@@ -263,7 +263,12 @@
   "boursorama": "1rPALGEN",
   "ft": "ALGEN:PAR",
   "echecs": {
-   "boursorama": 2
+   "boursorama": 3
   }
+ },
+ "ALPHA.AT": {
+  "boursorama": null,
+  "ft": "ALPHA:ATH",
+  "echecs": {}
  }
 }
