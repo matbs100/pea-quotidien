@@ -50,6 +50,23 @@ def calculs_collecte():
 
 
 @test
+def fichiers_de_signaux_vides():
+    import collecte
+    ancien = collecte.DATA
+    with tempfile.TemporaryDirectory() as tmp:
+        collecte.DATA = Path(tmp)
+        try:
+            assert collecte.evaluer_signaux("2026-11-06", {}) == [], "pas de fichier"
+            (Path(tmp) / "signaux.csv").write_text("", encoding="utf-8")
+            assert collecte.evaluer_signaux("2026-11-06", {}) == [], "fichier vide"
+            (Path(tmp) / "signaux.csv").write_text("date,ticker,signal,prix,rendement,resultat\n", encoding="utf-8")
+            assert collecte.evaluer_signaux("2026-11-06", {}) == [], "seulement l'en-tête"
+            assert (Path(tmp) / "signaux.csv").read_text(encoding="utf-8").startswith("date,"), "en-tête effacé"
+        finally:
+            collecte.DATA = ancien
+
+
+@test
 def calendrier_bourse():
     from datetime import date
     import collecte

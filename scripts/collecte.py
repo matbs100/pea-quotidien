@@ -117,9 +117,11 @@ def classer(lignes):
 def evaluer_signaux(jour, prix_du_jour):
     """Juge les signaux émis il y a au moins HORIZON séances."""
     f = DATA / "signaux.csv"
-    if not f.exists():
+    if not f.exists() or f.stat().st_size == 0:
         return []
     lignes = list(csv.DictReader(open(f, encoding="utf-8")))
+    if not lignes:  # fichier avec seulement l'en-tête : rien à juger, et surtout rien à réécrire
+        return []
     dates = sorted({l["date"] for l in lignes})
     for l in lignes:
         if l["resultat"] or l["date"] == jour:
@@ -196,7 +198,7 @@ def enregistrer(jour, tous, top30, petites, res):
     """À la clôture : juge les anciens signaux, note ceux du jour et complète l'historique."""
     lignes = evaluer_signaux(jour, {t: m["prix"] for t, m in tous.items()})
     f = DATA / "signaux.csv"
-    neuf = not f.exists()
+    neuf = not f.exists() or f.stat().st_size == 0
     deja_notes = {(l["date"], l["ticker"]) for l in lignes}
     with open(f, "a", newline="", encoding="utf-8") as h:
         w = csv.writer(h)
@@ -212,7 +214,7 @@ def enregistrer(jour, tous, top30, petites, res):
     h = DATA / "historique.csv"
     champs = ["date", "ticker", "nom", "categorie", "prix", "var_1j", "var_1m", "var_3m",
               "rsi", "volatilite", "liquidite", "signal", "score"]
-    existe = h.exists()
+    existe = h.exists() and h.stat().st_size > 0
     deja_h = set()
     if existe:
         deja_h = {(l["date"], l["ticker"]) for l in csv.DictReader(open(h, encoding="utf-8"))}
