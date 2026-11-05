@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matin PEA</title>
+<meta name="theme-color" content="#0d1412">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #f4f2ec; --surface: #fffdf8; --surface-2: #f0ece2; --ink: #1a1d1b; --muted: #636a65; --line: #e0dbcf;
+  --accent: #17795a; --accent-soft: #dcefe6; --amber: #b8730a; --amber-soft: #f6e9d2;
+  --up: #17795a; --down: #b8392c; --flat: #7a7f7b;
+  --glow-a: rgba(23,121,90,.18); --glow-b: rgba(232,170,64,.20);
+  --font-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0d1412; --surface: #141d1a; --surface-2: #1a2521; --ink: #e8efe9; --muted: #93a39b; --line: #25322d;
+  --accent: #5fd0a3; --accent-soft: #173029; --amber: #f0b552; --amber-soft: #33281a;
+  --up: #5fd0a3; --down: #f08273; --flat: #8d9893;
+  --glow-a: rgba(95,208,163,.16); --glow-b: rgba(240,181,82,.12); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0d1412; --surface: #141d1a; --surface-2: #1a2521; --ink: #e8efe9; --muted: #93a39b; --line: #25322d;
+  --accent: #5fd0a3; --accent-soft: #173029; --amber: #f0b552; --amber-soft: #33281a;
+  --up: #5fd0a3; --down: #f08273; --flat: #8d9893;
+  --glow-a: rgba(95,208,163,.16); --glow-b: rgba(240,181,82,.12); color-scheme: dark }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--font-body);
+  padding: 0 max(16px, env(safe-area-inset-left)) 56px max(16px, env(safe-area-inset-right)); overflow-x: hidden; }
+.wrap { max-width: 1100px; margin: 0 auto; position: relative; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.1; text-wrap: balance; }
+.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--flat); }
+
+/* fond vivant */
+.blobs { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.blobs i { position: absolute; width: 60vmax; height: 60vmax; border-radius: 50%; filter: blur(60px); opacity: .9; }
+.blobs i:nth-child(1) { background: radial-gradient(circle, var(--glow-a), transparent 65%); top: -25vmax; left: -15vmax; animation: flotte 22s ease-in-out infinite alternate; }
+.blobs i:nth-child(2) { background: radial-gradient(circle, var(--glow-b), transparent 65%); bottom: -30vmax; right: -20vmax; animation: flotte 28s ease-in-out infinite alternate-reverse; }
+@keyframes flotte { to { transform: translate(8vmax, 6vmax) scale(1.1); } }
+
+/* en-tête */
+header { padding: max(28px, env(safe-area-inset-top)) 0 12px; display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; }
+.kicker { font: 500 12px/1 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+h1 { font-size: clamp(2.4rem, 8vw, 4.4rem); font-weight: 800; letter-spacing: -.03em; margin-top: 10px; }
+h1 span { background: linear-gradient(100deg, var(--accent), var(--amber)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.date { color: var(--muted); margin-top: 6px; }
+.fx { text-align: right; }
+@media (max-width: 600px) { .fx { text-align: left; } }
+.fx .big { font: 500 clamp(2rem, 6vw, 3rem)/1 var(--font-mono); letter-spacing: -.02em; }
+.fx small { display: block; color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+/* bandeau défilant */
+.tape { margin: 18px 0 8px; border-block: 1px solid var(--line); overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.tape-in { display: flex; gap: 36px; width: max-content; padding: 10px 0; animation: defile 45s linear infinite; }
+.tape span { white-space: nowrap; font: 13px var(--font-mono); }
+.tape b { font-weight: 500; color: var(--muted); margin-right: 8px; }
+@keyframes defile { to { transform: translateX(-50%); } }
+
+section { margin-top: 40px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 700; }
+.sub { color: var(--muted); font-size: 14px; }
+
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; position: relative; overflow: hidden; }
+.card .nom { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card .val { font: 500 1.35rem var(--font-mono); margin-top: 4px; }
+.card .chg { font: 13px var(--font-mono); }
+.card svg { position: absolute; right: 10px; bottom: 10px; width: 90px; height: 34px; opacity: .9; }
+
+/* analyse */
+.analyse { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 22px clamp(16px, 4vw, 28px); }
+.analyse h3 { font-size: 1.05rem; margin: 18px 0 6px; color: var(--accent); }
+.analyse h3:first-child { margin-top: 0; }
+.analyse p, .analyse li { color: var(--ink); max-width: 72ch; }
+.analyse ul { padding-left: 1.2em; margin: 6px 0; }
+.analyse p { margin: 6px 0; }
+
+/* top 30 */
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 6px 14px; font: 500 13px var(--font-body); cursor: pointer; transition: .2s; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.liste { display: grid; gap: 8px; }
+.ligne { display: grid; grid-template-columns: 34px minmax(0, 1.6fr) 92px repeat(3, 70px) 46px 90px 100px; align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; }
+.ligne .rg { font: 500 15px var(--font-mono); color: var(--muted); }
+.ligne .t { min-width: 0; }
+.ligne .t strong { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ligne .t small { color: var(--muted); font: 12px var(--font-mono); }
+.badge { white-space: nowrap; display: inline-block; font: 600 10px/1 var(--font-body); letter-spacing: .06em; text-transform: uppercase; padding: 3px 6px; border-radius: 6px; margin-left: 6px; vertical-align: 2px; }
+.b-etf { background: var(--accent-soft); color: var(--accent); }
+.b-action { background: var(--surface-2); color: var(--muted); }
+.b-petite { background: var(--amber-soft); color: var(--amber); }
+.ligne .c { font: 13px var(--font-mono); text-align: right; }
+.ligne .c em { display: block; font-style: normal; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.sig { font: 600 12px var(--font-body); padding: 5px 9px; border-radius: 999px; text-align: center; white-space: nowrap; }
+.sig.hausse { background: var(--accent-soft); color: var(--up); }
+.sig.baisse { background: color-mix(in srgb, var(--down) 15%, transparent); color: var(--down); }
+.sig.neutre { background: var(--surface-2); color: var(--flat); }
+.score { height: 6px; background: var(--surface-2); border-radius: 6px; overflow: hidden; }
+.score i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--amber), var(--accent)); border-radius: 6px; transition: width 1.2s cubic-bezier(.2,.8,.2,1); }
+.score-w { display: grid; gap: 4px; }
+.score-w span { font: 11px var(--font-mono); color: var(--muted); text-align: right; }
+@media (max-width: 760px) {
+  .ligne { grid-template-columns: 28px minmax(0, 1fr) auto; grid-template-areas: "rg t prix" "rg c sig"; row-gap: 6px; }
+  .ligne .rg { grid-area: rg; } .ligne .t { grid-area: t; } .ligne .px { grid-area: prix; }
+  .ligne .cs { grid-area: c; display: flex; gap: 12px; } .ligne .sig { grid-area: sig; justify-self: end; }
+  .ligne .score-w { display: none; } .ligne .c { text-align: left; }
+  .ligne .t strong { white-space: normal; }
+}
+@media (min-width: 761px) { .ligne .cs { display: contents; } }
+
+.vf { white-space: nowrap; font: 600 10px/1 var(--font-body); padding: 3px 6px; border-radius: 6px; margin-left: 6px; vertical-align: 2px; letter-spacing: .04em; }
+.vf.ok { background: var(--accent-soft); color: var(--accent); }
+.vf.ecart { background: color-mix(in srgb, var(--down) 15%, transparent); color: var(--down); }
+.vf.seul { background: var(--surface-2); color: var(--muted); }
+.alerte { border-left: 3px solid var(--amber); background: var(--amber-soft); padding: 12px 16px; border-radius: 0 12px 12px 0; font-size: 14px; margin-bottom: 14px; }
+.stat { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.stat .card .val { font-size: 1.8rem; }
+footer { margin-top: 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 18px; }
+footer dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; margin: 0 0 14px; }
+footer dt { font-weight: 600; color: var(--ink); }
+footer dd { margin: 0; }
+footer a { color: var(--accent); }
+
+/* apparition */
+.rv { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.rv.vu { opacity: 1; transform: none; }
+.spark path { stroke-dasharray: 400; stroke-dashoffset: 400; transition: stroke-dashoffset 1.6s ease; }
+.vu .spark path, .spark.vu path { stroke-dashoffset: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1; transform: none; transition: none; } .tape-in, .blobs i { animation: none; }
+  .spark path { stroke-dashoffset: 0; transition: none; } .score i { transition: none; }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .card { padding: 12px; } .card .val { font-size: 1.15rem; }
+  .card .nom { white-space: normal; } .card .nom .vf { display: table; margin: 4px 0 0; }
+  .card .chg span { display: block; }
+  .card svg { position: static; display: block; width: 100%; height: 28px; margin-top: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="blobs" aria-hidden="true"><i></i><i></i></div>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="kicker">Fiche du matin · PEA</div>
+      <h1>Matin <span>PEA</span></h1>
+      <div class="date" id="date"></div>
+    </div>
+    <div class="fx">
+      <div class="big num" id="eurusd">—</div>
+      <small id="eurusd-sub"></small>
+    </div>
+  </header>
+  <div class="tape" aria-label="Indices"><div class="tape-in" id="tape"></div></div>
+
+  <section>
+    <div class="sec-head"><h2>Les marchés</h2><span class="sub">Clôture de la dernière séance · tendance sur 60 jours</span></div>
+    <div class="grid" id="indices"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Devises et matières premières</h2></div>
+    <div class="grid" id="devises"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>L'analyse du jour</h2><span class="sub">Rédigée par Claude à partir des données</span></div>
+    <div class="analyse rv" id="analyse"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div><h2>Top 30 éligible PEA</h2><div class="sub">Classement par critères chiffrés, pas une liste d'achats</div></div>
+      <div class="chips" role="group" aria-label="Filtrer">
+        <button class="chip" aria-pressed="true" data-f="tous">Tous</button>
+        <button class="chip" aria-pressed="false" data-f="etf">ETF</button>
+        <button class="chip" aria-pressed="false" data-f="actions">Actions</button>
+      </div>
+    </div>
+    <div class="liste" id="top30"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><h2>10 petits prix (moins de 2 €)</h2><div class="sub">Les mieux classés parmi les titres liquides sous 2 €</div></div></div>
+    <div class="alerte">Petit prix ne veut pas dire bon marché : ce sont souvent des sociétés fragiles (biotechs, entreprises en difficulté), très volatiles, où l'on peut perdre beaucoup. À garder pour une très petite part, ou juste à observer.</div>
+    <div class="liste" id="petites"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><h2>Les signaux tiennent-ils la route ?</h2><div class="sub">Chaque signal « hausse » ou « baisse » est vérifié 5 séances plus tard</div></div></div>
+    <div class="stat" id="bilan"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><h2>Contrôle des prix</h2><div class="sub">Chaque prix affiché est comparé entre Yahoo Finance, Boursorama et le Financial Times</div></div></div>
+    <div class="stat" id="sources"></div>
+  </section>
+
+  <footer>
+    <dl id="regles"></dl>
+    <p>Données Yahoo Finance, contrôlées avec Boursorama et le Financial Times. Elles peuvent avoir du retard ou des erreurs. Fiche générée automatiquement à visée d'information et d'apprentissage : ce n'est pas un conseil en investissement. Les performances passées ne préjugent pas des performances futures. Vérifie l'éligibilité PEA d'un titre auprès de ta banque avant d'acheter.</p>
+    <p style="margin-top:10px"><a href="archives/">Toutes les fiches précédentes</a> · <span id="gen"></span></p>
+  </footer>
+</div>
+
+<script id="donnees" type="application/json">/*__DONNEES__*/</script>
+<script>
+const D = JSON.parse(document.getElementById("donnees").textContent);
+const $ = (s) => document.querySelector(s);
+const fr = (x, d = 2) => x == null ? "—" : x.toLocaleString("fr-FR", { minimumFractionDigits: d, maximumFractionDigits: d });
+const sens = (x) => x == null ? "flat" : x > 0 ? "up" : x < 0 ? "down" : "flat";
+const pct = (x) => x == null ? "—" : (x > 0 ? "+" : "") + fr(x) + " %";
+const dec = (p) => p >= 1000 ? 0 : p >= 10 ? 2 : p >= 1 ? 3 : 4;
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+const SRC = { yahoo: "Yahoo", boursorama: "Boursorama", ft: "Financial Times" };
+function vf(m) {
+  if (!m.verif) return "";
+  const det = Object.entries(m.sources || {}).map(([k, v]) => `${SRC[k]} ${fr(v, dec(v))}`).join(" · ");
+  const lib = { ok: `✓ ${Object.keys(m.sources).length} sources`, ecart: "⚠ écart entre sources", seul: "1 source" }[m.verif];
+  return ` <span class="vf ${m.verif}" title="${esc(det)}">${lib}</span>`;
+}
+
+function spark(pts, cls) {
+  const v = (pts || []).filter((x) => x != null);
+  if (v.length < 2) return "";
+  const mn = Math.min(...v), mx = Math.max(...v), w = 90, h = 34;
+  const d = v.map((y, i) => `${i ? "L" : "M"}${(i / (v.length - 1) * w).toFixed(1)},${(h - 2 - (y - mn) / ((mx - mn) || 1) * (h - 4)).toFixed(1)}`).join("");
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><path d="${d}" vector-effect="non-scaling-stroke" fill="none" stroke="var(--${cls === "down" ? "down" : "up"})" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+}
+
+// date
+const dt = new Date(D.date + "T12:00:00");
+$("#date").textContent = dt.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+$("#gen").textContent = "Générée le " + new Date(D.genere_le).toLocaleString("fr-FR", { dateStyle: "short", timeStyle: "short" });
+
+// euro / dollar
+const eu = D.devises.find((x) => x.ticker === "EURUSD=X");
+if (eu) {
+  const el = $("#eurusd"), cible = eu.prix;
+  el.classList.add(sens(eu.var_1j));
+  compte(el, cible, 4, " $");
+  $("#eurusd-sub").innerHTML = `1 € = ${fr(cible, 4)} $ · 1 $ = <span class="num">${fr(1 / cible, 4)} €</span> · <span class="num ${sens(eu.var_1j)}">${pct(eu.var_1j)}</span>`;
+}
+function compte(el, cible, d, suffixe = "") {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = fr(cible, d) + suffixe; return; }
+  const t0 = performance.now(), dur = 1400;
+  const pas = (t) => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+    el.textContent = fr(cible * e, d) + suffixe; if (k < 1) requestAnimationFrame(pas); };
+  requestAnimationFrame(pas);
+}
+
+// bandeau
+const tape = D.indices.map((m) => `<span><b>${esc(m.nom)}</b>${fr(m.prix, dec(m.prix))} <span class="${sens(m.var_1j)}">${pct(m.var_1j)}</span></span>`).join("");
+$("#tape").innerHTML = tape + tape;
+
+function carte(m, unite = "") {
+  return `<div class="card rv"><div class="nom">${esc(m.nom)}${vf(m)}</div><div class="val">${fr(m.prix, dec(m.prix))}${unite}</div>
+    <div class="chg ${sens(m.var_1j)}">${pct(m.var_1j)} <span class="flat">· 1 mois ${pct(m.var_1m)}</span></div>${spark(m.courbe.slice(-60), sens(m.var_1m))}</div>`;
+}
+$("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
+$("#devises").innerHTML = [...D.devises, ...D.matieres].map((m) => carte(m)).join("");
+
+$("#analyse").innerHTML = D.analyse_html || "<p>L'analyse du jour n'a pas encore été rédigée.</p>";
+
+const badge = { etf: '<span class="badge b-etf">ETF</span>', actions: '<span class="badge b-action">Action</span>', petites: '<span class="badge b-petite">Petite cap.</span>' };
+function ligne(m, i, sc) {
+  const s = m[sc] ?? 0;
+  const parts = m.prix > 0 ? Math.floor(100 / m.prix) : 0;
+  return `<div class="ligne rv" data-cat="${m.categorie === "petites" ? "actions" : m.categorie}">
+    <div class="rg">${String(i + 1).padStart(2, "0")}</div>
+    <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"}</small></div>
+    <div class="c px"><span class="num">${fr(m.prix, dec(m.prix))}</span><em>prix</em></div>
+    <div class="cs"><div class="c ${sens(m.var_1j)}">${pct(m.var_1j)}<em>1 jour</em></div>
+    <div class="c ${sens(m.var_1m)}">${pct(m.var_1m)}<em>1 mois</em></div>
+    <div class="c ${sens(m.var_3m)}">${pct(m.var_3m)}<em>3 mois</em></div>
+    <div class="c">${fr(m.rsi, 0)}<em>RSI</em></div></div>
+    <div class="score-w"><div class="score"><i data-w="${s}"></i></div><span>score ${fr(s, 0)}</span></div>
+    <div class="sig ${m.signal}">${{ hausse: "↗ hausse", baisse: "↘ baisse", neutre: "→ neutre" }[m.signal]}</div></div>`;
+}
+$("#top30").innerHTML = D.top30.map((m, i) => ligne(m, i, "score")).join("");
+$("#petites").innerHTML = D.petites.map((m, i) => ligne(m, i, "score_petite")).join("");
+
+document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", c === b));
+  document.querySelectorAll("#top30 .ligne").forEach((l) => { l.hidden = !(b.dataset.f === "tous" || l.dataset.cat === b.dataset.f); });
+}));
+
+const B = D.bilan_signaux;
+$("#bilan").innerHTML = B.jugees ? `
+  <div class="card rv"><div class="nom">Signaux justes</div><div class="val">${fr(B.taux, 1)} %</div><div class="chg flat">${B.justes} sur ${B.jugees} vérifiés</div></div>
+  <div class="card rv"><div class="nom">Repère : titres montés sur 5 séances</div><div class="val">${fr(B.repere_hausse, 1)} %</div><div class="chg flat">Les signaux doivent faire mieux pour être utiles</div></div>`
+  : `<div class="card rv"><div class="nom">Premiers résultats</div><div class="val">dans 5 séances</div><div class="chg flat">Les signaux d'aujourd'hui seront vérifiés automatiquement</div></div>`;
+
+const C = D.controle_sources;
+if (C) {
+  $("#sources").innerHTML = `<div class="card rv"><div class="nom">Prix confirmés par 2 ou 3 sources</div><div class="val">${C.ok}</div><div class="chg flat">Yahoo, Boursorama, Financial Times</div></div>
+  <div class="card rv"><div class="nom">Écarts entre sources</div><div class="val ${C.ecart ? "down" : ""}">${C.ecart}</div><div class="chg flat">${C.ecarts.map((e) => esc(e.nom) + " : " + Object.entries(e.sources).map(([k, v]) => SRC[k] + " " + fr(v, dec(v))).join(" / ")).join("<br>") || "Aucun"}</div></div>
+  <div class="card rv"><div class="nom">Sans deuxième source</div><div class="val">${C.seul}</div><div class="chg flat">Quantalys bloque la lecture automatique</div></div>`;
+}
+$("#regles").innerHTML = Object.entries({ "Score": D.regles.score, "Signal": D.regles.signal, "Filtres": D.regles.filtres })
+  .map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
+
+// animations à l'apparition (décalées)
+const io = new IntersectionObserver((es) => es.forEach((e) => {
+  if (!e.isIntersecting) return;
+  const el = e.target; io.unobserve(el);
+  const fr0 = [...el.parentElement.children].indexOf(el);
+  setTimeout(() => { el.classList.add("vu"); el.querySelectorAll(".score i").forEach((i) => i.style.width = i.dataset.w + "%"); }, Math.min(fr0, 12) * 45);
+}), { threshold: 0.1 });
+document.querySelectorAll(".rv").forEach((el) => io.observe(el));
+</script>
+</body>
+</html>
