@@ -1,0 +1,269 @@
+{
+ "^FCHI": {
+  "boursorama": "1rPCAC",
+  "ft": "CAC:PAR",
+  "echecs": {}
+ },
+ "^STOXX50E": {
+  "boursorama": "2cSX5E",
+  "ft": "SX5E:STX",
+  "echecs": {}
+ },
+ "^STOXX": {
+  "boursorama": "2cSXXP",
+  "ft": "SXXP:STX",
+  "echecs": {}
+ },
+ "^GDAXI": {
+  "boursorama": "5pDAX",
+  "ft": "DAX:GER",
+  "echecs": {}
+ },
+ "^FTSE": {
+  "boursorama": "UKX",
+  "ft": "FTSE:FSI",
+  "echecs": {}
+ },
+ "^GSPC": {
+  "boursorama": null,
+  "ft": "INX:IOM",
+  "echecs": {}
+ },
+ "^IXIC": {
+  "boursorama": "$COMPX",
+  "ft": "COMP:NAS",
+  "echecs": {}
+ },
+ "^NDX": {
+  "boursorama": null,
+  "ft": "NDX:NAS",
+  "echecs": {}
+ },
+ "^DJI": {
+  "boursorama": "$INDU",
+  "ft": "DJI:DJI",
+  "echecs": {}
+ },
+ "^N225": {
+  "boursorama": null,
+  "ft": null,
+  "echecs": {}
+ },
+ "^HSI": {
+  "boursorama": null,
+  "ft": "HSI:HKG",
+  "echecs": {}
+ },
+ "^VIX": {
+  "boursorama": null,
+  "ft": null,
+  "echecs": {}
+ },
+ "EURUSD=X": {
+  "boursorama": null,
+  "ft": "EURUSD",
+  "echecs": {}
+ },
+ "CAP.PA": {
+  "boursorama": "1rPCAP",
+  "ft": "CAP:PAR",
+  "echecs": {}
+ },
+ "DSY.PA": {
+  "boursorama": "1rPDSY",
+  "ft": "DSY:PAR",
+  "echecs": {}
+ },
+ "SAP.DE": {
+  "boursorama": "1zSAP",
+  "ft": "SAP:FRA",
+  "echecs": {}
+ },
+ "SOP.PA": {
+  "boursorama": "1rPSOP",
+  "ft": "SOP:PAR",
+  "echecs": {}
+ },
+ "BVI.PA": {
+  "boursorama": "1rPBVI",
+  "ft": "BVI:PAR",
+  "echecs": {}
+ },
+ "ALV.DE": {
+  "boursorama": "1zALV",
+  "ft": "ALV:FRA",
+  "echecs": {}
+ },
+ "ATE.PA": {
+  "boursorama": "1rPATE",
+  "ft": "ATE:PAR",
+  "echecs": {}
+ },
+ "RACE.MI": {
+  "boursorama": "1gRACE",
+  "ft": "RACE:MIL",
+  "echecs": {}
+ },
+ "ITX.MC": {
+  "boursorama": "FF55-ITX",
+  "ft": "ITX:MCE",
+  "echecs": {}
+ },
+ "AC.PA": {
+  "boursorama": "1rPAC",
+  "ft": "AC:PAR",
+  "echecs": {}
+ },
+ "PUB.PA": {
+  "boursorama": "1rPPUB",
+  "ft": "PUB:PAR",
+  "echecs": {}
+ },
+ "TEP.PA": {
+  "boursorama": "1rPTEP",
+  "ft": "TEP:PAR",
+  "echecs": {}
+ },
+ "EL.PA": {
+  "boursorama": "1rPEL",
+  "ft": "EL:PAR",
+  "echecs": {}
+ },
+ "CS.PA": {
+  "boursorama": "1rPCS",
+  "ft": "CS:PAR",
+  "echecs": {}
+ },
+ "OR.PA": {
+  "boursorama": "1rPOR",
+  "ft": "OR:PAR",
+  "echecs": {}
+ },
+ "RI.PA": {
+  "boursorama": "1rPRI",
+  "ft": "RI:PAR",
+  "echecs": {}
+ },
+ "AI.PA": {
+  "boursorama": "1rPAI",
+  "ft": "AI:PAR",
+  "echecs": {}
+ },
+ "ERF.PA": {
+  "boursorama": "1rPERF",
+  "ft": "ERF:PAR",
+  "echecs": {}
+ },
+ "PHIA.AS": {
+  "boursorama": "1rAPHIA",
+  "ft": "PHIA:AEX",
+  "echecs": {}
+ },
+ "ELIS.PA": {
+  "boursorama": "1rPELIS",
+  "ft": "ELIS:PAR",
+  "echecs": {}
+ },
+ "AF.PA": {
+  "boursorama": "1rPAF",
+  "ft": "AF:PAR",
+  "echecs": {}
+ },
+ "SAN.PA": {
+  "boursorama": "1rPSAN",
+  "ft": "SAN:PAR",
+  "echecs": {}
+ },
+ "PCEU.PA": {
+  "boursorama": "1rTPCEU",
+  "ft": "PCEU:PAR:EUR",
+  "echecs": {}
+ },
+ "ETZ.PA": {
+  "boursorama": "1rTETZ",
+  "ft": "ETZ:PAR:EUR",
+  "echecs": {}
+ },
+ "PLEM.PA": {
+  "boursorama": "1rTPLEM",
+  "ft": "PLEM:PAR:EUR",
+  "echecs": {}
+ },
+ "MSE.PA": {
+  "boursorama": "1rTMSE",
+  "ft": "MSE:PAR:EUR",
+  "echecs": {}
+ },
+ "C40.PA": {
+  "boursorama": "1rTC40",
+  "ft": "C40:PAR:EUR",
+  "echecs": {}
+ },
+ "CAC.PA": {
+  "boursorama": "1rTCAC",
+  "ft": "CAC:PAR:EUR",
+  "echecs": {}
+ },
+ "WPEA.PA": {
+  "boursorama": "1rTWPEA",
+  "ft": "WPEA:PAR:EUR",
+  "echecs": {}
+ },
+ "EWLD.PA": {
+  "boursorama": "1rTEWLD",
+  "ft": "EWLD:PAR:EUR",
+  "echecs": {}
+ },
+ "ALAGO.PA": {
+  "boursorama": "1rPALAGO",
+  "ft": "ALAGO:PAR",
+  "echecs": {}
+ },
+ "ALTHE.PA": {
+  "boursorama": "1rPALTHE",
+  "ft": "ALTHE:PAR",
+  "echecs": {}
+ },
+ "ALSGD.PA": {
+  "boursorama": "1rPALSGD",
+  "ft": "ALSGD:PAR",
+  "echecs": {}
+ },
+ "ETL.PA": {
+  "boursorama": "1rPETL",
+  "ft": "ETL:PAR",
+  "echecs": {}
+ },
+ "ALBIO.PA": {
+  "boursorama": "1rPALBIO",
+  "ft": "ALBIO:PAR",
+  "echecs": {}
+ },
+ "ALVAL.PA": {
+  "boursorama": "1rPALVAL",
+  "ft": "ALVAL:PAR",
+  "echecs": {}
+ },
+ "ALSPW.PA": {
+  "boursorama": "1rPALSPW",
+  "ft": "ALSPW:PAR",
+  "echecs": {}
+ },
+ "ALNOV.PA": {
+  "boursorama": "1rPALNOV",
+  "ft": "ALNOV:PAR",
+  "echecs": {}
+ },
+ "ALCJ.PA": {
+  "boursorama": "1rPALCJ",
+  "ft": "ALCJ:PAR",
+  "echecs": {}
+ },
+ "ALGEN.PA": {
+  "boursorama": "1rPALGEN",
+  "ft": "ALGEN:PAR",
+  "echecs": {
+   "boursorama": 1
+  }
+ }
+}
