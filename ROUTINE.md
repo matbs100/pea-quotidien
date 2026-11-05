@@ -54,7 +54,9 @@ travailles dans ce dépôt Git. Tout est en français.
      -H "Click: {{URL_SITE}}" -d "<résumé>" https://ntfy.sh/{{TOPIC_NTFY}}
    ```
    Le résumé tient en 2 lignes : CAC 40, S&P 500 et Nasdaq (variation sur 1 jour), 1 € en dollars,
-   les 3 premiers du top 30, et le nombre d'écarts entre sources s'il y en a. En cas d'échec à
+   les 3 premiers du top 30, et le nombre d'écarts entre sources s'il y en a. Si un indice a bougé de
+   plus de 3 % sur la séance, commence par « ⚠️ ». Si `apprentissage/CHANGELOG.md` a une entrée datée
+   d'aujourd'hui ou d'hier, ajoute une 3e ligne « 🛠 Nouveau : <titre> ». En cas d'échec à
    l'étape 2, envoie à la place « Fiche non générée : <raison> ».
 
 ## Règles à respecter
@@ -67,4 +69,10 @@ travailles dans ce dépôt Git. Tout est en français.
   présente-les comme tels, avec leur taux de réussite mesuré.
 - Ne modifie pas les scripts, sauf pour corriger un bug évident qui bloque la fiche. Dans ce cas,
   explique la correction dans le message de commit.
+- **Filet de sécurité** : si un script plante et qu'un commit « Amélioration : … » a moins de 24 h
+  (`git log --since="24 hours ago" --grep="^Amélioration"`), annule-le avec `git revert --no-edit <commit>`,
+  relance l'étape, puis note « annulée le $JOUR : <raison> » sur l'idée correspondante dans
+  `apprentissage/idees.md` et commence la notification par « Amélioration de la nuit annulée ».
+- Ne touche pas à `apprentissage/` (sauf la ligne d'idée en cas d'annulation) : c'est le travail de
+  l'agent de nuit.
 - Ne touche pas aux fichiers de données des jours précédents.

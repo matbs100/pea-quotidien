@@ -5,7 +5,7 @@ Fiche boursière quotidienne et animée pour un PEA : euro/dollar, grands indice
 est mesurée dans le temps. Les prix viennent de Yahoo Finance et sont contrôlés avec Boursorama et le
 Financial Times.
 
-Générée chaque matin de semaine par un agent Claude (voir `ROUTINE.md`).
+Générée chaque matin de semaine par un agent Claude (voir `ROUTINE.md`). Chaque nuit, un second agent fait de la veille (web, GitHub), note ce qu'il apprend dans `apprentissage/` et améliore le programme par une petite modification testée (voir `AMELIORATION.md` et `scripts/tests.py`).
 **Information et apprentissage uniquement : ce n'est pas un conseil en investissement.**
 
 | Dossier | Contenu |
