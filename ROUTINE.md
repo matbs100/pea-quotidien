@@ -48,16 +48,22 @@ travailles dans ce dépôt Git. Tout est en français.
    jamais le texte d'un site.
 6. Rendu : `$PY scripts/rendu.py $JOUR` (fiche animée dans `docs/`, note Obsidian dans `notes/`).
 7. Publication : `git add -A && git commit -m "Matin PEA $JOUR" && git push origin HEAD:claude/pea`.
-8. Notification sur le téléphone :
+8. Notification sur le téléphone, **programmée pour l'ouverture de la Bourse de Paris (9 h)** :
    ```
-   curl -s -H "Title: Matin PEA du $JOUR" -H "Tags: chart_with_upwards_trend" \
+   OUVERTURE=$($PY -c "import sys; from datetime import datetime; from zoneinfo import ZoneInfo; print(int(datetime.fromisoformat(sys.argv[1] + 'T09:00').replace(tzinfo=ZoneInfo('Europe/Paris')).timestamp()))" $JOUR)
+   QUAND=(); [ "$(date +%s)" -lt "$((OUVERTURE - 60))" ] && QUAND=(-H "At: $OUVERTURE")
+   curl -s "${QUAND[@]}" -H "Title: Matin PEA du $JOUR" -H "Tags: chart_with_upwards_trend" \
      -H "Click: {{URL_SITE}}" -d "<résumé>" https://ntfy.sh/{{TOPIC_NTFY}}
    ```
+   ntfy garde le message et le délivre à 9 h pile (vérifie que le champ `time` de sa réponse vaut
+   `$OUVERTURE`). Si la fiche est prête après 8 h 59, la notification part tout de suite. Les jours
+   fériés d'Euronext (1er janvier, Vendredi saint, lundi de Pâques, 1er mai, 25 et 26 décembre), la
+   Bourse de Paris est fermée : commence alors le résumé par « Bourse fermée aujourd'hui (jour férié) ».
    Le résumé tient en 2 lignes : CAC 40, S&P 500 et Nasdaq (variation sur 1 jour), 1 € en dollars,
    les 3 premiers du top 30, et le nombre d'écarts entre sources s'il y en a. Si un indice a bougé de
    plus de 3 % sur la séance, commence par « ⚠️ ». Si `apprentissage/CHANGELOG.md` a une entrée datée
    d'aujourd'hui ou d'hier, ajoute une 3e ligne « 🛠 Nouveau : <titre> ». En cas d'échec à
-   l'étape 2, envoie à la place « Fiche non générée : <raison> ».
+   l'étape 2, envoie à la place « Fiche non générée : <raison> », programmée de la même façon.
 
 ## Règles à respecter
 
