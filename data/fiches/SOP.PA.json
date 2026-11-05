@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSOP/",
+  "isin": "FR0000050809",
+  "pea_bourso": true,
+  "secteur": "Logiciels et conseils",
+  "indice": "SBF 120",
+  "valorisation": "3 829 MEUR",
+  "rendement": "2,85%",
+  "per": "10,79",
+  "dernier_dividende": "5,30 EUR (02/06/26)",
+  "per_annee": "2026",
+  "effectif": "51 275",
+  "nb_titres": "19 418 067",
+  "capitalisation": "3 829,24 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.soprasteria.com",
+  "pays": "France"
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1gRACE/",
+  "isin": "NL0011585146",
+  "pea_bourso": true,
+  "secteur": "Véhicules particuliers et pièces détachées",
+  "indice": "EURO STOXX 50",
+  "valorisation": "66 887 MEUR",
+  "rendement": "1,10%",
+  "per": "36,12",
+  "dernier_dividende": "3,62 EUR (20/04/26)",
+  "per_annee": "2026",
+  "effectif": "5 718",
+  "nb_titres": "177 278 893",
+  "capitalisation": "66 887,33 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.ferrari.com/en-EN/corporate/investors",
+  "pays": "Italie"
+ }
+}

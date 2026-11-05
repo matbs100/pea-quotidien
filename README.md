@@ -12,9 +12,11 @@ Générée chaque matin de semaine par un agent Claude (voir `ROUTINE.md`).
 |---|---|
 | `scripts/collecte.py` | prix, indicateurs, classements, suivi des signaux |
 | `scripts/verif.py` | contrôle croisé Yahoo / Boursorama / FT |
+| `scripts/fiches.py` | fiches détaillées : historique 5 ans, risque SRI (DIC PRIIPs ou estimé), frais, caractéristiques, éligibilité PEA |
 | `scripts/rendu.py` + `modele.html` | fiche animée (`docs/`) et note Obsidian (`notes/`) |
+| `descriptions.json` | courtes descriptions rédigées par Claude (aucun texte copié) |
 | `data/` | une capture JSON par jour, historique CSV, signaux, analyses |
 | `univers.json` | les titres suivis |
 
 Relancer à la main : `pip install -r requirements.txt`, puis `python scripts/collecte.py`,
-`python scripts/verif.py AAAA-MM-JJ`, `python scripts/rendu.py AAAA-MM-JJ`.
+`python scripts/verif.py AAAA-MM-JJ`, `python scripts/fiches.py AAAA-MM-JJ`, `python scripts/rendu.py AAAA-MM-JJ`.

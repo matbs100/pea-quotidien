@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPRI/",
+  "isin": "FR0000120693",
+  "pea_bourso": true,
+  "secteur": "Production de produits alimentaires et de tabac",
+  "indice": "CAC 40",
+  "valorisation": "18 078 MEUR",
+  "rendement": "6,94%",
+  "per": "11,57",
+  "dernier_dividende": "2,35 EUR (22/07/26)",
+  "per_annee": "2026",
+  "effectif": "16 893",
+  "nb_titres": "252 269 195",
+  "capitalisation": "18 077,61 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.pernod-ricard.com/",
+  "pays": "France"
+ }
+}

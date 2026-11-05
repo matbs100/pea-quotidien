@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPTEP/",
+  "isin": "FR0000051807",
+  "pea_bourso": true,
+  "secteur": "Services aux entreprises",
+  "indice": "SBF 120",
+  "valorisation": "4 838 MEUR",
+  "rendement": "5,60%",
+  "per": "5,91",
+  "dernier_dividende": "4,50 EUR (26/05/26)",
+  "per_annee": "2026",
+  "effectif": "478 995",
+  "nb_titres": "59 874 365",
+  "capitalisation": "4 837,85 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.tp.com/",
+  "pays": "France"
+ }
+}

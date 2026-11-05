@@ -1,0 +1,22 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTEWLD/",
+  "isin": "LU2655993207",
+  "societe": "Amundi Luxembourg S.A.",
+  "pea_bourso": true,
+  "actif_net": "7 386M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "15/03/2024",
+  "forme": "ETF",
+  "classe": "Actions Internationales",
+  "zone": "Global",
+  "categorie_ms": "Actions International Gdes Cap. Mixte",
+  "affectation": "Distribution",
+  "replication": "Synthétique",
+  "frais_entree": "0 %",
+  "frais_sortie": "0 %",
+  "frais_gestion": "0,28 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00001JXM3&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

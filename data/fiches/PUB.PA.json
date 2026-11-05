@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPPUB/",
+  "isin": "FR0000130577",
+  "pea_bourso": true,
+  "secteur": "Services aux entreprises",
+  "indice": "CAC 40",
+  "valorisation": "26 677 MEUR",
+  "rendement": "3,94%",
+  "per": "12,66",
+  "dernier_dividende": "3,75 EUR (01/07/26)",
+  "per_annee": "2026",
+  "effectif": "114 079",
+  "nb_titres": "254 311 860",
+  "capitalisation": "26 677,31 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.publicisgroupe.com/fr",
+  "pays": "France"
+ }
+}

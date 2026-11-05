@@ -51,6 +51,10 @@ def prix(x):
     return f"{x:,.{d}f}".replace(",", " ").replace(".", ",")
 
 
+def pct_simple(x):
+    return "—" if x is None else f"{x:.1f} %".replace(".", ",")
+
+
 VERIF = {"ok": "✅", "ecart": "⚠️", "seul": "·", None: ""}
 
 
@@ -97,6 +101,26 @@ def note_obsidian(d, analyse, url):
                  f"{c['ecart']} écarts, {c['seul']} sans 2e source.")
         for e in c["ecarts"]:
             L.append(f"  - ⚠️ {e['nom']} : " + " / ".join(f"{k} {prix(v)}" for k, v in e["sources"].items()))
+    det = d.get("details", {})
+    if det:
+        L += ["", "## Fiches détaillées", "",
+              "> PEA : éligibilité indiquée par Boursorama pour cette place de cotation (à confirmer auprès de BNP Paribas). "
+              "SRI : risque de 1 à 7, officiel (DIC) pour les ETF, estimé à partir de la volatilité pour les actions.", "",
+              "| Titre | ISIN | PEA | Risque | Frais gestion | PER | Rendement | Volatilité 1 an | Pire baisse 1 an |",
+              "|---|---|:-:|:-:|--:|--:|--:|--:|--:|"]
+        vu = set()
+        for m in d["top30"] + d["petites"]:
+            x = det.get(m["ticker"])
+            if not x or m["ticker"] in vu:
+                continue
+            vu.add(m["ticker"])
+            i, st = x["infos"], x["stats"]
+            pea = {True: "✅", False: "⚠️ non indiqué", None: "?"}[i.get("pea_bourso")]
+            sri = f"{i['sri_officiel']}/7 (DIC)" if i.get("sri_officiel") else (
+                f"{st['sri_estime']}/7 (estimé)" if st.get("sri_estime") else "—")
+            L.append(f"| {m['nom']} (`{m['ticker']}`) | {i.get('isin', '—')} | {pea} | {sri} | "
+                     f"{i.get('frais_gestion', '—')} | {i.get('per', '—')} | {i.get('rendement', '—')} | "
+                     f"{pct_simple(st.get('vol_1a'))} | {pct_simple(st.get('perte_max_1a'))} |")
     L += ["", "## Règles", ""] + [f"- **{k}** : {v}" for k, v in d["regles"].items()]
     return "\n".join(L) + "\n"
 
@@ -120,9 +144,13 @@ def main():
     d["analyse_html"] = md_en_html(analyse) if analyse else ""
     for m in d["indices"] + d["devises"] + d["matieres"] + d["top30"] + d["petites"]:
         m["courbe"] = m.get("courbe", [])[-60:]
+    fd = RACINE / "descriptions.json"
+    textes = json.loads(fd.read_text(encoding="utf-8")).get("titres", {}) if fd.exists() else {}
+    for t, x in d.get("details", {}).items():
+        x["description"] = textes.get(t) or x.get("description_auto", "")
 
     modele = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
-    donnees = json.dumps(d, ensure_ascii=False).replace("</", "<\\/")
+    donnees = json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = modele.replace("/*__DONNEES__*/", donnees)
     (DOCS / "archives").mkdir(parents=True, exist_ok=True)
     (DOCS / "archives" / f"{jour}.html").write_text(page.replace('href="archives/"', 'href="./"'), encoding="utf-8")

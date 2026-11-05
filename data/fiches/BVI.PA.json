@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPBVI/",
+  "isin": "FR0006174348",
+  "pea_bourso": true,
+  "secteur": "Services aux entreprises",
+  "indice": "CAC 40",
+  "valorisation": "13 716 MEUR",
+  "rendement": "3,39%",
+  "per": "19,51",
+  "dernier_dividende": "0,92 EUR (26/05/26)",
+  "per_annee": "2026",
+  "effectif": "82 049",
+  "nb_titres": "453 871 520",
+  "capitalisation": "13 716,00 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://group.bureauveritas.com/fr/investisseurs",
+  "pays": "France"
+ }
+}

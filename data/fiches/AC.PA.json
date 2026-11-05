@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPAC/",
+  "isin": "FR0000120404",
+  "pea_bourso": true,
+  "secteur": "Services d'accueil",
+  "indice": "CAC 40",
+  "valorisation": "11 447 MEUR",
+  "rendement": "3,11%",
+  "per": "21,05",
+  "dernier_dividende": "1,35 EUR (01/06/26)",
+  "per_annee": "2026",
+  "effectif": "21 180",
+  "nb_titres": "231 354 360",
+  "capitalisation": "11 447,41 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://group.accor.com/",
+  "pays": "France"
+ }
+}

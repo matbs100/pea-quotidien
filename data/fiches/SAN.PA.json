@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSAN/",
+  "isin": "FR0000120578",
+  "pea_bourso": true,
+  "secteur": "Produits biopharmaceutiques",
+  "indice": "CAC 40",
+  "valorisation": "102 093 MEUR",
+  "rendement": "5,32%",
+  "per": "9,22",
+  "dernier_dividende": "4,12 EUR (05/05/26)",
+  "per_annee": "2026",
+  "effectif": "74 846",
+  "nb_titres": "1 207 773 393",
+  "capitalisation": "102 093,08 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.sanofi.com/fr/investisseurs/",
+  "pays": "France"
+ }
+}
