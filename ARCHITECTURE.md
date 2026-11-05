@@ -31,6 +31,7 @@ dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 |---|---|---|---|
 | 3 h, chaque nuit | **Veille et amélioration** | `AMELIORATION.md` | apprend (marchés, design, pédagogie, open source), note ce qu'il apprend dans `apprentissage/`, fait une amélioration testée |
 | 5 h, chaque jour | **Chef d'orchestre** | `CHEF.md` | contrôle tout (`controle.py`), vérifie les faits appris, relit les commits des autres, annule ce qui casse, corrige un bug ou embellit l'interface, écrit `pilotage/` |
+| 12 h 30, jours de bourse | **Chef d'orchestre, passage de mi-journée** | routine dédiée (lit `CHEF.md`) | vérifie la fiche d'ouverture, la refait et corrige le programme si besoin, s'assure que la clôture pourra tourner ; pas d'embellissement |
 | 9 h 15 et 17 h 55, jours de bourse | **Fiche du jour** | `ROUTINE.md` | collecte, contrôle des prix, fiches détaillées, analyse, site, notification |
 | 9 h 40 et 18 h 40, si le Mac est allumé | **Relais du Mac** | tâche planifiée de l'appli Claude | `git pull` dans Obsidian, vérifie le site en ligne, recopie l'essentiel dans les notes |
 
