@@ -243,6 +243,9 @@ def controle_du_chef():
                                           ("M", "scripts/collecte.py", 400)], "2026-11-06", "2026-11-05")
     assert pb and any("CHEF.md" in x for x in al) and any("400 lignes" in x for x in al)
     assert any("CHANGELOG" in x for x in al), "amélioration sans entrée dans les nouveautés"
+    assert c.ecarts_aux_regles("autre", [("D", "scripts/ancien.sh", 10)], "2026-11-06", "2026-11-05") == ([], []), \
+        "une suppression faite par Mathieu n'est pas une faute d'agent"
+    assert c.ecarts_aux_regles("nuit", [("D", "scripts/verif.py", 10)], "2026-11-06", "2026-11-05")[0]
     # documentation : une fonction publique non décrite est repérée
     with tempfile.TemporaryDirectory() as tmp:
         f = Path(tmp) / "essai.py"
