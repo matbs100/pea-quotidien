@@ -5,7 +5,12 @@ Fiche boursière quotidienne et animée pour un PEA : euro/dollar, grands indice
 est mesurée dans le temps. Les prix viennent de Yahoo Finance et sont contrôlés avec Boursorama et le
 Financial Times.
 
-Générée chaque matin de semaine par un agent Claude (voir `ROUTINE.md`). Chaque nuit, un second agent fait de la veille (web, GitHub), note ce qu'il apprend dans `apprentissage/` et améliore le programme par une petite modification testée (voir `AMELIORATION.md` et `scripts/tests.py`).
+Trois agents Claude travaillent dans le cloud, chacun avec sa consigne :
+- **Fiche du jour** (`ROUTINE.md`), à 9 h 15 et 17 h 55 les jours de bourse : collecte, contrôle des prix, analyse, site, notification ;
+- **Veille et amélioration** (`AMELIORATION.md`), chaque nuit à 3 h : apprend (marchés, méthodes, design, pédagogie, open source), note ce qu'il apprend dans `apprentissage/` avec ses sources, et améliore le programme par une petite modification testée ;
+- **Chef d'orchestre** (`CHEF.md`), chaque jour à 5 h : contrôle tout (`scripts/controle.py`), vérifie les faits appris, relit et peut annuler le travail des autres, corrige un bug ou embellit l'interface, et donne ses consignes dans `pilotage/`.
+
+Le programme est expliqué fonction par fonction dans `ARCHITECTURE.md`.
 **Information et apprentissage uniquement : ce n'est pas un conseil en investissement.**
 
 | Dossier | Contenu |
@@ -14,9 +19,14 @@ Générée chaque matin de semaine par un agent Claude (voir `ROUTINE.md`). Chaq
 | `scripts/verif.py` | contrôle croisé Yahoo / Boursorama / FT |
 | `scripts/fiches.py` | fiches détaillées : historique 5 ans, risque SRI (DIC PRIIPs ou estimé), frais, caractéristiques, éligibilité PEA |
 | `scripts/rendu.py` + `modele.html` | fiche animée (`docs/`) et note Obsidian (`notes/`) |
+| `scripts/controle.py` | contrôle qualité du chef d'orchestre (écrit `pilotage/etat.json`) |
+| `scripts/tests.py` | tests garde-fous, obligatoires avant toute publication |
+| `pilotage/` | consignes, état et rapports du chef d'orchestre |
+| `apprentissage/` | journal de nuit, idées, connaissances vérifiées, nouveautés |
 | `descriptions.json` | courtes descriptions rédigées par Claude (aucun texte copié) |
 | `data/` | une capture JSON par jour, historique CSV, signaux, analyses |
 | `univers.json` | les titres suivis |
 
 Relancer à la main : `pip install -r requirements.txt`, puis `python scripts/collecte.py`,
 `python scripts/verif.py AAAA-MM-JJ`, `python scripts/fiches.py AAAA-MM-JJ`, `python scripts/rendu.py AAAA-MM-JJ`.
+Contrôler tout le projet : `python scripts/controle.py` (ou `--hors-ligne`), puis `python scripts/tests.py`.

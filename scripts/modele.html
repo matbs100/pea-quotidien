@@ -276,6 +276,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
     <dl id="regles"></dl>
     <p>Données Yahoo Finance, contrôlées avec Boursorama et le Financial Times. Elles peuvent avoir du retard ou des erreurs. Fiche générée automatiquement à visée d'information et d'apprentissage : ce n'est pas un conseil en investissement. Les performances passées ne préjugent pas des performances futures. Vérifie l'éligibilité PEA d'un titre auprès de ta banque avant d'acheter.</p>
     <p style="margin-top:10px">Fiches publiées du lundi au vendredi, vers 9 h 30 (premiers cours de la séance) et vers 18 h 10 (cours de clôture définitifs).</p>
+    <p id="chef" style="margin-top:10px" hidden></p>
     <p style="margin-top:10px"><a href="archives/">Toutes les fiches précédentes</a> · <a id="lien-appr" href="#">Journal d'apprentissage de l'agent</a> · <span id="gen"></span></p>
   </footer>
 </div>
@@ -339,6 +340,18 @@ if (D.url_depot) {
     a.textContent = "🛠 Nouveau : " + nv.titre;
   }
 } else $("#lien-appr").remove();
+
+// contrôle qualité du chef d'orchestre (chaque matin à 5 h)
+const CC = D.controle_chef;
+if (CC && CC.etat) {
+  const el = $("#chef"), quand = new Date(CC.genere_le);
+  const pastille = { vert: "🟢", orange: "🟠", rouge: "🔴" }[CC.etat] || "⚪";
+  const lib = isNaN(quand) ? "" : ` du ${quand.toLocaleDateString("fr-FR", { day: "2-digit", month: "2-digit" })} à `
+    + quand.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }).replace(":", " h ");
+  el.hidden = false;
+  el.innerHTML = `${pastille} <strong>Contrôle qualité${lib}</strong> · ${esc(CC.resume)}`
+    + (D.url_depot ? ` · <a href="${D.url_depot}/tree/claude/pea/pilotage" target="_blank" rel="noopener">rapports du chef d'orchestre</a>` : "");
+}
 
 // euro / dollar
 const eu = D.devises.find((x) => x.ticker === "EURUSD=X");

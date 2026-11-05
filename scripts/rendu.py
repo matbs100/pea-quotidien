@@ -71,6 +71,11 @@ def note_obsidian(d, analyse, url):
     nv = d.get("nouveaute")
     if nv and nv["date"] >= j[:8] + "01" and nv["date"] <= j:
         L += [f"> 🛠 Nouveau ({nv['date']}) : {nv['titre']} — voir [[apprentissage/CHANGELOG|les nouveautés]]", ""]
+    cc = d.get("controle_chef")
+    if cc and cc.get("etat"):
+        pastille = {"vert": "🟢", "orange": "🟠", "rouge": "🔴"}.get(cc["etat"], "⚪")
+        L += [f"> {pastille} Contrôle qualité du {cc['genere_le'][:16].replace('T', ' à ')} : {cc['resume']} "
+              f"— voir [[pilotage/README|le pilotage]]", ""]
     L += ["> [!warning] Information et apprentissage, pas un conseil en investissement. "
           "Vérifier l'éligibilité PEA auprès de la banque.", "",
           "## Marchés", "", "| Indice | Clôture | 1 jour | 1 mois | Sources |", "|---|---:|---:|---:|:-:|"]
@@ -157,6 +162,10 @@ def main():
         if n:
             d["nouveaute"] = {"date": n.group(1), "titre": n.group(2).strip()}
     d["url_depot"] = CONFIG.get("url_depot", "")
+    fe = RACINE / "pilotage" / "etat.json"
+    if fe.exists():
+        e = json.loads(fe.read_text(encoding="utf-8"))
+        d["controle_chef"] = {k: e.get(k, "") for k in ("genere_le", "etat", "resume")}
     fd = RACINE / "descriptions.json"
     textes = json.loads(fd.read_text(encoding="utf-8")).get("titres", {}) if fd.exists() else {}
     for t, x in d.get("details", {}).items():

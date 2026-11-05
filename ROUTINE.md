@@ -17,7 +17,8 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
    puis `JOUR=$(TZ=Europe/Paris date +%F)` et
    `MOMENT=$([ "$(TZ=Europe/Paris date +%H)" -lt 13 ] && echo ouverture || echo cloture)`.
    Lance tous les scripts avec `$PY` (jamais `python` ou `pip` seuls : ils peuvent viser une autre
-   version de Python).
+   version de Python). Lis aussi `pilotage/consignes.md` (consignes du chef d'orchestre) et applique sa
+   partie « Pour la fiche du jour », sans jamais déroger aux règles ci-dessous.
 2. Collecte : `$PY scripts/collecte.py $JOUR $MOMENT`. Yahoo diffuse les cours de Paris avec
    15 minutes de décalage : le script attend tout seul (jusqu'à 20 minutes) que la séance du jour
    soit publiée. À la clôture, il attend aussi (jusqu'à 30 minutes) que le fixing de clôture de 17 h 35
@@ -74,7 +75,8 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
      Euro Stoxx 50 depuis l'ouverture, S&P 500 et Nasdaq (clôture de la veille), 1 € en dollars, les
      3 premiers du top 30, et le nombre d'écarts entre sources s'il y en a. Si
      `apprentissage/CHANGELOG.md` a une entrée datée d'aujourd'hui ou d'hier, ajoute une 3e ligne
-     « 🛠 Nouveau : <titre> ».
+     « 🛠 Nouveau : <titre> ». Si `pilotage/etat.json` date d'aujourd'hui et que son `etat` vaut
+     `rouge`, ajoute aussi la ligne « 🧭 Chef d'orchestre : <resume> ».
    - À la clôture : titre « Clôture du $JOUR ». Résumé en 2 lignes : CAC 40 et Euro Stoxx 50 sur la
      séance, la meilleure et la moins bonne valeur du top 30 sur la séance, et le taux de signaux justes
      s'il y en a de jugés.
@@ -96,6 +98,6 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
   (`git log --since="24 hours ago" --grep="^Amélioration"`), annule-le avec `git revert --no-edit <commit>`,
   relance l'étape, puis note « annulée le $JOUR : <raison> » sur l'idée correspondante dans
   `apprentissage/idees.md` et commence la notification par « Amélioration de la nuit annulée ».
-- Ne touche pas à `apprentissage/` (sauf la ligne d'idée en cas d'annulation) : c'est le travail de
-  l'agent de nuit.
+- Ne touche pas à `apprentissage/` (sauf la ligne d'idée en cas d'annulation), ni à `pilotage/`,
+  `ARCHITECTURE.md`, `AMELIORATION.md` ou `CHEF.md` : c'est le travail des autres agents.
 - Ne touche pas aux fichiers de données des jours précédents.

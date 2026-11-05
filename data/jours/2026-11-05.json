@@ -6842,7 +6842,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPCAC/",
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=CAC:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^FCHI"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5EFCHI/"
    }
   },
   "^STOXX50E": {
@@ -8010,7 +8010,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/2cSX5E/",
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=SX5E:STX",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^STOXX50E"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5ESTOXX50E/"
    }
   },
   "^STOXX": {
@@ -9178,7 +9178,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/2cSXXP/",
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=SXXP:STX",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^STOXX"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5ESTOXX/"
    }
   },
   "^GDAXI": {
@@ -10352,7 +10352,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/5pDAX/",
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=DAX:GER",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^GDAXI"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5EGDAXI/"
    }
   },
   "^FTSE": {
@@ -11526,7 +11526,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/UKX/",
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=FTSE:FSI",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^FTSE"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5EFTSE/"
    }
   },
   "^GSPC": {
@@ -12694,7 +12694,7 @@
    },
    "liens": {
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=INX:IOM",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^GSPC"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5EGSPC/"
    }
   },
   "^IXIC": {
@@ -13863,7 +13863,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/$COMPX/",
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=COMP:NAS",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^IXIC"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5EIXIC/"
    }
   },
   "^NDX": {
@@ -15031,7 +15031,7 @@
    },
    "liens": {
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=NDX:NAS",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^NDX"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5ENDX/"
    }
   },
   "^DJI": {
@@ -16200,7 +16200,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/$INDU/",
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=DJI:DJI",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^DJI"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5EDJI/"
    }
   },
   "^N225": {
@@ -17340,7 +17340,7 @@
     "bas_jour": 60786.1914
    },
    "liens": {
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^N225"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5EN225/"
    }
   },
   "^HSI": {
@@ -18491,7 +18491,7 @@
    },
    "liens": {
     "Financial Times": "https://markets.ft.com/data/indices/tearsheet/summary?s=HSI:HKG",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^HSI"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5EHSI/"
    }
   },
   "^VIX": {
@@ -19657,7 +19657,7 @@
     "bas_jour": 17.28
    },
    "liens": {
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/^VIX"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/%5EVIX/"
    }
   },
   "EURUSD=X": {
@@ -20834,7 +20834,7 @@
    },
    "liens": {
     "Financial Times": "https://markets.ft.com/data/currencies/tearsheet/summary?s=EURUSD",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/EURUSD=X"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/EURUSD=X/"
    }
   },
   "EURGBP=X": {
@@ -22011,7 +22011,7 @@
    },
    "liens": {
     "Financial Times": "https://markets.ft.com/data/currencies/tearsheet/summary?s=EURGBP",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/EURGBP=X"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/EURGBP=X/"
    }
   },
   "EURCHF=X": {
@@ -23188,7 +23188,7 @@
    },
    "liens": {
     "Financial Times": "https://markets.ft.com/data/currencies/tearsheet/summary?s=EURCHF",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/EURCHF=X"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/EURCHF=X/"
    }
   },
   "EURJPY=X": {
@@ -24365,7 +24365,7 @@
    },
    "liens": {
     "Financial Times": "https://markets.ft.com/data/currencies/tearsheet/summary?s=EURJPY",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/EURJPY=X"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/EURJPY=X/"
    }
   },
   "GC=F": {
@@ -25526,7 +25526,7 @@
     "vwap": 4120.9025
    },
    "liens": {
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/GC=F"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/GC=F/"
    }
   },
   "BZ=F": {
@@ -26687,7 +26687,7 @@
     "vwap": 97.3452
    },
    "liens": {
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/BZ=F"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/BZ=F/"
    }
   },
   "BTC-EUR": {
@@ -28112,7 +28112,7 @@
     "vwap": 69355.7548
    },
    "liens": {
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/BTC-EUR"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/BTC-EUR/"
    }
   },
   "CAP.PA": {
@@ -29314,7 +29314,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPCAP/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=CAP:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/CAP.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/CAP.PA/"
    }
   },
   "DSY.PA": {
@@ -30516,7 +30516,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPDSY/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=DSY:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/DSY.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/DSY.PA/"
    }
   },
   "SAP.DE": {
@@ -31712,7 +31712,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1zSAP/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=SAP:FRA",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/SAP.DE"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/SAP.DE/"
    }
   },
   "SOP.PA": {
@@ -32914,7 +32914,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPSOP/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=SOP:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/SOP.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/SOP.PA/"
    }
   },
   "BVI.PA": {
@@ -34116,7 +34116,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPBVI/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=BVI:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/BVI.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/BVI.PA/"
    }
   },
   "ALV.DE": {
@@ -35312,7 +35312,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1zALV/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALV:FRA",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALV.DE"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALV.DE/"
    }
   },
   "ATE.PA": {
@@ -36514,7 +36514,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPATE/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ATE:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ATE.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ATE.PA/"
    }
   },
   "RACE.MI": {
@@ -37711,7 +37711,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1gRACE/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=RACE:MIL",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/RACE.MI"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/RACE.MI/"
    }
   },
   "ITX.MC": {
@@ -38912,7 +38912,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/FF55-ITX/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ITX:MCE",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ITX.MC"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ITX.MC/"
    }
   },
   "TEP.PA": {
@@ -40114,7 +40114,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPTEP/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=TEP:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/TEP.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/TEP.PA/"
    }
   },
   "AC.PA": {
@@ -41316,7 +41316,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPAC/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=AC:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/AC.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/AC.PA/"
    }
   },
   "PUB.PA": {
@@ -42518,7 +42518,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPPUB/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=PUB:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/PUB.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/PUB.PA/"
    }
   },
   "EL.PA": {
@@ -43720,7 +43720,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPEL/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=EL:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/EL.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/EL.PA/"
    }
   },
   "CS.PA": {
@@ -44922,7 +44922,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPCS/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=CS:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/CS.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/CS.PA/"
    }
   },
   "OR.PA": {
@@ -46124,7 +46124,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPOR/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=OR:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/OR.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/OR.PA/"
    }
   },
   "RI.PA": {
@@ -47326,7 +47326,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPRI/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=RI:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/RI.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/RI.PA/"
    }
   },
   "AI.PA": {
@@ -48528,7 +48528,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPAI/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=AI:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/AI.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/AI.PA/"
    }
   },
   "ERF.PA": {
@@ -49730,7 +49730,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPERF/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ERF:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ERF.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ERF.PA/"
    }
   },
   "PHIA.AS": {
@@ -50930,7 +50930,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rAPHIA/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=PHIA:AEX",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/PHIA.AS"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/PHIA.AS/"
    }
   },
   "ALPHA.AT": {
@@ -51718,7 +51718,7 @@
    },
    "liens": {
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALPHA:ATH",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALPHA.AT"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALPHA.AT/"
    }
   },
   "ELIS.PA": {
@@ -52919,7 +52919,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPELIS/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ELIS:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ELIS.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ELIS.PA/"
    }
   },
   "AF.PA": {
@@ -54119,7 +54119,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPAF/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=AF:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/AF.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/AF.PA/"
    }
   },
   "PCEU.PA": {
@@ -55324,7 +55324,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTPCEU/",
     "Financial Times": "https://markets.ft.com/data/etfs/tearsheet/summary?s=PCEU:PAR:EUR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/PCEU.PA",
+    "Yahoo Finance": "https://finance.yahoo.com/quote/PCEU.PA/",
     "DIC (document PRIIPs, PDF)": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F000013MB0&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0",
     "justETF": "https://www.justetf.com/fr/etf-profile.html?isin=FR0013412038"
    }
@@ -56531,7 +56531,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTETZ/",
     "Financial Times": "https://markets.ft.com/data/etfs/tearsheet/summary?s=ETZ:PAR:EUR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ETZ.PA",
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ETZ.PA/",
     "DIC (document PRIIPs, PDF)": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00000QGL4&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0",
     "justETF": "https://www.justetf.com/fr/etf-profile.html?isin=FR0011550193"
    }
@@ -57738,7 +57738,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTPLEM/",
     "Financial Times": "https://markets.ft.com/data/etfs/tearsheet/summary?s=PLEM:PAR:EUR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/PLEM.PA",
+    "Yahoo Finance": "https://finance.yahoo.com/quote/PLEM.PA/",
     "DIC (document PRIIPs, PDF)": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00000TIOP&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0",
     "justETF": "https://www.justetf.com/fr/etf-profile.html?isin=FR0011440478"
    }
@@ -58943,7 +58943,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTMSE/",
     "Financial Times": "https://markets.ft.com/data/etfs/tearsheet/summary?s=MSE:PAR:EUR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/MSE.PA",
+    "Yahoo Finance": "https://finance.yahoo.com/quote/MSE.PA/",
     "DIC (document PRIIPs, PDF)": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F0GBR04NCS&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0",
     "justETF": "https://www.justetf.com/fr/etf-profile.html?isin=FR0007054358"
    }
@@ -60150,7 +60150,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTC40/",
     "Financial Times": "https://markets.ft.com/data/etfs/tearsheet/summary?s=C40:PAR:EUR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/C40.PA",
+    "Yahoo Finance": "https://finance.yahoo.com/quote/C40.PA/",
     "DIC (document PRIIPs, PDF)": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F0000100PA&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0",
     "justETF": "https://www.justetf.com/fr/etf-profile.html?isin=LU1681046931"
    }
@@ -61357,7 +61357,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTCAC/",
     "Financial Times": "https://markets.ft.com/data/etfs/tearsheet/summary?s=CAC:PAR:EUR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/CAC.PA",
+    "Yahoo Finance": "https://finance.yahoo.com/quote/CAC.PA/",
     "DIC (document PRIIPs, PDF)": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F0GBR04ND2&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0",
     "justETF": "https://www.justetf.com/fr/etf-profile.html?isin=FR0007052782"
    }
@@ -62298,7 +62298,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTWPEA/",
     "Financial Times": "https://markets.ft.com/data/etfs/tearsheet/summary?s=WPEA:PAR:EUR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/WPEA.PA",
+    "Yahoo Finance": "https://finance.yahoo.com/quote/WPEA.PA/",
     "DIC (document PRIIPs, PDF)": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00001K6U0&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0",
     "justETF": "https://www.justetf.com/fr/etf-profile.html?isin=IE0002XZSHO1"
    }
@@ -63257,7 +63257,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTEWLD/",
     "Financial Times": "https://markets.ft.com/data/etfs/tearsheet/summary?s=EWLD:PAR:EUR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/EWLD.PA",
+    "Yahoo Finance": "https://finance.yahoo.com/quote/EWLD.PA/",
     "DIC (document PRIIPs, PDF)": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00001JXM3&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0",
     "justETF": "https://www.justetf.com/fr/etf-profile.html?isin=LU2655993207"
    }
@@ -64455,7 +64455,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPALAGO/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALAGO:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALAGO.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALAGO.PA/"
    }
   },
   "ALTHE.PA": {
@@ -65651,7 +65651,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPALTHE/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALTHE:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALTHE.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALTHE.PA/"
    }
   },
   "ALSGD.PA": {
@@ -66848,7 +66848,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPALSGD/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALSGD:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALSGD.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALSGD.PA/"
    }
   },
   "ETL.PA": {
@@ -68046,7 +68046,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPETL/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ETL:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ETL.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ETL.PA/"
    }
   },
   "ALBIO.PA": {
@@ -69242,7 +69242,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPALBIO/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALBIO:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALBIO.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALBIO.PA/"
    }
   },
   "ALVAL.PA": {
@@ -70439,7 +70439,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPALVAL/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALVAL:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALVAL.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALVAL.PA/"
    }
   },
   "ALSPW.PA": {
@@ -71635,7 +71635,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPALSPW/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALSPW:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALSPW.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALSPW.PA/"
    }
   },
   "ALNOV.PA": {
@@ -72832,7 +72832,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPALNOV/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALNOV:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALNOV.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALNOV.PA/"
    }
   },
   "ALCJ.PA": {
@@ -74028,7 +74028,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPALCJ/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALCJ:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALCJ.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALCJ.PA/"
    }
   },
   "ALGEN.PA": {
@@ -75218,7 +75218,7 @@
    "liens": {
     "Boursorama": "https://www.boursorama.com/cours/1rPALGEN/",
     "Financial Times": "https://markets.ft.com/data/equities/tearsheet/summary?s=ALGEN:PAR",
-    "Yahoo Finance": "https://fr.finance.yahoo.com/quote/ALGEN.PA"
+    "Yahoo Finance": "https://finance.yahoo.com/quote/ALGEN.PA/"
    }
   }
  }
