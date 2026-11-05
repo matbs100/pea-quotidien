@@ -188,6 +188,9 @@ dl.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%,
 dl.kv div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px; }
 dl.kv dt { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 dl.kv dd { margin: 3px 0 0; font: 500 15px var(--font-mono); }
+dl.kv div { position: relative; }
+dl.kv dt.def { cursor: help; text-decoration: underline dotted; text-underline-offset: 3px; }
+dl.kv dt.def:hover::after, dl.kv dt.def:focus::after { content: attr(data-def); position: absolute; left: 0; right: 0; top: 100%; z-index: 5; margin-top: 4px; padding: 8px 10px; background: var(--surface); color: var(--text, inherit); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.18); font: 400 12px/1.4 var(--font, inherit); text-transform: none; letter-spacing: 0; }
 table.tab { width: 100%; border-collapse: collapse; font-size: 14px; }
 table.tab td { padding: 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
 table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%; }
@@ -404,7 +407,18 @@ const pctc = (x) => x == null ? null : `<span class="${sens(x)}">${pct(x)}</span
 const prixf = (x) => x == null ? null : fr(x, dec(x));
 const pc1 = (x) => x == null ? null : fr(x, 1) + " %";
 const fdate = (d, long) => d.toLocaleDateString("fr-FR", long ? { day: "numeric", month: "long", year: "numeric" } : { day: "numeric", month: "short", year: "2-digit" });
-const kv = (paires) => `<dl class="kv">${paires.filter(([, v]) => v != null && v !== "").map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
+// Définitions courtes, affichées au toucher ou au survol du libellé (clavier : Tab).
+const DEFS = [
+  [/^Volatilité/, "Ampleur des variations habituelles du prix sur un an. Plus elle est haute, plus le prix bouge fort, à la hausse comme à la baisse."],
+  [/^Pire baisse/, "Plus grande chute entre un sommet et le creux suivant sur la période. Donne une idée de la perte qu'on aurait pu subir."],
+  [/^Bêta/, "Sensibilité au CAC 40 : 1,2 signifie qu'en moyenne le titre bouge de 1,2 % quand le CAC 40 bouge de 1 %."],
+  [/^RSI/, "Indice de force relative, de 0 à 100. Au-dessus de 70, la hausse récente est jugée rapide ; sous 30, la baisse l'est. Ce n'est pas un ordre d'achat ou de vente."],
+  [/^PER/, "Prix de l'action divisé par le bénéfice par action : le nombre d'années de bénéfices que l'on paie."],
+  [/^Rendement du dividende/, "Dividende annuel divisé par le prix de l'action."],
+  [/^Moyenne \d+ jours/, "Moyenne des prix de clôture sur cette durée. Elle lisse les variations du quotidien."],
+];
+const defDe = (k) => { const t = String(k).trim(); const d = DEFS.find(([re]) => re.test(t)); return d ? d[1] : ""; };
+const kv = (paires) => `<dl class="kv">${paires.filter(([, v]) => v != null && v !== "").map(([k, v]) => { const d = defDe(k); return `<div><dt${d ? ` class="def" tabindex="0" data-def="${esc(d)}"` : ""}>${k}</dt><dd>${v}</dd></div>`; }).join("")}</dl>`;
 const tab = (paires) => `<table class="tab"><tbody>${paires.filter(([, v]) => v != null && v !== "").map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("")}</tbody></table>`;
 const bloc = (titre, html) => html ? `<div class="bloc"><h3>${titre}</h3>${html}</div>` : "";
 

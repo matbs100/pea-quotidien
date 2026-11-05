@@ -12,7 +12,7 @@ Statuts : `à faire`, `en cours`, `fait le AAAA-MM-JJ`, `rejetée : raison`, `é
 | 2 | Tableau des rendements mois par mois sur 5 ans, en carte de chaleur | quantstats (Apache-2.0) | 4 | 3 | 1 | à faire |
 | 3 | Simulateur d'investissement programmé : « 50 € par mois depuis 5 ans auraient donné… », calculé sur l'historique, avec un rappel que le passé ne prédit pas l'avenir | pédagogie, chapitre 6 du manuel | 5 | 3 | 1 | à faire |
 | 4 | Alerte dans la notification en cas de forte variation d'un indice (plus de 3 % sur une séance) | idée interne | 4 | 1 | 1 | à faire |
-| 5 | Petites définitions au survol ou au toucher (RSI, PER, SRI, volatilité, bêta) | pédagogie | 4 | 2 | 1 | à faire |
+| 5 | Petites définitions au survol ou au toucher (RSI, PER, SRI, volatilité, bêta) | pédagogie, guides d'accessibilité (Penn State, GWU) | 4 | 2 | 1 | fait le 2026-11-05 |
 | 6 | Corrélation entre les titres du top 30, pour voir si une sélection est vraiment diversifiée | Riskfolio-Lib (BSD-3), PyPortfolioOpt (MIT) | 4 | 3 | 1 | à faire |
 | 7 | Comparer deux titres sur le même graphique (base 100) | idée interne | 4 | 3 | 2 | à faire |
 | 8 | Fiche installable sur l'écran d'accueil du téléphone (manifeste PWA et icône) | bonnes pratiques web | 3 | 2 | 1 | à faire |
@@ -24,4 +24,5 @@ Statuts : `à faire`, `en cours`, `fait le AAAA-MM-JJ`, `rejetée : raison`, `é
 | 14 | Bouton clair / sombre manuel | bonnes pratiques web | 2 | 1 | 1 | à faire |
 | 15 | Graphique accessible au clavier (flèches pour parcourir les jours) | accessibilité | 2 | 2 | 1 | à faire |
 | 16 | Écart de suivi des ETF par rapport à leur indice | justETF, documentation des émetteurs | 3 | 4 | 2 | à faire |
+| 18 | Graphiques : ajouter un style de trait (pointillé) en plus de la couleur, et des étiquettes directes en fin de courbe, pour les daltoniens | accessibility.psu.edu/guidelines/charts, nrennie.rbind.io | 3 | 2 | 1 | à faire |
 | 17 | Remplacer le graphique maison par lightweight-charts | tradingview/lightweight-charts (Apache-2.0) | 2 | 3 | 3 | rejetée : ajoute une dépendance externe pour un gain faible ; le graphique actuel suffit |

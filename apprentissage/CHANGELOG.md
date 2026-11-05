@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-05 · Définitions au toucher
+- Dans les fiches détaillées, les libellés volatilité, pire baisse, bêta, RSI, PER, rendement et moyennes ont une définition courte au toucher, au survol ou au clavier (Tab).
+- Inspiré des guides d'accessibilité des graphiques et indicateurs (Penn State, GWU).
+
 ## 2026-11-05 · Agent qui apprend et s'améliore chaque nuit
 - Nouvelle routine de nuit (3 h) : veille, notes dans ce dossier, une amélioration testée par nuit.
 - Tests garde-fous (`scripts/tests.py`) obligatoires avant toute publication.
