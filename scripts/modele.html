@@ -206,6 +206,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .hist { list-style: none; padding: 0; margin: 8px 0 0; font: 13px/1.5 var(--font-mono); }
 .hist li { padding: 6px 0; border-bottom: 1px solid var(--line); }
 .astuce { font-size: 13px; color: var(--muted); }
+.moment { margin-top: 8px; font: 500 13px var(--font-mono); color: var(--accent); }
 .nouveau { display: inline-flex; gap: 6px; margin-top: 10px; font-size: 13px; padding: 5px 12px; border-radius: 999px; background: var(--amber-soft); color: var(--amber); text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .feuille, .voile { transition: none; } }
 </style>
@@ -218,6 +219,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
       <div class="kicker">Fiche du matin · PEA</div>
       <h1>Matin <span>PEA</span></h1>
       <div class="date" id="date"></div>
+      <div class="moment" id="moment" hidden></div>
       <a class="nouveau" id="nouveau" hidden></a>
     </div>
     <div class="fx">
@@ -228,7 +230,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   <div class="tape" aria-label="Indices"><div class="tape-in" id="tape"></div></div>
 
   <section>
-    <div class="sec-head"><h2>Les marchés</h2><span class="sub">Clôture de la dernière séance · touche une carte pour son historique</span></div>
+    <div class="sec-head"><h2>Les marchés</h2><span class="sub"><span id="sub-marches">Dernière séance</span> · touche une carte pour son historique</span></div>
     <div class="grid" id="indices"></div>
   </section>
 
@@ -317,6 +319,14 @@ function spark(pts, cls) {
 const dt = new Date(D.date + "T12:00:00");
 $("#date").textContent = dt.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
 $("#gen").textContent = "Générée le " + new Date(D.genere_le).toLocaleString("fr-FR", { dateStyle: "short", timeStyle: "short" });
+
+// moment des données : premiers cours (ouverture) ou clôture
+const MOMENTS = { ouverture: ["⏱ Premiers cours de la séance", "Cours en séance, décalés d'environ 15 min"],
+  cloture: ["🔔 Cours de clôture de la séance", "Clôture de la séance"] };
+if (MOMENTS[D.moment]) {
+  $("#moment").hidden = false; $("#moment").textContent = MOMENTS[D.moment][0];
+  $("#sub-marches").textContent = MOMENTS[D.moment][1];
+}
 
 // nouveauté du programme (moins de 3 jours) et journal d'apprentissage
 if (D.url_depot) {
@@ -415,6 +425,8 @@ const DEFS = [
   [/^RSI/, "Indice de force relative, de 0 à 100. Au-dessus de 70, la hausse récente est jugée rapide ; sous 30, la baisse l'est. Ce n'est pas un ordre d'achat ou de vente."],
   [/^PER/, "Prix de l'action divisé par le bénéfice par action : le nombre d'années de bénéfices que l'on paie."],
   [/^Rendement du dividende/, "Dividende annuel divisé par le prix de l'action."],
+  [/^Prix moyen du jour/, "Moyenne des prix de la séance, pondérée par les quantités échangées (VWAP). En comparant le prix payé à ce prix moyen, on voit si l'on a acheté plutôt cher ou plutôt bon marché ce jour-là."],
+  [/^Plus (haut|bas) du jour/, "Prix le plus haut ou le plus bas atteint pendant la séance du jour."],
   [/^Moyenne \d+ jours/, "Moyenne des prix de clôture sur cette durée. Elle lisse les variations du quotidien."],
 ];
 const defDe = (k) => { const t = String(k).trim(); const d = DEFS.find(([re]) => re.test(t)); return d ? d[1] : ""; };
@@ -603,7 +615,9 @@ function ouvrir(t, pousser = true) {
   const perfJ = (n, defaut) => Jp.length > n ? (Jp[Jp.length - 1][1] / Jp[Jp.length - 1 - n][1] - 1) * 100 : defaut; // même série que le graphique
   H.push(bloc("Performances", kv([["1 jour", pctc(m.var_1j)], ["1 semaine", pctc(perfJ(5, m.var_5j))], ["1 mois", pctc(perfJ(21, m.var_1m))], ["3 mois", pctc(perfJ(63, m.var_3m))],
     ["Depuis le 1er janvier", pctc(st.perf_annee)], ["1 an", pctc(perfJ(252, m.var_1a))], ["3 ans", pctc(st.perf_3a)], ["5 ans", pctc(st.perf_5a)]])));
-  H.push(bloc("Chiffres clés", kv([["Plus haut 1 an", prixf(st.haut_1a)], ["Plus bas 1 an", prixf(st.bas_1a)], ["Écart au plus haut", pctc(m.ecart_haut)],
+  const se = det.seance || {};
+  H.push(bloc("Chiffres clés", kv([["Prix moyen du jour (VWAP)", prixf(se.vwap)], ["Plus haut du jour", prixf(se.haut_jour)], ["Plus bas du jour", prixf(se.bas_jour)],
+    ["Plus haut 1 an", prixf(st.haut_1a)], ["Plus bas 1 an", prixf(st.bas_1a)], ["Écart au plus haut", pctc(m.ecart_haut)],
     ["Jours de hausse (1 an)", st.jours_hausse_1a != null ? fr(st.jours_hausse_1a, 0) + " %" : null],
     ["Échanges moyens", !m.liquidite || !PLACEMENT.includes(m.categorie) ? null : m.liquidite >= 1e6 ? fr(m.liquidite / 1e6, 1) + " M€/jour" : fr(m.liquidite / 1000, 0) + " k€/jour"], ["Parts pour 100 €", parts == null ? null : parts > 0 ? String(parts) : "0 (part > 100 €)"]])));
   if (PLACEMENT.includes(m.categorie)) H.push(blocRisque(m, inf, st));

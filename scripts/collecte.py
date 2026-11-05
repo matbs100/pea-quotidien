@@ -1,6 +1,9 @@
 """Collecte quotidienne : prix, indicateurs, top 30 PEA, 10 titres < 2 €, suivi des signaux.
 
-Usage : python scripts/collecte.py            (date du jour)
+Usage : python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]   (par défaut : aujourd'hui, cloture)
+- ouverture (vers 9 h 15) : premiers cours de la séance. Rien n'est ajouté à l'historique ni aux signaux.
+- cloture (vers 18 h 15) : cours de clôture, la référence. Historique et signaux mis à jour.
+Codes de sortie : 0 = OK ; 3 = cours du jour pas encore publiés après 20 min ; 4 = Bourse fermée.
 Produit : data/jours/AAAA-MM-JJ.json, data/historique.csv, data/signaux.csv
 Aucune donnée personnelle. Ce n'est pas un conseil en investissement.
 """
@@ -10,7 +13,8 @@ import math
 import sys
 import time
 import warnings
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 import pandas as pd
@@ -19,6 +23,7 @@ import yfinance as yf
 warnings.filterwarnings("ignore")
 RACINE = Path(__file__).resolve().parent.parent
 DATA = RACINE / "data"
+PARIS = ZoneInfo("Europe/Paris")
 HORIZON = 5            # un signal est jugé 5 séances plus tard
 LIQ_MIN = 50_000       # € échangés par jour en moyenne pour entrer dans le top 30
 LIQ_MIN_PETITES = 5_000
@@ -150,8 +155,91 @@ def bilan(lignes):
     return out
 
 
+def paques(annee):
+    """Dimanche de Pâques (calendrier grégorien, algorithme de Meeus)."""
+    a, (b, c) = annee % 19, divmod(annee, 100)
+    d, e = divmod(b, 4)
+    g = (b - (b + 8) // 25 + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30
+    i, k = divmod(c, 4)
+    l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    mois, jour = divmod(h + l - 7 * m + 114, 31)
+    return date(annee, mois, jour + 1)
+
+
+def bourse_fermee(j):
+    """Euronext Paris est fermée le week-end, le 1er janvier, le Vendredi saint, le lundi de Pâques,
+    le 1er mai et les 25 et 26 décembre."""
+    p = paques(j.year)
+    return (j.weekday() >= 5 or (j.month, j.day) in {(1, 1), (5, 1), (12, 25), (12, 26)}
+            or j in (p - timedelta(days=2), p + timedelta(days=1)))
+
+
+def attendre_seance(jour, max_minutes=20):
+    """Yahoo diffuse les cours de Paris avec 15 min de décalage : on attend que la séance du jour
+    apparaisse pour le CAC 40 (une vérification par minute)."""
+    for essai in range(max_minutes):
+        try:
+            h = yf.Ticker("^FCHI").history(period="5d", interval="1d")
+            if len(h) and str(h.index[-1].date()) == jour:
+                return True
+        except Exception as e:  # réseau, limite de Yahoo
+            print("Vérification de la séance :", e, file=sys.stderr)
+        if essai < max_minutes - 1:
+            print(f"Cours du {jour} pas encore publiés, nouvel essai dans 1 minute…", file=sys.stderr)
+            time.sleep(60)
+    return False
+
+
+def enregistrer(jour, tous, top30, petites, res):
+    """À la clôture : juge les anciens signaux, note ceux du jour et complète l'historique."""
+    lignes = evaluer_signaux(jour, {t: m["prix"] for t, m in tous.items()})
+    f = DATA / "signaux.csv"
+    neuf = not f.exists()
+    deja_notes = {(l["date"], l["ticker"]) for l in lignes}
+    with open(f, "a", newline="", encoding="utf-8") as h:
+        w = csv.writer(h)
+        if neuf:
+            w.writerow(["date", "ticker", "signal", "prix", "rendement", "resultat"])
+        for m in top30 + petites + res.get("indices", []):
+            if (jour, m["ticker"]) not in deja_notes:
+                w.writerow([jour, m["ticker"], m["signal"], m["prix"], "", ""])
+                deja_notes.add((jour, m["ticker"]))
+    lignes = list(csv.DictReader(open(f, encoding="utf-8")))
+
+    # Historique long de tous les titres suivis (une ligne par titre et par jour)
+    h = DATA / "historique.csv"
+    champs = ["date", "ticker", "nom", "categorie", "prix", "var_1j", "var_1m", "var_3m",
+              "rsi", "volatilite", "liquidite", "signal", "score"]
+    existe = h.exists()
+    deja_h = set()
+    if existe:
+        deja_h = {(l["date"], l["ticker"]) for l in csv.DictReader(open(h, encoding="utf-8"))}
+    with open(h, "a", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=champs, extrasaction="ignore")
+        if not existe:
+            w.writeheader()
+        for m in tous.values():
+            if (jour, m["ticker"]) not in deja_h:
+                w.writerow({"date": jour, "score": m.get("score", ""), **m})
+
+    return lignes
+
+
 def main():
-    jour = sys.argv[1] if len(sys.argv) > 1 else date.today().isoformat()
+    args = sys.argv[1:]
+    aujourdhui = datetime.now(PARIS).date().isoformat()
+    jour = args[0] if args else aujourdhui
+    moment = args[1] if len(args) > 1 else "cloture"
+    if moment not in ("ouverture", "cloture"):
+        sys.exit("Le moment doit être « ouverture » ou « cloture ».")
+    if bourse_fermee(date.fromisoformat(jour)):
+        print(f"FERME {jour} : Bourse de Paris fermée (week-end ou jour férié)")
+        sys.exit(4)
+    if jour == aujourdhui and not attendre_seance(jour):
+        print(f"ATTENTE {jour} : les cours de la séance du jour ne sont pas encore publiés")
+        sys.exit(3)
     u = json.loads((RACINE / "univers.json").read_text(encoding="utf-8"))
     cats = [c for c in u if not c.startswith("_")]
     tickers = sorted({t for c in cats for t in u[c]})
@@ -191,40 +279,16 @@ def main():
     for m in petites:
         m["deja_vu"] = m["ticker"] in deja
 
-    # Signaux : on note ceux du top 30, des petites et des indices, pour les juger plus tard
-    lignes = evaluer_signaux(jour, {t: m["prix"] for t, m in tous.items()})
     f = DATA / "signaux.csv"
-    neuf = not f.exists()
-    deja_notes = {(l["date"], l["ticker"]) for l in lignes}
-    with open(f, "a", newline="", encoding="utf-8") as h:
-        w = csv.writer(h)
-        if neuf:
-            w.writerow(["date", "ticker", "signal", "prix", "rendement", "resultat"])
-        for m in top30 + petites + res.get("indices", []):
-            if (jour, m["ticker"]) not in deja_notes:
-                w.writerow([jour, m["ticker"], m["signal"], m["prix"], "", ""])
-                deja_notes.add((jour, m["ticker"]))
-    lignes = list(csv.DictReader(open(f, encoding="utf-8")))
-
-    # Historique long de tous les titres suivis (une ligne par titre et par jour)
-    h = DATA / "historique.csv"
-    champs = ["date", "ticker", "nom", "categorie", "prix", "var_1j", "var_1m", "var_3m",
-              "rsi", "volatilite", "liquidite", "signal", "score"]
-    existe = h.exists()
-    deja_h = set()
-    if existe:
-        deja_h = {(l["date"], l["ticker"]) for l in csv.DictReader(open(h, encoding="utf-8"))}
-    with open(h, "a", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=champs, extrasaction="ignore")
-        if not existe:
-            w.writeheader()
-        for m in tous.values():
-            if (jour, m["ticker"]) not in deja_h:
-                w.writerow({"date": jour, "score": m.get("score", ""), **m})
-
+    if moment == "ouverture":
+        # À l'ouverture, les prix sont provisoires : on ne note rien, on lit seulement le bilan
+        lignes = list(csv.DictReader(open(f, encoding="utf-8"))) if f.exists() else []
+    else:
+        lignes = enregistrer(jour, tous, top30, petites, res)
     sortie = {
         "date": jour,
-        "genere_le": datetime.now().isoformat(timespec="minutes"),
+        "moment": moment,
+        "genere_le": datetime.now(PARIS).isoformat(timespec="minutes"),
         "indices": res.get("indices", []), "devises": res.get("devises", []),
         "matieres": res.get("matieres", []),
         "top30": top30, "petites": petites,
@@ -241,7 +305,7 @@ def main():
     }
     (DATA / "jours" / f"{jour}.json").write_text(json.dumps(sortie, ensure_ascii=False, indent=1),
                                                  encoding="utf-8")
-    print(f"OK {jour} : {len(tous)} titres, top30={len(top30)}, petites={len(petites)}")
+    print(f"OK {jour} ({moment}) : {len(tous)} titres, top30={len(top30)}, petites={len(petites)}")
 
 
 def _recent(m, tous):

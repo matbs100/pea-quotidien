@@ -102,6 +102,8 @@ def main():
     jour = sys.argv[1]
     fj = DATA / "jours" / f"{jour}.json"
     d = json.loads(fj.read_text(encoding="utf-8"))
+    # En séance, les sources n'ont pas le même décalage (temps réel ou 15 min) : tolérance plus large
+    tol = 2.0 if d.get("moment") == "ouverture" else TOL
     fc = DATA / "correspondances.json"
     cache = json.loads(fc.read_text(encoding="utf-8")) if fc.exists() else {}
 
@@ -134,7 +136,7 @@ def main():
             statut = "seul"
         else:
             tol_abs = 0.006 / ref * 100  # arrondi à 2 décimales sur les petits prix
-            statut = "ok" if all(abs(e) <= max(TOL, tol_abs) for e in ecarts.values()) else "ecart"
+            statut = "ok" if all(abs(e) <= max(tol, tol_abs) for e in ecarts.values()) else "ecart"
         info = {"sources": src, "prix_reference": round(ref, 4), "ecarts_sources": ecarts, "verif": statut}
         m.update(info)
         vus[t] = info

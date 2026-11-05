@@ -255,6 +255,24 @@ def statistiques(sj, ss, cac):
     return out
 
 
+def stats_seance(b, jour):
+    """Prix moyen pondéré par les volumes (VWAP), plus haut et plus bas de la séance du jour,
+    à partir de barres de 5 minutes (colonnes High, Low, Close, Volume)."""
+    if b is None or b.empty:
+        return None
+    b = b.dropna(subset=["Close"])
+    idx = b.index.tz_convert("Europe/Paris") if b.index.tz is not None else b.index
+    b = b[[str(x.date()) == jour for x in idx]]
+    if b.empty:
+        return None
+    out = {"haut_jour": r1(b["High"].max(), 4), "bas_jour": r1(b["Low"].min(), 4)}
+    v = b["Volume"].fillna(0)
+    if v.sum() > 0:
+        typique = (b["High"] + b["Low"] + b["Close"]) / 3
+        out["vwap"] = r1((typique * v).sum() / v.sum(), 4)
+    return out
+
+
 def signaux_du_titre(t):
     f = DATA / "signaux.csv"
     if not f.exists():
@@ -333,6 +351,14 @@ def main():
         return s if len(s) > 1 else None
 
     cac = serie(ds, "^FCHI")
+    # À la clôture : barres de 5 minutes de la séance pour le prix moyen du jour (VWAP)
+    d5 = None
+    if d.get("moment") == "cloture":
+        try:
+            d5 = yf.download(tickers, period="1d", interval="5m", auto_adjust=False, group_by="ticker",
+                             progress=False, threads=True)
+        except Exception as e:  # non bloquant
+            print("Barres de 5 minutes indisponibles :", e, file=sys.stderr)
     details = {}
     for t, m in tous.items():
         sj, ss = serie(dj, t), serie(ds, t)
@@ -346,6 +372,11 @@ def main():
                "infos": inf, "place": place, "devise": devise,
                "description_auto": description_auto(m, inf),
                "frais": frais(m, inf), "signaux": signaux_du_titre(t)}
+        if d5 is not None:
+            try:
+                det["seance"] = stats_seance(d5[t], jour)
+            except (KeyError, TypeError):
+                pass
         bc, fcode = codes(m)
         det["liens"] = {k: v for k, v in {
             "Boursorama": inf.get("url_boursorama") or (f"https://www.boursorama.com/cours/{bc}/" if bc else None),
