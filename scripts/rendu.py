@@ -64,6 +64,9 @@ def note_obsidian(d, analyse, url):
          f"# Matin PEA — {j}", ""]
     if url:
         L += [f"[Ouvrir la fiche animée]({url}archives/{j}.html)", ""]
+    nv = d.get("nouveaute")
+    if nv and nv["date"] >= j[:8] + "01" and nv["date"] <= j:
+        L += [f"> 🛠 Nouveau ({nv['date']}) : {nv['titre']} — voir [[apprentissage/CHANGELOG|les nouveautés]]", ""]
     L += ["> [!warning] Information et apprentissage, pas un conseil en investissement. "
           "Vérifier l'éligibilité PEA auprès de la banque.", "",
           "## Marchés", "", "| Indice | Clôture | 1 jour | 1 mois | Sources |", "|---|---:|---:|---:|:-:|"]
@@ -144,6 +147,12 @@ def main():
     d["analyse_html"] = md_en_html(analyse) if analyse else ""
     for m in d["indices"] + d["devises"] + d["matieres"] + d["top30"] + d["petites"]:
         m["courbe"] = m.get("courbe", [])[-60:]
+    fc = RACINE / "apprentissage" / "CHANGELOG.md"
+    if fc.exists():
+        n = re.search(r"^## (\d{4}-\d{2}-\d{2}) · (.+)$", fc.read_text(encoding="utf-8"), re.M)
+        if n:
+            d["nouveaute"] = {"date": n.group(1), "titre": n.group(2).strip()}
+    d["url_depot"] = CONFIG.get("url_depot", "")
     fd = RACINE / "descriptions.json"
     textes = json.loads(fd.read_text(encoding="utf-8")).get("titres", {}) if fd.exists() else {}
     for t, x in d.get("details", {}).items():

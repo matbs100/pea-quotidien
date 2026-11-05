@@ -42,8 +42,10 @@ def rsi(s, n=14):
     d = s.diff()
     gain = d.clip(lower=0).ewm(alpha=1 / n, adjust=False).mean()
     perte = (-d.clip(upper=0)).ewm(alpha=1 / n, adjust=False).mean()
-    rs = gain / perte.replace(0, math.nan)
-    return float((100 - 100 / (1 + rs)).iloc[-1])
+    g, p = float(gain.iloc[-1]), float(perte.iloc[-1])
+    if p == 0:  # aucune baisse récente : RSI maximal (ou neutre si le prix n'a pas bougé)
+        return 100.0 if g > 0 else 50.0
+    return 100 - 100 / (1 + g / p)
 
 
 def var(s, n):

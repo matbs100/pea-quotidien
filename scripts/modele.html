@@ -203,6 +203,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .hist { list-style: none; padding: 0; margin: 8px 0 0; font: 13px/1.5 var(--font-mono); }
 .hist li { padding: 6px 0; border-bottom: 1px solid var(--line); }
 .astuce { font-size: 13px; color: var(--muted); }
+.nouveau { display: inline-flex; gap: 6px; margin-top: 10px; font-size: 13px; padding: 5px 12px; border-radius: 999px; background: var(--amber-soft); color: var(--amber); text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .feuille, .voile { transition: none; } }
 </style>
 </head>
@@ -214,6 +215,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
       <div class="kicker">Fiche du matin · PEA</div>
       <h1>Matin <span>PEA</span></h1>
       <div class="date" id="date"></div>
+      <a class="nouveau" id="nouveau" hidden></a>
     </div>
     <div class="fx">
       <div class="big num" id="eurusd">—</div>
@@ -268,7 +270,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   <footer>
     <dl id="regles"></dl>
     <p>Données Yahoo Finance, contrôlées avec Boursorama et le Financial Times. Elles peuvent avoir du retard ou des erreurs. Fiche générée automatiquement à visée d'information et d'apprentissage : ce n'est pas un conseil en investissement. Les performances passées ne préjugent pas des performances futures. Vérifie l'éligibilité PEA d'un titre auprès de ta banque avant d'acheter.</p>
-    <p style="margin-top:10px"><a href="archives/">Toutes les fiches précédentes</a> · <span id="gen"></span></p>
+    <p style="margin-top:10px"><a href="archives/">Toutes les fiches précédentes</a> · <a id="lien-appr" href="#">Journal d'apprentissage de l'agent</a> · <span id="gen"></span></p>
   </footer>
 </div>
 
@@ -312,6 +314,17 @@ function spark(pts, cls) {
 const dt = new Date(D.date + "T12:00:00");
 $("#date").textContent = dt.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
 $("#gen").textContent = "Générée le " + new Date(D.genere_le).toLocaleString("fr-FR", { dateStyle: "short", timeStyle: "short" });
+
+// nouveauté du programme (moins de 3 jours) et journal d'apprentissage
+if (D.url_depot) {
+  $("#lien-appr").href = D.url_depot + "/tree/claude/pea/apprentissage";
+  const nv = D.nouveaute;
+  if (nv && (new Date(D.date) - new Date(nv.date)) / 864e5 <= 3) {
+    const a = $("#nouveau");
+    a.hidden = false; a.href = D.url_depot + "/blob/claude/pea/apprentissage/CHANGELOG.md"; a.target = "_blank"; a.rel = "noopener";
+    a.textContent = "🛠 Nouveau : " + nv.titre;
+  }
+} else $("#lien-appr").remove();
 
 // euro / dollar
 const eu = D.devises.find((x) => x.ticker === "EURUSD=X");
