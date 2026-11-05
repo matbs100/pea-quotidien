@@ -151,7 +151,7 @@ def rendu_de_bout_en_bout():
         c = Path(tmp) / "depot"
         shutil.copytree(SCRIPTS, c / "scripts", ignore=shutil.ignore_patterns("__pycache__"))
         for f in ("config.json", "descriptions.json", "apprentissage/CHANGELOG.md", f"data/jours/{jour}.json",
-                  f"data/analyses/{jour}.md"):
+                  f"data/analyses/{jour}.md", "pilotage/etat.json"):
             if (RACINE / f).exists():
                 (c / f).parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy(RACINE / f, c / f)
@@ -168,18 +168,87 @@ def rendu_de_bout_en_bout():
         d = json.loads(m.group(1))
         for k in ("date", "indices", "devises", "top30", "petites", "regles"):
             assert k in d, f"clé absente des données : {k}"
+        if (RACINE / "pilotage" / "etat.json").exists():
+            assert d.get("controle_chef", {}).get("etat"), "état du contrôle qualité absent de la page"
         note = (c / "notes" / f"{jour}.md").read_text(encoding="utf-8")
         assert "## Top 30" in note and "pas un conseil" in note.lower(), "note Obsidian incomplète"
         assert (c / "docs" / "archives" / f"{jour}.html").exists() and (c / "docs" / "archives" / "index.html").exists()
+        # Syntaxe JavaScript : node (cloud), sinon JavaScriptCore, présent sur tous les Mac
         node = shutil.which("node")
-        if node:
+        jsc = Path("/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc")
+        if node or jsc.exists():
             for i, js in enumerate(re.findall(r"<script>(.*?)</script>", page, re.S)):
                 f = c / f"page{i}.js"
                 f.write_text(js, encoding="utf-8")
-                r = subprocess.run([node, "--check", str(f)], capture_output=True, text=True, timeout=60)
-                assert r.returncode == 0, "erreur de syntaxe JavaScript :\n" + r.stderr[-1500:]
+                if node:
+                    r = subprocess.run([node, "--check", str(f)], capture_output=True, text=True, timeout=60)
+                    erreur = r.stderr if r.returncode else ""
+                else:
+                    v = c / "verif.js"
+                    v.write_text(f"try {{ checkSyntax({json.dumps(str(f))}); }} catch (e) {{ print('ERREUR ' + e); }}")
+                    r = subprocess.run([str(jsc), str(v)], capture_output=True, text=True, timeout=60)
+                    erreur = r.stdout if "ERREUR" in r.stdout or r.returncode else ""
+                assert not erreur, "erreur de syntaxe JavaScript :\n" + erreur[-1500:]
         else:
-            REMARQUES.append("node absent : syntaxe JavaScript non vérifiée")
+            REMARQUES.append("ni node ni JavaScriptCore : syntaxe JavaScript non vérifiée")
+
+
+@test
+def liens_des_fiches():
+    import fiches
+    assert fiches.lien_yahoo("CAP.PA") == "https://finance.yahoo.com/quote/CAP.PA/"
+    assert fiches.lien_yahoo("^FCHI") == "https://finance.yahoo.com/quote/%5EFCHI/", "le ^ doit être encodé"
+
+
+@test
+def controle_du_chef():
+    from datetime import datetime
+    import controle as c
+    P = c.PARIS
+    # quelle fiche doit être en ligne ? avant 10 h : clôture de la veille ; week-end et jours fériés sautés
+    assert c.fiche_attendue(datetime(2026, 11, 6, 8, 0, tzinfo=P)) == ("2026-11-05", "cloture")
+    assert c.fiche_attendue(datetime(2026, 11, 6, 12, 0, tzinfo=P)) == ("2026-11-06", "ouverture")
+    assert c.fiche_attendue(datetime(2026, 11, 6, 19, 0, tzinfo=P)) == ("2026-11-06", "cloture")
+    assert c.fiche_attendue(datetime(2026, 11, 7, 12, 0, tzinfo=P)) == ("2026-11-06", "cloture")
+    assert c.fiche_attendue(datetime(2027, 3, 29, 12, 0, tzinfo=P)) == ("2027-03-25", "cloture"), "Pâques 2027"
+
+    def titre(t, cat, prix=10.0):
+        return {"ticker": t, "nom": t, "categorie": cat, "prix": prix, "var_1j": 0.5, "rsi": 50,
+                "volatilite": 20, "date_cours": "2026-11-05"}
+    d = {"date": "2026-11-05", "moment": "cloture", "regles": {}, "matieres": [],
+         "indices": [titre("^FCHI", "indices", 8000)], "devises": [titre("EURUSD=X", "devises", 1.12)],
+         "top30": [titre(f"E{i}.PA", "etf") for i in range(8)] + [titre(f"A{i}.PA", "actions") for i in range(22)],
+         "petites": [titre(f"P{i}.PA", "actions", 1.5) for i in range(10)],
+         "controle_sources": {"ok": 41, "ecart": 0, "seul": 0, "ecarts": []}}
+    assert c.anomalies_donnees(d) == ([], []), c.anomalies_donnees(d)
+    abime = json.loads(json.dumps(d))
+    abime["top30"] = abime["top30"][:29]
+    abime["top30"][0]["prix"] = -1
+    abime["petites"][0]["prix"] = 3.5
+    pb, _ = c.anomalies_donnees(abime)
+    for morceau in ("29 titres", "prix invalide", "moins de 2 €"):
+        assert any(morceau in x for x in pb), f"anomalie non repérée : {morceau}"
+    # chiffres de l'analyse comparés aux données (arrondi toléré, chiffres sur un mois ignorés)
+    d2 = {"indices": [{"nom": "CAC 40", "var_1j": 0.34}, {"nom": "S&P 500", "var_1j": -4.36}]}
+    assert c.chiffres_incoherents("CAC 40 **+0,34 %**, S&P 500 **−4,4 %**.", d2) == []
+    assert len(c.chiffres_incoherents("Le CAC 40 **+0,54 %**.", d2)) == 1
+    assert c.chiffres_incoherents("Le CAC 40 **+5,6 %** sur un mois.", d2) == []
+    # règles des agents
+    assert c.agent_du_commit("Matin PEA 2026-11-06 (ouverture)") == "fiche"
+    assert c.agent_du_commit("Matin PEA : première version") == "autre"
+    assert c.agent_du_commit("Chef : rapport du 2026-11-06 (vert)") == "chef"
+    ok = [("M", "scripts/modele.html", 40), ("M", "apprentissage/CHANGELOG.md", 5)]
+    assert c.ecarts_aux_regles("nuit", ok, "2026-11-06", "2026-11-05") == ([], [])
+    pb, al = c.ecarts_aux_regles("nuit", [("M", "data/jours/2026-11-04.json", 3), ("M", "CHEF.md", 2),
+                                          ("M", "scripts/collecte.py", 400)], "2026-11-06", "2026-11-05")
+    assert pb and any("CHEF.md" in x for x in al) and any("400 lignes" in x for x in al)
+    assert any("CHANGELOG" in x for x in al), "amélioration sans entrée dans les nouveautés"
+    # documentation : une fonction publique non décrite est repérée
+    with tempfile.TemporaryDirectory() as tmp:
+        f = Path(tmp) / "essai.py"
+        f.write_text("def calcul(x):\n    return x\n\n\ndef _interne():\n    pass\n", encoding="utf-8")
+        assert c.manques_documentation("`essai.py` : `calcul(x)`", [f]) == []
+        assert c.manques_documentation("`essai.py`", [f]) == ["fonction non décrite : essai.calcul"]
 
 
 @test
@@ -189,11 +258,13 @@ def garde_fous():
     assert not re.search(r"(?<![A-Za-z]['’])\b(achète|achetez|vends|vendez)\b", modele, re.I), "formulation de conseil dans le modèle"
     routine = (RACINE / "ROUTINE.md").read_text(encoding="utf-8")
     assert "Pas de conseil en investissement personnalisé" in routine, "règle retirée de ROUTINE.md"
-    assert (RACINE / "AMELIORATION.md").exists(), "AMELIORATION.md manquant"
+    for f in ("AMELIORATION.md", "CHEF.md", "ARCHITECTURE.md", "pilotage/consignes.md"):
+        assert (RACINE / f).exists(), f"{f} manquant"
+    assert "Aucun conseil personnalisé" in (RACINE / "CHEF.md").read_text(encoding="utf-8"), "règle retirée de CHEF.md"
     cfg = json.loads((RACINE / "config.json").read_text(encoding="utf-8"))
     assert cfg.get("url_site") == "https://matbs100.github.io/pea-quotidien/", "adresse du site modifiée"
     motif_secret = re.compile(r"ntfy\.sh/matin-pea-[0-9a-f]{10}|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-ant-[A-Za-z0-9-]{20,}")
-    for p in list(SCRIPTS.glob("*")) + list(RACINE.glob("*.md")) + list(RACINE.glob("*.json")) + list((RACINE / "apprentissage").rglob("*.md")):
+    for p in list(SCRIPTS.glob("*")) + list(RACINE.glob("*.md")) + list(RACINE.glob("*.json")) + list((RACINE / "apprentissage").rglob("*.md")) + list((RACINE / "pilotage").rglob("*")):
         if p.is_file() and motif_secret.search(p.read_text(encoding="utf-8", errors="ignore")):
             raise AssertionError(f"secret ou sujet ntfy trouvé dans {p.relative_to(RACINE)}")
     for f in ("requirements.txt",):

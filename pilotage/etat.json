@@ -1,0 +1,101 @@
+{
+ "genere_le": "2026-11-06T00:20+01:00",
+ "fiche": "2026-11-05 (cloture)",
+ "lieu": "local",
+ "etat": "orange",
+ "resume": "À surveiller. 12/12 tests, 8/8 prix revérifiés, 29/29 liens valides, site à jour. Points à voir : cohérence des données, analyse du jour.",
+ "controles": [
+  {
+   "nom": "tests",
+   "titre": "Tests garde-fous",
+   "niveau": "ok",
+   "resume": "12/12 tests réussis",
+   "details": []
+  },
+  {
+   "nom": "fraicheur",
+   "titre": "Fraîcheur de la fiche",
+   "niveau": "ok",
+   "resume": "la dernière fiche est bien celle attendue",
+   "details": [
+    "dernière fiche : 2026-11-05 (cloture), générée le 2026-11-05T23:28+01:00",
+    "fiche attendue à cette heure : 2026-11-05 (cloture)"
+   ]
+  },
+  {
+   "nom": "donnees",
+   "titre": "Cohérence des données",
+   "niveau": "alerte",
+   "resume": "59 cours examinés, 0 problème(s), 1 alerte(s) ; entre sources : 50 confirmés, 1 écart(s)",
+   "details": [
+    "ALPHA.AT : cours daté du 2026-11-04, pas du 2026-11-05"
+   ]
+  },
+  {
+   "nom": "analyse",
+   "titre": "Analyse du jour",
+   "niveau": "alerte",
+   "resume": "390 mots, 1 remarque(s)",
+   "details": [
+    "390 mots (350 au plus)"
+   ]
+  },
+  {
+   "nom": "page",
+   "titre": "Page du dépôt (docs/index.html)",
+   "niveau": "ok",
+   "resume": "régénérée avec la fiche du 2026-11-05 (cloture)",
+   "details": []
+  },
+  {
+   "nom": "prix",
+   "titre": "Prix revérifiés après coup",
+   "niveau": "ok",
+   "resume": "8/8 prix identiques sur Boursorama",
+   "details": []
+  },
+  {
+   "nom": "liens",
+   "titre": "Liens des fiches détaillées",
+   "niveau": "ok",
+   "resume": "29/29 liens valides sur 8 titres, 5 non ouverts (robots.txt)",
+   "details": []
+  },
+  {
+   "nom": "site",
+   "titre": "Site en ligne",
+   "niveau": "ok",
+   "resume": "le site affiche la fiche du 2026-11-05 (cloture)",
+   "details": []
+  },
+  {
+   "nom": "documentation",
+   "titre": "Documentation et mémoire Obsidian",
+   "niveau": "ok",
+   "resume": "tout est documenté et rangé",
+   "details": [
+    "11 connaissance(s) en attente de vérification (⏳)"
+   ]
+  },
+  {
+   "nom": "agents",
+   "titre": "Travail des agents (30 dernières heures)",
+   "niveau": "ok",
+   "resume": "12 commit(s), 0 problème(s), 0 alerte(s)",
+   "details": [
+    "2241934 [autre] Passage du soir avancé à 17 h 55, avec attente de la clôture définitiv",
+    "dca4d68 [autre] Fiche du 5 novembre à la clôture réelle (VWAP, bandeau clôture) ; corr",
+    "95afc03 [autre] Deux passages par jour : ouverture (9 h 15) et clôture (18 h 15), jour",
+    "b105ec5 [autre] Notification programmée à l'ouverture de la Bourse de Paris (9 h)",
+    "ed2dcdd [autre] Correctif : police et couleur des bulles de définition",
+    "47e9ec6 [nuit] Amélioration : définitions au toucher dans les fiches",
+    "04d013e [autre] Agent Amélioration : apprentissage/, tests garde-fous, nouveauté affic",
+    "706148e [autre] Fiches détaillées cliquables : historique 5 ans, risque SRI (DIC ou es",
+    "19b73ef [fiche] Matin PEA 2026-11-05",
+    "9f0d10c [autre] Consigne : un seul Python ; fichier launchd de synchro",
+    "3a99b8d [autre] Adresse du site GitHub Pages",
+    "92a982e [autre] Matin PEA : première version et fiche du 5 novembre 2026"
+   ]
+  }
+ ]
+}

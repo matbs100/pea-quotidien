@@ -22,6 +22,7 @@ import sys
 import warnings
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
 import pandas as pd
 import yfinance as yf
@@ -273,6 +274,12 @@ def stats_seance(b, jour):
     return out
 
 
+def lien_yahoo(t):
+    """Page Yahoo Finance d'un titre, sur le site international : le site français renvoie une
+    erreur 404 pour beaucoup d'ETF et de petites valeurs (constaté par le contrôle du 06/11/2026)."""
+    return f"https://finance.yahoo.com/quote/{quote(t, safe='.=-')}/"
+
+
 def signaux_du_titre(t):
     f = DATA / "signaux.csv"
     if not f.exists():
@@ -381,7 +388,7 @@ def main():
         det["liens"] = {k: v for k, v in {
             "Boursorama": inf.get("url_boursorama") or (f"https://www.boursorama.com/cours/{bc}/" if bc else None),
             "Financial Times": f"https://markets.ft.com/data/{fcode[0]}/tearsheet/summary?s={fcode[1]}" if fcode else None,
-            "Yahoo Finance": f"https://fr.finance.yahoo.com/quote/{t}",
+            "Yahoo Finance": lien_yahoo(t),
             "DIC (document PRIIPs, PDF)": inf.get("dic"),
             "justETF": f"https://www.justetf.com/fr/etf-profile.html?isin={inf['isin']}"
             if m["categorie"] == "etf" and inf.get("isin") else None,
