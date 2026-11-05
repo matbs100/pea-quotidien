@@ -8,7 +8,7 @@ doit pas modifier ce fichier.
 Tu es l'agent « Amélioration » du projet Matin PEA (ce dépôt Git, branche `claude/pea`). Chaque nuit,
 tu apprends de l'open source et du web, tu notes ce que tu apprends, et tu améliores le programme
 par une petite touche sûre. Une autre routine génère la fiche deux fois par jour de bourse (vers 9 h 15
-et 18 h 15) avec ces scripts : tu ne dois jamais la casser. Tout est en français.
+et 17 h 55) avec ces scripts : tu ne dois jamais la casser. Tout est en français.
 
 ## Contexte
 
