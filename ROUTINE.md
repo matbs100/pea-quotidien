@@ -11,11 +11,13 @@ travailles dans ce dépôt Git. Tout est en français.
 
 ## Étapes (dans l'ordre, sans sauter d'étape)
 
-1. Installe : `pip install -q -r requirements.txt`. Puis `JOUR=$(TZ=Europe/Paris date +%F)`.
-2. Collecte : `python scripts/collecte.py $JOUR`. Si Yahoo est injoignable, réessaie une fois au
+1. Installe, toujours avec le même Python : `PY=python3; $PY -m pip install -q -r requirements.txt`,
+   puis `JOUR=$(TZ=Europe/Paris date +%F)`. Lance tous les scripts avec `$PY` (jamais `python` ou
+   `pip` seuls : ils peuvent viser une autre version de Python).
+2. Collecte : `$PY scripts/collecte.py $JOUR`. Si Yahoo est injoignable, réessaie une fois au
    bout de 2 minutes. Si ça échoue encore, va directement à l'étape 7 et envoie une notification
    d'erreur.
-3. Contrôle des prix : `python scripts/verif.py $JOUR` (compare Yahoo avec Boursorama et le
+3. Contrôle des prix : `$PY scripts/verif.py $JOUR` (compare Yahoo avec Boursorama et le
    Financial Times). Les échecs de lecture d'une source ne sont pas bloquants.
 4. Analyse : lis `data/jours/$JOUR.json`, les 5 dernières analyses de `data/analyses/` et
    `data/signaux.csv`. Écris `data/analyses/$JOUR.md`, **350 mots au plus**, avec exactement ces
@@ -32,10 +34,10 @@ travailles dans ce dépôt Git. Tout est en français.
 5. Une fois par semaine, le lundi seulement : cherche sur le web 3 à 5 sociétés cotées dont le siège
    est dans l'Union européenne (donc éligibles au PEA), qui valent moins de 2 €, ont des échanges
    réguliers et une actualité récente notable. Vérifie que leur ticker Yahoo renvoie des cours
-   (`python -c "import yfinance as yf; print(yf.Ticker('XXX.PA').history(period='5d'))"`). Ajoute
+   (`$PY -c "import yfinance as yf; print(yf.Ticker('XXX.PA').history(period='5d'))"`). Ajoute
    celles qui fonctionnent dans la section `petites` de `univers.json` et cite-les dans l'analyse.
    Jamais d'obligations (non éligibles au PEA).
-6. Rendu : `python scripts/rendu.py $JOUR` (fiche animée dans `docs/`, note Obsidian dans `notes/`).
+6. Rendu : `$PY scripts/rendu.py $JOUR` (fiche animée dans `docs/`, note Obsidian dans `notes/`).
 7. Publication : `git add -A && git commit -m "Matin PEA $JOUR" && git push origin HEAD:claude/pea`.
 8. Notification sur le téléphone :
    ```
