@@ -94,10 +94,12 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
   présente-les comme tels, avec leur taux de réussite mesuré.
 - Ne modifie pas les scripts, sauf pour corriger un bug évident qui bloque la fiche. Dans ce cas,
   explique la correction dans le message de commit.
-- **Filet de sécurité** : si un script plante et qu'un commit « Amélioration : … » a moins de 24 h
-  (`git log --since="24 hours ago" --grep="^Amélioration"`), annule-le avec `git revert --no-edit <commit>`,
-  relance l'étape, puis note « annulée le $JOUR : <raison> » sur l'idée correspondante dans
-  `apprentissage/idees.md` et commence la notification par « Amélioration de la nuit annulée ».
+- **Filet de sécurité** : si un script plante et qu'un commit « Amélioration : … » (agent de nuit) ou
+  « Chef : … » (chef d'orchestre) a moins de 24 h
+  (`git log -E --since="24 hours ago" --grep="^(Amélioration|Chef) :"`), annule-le avec
+  `git revert --no-edit <commit>`, relance l'étape, note « annulée le $JOUR : <raison> » sur l'idée
+  correspondante dans `apprentissage/idees.md` s'il y en a une, et commence la notification par
+  « Changement automatique annulé : <titre du commit> ».
 - Ne touche pas à `apprentissage/` (sauf la ligne d'idée en cas d'annulation), ni à `pilotage/`,
   `ARCHITECTURE.md`, `AMELIORATION.md` ou `CHEF.md` : c'est le travail des autres agents.
 - Ne touche pas aux fichiers de données des jours précédents.
