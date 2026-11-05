@@ -2,8 +2,9 @@
 
 Usage : python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]   (par défaut : aujourd'hui, cloture)
 - ouverture (vers 9 h 15) : premiers cours de la séance. Rien n'est ajouté à l'historique ni aux signaux.
-- cloture (vers 18 h 15) : cours de clôture, la référence. Historique et signaux mis à jour.
-Codes de sortie : 0 = OK ; 3 = cours du jour pas encore publiés après 20 min ; 4 = Bourse fermée.
+- cloture (vers 17 h 55) : attend que le fixing de clôture soit publié, puis cours de clôture, la
+  référence. Historique et signaux mis à jour.
+Codes de sortie : 0 = OK ; 3 = cours du jour (ou clôture définitive) pas encore publiés ; 4 = Bourse fermée.
 Produit : data/jours/AAAA-MM-JJ.json, data/historique.csv, data/signaux.csv
 Aucune donnée personnelle. Ce n'est pas un conseil en investissement.
 """
@@ -229,6 +230,42 @@ def enregistrer(jour, tous, top30, petites, res):
     return lignes
 
 
+def cloture_dans_meta(m, jour):
+    """Vrai si les métadonnées Yahoo (accès « graphique ») montrent un dernier échange daté du jour
+    et postérieur de 5 minutes à la fin de la séance continue : le fixing de clôture est publié."""
+    rt = m.get("regularMarketTime")
+    fin = ((m.get("currentTradingPeriod") or {}).get("regular") or {}).get("end")
+    if not rt or not fin:
+        return False
+    return str(datetime.fromtimestamp(rt, PARIS).date()) == jour and rt >= fin + 5 * 60
+
+
+def cloture_publiee(jour):
+    """Clôture définitive à Paris : fixing de 17 h 35 (14 h 05 les jours de séance courte), diffusé par
+    Yahoo avec 15 min de décalage. On vérifie LVMH (très échangée) et le CAC 40."""
+    for t in ("MC.PA", "^FCHI"):
+        tk = yf.Ticker(t)
+        tk.history(period="1d", interval="1d")
+        if not cloture_dans_meta(tk.history_metadata or {}, jour):
+            return False
+    return True
+
+
+def attendre_cloture(jour, max_minutes=30):
+    """N'avance jamais sur des cours provisoires : attend (une vérification par minute) que la clôture
+    soit définitive."""
+    for essai in range(max_minutes):
+        try:
+            if cloture_publiee(jour):
+                return True
+        except Exception as e:  # réseau, limite de Yahoo
+            print("Vérification de la clôture :", e, file=sys.stderr)
+        if essai < max_minutes - 1:
+            print(f"Clôture du {jour} pas encore définitive, nouvel essai dans 1 minute…", file=sys.stderr)
+            time.sleep(60)
+    return False
+
+
 def main():
     args = sys.argv[1:]
     aujourdhui = datetime.now(PARIS).date().isoformat()
@@ -241,6 +278,9 @@ def main():
         sys.exit(4)
     if jour == aujourdhui and not attendre_seance(jour):
         print(f"ATTENTE {jour} : les cours de la séance du jour ne sont pas encore publiés")
+        sys.exit(3)
+    if jour == aujourdhui and moment == "cloture" and not attendre_cloture(jour):
+        print(f"ATTENTE {jour} : la clôture n'est pas encore définitive")
         sys.exit(3)
     u = json.loads((RACINE / "univers.json").read_text(encoding="utf-8"))
     cats = [c for c in u if not c.startswith("_")]

@@ -67,6 +67,21 @@ def fichiers_de_signaux_vides():
 
 
 @test
+def cloture_definitive():
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    import collecte
+    P = ZoneInfo("Europe/Paris")
+    ts = lambda h, mi, j=6: int(datetime(2026, 11, j, h, mi, tzinfo=P).timestamp())
+    meta = lambda rt, fin: {"regularMarketTime": rt, "currentTradingPeriod": {"regular": {"end": fin}}}
+    assert collecte.cloture_dans_meta(meta(ts(17, 35), ts(17, 30)), "2026-11-06"), "fixing publié"
+    assert not collecte.cloture_dans_meta(meta(ts(17, 29), ts(17, 30)), "2026-11-06"), "séance pas finie"
+    assert not collecte.cloture_dans_meta(meta(ts(17, 35, 5), ts(17, 30, 5)), "2026-11-06"), "clôture de la veille"
+    assert collecte.cloture_dans_meta(meta(ts(14, 6), ts(14, 0)), "2026-11-06"), "séance courte (14 h)"
+    assert not collecte.cloture_dans_meta({}, "2026-11-06"), "métadonnées absentes"
+
+
+@test
 def calendrier_bourse():
     from datetime import date
     import collecte
