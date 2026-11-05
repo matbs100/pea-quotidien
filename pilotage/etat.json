@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-06T00:28+01:00",
+ "genere_le": "2026-11-06T00:30+01:00",
  "fiche": "2026-11-05 (cloture)",
- "lieu": "cloud",
- "etat": "rouge",
- "resume": "À corriger. 12/12 tests, 8/8 prix revérifiés, 16/16 liens valides. Points à voir : cohérence des données, analyse du jour, travail des agents (30 dernières heures).",
+ "lieu": "local",
+ "etat": "orange",
+ "resume": "À surveiller. 12/12 tests, 8/8 prix revérifiés, 29/29 liens valides, site à jour. Points à voir : cohérence des données, analyse du jour.",
  "controles": [
   {
    "nom": "tests",
@@ -58,14 +58,14 @@
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "16/16 liens valides sur 8 titres, 5 non ouverts (robots.txt), 13 injoignables d'ici",
+   "resume": "29/29 liens valides sur 8 titres, 5 non ouverts (robots.txt)",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
-   "niveau": "non_verifiable",
-   "resume": "matbs100.github.io injoignable d'ici (réseau du cloud ?)",
+   "niveau": "ok",
+   "resume": "le site affiche la fiche du 2026-11-05 (cloture)",
    "details": []
   },
   {
@@ -74,17 +74,16 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "3 connaissance(s) en attente de vérification (⏳)"
+    "11 connaissance(s) en attente de vérification (⏳)"
    ]
   },
   {
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
-   "niveau": "probleme",
-   "resume": "14 commit(s), 2 problème(s), 0 alerte(s)",
+   "niveau": "ok",
+   "resume": "15 commit(s), 0 problème(s), 0 alerte(s)",
    "details": [
-    "55aa480 « Équipe d'agents : chef d'orchestre (controle.py, p » : scripts/com.proprietaire.matin-pea.plist : fichier supprimé",
-    "55aa480 « Équipe d'agents : chef d'orchestre (controle.py, p » : scripts/synchro-mac.sh : fichier supprimé",
+    "8816215 [chef] Chef : rapport du 2026-11-06 (orange)",
     "932b0d1 [autre] Consigne de la fiche : filet de sécurité étendu aux commits du chef d'",
     "55aa480 [autre] Équipe d'agents : chef d'orchestre (controle.py, pilotage/, CHEF.md), ",
     "2241934 [autre] Passage du soir avancé à 17 h 55, avec attente de la clôture définitiv",

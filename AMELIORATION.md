@@ -55,8 +55,9 @@ scripts : tu ne dois jamais la casser. Tout est en français.
      vocabulaire, aides et définitions, accessibilité, usage au téléphone.
    - 7, dimanche : **données, robustesse et bilan** : limites des sources, cas non gérés, fiabilité des
      signaux sur les données accumulées (sans sur-ajuster), bilan de la semaine, idées à abandonner.
-   Outils : WebSearch, WebFetch, `gh`. Si un site est bloqué par le réseau, note son domaine dans la
-   partie « Accès bloqués » du journal et continue.
+   Outils : WebSearch, WebFetch, `gh`. WebFetch n'ouvre que les sites autorisés par le réseau du
+   cloud : si un site est bloqué, note son domaine dans la partie « Accès bloqués » du journal,
+   appuie-toi sur les extraits de WebSearch (en « Source proposée ») et continue.
 3. **Noter ce que tu apprends.**
    - `apprentissage/connaissances/<thème>.md` (marches, methodes, reglementation, donnees, design) :
      chaque fait nouveau, avec tes propres mots, sa source et le statut « ⏳ à vérifier », au format

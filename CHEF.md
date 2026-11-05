@@ -55,11 +55,16 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
    nouvelles idées de `apprentissage/idees.md`, et les entrées « ⏳ à vérifier » de
    `apprentissage/connaissances/` (les plus anciennes d'abord). Vérifie-en **6 au plus** :
    - ouvre la source citée (WebFetch), ou cherche une confirmation indépendante (WebSearch) ; pour un
-     chiffre réglementaire ou fiscal, seulement une source officielle (service-public.fr,
+     chiffre réglementaire ou fiscal, seulement une source officielle (service-public.gouv.fr,
      impots.gouv.fr, BOFiP, Légifrance, AMF, Banque de France, Euronext) ;
+   - si WebFetch échoue parce que le réseau du cloud bloque le site, cherche avec WebSearch en visant
+     le site officiel (par exemple `site:service-public.gouv.fr …`) : un extrait du site officiel qui
+     confirme le fait suffit, en le précisant (« extrait de recherche ») ;
    - dans `apprentissage/connaissances/`, remplace « ⏳ à vérifier » par « ✅ vérifié le $JOUR
-     ([source](lien)) » ou par « ❌ corrigé le $JOUR : <fait exact> ([source](lien)) » ; si tu ne peux pas
-     trancher, « ❔ non vérifiable le $JOUR : <raison> » ;
+     ([source](lien)) » ou par « ❌ corrigé le $JOUR : <fait exact> ([source](lien)) ». Si tu ne peux pas
+     trancher seulement parce qu'un site est bloqué, laisse « ⏳ » et ajoute « (le $JOUR : <domaine>
+     bloqué) ». Garde « ❔ non vérifiable le $JOUR : <raison> » pour un fait qu'aucune source sérieuse ne
+     permet de confirmer, et reprends les entrées « ❔ » de plus de 7 jours ;
    - ajoute à la fin du journal de la nuit une partie `## Vérification du chef` (chaque affirmation
      vérifiée avec ✅, ❌ ou ❔) ;
    - vérifie la cohérence : un fait ne doit contredire ni le site (par exemple les frais affichés par
@@ -70,8 +75,9 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
    code : la prochaine fiche utilisera la correction. Ne modifie pas les données déjà publiées.
 6. **Publication et Obsidian.**
    - Site en ligne : « ok », rien à faire. « Non vérifiable » : le réseau du cloud bloque peut-être
-     `matbs100.github.io` ; demande-le une seule fois au propriétaire (« À faire par le propriétaire »), sauf si un
-     rapport précédent le demande déjà. « Problème » : si `docs/index.html` est à jour mais pas le site,
+     `matbs100.github.io`. Les domaines bloqués (site, sources officielles) se demandent une seule fois à
+     Le propriétaire (« À faire par le propriétaire »), sauf si un rapport des 7 derniers jours les demande déjà ; le
+     relais du Mac vérifie aussi le site en ligne. « Problème » : si `docs/index.html` est à jour mais pas le site,
      c'est GitHub Pages (note-le pour le propriétaire) ; sinon régénère la page.
    - Documentation : complète ce que le contrôle signale (fonction absente de `ARCHITECTURE.md` :
      lis-la, puis décris-la en une ligne ; journal absent de la liste de `apprentissage/README.md` :

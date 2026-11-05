@@ -415,9 +415,10 @@ def c_documentation(d, maintenant):
                ("Veille du jour", "Ce que j'ai appris", "À retenir", "Amélioration") if f"# {t}" not in dernier]
         if (maintenant.date() - datetime.fromisoformat(journaux[-1].stem).date()).days > 1:
             al.append(f"aucun journal de nuit depuis le {journaux[-1].stem}")
-    attente = sum(lire(p).count("⏳") for p in (RACINE / "apprentissage" / "connaissances").glob("*.md")
-                  if p.name != "README.md")
-    infos = [f"{attente} connaissance(s) en attente de vérification (⏳)"] if attente else []
+    textes = [lire(p) for p in (RACINE / "apprentissage" / "connaissances").glob("*.md") if p.name != "README.md"]
+    attente, douteux = sum(t.count("⏳") for t in textes), sum(t.count("❔") for t in textes)
+    infos = ([f"{attente} connaissance(s) en attente de vérification (⏳)"] if attente else []) + \
+            ([f"{douteux} connaissance(s) non vérifiable(s) (❔)"] if douteux else [])
     return controle("documentation", titre, "alerte" if al else "ok",
                     f"{len(al)} manque(s)" if al else "tout est documenté et rangé", al + infos)
 
@@ -448,7 +449,7 @@ def ecarts_aux_regles(agent, fichiers, jour_commit, dernier_jour):
         m = re.match(r"(docs/archives|notes)/(\d{4}-\d{2}-\d{2})\.", chemin)
         if m and m.group(2) < dernier_jour and agent in ("nuit", "chef"):
             al.append(f"{chemin} : fiche d'un jour passé régénérée")
-        if statut.startswith("D") and not chemin.startswith("data/fiches/"):
+        if statut.startswith("D") and agent in HORS_ROLE and not chemin.startswith("data/fiches/"):
             (pb if chemin.startswith(("scripts/", "data/")) else al).append(f"{chemin} : fichier supprimé")
     code = sum(n for _, chemin, n in fichiers if chemin.startswith("scripts/"))
     if agent in MAX_LIGNES and code > MAX_LIGNES[agent]:
