@@ -12,6 +12,8 @@ tout le projet avant la fiche de 9 h 15 :
 4. **Une correction ou un embellissement** de l'interface, testé ;
 5. **Consignes** pour les autres agents, et **rapport** du jour.
 
+Les jours de bourse, un **second passage à 12 h 30** répare ce qui ne va pas avant la fiche de clôture (fiche d'ouverture manquante ou cassée, bug, commit risqué) et ajoute une partie « Passage de 12 h 30 » au rapport du jour.
+
 ## Où lire
 | Fichier | Contenu |
 |---|---|
