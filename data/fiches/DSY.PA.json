@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPDSY/",
+  "isin": "FR0014003TT8",
+  "pea_bourso": true,
+  "secteur": "Logiciels et conseils",
+  "indice": "CAC 40",
+  "valorisation": "35 143 MEUR",
+  "rendement": "1,11%",
+  "per": "18,57",
+  "dernier_dividende": "0,27 EUR (27/05/26)",
+  "per_annee": "2026",
+  "effectif": "24 997",
+  "nb_titres": "1 341 855 657",
+  "capitalisation": "35 143,20 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://investor.3ds.com/fr/",
+  "pays": "France"
+ }
+}

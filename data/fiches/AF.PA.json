@@ -1,0 +1,19 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPAF/",
+  "isin": "FR001400J770",
+  "pea_bourso": true,
+  "secteur": "Services industriels",
+  "indice": "SBF 120",
+  "valorisation": "3 320 MEUR",
+  "per": "3,65",
+  "per_annee": "2026",
+  "effectif": "90 128",
+  "nb_titres": "262 769 869",
+  "capitalisation": "3 320,10 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.airfranceklm.com/fr/finance",
+  "pays": "France"
+ }
+}

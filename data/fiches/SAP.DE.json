@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1zSAP/",
+  "isin": "DE0007164600",
+  "pea_bourso": false,
+  "secteur": "Logiciels et conseils",
+  "indice": "EURO STOXX 50",
+  "valorisation": "265 049 MEUR",
+  "rendement": "1,25%",
+  "per": "29,75",
+  "per_annee": "2026",
+  "effectif": "111 397",
+  "nb_titres": "1 228 500 000",
+  "capitalisation": "265 048,88 MEUR",
+  "marche": "Prime Standard",
+  "site": "https://www.sap.com/investors",
+  "pays": "Allemagne"
+ }
+}

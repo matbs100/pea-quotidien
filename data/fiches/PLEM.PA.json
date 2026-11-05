@@ -1,0 +1,22 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTPLEM/",
+  "isin": "FR0011440478",
+  "societe": "Amundi Asset Management",
+  "pea_bourso": true,
+  "actif_net": "56M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "05/05/2014",
+  "forme": "ETF",
+  "classe": "Actions Secteurs",
+  "zone": "Europe (Marchés Emergents)",
+  "categorie_ms": "Actions Secteur Autres",
+  "affectation": "Capitalisation",
+  "replication": "Synthétique",
+  "frais_entree": "0 %",
+  "frais_sortie": "0 %",
+  "frais_gestion": "0,55 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00000TIOP&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

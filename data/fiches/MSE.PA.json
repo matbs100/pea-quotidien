@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTMSE/",
+  "isin": "FR0007054358",
+  "societe": "Amundi Asset Management",
+  "pea_bourso": true,
+  "actif_net": "4 793M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "19/02/2001",
+  "forme": "ETF",
+  "classe": "Actions Europe",
+  "zone": "Eurozone",
+  "categorie_ms": "Actions Zone Euro Grandes Cap.",
+  "affectation": "Capitalisation",
+  "replication": "Physique",
+  "frais_entree": "0 %",
+  "frais_gestion": "0,2 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F0GBR04NCS&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

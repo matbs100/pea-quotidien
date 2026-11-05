@@ -113,6 +113,9 @@ h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 700; }
   .ligne .cs { grid-area: c; display: flex; gap: 12px; } .ligne .sig { grid-area: sig; justify-self: end; }
   .ligne .score-w { display: none; } .ligne .c { text-align: left; }
   .ligne .t strong { white-space: normal; }
+  .ligne .c { white-space: nowrap; font-size: 12px; }
+  .ligne .cs { gap: 10px; }
+  .ligne .cs .c:nth-child(4) { display: none; }
 }
 @media (min-width: 761px) { .ligne .cs { display: contents; } }
 
@@ -145,6 +148,62 @@ footer a { color: var(--accent); }
   .card .chg span { display: block; }
   .card svg { position: static; display: block; width: 100%; height: 28px; margin-top: 8px; }
 }
+/* fiche détaillée */
+.clic { cursor: pointer; transition: border-color .2s, transform .15s, box-shadow .2s; }
+.clic:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); box-shadow: 0 8px 24px -16px var(--accent); }
+.clic:active { transform: scale(.985); }
+body.fige { overflow: hidden; }
+.voile { position: fixed; inset: 0; z-index: 40; background: rgba(6, 10, 8, .55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); opacity: 0; transition: opacity .3s; }
+.voile.ouvert { opacity: 1; }
+.feuille { position: fixed; z-index: 41; left: 50%; bottom: 0; width: min(860px, 100%); max-height: 92vh; max-height: 92dvh; display: flex; flex-direction: column;
+  background: var(--bg); border: 1px solid var(--line); border-bottom: 0; border-radius: 22px 22px 0 0; box-shadow: 0 -24px 60px -24px rgba(0,0,0,.5);
+  transform: translate(-50%, 100%); transition: transform .38s cubic-bezier(.2,.8,.2,1); }
+.feuille.ouvert { transform: translate(-50%, 0); }
+@media (min-width: 900px) {
+  .feuille { bottom: auto; top: 50%; max-height: 88vh; border-radius: 22px; border-bottom: 1px solid var(--line); opacity: 0;
+    transform: translate(-50%, -46%) scale(.985); transition: transform .3s cubic-bezier(.2,.8,.2,1), opacity .25s; }
+  .feuille.ouvert { opacity: 1; transform: translate(-50%, -50%); }
+  .f-poignee { display: none; }
+}
+.f-poignee { width: 42px; height: 5px; border-radius: 4px; background: var(--line); margin: 10px auto 0; flex: none; }
+.f-tete { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid var(--line); flex: none; }
+.f-tete h2 { font-size: clamp(1.3rem, 4.5vw, 1.8rem); margin-top: 6px; }
+.f-tete .sub { font-family: var(--font-mono); font-size: 12px; margin-top: 4px; }
+.f-fermer { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 16px; }
+.f-corps { overflow-y: auto; padding: 16px 20px max(32px, env(safe-area-inset-bottom)); overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.f-prix { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.f-prix .big { font: 500 2.1rem/1.1 var(--font-mono); letter-spacing: -.02em; }
+.f-desc { margin-top: 10px; color: var(--ink); max-width: 70ch; }
+.bloc { margin-top: 24px; }
+.bloc h3 { font-size: 1.08rem; margin-bottom: 10px; }
+.onglets { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.onglets .chip { padding: 5px 12px; font-size: 12px; }
+.graphe { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 10px 4px 4px; }
+.graphe svg { display: block; width: 100%; height: 240px; touch-action: pan-y; cursor: crosshair; }
+.g-info { font: 13px/1.4 var(--font-mono); color: var(--muted); min-height: 38px; padding: 0 10px 6px; }
+.g-info b { color: var(--ink); font-weight: 500; }
+.g-leg { font-size: 12px; color: var(--muted); padding: 4px 10px 6px; }
+.g-leg i { display: inline-block; width: 18px; border-top: 2px dashed; vertical-align: middle; margin-right: 4px; }
+dl.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); gap: 8px; margin: 0; }
+dl.kv div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px; }
+dl.kv dt { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+dl.kv dd { margin: 3px 0 0; font: 500 15px var(--font-mono); }
+table.tab { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.tab td { padding: 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%; }
+.jauge { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin: 8px 0 4px; }
+.jauge span { height: 34px; border-radius: 8px; display: grid; place-items: center; font: 600 14px var(--font-mono); background: var(--surface-2); color: var(--muted); }
+.jauge span.on { color: #fff; transform: scale(1.08); box-shadow: 0 6px 16px -8px rgba(0,0,0,.5); }
+.jauge-leg { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+.note { font-size: 13px; color: var(--muted); margin-top: 8px; max-width: 75ch; }
+.pea { padding: 12px 14px; border-radius: 12px; font-size: 14px; }
+.pea.oui { background: var(--accent-soft); } .pea.non { background: var(--amber-soft); } .pea.inconnu { background: var(--surface-2); }
+.liens { display: flex; flex-wrap: wrap; gap: 8px; }
+.liens a { text-decoration: none; border: 1px solid var(--line); background: var(--surface); padding: 8px 13px; border-radius: 999px; font-size: 13px; }
+.hist { list-style: none; padding: 0; margin: 8px 0 0; font: 13px/1.5 var(--font-mono); }
+.hist li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+.astuce { font-size: 13px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .feuille, .voile { transition: none; } }
 </style>
 </head>
 <body>
@@ -164,7 +223,7 @@ footer a { color: var(--accent); }
   <div class="tape" aria-label="Indices"><div class="tape-in" id="tape"></div></div>
 
   <section>
-    <div class="sec-head"><h2>Les marchés</h2><span class="sub">Clôture de la dernière séance · tendance sur 60 jours</span></div>
+    <div class="sec-head"><h2>Les marchés</h2><span class="sub">Clôture de la dernière séance · touche une carte pour son historique</span></div>
     <div class="grid" id="indices"></div>
   </section>
 
@@ -180,7 +239,7 @@ footer a { color: var(--accent); }
 
   <section>
     <div class="sec-head">
-      <div><h2>Top 30 éligible PEA</h2><div class="sub">Classement par critères chiffrés, pas une liste d'achats</div></div>
+      <div><h2>Top 30 éligible PEA</h2><div class="sub">Classement par critères chiffrés, pas une liste d'achats · touche une ligne pour sa fiche complète (graphique, risque, frais…)</div></div>
       <div class="chips" role="group" aria-label="Filtrer">
         <button class="chip" aria-pressed="true" data-f="tous">Tous</button>
         <button class="chip" aria-pressed="false" data-f="etf">ETF</button>
@@ -212,6 +271,16 @@ footer a { color: var(--accent); }
     <p style="margin-top:10px"><a href="archives/">Toutes les fiches précédentes</a> · <span id="gen"></span></p>
   </footer>
 </div>
+
+<div class="voile" id="voile" hidden></div>
+<section class="feuille" id="feuille" role="dialog" aria-modal="true" aria-labelledby="f-titre" hidden>
+  <div class="f-poignee" aria-hidden="true"></div>
+  <header class="f-tete">
+    <div><div class="kicker" id="f-type"></div><h2 id="f-titre"></h2><div class="sub" id="f-sous"></div></div>
+    <button class="f-fermer" id="f-fermer" aria-label="Fermer la fiche">✕</button>
+  </header>
+  <div class="f-corps" id="f-corps"></div>
+</section>
 
 <script id="donnees" type="application/json">/*__DONNEES__*/</script>
 <script>
@@ -265,7 +334,7 @@ const tape = D.indices.map((m) => `<span><b>${esc(m.nom)}</b>${fr(m.prix, dec(m.
 $("#tape").innerHTML = tape + tape;
 
 function carte(m, unite = "") {
-  return `<div class="card rv"><div class="nom">${esc(m.nom)}${vf(m)}</div><div class="val">${fr(m.prix, dec(m.prix))}${unite}</div>
+  return `<div class="card rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}"><div class="nom">${esc(m.nom)}${vf(m)}</div><div class="val">${fr(m.prix, dec(m.prix))}${unite}</div>
     <div class="chg ${sens(m.var_1j)}">${pct(m.var_1j)} <span class="flat">· 1 mois ${pct(m.var_1m)}</span></div>${spark(m.courbe.slice(-60), sens(m.var_1m))}</div>`;
 }
 $("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
@@ -277,7 +346,7 @@ const badge = { etf: '<span class="badge b-etf">ETF</span>', actions: '<span cla
 function ligne(m, i, sc) {
   const s = m[sc] ?? 0;
   const parts = m.prix > 0 ? Math.floor(100 / m.prix) : 0;
-  return `<div class="ligne rv" data-cat="${m.categorie === "petites" ? "actions" : m.categorie}">
+  return `<div class="ligne rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}" data-cat="${m.categorie === "petites" ? "actions" : m.categorie}">
     <div class="rg">${String(i + 1).padStart(2, "0")}</div>
     <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"}</small></div>
     <div class="c px"><span class="num">${fr(m.prix, dec(m.prix))}</span><em>prix</em></div>
@@ -310,6 +379,249 @@ if (C) {
 }
 $("#regles").innerHTML = Object.entries({ "Score": D.regles.score, "Signal": D.regles.signal, "Filtres": D.regles.filtres })
   .map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
+
+// ---------- fiche détaillée ----------
+const DET = D.details || {};
+const TOUS = {};
+[...D.indices, ...D.devises, ...D.matieres, ...D.top30, ...D.petites].forEach((m) => { if (!TOUS[m.ticker]) TOUS[m.ticker] = m; });
+const TYPE = { indices: "Indice", devises: "Devise", matieres: "Matière première", etf: "ETF", actions: "Action", petites: "Petite capitalisation" };
+const PLACEMENT = ["etf", "actions", "petites"];
+const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const pctc = (x) => x == null ? null : `<span class="${sens(x)}">${pct(x)}</span>`;
+const prixf = (x) => x == null ? null : fr(x, dec(x));
+const pc1 = (x) => x == null ? null : fr(x, 1) + " %";
+const fdate = (d, long) => d.toLocaleDateString("fr-FR", long ? { day: "numeric", month: "long", year: "numeric" } : { day: "numeric", month: "short", year: "2-digit" });
+const kv = (paires) => `<dl class="kv">${paires.filter(([, v]) => v != null && v !== "").map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
+const tab = (paires) => `<table class="tab"><tbody>${paires.filter(([, v]) => v != null && v !== "").map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("")}</tbody></table>`;
+const bloc = (titre, html) => html ? `<div class="bloc"><h3>${titre}</h3>${html}</div>` : "";
+
+function serieDe(o) {
+  if (!o) return [];
+  const t0 = new Date(o.t0 + "T12:00:00").getTime();
+  return o.o.map((d, i) => [new Date(t0 + d * 864e5), o.c[i]]);
+}
+function moyenne(serie, n) {
+  const out = []; let s = 0;
+  serie.forEach(([, v], i) => { s += v; if (i >= n) s -= serie[i - n][1]; out.push(i >= n - 1 ? s / n : null); });
+  return out;
+}
+
+const PERIODES = [["1M", "1 mois", 21, "j"], ["3M", "3 mois", 63, "j"], ["6M", "6 mois", 126, "j"], ["1A", "1 an", 252, "j"], ["5A", "5 ans", 1830, "s"]];
+let redessiner = null;
+function graphe(zone, det) {
+  const J = serieDe(det.j), S = serieDe(det.s);
+  const dispo = PERIODES.filter((p) => (p[3] === "s" ? S.length > 10 : J.length > 5));
+  let per = "1A", moy = false;
+  const lib5 = (det.stats && det.stats.annees_hist < 4.8) ? "Max" : "5 ans";
+  zone.innerHTML = `<div class="onglets" role="group" aria-label="Période">${dispo.map((p) => `<button class="chip" data-p="${p[0]}" aria-pressed="${p[0] === per}">${p[0] === "5A" ? lib5 : p[1]}</button>`).join("")}
+    <button class="chip" data-mm aria-pressed="false">Moyennes mobiles</button></div>
+    <div class="graphe"><div class="g-info" aria-live="polite"></div><svg role="img" aria-label="Historique du prix"></svg><div class="g-leg" hidden></div></div>`;
+  const svg = zone.querySelector("svg"), info = zone.querySelector(".g-info"), leg = zone.querySelector(".g-leg");
+  function dessiner() {
+    const p = PERIODES.find((x) => x[0] === per), src = p[3], base = src === "s" ? S : J;
+    if (!base.length) return;
+    let i0;
+    if (src === "j") i0 = Math.max(0, base.length - 1 - p[2]); // en séances, comme les performances affichées
+    else { const fin = base[base.length - 1][0].getTime(); i0 = Math.max(0, base.findIndex(([d]) => d.getTime() >= fin - p[2] * 864e5)); }
+    const pts = base.slice(i0);
+    const W = Math.max(280, svg.clientWidth || 600), H = 240, g = 8, dr = 58, h = 12, b = 24;
+    const ys = pts.map((x) => x[1]);
+    let mms = [];
+    if (moy) {
+      const [n1, n2, l1, l2] = src === "s" ? [10, 40, "10 semaines", "40 semaines"] : [50, 200, "50 jours", "200 jours"];
+      mms = [[moyenne(base, n1).slice(i0), "var(--amber)", l1], [moyenne(base, n2).slice(i0), "var(--muted)", l2]];
+      mms.forEach(([l]) => l.forEach((v) => { if (v != null) ys.push(v); }));
+      leg.hidden = false;
+      leg.innerHTML = mms.map(([, c, l]) => `<span style="margin-right:14px"><i style="border-color:${c}"></i>moyenne ${l}</span>`).join("");
+    } else leg.hidden = true;
+    const mn = Math.min(...ys), mx = Math.max(...ys), marge = (mx - mn) * 0.08 || Math.abs(mx) * 0.01 || 1;
+    const y0 = mn - marge, y1 = mx + marge;
+    const X = (i) => g + i / Math.max(1, pts.length - 1) * (W - g - dr);
+    const Y = (v) => h + (1 - (v - y0) / (y1 - y0)) * (H - h - b);
+    const d = pts.map((q, i) => `${i ? "L" : "M"}${X(i).toFixed(1)},${Y(q[1]).toFixed(1)}`).join("");
+    const perf = (pts[pts.length - 1][1] / pts[0][1] - 1) * 100;
+    const coul = perf >= 0 ? "var(--up)" : "var(--down)";
+    let grille = "";
+    for (let k = 0; k <= 3; k++) {
+      const v = y0 + (y1 - y0) * k / 3, y = Y(v).toFixed(1);
+      grille += `<line x1="${g}" x2="${W - dr}" y1="${y}" y2="${y}" stroke="var(--line)" stroke-dasharray="2 4"/><text x="${W - dr + 6}" y="${(+y + 4).toFixed(1)}" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono, monospace">${fr(v, dec(Math.abs(v)))}</text>`;
+    }
+    const idx = [0, Math.floor((pts.length - 1) / 2), pts.length - 1];
+    const xl = idx.map((i, k) => `<text x="${X(i).toFixed(1)}" y="${H - 6}" font-size="11" fill="var(--muted)" text-anchor="${["start", "middle", "end"][k]}">${fdate(pts[i][0])}</text>`).join("");
+    const chemins = mms.map(([l, c]) => {
+      let s = "", on = false;
+      l.forEach((v, i) => { if (v == null) { on = false; return; } s += `${on ? "L" : "M"}${X(i).toFixed(1)},${Y(v).toFixed(1)}`; on = true; });
+      return s ? `<path d="${s}" fill="none" stroke="${c}" stroke-width="1.5" stroke-dasharray="5 3"/>` : "";
+    }).join("");
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    svg.innerHTML = `<defs><linearGradient id="g-remp" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${coul}" stop-opacity=".26"/><stop offset="1" stop-color="${coul}" stop-opacity="0"/></linearGradient></defs>
+      ${grille}${xl}<path d="${d}L${X(pts.length - 1).toFixed(1)},${H - b}L${X(0).toFixed(1)},${H - b}Z" fill="url(#g-remp)"/>
+      <path class="g-ligne" d="${d}" fill="none" stroke="${coul}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${chemins}
+      <line class="g-x" y1="${h}" y2="${H - b}" stroke="var(--muted)" opacity="0"/><circle class="g-pt" r="5" fill="${coul}" stroke="var(--bg)" stroke-width="2" opacity="0"/>`;
+    const resume = `<span class="${sens(perf)}" style="font-weight:600">${pct(perf)}</span> sur ${p[0] === "5A" ? (lib5 === "Max" ? "tout l'historique" : "5 ans") : p[1]}<br>du ${fdate(pts[0][0], true)} au ${fdate(pts[pts.length - 1][0], true)}`;
+    info.innerHTML = resume;
+    const lg = svg.querySelector(".g-ligne");
+    if (!reduit && lg.getTotalLength) {
+      const L = lg.getTotalLength();
+      lg.style.strokeDasharray = L; lg.style.strokeDashoffset = L; lg.getBoundingClientRect();
+      lg.style.transition = "stroke-dashoffset .9s ease"; lg.style.strokeDashoffset = 0;
+    }
+    const gx = svg.querySelector(".g-x"), gp = svg.querySelector(".g-pt");
+    const suivre = (e) => {
+      const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) * W / r.width;
+      const i = Math.max(0, Math.min(pts.length - 1, Math.round((x - g) / (W - g - dr) * (pts.length - 1))));
+      const [jour, v] = pts[i], ev = (v / pts[0][1] - 1) * 100;
+      gx.setAttribute("x1", X(i)); gx.setAttribute("x2", X(i)); gx.setAttribute("opacity", ".6");
+      gp.setAttribute("cx", X(i)); gp.setAttribute("cy", Y(v)); gp.setAttribute("opacity", "1");
+      info.innerHTML = `${fdate(jour, true)}${src === "s" ? " (semaine)" : ""} · <b>${fr(v, dec(Math.abs(v)))}</b><br><span class="${sens(ev)}">${pct(ev)}</span> depuis le début de la période`;
+    };
+    svg.onpointermove = suivre; svg.onpointerdown = suivre;
+    svg.onpointerleave = () => { gx.setAttribute("opacity", "0"); gp.setAttribute("opacity", "0"); info.innerHTML = resume; };
+  }
+  zone.querySelectorAll("[data-p]").forEach((bt) => bt.addEventListener("click", () => {
+    per = bt.dataset.p; zone.querySelectorAll("[data-p]").forEach((x) => x.setAttribute("aria-pressed", x === bt)); dessiner();
+  }));
+  zone.querySelector("[data-mm]").addEventListener("click", (e) => { moy = !moy; e.currentTarget.setAttribute("aria-pressed", moy); dessiner(); });
+  redessiner = dessiner;
+  requestAnimationFrame(dessiner);
+}
+addEventListener("resize", () => { if (!$("#feuille").hidden && redessiner) redessiner(); });
+
+function blocRisque(m, inf, st) {
+  const off = inf.sri_officiel, est = st.sri_estime, niv = off || est;
+  if (!niv) return "";
+  const cases = [1, 2, 3, 4, 5, 6, 7].map((k) => `<span class="${k === niv ? "on" : ""}"${k === niv ? ` style="background:hsl(${140 - (k - 1) * 22} 58% 40%)"` : ""}>${k}</span>`).join("");
+  const vol = st.vol_5a != null && st.annees_hist >= 2 ? st.vol_5a : st.vol_1a;
+  const expl = off
+    ? `C'est l'indicateur synthétique de risque (SRI) du DIC, le document d'informations clés imposé par le règlement européen PRIIPs. Il va de 1 (risque le plus faible) à 7 (le plus élevé).${est ? ` Notre propre calcul, à partir de la volatilité, donne ${est}/7.` : ""}`
+    : `Une action n'a pas de DIC, donc pas de SRI officiel. Ce niveau est calculé comme le volet « risque de marché » du SRI PRIIPs, à partir de la volatilité sur ${st.sri_base} (${fr(vol, 1)} % par an). Seuils : moins de 0,5 % → 1 ; 5 % → 2 ; 12 % → 3 ; 20 % → 4 ; 30 % → 5 ; 80 % → 6 ; au-delà → 7.`;
+  const pire = st.perte_max_5a != null ? st.perte_max_5a : st.perte_max_1a;
+  const duree = st.perte_max_5a != null ? st.sri_base : "1 an";
+  const concret = pire != null ? ` Concrètement, sur ${duree}, ce titre a perdu jusqu'à ${fr(Math.abs(pire), 0)} % depuis un sommet : ${fr(5 * Math.abs(pire), 0)} € sur 500 € placés au pire moment.` : "";
+  return bloc("Risque", `<p><b>${off ? `Risque officiel : ${off}/7` : `Risque estimé : ${est}/7`}</b></p>
+    <div class="jauge" role="img" aria-label="Niveau de risque ${niv} sur 7">${cases}</div><div class="jauge-leg"><span>Plus faible</span><span>Plus élevé</span></div>
+    ${kv([["Volatilité 1 an", pc1(st.vol_1a)], [`Volatilité ${st.sri_base === "1 an" ? "" : st.sri_base}`, st.sri_base === "1 an" ? null : pc1(st.vol_5a)],
+      ["Pire baisse 1 an", pctc(st.perte_max_1a)], [`Pire baisse ${st.sri_base === "1 an" ? "" : st.sri_base}`, st.sri_base === "1 an" ? null : pctc(st.perte_max_5a)],
+      ["Pire semaine", pctc(st.pire_semaine)], ["Meilleure semaine", pctc(st.meilleure_semaine)], ["Bêta / CAC 40", st.beta_cac != null ? fr(st.beta_cac, 2) : null]])}
+    <p class="note">${expl}${concret} La volatilité mesure l'ampleur des variations habituelles sur un an. Le bêta dit de combien le titre bouge en moyenne quand le CAC 40 bouge de 1 % (3 ans, données hebdomadaires).</p>`);
+}
+
+function blocFrais(m, inf, fx) {
+  if (!fx) return "";
+  const L = [];
+  if (m.categorie === "etf") {
+    if (fx.gestion != null) L.push(["Frais de gestion annuels", `<b>${fr(fx.gestion, 2)} %</b> · soit ${fr(5 * fx.gestion, 2)} € par an pour 500 € placés`]);
+    if (fx.entree != null || fx.sortie != null) L.push(["Frais d'entrée / de sortie", `${fr(fx.entree || 0, 0)} % / ${fr(fx.sortie || 0, 0)} %`]);
+    L.push(["Comment sont-ils payés ?", "Prélevés chaque jour dans le prix de l'ETF : tu ne les vois pas passer, mais ils réduisent la performance"]);
+  } else L.push(["Frais de gestion", "Aucun : une action n'a pas de frais annuels"]);
+  L.push(["Courtage dans un PEA", `0,5 % maximum par ordre passé en ligne (1,2 % en agence) : au plus 0,50 € pour un achat de 100 € en ligne`]);
+  if (fx.ttf) L.push(["Taxe sur les transactions financières", "0,4 % à l'achat, même dans un PEA (société française de plus de 1 Md€ de capitalisation) : 0,40 € pour 100 €"]);
+  L.push(["Droits de garde", "0,4 % par an maximum dans un PEA, souvent 0 € chez les courtiers en ligne"]);
+  return bloc("Frais", tab(L) + `<p class="note">Plafonds légaux du PEA (décret n° 2020-95). BNP Paribas peut facturer moins : vérifie sa grille tarifaire.</p>`);
+}
+
+function blocCaract(m, inf, det, t) {
+  const L = [["ISIN", inf.isin], ["Code", esc(t)], ["Place de cotation", det.place], ["Devise", det.devise]];
+  if (m.categorie === "etf") {
+    const synth = (inf.replication || "").toLowerCase().startsWith("synth");
+    const capi = (inf.affectation || "").toLowerCase().startsWith("capi");
+    L.push(["Société de gestion", inf.societe], ["Catégorie Morningstar", inf.categorie_ms], ["Classe d'actifs", inf.classe], ["Zone géographique", inf.zone],
+      ["Réplication", inf.replication && (inf.replication + (synth ? " : l'ETF détient des actions européennes et échange leur performance contre celle de l'indice, ce qui le rend éligible au PEA" : " : l'ETF détient directement les titres de l'indice"))],
+      ["Dividendes", inf.affectation && (inf.affectation + (capi ? " : réinvestis automatiquement dans l'ETF" : " : versés sur ton compte"))],
+      ["Date de création", inf.creation], ["Actif net (taille du fonds)", inf.actif_net && esc(inf.actif_net)], ["Forme juridique", inf.forme]);
+  } else if (PLACEMENT.includes(m.categorie)) {
+    L.push(["Secteur", inf.secteur], ["Pays du siège", inf.pays], ["Marché", inf.marche], ["Indice", inf.indice],
+      ["Capitalisation", inf.capitalisation || inf.valorisation], ["Nombre d'actions", inf.nb_titres], ["Salariés", inf.effectif],
+      [`PER estimé${inf.per_annee ? " " + inf.per_annee : ""}`, inf.per], ["Rendement du dividende", inf.rendement], ["Dernier dividende", inf.dernier_dividende],
+      ["Site de l'entreprise", inf.site && `<a href="${esc(inf.site)}" target="_blank" rel="noopener">${esc(inf.site.replace(/^https?:\/\//, "").slice(0, 40))}</a>`]);
+  }
+  const note = PLACEMENT.includes(m.categorie) && m.categorie !== "etf"
+    ? `<p class="note">PER : prix de l'action divisé par le bénéfice par action, soit le nombre d'années de bénéfices que tu paies. Rendement : dividende annuel divisé par le prix.${inf.source_infos ? " Données : " + esc(inf.source_infos) + "." : " Données : Boursorama."}</p>` : "";
+  return bloc("Caractéristiques", tab(L.map(([k, v]) => [k, v == null ? null : (String(v).startsWith("<") ? v : esc(v))])) + note);
+}
+
+function blocPEA(m, inf, det) {
+  if (!PLACEMENT.includes(m.categorie)) return "";
+  const v = inf.pea_bourso;
+  const txt = v === true ? "✓ <b>Éligible au PEA</b> d'après Boursorama."
+    : v === false ? (m.categorie === "etf" ? "⚠ Boursorama ne l'indique pas éligible au PEA. Vérifie auprès de BNP Paribas avant d'acheter."
+      : `⚠ Boursorama ne l'indique pas éligible au PEA sur cette place (${esc(det.place || "")}). Le siège est dans l'Union européenne, donc l'action est en principe éligible, mais ta banque doit pouvoir l'acheter dans un PEA sur ce marché : demande à BNP Paribas avant d'acheter.`)
+    : "Information non disponible : vérifie auprès de BNP Paribas.";
+  return bloc("Éligibilité PEA", `<div class="pea ${v === true ? "oui" : v === false ? "non" : "inconnu"}">${txt}</div>`);
+}
+
+function blocSignal(m, det) {
+  const S = { hausse: "↗ hausse", baisse: "↘ baisse", neutre: "→ neutre" };
+  const expl = { hausse: "le prix est au-dessus de sa moyenne 20 jours, elle-même au-dessus de la moyenne 50 jours, sans surchauffe (RSI sous 70) : la tendance est haussière.",
+    baisse: "le prix est sous sa moyenne 20 jours, elle-même sous la moyenne 50 jours, sans excès de vente (RSI au-dessus de 30) : la tendance est baissière.",
+    neutre: "pas de tendance nette, ou une tendance déjà très avancée (RSI au-dessus de 70 ou sous 30)." };
+  const h = (det && det.signaux || []).slice().reverse().map((s) => `<li>${new Date(s.date + "T12:00:00").toLocaleDateString("fr-FR")} · ${S[s.signal]} à ${fr(s.prix, dec(s.prix))} → ${s.resultat ? (s.resultat === "juste" ? "✓ juste" : s.resultat === "faux" ? "✗ faux" : "neutre") + ` (${pct(s.rendement)} en 5 séances)` : "en attente"}</li>`).join("");
+  return bloc("Signal technique", `<p><span class="sig ${m.signal}" style="display:inline-block">${S[m.signal]}</span> Aujourd'hui, ${expl[m.signal]}</p>
+    ${kv([["Moyenne 20 jours", prixf(m.ma20)], ["Moyenne 50 jours", prixf(m.ma50)], ["Moyenne 200 jours", prixf(m.ma200)], ["RSI 14 jours", m.rsi != null ? fr(m.rsi, 0) : null]])}
+    ${h ? `<ul class="hist">${h}</ul>` : ""}<p class="note">Un signal technique n'est pas une prédiction : sa fiabilité est mesurée en bas de la fiche du jour.</p>`);
+}
+
+function ouvrir(t, pousser = true) {
+  const m = TOUS[t]; if (!m) return;
+  const det = DET[t] || {}, inf = det.infos || {}, st = det.stats || {};
+  $("#f-type").textContent = TYPE[m.categorie] + (det.place ? " · " + det.place : "");
+  $("#f-titre").textContent = m.nom;
+  $("#f-sous").textContent = [t, inf.isin && "ISIN " + inf.isin].filter(Boolean).join(" · ");
+  const parts = m.prix > 0 && PLACEMENT.includes(m.categorie) ? Math.floor(100 / m.prix) : null;
+  const H = [];
+  H.push(`<div class="f-prix"><span class="big">${fr(m.prix, dec(m.prix))}${det.devise ? ` <small style="font-size:1rem;color:var(--muted)">${det.devise}</small>` : ""}</span><span class="num ${sens(m.var_1j)}">${pct(m.var_1j)} sur la dernière séance</span>${vf(m)}</div>`);
+  if (det.description) H.push(`<p class="f-desc">${esc(det.description)}</p>`);
+  H.push(`<div class="bloc"><h3>Historique du prix</h3><div id="f-graphe">${det.j ? "" : "<p class='note'>Historique indisponible.</p>"}</div></div>`);
+  const Jp = serieDe(det.j);
+  const perfJ = (n, defaut) => Jp.length > n ? (Jp[Jp.length - 1][1] / Jp[Jp.length - 1 - n][1] - 1) * 100 : defaut; // même série que le graphique
+  H.push(bloc("Performances", kv([["1 jour", pctc(m.var_1j)], ["1 semaine", pctc(perfJ(5, m.var_5j))], ["1 mois", pctc(perfJ(21, m.var_1m))], ["3 mois", pctc(perfJ(63, m.var_3m))],
+    ["Depuis le 1er janvier", pctc(st.perf_annee)], ["1 an", pctc(perfJ(252, m.var_1a))], ["3 ans", pctc(st.perf_3a)], ["5 ans", pctc(st.perf_5a)]])));
+  H.push(bloc("Chiffres clés", kv([["Plus haut 1 an", prixf(st.haut_1a)], ["Plus bas 1 an", prixf(st.bas_1a)], ["Écart au plus haut", pctc(m.ecart_haut)],
+    ["Jours de hausse (1 an)", st.jours_hausse_1a != null ? fr(st.jours_hausse_1a, 0) + " %" : null],
+    ["Échanges moyens", !m.liquidite || !PLACEMENT.includes(m.categorie) ? null : m.liquidite >= 1e6 ? fr(m.liquidite / 1e6, 1) + " M€/jour" : fr(m.liquidite / 1000, 0) + " k€/jour"], ["Parts pour 100 €", parts == null ? null : parts > 0 ? String(parts) : "0 (part > 100 €)"]])));
+  if (PLACEMENT.includes(m.categorie)) H.push(blocRisque(m, inf, st));
+  else H.push(bloc("Volatilité", kv([["Volatilité 1 an", pc1(st.vol_1a)], ["Volatilité 5 ans", pc1(st.vol_5a)], ["Pire baisse 1 an", pctc(st.perte_max_1a)],
+    ["Pire baisse 5 ans", pctc(st.perte_max_5a)], ["Pire semaine", pctc(st.pire_semaine)], ["Meilleure semaine", pctc(st.meilleure_semaine)]]) +
+    `<p class="note">${m.categorie === "indices" ? "Un indice ne s'achète pas directement : on l'achète via un ETF qui le suit." : "Ce n'est pas un placement éligible au PEA : il est affiché comme repère."}</p>`));
+  H.push(blocFrais(m, inf, det.frais));
+  H.push(blocPEA(m, inf, det));
+  H.push(blocCaract(m, inf, det, t));
+  if (PLACEMENT.includes(m.categorie)) H.push(blocSignal(m, det));
+  if (m.sources) H.push(bloc("Contrôle du prix", tab(Object.entries(m.sources).map(([k, v]) => [SRC[k], fr(v, dec(v))])) +
+    `<p class="note">${{ ok: "Les sources concordent.", ecart: "⚠ Les sources ne concordent pas : vérifie le prix avant toute décision.", seul: "Une seule source a pu être lue." }[m.verif] || ""}</p>`));
+  if (det.liens) H.push(bloc("Pour aller plus loin", `<div class="liens">${Object.entries(det.liens).map(([k, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(k)} ↗</a>`).join("")}</div>`));
+  H.push(`<p class="note" style="margin-top:22px">Information et apprentissage, pas un conseil en investissement. Données du ${new Date(D.date + "T12:00:00").toLocaleDateString("fr-FR")}.</p>`);
+  $("#f-corps").innerHTML = H.join("");
+  $("#f-corps").scrollTop = 0;
+  if (det.j) graphe($("#f-graphe"), det);
+  montrer();
+  if (pousser) history.pushState({ fiche: t }, "", "#" + encodeURIComponent(t));
+}
+
+const feuille = $("#feuille"), voile = $("#voile");
+let avant = null;
+function montrer() {
+  if (feuille.hidden) avant = document.activeElement;
+  voile.hidden = false; feuille.hidden = false; document.body.classList.add("fige");
+  requestAnimationFrame(() => requestAnimationFrame(() => { voile.classList.add("ouvert"); feuille.classList.add("ouvert"); }));
+  $("#f-fermer").focus({ preventScroll: true });
+}
+function cacher() {
+  voile.classList.remove("ouvert"); feuille.classList.remove("ouvert"); document.body.classList.remove("fige");
+  setTimeout(() => { if (!feuille.classList.contains("ouvert")) { voile.hidden = true; feuille.hidden = true; } }, reduit ? 0 : 400);
+  if (avant && avant.focus) avant.focus({ preventScroll: true });
+}
+function fermer() { if (history.state && history.state.fiche) history.back(); else cacher(); }
+addEventListener("popstate", () => { const t = decodeURIComponent(location.hash.slice(1)); if (t && TOUS[t]) ouvrir(t, false); else if (!feuille.hidden) cacher(); });
+$("#f-fermer").addEventListener("click", fermer);
+voile.addEventListener("click", fermer);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !feuille.hidden) { fermer(); return; }
+  if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches("[data-t]")) { e.preventDefault(); ouvrir(e.target.dataset.t); }
+});
+document.addEventListener("click", (e) => { const c = e.target.closest("[data-t]"); if (c && !feuille.contains(c)) ouvrir(c.dataset.t); });
+const lienDirect = decodeURIComponent(location.hash.slice(1));
+if (lienDirect && TOUS[lienDirect]) { history.replaceState(null, "", location.pathname + location.search); ouvrir(lienDirect); }
 
 // animations à l'apparition (décalées)
 const io = new IntersectionObserver((es) => es.forEach((e) => {

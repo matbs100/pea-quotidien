@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPEL/",
+  "isin": "FR0000121667",
+  "pea_bourso": true,
+  "secteur": "Biens de consommation",
+  "indice": "CAC 40",
+  "valorisation": "89 112 MEUR",
+  "rendement": "2,26%",
+  "per": "25,25",
+  "dernier_dividende": "4,00 EUR (05/05/26)",
+  "per_annee": "2026",
+  "effectif": "214 272",
+  "nb_titres": "464 247 548",
+  "capitalisation": "89 112,32 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.essilorluxottica.com/fr/investisseurs/",
+  "pays": "France"
+ }
+}

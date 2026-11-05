@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPCAP/",
+  "isin": "FR0000125338",
+  "pea_bourso": true,
+  "secteur": "Logiciels et conseils",
+  "indice": "CAC 40",
+  "valorisation": "22 176 MEUR",
+  "rendement": "2,69%",
+  "per": "10,11",
+  "dernier_dividende": "3,40 EUR (02/06/26)",
+  "per_annee": "2026",
+  "effectif": "423 405",
+  "nb_titres": "169 928 671",
+  "capitalisation": "22 175,69 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://investors.capgemini.com/fr/",
+  "pays": "France"
+ }
+}

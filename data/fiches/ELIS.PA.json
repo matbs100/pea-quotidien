@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPELIS/",
+  "isin": "FR0012435121",
+  "pea_bourso": true,
+  "secteur": "Services aux entreprises",
+  "indice": "SBF 120",
+  "valorisation": "5 791 MEUR",
+  "rendement": "2,24%",
+  "per": "11,52",
+  "dernier_dividende": "0,48 EUR (26/05/26)",
+  "per_annee": "2026",
+  "nb_titres": "238 313 588",
+  "capitalisation": "5 791,02 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://fr.elis.com/fr/groupe/relations-investisseurs",
+  "pays": "France"
+ }
+}

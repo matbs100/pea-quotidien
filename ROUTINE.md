@@ -19,6 +19,9 @@ travailles dans ce dépôt Git. Tout est en français.
    d'erreur.
 3. Contrôle des prix : `$PY scripts/verif.py $JOUR` (compare Yahoo avec Boursorama et le
    Financial Times). Les échecs de lecture d'une source ne sont pas bloquants.
+3 bis. Fiches détaillées : `$PY scripts/fiches.py $JOUR` (historique de prix sur 5 ans, risque SRI,
+   frais, caractéristiques, éligibilité PEA selon Boursorama). Compte 2 à 3 minutes. Non bloquant :
+   si le script échoue, continue sans les fiches.
 4. Analyse : lis `data/jours/$JOUR.json`, les 5 dernières analyses de `data/analyses/` et
    `data/signaux.csv`. Écris `data/analyses/$JOUR.md`, **350 mots au plus**, avec exactement ces
    titres de niveau 3 :
@@ -28,7 +31,9 @@ travailles dans ce dépôt Git. Tout est en français.
      tendances qui se confirment ou s'inversent)
    - `### Fiabilité des signaux` (taux de signaux justes comparé au repère ; dis franchement si les
      signaux ne font pas mieux que le hasard)
-   - `### À garder en tête` (risques, écarts entre sources à vérifier, petits prix)
+   - `### À garder en tête` (risques, écarts entre sources à vérifier, petits prix ; cite les titres
+     du top 30 que Boursorama n'indique pas éligibles au PEA : `details[ticker].infos.pea_bourso` vaut
+     `false` dans le JSON du jour)
    - `### Pour apprendre` (une notion expliquée simplement, différente chaque jour : RSI,
      volatilité, ETF à réplication synthétique, frais, diversification, etc.)
 5. Une fois par semaine, le lundi seulement : cherche sur le web 3 à 5 sociétés cotées dont le siège
@@ -37,6 +42,10 @@ travailles dans ce dépôt Git. Tout est en français.
    (`$PY -c "import yfinance as yf; print(yf.Ticker('XXX.PA').history(period='5d'))"`). Ajoute
    celles qui fonctionnent dans la section `petites` de `univers.json` et cite-les dans l'analyse.
    Jamais d'obligations (non éligibles au PEA).
+5 bis. Descriptions : pour les titres du top 30 et des petits prix absents de `descriptions.json`
+   (clé `titres`), ajoute une description de 1 à 2 phrases en français, avec tes propres mots
+   (activité principale, pays), uniquement si tu es sûr des faits ; 10 au maximum par jour. Ne copie
+   jamais le texte d'un site.
 6. Rendu : `$PY scripts/rendu.py $JOUR` (fiche animée dans `docs/`, note Obsidian dans `notes/`).
 7. Publication : `git add -A && git commit -m "Matin PEA $JOUR" && git push origin HEAD:claude/pea`.
 8. Notification sur le téléphone :

@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1zALV/",
+  "isin": "DE0008404005",
+  "pea_bourso": false,
+  "secteur": "Assurance",
+  "indice": "EURO STOXX 50",
+  "valorisation": "176 933 MEUR",
+  "rendement": "4,23%",
+  "per": "14,45",
+  "per_annee": "2026",
+  "effectif": "156 875",
+  "nb_titres": "380 419 000",
+  "capitalisation": "176 932,88 MEUR",
+  "marche": "Prime Standard",
+  "site": "https://www.allianz.com/en/investor_relations",
+  "pays": "Allemagne"
+ }
+}

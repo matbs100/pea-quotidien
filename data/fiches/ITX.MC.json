@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-05",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/FF55-ITX/",
+  "isin": "ES0148396007",
+  "pea_bourso": false,
+  "secteur": "Commerces de détail de biens de consommation",
+  "indice": "EURO STOXX 50",
+  "valorisation": "187 186 MEUR",
+  "rendement": "3,12%",
+  "per": "28,13",
+  "dernier_dividende": "0,88 EUR (29/10/26)",
+  "per_annee": "2026",
+  "effectif": "163 047",
+  "nb_titres": "3 116 652 000",
+  "capitalisation": "187 186,12 MEUR",
+  "marche": "Mercado Continuo",
+  "site": "http://www.inditex.com",
+  "pays": "Espagne"
+ }
+}
