@@ -1,6 +1,6 @@
 {
  "date": "2026-11-05",
- "genere_le": "2026-11-05T19:28",
+ "genere_le": "2026-11-05T20:50",
  "indices": [
   {
    "prix": 8205.37,
@@ -483,22 +483,22 @@
    "verif": "ok"
   },
   {
-   "prix": 7427.81,
+   "prix": 7370.59,
    "date_cours": "2026-11-05",
-   "var_1j": -3.39,
-   "var_5j": -3.79,
-   "var_1m": -4.79,
-   "var_3m": -4.25,
-   "var_1a": 9.69,
-   "ma20": 7683.2405,
-   "ma50": 7688.0116,
-   "ma200": 7323.1061,
-   "rsi": 36.2,
-   "volatilite": 17.5,
+   "var_1j": -4.14,
+   "var_5j": -4.53,
+   "var_1m": -5.53,
+   "var_3m": -4.99,
+   "var_1a": 8.85,
+   "ma20": 7680.3795,
+   "ma50": 7686.8672,
+   "ma200": 7322.82,
+   "rsi": 34.1,
+   "volatilite": 19.4,
    "haut_1a": 7818.9302,
    "bas_1a": 6343.7202,
-   "ecart_haut": -5.0,
-   "liquidite": 40746835410441,
+   "ecart_haut": -5.73,
+   "liquidite": 41335549339100,
    "courbe": [
     7798.9902,
     7785.7598,
@@ -559,40 +559,40 @@
     7541.3999,
     7568.9199,
     7688.6201,
-    7427.8101
+    7370.5898
    ],
    "ticker": "^GSPC",
    "nom": "S&P 500",
    "categorie": "indices",
    "signal": "baisse",
    "sources": {
-    "yahoo": 7427.81,
-    "ft": 7385.08
+    "yahoo": 7370.59,
+    "ft": 7368.26
    },
-   "prix_reference": 7406.445,
+   "prix_reference": 7369.425,
    "ecarts_sources": {
-    "yahoo": 0.29,
-    "ft": -0.29
+    "yahoo": 0.02,
+    "ft": -0.02
    },
    "verif": "ok"
   },
   {
-   "prix": 24559.99,
+   "prix": 24379.69,
    "date_cours": "2026-11-05",
-   "var_1j": -4.57,
-   "var_5j": -6.2,
-   "var_1m": -10.82,
-   "var_3m": -7.98,
-   "var_1a": 5.19,
-   "ma20": 26226.8364,
-   "ma50": 26501.9573,
-   "ma200": 25093.7926,
-   "rsi": 31.6,
-   "volatilite": 25.7,
+   "var_1j": -5.27,
+   "var_5j": -6.89,
+   "var_1m": -11.47,
+   "var_3m": -8.66,
+   "var_1a": 4.42,
+   "ma20": 26217.8217,
+   "ma50": 26498.3514,
+   "ma200": 25092.8911,
+   "rsi": 30.5,
+   "volatilite": 27.3,
    "haut_1a": 27599.7891,
    "bas_1a": 20794.6406,
-   "ecart_haut": -11.01,
-   "liquidite": 210357916566538,
+   "ecart_haut": -11.67,
+   "liquidite": 214511321527929,
    "courbe": [
     26803.0293,
     26729.1602,
@@ -653,42 +653,42 @@
     25164.3105,
     25372.0098,
     25736.5098,
-    24559.9883
+    24379.6934
    ],
    "ticker": "^IXIC",
    "nom": "Nasdaq Composite",
    "categorie": "indices",
    "signal": "baisse",
    "sources": {
-    "yahoo": 24559.99,
-    "boursorama": 24472.13,
-    "ft": 24453.45
+    "yahoo": 24379.69,
+    "boursorama": 24360.66,
+    "ft": 24357.93
    },
-   "prix_reference": 24472.13,
+   "prix_reference": 24360.66,
    "ecarts_sources": {
-    "yahoo": 0.36,
+    "yahoo": 0.08,
     "boursorama": 0.0,
-    "ft": -0.08
+    "ft": -0.01
    },
    "verif": "ok"
   },
   {
-   "prix": 26945.57,
+   "prix": 26751.31,
    "date_cours": "2026-11-05",
-   "var_1j": -5.25,
-   "var_5j": -8.36,
-   "var_1m": -13.53,
-   "var_3m": -9.34,
-   "var_1a": 5.94,
-   "ma20": 29301.3924,
-   "ma50": 29692.044,
-   "ma200": 27978.1123,
-   "rsi": 28.5,
-   "volatilite": 28.6,
+   "var_1j": -5.93,
+   "var_5j": -9.02,
+   "var_1m": -14.15,
+   "var_3m": -10.0,
+   "var_1a": 5.17,
+   "ma20": 29291.6794,
+   "ma50": 29688.1588,
+   "ma200": 27977.141,
+   "rsi": 27.6,
+   "volatilite": 30.2,
    "haut_1a": 31224.4707,
    "bas_1a": 22953.3809,
-   "ecart_haut": -13.7,
-   "liquidite": 229100971944054,
+   "ecart_haut": -14.33,
+   "liquidite": 230131457942947,
    "courbe": [
     30084.5,
     30046.1406,
@@ -749,40 +749,40 @@
     27989.8203,
     28180.2598,
     28437.1699,
-    26945.5703
+    26751.3105
    ],
    "ticker": "^NDX",
    "nom": "Nasdaq 100",
    "categorie": "indices",
    "signal": "neutre",
    "sources": {
-    "yahoo": 26945.57,
-    "ft": 26844.87
+    "yahoo": 26751.31,
+    "ft": 26707.99
    },
-   "prix_reference": 26895.22,
+   "prix_reference": 26729.65,
    "ecarts_sources": {
-    "yahoo": 0.19,
-    "ft": -0.19
+    "yahoo": 0.08,
+    "ft": -0.08
    },
    "verif": "ok"
   },
   {
-   "prix": 51994.27,
+   "prix": 51571.17,
    "date_cours": "2026-11-05",
-   "var_1j": -2.55,
-   "var_5j": -0.67,
-   "var_1m": 1.59,
-   "var_3m": -3.78,
-   "var_1a": 10.43,
-   "ma20": 52191.3266,
-   "ma50": 52119.1292,
-   "ma200": 50669.2059,
-   "rsi": 48.6,
-   "volatilite": 17.3,
+   "var_1j": -3.35,
+   "var_5j": -1.47,
+   "var_1m": 0.76,
+   "var_3m": -4.56,
+   "var_1a": 9.53,
+   "ma20": 52170.1717,
+   "ma50": 52110.6673,
+   "ma200": 50667.0904,
+   "rsi": 45.3,
+   "volatilite": 19.0,
    "haut_1a": 54349.1211,
    "bas_1a": 45166.6406,
-   "ecart_haut": -4.33,
-   "liquidite": 23217506484004,
+   "ecart_haut": -5.11,
+   "liquidite": 23860344697488,
    "courbe": [
     53839.9883,
     53732.4102,
@@ -843,22 +843,22 @@
     51983.9805,
     51786.7188,
     53356.1211,
-    51994.2695
+    51571.1719
    ],
    "ticker": "^DJI",
    "nom": "Dow Jones",
    "categorie": "indices",
    "signal": "neutre",
    "sources": {
-    "yahoo": 51994.27,
-    "boursorama": 51811.16,
-    "ft": 51734.61
+    "yahoo": 51571.17,
+    "boursorama": 51656.29,
+    "ft": 51574.32
    },
-   "prix_reference": 51811.16,
+   "prix_reference": 51574.32,
    "ecarts_sources": {
-    "yahoo": 0.35,
-    "boursorama": 0.0,
-    "ft": -0.15
+    "yahoo": -0.01,
+    "boursorama": 0.16,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -1049,21 +1049,21 @@
    "verif": "ecart"
   },
   {
-   "prix": 23.84,
+   "prix": 25.92,
    "date_cours": "2026-11-05",
-   "var_1j": 43.53,
-   "var_5j": 38.6,
-   "var_1m": 58.09,
-   "var_3m": 54.2,
-   "var_1a": 22.26,
-   "ma20": 18.071,
-   "ma50": 16.611,
-   "ma200": 18.3268,
-   "rsi": 63.8,
-   "volatilite": 211.0,
+   "var_1j": 56.05,
+   "var_5j": 50.7,
+   "var_1m": 71.88,
+   "var_3m": 67.66,
+   "var_1a": 32.92,
+   "ma20": 18.175,
+   "ma50": 16.6526,
+   "ma200": 18.3372,
+   "rsi": 66.8,
+   "volatilite": 244.9,
    "haut_1a": 31.05,
    "bas_1a": 13.47,
-   "ecart_haut": -23.22,
+   "ecart_haut": -16.52,
    "liquidite": 0,
    "courbe": [
     14.25,
@@ -1125,16 +1125,16 @@
     21.15,
     20.83,
     16.61,
-    23.84
+    25.92
    ],
    "ticker": "^VIX",
    "nom": "VIX (indice de la peur)",
    "categorie": "indices",
    "signal": "hausse",
    "sources": {
-    "yahoo": 23.84
+    "yahoo": 25.92
    },
-   "prix_reference": 23.84,
+   "prix_reference": 25.92,
    "ecarts_sources": {
     "yahoo": 0.0
    },
@@ -1143,21 +1143,21 @@
  ],
  "devises": [
   {
-   "prix": 1.1238,
+   "prix": 1.1225,
    "date_cours": "2026-11-05",
-   "var_1j": 0.28,
-   "var_5j": 0.74,
-   "var_1m": -0.13,
-   "var_3m": -2.75,
-   "var_1a": -3.38,
+   "var_1j": 0.15,
+   "var_5j": 0.62,
+   "var_1m": -0.26,
+   "var_3m": -2.87,
+   "var_1a": -3.5,
    "ma20": 1.1198,
    "ma50": 1.1362,
    "ma200": 1.1549,
-   "rsi": 49.1,
-   "volatilite": 3.8,
+   "rsi": 47.0,
+   "volatilite": 3.7,
    "haut_1a": 1.2018,
    "bas_1a": 1.113,
-   "ecart_haut": -6.48,
+   "ecart_haut": -6.6,
    "liquidite": 0,
    "courbe": [
     1.1535,
@@ -1219,17 +1219,17 @@
     1.1157,
     1.1192,
     1.1207,
-    1.1238
+    1.1225
    ],
    "ticker": "EURUSD=X",
    "nom": "1 € en dollars",
    "categorie": "devises",
    "signal": "neutre",
    "sources": {
-    "yahoo": 1.1238,
-    "ft": 1.1238
+    "yahoo": 1.1225,
+    "ft": 1.1225
    },
-   "prix_reference": 1.1238,
+   "prix_reference": 1.1225,
    "ecarts_sources": {
     "yahoo": 0.0,
     "ft": 0.0
@@ -1237,21 +1237,21 @@
    "verif": "ok"
   },
   {
-   "prix": 0.8334,
+   "prix": 0.8342,
    "date_cours": "2026-11-05",
-   "var_1j": -0.1,
-   "var_5j": -0.42,
-   "var_1m": -1.75,
-   "var_3m": -2.71,
-   "var_1a": -5.75,
+   "var_1j": 0.0,
+   "var_5j": -0.33,
+   "var_1m": -1.65,
+   "var_3m": -2.62,
+   "var_1a": -5.66,
    "ma20": 0.8397,
    "ma50": 0.8498,
    "ma200": 0.8602,
-   "rsi": 23.8,
+   "rsi": 25.0,
    "volatilite": 2.5,
    "haut_1a": 0.8834,
-   "bas_1a": 0.8334,
-   "ecart_haut": -5.66,
+   "bas_1a": 0.8335,
+   "ecart_haut": -5.57,
    "liquidite": 0,
    "courbe": [
     0.8549,
@@ -1313,7 +1313,7 @@
     0.8335,
     0.8346,
     0.8342,
-    0.8334
+    0.8342
    ],
    "ticker": "EURGBP=X",
    "nom": "1 € en livres",
@@ -1321,21 +1321,21 @@
    "signal": "neutre"
   },
   {
-   "prix": 0.9152,
+   "prix": 0.9167,
    "date_cours": "2026-11-05",
-   "var_1j": -0.33,
-   "var_5j": -0.91,
-   "var_1m": -2.27,
-   "var_3m": -2.0,
-   "var_1a": -0.79,
-   "ma20": 0.9247,
+   "var_1j": -0.17,
+   "var_5j": -0.75,
+   "var_1m": -2.12,
+   "var_3m": -1.84,
+   "var_1a": -0.63,
+   "ma20": 0.9248,
    "ma50": 0.9345,
    "ma200": 0.9235,
-   "rsi": 31.8,
-   "volatilite": 4.4,
+   "rsi": 33.2,
+   "volatilite": 4.3,
    "haut_1a": 0.9468,
    "bas_1a": 0.9001,
-   "ecart_haut": -3.33,
+   "ecart_haut": -3.18,
    "liquidite": 0,
    "courbe": [
     0.939,
@@ -1397,7 +1397,7 @@
     0.9201,
     0.9161,
     0.9183,
-    0.9152
+    0.9167
    ],
    "ticker": "EURCHF=X",
    "nom": "1 € en francs suisses",
@@ -1405,21 +1405,21 @@
    "signal": "baisse"
   },
   {
-   "prix": 177.19,
+   "prix": 177.08,
    "date_cours": "2026-11-05",
-   "var_1j": -0.23,
-   "var_5j": 0.64,
-   "var_1m": -0.53,
-   "var_3m": -2.89,
-   "var_1a": -1.47,
-   "ma20": 176.8184,
-   "ma50": 178.7691,
-   "ma200": 183.1589,
-   "rsi": 48.4,
-   "volatilite": 5.7,
+   "var_1j": -0.29,
+   "var_5j": 0.58,
+   "var_1m": -0.59,
+   "var_3m": -2.95,
+   "var_1a": -1.53,
+   "ma20": 176.8131,
+   "ma50": 178.7669,
+   "ma200": 183.1583,
+   "rsi": 47.7,
+   "volatilite": 5.8,
    "haut_1a": 187.558,
    "bas_1a": 175.597,
-   "ecart_haut": -5.53,
+   "ecart_haut": -5.59,
    "liquidite": 0,
    "courbe": [
     183.885,
@@ -1481,7 +1481,7 @@
     175.918,
     176.71,
     177.595,
-    177.189
+    177.082
    ],
    "ticker": "EURJPY=X",
    "nom": "1 € en yens",
@@ -1491,22 +1491,22 @@
  ],
  "matieres": [
   {
-   "prix": 4132.3,
+   "prix": 4114.4,
    "date_cours": "2026-11-05",
-   "var_1j": 1.46,
-   "var_5j": 2.5,
-   "var_1m": -0.2,
-   "var_3m": -6.08,
-   "var_1a": 4.34,
-   "ma20": 4088.725,
-   "ma50": 4242.58,
-   "ma200": 4505.782,
-   "rsi": 51.4,
-   "volatilite": 24.3,
+   "var_1j": 1.02,
+   "var_5j": 2.06,
+   "var_1m": -0.64,
+   "var_3m": -6.48,
+   "var_1a": 3.89,
+   "ma20": 4087.83,
+   "ma50": 4242.222,
+   "ma200": 4505.6925,
+   "rsi": 50.1,
+   "volatilite": 24.0,
    "haut_1a": 5318.3999,
    "bas_1a": 3898.8999,
-   "ecart_haut": -22.3,
-   "liquidite": 641480498,
+   "ecart_haut": -22.64,
+   "liquidite": 647711474,
    "courbe": [
     4420.3999,
     4437.2998,
@@ -1567,7 +1567,7 @@
     3969.6001,
     3940.3999,
     4073.0,
-    4132.2998
+    4114.3999
    ],
    "ticker": "GC=F",
    "nom": "Or (once, $)",
@@ -1575,22 +1575,22 @@
    "signal": "neutre"
   },
   {
-   "prix": 96.86,
+   "prix": 98.32,
    "date_cours": "2026-11-05",
-   "var_1j": 2.37,
-   "var_5j": -15.69,
-   "var_1m": -3.33,
-   "var_3m": 15.93,
-   "var_1a": 50.31,
-   "ma20": 108.6665,
-   "ma50": 104.0032,
-   "ma200": 93.1646,
-   "rsi": 37.1,
-   "volatilite": 58.2,
+   "var_1j": 3.91,
+   "var_5j": -14.42,
+   "var_1m": -1.88,
+   "var_3m": 17.68,
+   "var_1a": 52.58,
+   "ma20": 108.7395,
+   "ma50": 104.0324,
+   "ma200": 93.1719,
+   "rsi": 39.4,
+   "volatilite": 59.4,
    "haut_1a": 118.35,
    "bas_1a": 58.92,
-   "ecart_haut": -18.16,
-   "liquidite": 3955735,
+   "ecart_haut": -16.92,
+   "liquidite": 4010603,
    "courbe": [
     87.07,
     88.52,
@@ -1651,7 +1651,7 @@
     104.77,
     103.6,
     94.62,
-    96.86
+    98.32
    ],
    "ticker": "BZ=F",
    "nom": "Pétrole Brent ($)",
@@ -1659,22 +1659,22 @@
    "signal": "neutre"
   },
   {
-   "prix": 67742.26,
+   "prix": 67929.34,
    "date_cours": "2026-11-05",
-   "var_1j": -5.35,
-   "var_5j": -2.02,
-   "var_1m": -7.53,
-   "var_3m": -3.08,
-   "var_1a": 18.54,
-   "ma20": 71352.657,
-   "ma50": 72769.295,
-   "ma200": 63716.3478,
-   "rsi": 38.9,
-   "volatilite": 33.9,
+   "var_1j": -5.08,
+   "var_5j": -1.75,
+   "var_1m": -7.27,
+   "var_3m": -2.81,
+   "var_1a": 18.87,
+   "ma20": 71362.0113,
+   "ma50": 72773.0367,
+   "ma200": 63717.2832,
+   "rsi": 39.3,
+   "volatilite": 33.4,
    "haut_1a": 76833.4297,
    "bas_1a": 51308.3945,
-   "ecart_haut": -11.83,
-   "liquidite": 1653346238345613,
+   "ecart_haut": -11.59,
+   "liquidite": 1655279087396266,
    "courbe": [
     68039.7109,
     67457.7266,
@@ -1735,7 +1735,7 @@
     68503.5,
     69015.6797,
     71568.3438,
-    67742.2578
+    67929.3438
    ],
    "ticker": "BTC-EUR",
    "nom": "Bitcoin (€)",
@@ -2025,13 +2025,13 @@
    "sources": {
     "yahoo": 215.75,
     "boursorama": 215.75,
-    "ft": 215.9
+    "ft": 215.4
    },
    "prix_reference": 215.75,
    "ecarts_sources": {
     "yahoo": 0.0,
     "boursorama": 0.0,
-    "ft": 0.07
+    "ft": -0.16
    },
    "verif": "ok"
   },
@@ -2316,13 +2316,13 @@
    "sources": {
     "yahoo": 465.1,
     "boursorama": 465.1,
-    "ft": 462.2
+    "ft": 462.5
    },
    "prix_reference": 465.1,
    "ecarts_sources": {
     "yahoo": 0.0,
     "boursorama": 0.0,
-    "ft": -0.62
+    "ft": -0.56
    },
    "verif": "ok"
   },
@@ -2342,7 +2342,7 @@
    "haut_1a": 90.25,
    "bas_1a": 50.2562,
    "ecart_haut": -0.66,
-   "liquidite": 4738912,
+   "liquidite": 4738374,
    "courbe": [
     74.0,
     72.75,
@@ -4185,7 +4185,7 @@
    "haut_1a": 74.66,
    "bas_1a": 61.34,
    "ecart_haut": -4.62,
-   "liquidite": 4722216,
+   "liquidite": 4693415,
    "courbe": [
     74.5,
     74.4,
@@ -4282,7 +4282,7 @@
    "haut_1a": 154.26,
    "bas_1a": 130.04,
    "ecart_haut": -6.04,
-   "liquidite": 594239,
+   "liquidite": 593080,
    "courbe": [
     152.34,
     151.18,
@@ -4379,7 +4379,7 @@
    "haut_1a": 88.02,
    "bas_1a": 75.67,
    "ecart_haut": -5.52,
-   "liquidite": 4114585,
+   "liquidite": 4103512,
    "courbe": [
     87.11,
     86.55,
@@ -4672,7 +4672,7 @@
    "haut_1a": 0.3804,
    "bas_1a": 0.087,
    "ecart_haut": -53.94,
-   "liquidite": 98264,
+   "liquidite": 98232,
    "courbe": [
     0.1735,
     0.187,
@@ -5361,7 +5361,7 @@
    "haut_1a": 0.903,
    "bas_1a": 0.3165,
    "ecart_haut": -54.6,
-   "liquidite": 42511,
+   "liquidite": 42369,
    "courbe": [
     0.518,
     0.545,
