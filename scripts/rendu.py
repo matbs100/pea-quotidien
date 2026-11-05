@@ -60,8 +60,12 @@ VERIF = {"ok": "✅", "ecart": "⚠️", "seul": "·", None: ""}
 
 def note_obsidian(d, analyse, url):
     j = d["date"]
-    L = ["---", f"date: {j}", "tags: [finance, pea, pea-quotidien]", "---", "",
+    L = ["---", f"date: {j}", f"moment: {d.get('moment', '')}", "tags: [finance, pea, pea-quotidien]", "---", "",
          f"# Matin PEA — {j}", ""]
+    MOMENTS = {"ouverture": "⏱ Premiers cours de la séance (ouverture, données décalées d'environ 15 min)",
+               "cloture": "🔔 Cours de clôture de la séance"}
+    if d.get("moment") in MOMENTS:
+        L += [f"> {MOMENTS[d['moment']]}", ""]
     if url:
         L += [f"[Ouvrir la fiche animée]({url}archives/{j}.html)", ""]
     nv = d.get("nouveaute")

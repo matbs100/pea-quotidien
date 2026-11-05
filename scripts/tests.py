@@ -50,6 +50,32 @@ def calculs_collecte():
 
 
 @test
+def calendrier_bourse():
+    from datetime import date
+    import collecte
+    assert collecte.paques(2026) == date(2026, 4, 5), "Pâques 2026 = 5 avril"
+    assert collecte.paques(2027) == date(2027, 3, 28), "Pâques 2027 = 28 mars"
+    for j in (date(2026, 1, 1), date(2026, 4, 3), date(2026, 4, 6), date(2026, 5, 1), date(2026, 12, 25),
+              date(2026, 11, 7)):
+        assert collecte.bourse_fermee(j), f"{j} devrait être fermé"
+    for j in (date(2026, 11, 6), date(2026, 5, 8), date(2026, 7, 14), date(2026, 11, 11)):
+        assert not collecte.bourse_fermee(j), f"{j} devrait être ouvert (Euronext ouvre les jours fériés français)"
+
+
+@test
+def prix_moyen_du_jour():
+    import pandas as pd
+    import fiches
+    idx = pd.date_range("2026-11-06 09:00", periods=4, freq="5min", tz="Europe/Paris")
+    b = pd.DataFrame({"High": [11, 12, 13, 12], "Low": [9, 10, 11, 10], "Close": [10, 11, 12, 11],
+                      "Volume": [100, 0, 300, 0]}, index=idx)
+    st = fiches.stats_seance(b, "2026-11-06")
+    assert st["haut_jour"] == 13 and st["bas_jour"] == 9
+    assert abs(st["vwap"] - (10 * 100 + 12 * 300) / 400) < 1e-9, f"VWAP faux : {st}"
+    assert fiches.stats_seance(b, "2026-11-07") is None, "aucune barre ce jour-là"
+
+
+@test
 def calculs_fiches():
     import numpy as np
     import pandas as pd
