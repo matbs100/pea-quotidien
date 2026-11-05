@@ -26,3 +26,5 @@ tout le projet avant la fiche de 9 h 15 :
 - 🔴 **rouge** : à corriger avant la prochaine fiche (test cassé, fiche manquante, donnée fausse).
 
 ## Rapports
+
+- [2026-11-06](rapports/2026-11-06.md) · 🟠

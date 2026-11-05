@@ -15,11 +15,11 @@ officielle compte pour les valider.
   Statut : ✅ vérifié le 2026-11-06 (service-public.gouv.fr)
 - **Taux des prélèvements sociaux en 2026** : 17,2 % jusqu'en 2025 ; une hausse de la CSG sur les revenus
   du capital a été discutée pour 2026. Taux exact et application au PEA à confirmer. Source proposée :
-  service-public.gouv.fr ou impots.gouv.fr. Statut : ⏳ à vérifier
+  service-public.gouv.fr ou impots.gouv.fr. Statut : ❔ non vérifiable le 2026-11-06 : sites officiels injoignables depuis le cloud (service-public, W3C, Euronext, BOFiP hors des domaines autorisés)
 - **Plafonds de frais du PEA** : 0,5 % par ordre passé en ligne, 1,2 % par ordre passé autrement, 0,4 % par
   an de droits de garde. Source proposée : Code monétaire et financier, articles D221-113-1 à D221-113-7
   (cités par service-public.gouv.fr ; Légifrance bloque les robots, chercher une autre source officielle).
-  Statut : ⏳ à vérifier
+  Statut : ❔ non vérifiable le 2026-11-06 : sites officiels injoignables depuis le cloud (service-public, W3C, Euronext, BOFiP hors des domaines autorisés)
 - **Taxe sur les transactions financières** : 0,4 % du montant acheté depuis le 1er avril 2025 (0,3 %
   avant), sur les actions françaises de plus d'un milliard d'euros de capitalisation, y compris dans un
-  PEA. Source proposée : BOFiP (série TCA-FIN) ou impots.gouv.fr. Statut : ⏳ à vérifier
+  PEA. Source proposée : BOFiP (série TCA-FIN) ou impots.gouv.fr. Statut : ❔ non vérifiable le 2026-11-06 : sites officiels injoignables depuis le cloud (service-public, W3C, Euronext, BOFiP hors des domaines autorisés)

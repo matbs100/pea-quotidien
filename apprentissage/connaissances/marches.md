@@ -7,6 +7,6 @@ tags: [pea, connaissances, marches]
   continu de 9 h à 17 h 30, puis fixing de clôture de 17 h 30 à 17 h 35 : le cours de clôture officiel
   est fixé vers 17 h 35. Le programme attend ce cours avant la fiche du soir. Source proposée : [Euronext,
   horaires et jours fériés](https://www.euronext.com/fr/trading/trading-hours-holidays).
-  Statut : ⏳ à vérifier
+  Statut : ❔ non vérifiable le 2026-11-06 : sites officiels injoignables depuis le cloud (service-public, W3C, Euronext, BOFiP hors des domaines autorisés)
 - **Jours de fermeture d'Euronext** : 1er janvier, Vendredi saint, lundi de Pâques, 1er mai, 25 et
-  26 décembre (séances écourtées les 24 et 31 décembre). Source proposée : [Euronext, horaires et jours fériés](https://www.euronext.com/fr/trading/trading-hours-holidays). Statut : ⏳ à vérifier
+  26 décembre (séances écourtées les 24 et 31 décembre). Source proposée : [Euronext, horaires et jours fériés](https://www.euronext.com/fr/trading/trading-hours-holidays). Statut : ❔ non vérifiable le 2026-11-06 : sites officiels injoignables depuis le cloud (service-public, W3C, Euronext, BOFiP hors des domaines autorisés)
