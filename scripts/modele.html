@@ -190,7 +190,7 @@ dl.kv dt { font-size: 11px; color: var(--muted); text-transform: uppercase; lett
 dl.kv dd { margin: 3px 0 0; font: 500 15px var(--font-mono); }
 dl.kv div { position: relative; }
 dl.kv dt.def { cursor: help; text-decoration: underline dotted; text-underline-offset: 3px; }
-dl.kv dt.def:hover::after, dl.kv dt.def:focus::after { content: attr(data-def); position: absolute; left: 0; right: 0; top: 100%; z-index: 5; margin-top: 4px; padding: 8px 10px; background: var(--surface); color: var(--text, inherit); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.18); font: 400 12px/1.4 var(--font, inherit); text-transform: none; letter-spacing: 0; }
+dl.kv dt.def:hover::after, dl.kv dt.def:focus::after { content: attr(data-def); position: absolute; left: 0; right: 0; top: 100%; z-index: 5; margin-top: 4px; padding: 8px 10px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.18); font: 400 12px/1.4 var(--font-body); text-transform: none; letter-spacing: 0; }
 table.tab { width: 100%; border-collapse: collapse; font-size: 14px; }
 table.tab td { padding: 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
 table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%; }
