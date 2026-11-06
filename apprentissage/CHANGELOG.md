@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-06 · Textes un peu plus grands sur téléphone
+- Chiffres des lignes à 13 px (au lieu de 12) et badge de risque à 12 px (au lieu de 11). Contrastes du gris vérifiés : 4,7:1 au minimum en clair, 6:1 en sombre.
+
 ## 2026-11-06 · Risque visible sur la page principale
 - Chaque ligne du top 30 et des petits prix affiche un badge « Risque 4/7 » (officiel du DIC, ou « estimé » pour les actions), coloré du vert au rouge.
 - Un toucher sur le badge affiche sa définition, sans ouvrir la fiche.
