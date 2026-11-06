@@ -99,6 +99,7 @@ h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 700; }
 .rsq { cursor: help; background: hsl(var(--rt) 60% 45% / .18); color: var(--ink); border: 1px solid hsl(var(--rt) 60% 45% / .55); font-size: 12px; padding: 3px 7px; margin-left: 0; text-transform: none; letter-spacing: 0; }
 #bulle-r { position: fixed; z-index: 30; max-width: min(280px, calc(100vw - 24px)); padding: 8px 10px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.18); font: 400 13px/1.4 var(--font-body); }
 .b-petite { background: var(--amber-soft); color: var(--amber); }
+.b-levier { background: color-mix(in srgb, var(--down) 15%, transparent); color: var(--down); }
 .ligne .c { font: 13px var(--font-mono); text-align: right; }
 .ligne .c em { display: block; font-style: normal; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
 .sig { font: 600 12px var(--font-body); padding: 5px 9px; border-radius: 999px; text-align: center; white-space: nowrap; }
@@ -566,6 +567,8 @@ function ecrireAchats(a) {
 const sansAccents = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const nombreSaisi = (s) => { const x = parseFloat(String(s || "").replace(/[\s  €]/g, "").replace(",", ".")); return isFinite(x) && x > 0 ? x : null; };
 const estIsin = (s) => /^[A-Z]{2}[A-Z0-9]{9}\d$/.test(s);
+const levier = (m) => m.levier ? '<span class="badge b-levier">Effet de levier</span>' : "";
+const AVERT_LEVIER = "ETF à effet de levier : il amplifie chaque jour les variations de son indice (×2, ou à l'inverse). Les pertes peuvent être très rapides, et il peut perdre de la valeur même si l'indice revient à son niveau de départ. À garder pour une très petite part.";
 const isinDe = (m) => m.isin || ((CAT.find((c) => c.ticker === m.ticker) || {}).isin) || ((DET[m.ticker] || {}).infos || {}).isin || null;
 
 function chercher(q) {
@@ -623,7 +626,7 @@ function position(l) {
   const info = [esc(l.ticker), achat, l.quantite ? nbParts(l.quantite) : "",
     l.prix == null ? "cours indisponible sur cette fiche" : l.date_cours && l.date_cours !== D.date ? "cours du " + jourCourt(l.date_cours) : ""].filter(Boolean).join(" · ");
   return `<div class="pos clic${l.local ? " local" : ""}" data-t="${esc(l.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(l.nom)}">
-    <div class="t"><strong>${esc(l.nom)}${badge[l.categorie] || ""}${vf(l)}</strong><small>${info}</small></div>
+    <div class="t"><strong>${esc(l.nom)}${badge[l.categorie] || ""}${levier(l)}${vf(l)}</strong><small>${info}</small></div>
     <div class="c"><span class="num">${l.prix == null ? "—" : fr(l.prix, dec(l.prix))}</span><small class="${sens(l.var_1j)}">${pct(l.var_1j)}</small><em>aujourd'hui</em></div>
     <div class="c ${sens(l.perf_achat)}">${pct(l.perf_achat)}<em>depuis l'achat</em></div>
     ${l.valeur != null ? `<div class="c">${eur(l.valeur)}<small class="${sens(l.plus_value)}">${eur(l.plus_value, true)}</small><em>valeur</em></div>` : ""}
@@ -659,7 +662,7 @@ function montrerResultats() {
   trouves = chercher(v);
   resultats.hidden = false;
   if (trouves.length) {
-    resultats.innerHTML = trouves.map((m) => `<button type="button" class="res" data-choix="${esc(m.ticker)}"><span><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}<small>${esc([m.isin, m.ticker].filter(Boolean).join(" · "))}</small></span><span class="num">${fr(m.prix, dec(m.prix))}</span></button>`).join("");
+    resultats.innerHTML = trouves.map((m) => `<button type="button" class="res" data-choix="${esc(m.ticker)}"><span><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([m.isin, m.ticker].filter(Boolean).join(" · "))}</small></span><span class="num">${fr(m.prix, dec(m.prix))}</span></button>`).join("");
     return;
   }
   const V = v.toUpperCase().replace(/\s+/g, ""), connus = CAT.filter((m) => m.isin).length;
@@ -673,7 +676,8 @@ function formulaire(m) {
   resultats.hidden = true;
   const f = $("#inv-form"), isin = isinDe(m);
   f.hidden = false;
-  f.innerHTML = `<div><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}<small>${esc([isin, m.ticker].filter(Boolean).join(" · "))}${m.prix != null ? " · cours " + fr(m.prix, dec(m.prix)) : ""}</small></div>
+  f.innerHTML = `<div><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([isin, m.ticker].filter(Boolean).join(" · "))}${m.prix != null ? " · cours " + fr(m.prix, dec(m.prix)) : ""}</small></div>
+    ${m.levier ? `<div class="alerte" style="margin:12px 0 0">${AVERT_LEVIER}</div>` : ""}
     <div class="champs">
       <label>Date d'achat<input id="a-date" type="date" value="${D.date}"></label>
       <label>Prix d'une part<input id="a-prix" type="text" inputmode="decimal" autocomplete="off" value="${m.prix != null ? String(m.prix).replace(".", ",") : ""}"></label>
@@ -922,6 +926,7 @@ function ouvrir(t, pousser = true) {
   const H = [];
   H.push(`<div class="f-prix"><span class="big">${fr(m.prix, dec(m.prix))}${det.devise ? ` <small style="font-size:1rem;color:var(--muted)">${det.devise}</small>` : ""}</span><span class="num ${sens(m.var_1j)}">${pct(m.var_1j)} sur la dernière séance</span>${vf(m)}</div>`);
   if (det.description) H.push(`<p class="f-desc">${esc(det.description)}</p>`);
+  if (m.levier) H.push(`<div class="alerte" style="margin-top:12px">${AVERT_LEVIER}</div>`);
   const iv = INV[t], sg = SG.find((s) => s.ticker === t);
   if (iv) {
     const plusieurs = iv.achats && iv.achats.length > 1;

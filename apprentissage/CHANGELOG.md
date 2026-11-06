@@ -8,7 +8,7 @@ Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · ti
 ## 2026-11-06 · Recherche par ISIN dans « Mes investissements »
 - Une barre de recherche en haut de « Mes investissements » : tape un ISIN, un nom ou un code, choisis le titre, puis la date, le prix d'une part et le nombre de parts. Le bouton « Ajouter à mes investissements » existe aussi dans chaque fiche détaillée.
 - Ces achats restent sur ton téléphone (dans le navigateur) : rien n'est publié. Un ✕ retire un titre.
-- La recherche couvre tous les ETF et actions suivis par la fiche ; leurs ISIN se complètent chaque jour.
+- La recherche couvre tous les ETF et actions suivis par la fiche ; leurs ISIN se complètent chaque jour. Tous les ETF éligibles au PEA cotés à Paris y sont ajoutés, plus 3 ou 4 ETF à effet de levier, signalés par un badge et un avertissement, et tenus hors du top 30 et des suggestions.
 - Demandé par Mathieu.
 
 ## 2026-11-06 · Suggestions du jour et suivi de mes investissements
