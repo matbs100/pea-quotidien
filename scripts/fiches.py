@@ -329,6 +329,11 @@ def description_auto(m, inf):
         if inf.get("effectif"):
             bouts.append(f"{inf['effectif']} salariés")
         return f"{nom} : entreprise cotée ({', '.join(bouts)})." if bouts else ""
+    if cat == "fonds":
+        bouts = [f"géré par {inf['gestionnaire']}"] if inf.get("gestionnaire") else []
+        if inf.get("sfdr"):
+            bouts.append(f"classé {inf['sfdr'].lower()} du règlement SFDR")
+        return f"Fonds {', '.join(bouts)}, proposé dans les contrats d'assurance vie de Wealins." if bouts else ""
     return ""
 
 
@@ -353,6 +358,33 @@ def frais(m, inf):
     return out
 
 
+def fiche_fonds_wealins(m):
+    """Fiche détaillée d'un fonds de la liste Wealins (noté dans mes-investissements.md) : historique de la
+    valeur liquidative (jusqu'à 5 ans, lu sur la page du fonds), statistiques, gestionnaire, SFDR, DIC.
+    None si la page est injoignable ou sans historique."""
+    import wealins
+    isin = m["ticker"]
+    f = wealins.lire_fonds(wealins._get(wealins.url_fonds(isin) + "?period=60"))
+    h = f["historique"]
+    if len(h) < 2:
+        return None
+    s = pd.Series([v for _, v in h], index=pd.to_datetime([d for d, _ in h])).sort_index()
+    s = s[~s.index.duplicated(keep="last")]
+    sj = s[s.index >= s.index[-1] - pd.Timedelta(days=430)]  # 14 mois, comme pour les autres titres
+    ss = s.resample("W-FRI").last().dropna()
+    devise = m.get("devise") or f["devise"]
+    inf = {k: v for k, v in {"isin": isin, "gestionnaire": f["gestionnaire"], "sfdr": f["sfdr"] or m.get("sfdr"),
+                             "perf_annee_wealins": f["perf_annee"], "dic": f["dic"],
+                             "source_infos": "Wealins"}.items() if v is not None}
+    return {"j": compacte(sj), "s": compacte(ss) if len(ss) > 10 else None,
+            "stats": statistiques(sj, ss if len(ss) > 10 else None, None), "infos": inf,
+            "place": None, "devise": devise,
+            "description_auto": description_auto(m, inf), "frais": None, "signaux": [],
+            "liens": {k: v for k, v in {"Wealins (fiche du fonds)": wealins.url_fonds(isin),
+                                        "Financial Times": wealins.url_ft(isin, devise),
+                                        "DIC (document PRIIPs, PDF)": f["dic"]}.items() if v}}
+
+
 def main():
     jour = sys.argv[1]
     fj = DATA / "jours" / f"{jour}.json"
@@ -364,7 +396,8 @@ def main():
     # Suggestions du jour et investissements notés par le propriétaire : fiche détaillée aussi
     for m in d.get("suggestions", []) + (d.get("mes_investissements") or {}).get("lignes", []):
         tous.setdefault(m["ticker"], m)
-    tickers = sorted(set(tous) | {"^FCHI"})
+    fonds = {t for t, m in tous.items() if m.get("source") == "wealins"}  # pas sur Yahoo : page Wealins
+    tickers = sorted((set(tous) - fonds) | {"^FCHI"})
     dj = yf.download(tickers, period="14mo", interval="1d", auto_adjust=True, group_by="ticker",
                      progress=False, threads=True)
     ds = yf.download(tickers, period="5y", interval="1wk", auto_adjust=True, group_by="ticker",
@@ -387,7 +420,17 @@ def main():
         except Exception as e:  # non bloquant
             print("Barres de 5 minutes indisponibles :", e, file=sys.stderr)
     details = {}
+    for t in sorted(fonds):
+        try:
+            det = fiche_fonds_wealins(tous[t])
+        except Exception as e:  # noqa: BLE001  un fonds illisible ne bloque jamais la fiche
+            print("Fiche du fonds impossible :", t, e, file=sys.stderr)
+            det = None
+        if det:
+            details[t] = det
     for t, m in tous.items():
+        if t in fonds:
+            continue
         sj, ss = serie(dj, t), serie(ds, t)
         if sj is None:
             continue

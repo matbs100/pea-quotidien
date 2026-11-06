@@ -146,6 +146,14 @@ def note_obsidian(d, analyse, url):
     return "\n".join(L) + "\n"
 
 
+def montant(x, m, signe=False):
+    """Montant d'une ligne dans sa devise : en euros (« 1 234,56 € ») ou, hors euros, « 473,16 USD »."""
+    dev = (m or {}).get("devise") or "EUR"
+    if dev == "EUR" or x is None:
+        return eur(x, signe)
+    return eur(x, signe).replace(" €", f" {dev}")
+
+
 def note_investissements(mes):
     """Partie « Mes investissements » de la note Obsidian (achats notés dans mes-investissements.md : ceux de
     la barre de recherche restent privés, sur le téléphone) : total, une ligne par titre, codes à corriger."""
@@ -158,16 +166,37 @@ def note_investissements(mes):
         L += [f"- Valeur : **{eur(t['valeur'])}** pour {eur(t['investi'])} investis, soit "
               f"**{eur(t['plus_value'], True)}** ({pct(t['perf'])}) ; sur la séance : "
               f"{eur(t['var_jour_eur'], True)} ({pct(t['var_jour'])})"
-              + ("" if t["complet"] else " ; sans les titres dont la quantité n'est pas notée"), ""]
+              + ("" if t["complet"] else " ; sans les titres hors euros ou dont la quantité n'est pas notée"), ""]
     if lignes:
         L += ["| Titre | Prix | Séance | Prix d'achat | Depuis l'achat | Valeur | Plus-value | Sources |",
               "|---|--:|--:|--:|--:|--:|--:|:-:|"]
-        L += [f"| {m['nom']} (`{m['ticker']}`) | {prix(m.get('prix'))} | {pct(m.get('var_1j'))} | "
-              f"{prix(m.get('prix_revient'))} | {pct(m.get('perf_achat'))} | {eur(m.get('valeur'))} | "
-              f"{eur(m.get('plus_value'), True)} | {VERIF.get(m.get('verif'), '')} |" for m in lignes]
+        L += [f"| {m['nom']} (`{m['ticker']}`) | {prix(m.get('prix'))}{date_vl(m)} | {pct(m.get('var_1j'))} | "
+              f"{prix(m.get('prix_revient'))} | {pct(m.get('perf_achat'))} | {montant(m.get('valeur'), m)} | "
+              f"{montant(m.get('plus_value'), m, True)} | {VERIF.get(m.get('verif'), '')} |" for m in lignes]
         L.append("")
     L += [f"- ⚠️ `{e['ticker']}` : {e['message']}" for e in erreurs]
     return L + ["", "Frais de courtage non compris. Pour ajouter un achat : [[mes-investissements]].", ""]
+
+
+def date_vl(m):
+    """« (valeur du 05/11) » pour un fonds : sa valeur liquidative est publiée le lendemain."""
+    d = m.get("date_cours") if m.get("categorie") == "fonds" else None
+    return f" (valeur du {d[8:10]}/{d[5:7]})" if d and len(d) == 10 else ""
+
+
+def fonds_wealins(d):
+    """Fonds de la liste Wealins pour la barre de recherche (data/wealins.json), sans ceux que la fiche
+    suit déjà (même ISIN) ; None si le cache est vide ou illisible."""
+    try:
+        import wealins
+        c = wealins.charger()
+    except Exception as e:  # noqa: BLE001  la page se construit toujours, même sans les fonds
+        print("Fonds Wealins non ajoutés à la recherche :", e, file=sys.stderr)
+        return None
+    if not c["fonds"]:
+        return None
+    suivis = {m.get("isin") for m in d.get("catalogue", []) if m.get("isin")}
+    return {"maj": c.get("maj"), "l": wealins.catalogue_page(c, suivis)}
 
 
 def note_suggestions(sugg):
@@ -221,6 +250,9 @@ def main():
         if n:
             d["nouveaute"] = {"date": n.group(1), "titre": n.group(2).strip()}
     d["url_depot"] = CONFIG.get("url_depot", "")
+    fw = fonds_wealins(d)
+    if fw:
+        d["fonds_wealins"] = fw
     fe = RACINE / "pilotage" / "etat.json"
     if fe.exists():
         e = json.loads(fe.read_text(encoding="utf-8"))

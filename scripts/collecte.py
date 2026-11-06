@@ -16,6 +16,7 @@ import math
 import re
 import statistics
 import sys
+import threading
 import time
 import unicodedata
 import warnings
@@ -263,17 +264,16 @@ def mes_investissements(entrees, mesure_de, categories, jour):
     notées, valeur, plus-value et variation du jour en euros. mesure_de(t) : mesures du titre ou None ;
     categories : ticker -> catégorie dans univers.json."""
     groupes, erreurs = {}, []
-    for e in entrees:
-        if ISIN.fullmatch(e["ticker"]):
-            erreurs.append({"ticker": e["ticker"], "message": "ISIN pas encore dans les titres suivis par la "
-                                                              "fiche : donne-le à Claude pour qu'il ajoute le titre"})
-        else:
-            groupes.setdefault(e["ticker"], []).append(e)
+    for e in entrees:  # un ISIN qui reste ici n'est pas suivi par la fiche : peut-être un fonds Wealins
+        groupes.setdefault(e["ticker"], []).append(e)
     lignes = []
     for t, achats in groupes.items():
         m = mesure_de(t)
         if not m or not m.get("prix"):
-            erreurs.append({"ticker": t, "message": "aucun cours trouvé chez Yahoo Finance pour ce code"})
+            erreurs.append({"ticker": t, "message": (
+                "ISIN inconnu : ni dans les titres suivis par la fiche, ni dans la liste des fonds Wealins ; "
+                "donne-le à Claude pour qu'il ajoute le titre") if ISIN.fullmatch(t)
+                else "aucun cours trouvé chez Yahoo Finance pour ce code"})
             continue
         p, v = m["prix"], m.get("var_1j")
         achats = sorted(achats, key=lambda a: a["date"] or "")
@@ -290,7 +290,7 @@ def mes_investissements(entrees, mesure_de, categories, jour):
         ligne.update(
             ticker=t, nom=next((a["nom"] for a in achats if a["nom"]), None) or m.get("nom") or t,
             categorie=next((a["type"] for a in achats if a["type"]), None) or categories.get(t)
-            or ("fonds" if t.startswith("0P") else "actions"),
+            or m.get("categorie") or ("fonds" if t.startswith("0P") else "actions"),
             achats=[{k: a[k] for k in ("date", "prix", "quantite")} for a in achats],
             depuis=next((a["date"] for a in achats if a["date"]), None),
             prix_revient=r(pru, 4), pru_pondere=complet, quantite=r(q, 4),
@@ -506,6 +506,9 @@ def main():
     if jour == aujourdhui and moment == "cloture" and not attendre_cloture(jour):
         print(f"ATTENTE {jour} : la clôture n'est pas encore définitive")
         sys.exit(3)
+    # Liste des fonds Wealins (une lecture par jour, 3 à 4 minutes) : en parallèle, jamais bloquante
+    fil_wealins = threading.Thread(target=_actualiser_wealins, daemon=True)
+    fil_wealins.start()
     u = json.loads((RACINE / "univers.json").read_text(encoding="utf-8"))
     cats = [c for c in u if not c.startswith("_")]
     # Investissements notés par le propriétaire : une erreur dans le fichier ne doit jamais bloquer la fiche
@@ -570,10 +573,19 @@ def main():
         print("Suggestions impossibles :", e, file=sys.stderr)
         sugg = []
     categories = {t: "etf" if c == "etf_levier" else c for c in cats for t in u[c]}
+    fil_wealins.join(timeout=600)
+    fonds_w = _fonds_wealins()
 
     def mesure_de(t):
         if t in tous:
             return tous[t]
+        if ISIN.fullmatch(t):  # fonds de la liste Wealins (valeur liquidative la plus récente, avec le FT)
+            try:
+                import wealins
+                return wealins.mesure(t, fonds_w)
+            except Exception as e:  # noqa: BLE001
+                print("Fonds Wealins illisible :", t, e, file=sys.stderr)
+                return None
         m = mesures(df, t)
         if m:
             m["signal"] = signal(m)
@@ -603,6 +615,7 @@ def main():
         "top30": top30, "petites": petites,
         "suggestions": sugg, "mes_investissements": mes, "catalogue": catalogue(res),
         "bilan_signaux": bilan(lignes),
+        "wealins": {"maj": fonds_w.get("maj"), "nb_fonds": len(fonds_w.get("fonds", {}))},
         "nb_suivis": len(tous),
         "regles": {
             "score": "35 % perf. 3 mois + 25 % perf. 1 mois + 15 % perf. 1 semaine + 15 % tendance "
@@ -622,6 +635,23 @@ def main():
     print(f"OK {jour} ({moment}) : {len(tous)} titres, top30={len(top30)}, petites={len(petites)}, "
           f"suggestions={len(sugg)}, mes investissements={len(mes['lignes'])}"
           + (f" ({len(mes['erreurs'])} à corriger)" if mes["erreurs"] else ""))
+
+
+def _actualiser_wealins():
+    try:
+        import wealins
+        print(wealins.actualiser())
+    except Exception as e:  # noqa: BLE001  la fiche ne dépend jamais de Wealins
+        print("Wealins : actualisation impossible :", e, file=sys.stderr)
+
+
+def _fonds_wealins():
+    try:
+        import wealins
+        return wealins.charger()
+    except Exception as e:  # noqa: BLE001
+        print("Wealins : cache illisible :", e, file=sys.stderr)
+        return {"maj": None, "fonds": {}}
 
 
 def _recent(m, tous):

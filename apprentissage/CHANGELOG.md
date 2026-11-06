@@ -5,6 +5,12 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-06 · Fonds Wealins dans « Mes investissements »
+- La barre de recherche trouve aussi les quelque 1 340 fonds de la liste Wealins (supports d'assurance vie), par ISIN ou par nom, même si les mots sont dans le désordre.
+- Un fonds a pour prix sa dernière valeur liquidative, toujours affichée avec sa date : un fonds calcule sa valeur une fois par jour et Wealins la publie en général le lendemain. Les montants restent dans la devise du fonds (dollar, livre…).
+- Pour un fonds noté dans `mes-investissements.md`, la fiche prend la valeur la plus récente entre Wealins et le Financial Times (règle du propriétaire : une source qui n'a que la veille est écartée), compare les deux quand elles ont la même date, et montre son historique et son risque estimé.
+- Demandé par le propriétaire ; la liste est relue une fois par jour, une page par seconde (robots.txt de Wealins : tout est autorisé).
+
 ## 2026-11-06 · Moyennes mobiles distinguables sans la couleur
 - Dans le graphique, la moyenne courte est en tirets et la longue en pointillés, avec le même style dans la légende : on les distingue même sans voir les couleurs.
 - Inspiré des guides d'accessibilité des graphiques (Penn State) ; priorité du chef n° 3.

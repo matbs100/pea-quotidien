@@ -389,7 +389,7 @@ const eur = (x, signe) => x == null ? "—" : (signe && x > 0 ? "+" : "") + fr(x
 const jourCourt = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
 const nbParts = (q) => fr(q, q % 1 ? 2 : 0) + (q > 1 ? " parts" : " part");
 
-const SRC = { yahoo: "Yahoo", boursorama: "Boursorama", ft: "Financial Times" };
+const SRC = { yahoo: "Yahoo", boursorama: "Boursorama", ft: "Financial Times", wealins: "Wealins" };
 function vf(m) {
   if (!m.verif) return "";
   const det = Object.entries(m.sources || {}).map(([k, v]) => `${SRC[k]} ${fr(v, dec(v))}`).join(" · ");
@@ -557,6 +557,17 @@ const pc1 = (x) => x == null ? null : fr(x, 1) + " %";
 // mes-investissements.md (calculés par collecte.py) s'affichent aussi, sans bouton pour les retirer.
 const CAT = D.catalogue || [];
 CAT.forEach((m) => { if (!TOUS[m.ticker]) TOUS[m.ticker] = m; });
+const NB_SUIVIS = CAT.length, NB_ISIN_SUIVIS = CAT.filter((m) => m.isin).length;
+// Fonds de la liste Wealins (supports d'assurance vie) : trouvables par ISIN ou par nom. Leur prix est leur
+// dernière valeur liquidative publiée (souvent celle de la veille), toujours affichée avec sa date.
+((D.fonds_wealins && D.fonds_wealins.l) || []).forEach(([isin, nom, devise, vl, dvl, v]) => {
+  const m = { ticker: isin, isin, nom, categorie: "fonds", wealins: true, prix: vl, devise, date_cours: dvl, var_1j: v };
+  CAT.push(m);
+  if (!TOUS[isin]) TOUS[isin] = m;
+});
+const NB_FONDS = CAT.length - NB_SUIVIS;
+const estFonds = (m) => !!m && m.categorie === "fonds";
+const valeurDu = (m) => m.date_cours ? "valeur du " + jourCourt(m.date_cours) : "";
 const CLE = "matin-pea:investissements";
 let stockageOk = true;
 function lireAchats() {
@@ -576,6 +587,7 @@ const isinDe = (m) => m.isin || ((CAT.find((c) => c.ticker === m.ticker) || {}).
 function chercher(q) {
   const n = sansAccents(q).trim(), N = n.toUpperCase().replace(/\s+/g, "");
   if (n.length < 2) return [];
+  const mots = n.split(/[\s\-–,.()]+/).filter((w) => w.length > 1);
   const rang = (m) => {
     const tk = m.ticker.toUpperCase(), nom = sansAccents(m.nom);
     if (m.isin && m.isin === N) return 0;
@@ -583,11 +595,13 @@ function chercher(q) {
     if (m.isin && N.length >= 4 && m.isin.startsWith(N)) return 2;
     if (nom.startsWith(n)) return 3;
     if (nom.includes(n)) return 4;
-    if (tk.startsWith(N)) return 5;
+    if (mots.length > 1 && mots.every((w) => nom.includes(w))) return 5;  // tous les mots, dans n'importe quel ordre
+    if (tk.startsWith(N)) return 6;
     return 9;
   };
-  return CAT.map((m) => [rang(m), m]).filter(([r]) => r < 9)
-    .sort((a, b) => a[0] - b[0] || a[1].nom.localeCompare(b[1].nom, "fr")).slice(0, 6).map(([, m]) => m);
+  return CAT.map((m) => [rang(m), m]).filter(([r]) => r < 9)  // à égalité, les titres suivis avant les fonds Wealins
+    .sort((a, b) => a[0] - b[0] || (a[1].wealins ? 1 : 0) - (b[1].wealins ? 1 : 0) || a[1].nom.localeCompare(b[1].nom, "fr"))
+    .slice(0, 8).map(([, m]) => m);
 }
 
 function positionsLocales() {
@@ -627,10 +641,10 @@ function position(l) {
     ? `acheté ${fr(l.prix_revient, dec(l.prix_revient))}${plusieurs ? " en moyenne" : ""}${l.depuis ? " · depuis le " + jourCourt(l.depuis) : ""}`
     : l.depuis ? "depuis le " + jourCourt(l.depuis) : "prix d'achat non noté";
   const info = [esc(l.ticker), achat, l.quantite ? nbParts(l.quantite) : "",
-    l.prix == null ? "cours indisponible sur cette fiche" : l.date_cours && l.date_cours !== D.date ? "cours du " + jourCourt(l.date_cours) : ""].filter(Boolean).join(" · ");
+    l.prix == null ? "cours indisponible sur cette fiche" : l.date_cours && l.date_cours !== D.date ? (estFonds(l) ? "valeur du " : "cours du ") + jourCourt(l.date_cours) : ""].filter(Boolean).join(" · ");
   return `<div class="pos clic${l.local ? " local" : ""}" data-t="${esc(l.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(l.nom)}">
     <div class="t"><strong>${esc(l.nom)}${badge[l.categorie] || ""}${levier(l)}${vf(l)}</strong><small>${info}</small></div>
-    <div class="c"><span class="num">${l.prix == null ? "—" : fr(l.prix, dec(l.prix)) + dev(l)}</span><small class="${sens(l.var_1j)}">${pct(l.var_1j)}</small><em>aujourd'hui</em></div>
+    <div class="c"><span class="num">${l.prix == null ? "—" : fr(l.prix, dec(l.prix)) + dev(l)}</span><small class="${sens(l.var_1j)}">${pct(l.var_1j)}</small><em>${estFonds(l) ? "dernière valeur" : "aujourd'hui"}</em></div>
     <div class="c ${sens(l.perf_achat)}">${pct(l.perf_achat)}<em>depuis l'achat</em></div>
     ${l.valeur != null ? `<div class="c">${montant(l.valeur, l)}<small class="${sens(l.plus_value)}">${montant(l.plus_value, l, true)}</small><em>valeur</em></div>` : ""}
     ${l.local ? `<button type="button" class="retirer" data-retirer="${esc(l.ticker)}" aria-label="Retirer ${esc(l.nom)} de mes investissements">✕</button>` : ""}</div>`;
@@ -651,7 +665,8 @@ function rendreInvestissements() {
   $("#inv").innerHTML = L.length ? L.map(position).join("")
     : `<div class="vide">Aucun investissement pour l'instant. Tape l'ISIN ou le nom d'un titre dans la barre ci-dessus, puis indique la date, le prix d'une part et le nombre de parts.</div>`;
   const notes = [];
-  if (L.length) notes.push(`Prix du jour : ${D.moment === "ouverture" ? "premiers cours de la séance" : "clôture de la séance"}. Prix d'achat sans les frais de courtage${T && !T.complet ? " ; le total ne compte que les titres dont le nombre de parts est noté" : ""}.`);
+  if (L.length) notes.push(`Prix du jour : ${D.moment === "ouverture" ? "premiers cours de la séance" : "clôture de la séance"}. Prix d'achat sans les frais de courtage${T && !T.complet ? " ; le total ne compte que les titres en euros dont le nombre de parts est noté" : ""}.`);
+  if (L.some(estFonds)) notes.push("Fonds : dernière valeur liquidative publiée, avec sa date (souvent celle de la veille) ; « sur la séance » compte sa dernière variation.");
   notes.push(stockageOk ? "Tes achats sont gardés seulement sur cet appareil, dans ce navigateur : rien n'est publié."
     : "Ce navigateur bloque l'enregistrement (navigation privée ?) : tes achats ne seront pas gardés.");
   $("#inv-note").textContent = notes.join(" ");
@@ -665,12 +680,12 @@ function montrerResultats() {
   trouves = chercher(v);
   resultats.hidden = false;
   if (trouves.length) {
-    resultats.innerHTML = trouves.map((m) => `<button type="button" class="res" data-choix="${esc(m.ticker)}"><span><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([m.isin, m.ticker].filter(Boolean).join(" · "))}</small></span><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span></button>`).join("");
+    resultats.innerHTML = trouves.map((m) => `<button type="button" class="res" data-choix="${esc(m.ticker)}"><span><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([m.isin, m.ticker !== m.isin && m.ticker, m.wealins && "liste Wealins, " + valeurDu(m)].filter(Boolean).join(" · "))}</small></span><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span></button>`).join("");
     return;
   }
-  const V = v.toUpperCase().replace(/\s+/g, ""), connus = CAT.filter((m) => m.isin).length;
+  const V = v.toUpperCase().replace(/\s+/g, ""), connus = NB_ISIN_SUIVIS;
   resultats.innerHTML = `<div class="res-vide">${!CAT.length ? "La liste des titres arrive avec la prochaine fiche."
-    : estIsin(V) ? `Cet ISIN ne fait pas partie des ${CAT.length} titres suivis par la fiche${connus < CAT.length ? ` (la recherche par ISIN en connaît ${connus} pour l'instant, la liste se complète chaque jour : essaie aussi le nom)` : ""}. Pour suivre un autre titre, donne son ISIN à Claude.`
+    : estIsin(V) ? `Cet ISIN n'est ni dans les ${NB_SUIVIS} titres suivis par la fiche${NB_FONDS ? `, ni dans les ${NB_FONDS} fonds de la liste Wealins` : ""}${connus < NB_SUIVIS ? ` (la recherche par ISIN connaît ${connus} des titres suivis pour l'instant : essaie aussi le nom)` : ""}. Pour suivre un autre titre, donne son ISIN à Claude.`
     : "Aucun titre trouvé. Essaie l'ISIN (12 caractères, comme FR0013412020), le nom ou le code."}</div>`;
 }
 
@@ -679,11 +694,12 @@ function formulaire(m) {
   resultats.hidden = true;
   const f = $("#inv-form"), isin = isinDe(m);
   f.hidden = false;
-  f.innerHTML = `<div><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([isin, m.ticker].filter(Boolean).join(" · "))}${m.prix != null ? " · cours " + fr(m.prix, dec(m.prix)) + (m.devise ? " " + m.devise : "") : ""}</small></div>
+  f.innerHTML = `<div><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([isin, m.ticker !== isin && m.ticker].filter(Boolean).join(" · "))}${m.prix != null ? (estFonds(m) && m.date_cours ? " · " + valeurDu(m) + " : " : " · cours ") + fr(m.prix, dec(m.prix)) + (m.devise ? " " + m.devise : "") : ""}</small></div>
     ${m.levier ? `<div class="alerte" style="margin:12px 0 0">${AVERT_LEVIER}</div>` : ""}
+    ${estFonds(m) ? `<p class="note" style="margin:10px 0 0">Un fonds publie la valeur d'une part (valeur liquidative) une fois par jour, souvent le lendemain : la fiche affichera chaque jour sa dernière valeur connue, avec sa date.</p>` : ""}
     <div class="champs">
       <label>Date d'achat<input id="a-date" type="date" value="${D.date}"></label>
-      <label>Prix d'une part${m.devise ? " (" + m.devise + ")" : ""}<input id="a-prix" type="text" inputmode="decimal" autocomplete="off" value="${m.prix != null ? String(m.prix).replace(".", ",") : ""}"></label>
+      <label>${estFonds(m) ? "Valeur d'une part à l'achat" : "Prix d'une part"}${m.devise ? " (" + m.devise + ")" : ""}<input id="a-prix" type="text" inputmode="decimal" autocomplete="off" value="${m.prix != null ? String(m.prix).replace(".", ",") : ""}"></label>
       <label>Nombre de parts<input id="a-q" type="text" inputmode="decimal" autocomplete="off" placeholder="facultatif"></label>
     </div>
     <div class="boutons"><button type="button" class="btn" id="a-ok">Ajouter à mes investissements</button><button type="button" class="btn sec" id="a-annuler">Annuler</button></div>
@@ -749,7 +765,7 @@ const DEFS = [
   [/^Moyenne \d+ jours/, "Moyenne des prix de clôture sur cette durée. Elle lisse les variations du quotidien."],
 ];
 const defDe = (k) => { const t = String(k).trim(); const d = DEFS.find(([re]) => re.test(t)); return d ? d[1] : ""; };
-const kv = (paires) => `<dl class="kv">${paires.filter(([, v]) => v != null && v !== "").map(([k, v]) => { const d = defDe(k); return `<div><dt${d ? ` class="def" tabindex="0" data-def="${esc(d)}"` : ""}>${k}</dt><dd>${v}</dd></div>`; }).join("")}</dl>`;
+const kv = (paires) => { const L = paires.filter(([, v]) => v != null && v !== ""); return L.length ? `<dl class="kv">${L.map(([k, v]) => { const d = defDe(k); return `<div><dt${d ? ` class="def" tabindex="0" data-def="${esc(d)}"` : ""}>${k}</dt><dd>${v}</dd></div>`; }).join("")}</dl>` : ""; };  // rien si toutes les valeurs manquent
 const tab = (paires) => `<table class="tab"><tbody>${paires.filter(([, v]) => v != null && v !== "").map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("")}</tbody></table>`;
 const bloc = (titre, html) => html ? `<div class="bloc"><h3>${titre}</h3>${html}</div>` : "";
 
@@ -852,6 +868,7 @@ function blocRisque(m, inf, st) {
   const vol = st.vol_5a != null && st.annees_hist >= 2 ? st.vol_5a : st.vol_1a;
   const expl = off
     ? `C'est l'indicateur synthétique de risque (SRI) du DIC, le document d'informations clés imposé par le règlement européen PRIIPs. Il va de 1 (risque le plus faible) à 7 (le plus élevé).${est ? ` Notre propre calcul, à partir de la volatilité, donne ${est}/7.` : ""}`
+    : estFonds(m) ? `Le SRI officiel de ce fonds figure dans son DIC (lien plus bas). Ce niveau-ci est une estimation, calculée comme le volet « risque de marché » du SRI PRIIPs à partir de la volatilité de sa valeur liquidative sur ${st.sri_base} (${fr(vol, 1)} % par an). Seuils : moins de 0,5 % → 1 ; 5 % → 2 ; 12 % → 3 ; 20 % → 4 ; 30 % → 5 ; 80 % → 6 ; au-delà → 7.`
     : `Une action n'a pas de DIC, donc pas de SRI officiel. Ce niveau est calculé comme le volet « risque de marché » du SRI PRIIPs, à partir de la volatilité sur ${st.sri_base} (${fr(vol, 1)} % par an). Seuils : moins de 0,5 % → 1 ; 5 % → 2 ; 12 % → 3 ; 20 % → 4 ; 30 % → 5 ; 80 % → 6 ; au-delà → 7.`;
   const pire = st.perte_max_5a != null ? st.perte_max_5a : st.perte_max_1a;
   const duree = st.perte_max_5a != null ? st.sri_base : "1 an";
@@ -878,8 +895,19 @@ function blocFrais(m, inf, fx) {
   return bloc("Frais", tab(L) + `<p class="note">Plafonds légaux du PEA (décret n° 2020-95). BNP Paribas peut facturer moins : vérifie sa grille tarifaire.</p>`);
 }
 
+const SFDR = { "Article 6": "pas d'objectif de durabilité affiché", "Article 8": "promeut des caractéristiques environnementales ou sociales", "Article 9": "a un objectif d'investissement durable" };
 function blocCaract(m, inf, det, t) {
   const devise = det.devise || m.devise;
+  if (estFonds(m) && (m.wealins || m.source === "wealins" || inf.source_infos === "Wealins")) {
+    const sf = inf.sfdr || m.sfdr;
+    const F = [["ISIN", inf.isin || m.isin], ["Devise", devise],
+      ["Valeur liquidative", m.date_cours ? "du " + new Date(m.date_cours + "T12:00:00").toLocaleDateString("fr-FR") + ", calculée une fois par jour et publiée en général le lendemain" : null],
+      ["Gestionnaire", inf.gestionnaire], ["Classification SFDR", sf && (sf + (SFDR[sf] ? " : " + SFDR[sf] : ""))],
+      ["Depuis le 1er janvier (Wealins)", inf.perf_annee_wealins != null ? pct(inf.perf_annee_wealins) : null],
+      ["Où le trouver", "Liste des supports des contrats d'assurance vie Wealins"]];
+    if (devise && devise !== "EUR") F.push(["Risque de change", `Valeur en ${devise} : sa valeur en euros dépend aussi du taux de change.`]);
+    return bloc("Caractéristiques", tab(F.map(([k, v]) => [k, v == null ? null : esc(v)])) + `<p class="note">Données : Wealins${m.sources && m.sources.ft ? " et Financial Times" : ""}. SFDR : règlement européen sur la publication d'informations de durabilité.</p>`);
+  }
   const L = [["ISIN", inf.isin], ["Code", esc(t)], ["Place de cotation", det.place], ["Devise de cotation", devise]];
   if (m.categorie === "etf") L.push(["Risque de change", "Le prix est en euros, mais si l'ETF suit des actions étrangères (américaines, japonaises, émergentes…), sa valeur monte ou baisse aussi avec leurs devises face à l'euro, sauf s'il est couvert contre le change (« Hedged » dans son nom)."]);
   else if (devise && devise !== "EUR" && PLACEMENT.includes(m.categorie)) L.push(["Risque de change", `Cotée en ${esc(devise)} : sa valeur en euros dépend aussi du taux de change.`]);
@@ -903,6 +931,8 @@ function blocCaract(m, inf, det, t) {
 
 function blocPEA(m, inf, det) {
   if (!PLACEMENT.includes(m.categorie)) return "";
+  if (estFonds(m) && (m.wealins || m.source === "wealins" || inf.source_infos === "Wealins"))
+    return bloc("Éligibilité PEA", `<div class="pea inconnu">Fonds de la liste des supports d'assurance vie de Wealins : cette source n'indique pas s'il est éligible au PEA. Un fonds n'y est éligible que s'il investit en permanence au moins 75 % en actions éligibles au PEA (sociétés de l'Union européenne ou de l'Espace économique européen).</div>`);
   const v = inf.pea_bourso;
   const txt = v === true ? "✓ <b>Éligible au PEA</b> d'après Boursorama."
     : v === false ? (m.categorie === "etf" ? "⚠ Boursorama ne l'indique pas éligible au PEA. Vérifie auprès de BNP Paribas avant d'acheter."
@@ -924,14 +954,19 @@ function blocSignal(m, det) {
 
 function ouvrir(t, pousser = true) {
   const m = TOUS[t]; if (!m) return;
-  const det = DET[t] || {}, inf = det.infos || {}, st = det.stats || {};
+  let det = DET[t] || {};
+  if (estFonds(m) && m.isin && !det.liens)  // fonds Wealins sans fiche détaillée : liens vers ses pages
+    det = { ...det, infos: { isin: m.isin, ...(det.infos || {}) }, liens: { "Wealins (fiche du fonds)": `https://www.wealins.com/funds/${m.isin.toLowerCase()}/`,
+      "Financial Times": `https://markets.ft.com/data/funds/tearsheet/summary?s=${m.isin}:${m.devise || "EUR"}` } };
+  const inf = det.infos || {}, st = det.stats || {};
   $("#f-type").textContent = TYPE[m.categorie] + (det.place ? " · " + det.place : "");
   $("#f-titre").textContent = m.nom;
-  $("#f-sous").textContent = [t, inf.isin && "ISIN " + inf.isin].filter(Boolean).join(" · ");
-  const parts = m.prix > 0 && PLACEMENT.includes(m.categorie) ? Math.floor(100 / m.prix) : null;
+  $("#f-sous").textContent = (inf.isin === t ? ["ISIN " + t] : [t, inf.isin && "ISIN " + inf.isin]).filter(Boolean).join(" · ");
+  const parts = m.prix > 0 && PLACEMENT.includes(m.categorie) && (!estFonds(m) || (m.devise || "EUR") === "EUR") ? Math.floor(100 / m.prix) : null;
   const H = [];
   const devise = det.devise || m.devise;
-  H.push(`<div class="f-prix"><span class="big">${fr(m.prix, dec(m.prix))}${devise ? ` <small style="font-size:1rem;color:var(--muted)">${devise}</small>` : ""}</span><span class="num ${sens(m.var_1j)}">${pct(m.var_1j)} sur la dernière séance</span>${vf(m)}</div>`);
+  H.push(`<div class="f-prix"><span class="big">${fr(m.prix, dec(m.prix))}${devise ? ` <small style="font-size:1rem;color:var(--muted)">${devise}</small>` : ""}</span><span class="num ${sens(m.var_1j)}">${pct(m.var_1j)} ${estFonds(m) ? "depuis la valeur précédente" : "sur la dernière séance"}</span>${vf(m)}</div>`);
+  if (estFonds(m) && m.date_cours) H.push(`<p class="note">Valeur liquidative du ${new Date(m.date_cours + "T12:00:00").toLocaleDateString("fr-FR")} : un fonds n'est pas coté en continu, sa valeur est calculée une fois par jour.</p>`);
   if (det.description) H.push(`<p class="f-desc">${esc(det.description)}</p>`);
   if (m.levier) H.push(`<div class="alerte" style="margin-top:12px">${AVERT_LEVIER}</div>`);
   const iv = INV[t], sg = SG.find((s) => s.ticker === t);
@@ -939,13 +974,13 @@ function ouvrir(t, pousser = true) {
     const plusieurs = iv.achats && iv.achats.length > 1;
     H.push(bloc("Mon investissement", kv([[plusieurs ? "Premier achat" : "Acheté le", iv.depuis && jourCourt(iv.depuis)],
       [plusieurs ? "Prix d'achat moyen" : "Prix d'achat", prixf(iv.prix_revient)], ["Depuis l'achat", pctc(iv.perf_achat)],
-      ["Parts", iv.quantite != null ? fr(iv.quantite, iv.quantite % 1 ? 2 : 0) : null], ["Valeur aujourd'hui", iv.valeur != null ? eur(iv.valeur) : null],
-      ["Plus ou moins-value", iv.plus_value != null ? `<span class="${sens(iv.plus_value)}">${eur(iv.plus_value, true)}</span>` : null]])
+      ["Parts", iv.quantite != null ? fr(iv.quantite, iv.quantite % 1 ? 2 : 0) : null], ["Valeur aujourd'hui", iv.valeur != null ? montant(iv.valeur, iv) : null],
+      ["Plus ou moins-value", iv.plus_value != null ? `<span class="${sens(iv.plus_value)}">${montant(iv.plus_value, iv, true)}</span>` : null]])
       + (plusieurs ? `<ul class="hist">${iv.achats.map((a) => `<li>${a.date ? jourCourt(a.date) : "date non notée"} · ${a.quantite != null ? nbParts(a.quantite) + " à " : ""}${a.prix != null ? fr(a.prix, dec(a.prix)) : "prix non noté"}</li>`).join("")}</ul>` : "")
       + `<p class="note">${iv.local ? "Gardé sur cet appareil" : "D'après mes-investissements.md"}, frais de courtage non compris.</p>`));
   }
   if (sg) H.push(bloc("Suggestion du jour : " + esc(sg.critere_lib), `<p>${esc(sg.raison)}</p><p class="note">Une suggestion signale un titre à regarder de plus près, pas un titre à acheter.</p>`));
-  H.push(`<div class="bloc"><h3>Historique du prix</h3><div id="f-graphe">${det.j ? "" : "<p class='note'>Historique indisponible.</p>"}</div></div>`);
+  H.push(`<div class="bloc"><h3>Historique du prix</h3><div id="f-graphe">${det.j ? "" : estFonds(m) ? "<p class='note'>L'historique de ce fonds est sur sa fiche Wealins (lien plus bas). Pour l'avoir ici, avec ses statistiques, note le fonds dans mes-investissements.md (le nombre de parts peut rester vide).</p>" : "<p class='note'>Historique indisponible.</p>"}</div></div>`);
   const Jp = serieDe(det.j);
   const perfJ = (n, defaut) => Jp.length > n ? (Jp[Jp.length - 1][1] / Jp[Jp.length - 1 - n][1] - 1) * 100 : defaut; // même série que le graphique
   H.push(bloc("Performances", kv([["1 jour", pctc(m.var_1j)], ["1 semaine", pctc(perfJ(5, m.var_5j))], ["1 mois", pctc(perfJ(21, m.var_1m))], ["3 mois", pctc(perfJ(63, m.var_3m))],
@@ -962,9 +997,10 @@ function ouvrir(t, pousser = true) {
   H.push(blocFrais(m, inf, det.frais));
   H.push(blocPEA(m, inf, det));
   H.push(blocCaract(m, inf, det, t));
-  if (PLACEMENT.includes(m.categorie)) H.push(blocSignal(m, det));
-  if (m.sources) H.push(bloc("Contrôle du prix", tab(Object.entries(m.sources).map(([k, v]) => [SRC[k], fr(v, dec(v))])) +
-    `<p class="note">${{ ok: "Les sources concordent.", ecart: "⚠ Les sources ne concordent pas : vérifie le prix avant toute décision.", seul: "Une seule source a pu être lue." }[m.verif] || ""}</p>`));
+  if (PLACEMENT.includes(m.categorie) && !estFonds(m)) H.push(blocSignal(m, det));
+  const perimees = Object.entries(m.sources_perimees || {}).map(([k, d]) => `${SRC[k] || k} (${d ? (estFonds(m) ? "valeur du " : "cours du ") + jourCourt(d) : "date inconnue"})`).join(", ");
+  if (m.sources) H.push(bloc("Contrôle du prix", tab(Object.entries(m.sources).map(([k, v]) => [SRC[k] || k, fr(v, dec(v)) + (m.dates_sources && m.dates_sources[k] ? " · valeur du " + jourCourt(m.dates_sources[k]) : "")])) +
+    `<p class="note">${{ ok: "Les sources concordent.", ecart: "⚠ Les sources ne concordent pas : vérifie le prix avant toute décision.", seul: perimees ? "Une seule source est à jour." : "Une seule source a pu être lue." }[m.verif] || ""}${perimees ? ` Non prise en compte, car pas à jour : ${perimees}.` : ""}</p>`));
   if (det.liens) H.push(bloc("Pour aller plus loin", `<div class="liens">${Object.entries(det.liens).map(([k, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(k)} ↗</a>`).join("")}</div>`));
   if (PLACEMENT.includes(m.categorie) && !$("#sec-inv").hidden) H.push(`<div class="bloc"><button type="button" class="btn" data-ajouter="${esc(t)}">＋ Ajouter à mes investissements</button></div>`);
   H.push(`<p class="note" style="margin-top:22px">Information et apprentissage, pas un conseil en investissement. Données du ${new Date(D.date + "T12:00:00").toLocaleDateString("fr-FR")}.</p>`);

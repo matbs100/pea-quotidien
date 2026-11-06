@@ -13,10 +13,11 @@ avec leur prix du jour, leur variation sur la séance et leur évolution depuis 
 achat : si tu achètes deux fois le même titre, mets deux lignes, la fiche calcule ton prix d'achat moyen.
 
 - **Code** : l'ISIN (`FR001400U5Q4`) ou le code Yahoo Finance du titre (`DCAM.PA`, `PSP5.PA`,
-  `AI.PA`). Un ISIN n'est reconnu que pour les titres déjà suivis par la fiche ; pour un autre titre,
-  donne son ISIN à Claude, qui l'ajoutera.
+  `AI.PA`). Un ISIN est reconnu pour les titres suivis par la fiche et pour les fonds de la liste Wealins
+  (supports d'assurance vie : leur prix est leur dernière valeur liquidative, avec sa date, et la fiche
+  montre leur historique) ; pour un autre titre, donne son ISIN à Claude, qui l'ajoutera.
 - **Date d'achat** : `2026-11-06` ou `06/11/2026`.
-- **Prix d'achat** : le prix d'une part, en euros (`5,42`), sans les frais.
+- **Prix d'achat** : le prix d'une part, dans la devise du titre (`5,42`), sans les frais.
 - **Quantité** : le nombre de parts. Facultatif : sans quantité, la fiche montre seulement les
   pourcentages, sans montants en euros.
 - **Type** : `ETF`, `Action` ou `Fonds`. Facultatif pour les titres que la fiche suit déjà.

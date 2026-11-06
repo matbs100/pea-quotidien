@@ -94,10 +94,33 @@ dans le contrôle des prix (fonction `source_perimee()` de `verif.py`) : elle es
 séance qui compte.
 
 **Wealins** (www.wealins.com/funds-list/) : la liste publie des valeurs liquidatives de fonds d'assurance
-vie, **datées de la veille** (le 6 novembre à 18 h 30, toutes au 5 novembre). Ce ne sont pas les titres de
-la fiche, et la règle ci-dessus l'écarte : il n'est pas utilisé. Il ne servirait que pour suivre des fonds
-Wealins dans « Mes investissements » ; il faudrait alors autoriser `www.wealins.com` dans le réseau du
-cloud.
+vie, **datées de la veille ou de l'avant-veille**. Ce ne sont pas les titres de la fiche : elle ne sert pas à
+comparer leurs cours. En revanche, à la demande du propriétaire (le soir), **les fonds Wealins sont suivis dans
+« Mes investissements »** (partie 4 ter).
+
+## 4 ter. Les fonds Wealins dans « Mes investissements »
+
+- **Chercher** : tape l'ISIN (`LU0011963245`) ou le nom (« abrdn asia ») dans la barre de recherche. Elle
+  trouve les quelque 1 340 fonds de la liste Wealins, avec le badge « Fonds », leur devise et la date de
+  leur valeur (« liste Wealins, valeur du 5 nov. »).
+- **Ajouter** : comme un ETF, mais le prix demandé est la **valeur d'une part à l'achat** (valeur
+  liquidative), dans la devise du fonds.
+- **Ce que la fiche affiche** : la dernière valeur liquidative publiée, avec sa date (un fonds calcule sa
+  valeur une fois par jour ; Wealins la publie en général le lendemain), la variation depuis la valeur
+  précédente, l'évolution depuis l'achat. Les montants d'un fonds en dollars restent en dollars et ne
+  comptent pas dans le total en euros.
+- **Fonds noté dans [[mes-investissements]]** (l'ISIN suffit, le nombre de parts peut rester vide) : la
+  fiche prend la valeur **la plus récente entre Wealins et le Financial Times** (règle du propriétaire : une
+  source qui n'a que la veille est écartée), compare les deux quand elles ont la même date, et montre
+  l'historique (jusqu'à 5 ans), le risque estimé, le gestionnaire, la classification SFDR et le DIC.
+  Exemple du 6 novembre : pour un fonds d'actions d'Asie-Pacifique, le FT avait déjà la valeur du
+  6 novembre, Wealins celle du 5.
+- **Fonds ajouté seulement sur le téléphone** : valeur de la liste Wealins (les agents ne voient pas ces
+  achats, qui restent privés).
+- **Mise à jour** : la liste est relue une fois par jour (135 pages, une par seconde, environ 3 minutes),
+  pendant la collecte, sans jamais la bloquer. Le robots.txt de Wealins autorise tout.
+- **À faire par le propriétaire** : ajouter `www.wealins.com` aux domaines autorisés du réseau cloud. D'ici là,
+  la fiche garde la liste lue depuis le Mac le 6 novembre (valeurs du 4 et du 5 novembre).
 
 ## 5. Garde-fous
 
@@ -120,8 +143,8 @@ cloud.
 - [ ] Lundi 9 h 15 : vérifier que les 70 nouveaux titres sont dans la recherche et que la collecte reste
   assez rapide (236 titres).
 - [ ] Possible plus tard : un lien pour transférer tes achats vers un autre appareil (Mac).
-- [ ] Wealins : seulement si tu veux suivre des fonds Wealins (valeur de la veille) dans « Mes
-  investissements ».
+- [x] Fonds Wealins dans « Mes investissements » (partie 4 ter).
+- [ ] Ajouter `www.wealins.com` aux domaines autorisés du réseau cloud (le propriétaire).
 
 ## 7. Détail technique (pour Claude et les agents)
 
