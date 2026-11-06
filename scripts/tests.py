@@ -146,6 +146,52 @@ def methode_de_decision():
 
 
 @test
+def lectures_des_agents():
+    import lectures as l
+    import controle as c
+    tableau = ("| Domaine | Organisme |\n|---|---|\n| `www.amf-france.org` | AMF |\n| `arxiv.org` | arXiv |\n"
+               "Écartés : `www.imf.org` (hors tableau)\n")
+    D = l.domaines_verifies(tableau)
+    assert D == {"www.amf-france.org", "arxiv.org"}, D
+    assert l.est_verifie("https://www.amf-france.org/sites/x.pdf", D)
+    assert not l.est_verifie("http://www.amf-france.org/x.pdf", D), "https obligatoire"
+    assert not l.est_verifie("https://www.amf-france.org.exemple.com/x.pdf", D), "domaine imité"
+    assert not l.est_verifie("https://amf-france.org/x.pdf", D) and not l.est_verifie("pas une adresse", D)
+    robots = "User-agent: *\nDisallow: /prive/\n"
+    assert l.robots_permet(200, robots, "https://www.amf-france.org/public/x.pdf")
+    assert not l.robots_permet(200, robots, "https://www.amf-france.org/prive/x.pdf")
+    assert not l.robots_permet(403, "", "https://x/y.pdf") and l.robots_permet(404, "", "https://x/y.pdf")
+    assert l.slug("Rapport annuel 2025 : l'épargne des ménages") == "rapport-annuel-2025-l-epargne-des-menages"
+    assert l.pages_demandees("3-8", 20) == [3, 4, 5, 6, 7, 8] and l.pages_demandees("1-99", 12)[-1] == 12
+    assert len(l.pages_demandees("1-100", 500)) == 30, "30 pages au plus par appel"
+    with tempfile.TemporaryDirectory() as tmp:
+        f = l.nouvelle_note("https://www.amf-france.org/a.pdf", "Guide des ETF", "AMF", "2026-06-11", "nuit",
+                            jour="2026-11-07", dossier=tmp)
+        assert f.name == "2026-11-07-guide-des-etf.md" and l.nouvelle_note("https://x", "Guide des ETF", "AMF",
+                                                                          jour="2026-11-07", dossier=tmp) == f
+        notes = l.lire_notes(tmp)
+        assert notes[0]["titre"] == "Guide des ETF" and notes[0]["mots"] == 0, "la consigne ne compte pas comme résumé"
+        defauts = l.defauts(notes, {"www.amf-france.org"}, "", "2026-11-07")
+        assert any("résumé de 0 mots" in x for x in defauts) and any("absente de la bibliothèque" in x for x in defauts)
+        f.write_text(f.read_text(encoding="utf-8").replace("(80 à 300 mots", " ".join(["mot"] * 120) + "\n(80 à 300 mots"),
+                     encoding="utf-8")
+        l.ecrire_index(tmp)
+        notes = l.lire_notes(tmp)
+        texte_index = (Path(tmp) / "README.md").read_text(encoding="utf-8")
+        assert notes[0]["mots"] == 120 and "[[2026-11-07-guide-des-etf" in texte_index
+        assert l.defauts(notes, {"www.amf-france.org"}, texte_index, "2026-11-08") == []
+        assert any("hors des sources" in x for x in l.defauts(notes, {"arxiv.org"}, texte_index, "2026-11-08"))
+        assert any("aucune lecture depuis" in x for x in l.defauts(notes, {"www.amf-france.org"}, texte_index, "2026-11-12"))
+        assert l.defauts([], set(), "", "2026-11-08") == [], "pas d'alerte avant 3 jours de méthode"
+    # la vraie bibliothèque est cohérente, et un PDF ajouté par un agent est un problème
+    vraies = l.lire_notes()
+    assert vraies and l.defauts(vraies, l.domaines_verifies(), (l.DOSSIER / "README.md").read_text(encoding="utf-8"),
+                                vraies[-1]["lu_le"]) == []
+    pb, _ = c.ecarts_aux_regles("nuit", [("A", "apprentissage/lectures/rapport.pdf", 0)], "2026-11-07", "2026-11-06")
+    assert pb and "PDF" in pb[0]
+
+
+@test
 def fonds_wealins():
     import wealins as w
     import collecte as c
