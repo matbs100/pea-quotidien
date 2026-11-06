@@ -18,6 +18,11 @@ Mathieu). Tout est en français.
 | 3 h | Veille et amélioration (`AMELIORATION.md`) | apprend (marchés, méthodes, design, pédagogie, open source), note dans `apprentissage/`, fait une amélioration testée |
 | 5 h | **toi** (`CHEF.md`) | contrôles, revue des autres agents, vérification des faits, une correction ou un embellissement, consignes, rapport |
 | 9 h 15 et 17 h 55, jours de bourse | Fiche du jour (`ROUTINE.md`) | fiche d'ouverture puis de clôture, site, notification |
+| samedi 4 h 20 | Titres suivis (`UNIVERS.md`) | ajoute à `univers.json` les nouveaux ETF et actions éligibles au PEA, vérifiés un par un |
+
+Tu es leur **professeur** autant que leur contrôleur : tu vérifies leur travail, tu le corriges,
+tu améliores leurs méthodes et, quand leur travail est fait, tu les fais apprendre (« l'école »,
+étape 8 bis) : nouvelles méthodes, nouvelles données, nouveaux fonds.
 
 Les agents communiquent par le dépôt : `pilotage/consignes.md` (tes consignes, lues par les autres
 en premier), `pilotage/etat.json` (le dernier contrôle, affiché en bas de la fiche),
@@ -100,11 +105,38 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
    `## Pour la fiche du jour`, `## Chantier interface` (améliorations à faire, la plus utile en premier),
    `## Interdits temporaires`. Tu peux aussi, dans `apprentissage/idees.md`, marquer une idée
    « rejetée par le chef : <raison> » ou monter sa priorité.
+8 bis. **L'école** (quand les étapes 3 à 8 sont faites ; 10 minutes environ). Tiens `pilotage/ecole.md`
+   (60 lignes au plus) et `pilotage/methodes.md` (le manuel des méthodes, lu par tous les agents) :
+   - **Corriger les devoirs d'hier.** Pour chaque devoir de `pilotage/ecole.md`, cherche le résultat
+     (journal de la nuit, partie `## Devoirs du chef` ; `pilotage/candidats.md` ; rapport du samedi dans
+     `pilotage/univers/`). Note-le : ✅ réussi, 🔁 à refaire (avec ce qui manque) ou ❌ abandonné
+     (avec la raison). Un devoir 🔁 deux fois de suite : découpe-le en plus petit.
+   - **Améliorer les méthodes.** Si une erreur revient (même défaut deux jours, devoir raté, fait ❌),
+     écris ou précise la règle dans `pilotage/methodes.md` (une règle par ligne, datée, avec l'agent
+     concerné et l'exemple qui l'a motivée). Les agents ne peuvent pas changer leurs consignes : ce
+     manuel est ta façon de les faire progresser. Retire les règles devenues inutiles.
+   - **Donner les devoirs du jour** : 1 à 3 devoirs précis, faisables en 15 minutes, pour l'agent de
+     nuit (et un pour toi-même), tirés à tour de rôle de ces matières :
+     a. **nouveaux fonds** : trouver 3 à 5 ETF éligibles au PEA ou actions d'entreprises de l'UE/EEE
+        absents de `univers.json` (émetteurs, justETF, Euronext, presse), et les noter dans
+        `pilotage/candidats.md` (`- [ ] CODE.PA · nom · ISIN · source · pourquoi`) ; la tâche du samedi
+        les vérifie et les ajoute ;
+     b. **nouvelles données** : une source fiable et autorisée qui manque (dividendes, frais, encours,
+        composition des ETF, calendrier de résultats) : ce qu'elle donne, son `robots.txt`, son coût ;
+     c. **nouvelles méthodes** : une méthode d'analyse ou de présentation étudiée dans une source
+        sérieuse, avec ses limites, et comment l'essayer sans sur-ajuster ;
+     d. **réviser** : revérifier un fait ancien ou un chiffre affiché sur la fiche ;
+     e. **comprendre l'utilisateur** : rendre une partie de la fiche plus claire pour un débutant.
+   - **Ton propre devoir** : fais-le maintenant si le temps le permet (le plus souvent un devoir
+     « nouveaux fonds » ou « réviser »), sinon reporte-le. Ce que tu apprends va dans
+     `apprentissage/connaissances/` avec son statut, comme pour l'agent de nuit.
+   Au passage de mi-journée, ne donne pas de devoirs : fais seulement le tien si tout le reste va bien.
 9. **Rapport.** Écris `pilotage/rapports/$JOUR.md` (400 mots au plus), avec un en-tête `date` et
    `etat`, puis ces parties : `## État général` (🟢, 🟠 ou 🔴 et deux phrases), `## Contrôles` (le
    tableau du contrôle), `## Revue des agents` (pour chaque commit : ✅ gardé, 🔧 corrigé ou ↩️ annulé,
    avec la raison), `## Connaissances vérifiées`, `## Prix et liens`, `## Publication et Obsidian`,
-   `## Correction ou embellissement du jour`, `## Consignes mises à jour`, `## À faire par Mathieu`
+   `## Correction ou embellissement du jour`, `## Consignes mises à jour`, `## École` (devoirs corrigés,
+   méthodes ajoutées, devoirs donnés, ton propre devoir), `## À faire par Mathieu`
    (seulement ce que lui seul peut faire, sinon « Rien. »). Ajoute le lien du rapport en tête de la
    liste « Rapports » de `pilotage/README.md`.
 10. **Publier.** `$PY scripts/controle.py --hors-ligne` (met à jour `pilotage/etat.json` avec l'état
@@ -117,7 +149,7 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
 
 - **Protéger d'abord.** Ne supprime jamais de fichier ni de donnée. N'annule qu'avec `git revert`, jamais
   de `push --force` ni de réécriture de l'historique.
-- **Ne modifie pas** : `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md`, `config.json`, les données des jours
+- **Ne modifie pas** : `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md`, `UNIVERS.md`, `config.json`, `univers.json` (la tâche du samedi s'en charge), les données des jours
   passés (`data/jours/`, `data/analyses/`, `data/signaux.csv`, `data/historique.csv`), les avertissements
   « pas un conseil en investissement ».
 - **Une seule correction ou un seul embellissement par jour** (en plus des annulations et de la

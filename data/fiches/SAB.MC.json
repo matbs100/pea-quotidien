@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/FF55-SAB/",
+  "isin": "ES0113860A34",
+  "pea_bourso": false,
+  "secteur": "Banque",
+  "indice": "IBEX 35",
+  "valorisation": "14 935 MEUR",
+  "rendement": "18,94%",
+  "per": "11,88",
+  "dernier_dividende": "0,50 EUR (27/05/26)",
+  "per_annee": "2026",
+  "effectif": "18 736",
+  "nb_titres": "4 768 462 486",
+  "capitalisation": "14 934,82 MEUR",
+  "marche": "Mercado Continuo",
+  "site": "https://www.grupbancsabadell.com/en/",
+  "pays": "Espagne"
+ }
+}

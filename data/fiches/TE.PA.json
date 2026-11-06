@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPTE/",
+  "isin": "NL0014559478",
+  "pea_bourso": true,
+  "secteur": "Services industriels",
+  "indice": "SBF 120",
+  "valorisation": "6 086 MEUR",
+  "rendement": "3,02%",
+  "per": "18,33",
+  "dernier_dividende": "1,00 EUR (18/05/26)",
+  "per_annee": "2026",
+  "effectif": "18 574",
+  "nb_titres": "178 378 708",
+  "capitalisation": "6 086,28 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://investors.technipenergies.com",
+  "pays": "France"
+ }
+}

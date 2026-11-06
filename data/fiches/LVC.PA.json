@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTLVC/",
+  "isin": "FR0010592014",
+  "societe": "Amundi Asset Management",
+  "pea_bourso": true,
+  "actif_net": "257M  • 31/10/2026",
+  "sri_officiel": 6,
+  "creation": "23/05/2008",
+  "forme": "SICAV",
+  "classe": "Autres",
+  "zone": "France",
+  "categorie_ms": "Trading - Leveraged/Inverse Actions",
+  "affectation": "Capitalisation",
+  "replication": "Synthétique",
+  "frais_entree": "0 %",
+  "frais_gestion": "0,4 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F000001ZQF&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

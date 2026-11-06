@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSK/",
+  "isin": "FR0000121709",
+  "pea_bourso": true,
+  "secteur": "Produits ménagers",
+  "indice": "SBF 120",
+  "valorisation": "3 179 MEUR",
+  "rendement": "5,19%",
+  "per": "10,67",
+  "dernier_dividende": "2,80 EUR (20/05/26)",
+  "per_annee": "2026",
+  "effectif": "32 064",
+  "nb_titres": "55 337 770",
+  "capitalisation": "3 179,15 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.groupeseb.com",
+  "pays": "France"
+ }
+}

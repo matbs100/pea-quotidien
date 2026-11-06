@@ -63,21 +63,57 @@ def get(url):
         return None
 
 
-def boursorama(code):
+MOIS_EN = {m: i for i, m in enumerate(("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+                                        "Oct", "Nov", "Dec"), 1)}
+
+
+def date_bourso(page):
+    """Date (AAAA-MM-JJ) du dernier cours affiché par une page Boursorama, ou None."""
+    i = page.find("data-ist-last")
+    m = re.search(r"(\d{2})/(\d{2})/(\d{4})", page[i:i + 6000] if i >= 0 else page)
+    return f"{m.group(3)}-{m.group(2)}-{m.group(1)}" if m else None
+
+
+def date_ft(page):
+    """Date (AAAA-MM-JJ) du cours d'une page du Financial Times (« as of Nov 06 2026 »), ou None."""
+    m = re.search(r"as of ([A-Z][a-z]{2}) (\d{2}) (\d{4})", page)
+    return f"{m.group(3)}-{MOIS_EN[m.group(1)]:02d}-{m.group(2)}" if m and m.group(1) in MOIS_EN else None
+
+
+def boursorama_date(code):
+    """(prix, date du cours) lus sur Boursorama, ou (None, None)."""
     r = get(f"https://www.boursorama.com/cours/{code}/")
     # Code inconnu -> redirection vers la recherche : on rejette
     if not r or f"/cours/{code}".lower().replace("$", "%24") not in r.url.lower().replace("$", "%24"):
-        return None
+        return None, None
     m = re.search(r"data-ist-last>([^<]+)", r.text)
-    return nombre(m.group(1), "fr") if m else None
+    return (nombre(m.group(1), "fr") if m else None), date_bourso(r.text)
+
+
+def boursorama(code):
+    return boursorama_date(code)[0]
+
+
+def ft_date(genre, code):
+    """(prix, date du cours) lus sur le Financial Times, ou (None, None)."""
+    r = get(f"https://markets.ft.com/data/{genre}/tearsheet/summary?s={code}")
+    if not r or "summary" not in r.text[:5000].lower():
+        return None, None
+    m = re.search(r'mod-ui-data-list__value">([^<]+)', r.text)
+    return (nombre(m.group(1), "en") if m else None), date_ft(r.text)
 
 
 def ft(genre, code):
-    r = get(f"https://markets.ft.com/data/{genre}/tearsheet/summary?s={code}")
-    if not r or "summary" not in r.text[:5000].lower():
-        return None
-    m = re.search(r'mod-ui-data-list__value">([^<]+)', r.text)
-    return nombre(m.group(1), "en") if m else None
+    return ft_date(genre, code)[0]
+
+
+def source_perimee(date_source, jour, date_yahoo=None):
+    """Règle de Mathieu (06/11) : une source qui ne donne que le cours d'un jour précédent n'est pas
+    prise en compte. On attend le cours du jour, ou celui de la dernière séance du titre si Yahoo
+    lui-même n'a pas encore de cours du jour (marché pas encore ouvert). Date inconnue : gardée."""
+    if not date_source:
+        return False
+    return date_source < min(jour, date_yahoo or jour)
 
 
 def codes(m):
@@ -119,12 +155,16 @@ def main():
         bc, fcode = codes(m)
         echecs = cache.get(t, {}).get("echecs", {})  # source -> nb d'échecs d'affilée
         src = {"yahoo": m["prix"]}
-        for nom_src, code, lire in (("boursorama", bc, lambda c: boursorama(c)),
-                                     ("ft", fcode, lambda c: ft(*c))):
+        perimees = {}
+        for nom_src, code, lire in (("boursorama", bc, lambda c: boursorama_date(c)),
+                                     ("ft", fcode, lambda c: ft_date(*c))):
             if not code or echecs.get(nom_src, 0) >= 3:  # abandon après 3 échecs
                 continue
-            p = lire(code)
-            if p:
+            p, dt = lire(code)
+            if p and source_perimee(dt, jour, m.get("date_cours")):
+                perimees[nom_src] = dt  # cours de la veille : écarté (règle de Mathieu)
+                echecs.pop(nom_src, None)
+            elif p:
                 src[nom_src] = p
                 echecs.pop(nom_src, None)
             else:
@@ -139,6 +179,8 @@ def main():
             tol_abs = 0.006 / ref * 100  # arrondi à 2 décimales sur les petits prix
             statut = "ok" if all(abs(e) <= max(tol, tol_abs) for e in ecarts.values()) else "ecart"
         info = {"sources": src, "prix_reference": round(ref, 4), "ecarts_sources": ecarts, "verif": statut}
+        if perimees:
+            info["sources_perimees"] = perimees
         m.update(info)
         vus[t] = info
         bilan[statut] += 1

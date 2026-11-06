@@ -260,6 +260,15 @@ def calculs_verif():
     assert verif.codes({"ticker": "AIR.PA", "categorie": "actions"}) == ("1rPAIR", ("equities", "AIR:PAR"))
     assert verif.codes({"ticker": "PSP5.PA", "categorie": "etf"}) == ("1rTPSP5", ("etfs", "PSP5:PAR:EUR"))
     assert verif.codes({"ticker": "^FCHI", "categorie": "indices"})[0] == "1rPCAC"
+    # règle de Mathieu : une source qui ne donne que le cours de la veille est écartée
+    page_b = '<span data-ist-last>12,30</span><span data-ist-last-trade-datetime>05/11/2026 17:35:02</span>'
+    assert verif.date_bourso(page_b) == "2026-11-05"
+    assert verif.date_ft("Data delayed at least 15 minutes, as of Nov 06 2026 16:39 GMT.") == "2026-11-06"
+    assert verif.source_perimee("2026-11-05", "2026-11-06", "2026-11-06")
+    assert not verif.source_perimee("2026-11-06", "2026-11-06", "2026-11-06")
+    assert not verif.source_perimee(None, "2026-11-06"), "date inconnue : source gardée"
+    assert not verif.source_perimee("2026-11-05", "2026-11-06", "2026-11-05"), \
+        "marché pas encore ouvert (Yahoo aussi à la veille) : la dernière séance compte"
 
 
 @test
@@ -385,6 +394,13 @@ def controle_du_chef():
     assert c.agent_du_commit("Matin PEA 2026-11-06 (ouverture)") == "fiche"
     assert c.agent_du_commit("Matin PEA : première version") == "autre"
     assert c.agent_du_commit("Chef : rapport du 2026-11-06 (vert)") == "chef"
+    # tâche du samedi : seulement univers.json, son rapport et les pistes
+    assert c.agent_du_commit("Univers : mise à jour hebdomadaire du 2026-11-07 (3 ajouts)") == "univers"
+    ok_u = [("M", "univers.json", 6), ("A", "pilotage/univers/2026-11-07.md", 30), ("M", "pilotage/candidats.md", 4)]
+    assert c.ecarts_aux_regles("univers", ok_u, "2026-11-07", "2026-11-06") == ([], [])
+    assert c.ecarts_aux_regles("univers", [("M", "scripts/collecte.py", 3)], "2026-11-07", "2026-11-06")[1]
+    assert c.ecarts_aux_regles("nuit", [("M", "pilotage/candidats.md", 3)], "2026-11-07", "2026-11-06") == ([], [])
+    assert c.ecarts_aux_regles("nuit", [("M", "pilotage/consignes.md", 3)], "2026-11-07", "2026-11-06")[1]
     ok = [("M", "scripts/modele.html", 40), ("M", "apprentissage/CHANGELOG.md", 5)]
     assert c.ecarts_aux_regles("nuit", ok, "2026-11-06", "2026-11-05") == ([], [])
     pb, al = c.ecarts_aux_regles("nuit", [("M", "data/jours/2026-11-04.json", 3), ("M", "CHEF.md", 2),

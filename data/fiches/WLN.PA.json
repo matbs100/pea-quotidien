@@ -1,0 +1,19 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPWLN/",
+  "isin": "FR00140182K6",
+  "pea_bourso": true,
+  "secteur": "Financements et services spécialisés",
+  "indice": "SBF 120",
+  "valorisation": "653 MEUR",
+  "per": "3,70",
+  "per_annee": "2026",
+  "effectif": "18 106",
+  "nb_titres": "56 808 059",
+  "capitalisation": "653,07 MEUR",
+  "marche": "Compartiment B",
+  "site": "https://worldline.com",
+  "pays": "France"
+ }
+}

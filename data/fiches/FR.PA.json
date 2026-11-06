@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPFR/",
+  "isin": "FR0013176526",
+  "pea_bourso": true,
+  "secteur": "Véhicules particuliers et pièces détachées",
+  "indice": "SBF 120",
+  "valorisation": "2 692 MEUR",
+  "rendement": "4,48%",
+  "per": "7,58",
+  "dernier_dividende": "0,44 EUR (26/05/26)",
+  "per_annee": "2026",
+  "effectif": "100 216",
+  "nb_titres": "245 607 624",
+  "capitalisation": "2 691,86 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.valeo.com/",
+  "pays": "France"
+ }
+}

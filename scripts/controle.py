@@ -43,14 +43,20 @@ RANG_MOMENT = {"ouverture": 0, "cloture": 1}
 
 # Fichiers que chaque agent ne doit pas modifier (le chef juge les cas limites)
 HORS_ROLE = {  # mes-investissements.md : tenu par Mathieu seul, aucun agent n'y touche
-    "fiche": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "ARCHITECTURE.md", "config.json",
+    "fiche": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "ARCHITECTURE.md", "config.json",
               "pilotage/*", "apprentissage/*", "mes-investissements.md", "guide/*"],
-    "nuit": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "config.json", "pilotage/*", "data/*",
+    "nuit": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "config.json", "pilotage/*", "data/*",
              "mes-investissements.md", "guide/*"],
-    "chef": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "config.json", "data/jours/*",
+    "chef": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "config.json", "data/jours/*",
              "data/analyses/*", "data/signaux.csv", "data/historique.csv", "mes-investissements.md", "guide/*"],
+    "univers": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "ARCHITECTURE.md",
+                "config.json", "data/*", "docs/*", "notes/*", "apprentissage/*", "mes-investissements.md",
+                "guide/*", "pilotage/*"],
 }
-PERMIS = {"fiche": ["apprentissage/idees.md"]}  # filet de sécurité : ligne d'idée annulée
+# exceptions : filet de sécurité de la fiche ; pistes de nouveaux titres (nuit) ; rapport du samedi
+PERMIS = {"fiche": ["apprentissage/idees.md"], "nuit": ["pilotage/candidats.md"],
+          "univers": ["pilotage/candidats.md"]}
+PERMIS_MOTIFS = {"univers": ["pilotage/univers/*"]}
 MAX_LIGNES = {"nuit": 300, "chef": 250}         # lignes de code modifiées par passage
 
 
@@ -435,6 +441,8 @@ def agent_du_commit(message):
         return "nuit"
     if message.startswith("Chef :"):
         return "chef"
+    if message.startswith("Univers :"):
+        return "univers"
     if message.startswith("Revert"):
         return "annulation"
     return "autre"
@@ -444,7 +452,8 @@ def ecarts_aux_regles(agent, fichiers, jour_commit, dernier_jour):
     """fichiers : [(statut Git, chemin, lignes modifiées)]. Renvoie (problèmes, alertes)."""
     pb, al = [], []
     for statut, chemin, _ in fichiers:
-        if any(fnmatch(chemin, motif) for motif in HORS_ROLE.get(agent, [])) and chemin not in PERMIS.get(agent, []):
+        if any(fnmatch(chemin, motif) for motif in HORS_ROLE.get(agent, [])) and chemin not in PERMIS.get(agent, []) \
+                and not any(fnmatch(chemin, m) for m in PERMIS_MOTIFS.get(agent, [])):
             al.append(f"{chemin} : hors du rôle de l'agent « {agent} »")
         m = re.match(r"data/(jours|analyses)/(\d{4}-\d{2}-\d{2})\.", chemin)
         if m and m.group(2) < jour_commit and agent != "autre":

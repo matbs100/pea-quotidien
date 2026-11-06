@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPANTIN/",
+  "isin": "FR0014005AL0",
+  "pea_bourso": true,
+  "secteur": "Services d'investissement",
+  "indice": "CAC Mid & Small",
+  "valorisation": "1 358 MEUR",
+  "rendement": "9,47%",
+  "per": "13,56",
+  "dernier_dividende": "0,28 EUR (20/10/26)",
+  "per_annee": "2026",
+  "effectif": "254",
+  "nb_titres": "179 193 288",
+  "capitalisation": "1 358,29 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://shareholders.antin-ip.com/",
+  "pays": "France"
+ }
+}
