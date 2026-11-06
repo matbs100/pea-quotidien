@@ -1,15 +1,15 @@
 {
- "genere_le": "2026-11-06T05:08+01:00",
- "fiche": "2026-11-05 (cloture)",
+ "genere_le": "2026-11-06T12:38+01:00",
+ "fiche": "2026-11-06 (ouverture)",
  "lieu": "cloud",
  "etat": "orange",
- "resume": "À surveiller. 13/13 tests, 8/8 prix revérifiés, 29/29 liens valides, site à jour. Points à voir : cohérence des données, analyse du jour.",
+ "resume": "À surveiller. 17/17 tests, 25/25 liens valides, site à jour. Points à voir : cohérence des données, travail des agents (30 dernières heures).",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "13/13 tests réussis",
+   "resume": "17/17 tests réussis",
    "details": []
   },
   {
@@ -18,54 +18,64 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-05 (cloture), générée le 2026-11-05T23:28+01:00",
-    "fiche attendue à cette heure : 2026-11-05 (cloture)"
+    "dernière fiche : 2026-11-06 (ouverture), générée le 2026-11-06T09:17+01:00",
+    "fiche attendue à cette heure : 2026-11-06 (ouverture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
    "niveau": "alerte",
-   "resume": "59 cours examinés, 0 problème(s), 1 alerte(s) ; entre sources : 50 confirmés, 1 écart(s)",
+   "resume": "59 cours examinés, 0 problème(s), 13 alerte(s) ; entre sources : 44 confirmés, 7 écart(s)",
    "details": [
-    "ALPHA.AT : cours daté du 2026-11-04, pas du 2026-11-05"
+    "TEP.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "ALV.DE : cours daté du 2026-11-04, pas du 2026-11-06",
+    "ALPHA.AT : cours daté du 2026-11-04, pas du 2026-11-06",
+    "PCEU.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "ETZ.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "WPEA.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "CAC.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "MSE.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "RS2K.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "C40.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "DCAM.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "ALNXT.PA : cours daté du 2026-11-04, pas du 2026-11-06",
+    "7 écarts entre sources : TEP.PA, AF.PA, WPEA.PA, RS2K.PA, DCAM.PA, ALMKT.PA"
    ]
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
-   "niveau": "alerte",
-   "resume": "390 mots, 1 remarque(s)",
-   "details": [
-    "390 mots (350 au plus)"
-   ]
+   "niveau": "ok",
+   "resume": "292 mots, 0 remarque(s)",
+   "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-05 (cloture)",
+   "resume": "régénérée avec la fiche du 2026-11-06 (ouverture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "ok",
-   "resume": "8/8 prix identiques sur Boursorama",
+   "niveau": "non_verifiable",
+   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
    "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "29/29 liens valides sur 8 titres, 5 non ouverts (robots.txt)",
+   "resume": "25/25 liens valides sur 8 titres, 4 non ouverts (robots.txt)",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-05 (cloture)",
+   "resume": "le site affiche la fiche du 2026-11-06 (ouverture)",
    "details": []
   },
   {
@@ -81,9 +91,21 @@
   {
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
-   "niveau": "ok",
-   "resume": "19 commit(s), 0 problème(s), 0 alerte(s)",
+   "niveau": "alerte",
+   "resume": "27 commit(s), 0 problème(s), 4 alerte(s)",
    "details": [
+    "3a38663 « Chef : rapport du 2026-11-06 (orange) ; textes plu » : docs/archives/2026-11-05.html : fiche d'un jour passé régénérée",
+    "3a38663 « Chef : rapport du 2026-11-06 (orange) ; textes plu » : notes/2026-11-05.md : fiche d'un jour passé régénérée",
+    "1b28377 « Amélioration : badge de risque sur la page princip » : docs/archives/2026-11-05.html : fiche d'un jour passé régénérée",
+    "47e9ec6 « Amélioration : définitions au toucher dans les fic » : docs/archives/2026-11-05.html : fiche d'un jour passé régénérée",
+    "0b58edc [autre] le propriétaire : devise de cotation de chaque titre sur la fiche",
+    "2543706 [autre] le propriétaire : note des nouveautés du 6 novembre et mise à jour hebdomadair",
+    "90be280 [autre] le propriétaire : ETF à effet de levier suivis à part",
+    "b926af5 [autre] le propriétaire : recherche par ISIN dans « Mes investissements »",
+    "cb360de [autre] le propriétaire : suggestions du jour et suivi de mes investissements",
+    "21f9888 [fiche] Matin PEA 2026-11-06 (ouverture)",
+    "7bb6dbc [fiche] Matin PEA 2026-11-06 (ouverture)",
+    "3a38663 [chef] Chef : rapport du 2026-11-06 (orange) ; textes plus lisibles sur télép",
     "1b28377 [nuit] Amélioration : badge de risque sur la page principale",
     "239c2e7 [autre] Consignes : afficher le risque sur la page principale (demande de Math",
     "7cae52a [autre] Pilotage : passage de mi-journée du chef d'orchestre (12 h 30, jours d",
@@ -91,18 +113,7 @@
     "8816215 [chef] Chef : rapport du 2026-11-06 (orange)",
     "932b0d1 [autre] Consigne de la fiche : filet de sécurité étendu aux commits du chef d'",
     "55aa480 [autre] Équipe d'agents : chef d'orchestre (controle.py, pilotage/, CHEF.md), ",
-    "2241934 [autre] Passage du soir avancé à 17 h 55, avec attente de la clôture définitiv",
-    "dca4d68 [autre] Fiche du 5 novembre à la clôture réelle (VWAP, bandeau clôture) ; corr",
-    "95afc03 [autre] Deux passages par jour : ouverture (9 h 15) et clôture (18 h 15), jour",
-    "b105ec5 [autre] Notification programmée à l'ouverture de la Bourse de Paris (9 h)",
-    "ed2dcdd [autre] Correctif : police et couleur des bulles de définition",
-    "47e9ec6 [nuit] Amélioration : définitions au toucher dans les fiches",
-    "04d013e [autre] Agent Amélioration : apprentissage/, tests garde-fous, nouveauté affic",
-    "706148e [autre] Fiches détaillées cliquables : historique 5 ans, risque SRI (DIC ou es",
-    "19b73ef [fiche] Matin PEA 2026-11-05",
-    "9f0d10c [autre] Consigne : un seul Python ; fichier launchd de synchro",
-    "3a99b8d [autre] Adresse du site GitHub Pages",
-    "92a982e [autre] Matin PEA : première version et fiche du 5 novembre 2026"
+    "2241934 [autre] Passage du soir avancé à 17 h 55, avec attente de la clôture définitiv"
    ]
   }
  ]
