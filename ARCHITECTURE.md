@@ -39,6 +39,7 @@ dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 | 5 h, chaque jour | **Chef d'orchestre** | `CHEF.md` | contrôle tout (`controle.py`), vérifie les faits appris, relit les commits des autres, annule ce qui casse, corrige un bug ou embellit l'interface, écrit `pilotage/` |
 | 12 h 30, jours de bourse | **Chef d'orchestre, passage de mi-journée** | routine dédiée (lit `CHEF.md`) | vérifie la fiche d'ouverture, la refait et corrige le programme si besoin, s'assure que la clôture pourra tourner ; pas d'embellissement |
 | 9 h 15 et 17 h 55, jours de bourse | **Fiche du jour** | `ROUTINE.md` | collecte, contrôle des prix, fiches détaillées, analyse, site, notification |
+| samedi à 4 h 20 | **Mise à jour des titres suivis** | tâche planifiée (consigne dans la tâche) | ajoute à `univers.json` les nouveaux ETF éligibles au PEA et les actions entrées dans le CAC 40, le SBF 120 ou l'Euro Stoxx 50, chacun vérifié (Yahoo, Boursorama) ; 20 ajouts au plus ; signale sans les supprimer les titres qui ne cotent plus |
 | 9 h 40 et 18 h 40, si le Mac est allumé | **Relais du Mac** | tâche planifiée de l'appli Claude | `git pull` dans Obsidian, vérifie le site en ligne, recopie l'essentiel dans les notes |
 
 Les agents ne se parlent pas directement : ils communiquent par des fichiers du dépôt.
@@ -57,6 +58,7 @@ même temps que la routine correspondante sur claude.ai.
 |---|---|
 | `univers.json` | les titres suivis, par catégorie (indices, devises, matières, ETF, ETF à effet de levier, actions, petits prix). Les ETF de `etf_levier` sont traités comme des ETF (fiche, contrôle des prix, recherche) mais restent hors du top 30 et des suggestions, et portent un avertissement |
 | `descriptions.json` | courtes descriptions des titres, rédigées sans copier de site |
+| `guide/` | notes pour le propriétaire (dans Obsidian) : ce qui a été ajouté et comment s'en servir. Les agents ne les modifient pas |
 | `mes-investissements.md` | autre façon de noter les achats du propriétaire (code Yahoo ou ISIN, date, prix, quantité, type), un par ligne de tableau, pour les retrouver dans Obsidian. Tenu par le propriétaire seul : les agents le lisent mais ne le modifient jamais (`controle.py` le signale). Public, comme tout le dépôt, contrairement à la barre de recherche |
 | `config.json` | adresse du site et du dépôt (ne pas changer) |
 | `data/jours/` | une capture JSON par jour (écrasée à la clôture) |

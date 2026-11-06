@@ -44,11 +44,11 @@ RANG_MOMENT = {"ouverture": 0, "cloture": 1}
 # Fichiers que chaque agent ne doit pas modifier (le chef juge les cas limites)
 HORS_ROLE = {  # mes-investissements.md : tenu par le propriétaire seul, aucun agent n'y touche
     "fiche": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "ARCHITECTURE.md", "config.json",
-              "pilotage/*", "apprentissage/*", "mes-investissements.md"],
+              "pilotage/*", "apprentissage/*", "mes-investissements.md", "guide/*"],
     "nuit": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "config.json", "pilotage/*", "data/*",
-             "mes-investissements.md"],
+             "mes-investissements.md", "guide/*"],
     "chef": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "config.json", "data/jours/*",
-             "data/analyses/*", "data/signaux.csv", "data/historique.csv", "mes-investissements.md"],
+             "data/analyses/*", "data/signaux.csv", "data/historique.csv", "mes-investissements.md", "guide/*"],
 }
 PERMIS = {"fiche": ["apprentissage/idees.md"]}  # filet de sécurité : ligne d'idée annulée
 MAX_LIGNES = {"nuit": 300, "chef": 250}         # lignes de code modifiées par passage
