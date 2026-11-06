@@ -116,6 +116,94 @@ def calcul_de_mes_investissements():
 
 
 @test
+def fonds_wealins():
+    import wealins as w
+    import collecte as c
+    import verif
+    ligne = lambda nom, isin, d, dev, vl, sfdr: (
+        f'<tr class="wsa-table-row is-odd"><th data-label="" scope="row" class="wsa-table-row-cell"> {nom} </th>'
+        f'<td data-label="ISIN" class="wsa-table-row-cell">{isin}</td><td data-label="Val.date" class="wsa-table-row-cell">{d}</td>'
+        f'<td data-label="Currency" class="wsa-table-row-cell">{dev}</td><td data-label="Actual" class="wsa-table-row-cell">{vl}</td>'
+        f'<td data-label="SFDR" class="wsa-table-row-cell">{sfdr}</td><td class="wsa-table-row-cell"><a href="#">Details</a></td></tr>')
+    page = ('<table class="wsa-table"><tr class="wsa-table-header"><th>Name</th></tr>'
+            + ligne("AB &#8211; Select US Equity", "LU0683600646", "2026-11-05", "EUR", "70.02", "Article 8")
+            + ligne("Liquidity Euro", "LU0108940346", "2026-11-04", "EUR", "1,323.519", "&#8211;")
+            + ligne("Sans ISIN", "XX", "2026-11-04", "EUR", "1", "") + "</table>"
+            + '<a class="page-numbers" href="https://www.wealins.com/funds-list/page/2/">2</a>'
+            + '<a class="page-numbers" href="https://www.wealins.com/funds-list/page/135/">135</a>')
+    L = w.lire_liste(page)
+    assert [f["isin"] for f in L] == ["LU0683600646", "LU0108940346"], L
+    assert L[0]["nom"] == "AB – Select US Equity" and L[0]["vl"] == 70.02 and L[0]["sfdr"] == "Article 8"
+    assert L[1]["vl"] == 1323.519 and L[1]["sfdr"] is None and L[1]["date_vl"] == "2026-11-04"
+    assert w.nb_pages(page) == 135 and w.nb_pages("<p>rien</p>") == 1 and w.lire_liste(None) == []
+    fiche = ('<h1 class="alignwide wp-block-post-title has-x-large-font-size">Abrdn Asia &#8211; A Acc USD</h1>'
+             '<dl><dt class="wsa-fund-graph-top-right-info-list__label">ISIN:</dt> <dd class="wsa-fund-graph-top-right-info-list__value">LU0011963245</dd>'
+             '<dt class="wsa-fund-graph-top-right-info-list__label">Current NAV:</dt> <dd class="wsa-fund-graph-top-right-info-list__value">121.4838</dd>'
+             '<dt class="wsa-fund-graph-top-right-info-list__label">Val.date:</dt> <dd class="wsa-fund-graph-top-right-info-list__value">2026-11-05</dd>'
+             '<dt class="wsa-fund-graph-top-right-info-list__label">Year to date performance:</dt> <dd class="wsa-fund-graph-top-right-info-list__value">9.39%</dd>'
+             '<dt class="wsa-fund-graph-top-right-info-list__label">Manager:</dt> <dd class="wsa-fund-graph-top-right-info-list__value">Abrdn Investments Luxembourg SA</dd></dl>'
+             '<a href="https://www.e-wealins.com/fundDocument/LU0011963245_USD_KIDDOC_EN_2026-03-26.pdf">KID (EN)</a>'
+             '<a href="https://www.e-wealins.com/fundDocument/LU0011963245_USD_KIDDOC_FR_2026-03-26.pdf">KID (FR)</a>'
+             'data.addRows([ [new Date("2026-11-04T00:00:00"), 123.089],[new Date("2026-11-05T00:00:00"), 121.4838], ]);')
+    f = w.lire_fonds(fiche)
+    assert f["nom"] == "Abrdn Asia – A Acc USD" and f["isin"] == "LU0011963245" and f["vl"] == 121.4838
+    assert f["date_vl"] == "2026-11-05" and f["perf_annee"] == 9.39 and f["gestionnaire"].startswith("Abrdn")
+    assert f["devise"] == "USD" and f["dic"].endswith("_KIDDOC_FR_2026-03-26.pdf"), "DIC en français d'abord"
+    assert f["historique"] == [("2026-11-04", 123.089), ("2026-11-05", 121.4838)]
+    # cache : la valeur précédente sert à la variation ; une page en retard ne fait pas reculer la date
+    cw = {"fonds": {}}
+    w.fusionner(cw, [{"isin": "LU1", "nom": "F", "vl": 100.0, "date_vl": "2026-11-04", "devise": "EUR"}], "2026-11-05")
+    w.fusionner(cw, [{"isin": "LU1", "nom": "F", "vl": 102.0, "date_vl": "2026-11-05", "devise": "EUR"}], "2026-11-06")
+    assert cw["fonds"]["LU1"]["vl_prec"] == 100.0 and w.variation(cw["fonds"]["LU1"]) == 2.0
+    w.fusionner(cw, [{"isin": "LU1", "nom": "F", "vl": 102.0, "date_vl": "2026-11-05", "devise": "EUR"}], "2026-11-06")
+    assert cw["fonds"]["LU1"]["vl_prec"] == 100.0, "même date : la valeur précédente est gardée"
+    w.fusionner(cw, [{"isin": "LU1", "nom": "F", "vl": 99.0, "date_vl": "2026-11-03", "devise": "EUR"}], "2026-11-07")
+    assert cw["fonds"]["LU1"]["vl"] == 102.0 and cw["fonds"]["LU1"]["vu_le"] == "2026-11-07"
+    # une lecture par jour, une seconde seulement si la première n'avait pas la veille
+    from datetime import datetime
+    soir = datetime(2026, 11, 6, 18, 0)
+    assert w.a_actualiser({"maj": None, "fonds": {}}, soir)
+    assert w.a_actualiser({"maj": "2026-11-05T18:00", "fonds": cw["fonds"]}, soir)
+    assert not w.a_actualiser({"maj": "2026-11-06T09:30", "fonds": cw["fonds"]}, soir), "valeurs du 05/11 : à jour"
+    vieux = {"X": {"vl": 1.0, "date_vl": "2026-11-04"}}
+    assert w.a_actualiser({"maj": "2026-11-06T09:30", "fonds": vieux}, soir), "valeurs du 04/11 : relire le soir"
+    assert not w.a_actualiser({"maj": "2026-11-06T16:00", "fonds": vieux}, soir), "pas deux lectures en 4 h"
+    assert w.jour_ouvre_precedent(datetime(2026, 11, 9).date()).isoformat() == "2026-11-06", "lundi -> vendredi"
+    # prix d'un fonds : la valeur la plus récente entre Wealins et le FT (règle de Mathieu)
+    ancien_ft = verif.ft_date
+    try:
+        verif.ft_date = lambda genre, code: (104.0, "2026-11-06")
+        m = w.mesure("LU1", cw)
+        assert m["prix"] == 104.0 and m["date_cours"] == "2026-11-06" and m["var_1j"] == 1.96, m
+        info = verif.verif_fonds(m)
+        assert info["verif"] == "seul" and info["sources_perimees"] == {"wealins": "2026-11-05"}
+        verif.ft_date = lambda genre, code: (102.01, "2026-11-05")
+        m = w.mesure("LU1", cw)
+        assert m["prix"] == 102.0 and m["var_1j"] == 2.0 and verif.verif_fonds(m)["verif"] == "ok"
+        verif.ft_date = lambda genre, code: (110.0, "2026-11-05")
+        assert verif.verif_fonds(w.mesure("LU1", cw))["verif"] == "ecart"
+        verif.ft_date = lambda genre, code: (None, None)
+        m = w.mesure("LU1", cw)
+        assert m["prix"] == 102.0 and verif.verif_fonds(m)["verif"] == "seul" and "sources_perimees" not in verif.verif_fonds(m)
+        assert w.mesure("LU9", cw) is None
+    finally:
+        verif.ft_date = ancien_ft
+    # mes investissements : un ISIN de la liste Wealins est suivi comme un fonds
+    m = w.mesure("LU1", cw, ft=False)
+    res = c.mes_investissements([{"ticker": "LU1", "nom": None, "date": "2026-10-01", "prix": 100.0, "quantite": 10.0,
+                                  "type": None}], {"LU1": m}.get, {}, "2026-11-06")
+    l = res["lignes"][0]
+    assert l["categorie"] == "fonds" and l["valeur"] == 1020.0 and l["perf_achat"] == 2.0 and not res["erreurs"]
+    assert w.catalogue_page(cw) == [["LU1", "F", "EUR", 102.0, "2026-11-05", 2.0]]
+    assert w.catalogue_page(cw, {"LU1"}) == [], "un fonds déjà suivi par la fiche n'est pas en double"
+    import rendu
+    assert rendu.montant(473.16, {"devise": "USD"}) == "473,16 USD" and rendu.montant(-0.84, {"devise": "USD"}, True) == "-0,84 USD"
+    assert rendu.montant(10, {}) == "10,00 €" and rendu.montant(None, {"devise": "USD"}) == "—"
+    assert rendu.date_vl({"categorie": "fonds", "date_cours": "2026-11-05"}) == " (valeur du 05/11)"
+    assert rendu.date_vl({"categorie": "etf", "date_cours": "2026-11-05"}) == ""
+
+
+@test
 def catalogue_et_isin():
     import collecte as c
     import fiches
@@ -288,7 +376,7 @@ def rendu_de_bout_en_bout():
         c = Path(tmp) / "depot"
         shutil.copytree(SCRIPTS, c / "scripts", ignore=shutil.ignore_patterns("__pycache__"))
         for f in ("config.json", "descriptions.json", "apprentissage/CHANGELOG.md", f"data/jours/{jour}.json",
-                  f"data/analyses/{jour}.md", "pilotage/etat.json"):
+                  f"data/analyses/{jour}.md", "pilotage/etat.json", "data/wealins.json"):
             if (RACINE / f).exists():
                 (c / f).parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy(RACINE / f, c / f)
@@ -323,6 +411,10 @@ def rendu_de_bout_en_bout():
                   "catalogue"):
             assert k in d, f"clé absente des données : {k}"
         assert any(x.get("risque") for x in d["top30"]), "aucun badge de risque dans le top 30"
+        if (RACINE / "data" / "wealins.json").exists():
+            fw = d.get("fonds_wealins") or {}
+            assert len(fw.get("l", [])) > 100, "fonds Wealins absents de la recherche"
+            assert not {x[0] for x in fw["l"]} & {m.get("isin") for m in d["catalogue"]}, "fonds en double"
         if (RACINE / "pilotage" / "etat.json").exists():
             assert d.get("controle_chef", {}).get("etat"), "état du contrôle qualité absent de la page"
         note = (c / "notes" / f"{jour}.md").read_text(encoding="utf-8")

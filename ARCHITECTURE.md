@@ -26,7 +26,10 @@ Yahoo Finance ──► collecte.py ──► data/jours/AAAA-MM-JJ.json ◄─�
 achats restent dans son navigateur (`localStorage`, rien n'est publié) et la page calcule leur évolution
 avec le catalogue des titres suivis (prix du jour de `collecte.py`, ISIN ajouté par `fiches.py`). Les
 achats notés dans `mes-investissements.md` sont, eux, calculés par `collecte.py`. Les « Suggestions du
-jour » sont choisies par des règles chiffrées.
+jour » sont choisies par des règles chiffrées. La barre trouve aussi les **fonds de la liste Wealins**
+(supports d'assurance vie, environ 1 350) : `wealins.py` relit la liste une fois par jour
+(`data/wealins.json`) et `rendu.py` l'ajoute à la page ; un fonds a pour prix sa dernière valeur
+liquidative, avec sa date.
 
 Tout tourne dans le cloud (routines Claude Code) : le Mac peut être éteint. Le dépôt est rangé
 dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
@@ -65,6 +68,7 @@ même temps que la routine correspondante sur claude.ai.
 | `data/analyses/` | l'analyse écrite par Claude, une par jour |
 | `data/historique.csv`, `data/signaux.csv` | historique des cours de clôture et des signaux, jugés 5 séances plus tard |
 | `data/correspondances.json`, `data/fiches/` | caches : codes Boursorama / FT trouvés, caractéristiques des titres (7 jours) |
+| `data/wealins.json` | les fonds de la liste Wealins (nom, ISIN, devise, dernière valeur liquidative et sa date, valeur précédente), un par ligne, relus une fois par jour par `wealins.py` |
 | `docs/` | le site : `index.html` (dernière fiche) et `archives/` |
 | `notes/` | une note Obsidian par jour |
 | `apprentissage/` | journal de nuit, idées, connaissances, veille GitHub, nouveautés, crédits |
@@ -93,7 +97,7 @@ Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de 
 | `nombre_fr(txt)` | lit un nombre écrit à la française ou à l'anglaise (« 1 234,56 € », « 512.3 ») |
 | `date_iso(txt)` | « 06/11/2026 » ou « 2026-11-06 » → « 2026-11-06 » ; `None` pour une date impossible |
 | `lire_investissements(texte)` | lit le tableau de `mes-investissements.md` (colonnes reconnues à leur titre, dans n'importe quel ordre) |
-| `mes_investissements(entrees, mesure_de, categories, jour)` | regroupe les achats par titre : prix de revient, évolution depuis l'achat, valeur, plus-value et variation du jour en euros si les quantités sont notées, total ; codes ISIN ou introuvables listés dans `erreurs` |
+| `mes_investissements(entrees, mesure_de, categories, jour)` | regroupe les achats par titre : prix de revient, évolution depuis l'achat, valeur, plus-value et variation du jour en euros si les quantités sont notées, total ; un ISIN qui n'est pas suivi est cherché dans la liste Wealins (fonds) ; codes introuvables listés dans `erreurs` |
 | `catalogue(res)` | tous les ETF et actions suivis, avec leur prix du jour : la liste où cherche la barre de recherche « Mes investissements » |
 | `suggestions(candidats, top30, signaux_veille, top30_veille, deja, n)` | jusqu'à 5 actions à regarder, une par règle : nouveau signal « hausse », entrée dans le top 30, plus haut sur un an, repli (RSI < 40) au-dessus de la moyenne 200 jours, variation d'au moins 3 % ; chacune avec sa raison chiffrée |
 | `paques(annee)` | date de Pâques (algorithme de Meeus) |
@@ -108,7 +112,9 @@ Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de 
 Aides internes : `_isins_connus` (ISIN → code Yahoo, d'après le cache `data/fiches/`, pour accepter un
 ISIN dans `mes-investissements.md`), `_signaux_veille` (signaux de la dernière clôture, d'après `historique.csv`),
 `_top30_veille`, `_suggestions_recentes` (titres suggérés les 3 jours précédents, pour varier),
-`_prix_simple` (dernier cours d'un fonds à l'historique trop court pour les indicateurs).
+`_prix_simple` (dernier cours d'un fonds à l'historique trop court pour les indicateurs),
+`_actualiser_wealins` et `_fonds_wealins` (lecture de la liste Wealins dans un fil parallèle, puis du cache,
+sans jamais bloquer la fiche).
 
 ### `verif.py` : contrôle croisé des prix
 Usage : `python scripts/verif.py AAAA-MM-JJ`. Compare chaque prix Yahoo avec Boursorama et le
@@ -124,7 +130,8 @@ Financial Times (tolérance 1 %, 2 % à l'ouverture). Quantalys n'est pas interr
 | `boursorama_date(code)` / `ft_date(genre, code)` | cours et date du cours (les deux fonctions sans `_date` ne renvoient que le cours) |
 | `source_perimee(date_source, jour, date_yahoo)` | règle de Mathieu (06/11) : une source qui ne donne que le cours d'un jour précédent est écartée (notée dans `sources_perimees`) ; si Yahoo n'a pas encore de cours du jour, la dernière séance compte |
 | `codes(m)` | traduit un ticker Yahoo en codes Boursorama et FT (place de cotation, ETF, indice, devise) |
-| `main()` | ajoute sources, prix de référence (médiane) et statut `ok`, `ecart` ou `seul` à chaque titre |
+| `verif_fonds(m, tol)` | contrôle d'un fonds Wealins : compare les valeurs de même date (Wealins, FT) ; une source plus ancienne que la plus récente est écartée |
+| `main()` | ajoute sources, prix de référence (médiane) et statut `ok`, `ecart` ou `seul` à chaque titre (fonds Wealins : `verif_fonds`, sans nouvelle requête) |
 
 ### `fiches.py` : fiches détaillées
 Usage : `python scripts/fiches.py AAAA-MM-JJ`. Ajoute `details` au JSON du jour pour chaque titre affiché.
@@ -150,7 +157,31 @@ Usage : `python scripts/fiches.py AAAA-MM-JJ`. Ajoute `details` au JSON du jour 
 | `signaux_du_titre(t)` | historique des signaux du titre et leur résultat |
 | `description_auto(m, inf)` | description de secours, construite à partir des caractéristiques |
 | `frais(m, inf)` | frais de l'ETF, plafonds légaux du PEA, taxe sur les transactions financières |
+| `fiche_fonds_wealins(m)` | fiche d'un fonds Wealins noté dans `mes-investissements.md` : historique de la valeur liquidative (jusqu'à 5 ans, page du fonds), statistiques, SRI estimé, gestionnaire, SFDR, lien du DIC |
 | `main()` | construit les fiches et leurs liens (Boursorama, FT, Yahoo, DIC, justETF) ; ajoute l'ISIN de chaque titre du catalogue (60 titres jamais lus au plus par passage, pour compléter peu à peu sans ralentir la fiche) |
+
+### `wealins.py` : les fonds de la liste Wealins
+Usage : `python scripts/wealins.py [--forcer]` (`collecte.py` l'appelle aussi, dans un fil parallèle qui
+ne bloque jamais la fiche). Source : https://www.wealins.com/funds-list/ (135 pages de 10 fonds ; robots.txt
+lu le 06/11/2026 : tout est autorisé). Une requête par seconde, 3 à 4 minutes par lecture complète. Le réseau
+du cloud doit autoriser `www.wealins.com` ; sinon le cache reste tel quel (le Mac peut le remplir).
+
+| Fonction | Rôle |
+|---|---|
+| `lire_liste(page)` | fonds d'une page de la liste : ISIN, nom, date de valeur, devise, valeur, SFDR |
+| `nb_pages(page)` | nombre de pages, d'après la pagination |
+| `lire_fonds(page)` | page d'un fonds : valeur et date, performance depuis le 1er janvier, gestionnaire, SFDR, devise, DIC en français, historique |
+| `url_fonds(isin)`, `url_ft(isin, devise)` | pages du fonds chez Wealins et au Financial Times |
+| `charger()` | contenu de `data/wealins.json` (vide s'il n'existe pas) |
+| `enregistrer(c)` | écrit le cache d'un coup (fichier temporaire puis renommage), un fonds par ligne |
+| `fusionner(c, nouveaux, vu_le)` | ajoute les fonds lus ; l'ancienne valeur devient la valeur précédente quand la date avance |
+| `date_dominante(c)` | date de valeur la plus fréquente du cache |
+| `jour_ouvre_precedent(j)` | jour ouvré précédent (week-ends sautés) |
+| `a_actualiser(c, maintenant)` | une lecture par jour ; une seconde (après 4 h) si la première n'avait pas les valeurs de la veille |
+| `actualiser(forcer, max_minutes)` | relit toute la liste si besoin et met le cache à jour ; ne lève jamais d'erreur |
+| `variation(f)` | variation entre la valeur précédente et la dernière |
+| `mesure(isin, c, ft)` | prix d'un fonds pour « Mes investissements » : la valeur la plus récente entre Wealins et le FT (règle de Mathieu), avec les deux sources dans `sources_vl` |
+| `catalogue_page(c, exclus)` | fonds pour la barre de recherche : `[isin, nom, devise, valeur, date, variation]` |
 
 ### `rendu.py` et `modele.html` : le site et la note Obsidian
 Usage : `python scripts/rendu.py AAAA-MM-JJ`. `modele.html` contient toute la page (styles,
@@ -165,9 +196,12 @@ par les agents. Dans le graphique, la moyenne courte est en tirets et la longue 
 | `pct(x)`, `prix(x)`, `pct_simple(x)` | formats français des nombres pour la note |
 | `note_obsidian(d, analyse, url)` | note du jour pour Obsidian : mes investissements, marchés, analyse, suggestions, top 30, petits prix, fiabilité, liens |
 | `eur(x, signe)` | montant en euros à la française (« 1 234,56 € », « +12,30 € ») |
+| `montant(x, m, signe)` | montant d'une ligne dans sa devise (« 473,16 USD » hors euros) |
 | `note_investissements(mes)` | partie « Mes investissements » de la note : total, une ligne par titre, codes à corriger |
 | `note_suggestions(sugg)` | partie « Suggestions du jour » de la note, avec la raison de chaque suggestion |
 | `risque_de(det)` | niveau de risque 1 à 7 du badge de la page principale (SRI officiel, sinon estimé) |
+| `date_vl(m)` | « (valeur du 05/11) » après le prix d'un fonds dans la note |
+| `fonds_wealins(d)` | fonds de `data/wealins.json` pour la barre de recherche, en tableaux compacts, sans ceux que la fiche suit déjà |
 | `archives()` | page `docs/archives/` qui liste toutes les fiches |
 | `main()` | écrit `docs/index.html`, l'archive du jour et la note ; ajoute la nouveauté du programme et l'état du dernier contrôle |
 

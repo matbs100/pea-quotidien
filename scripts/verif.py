@@ -116,6 +116,26 @@ def source_perimee(date_source, jour, date_yahoo=None):
     return date_source < min(jour, date_yahoo or jour)
 
 
+def verif_fonds(m, tol=TOL):
+    """Contrôle d'un fonds de la liste Wealins (valeurs lues par wealins.mesure() dans sources_vl) : on
+    compare les valeurs liquidatives de même date ; une source plus ancienne que la plus récente est
+    écartée (règle de Mathieu). Date inconnue : valeur gardée."""
+    ref = m.get("date_cours")
+    sv = {k: v for k, v in (m.get("sources_vl") or {}).items() if v and v[0]}
+    src = {k: v[0] for k, v in sv.items() if v[1] in (ref, None)} or {"wealins": m["prix"]}
+    perimees = {k: v[1] for k, v in sv.items() if v[1] not in (ref, None)}
+    ref_prix = statistics.median(src.values())
+    ecarts = {k: round((v / ref_prix - 1) * 100, 2) for k, v in src.items()}
+    tol_abs = 0.006 / ref_prix * 100  # le FT arrondit les valeurs à 2 décimales
+    statut = "seul" if len(src) == 1 else (
+        "ok" if all(abs(e) <= max(tol, tol_abs) for e in ecarts.values()) else "ecart")
+    info = {"sources": src, "prix_reference": round(ref_prix, 4), "ecarts_sources": ecarts, "verif": statut,
+            "dates_sources": {k: v[1] for k, v in sv.items()}}
+    if perimees:
+        info["sources_perimees"] = perimees
+    return info
+
+
 def codes(m):
     t, cat = m["ticker"], m["categorie"]
     if cat == "indices":
@@ -151,6 +171,15 @@ def main():
         t = m["ticker"]
         if t in vus:
             m.update(vus[t])
+            continue
+        if m.get("source") == "wealins":  # fonds : valeurs déjà lues par collecte.py (Wealins et FT)
+            info = verif_fonds(m)
+            m.update(info)
+            vus[t] = info
+            bilan[info["verif"]] += 1
+            if info["verif"] == "ecart":
+                bilan["ecarts"].append({"ticker": t, "nom": m["nom"], "sources": info["sources"]})
+            print(f"{info['verif']:5} {t:12} {info['sources']} (fonds)")
             continue
         bc, fcode = codes(m)
         echecs = cache.get(t, {}).get("echecs", {})  # source -> nb d'échecs d'affilée
