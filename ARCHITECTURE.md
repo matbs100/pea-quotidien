@@ -80,6 +80,7 @@ Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de 
 | Fonction | Rôle |
 |---|---|
 | `telecharger(tickers)` | télécharge 14 mois de cours quotidiens pour tous les titres en un seul appel Yahoo |
+| `devise_de(t)` | devise de cotation d'un titre d'après sa place (EUR, DKK, SEK, NOK), affichée à côté de chaque prix |
 | `rsi(s, n)` | RSI sur 14 séances (100 s'il n'y a eu que des hausses) |
 | `var(s, n)` | variation en % sur n séances |
 | `r(x, n)` | arrondi qui renvoie `None` pour une valeur manquante |

@@ -65,6 +65,15 @@ cotés à la dernière séance sont retenus. Ce sont des pistes à étudier (fic
   variations de chaque jour et peuvent perdre de la valeur même si l'indice revient à son niveau de
   départ.
 
+## 3 bis. Devise de chaque titre
+
+- La devise de cotation (EUR pour Paris, Amsterdam, Francfort…, DKK pour Copenhague) est affichée à côté
+  de chaque prix : top 30, petits prix, suggestions, mes investissements, recherche, fiche détaillée.
+- Dans la fiche d'un ETF, une ligne « Risque de change » explique qu'un ETF coté en euros qui suit des
+  actions étrangères bouge aussi avec leurs devises, sauf s'il est couvert (« Hedged »).
+- Mes investissements : les montants d'un titre coté hors euros sont affichés dans sa devise et ne sont
+  pas comptés dans le total en euros.
+
 ## 4. Ce qui se met à jour tout seul
 
 | Quand | Quoi |

@@ -99,6 +99,7 @@ h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 700; }
 .rsq { cursor: help; background: hsl(var(--rt) 60% 45% / .18); color: var(--ink); border: 1px solid hsl(var(--rt) 60% 45% / .55); font-size: 12px; padding: 3px 7px; margin-left: 0; text-transform: none; letter-spacing: 0; }
 #bulle-r { position: fixed; z-index: 30; max-width: min(280px, calc(100vw - 24px)); padding: 8px 10px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.18); font: 400 13px/1.4 var(--font-body); }
 .b-petite { background: var(--amber-soft); color: var(--amber); }
+.dev { font: 500 10px var(--font-mono); color: var(--muted); letter-spacing: .04em; }
 .b-levier { background: color-mix(in srgb, var(--down) 15%, transparent); color: var(--down); }
 .ligne .c { font: 13px var(--font-mono); text-align: right; }
 .ligne .c em { display: block; font-style: normal; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
@@ -379,6 +380,7 @@ const fr = (x, d = 2) => x == null ? "—" : x.toLocaleString("fr-FR", { minimum
 const sens = (x) => x == null ? "flat" : x > 0 ? "up" : x < 0 ? "down" : "flat";
 const pct = (x) => x == null ? "—" : (x > 0 ? "+" : "") + fr(x) + " %";
 const dec = (p) => p >= 1000 ? 0 : p >= 10 ? 2 : p >= 1 ? 3 : 4;
+const dev = (m) => m && m.devise ? ` <span class="dev">${m.devise}</span>` : "";  // devise de cotation
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const SG = D.suggestions || [];
 const MI = D.mes_investissements || null;
@@ -495,7 +497,7 @@ function ligne(m, i, sc) {
   return `<div class="ligne rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}" data-cat="${m.categorie === "petites" ? "actions" : m.categorie}">
     <div class="rg">${String(i + 1).padStart(2, "0")}</div>
     <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"} ${risque(m)}</small></div>
-    <div class="c px"><span class="num">${fr(m.prix, dec(m.prix))}</span><em>prix</em></div>
+    <div class="c px"><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span><em>prix</em></div>
     <div class="cs"><div class="c ${sens(m.var_1j)}">${pct(m.var_1j)}<em>1 jour</em></div>
     <div class="c ${sens(m.var_1m)}">${pct(m.var_1m)}<em>1 mois</em></div>
     <div class="c ${sens(m.var_3m)}">${pct(m.var_3m)}<em>3 mois</em></div>
@@ -511,7 +513,7 @@ function suggestion(s) {
   return `<div class="card sug rv clic" data-t="${esc(s.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(s.nom)}">
     <div class="kicker">${esc(s.critere_lib)}</div>
     <div><strong>${esc(s.nom)}</strong>${badge[s.categorie] || ""}${risque(s)}${s.deja_suggere ? ' <span class="badge b-action">déjà suggéré</span>' : ""}</div>
-    <div class="sug-p"><span class="num">${fr(s.prix, dec(s.prix))}</span> <span class="${sens(s.var_1j)}">${pct(s.var_1j)}</span><small>${esc(s.ticker)}</small></div>
+    <div class="sug-p"><span class="num">${fr(s.prix, dec(s.prix))}${dev(s)}</span> <span class="${sens(s.var_1j)}">${pct(s.var_1j)}</span><small>${esc(s.ticker)}</small></div>
     <p>${esc(s.raison)}</p></div>`;
 }
 if (SG.length) {
@@ -609,8 +611,9 @@ function positionsLocales() {
   });
 }
 
+const montant = (x, l, signe) => l && l.devise && l.devise !== "EUR" ? (x == null ? "—" : (signe && x > 0 ? "+" : "") + fr(x, 2) + " " + l.devise) : eur(x, signe);
 function totalDe(L) {
-  const avec = L.filter((l) => l.valeur != null);
+  const avec = L.filter((l) => l.valeur != null && (l.devise || "EUR") === "EUR");  // total en euros seulement
   if (!avec.length) return null;
   const inv = avec.reduce((s, l) => s + l.investi, 0), val = avec.reduce((s, l) => s + l.valeur, 0);
   const vj = avec.reduce((s, l) => s + (l.var_jour_eur || 0), 0);
@@ -627,9 +630,9 @@ function position(l) {
     l.prix == null ? "cours indisponible sur cette fiche" : l.date_cours && l.date_cours !== D.date ? "cours du " + jourCourt(l.date_cours) : ""].filter(Boolean).join(" · ");
   return `<div class="pos clic${l.local ? " local" : ""}" data-t="${esc(l.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(l.nom)}">
     <div class="t"><strong>${esc(l.nom)}${badge[l.categorie] || ""}${levier(l)}${vf(l)}</strong><small>${info}</small></div>
-    <div class="c"><span class="num">${l.prix == null ? "—" : fr(l.prix, dec(l.prix))}</span><small class="${sens(l.var_1j)}">${pct(l.var_1j)}</small><em>aujourd'hui</em></div>
+    <div class="c"><span class="num">${l.prix == null ? "—" : fr(l.prix, dec(l.prix)) + dev(l)}</span><small class="${sens(l.var_1j)}">${pct(l.var_1j)}</small><em>aujourd'hui</em></div>
     <div class="c ${sens(l.perf_achat)}">${pct(l.perf_achat)}<em>depuis l'achat</em></div>
-    ${l.valeur != null ? `<div class="c">${eur(l.valeur)}<small class="${sens(l.plus_value)}">${eur(l.plus_value, true)}</small><em>valeur</em></div>` : ""}
+    ${l.valeur != null ? `<div class="c">${montant(l.valeur, l)}<small class="${sens(l.plus_value)}">${montant(l.plus_value, l, true)}</small><em>valeur</em></div>` : ""}
     ${l.local ? `<button type="button" class="retirer" data-retirer="${esc(l.ticker)}" aria-label="Retirer ${esc(l.nom)} de mes investissements">✕</button>` : ""}</div>`;
 }
 
@@ -662,7 +665,7 @@ function montrerResultats() {
   trouves = chercher(v);
   resultats.hidden = false;
   if (trouves.length) {
-    resultats.innerHTML = trouves.map((m) => `<button type="button" class="res" data-choix="${esc(m.ticker)}"><span><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([m.isin, m.ticker].filter(Boolean).join(" · "))}</small></span><span class="num">${fr(m.prix, dec(m.prix))}</span></button>`).join("");
+    resultats.innerHTML = trouves.map((m) => `<button type="button" class="res" data-choix="${esc(m.ticker)}"><span><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([m.isin, m.ticker].filter(Boolean).join(" · "))}</small></span><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span></button>`).join("");
     return;
   }
   const V = v.toUpperCase().replace(/\s+/g, ""), connus = CAT.filter((m) => m.isin).length;
@@ -676,11 +679,11 @@ function formulaire(m) {
   resultats.hidden = true;
   const f = $("#inv-form"), isin = isinDe(m);
   f.hidden = false;
-  f.innerHTML = `<div><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([isin, m.ticker].filter(Boolean).join(" · "))}${m.prix != null ? " · cours " + fr(m.prix, dec(m.prix)) : ""}</small></div>
+  f.innerHTML = `<div><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([isin, m.ticker].filter(Boolean).join(" · "))}${m.prix != null ? " · cours " + fr(m.prix, dec(m.prix)) + (m.devise ? " " + m.devise : "") : ""}</small></div>
     ${m.levier ? `<div class="alerte" style="margin:12px 0 0">${AVERT_LEVIER}</div>` : ""}
     <div class="champs">
       <label>Date d'achat<input id="a-date" type="date" value="${D.date}"></label>
-      <label>Prix d'une part<input id="a-prix" type="text" inputmode="decimal" autocomplete="off" value="${m.prix != null ? String(m.prix).replace(".", ",") : ""}"></label>
+      <label>Prix d'une part${m.devise ? " (" + m.devise + ")" : ""}<input id="a-prix" type="text" inputmode="decimal" autocomplete="off" value="${m.prix != null ? String(m.prix).replace(".", ",") : ""}"></label>
       <label>Nombre de parts<input id="a-q" type="text" inputmode="decimal" autocomplete="off" placeholder="facultatif"></label>
     </div>
     <div class="boutons"><button type="button" class="btn" id="a-ok">Ajouter à mes investissements</button><button type="button" class="btn sec" id="a-annuler">Annuler</button></div>
@@ -876,7 +879,10 @@ function blocFrais(m, inf, fx) {
 }
 
 function blocCaract(m, inf, det, t) {
-  const L = [["ISIN", inf.isin], ["Code", esc(t)], ["Place de cotation", det.place], ["Devise", det.devise]];
+  const devise = det.devise || m.devise;
+  const L = [["ISIN", inf.isin], ["Code", esc(t)], ["Place de cotation", det.place], ["Devise de cotation", devise]];
+  if (m.categorie === "etf") L.push(["Risque de change", "Le prix est en euros, mais si l'ETF suit des actions étrangères (américaines, japonaises, émergentes…), sa valeur monte ou baisse aussi avec leurs devises face à l'euro, sauf s'il est couvert contre le change (« Hedged » dans son nom)."]);
+  else if (devise && devise !== "EUR" && PLACEMENT.includes(m.categorie)) L.push(["Risque de change", `Cotée en ${esc(devise)} : sa valeur en euros dépend aussi du taux de change.`]);
   if (m.categorie === "etf") {
     const synth = (inf.replication || "").toLowerCase().startsWith("synth");
     const capi = (inf.affectation || "").toLowerCase().startsWith("capi");
@@ -924,7 +930,8 @@ function ouvrir(t, pousser = true) {
   $("#f-sous").textContent = [t, inf.isin && "ISIN " + inf.isin].filter(Boolean).join(" · ");
   const parts = m.prix > 0 && PLACEMENT.includes(m.categorie) ? Math.floor(100 / m.prix) : null;
   const H = [];
-  H.push(`<div class="f-prix"><span class="big">${fr(m.prix, dec(m.prix))}${det.devise ? ` <small style="font-size:1rem;color:var(--muted)">${det.devise}</small>` : ""}</span><span class="num ${sens(m.var_1j)}">${pct(m.var_1j)} sur la dernière séance</span>${vf(m)}</div>`);
+  const devise = det.devise || m.devise;
+  H.push(`<div class="f-prix"><span class="big">${fr(m.prix, dec(m.prix))}${devise ? ` <small style="font-size:1rem;color:var(--muted)">${devise}</small>` : ""}</span><span class="num ${sens(m.var_1j)}">${pct(m.var_1j)} sur la dernière séance</span>${vf(m)}</div>`);
   if (det.description) H.push(`<p class="f-desc">${esc(det.description)}</p>`);
   if (m.levier) H.push(`<div class="alerte" style="margin-top:12px">${AVERT_LEVIER}</div>`);
   const iv = INV[t], sg = SG.find((s) => s.ticker === t);
