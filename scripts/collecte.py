@@ -34,6 +34,8 @@ HORIZON = 5            # un signal est jugé 5 séances plus tard
 LIQ_MIN = 50_000       # € échangés par jour en moyenne pour entrer dans le top 30
 LIQ_MIN_PETITES = 5_000
 PRIX_MIN_PETITES = 0.05  # en dessous : quasi-faillite / "penny" extrême, exclu
+DEVISES = {"PA": "EUR", "AS": "EUR", "BR": "EUR", "LS": "EUR", "IR": "EUR", "DE": "EUR", "F": "EUR", "MI": "EUR",
+           "MC": "EUR", "HE": "EUR", "AT": "EUR", "VI": "EUR", "CO": "DKK", "ST": "SEK", "OL": "NOK"}
 FICHIER_INV = RACINE / "mes-investissements.md"
 NB_SUGGESTIONS = 5
 ISIN = re.compile(r"[A-Z]{2}[A-Z0-9]{9}\d")
@@ -52,6 +54,13 @@ def telecharger(tickers):
             print("Essai", essai + 1, "échoué :", e, file=sys.stderr)
         time.sleep(10 * (essai + 1))
     sys.exit("Impossible de joindre Yahoo Finance.")
+
+
+def devise_de(t):
+    """Devise de cotation d'un titre, d'après sa place (suffixe du code Yahoo) ; None si inconnue."""
+    if t.startswith("^") or "=" in t or "." not in t:
+        return None
+    return DEVISES.get(t.rsplit(".", 1)[1])
 
 
 def rsi(s, n=14):
@@ -289,7 +298,7 @@ def mes_investissements(entrees, mesure_de, categories, jour):
             investi=r(investi), valeur=r(q * p) if complet else None,
             plus_value=r(q * p - investi) if complet else None, var_jour_eur=r(var_jour))
         lignes.append(ligne)
-    avec = [l for l in lignes if l["valeur"] is not None]
+    avec = [l for l in lignes if l["valeur"] is not None and (l.get("devise") or "EUR") == "EUR"]  # total en euros
     total = None
     if avec:
         inv, val = sum(l["investi"] for l in avec), sum(l["valeur"] for l in avec)
@@ -303,7 +312,7 @@ def mes_investissements(entrees, mesure_de, categories, jour):
 def catalogue(res):
     """Titres que la barre de recherche « Mes investissements » peut trouver : tous les ETF et actions
     suivis, avec leur prix du jour (fiches.py y ajoute l'ISIN)."""
-    cles = ("ticker", "nom", "categorie", "prix", "var_1j", "var_1m", "date_cours", "signal", "rsi")
+    cles = ("ticker", "nom", "categorie", "prix", "devise", "var_1j", "var_1m", "date_cours", "signal", "rsi")
     out = [{k: m.get(k) for k in cles} for c in ("etf", "etf_levier", "actions", "petites") for m in res.get(c, [])]
     for x, m in zip(out, [m for c in ("etf", "etf_levier", "actions", "petites") for m in res.get(c, [])]):
         if m.get("levier"):
@@ -517,6 +526,8 @@ def main():
             if m:
                 # ETF à effet de levier : des ETF comme les autres, mais hors classements (trop risqués)
                 m.update(ticker=t, nom=nom, categorie="etf" if c == "etf_levier" else c, signal=signal(m))
+                if c in ("etf", "etf_levier", "actions", "petites"):
+                    m["devise"] = devise_de(t)
                 if c == "etf_levier":
                     m["levier"] = True
                 res[c].append(m)
@@ -563,7 +574,10 @@ def main():
         m = mesures(df, t)
         if m:
             m["signal"] = signal(m)
-        return m or _prix_simple(df, t)
+        m = m or _prix_simple(df, t)
+        if m:
+            m["devise"] = devise_de(t)
+        return m
 
     try:
         mes = mes_investissements(entrees, mesure_de, categories, jour)

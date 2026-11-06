@@ -57,6 +57,8 @@ def lecture_de_mes_investissements():
     assert c.nombre_fr("") is None and c.nombre_fr("abc") is None and c.nombre_fr(None) is None
     assert c.date_iso("06/11/2026") == c.date_iso("6/11/26") == c.date_iso("2026-11-6") == "2026-11-06"
     assert c.date_iso("31/02/2026") is None and c.date_iso("") is None
+    assert c.devise_de("CW8.PA") == "EUR" and c.devise_de("NOVO-B.CO") == "DKK" and c.devise_de("SAP.DE") == "EUR"
+    assert c.devise_de("^FCHI") is None and c.devise_de("EURUSD=X") is None and c.devise_de("XX.ZZ") is None
     texte = """Un tableau sans colonne Code, ignoré :
 | Exemple | Texte |
 |---|---|
@@ -124,6 +126,7 @@ def catalogue_et_isin():
     res["etf_levier"] = [{"ticker": "LQQ.PA", "nom": "Nasdaq x2", "categorie": "etf", "prix": 900.0, "levier": True}]
     cat = c.catalogue(res)
     assert [m["ticker"] for m in cat] == ["DCAM.PA", "LQQ.PA", "AI.PA"], "le catalogue ne contient que des ETF et des actions"
+    assert "devise" in cat[0], "devise de cotation dans le catalogue"
     assert cat[1].get("levier") is True and "levier" not in cat[0], "ETF à effet de levier signalé"
     assert "courbe" not in cat[0] and cat[0]["prix"] == 6.3 and cat[1]["var_1j"] is None
     anciens = (c.DATA, fiches.CACHE)
