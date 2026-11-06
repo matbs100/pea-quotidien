@@ -2,7 +2,7 @@
 
 Usage : python scripts/fiches.py AAAA-MM-JJ   (après collecte.py et verif.py)
 Ajoute « details » à data/jours/AAAA-MM-JJ.json, pour chaque indice, devise, matière première,
-titre du top 30 et petit prix :
+titre du top 30, petit prix, suggestion du jour et investissement noté par Mathieu :
 - historique de prix : 14 mois en quotidien et 5 ans en hebdomadaire (graphique interactif) ;
 - statistiques : performances, plus haut et plus bas, volatilité, pire baisse, bêta face au CAC 40 ;
 - risque : SRI officiel du DIC (document PRIIPs) pour les ETF, lu sur Boursorama ; pour les
@@ -173,7 +173,7 @@ def infos(m):
         if (date.today() - date.fromisoformat(c["maj"])).days < VALIDITE_JOURS:
             return c["infos"]
     out = {}
-    if cat in ("etf", "actions", "petites"):
+    if cat in ("etf", "actions", "petites", "fonds"):
         bc, _ = codes(m)
         if bc:
             out = lire_bourso(bc, cat == "etf")
@@ -344,6 +344,9 @@ def main():
     for cle in ("indices", "devises", "matieres", "top30", "petites"):
         for m in d.get(cle, []):
             tous.setdefault(m["ticker"], m)
+    # Suggestions du jour et investissements notés par Mathieu : fiche détaillée aussi
+    for m in d.get("suggestions", []) + (d.get("mes_investissements") or {}).get("lignes", []):
+        tous.setdefault(m["ticker"], m)
     tickers = sorted(set(tous) | {"^FCHI"})
     dj = yf.download(tickers, period="14mo", interval="1d", auto_adjust=True, group_by="ticker",
                      progress=False, threads=True)
@@ -375,7 +378,7 @@ def main():
         suffixe = t.rsplit(".", 1)[1] if "." in t and not t.startswith("^") else None
         place, devise = PLACES.get(suffixe, (None, None))
         det = {"j": compacte(sj), "s": compacte(ss) if ss is not None else None,
-               "stats": statistiques(sj, ss, cac if m["categorie"] in ("etf", "actions", "petites") else None),
+               "stats": statistiques(sj, ss, cac if m["categorie"] in ("etf", "actions", "petites", "fonds") else None),
                "infos": inf, "place": place, "devise": devise,
                "description_auto": description_auto(m, inf),
                "frais": frais(m, inf), "signaux": signaux_du_titre(t)}

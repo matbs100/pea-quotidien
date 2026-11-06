@@ -42,12 +42,13 @@ CONSEIL = re.compile(r"(?<![A-Za-z]['’])\b(achète|achetez|vends|vendez)\b|\bm
 RANG_MOMENT = {"ouverture": 0, "cloture": 1}
 
 # Fichiers que chaque agent ne doit pas modifier (le chef juge les cas limites)
-HORS_ROLE = {
+HORS_ROLE = {  # mes-investissements.md : tenu par Mathieu seul, aucun agent n'y touche
     "fiche": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "ARCHITECTURE.md", "config.json",
-              "pilotage/*", "apprentissage/*"],
-    "nuit": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "config.json", "pilotage/*", "data/*"],
+              "pilotage/*", "apprentissage/*", "mes-investissements.md"],
+    "nuit": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "config.json", "pilotage/*", "data/*",
+             "mes-investissements.md"],
     "chef": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "config.json", "data/jours/*",
-             "data/analyses/*", "data/signaux.csv", "data/historique.csv"],
+             "data/analyses/*", "data/signaux.csv", "data/historique.csv", "mes-investissements.md"],
 }
 PERMIS = {"fiche": ["apprentissage/idees.md"]}  # filet de sécurité : ligne d'idée annulée
 MAX_LIGNES = {"nuit": 300, "chef": 250}         # lignes de code modifiées par passage
@@ -145,6 +146,8 @@ def anomalies_donnees(d):
             pb.append(f"petits prix : {m['ticker']} vaut {m['prix']} €, pas moins de 2 €")
     if len(d["petites"]) < 10:
         al.append(f"petits prix : {len(d['petites'])} titres au lieu de 10")
+    for e in (d.get("mes_investissements") or {}).get("erreurs", []):
+        al.append(f"mes investissements : {e.get('ticker')} : {e.get('message')} (à corriger par Mathieu)")
     eu = next((m for m in d["devises"] if m.get("ticker") == "EURUSD=X"), None)
     if not eu:
         pb.append("euro/dollar absent")

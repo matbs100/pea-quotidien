@@ -5,6 +5,12 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-06 · Suggestions du jour et suivi de mes investissements
+- Nouvelle partie « Mes investissements » en haut de la fiche : prix du jour de chaque titre acheté, variation sur la séance, évolution depuis l'achat et, si la quantité est notée, valeur et plus-value en euros. Les achats se notent dans `mes-investissements.md` (Obsidian ou GitHub), ou en les donnant à Claude.
+- Nouvelle partie « Suggestions du jour » : jusqu'à 5 actions à regarder de plus près, chacune avec la règle qui l'a choisie et une raison chiffrée (nouveau signal, entrée dans le top 30, plus haut sur un an, repli, gros mouvement). Ce n'est pas une liste d'achats.
+- Les deux parties ont leur fiche détaillée au toucher, leurs prix contrôlés entre sources, et figurent dans la note Obsidian.
+- Demandé par Mathieu.
+
 ## 2026-11-06 · Textes un peu plus grands sur téléphone
 - Chiffres des lignes à 13 px (au lieu de 12) et badge de risque à 12 px (au lieu de 11). Contrastes du gris vérifiés : 4,7:1 au minimum en clair, 6:1 en sombre.
 
