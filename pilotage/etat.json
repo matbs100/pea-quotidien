@@ -1,15 +1,15 @@
 {
- "genere_le": "2026-11-06T12:38+01:00",
+ "genere_le": "2026-11-06T18:16+01:00",
  "fiche": "2026-11-06 (ouverture)",
  "lieu": "cloud",
- "etat": "orange",
- "resume": "À surveiller. 17/17 tests, 25/25 liens valides, site à jour. Points à voir : cohérence des données, travail des agents (30 dernières heures).",
+ "etat": "rouge",
+ "resume": "À corriger. 18/18 tests, 24/25 liens valides, site à jour. Points à voir : cohérence des données, liens des fiches détaillées, travail des agents (30 dernières heures).",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "17/17 tests réussis",
+   "resume": "18/18 tests réussis",
    "details": []
   },
   {
@@ -67,9 +67,11 @@
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
-   "niveau": "ok",
-   "resume": "25/25 liens valides sur 8 titres, 4 non ouverts (robots.txt)",
-   "details": []
+   "niveau": "probleme",
+   "resume": "24/25 liens valides sur 8 titres, 4 non ouverts (robots.txt)",
+   "details": [
+    "RS2K.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/RS2K.PA/)"
+   ]
   },
   {
    "nom": "site",
@@ -92,12 +94,14 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "alerte",
-   "resume": "27 commit(s), 0 problème(s), 4 alerte(s)",
+   "resume": "29 commit(s), 0 problème(s), 4 alerte(s)",
    "details": [
     "3a38663 « Chef : rapport du 2026-11-06 (orange) ; textes plu » : docs/archives/2026-11-05.html : fiche d'un jour passé régénérée",
     "3a38663 « Chef : rapport du 2026-11-06 (orange) ; textes plu » : notes/2026-11-05.md : fiche d'un jour passé régénérée",
     "1b28377 « Amélioration : badge de risque sur la page princip » : docs/archives/2026-11-05.html : fiche d'un jour passé régénérée",
     "47e9ec6 « Amélioration : définitions au toucher dans les fic » : docs/archives/2026-11-05.html : fiche d'un jour passé régénérée",
+    "e6d8248 [nuit] Amélioration : moyennes mobiles en traits distincts",
+    "6eb54dc [chef] Chef : passage de mi-journée du 2026-11-06 (orange)",
     "0b58edc [autre] Mathieu : devise de cotation de chaque titre sur la fiche",
     "2543706 [autre] Mathieu : note des nouveautés du 6 novembre et mise à jour hebdomadair",
     "90be280 [autre] Mathieu : ETF à effet de levier suivis à part",
@@ -111,9 +115,7 @@
     "7cae52a [autre] Pilotage : passage de mi-journée du chef d'orchestre (12 h 30, jours d",
     "755edf0 [autre] Contrôle : une suppression faite par Mathieu n'est plus comptée comme ",
     "8816215 [chef] Chef : rapport du 2026-11-06 (orange)",
-    "932b0d1 [autre] Consigne de la fiche : filet de sécurité étendu aux commits du chef d'",
-    "55aa480 [autre] Équipe d'agents : chef d'orchestre (controle.py, pilotage/, CHEF.md), ",
-    "2241934 [autre] Passage du soir avancé à 17 h 55, avec attente de la clôture définitiv"
+    "932b0d1 [autre] Consigne de la fiche : filet de sécurité étendu aux commits du chef d'"
    ]
   }
  ]
