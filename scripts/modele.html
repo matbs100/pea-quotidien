@@ -96,6 +96,8 @@ h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 700; }
 .badge { white-space: nowrap; display: inline-block; font: 600 10px/1 var(--font-body); letter-spacing: .06em; text-transform: uppercase; padding: 3px 6px; border-radius: 6px; margin-left: 6px; vertical-align: 2px; }
 .b-etf { background: var(--accent-soft); color: var(--accent); }
 .b-action { background: var(--surface-2); color: var(--muted); }
+.rsq { cursor: help; background: hsl(var(--rt) 60% 45% / .18); color: var(--ink); border: 1px solid hsl(var(--rt) 60% 45% / .55); font-size: 11px; padding: 3px 7px; margin-left: 0; text-transform: none; letter-spacing: 0; }
+#bulle-r { position: fixed; z-index: 30; max-width: min(280px, calc(100vw - 24px)); padding: 8px 10px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.18); font: 400 13px/1.4 var(--font-body); }
 .b-petite { background: var(--amber-soft); color: var(--amber); }
 .ligne .c { font: 13px var(--font-mono); text-align: right; }
 .ligne .c em { display: block; font-style: normal; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
@@ -382,13 +384,33 @@ $("#devises").innerHTML = [...D.devises, ...D.matieres].map((m) => carte(m)).joi
 
 $("#analyse").innerHTML = D.analyse_html || "<p>L'analyse du jour n'a pas encore été rédigée.</p>";
 
+function risque(m) {
+  if (!m.risque) return "";
+  const def = m.risque_officiel
+    ? `Risque ${m.risque} sur 7 : indicateur officiel (SRI) du document d'informations clés. 1 = le plus faible, 7 = le plus élevé. Un risque faible ne garantit pas l'absence de perte.`
+    : `Risque ${m.risque} sur 7, estimé par nos soins d'après la volatilité de l'action (méthode du SRI). 1 = le plus faible, 7 = le plus élevé. Ce n'est pas un chiffre officiel.`;
+  return `<span class="badge rsq" style="--rt:${140 - (m.risque - 1) * 22}" tabindex="0" role="button" data-r="${esc(def)}" aria-label="${esc(def)}">Risque ${m.risque}/7${m.risque_officiel ? "" : " (estimé)"}</span>`;
+}
+document.addEventListener("click", (e) => {
+  let b = $("#bulle-r"), c = e.target.closest && e.target.closest(".rsq");
+  if (b) b.remove();
+  if (!c || (b && b.dataset.s === c.dataset.r)) return;
+  e.stopPropagation();
+  b = document.createElement("div"); b.id = "bulle-r"; b.dataset.s = c.dataset.r; b.textContent = c.dataset.r;
+  document.body.appendChild(b);
+  const r = c.getBoundingClientRect();
+  b.style.left = Math.max(12, Math.min(r.left, innerWidth - b.offsetWidth - 12)) + "px"; b.style.top = r.bottom + 6 + "px";
+}, true);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && e.target.classList && e.target.classList.contains("rsq")) { e.stopPropagation(); e.target.click(); }
+}, true);
 const badge = { etf: '<span class="badge b-etf">ETF</span>', actions: '<span class="badge b-action">Action</span>', petites: '<span class="badge b-petite">Petite cap.</span>' };
 function ligne(m, i, sc) {
   const s = m[sc] ?? 0;
   const parts = m.prix > 0 ? Math.floor(100 / m.prix) : 0;
   return `<div class="ligne rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}" data-cat="${m.categorie === "petites" ? "actions" : m.categorie}">
     <div class="rg">${String(i + 1).padStart(2, "0")}</div>
-    <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"}</small></div>
+    <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"} ${risque(m)}</small></div>
     <div class="c px"><span class="num">${fr(m.prix, dec(m.prix))}</span><em>prix</em></div>
     <div class="cs"><div class="c ${sens(m.var_1j)}">${pct(m.var_1j)}<em>1 jour</em></div>
     <div class="c ${sens(m.var_1m)}">${pct(m.var_1m)}<em>1 mois</em></div>

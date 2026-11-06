@@ -5,6 +5,11 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-06 · Risque visible sur la page principale
+- Chaque ligne du top 30 et des petits prix affiche un badge « Risque 4/7 » (officiel du DIC, ou « estimé » pour les actions), coloré du vert au rouge.
+- Un toucher sur le badge affiche sa définition, sans ouvrir la fiche.
+- Demandé par le propriétaire ; inspiré du SRI PRIIPs déjà utilisé dans les fiches.
+
 ## 2026-11-05 · Définitions au toucher
 - Dans les fiches détaillées, les libellés volatilité, pire baisse, bêta, RSI, PER, rendement et moyennes ont une définition courte au toucher, au survol ou au clavier (Tab).
 - Inspiré des guides d'accessibilité des graphiques et indicateurs (Penn State, GWU).

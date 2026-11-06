@@ -46,4 +46,5 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 - Il n'exécute jamais de code téléchargé.
 
 ## Journaux
+- [2026-11-06](journal/2026-11-06.md) : réglementation PEA ; badge de risque sur la page principale
 - [2026-11-05](journal/2026-11-05.md) : point de départ, première veille GitHub
