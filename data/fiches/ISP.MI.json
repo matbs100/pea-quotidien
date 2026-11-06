@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1gISP/",
+  "isin": "IT0000072618",
+  "pea_bourso": true,
+  "secteur": "Banque",
+  "indice": "EURO STOXX 50",
+  "valorisation": "107 060 MEUR",
+  "rendement": "7,64%",
+  "per": "9,98",
+  "dernier_dividende": "0,19 EUR (18/05/26)",
+  "per_annee": "2026",
+  "effectif": "90 831",
+  "nb_titres": "17 332 045 430",
+  "capitalisation": "107 060,04 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://group.intesasanpaolo.com/it/investor-relations",
+  "pays": "Italie"
+ }
+}

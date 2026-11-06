@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPCA/",
+  "isin": "FR0000120172",
+  "pea_bourso": true,
+  "secteur": "Vente au détail de produits alimentaires et de première nécessité",
+  "indice": "CAC 40",
+  "valorisation": "10 047 MEUR",
+  "rendement": "7,88%",
+  "per": "8,00",
+  "dernier_dividende": "0,21 EUR (28/07/26)",
+  "per_annee": "2026",
+  "effectif": "298 604",
+  "nb_titres": "736 314 789",
+  "capitalisation": "10 047,02 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.carrefour.com/fr/finance",
+  "pays": "France"
+ }
+}

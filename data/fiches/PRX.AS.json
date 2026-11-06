@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rAPRX/",
+  "isin": "NL0013654783",
+  "pea_bourso": true,
+  "secteur": "Vente au détail de produits alimentaires et de première nécessité",
+  "indice": "EURO STOXX 50",
+  "valorisation": "82 114 MEUR",
+  "rendement": "0,71%",
+  "per": "10,50",
+  "dernier_dividende": "0,20 EUR (30/10/25)",
+  "per_annee": "2026",
+  "effectif": "23 173",
+  "nb_titres": "2 186 494 867",
+  "capitalisation": "82 113,81 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.prosus.com",
+  "pays": "Pays-Bas"
+ }
+}

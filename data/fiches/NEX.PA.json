@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPNEX/",
+  "isin": "FR0000044448",
+  "pea_bourso": true,
+  "secteur": "Fabrication industrielle",
+  "indice": "SBF 120",
+  "valorisation": "5 403 MEUR",
+  "rendement": "2,61%",
+  "per": "16,87",
+  "dernier_dividende": "2,90 EUR (25/05/26)",
+  "per_annee": "2026",
+  "nb_titres": "43 746 793",
+  "capitalisation": "5 402,73 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.nexans.com/en/",
+  "pays": "France"
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPKER/",
+  "isin": "FR0000121485",
+  "pea_bourso": true,
+  "secteur": "Biens de consommation",
+  "indice": "CAC 40",
+  "valorisation": "23 104 MEUR",
+  "rendement": "1,97%",
+  "per": "28,95",
+  "dernier_dividende": "2,75 EUR (02/06/26)",
+  "per_annee": "2026",
+  "effectif": "43 731",
+  "nb_titres": "123 420 778",
+  "capitalisation": "23 104,37 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.kering.com/fr/finance/",
+  "pays": "France"
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTEEMK/",
+  "isin": "LU1291097779",
+  "societe": "BNP Paribas Asset Management Luxembourg",
+  "pea_bourso": false,
+  "actif_net": "3 471M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "04/03/2016",
+  "forme": "SICAV",
+  "classe": "Actions Pays Emergents",
+  "zone": "Marchés Emergents Glob",
+  "categorie_ms": "Actions Marchés Emergents",
+  "affectation": "Capitalisation",
+  "replication": "Physique",
+  "frais_entree": "0 %",
+  "frais_sortie": "0 %",
+  "frais_gestion": "0,13 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00000WXEQ&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

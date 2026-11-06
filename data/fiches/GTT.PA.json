@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPGTT/",
+  "isin": "FR0011726835",
+  "pea_bourso": true,
+  "secteur": "Fabrication industrielle",
+  "indice": "SBF 120",
+  "valorisation": "6 729 MEUR",
+  "rendement": "4,84%",
+  "per": "16,57",
+  "dernier_dividende": "4,94 EUR (17/06/26)",
+  "per_annee": "2026",
+  "effectif": "862",
+  "nb_titres": "37 117 772",
+  "capitalisation": "6 729,45 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.gtt.fr/fr/finance",
+  "pays": "France"
+ }
+}

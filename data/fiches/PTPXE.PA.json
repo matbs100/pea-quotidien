@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTPTPXE/",
+  "isin": "FR0013411980",
+  "societe": "Amundi Asset Management",
+  "pea_bourso": true,
+  "actif_net": "212M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "25/04/2019",
+  "forme": "FCP",
+  "classe": "Actions Asie/Pacifique",
+  "zone": "Japon",
+  "categorie_ms": "Actions Japon Grandes Cap.",
+  "affectation": "Capitalisation",
+  "replication": "Synthétique",
+  "frais_entree": "0 %",
+  "frais_gestion": "0,2 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F000013MGL&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

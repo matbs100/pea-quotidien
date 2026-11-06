@@ -1,0 +1,19 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPVIRI/",
+  "isin": "FR001400PVN6",
+  "pea_bourso": true,
+  "secteur": "Énergie en amont",
+  "indice": "SBF 120",
+  "valorisation": "680 MEUR",
+  "per": "13,89",
+  "per_annee": "2026",
+  "effectif": "3 136",
+  "nb_titres": "7 219 747",
+  "capitalisation": "673,60 MEUR",
+  "marche": "Compartiment B",
+  "site": "https://www.viridiengroup.com/investors",
+  "pays": "France"
+ }
+}

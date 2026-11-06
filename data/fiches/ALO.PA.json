@@ -1,0 +1,19 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPALO/",
+  "isin": "FR0010220475",
+  "pea_bourso": true,
+  "secteur": "Fabrication industrielle",
+  "indice": "SBF 120",
+  "valorisation": "4 957 MEUR",
+  "per": "11,87",
+  "per_annee": "2026",
+  "effectif": "87 832",
+  "nb_titres": "462 616 024",
+  "capitalisation": "4 956,93 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.alstom.com/finance",
+  "pays": "France"
+ }
+}

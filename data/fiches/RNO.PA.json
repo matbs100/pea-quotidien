@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPRNO/",
+  "isin": "FR0000131906",
+  "pea_bourso": true,
+  "secteur": "Véhicules particuliers et pièces détachées",
+  "indice": "CAC 40",
+  "valorisation": "8 546 MEUR",
+  "rendement": "7,96%",
+  "per": "4,78",
+  "dernier_dividende": "2,20 EUR (08/05/26)",
+  "per_annee": "2026",
+  "effectif": "100 541",
+  "nb_titres": "295 722 284",
+  "capitalisation": "8 546,37 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://group.renault.com/finance/",
+  "pays": "France"
+ }
+}

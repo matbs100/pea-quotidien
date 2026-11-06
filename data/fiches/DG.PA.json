@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPDG/",
+  "isin": "FR0000125486",
+  "pea_bourso": true,
+  "secteur": "Services industriels",
+  "indice": "CAC 40",
+  "valorisation": "64 931 MEUR",
+  "rendement": "4,89%",
+  "per": "11,84",
+  "dernier_dividende": "1,10 EUR (13/10/26)",
+  "per_annee": "2026",
+  "effectif": "293 786",
+  "nb_titres": "581 816 830",
+  "capitalisation": "64 930,76 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.vinci.com",
+  "pays": "France"
+ }
+}

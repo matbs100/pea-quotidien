@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1zRHM/",
+  "isin": "DE0007030009",
+  "pea_bourso": false,
+  "secteur": "Fabrication industrielle",
+  "indice": "DAX",
+  "valorisation": "38 016 MEUR",
+  "rendement": "1,45%",
+  "per": "27,38",
+  "per_annee": "2026",
+  "effectif": "33 217",
+  "nb_titres": "46 777 200",
+  "capitalisation": "38 015,83 MEUR",
+  "marche": "Prime Standard",
+  "site": "https://www.rheinmetall.com",
+  "pays": "Allemagne"
+ }
+}

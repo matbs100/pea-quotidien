@@ -458,6 +458,9 @@ def cloture_dans_meta(m, jour):
     fin = ((m.get("currentTradingPeriod") or {}).get("regular") or {}).get("end")
     if not rt or not fin:
         return False
+    # Selon la version de yfinance, ces valeurs sont des secondes ou des Timestamp pandas
+    rt = int(rt.timestamp()) if hasattr(rt, "timestamp") else int(rt)
+    fin = int(fin.timestamp()) if hasattr(fin, "timestamp") else int(fin)
     return str(datetime.fromtimestamp(rt, PARIS).date()) == jour and rt >= fin + 5 * 60
 
 

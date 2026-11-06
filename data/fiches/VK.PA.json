@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPVK/",
+  "isin": "FR0013506730",
+  "pea_bourso": true,
+  "secteur": "Énergie en amont",
+  "indice": "SBF 120",
+  "valorisation": "5 028 MEUR",
+  "rendement": "7,26%",
+  "per": "15,50",
+  "dernier_dividende": "2,05 EUR (03/08/26)",
+  "per_annee": "2026",
+  "effectif": "12 269",
+  "nb_titres": "265 886 457",
+  "capitalisation": "4 973,41 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.vallourec.com",
+  "pays": "France"
+ }
+}

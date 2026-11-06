@@ -1,0 +1,19 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1zDTE/",
+  "isin": "DE0005557508",
+  "pea_bourso": false,
+  "secteur": "Télécommunications",
+  "indice": "EURO STOXX 50",
+  "valorisation": "125 658 MEUR",
+  "rendement": "4,29%",
+  "per": "11,47",
+  "per_annee": "2026",
+  "nb_titres": "4 849 780 000",
+  "capitalisation": "125 657,80 MEUR",
+  "marche": "Prime Standard",
+  "site": "https://www.telekom.com/en/investor-relations",
+  "pays": "Allemagne"
+ }
+}

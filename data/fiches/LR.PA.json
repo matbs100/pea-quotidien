@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPLR/",
+  "isin": "FR0010307819",
+  "pea_bourso": true,
+  "secteur": "Fabrication industrielle",
+  "indice": "CAC 40",
+  "valorisation": "34 000 MEUR",
+  "rendement": "2,08%",
+  "per": "22,17",
+  "dernier_dividende": "2,38 EUR (29/05/26)",
+  "per_annee": "2026",
+  "nb_titres": "262 245 733",
+  "capitalisation": "34 000,16 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.legrand.com/fr",
+  "pays": "France"
+ }
+}

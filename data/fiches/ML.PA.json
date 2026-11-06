@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPML/",
+  "isin": "FR001400AJ45",
+  "pea_bourso": true,
+  "secteur": "Véhicules particuliers et pièces détachées",
+  "indice": "CAC 40",
+  "valorisation": "22 958 MEUR",
+  "rendement": "4,21%",
+  "per": "11,94",
+  "dernier_dividende": "1,38 EUR (26/05/26)",
+  "per_annee": "2026",
+  "effectif": "122 600",
+  "nb_titres": "691 516 247",
+  "capitalisation": "22 958,34 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.michelin.com/investisseurs",
+  "pays": "France"
+ }
+}

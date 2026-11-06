@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPVIE/",
+  "isin": "FR0000124141",
+  "pea_bourso": true,
+  "secteur": "Services aux entreprises",
+  "indice": "CAC 40",
+  "valorisation": "25 082 MEUR",
+  "rendement": "4,94%",
+  "per": "13,63",
+  "dernier_dividende": "1,50 EUR (11/05/26)",
+  "per_annee": "2026",
+  "effectif": "215 965",
+  "nb_titres": "742 496 650",
+  "capitalisation": "25 081,54 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.veolia.com/fr/groupe/espace-finance",
+  "pays": "France"
+ }
+}

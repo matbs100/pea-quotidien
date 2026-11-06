@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1zIFX/",
+  "isin": "DE0006231004",
+  "pea_bourso": false,
+  "secteur": "Composants électroniques et fabrication",
+  "indice": "EURO STOXX 50",
+  "valorisation": "59 752 MEUR",
+  "rendement": "0,76%",
+  "per": "28,73",
+  "per_annee": "2026",
+  "effectif": "57 077",
+  "nb_titres": "1 305 920 000",
+  "capitalisation": "59 530,36 MEUR",
+  "marche": "Prime Standard",
+  "site": "https://www.infineon.com/cms/en/about-infineon/investor/",
+  "pays": "Allemagne"
+ }
+}

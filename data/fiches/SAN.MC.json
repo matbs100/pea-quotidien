@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/FF55-SAN/",
+  "isin": "ES0113900J37",
+  "pea_bourso": false,
+  "secteur": "Banque",
+  "indice": "EURO STOXX 50",
+  "valorisation": "155 696 MEUR",
+  "rendement": "2,60%",
+  "per": "9,93",
+  "dernier_dividende": "0,13 EUR (29/10/26)",
+  "per_annee": "2026",
+  "effectif": "198 403",
+  "nb_titres": "14 556 482 801",
+  "capitalisation": "155 696,14 MEUR",
+  "marche": "Mercado Continuo",
+  "site": "https://www.santander.com/en/shareholders-and-investors",
+  "pays": "Espagne"
+ }
+}

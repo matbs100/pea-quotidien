@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPAM/",
+  "isin": "FR0014004L86",
+  "pea_bourso": true,
+  "secteur": "Fabrication industrielle",
+  "indice": "SBF 120",
+  "valorisation": "23 235 MEUR",
+  "rendement": "1,71%",
+  "per": "19,70",
+  "dernier_dividende": "4,78 EUR (15/05/26)",
+  "per_annee": "2026",
+  "effectif": "14 838",
+  "nb_titres": "77 193 609",
+  "capitalisation": "23 235,28 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.dassault-aviation.com/fr/groupe/finance/",
+  "pays": "France"
+ }
+}

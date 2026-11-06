@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1gENEL/",
+  "isin": "IT0003128367",
+  "pea_bourso": true,
+  "secteur": "Services publics",
+  "indice": "EURO STOXX 50",
+  "valorisation": "96 325 MEUR",
+  "rendement": "5,58%",
+  "per": "12,81",
+  "dernier_dividende": "0,26 EUR (20/07/26)",
+  "per_annee": "2026",
+  "effectif": "61 634",
+  "nb_titres": "9 937 548 896",
+  "capitalisation": "96 324,66 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.enel.com/investors/overview",
+  "pays": "Italie"
+ }
+}

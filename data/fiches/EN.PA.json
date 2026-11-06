@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPEN/",
+  "isin": "FR0000120503",
+  "pea_bourso": true,
+  "secteur": "Services industriels",
+  "indice": "CAC 40",
+  "valorisation": "16 428 MEUR",
+  "rendement": "5,27%",
+  "per": "12,28",
+  "dernier_dividende": "2,10 EUR (28/04/26)",
+  "per_annee": "2026",
+  "effectif": "192 158",
+  "nb_titres": "388 468 889",
+  "capitalisation": "16 428,35 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.bouygues.com",
+  "pays": "France"
+ }
+}

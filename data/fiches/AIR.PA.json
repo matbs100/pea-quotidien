@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPAIR/",
+  "isin": "NL0000235190",
+  "pea_bourso": true,
+  "secteur": "Fabrication industrielle",
+  "indice": "CAC 40",
+  "valorisation": "155 605 MEUR",
+  "rendement": "1,81%",
+  "per": "26,04",
+  "dernier_dividende": "3,20 EUR (21/04/26)",
+  "per_annee": "2026",
+  "effectif": "165 294",
+  "nb_titres": "792 283 683",
+  "capitalisation": "155 604,52 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.airbus.com/en/investors",
+  "pays": "Pays-Bas"
+ }
+}

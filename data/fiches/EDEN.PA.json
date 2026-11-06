@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPEDEN/",
+  "isin": "FR0010908533",
+  "pea_bourso": true,
+  "secteur": "Services aux entreprises",
+  "indice": "SBF 120",
+  "valorisation": "5 830 MEUR",
+  "rendement": "5,65%",
+  "per": "11,80",
+  "dernier_dividende": "1,33 EUR (10/06/26)",
+  "per_annee": "2026",
+  "effectif": "12 000",
+  "nb_titres": "236 974 583",
+  "capitalisation": "5 829,57 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.edenred.com/fr",
+  "pays": "France"
+ }
+}

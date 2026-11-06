@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSTMPA/",
+  "isin": "NL0000226223",
+  "pea_bourso": true,
+  "secteur": "Composants électroniques et fabrication",
+  "indice": "CAC 40",
+  "valorisation": "34 296 MEUR",
+  "rendement": "0,77%",
+  "per": "34,38",
+  "dernier_dividende": "0,09 EUR (21/09/26)",
+  "per_annee": "2026",
+  "effectif": "49 157",
+  "nb_titres": "911 281 920",
+  "capitalisation": "34 296,10 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://investors.st.com",
+  "pays": "Suisse"
+ }
+}

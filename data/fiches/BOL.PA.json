@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPBOL/",
+  "isin": "FR0000039299",
+  "pea_bourso": true,
+  "secteur": "Énergie en aval et en milieu de chaîne",
+  "indice": "SBF 120",
+  "valorisation": "10 576 MEUR",
+  "rendement": "2,25%",
+  "per": "37,66",
+  "dernier_dividende": "1,56 EUR (23/06/26)",
+  "per_annee": "2026",
+  "effectif": "3 042",
+  "nb_titres": "2 809 783 802",
+  "capitalisation": "10 576,03 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.bollore.com/fr",
+  "pays": "France"
+ }
+}

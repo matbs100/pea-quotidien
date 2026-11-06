@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rAMT/",
+  "isin": "LU1598757687",
+  "pea_bourso": true,
+  "secteur": "Produits miniers et minéraux",
+  "indice": "CAC 40",
+  "valorisation": "42 486 MEUR",
+  "rendement": "1,00%",
+  "per": "23,16",
+  "dernier_dividende": "0,13 EUR (06/08/26)",
+  "per_annee": "2026",
+  "nb_titres": "775 000 000",
+  "capitalisation": "42 485,50 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://corporate.arcelormittal.com/investors/financial-reports",
+  "pays": "Luxembourg"
+ }
+}

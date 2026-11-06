@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPMC/",
+  "isin": "FR0000121014",
+  "pea_bourso": true,
+  "secteur": "Biens de consommation",
+  "indice": "CAC 40",
+  "valorisation": "202 170 MEUR",
+  "rendement": "3,36%",
+  "per": "17,55",
+  "dernier_dividende": "7,50 EUR (28/04/26)",
+  "per_annee": "2026",
+  "effectif": "211 552",
+  "nb_titres": "494 606 080",
+  "capitalisation": "199 054,22 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.lvmh.fr/",
+  "pays": "France"
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTPSP5/",
+  "isin": "FR0011871128",
+  "societe": "Amundi Asset Management",
+  "pea_bourso": true,
+  "actif_net": "1 535M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "20/05/2014",
+  "forme": "FCP",
+  "classe": "Actions Amérique du Nord",
+  "zone": "Etats-Unis",
+  "categorie_ms": "Actions Etats-Unis Gdes Cap. Mixte",
+  "affectation": "Capitalisation",
+  "replication": "Synthétique",
+  "frais_entree": "0 %",
+  "frais_sortie": "0 %",
+  "frais_gestion": "0,15 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00000TNR4&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPENGI/",
+  "isin": "FR0010208488",
+  "pea_bourso": true,
+  "secteur": "Services publics",
+  "indice": "CAC 40",
+  "valorisation": "61 527 MEUR",
+  "rendement": "6,19%",
+  "per": "11,32",
+  "dernier_dividende": "1,35 EUR (30/04/26)",
+  "per_annee": "2026",
+  "nb_titres": "2 542 427 868",
+  "capitalisation": "61 526,75 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.engie.com/espace-finance",
+  "pays": "France"
+ }
+}

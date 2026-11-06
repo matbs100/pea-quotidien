@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPHO/",
+  "isin": "FR0000121329",
+  "pea_bourso": true,
+  "secteur": "Fabrication industrielle",
+  "indice": "CAC 40",
+  "valorisation": "45 657 MEUR",
+  "rendement": "1,82%",
+  "per": "22,08",
+  "dernier_dividende": "2,95 EUR (18/05/26)",
+  "per_annee": "2026",
+  "effectif": "84 958",
+  "nb_titres": "205 941 913",
+  "capitalisation": "45 657,32 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.thalesgroup.com/",
+  "pays": "France"
+ }
+}
