@@ -116,6 +116,36 @@ def calcul_de_mes_investissements():
 
 
 @test
+def methode_de_decision():
+    import controle as c
+    journal = ("| ID | Date | Idée | Par | Gain | Coût | Risque | Priorité | Décision | Réalisée | Indicateur | Bilan |\n"
+               "|---|---|---|---|--:|--:|--:|--:|---|---|---|---|\n"
+               "| D-20261106-1 | 2026-11-06 | n° 3 · Simulateur | chef | 4,45 | 3 | 1 | 4,9 | adoptée | 2026-11-06 | calcul juste | |\n"
+               "| D-20261106-2 | 2026-11-06 | n° 7 · Comparer | chef | 3,85 | 3 | 2 | 2,7 | adoptée | | aucune régression | |\n"
+               "| D-20261106-3 | 2026-11-06 | n° 1 · Ratios | chef | 3,35 | 2 | 1 | 3,7 | à l'essai | 2026-11-06 | ratios | ✅ gardée |\n")
+    D = c.lire_decisions(journal)
+    assert list(D) == ["D-20261106-1", "D-20261106-2", "D-20261106-3"] and D["D-20261106-2"]["réalisée"] == ""
+    assert c.jours_ouvres_entre("2026-11-06", "2026-11-11") == 3, "vendredi -> mercredi : lundi, mardi, mercredi"
+    assert c.bilans_en_retard(D, "2026-11-10") == [] and c.bilans_en_retard(D, "2026-11-11") == ["D-20261106-1"]
+    # toute amélioration du code cite une décision connue du journal
+    assert c.commit_sans_decision("nuit", "Amélioration : simulateur", ["scripts/modele.html"], D)
+    assert not c.commit_sans_decision("nuit", "Amélioration : simulateur [D-20261106-1]", ["scripts/modele.html"], D)
+    assert c.commit_sans_decision("chef", "Chef : rapport ; correction [D-20991231-1]", ["scripts/rendu.py"], D), "identifiant inconnu"
+    assert not c.commit_sans_decision("nuit", "Veille : marchés", ["apprentissage/journal/x.md"], D), "pas de code : pas de décision"
+    assert not c.commit_sans_decision("fiche", "Matin PEA 2026-11-09 (ouverture)", ["scripts/collecte.py"], D)
+    # les gains doivent suivre la grille (30/25/20/15/10 %)
+    idees = ("| # | Idée | Source | Indicateur | U | R | V | N | F | Gain | C | Ri | Statut |\n|--:|---|---|---|---|---|---|---|---|---|---|---|---|\n"
+             "| 3 | Simulateur | x | y | 5 | 4 | 4 | 5 | 4 | 4,45 | 3 | 1 | adoptée |\n"
+             "| 9 | Erreur | x | y | 3 | 3 | 3 | 3 | 3 | 4,00 | 1 | 1 | adoptée |\n"
+             "| 5 | Ancienne | x | — | 4 | — | — | — | — | — | 2 | 1 | fait |\n")
+    faux = c.gains_incoherents(idees)
+    assert len(faux) == 1 and "n° 9" in faux[0], faux
+    vrai = c.lire_decisions((RACINE / "pilotage" / "decisions.md").read_text(encoding="utf-8"))
+    assert vrai and all(x.get("décision") for x in vrai.values()), "journal des décisions illisible"
+    assert c.gains_incoherents((RACINE / "apprentissage" / "idees.md").read_text(encoding="utf-8")) == []
+
+
+@test
 def fonds_wealins():
     import wealins as w
     import collecte as c
@@ -201,6 +231,9 @@ def fonds_wealins():
     assert rendu.montant(10, {}) == "10,00 €" and rendu.montant(None, {"devise": "USD"}) == "—"
     assert rendu.date_vl({"categorie": "fonds", "date_cours": "2026-11-05"}) == " (valeur du 05/11)"
     assert rendu.date_vl({"categorie": "etf", "date_cours": "2026-11-05"}) == ""
+    # devise à côté de chaque prix d'un placement (décision D-20261106-2), pas pour un indice
+    assert rendu.prix_dev(6.177, {"devise": "EUR"}) == "6,177 EUR" and rendu.prix_dev(121.48, {"devise": "USD"}) == "121,48 USD"
+    assert rendu.prix_dev(8139.0, {}) == "8 139" and rendu.prix_dev(None, {"devise": "EUR"}) == "—"
 
 
 @test
@@ -420,6 +453,8 @@ def rendu_de_bout_en_bout():
         note = (c / "notes" / f"{jour}.md").read_text(encoding="utf-8")
         assert "## Top 30" in note and "pas un conseil" in note.lower(), "note Obsidian incomplète"
         assert "## Mes investissements" in note, "mes investissements absents de la note"
+        top = note.split("## Top 30", 1)[1].split("##", 1)[0]
+        assert re.search(r"\| [\d ]+,\d+ (EUR|USD|DKK) \|", top), "devise absente des prix du top 30 dans la note"
         assert not d["suggestions"] or "## Suggestions du jour" in note, "suggestions absentes de la note"
         assert (c / "docs" / "archives" / f"{jour}.html").exists() and (c / "docs" / "archives" / "index.html").exists()
         # Syntaxe JavaScript : node (cloud), sinon JavaScriptCore, présent sur tous les Mac

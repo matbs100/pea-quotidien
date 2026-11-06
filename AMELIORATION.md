@@ -29,7 +29,8 @@ scripts : tu ne dois jamais la casser. Tout est en français.
 1. **Préparer.** `PY=python3; $PY -m pip install -q -r requirements.txt`, puis
    `JOUR=$(TZ=Europe/Paris date +%F)` et `NUM=$(TZ=Europe/Paris date +%u)` (1 = lundi). Lis d'abord
    `pilotage/consignes.md` (consignes du chef), `pilotage/methodes.md` (le manuel des méthodes, à
-   appliquer), `pilotage/ecole.md` (tes devoirs) et le dernier rapport de `pilotage/rapports/`, puis
+   appliquer), `pilotage/ecole.md` (tes devoirs), `pilotage/decision.md` (la méthode de décision) et
+   `pilotage/decisions.md` (le journal des décisions), et le dernier rapport de `pilotage/rapports/`, puis
    `apprentissage/README.md`, `apprentissage/idees.md`, le haut de `apprentissage/CHANGELOG.md`, les
    3 derniers journaux, les 3 dernières analyses de `data/analyses/` et le bilan des signaux
    (`data/signaux.csv`). Lance `$PY scripts/tests.py` : si les tests échouent déjà, ta seule mission de
@@ -72,12 +73,18 @@ scripts : tu ne dois jamais la casser. Tout est en français.
      vraiment ouverte ; sinon « Source proposée ». Pas de doublon : complète une entrée existante.
    - `apprentissage/veille-github.md` : une ligne par projet étudié (lien, étoiles, licence, date de mise
      à jour, intérêt pour Matin PEA, idée reprise ou non).
-   - `apprentissage/idees.md` : les nouvelles idées (avec leur source), sans doublon, notées de 1 à 5 en
-     utilité, effort et risque, avec un statut. Les idées d'interface peuvent aussi rejoindre le
-     « Chantier interface » du chef : propose-les dans le journal.
-4. **Améliorer le programme**, par UNE idée : d'abord une priorité de `pilotage/consignes.md`, sinon
-   l'idée de `idees.md` à la meilleure utilité pour un effort et un risque faibles (jamais une idée
-   marquée « après 3 mois de données » avant ce délai) :
+   - `apprentissage/idees.md` : les nouvelles idées (avec leur source et leur **indicateur de réussite**),
+     sans doublon, notées avec la grille de `pilotage/decision.md` (U utilité, R résultats, V visuel et
+     clarté, N avantage de la nouveauté, F fiabilité ; Gain = moyenne pondérée 30/25/20/15/10 % ;
+     C coût et Ri risque à part), statut « proposée ». Le chef les décide chaque matin. Propose au moins
+     une idée par nuit, tirée de ta veille.
+4. **Améliorer le programme**, par UNE décision (méthode de `pilotage/decision.md` ; le propriétaire a autorisé que
+   toute amélioration jugée utile selon cette méthode soit faite sans sa validation) : d'abord une priorité
+   de `pilotage/consignes.md`, sinon la décision « adoptée » ou « à l'essai » de plus haute priorité, pas
+   encore réalisée, de `pilotage/decisions.md` ; sinon une idée que tu notes toi-même et qui passe le seuil
+   « adoptée » de la grille : c'est une **décision provisoire**, que tu ajoutes au journal
+   (`D-AAAAMMJJ-n`, décision « provisoire (nuit) ») et que le chef confirmera ou annulera le matin
+   (jamais une idée en attente de données avant son délai) :
    a. Implémente un changement petit et ciblé (300 lignes modifiées au plus), dans le style du code
       existant (français, commentaires courts). Toute fonction ajoutée ou changée : un test dans
       `scripts/tests.py` et une ligne dans `ARCHITECTURE.md`.
@@ -86,27 +93,35 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    d. Si un test échoue et que tu ne le corriges pas en 2 essais : annule tout ton code
       (`git checkout -- scripts docs notes descriptions.json univers.json requirements.txt ARCHITECTURE.md`),
       garde seulement tes notes, et marque l'idée « échouée : raison » dans `idees.md`.
-   e. Si tout passe : marque l'idée « fait le $JOUR » et ajoute en tête de `apprentissage/CHANGELOG.md`
-      une entrée `## $JOUR · titre court`, avec ce qui change pour le propriétaire et la source d'inspiration.
+   e. Si tout passe : marque l'idée « fait le $JOUR (D-…) », note la date dans la colonne « Réalisée » du
+      journal des décisions, et ajoute en tête de `apprentissage/CHANGELOG.md` une entrée
+      `## $JOUR · titre court`, avec ce qui change pour le propriétaire, la source d'inspiration et l'identifiant
+      de la décision.
+   Une seconde amélioration est permise la même nuit si elle fait moins de 80 lignes, qu'elle a sa
+   propre décision et que tout est au vert après la première.
    Ne régénère pas les fiches des jours passés : ne garde que les modifications de `docs/` et `notes/`
    du dernier jour.
 5. **Journal.** Écris `apprentissage/journal/$JOUR.md`, avec un en-tête `date` et ces titres :
    `## Veille du jour` (thème, sources ouvertes avec leurs liens), `## Ce que j'ai appris` (3 à 6
    puces, chacune avec sa source), `## À retenir` (une seule notion ou technique, en une phrase claire,
-   pour le « Savoir-faire » du propriétaire), `## Amélioration` (idée choisie, fichiers modifiés, résultat
+   pour le « Savoir-faire » du propriétaire), `## Amélioration` (décision réalisée et son identifiant, fichiers modifiés, résultat
    des tests, ou pourquoi rien n'a changé), `## Devoirs du chef` (chaque devoir : fait, avec le résultat
    et ses sources, ou pas fait et pourquoi), `## Idées pour la suite`, et `## Accès bloqués` si besoin.
    Ajoute le lien du journal en tête de la liste « Journaux » de `apprentissage/README.md`.
-6. **Publier.** `git add -A && git commit -m "Amélioration : <titre>"`, ou `"Veille : <thème>"` si
+6. **Publier.** `git add -A && git commit -m "Amélioration : <titre> [D-…]"` (l'identifiant est
+   obligatoire dès que le programme change : `controle.py` le vérifie), ou `"Veille : <thème>"` si
    seules les notes ont changé. Puis `git push origin HEAD:claude/pea`. Ne pousse jamais du code si les
    tests échouent. Pas de notification la nuit.
 
 ## Règles (non négociables)
 
-- **Ne casse pas la fiche.** Tests obligatoires, une seule amélioration par nuit.
+- **Ne casse pas la fiche.** Tests obligatoires, une amélioration par nuit (deux si la seconde est petite, voir
+  l'étape 4). Une idée qui touche à un veto de `pilotage/decision.md` est rejetée, quelle que soit sa note.
 - **Suis les consignes du chef** (`pilotage/consignes.md`), sauf si l'une contredit une règle
   ci-dessous : applique alors la règle et signale-le dans le journal.
-- **Ne modifie pas** : `AMELIORATION.md`, `ROUTINE.md`, `CHEF.md`, `pilotage/`, `config.json`, l'adresse
+- **Ne modifie pas** : `AMELIORATION.md`, `ROUTINE.md`, `CHEF.md`, `UNIVERS.md`, `pilotage/` (sauf
+  `pilotage/candidats.md`, et dans `pilotage/decisions.md` tes décisions provisoires et la colonne
+  « Réalisée »), `config.json`, l'adresse
   du site, les avertissements « pas un conseil en investissement », les données (`data/`) ni l'historique
   Git (pas de `push --force`).
 - **Des faits sourcés.** N'écris un fait que si tu as sa source ; un fait non vérifié reste « ⏳ à

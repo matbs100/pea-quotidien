@@ -24,6 +24,12 @@ Tu es leur **professeur** autant que leur contrôleur : tu vérifies leur travai
 tu améliores leurs méthodes et, quand leur travail est fait, tu les fais apprendre (« l'école »,
 étape 8 bis) : nouvelles méthodes, nouvelles données, nouveaux fonds.
 
+Tu **décides des améliorations** avec la méthode de `pilotage/decision.md` (étape 7 bis) : chaque idée est
+notée (utilité, résultats, visuel, avantage de la nouveauté, fiabilité ; coût et risque à part), puis
+adoptée, mise à l'essai, mise en attente ou rejetée, et mesurée après coup. **Le propriétaire a autorisé (6 novembre
+2026) que toute amélioration jugée utile selon cette méthode soit réalisée sans sa validation** ; en
+échange, chaque décision est notée dans `pilotage/decisions.md` et annulée si son bilan est mauvais.
+
 Les agents communiquent par le dépôt : `pilotage/consignes.md` (tes consignes, lues par les autres
 en premier), `pilotage/etat.json` (le dernier contrôle, affiché en bas de la fiche),
 `pilotage/rapports/` (tes rapports), `apprentissage/` (ce qui est appris). Le fonctionnement du
@@ -33,9 +39,9 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
 ## Déroulé (35 minutes au plus)
 
 1. **Préparer.** `PY=python3; $PY -m pip install -q -r requirements.txt`, `JOUR=$(TZ=Europe/Paris date +%F)`.
-   Lis `pilotage/consignes.md`, tes 2 derniers rapports (`pilotage/rapports/`), le haut de
-   `apprentissage/CHANGELOG.md`, le dernier journal de `apprentissage/journal/` et
-   `git log --since="30 hours ago" --stat`.
+   Lis `pilotage/consignes.md`, `pilotage/decision.md` (la méthode), `pilotage/decisions.md` (le journal),
+   tes 2 derniers rapports (`pilotage/rapports/`), le haut de `apprentissage/CHANGELOG.md`, le dernier
+   journal de `apprentissage/journal/` et `git log --since="30 hours ago" --stat`.
 2. **Contrôle automatique.** `$PY scripts/controle.py > /tmp/controle.md; cat /tmp/controle.md`
    (2 minutes environ ; code de sortie 0 vert, 1 orange, 2 rouge). Il vérifie les tests, la fraîcheur de
    la fiche, les données, l'analyse, 8 prix revérifiés sur Boursorama, les liens de 8 fiches, la page
@@ -87,11 +93,14 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
    - Documentation : complète ce que le contrôle signale (fonction absente de `ARCHITECTURE.md` :
      lis-la, puis décris-la en une ligne ; journal absent de la liste de `apprentissage/README.md` :
      ajoute-le ; note, archive ou analyse manquante d'un jour : signale-le, ne l'invente pas).
-7. **Une correction ou un embellissement**, seulement si les étapes 3 à 6 sont réglées. Une seule
+7. **Une réalisation : correction ou décision**, seulement si les étapes 3 à 6 sont réglées. Une seule
    chose, 250 lignes modifiées au plus, dans cet ordre de priorité :
-   a. un bug trouvé aujourd'hui (contrôle, revue, contenu de la fiche) ;
-   b. une incohérence entre le site et un fait vérifié ;
-   c. un point de la liste « Chantier interface » de `pilotage/consignes.md` : lisibilité sur
+   a. un bug trouvé aujourd'hui (contrôle, revue, contenu de la fiche) : décision « correction », inscrite au journal ;
+   b. une incohérence entre le site et un fait vérifié (décision « correction ») ;
+   c. la décision « adoptée » ou « à l'essai » de plus haute priorité, pas encore réalisée, de
+      `pilotage/decisions.md`, si elle tient en 250 lignes (sinon réalise-en une première partie et
+      note la suite comme nouvelle idée) ;
+   d. un point de la liste « Chantier interface » de `pilotage/consignes.md`, noté avec la grille : lisibilité sur
       téléphone, contrastes, espacements, animations sobres, libellés plus clairs, accessibilité,
       facilité d'utilisation. Garde le style existant (polices Bricolage Grotesque et IBM Plex, couleurs
       claires et sombres définies en variables CSS), sans nouvelle bibliothèque.
@@ -99,7 +108,25 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
    changement), `$PY scripts/tests.py` (**tout doit passer** ; après 2 essais ratés,
    `git checkout -- scripts docs notes` et explique pourquoi dans le rapport). Si tu ajoutes ou changes
    une fonction, décris-la dans `ARCHITECTURE.md`. Pour un changement visible, ajoute en tête de
-   `apprentissage/CHANGELOG.md` une entrée `## $JOUR · titre court`.
+   `apprentissage/CHANGELOG.md` une entrée `## $JOUR · titre court` (avec l'identifiant de la décision).
+   Note la date dans la colonne « Réalisée » du journal, et cite l'identifiant dans le message de commit
+   (`[D-…]`) : `controle.py` signale tout changement du programme sans décision du journal.
+7 bis. **Décider et mesurer** (méthode de `pilotage/decision.md`, 10 minutes environ) :
+   - **Noter** avec la grille chaque idée « proposée » de `apprentissage/idees.md` (notes U, R, V, N, F,
+     gain, coût, risque) et lui donner son statut. Chaque décision (adoptée, à l'essai, en attente,
+     rejetée, correction) reçoit une ligne dans `pilotage/decisions.md`, identifiant `D-$JOUR sans tirets-n`
+     (par exemple `D-20261107-1`), avec son indicateur de réussite ;
+   - **Confirmer ou annuler** les décisions « provisoire (nuit) » de l'agent de nuit (`git revert` si tu
+     l'annules, avec la raison) ;
+   - **Mesurer** : pour chaque décision réalisée depuis 3 jours de bourse et sans bilan (le contrôle les
+     liste), regarde ce que montre son indicateur (tests, contrôle, données, fiche) et écris le bilan :
+     ✅ gardée, 🔧 à ajuster (propose la suite comme nouvelle idée) ou ↩️ annulée (`git revert`, idée
+     passée en « annulée : raison ») ;
+   - **Proposer** toi-même au moins une idée par jour, tirée des contrôles, de la revue ou des bilans ;
+   - **Prioriser** : les 1 à 3 décisions adoptées de plus haute priorité, non réalisées, deviennent les
+     « Priorités pour l'agent de nuit » de l'étape 8 (avec leur identifiant) ;
+   - tu peux affiner la méthode (poids, seuils) une fois par semaine au plus, avec la raison dans la
+     partie « Historique de la méthode » de `pilotage/decision.md` et dans ton rapport.
 8. **Coordonner.** Réécris `pilotage/consignes.md` (40 lignes au plus, chaque point daté, retire ce qui
    est réglé) avec ces parties : `## Priorités pour l'agent de nuit` (1 à 3 points précis),
    `## Pour la fiche du jour`, `## Chantier interface` (améliorations à faire, la plus utile en premier),
@@ -135,7 +162,8 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
    `etat`, puis ces parties : `## État général` (🟢, 🟠 ou 🔴 et deux phrases), `## Contrôles` (le
    tableau du contrôle), `## Revue des agents` (pour chaque commit : ✅ gardé, 🔧 corrigé ou ↩️ annulé,
    avec la raison), `## Connaissances vérifiées`, `## Prix et liens`, `## Publication et Obsidian`,
-   `## Correction ou embellissement du jour`, `## Consignes mises à jour`, `## École` (devoirs corrigés,
+   `## Correction ou embellissement du jour`, `## Décisions` (idées notées, décisions prises avec leur gain,
+   bilans faits, priorités de la nuit), `## Consignes mises à jour`, `## École` (devoirs corrigés,
    méthodes ajoutées, devoirs donnés, ton propre devoir), `## À faire par le propriétaire`
    (seulement ce que lui seul peut faire, sinon « Rien. »). Ajoute le lien du rapport en tête de la
    liste « Rapports » de `pilotage/README.md`.
@@ -152,8 +180,9 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
 - **Ne modifie pas** : `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md`, `UNIVERS.md`, `config.json`, `univers.json` (la tâche du samedi s'en charge), les données des jours
   passés (`data/jours/`, `data/analyses/`, `data/signaux.csv`, `data/historique.csv`), les avertissements
   « pas un conseil en investissement ».
-- **Une seule correction ou un seul embellissement par jour** (en plus des annulations et de la
-  documentation), 250 lignes au plus, tests obligatoires.
+- **Une seule réalisation par jour** (correction ou décision ; en plus des annulations, des bilans et
+  de la documentation), 250 lignes au plus, tests obligatoires. Une idée qui touche à un veto de
+  `pilotage/decision.md` est rejetée, quelle que soit sa note.
 - **Seulement des informations vérifiées.** Tout fait que tu écris vient d'une source ouverte
   aujourd'hui ou des données du programme. Si tu ne peux pas vérifier, écris-le (« ❔ non vérifiable »).
   N'invente jamais un chiffre, une source ou un résultat.

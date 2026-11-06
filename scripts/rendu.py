@@ -51,6 +51,12 @@ def prix(x):
     return f"{x:,.{d}f}".replace(",", " ").replace(".", ",")
 
 
+def prix_dev(x, m):
+    """Prix suivi de la devise du titre (« 6,177 EUR », « 121,48 USD ») ; sans devise pour un indice."""
+    dev = (m or {}).get("devise")
+    return prix(x) + (f" {dev}" if dev and x is not None else "")
+
+
 def pct_simple(x):
     return "—" if x is None else f"{x:.1f} %".replace(".", ",")
 
@@ -99,7 +105,7 @@ def note_obsidian(d, analyse, url):
           "|--:|---|---|--:|--:|--:|--:|--:|---|--:|:-:|"]
     typ = {"etf": "ETF", "actions": "Action", "petites": "Petite cap."}
     for i, m in enumerate(d["top30"], 1):
-        L.append(f"| {i} | {m['nom']} (`{m['ticker']}`) | {typ[m['categorie']]} | {prix(m['prix'])} | "
+        L.append(f"| {i} | {m['nom']} (`{m['ticker']}`) | {typ[m['categorie']]} | {prix_dev(m['prix'], m)} | "
                  f"{pct(m['var_1j'])} | {pct(m['var_1m'])} | {pct(m['var_3m'])} | {m['rsi']:.0f} | "
                  f"{m['signal']} | {m['score']:.0f} | {VERIF[m.get('verif')]} |")
     L += ["", "## 10 petits prix (moins de 2 €)", "",
@@ -107,7 +113,7 @@ def note_obsidian(d, analyse, url):
           "| # | Titre | Prix | 1 mois | 3 mois | Liquidité €/j | Signal | Déjà vu |",
           "|--:|---|--:|--:|--:|--:|---|:-:|"]
     for i, m in enumerate(d["petites"], 1):
-        L.append(f"| {i} | {m['nom']} (`{m['ticker']}`) | {prix(m['prix'])} | {pct(m['var_1m'])} | "
+        L.append(f"| {i} | {m['nom']} (`{m['ticker']}`) | {prix_dev(m['prix'], m)} | {pct(m['var_1m'])} | "
                  f"{pct(m['var_3m'])} | {m['liquidite']:,} | {m['signal']} | {'oui' if m.get('deja_vu') else ''} |"
                  .replace(",", " "))
     b, c = d["bilan_signaux"], d.get("controle_sources")
@@ -170,8 +176,8 @@ def note_investissements(mes):
     if lignes:
         L += ["| Titre | Prix | Séance | Prix d'achat | Depuis l'achat | Valeur | Plus-value | Sources |",
               "|---|--:|--:|--:|--:|--:|--:|:-:|"]
-        L += [f"| {m['nom']} (`{m['ticker']}`) | {prix(m.get('prix'))}{date_vl(m)} | {pct(m.get('var_1j'))} | "
-              f"{prix(m.get('prix_revient'))} | {pct(m.get('perf_achat'))} | {montant(m.get('valeur'), m)} | "
+        L += [f"| {m['nom']} (`{m['ticker']}`) | {prix_dev(m.get('prix'), m)}{date_vl(m)} | {pct(m.get('var_1j'))} | "
+              f"{prix_dev(m.get('prix_revient'), m)} | {pct(m.get('perf_achat'))} | {montant(m.get('valeur'), m)} | "
               f"{montant(m.get('plus_value'), m, True)} | {VERIF.get(m.get('verif'), '')} |" for m in lignes]
         L.append("")
     L += [f"- ⚠️ `{e['ticker']}` : {e['message']}" for e in erreurs]
@@ -206,7 +212,7 @@ def note_suggestions(sugg):
     L = ["## Suggestions du jour", "",
          "> [!note] Des actions à regarder de plus près, choisies par des règles chiffrées (voir « Règles ») : "
          "pas une liste d'achats.", ""]
-    L += [f"- **{s['nom']}** (`{s['ticker']}`, {prix(s.get('prix'))}, {pct(s.get('var_1j'))}) · "
+    L += [f"- **{s['nom']}** (`{s['ticker']}`, {prix_dev(s.get('prix'), s)}, {pct(s.get('var_1j'))}) · "
           f"*{s['critere_lib']}* : {s['raison']}" for s in sugg]
     return L + [""]
 

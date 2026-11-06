@@ -42,18 +42,26 @@ dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 | 5 h, chaque jour | **Chef d'orchestre** | `CHEF.md` | contrôle tout (`controle.py`), vérifie les faits appris, relit les commits des autres, annule ce qui casse, corrige un bug ou embellit l'interface, écrit `pilotage/` |
 | 12 h 30, jours de bourse | **Chef d'orchestre, passage de mi-journée** | routine dédiée (lit `CHEF.md`) | vérifie la fiche d'ouverture, la refait et corrige le programme si besoin, s'assure que la clôture pourra tourner ; pas d'embellissement |
 | 9 h 15 et 17 h 55, jours de bourse | **Fiche du jour** | `ROUTINE.md` | collecte, contrôle des prix, fiches détaillées, analyse, site, notification |
-| samedi à 4 h 20 | **Mise à jour des titres suivis** | tâche planifiée (consigne dans la tâche) | ajoute à `univers.json` les nouveaux ETF éligibles au PEA et les actions entrées dans le CAC 40, le SBF 120 ou l'Euro Stoxx 50, chacun vérifié (Yahoo, Boursorama) ; 20 ajouts au plus ; signale sans les supprimer les titres qui ne cotent plus |
+| samedi à 4 h 20 | **Mise à jour des titres suivis** | `UNIVERS.md` | ajoute à `univers.json` les nouveaux ETF éligibles au PEA et les actions entrées dans le CAC 40, le SBF 120 ou l'Euro Stoxx 50, chacun vérifié (Yahoo, Boursorama) ; 20 ajouts au plus ; signale sans les supprimer les titres qui ne cotent plus |
 | 9 h 40 et 18 h 40, si le Mac est allumé | **Relais du Mac** | tâche planifiée de l'appli Claude | `git pull` dans Obsidian, vérifie le site en ligne, recopie l'essentiel dans les notes |
 
 Les agents ne se parlent pas directement : ils communiquent par des fichiers du dépôt.
 - `pilotage/consignes.md` : les consignes du chef, que les autres agents lisent en premier ;
 - `pilotage/etat.json` : le dernier contrôle, affiché en bas de la fiche ;
 - `pilotage/rapports/` : un rapport du chef par jour ;
-- `apprentissage/` : ce que l'agent de nuit apprend (journal, idées, connaissances).
+- `apprentissage/` : ce que l'agent de nuit apprend (journal, idées, connaissances) ;
+- `pilotage/decision.md` et `pilotage/decisions.md` : **la méthode de décision** et son journal. Tous les
+  agents proposent des idées (notées avec la grille : utilité, résultats, visuel, avantage de la nouveauté,
+  fiabilité ; coût et risque à part) ; le chef décide chaque matin (adoptée, à l'essai, en attente,
+  rejetée), l'agent de nuit ou le chef réalise, et le chef mesure le résultat trois jours de bourse plus
+  tard (gardée, à ajuster, annulée). Le propriétaire a autorisé (06/11/2026) l'adoption sans sa validation de ce
+  que la méthode juge utile ; chaque commit d'amélioration cite sa décision (`[D-…]`).
 
-Les consignes des routines sont recopiées dans `ROUTINE.md`, `AMELIORATION.md` et `CHEF.md`. Les
-agents ne modifient jamais ces trois fichiers : seul le propriétaire (avec Claude sur le Mac) les change, en
-même temps que la routine correspondante sur claude.ai.
+Les consignes sont dans `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md` et `UNIVERS.md` : depuis le 06/11/2026,
+chaque routine dit seulement « lis ce fichier et applique-le » (la routine de la fiche garde en plus
+l'adresse de notification, qui ne doit pas être dans le dépôt public). Pour changer une consigne, il
+suffit donc de modifier le fichier. Les agents ne modifient jamais ces fichiers : si une routine voit
+qu'un agent l'a fait, elle applique la version d'avant. Seul le propriétaire (avec Claude) les change.
 
 ## Les fichiers
 
@@ -72,7 +80,7 @@ même temps que la routine correspondante sur claude.ai.
 | `docs/` | le site : `index.html` (dernière fiche) et `archives/` |
 | `notes/` | une note Obsidian par jour |
 | `apprentissage/` | journal de nuit, idées, connaissances, veille GitHub, nouveautés, crédits |
-| `pilotage/` | consignes, état et rapports du chef d'orchestre |
+| `pilotage/` | consignes, état et rapports du chef d'orchestre ; `decision.md` (la méthode de décision des améliorations : grille, seuils, vetos, bilans) et `decisions.md` (le journal des décisions, une ligne par décision avec son identifiant `D-AAAAMMJJ-n`) ; école, méthodes, pistes de fonds |
 | `scripts/` | le programme (ci-dessous) |
 
 ## Les scripts, fonction par fonction
@@ -201,6 +209,7 @@ par les agents. Dans le graphique, la moyenne courte est en tirets et la longue 
 | `note_suggestions(sugg)` | partie « Suggestions du jour » de la note, avec la raison de chaque suggestion |
 | `risque_de(det)` | niveau de risque 1 à 7 du badge de la page principale (SRI officiel, sinon estimé) |
 | `date_vl(m)` | « (valeur du 05/11) » après le prix d'un fonds dans la note |
+| `prix_dev(x, m)` | prix suivi de la devise du titre dans la note (« 6,177 EUR ») ; sans devise pour un indice |
 | `fonds_wealins(d)` | fonds de `data/wealins.json` pour la barre de recherche, en tableaux compacts, sans ceux que la fiche suit déjà |
 | `archives()` | page `docs/archives/` qui liste toutes les fiches |
 | `main()` | écrit `docs/index.html`, l'archive du jour et la note ; ajoute la nouveauté du programme et l'état du dernier contrôle |
@@ -237,6 +246,12 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `ecarts_aux_regles(agent, fichiers, jour_commit, dernier_jour)` | fichiers hors du rôle de l'agent, données passées modifiées, suppressions, taille du changement |
 | `git(*args)` | lance une commande Git dans le dépôt |
 | `c_agents(d, heures)` | relit les commits des 30 dernières heures |
+| `lire_decisions(texte)` | lignes du journal `pilotage/decisions.md` (identifiant → colonnes) |
+| `gains_incoherents(texte_idees)` | idées dont le « Gain » ne suit pas la grille (moyenne pondérée 30/25/20/15/10 %) |
+| `jours_ouvres_entre(debut, fin)` | jours de semaine entre deux dates |
+| `bilans_en_retard(decisions, jour, delai)` | décisions réalisées depuis 3 jours ouvrés et toujours sans bilan |
+| `commit_sans_decision(agent, message, chemins, decisions)` | commit d'agent qui change le programme sans citer une décision connue (`[D-…]`) |
+| `c_decisions(d, heures)` | contrôle « Méthode de décision » : bilans en retard, gains mal calculés, améliorations sans décision (commits depuis le 07/11/2026) |
 | `resume_court(controles, etat)` | phrase affichée en bas de la fiche |
 | `main()` | enchaîne les contrôles, écrit `pilotage/etat.json`, affiche le résumé |
 

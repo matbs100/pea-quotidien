@@ -1,8 +1,9 @@
 # Consigne de l'agent cloud « Matin PEA »
 
-Texte envoyé à l'agent Claude dans le cloud (routine claude.ai), deux fois par jour de bourse :
-vers 9 h 15 (ouverture) et vers 17 h 55 (clôture), par deux routines qui partagent ce texte. Les valeurs `{{URL_SITE}}` et `{{TOPIC_NTFY}}`
-sont remplacées au moment de créer la routine.
+Consigne lue par l'agent Claude dans le cloud (routine claude.ai), deux fois par jour de bourse :
+vers 9 h 15 (ouverture) et vers 17 h 55 (clôture), par deux routines qui disent seulement « lis
+`ROUTINE.md` et applique-le ». Les valeurs `{{URL_SITE}}` et `{{TOPIC_NTFY}}` sont données par la
+routine (le sujet de notification ne doit pas être écrit dans ce dépôt public).
 
 ---
 
@@ -64,6 +65,10 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
    `descriptions.json` (clé `titres`), ajoute une description de 1 à 2 phrases en français, avec tes
    propres mots (activité principale, pays), uniquement si tu es sûr des faits ; 10 au maximum par
    jour. Ne copie jamais le texte d'un site.
+5 ter. À la clôture seulement, 2 minutes au plus : si, en préparant la fiche, tu as remarqué un manque ou une
+   gêne (donnée absente, libellé peu clair, calcul douteux, source qui bloque, lenteur), propose UNE idée
+   dans `apprentissage/idees.md`, notée avec la grille de `pilotage/decision.md`, statut « proposée »,
+   source « fiche du $JOUR ». Pas de code : le chef d'orchestre la décidera. Rien à signaler : rien à écrire.
 6. Rendu : `$PY scripts/rendu.py $JOUR` (fiche animée dans `docs/`, note Obsidian dans `notes/`).
 7. Publication : `git add -A && git commit -m "Matin PEA $JOUR ($MOMENT)" && git push origin HEAD:claude/pea`.
 8. Notification sur le téléphone, envoyée dès que la fiche est publiée :
@@ -100,6 +105,7 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
   `git revert --no-edit <commit>`, relance l'étape, note « annulée le $JOUR : <raison> » sur l'idée
   correspondante dans `apprentissage/idees.md` s'il y en a une, et commence la notification par
   « Changement automatique annulé : <titre du commit> ».
-- Ne touche pas à `apprentissage/` (sauf la ligne d'idée en cas d'annulation), ni à `pilotage/`,
+- Ne touche pas à `apprentissage/` (sauf l'idée proposée à l'étape 5 ter et la ligne d'idée en cas
+  d'annulation), ni à `pilotage/`,
   `ARCHITECTURE.md`, `AMELIORATION.md` ou `CHEF.md` : c'est le travail des autres agents.
 - Ne touche pas aux fichiers de données des jours précédents.

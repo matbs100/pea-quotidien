@@ -53,9 +53,9 @@ HORS_ROLE = {  # mes-investissements.md : tenu par le propriétaire seul, aucun 
                 "config.json", "data/*", "docs/*", "notes/*", "apprentissage/*", "mes-investissements.md",
                 "guide/*", "pilotage/*"],
 }
-# exceptions : filet de sécurité de la fiche ; pistes de nouveaux titres (nuit) ; rapport du samedi
-PERMIS = {"fiche": ["apprentissage/idees.md"], "nuit": ["pilotage/candidats.md"],
-          "univers": ["pilotage/candidats.md"]}
+# exceptions : idées proposées (fiche, samedi) ; pistes de nouveaux titres et décisions provisoires (nuit)
+PERMIS = {"fiche": ["apprentissage/idees.md"], "nuit": ["pilotage/candidats.md", "pilotage/decisions.md"],
+          "univers": ["pilotage/candidats.md", "apprentissage/idees.md"]}
 PERMIS_MOTIFS = {"univers": ["pilotage/univers/*"]}
 MAX_LIGNES = {"nuit": 300, "chef": 250}         # lignes de code modifiées par passage
 
@@ -499,6 +499,103 @@ def c_agents(d, heures=30):
     return controle("agents", titre, niveau, resume, pb + al + vus)
 
 
+# ---------- méthode de décision (pilotage/decision.md) ----------
+
+DEBUT_METHODE = "2026-11-07"   # les commits d'avant la méthode ne sont pas contrôlés
+POIDS_GRILLE = (0.30, 0.25, 0.20, 0.15, 0.10)  # utilité, résultats, visuel, nouveauté, fiabilité
+ID_DECISION = re.compile(r"D-\d{8}-\d+")
+
+
+def _cellules(ligne):
+    return [c.strip() for c in ligne.strip().strip("|").split("|")]
+
+
+def lire_decisions(texte):
+    """Lignes du journal pilotage/decisions.md : identifiant -> {colonne en minuscules: valeur}."""
+    entetes, out = None, {}
+    for l in (texte or "").splitlines():
+        if not l.strip().startswith("|"):
+            continue
+        c = _cellules(l)
+        if c and c[0] == "ID":
+            entetes = [x.lower() for x in c]
+        elif entetes and ID_DECISION.fullmatch(c[0]):
+            out[c[0]] = dict(zip(entetes, c))
+    return out
+
+
+def _nombre_fr(x):
+    try:
+        return float(str(x).replace(",", ".").strip())
+    except ValueError:
+        return None
+
+
+def gains_incoherents(texte_idees):
+    """Idées de apprentissage/idees.md dont le « Gain » ne correspond pas aux cinq notes de la grille
+    (moyenne pondérée, écart toléré 0,05) : erreur de calcul d'un agent."""
+    entetes, faux = None, []
+    for l in (texte_idees or "").splitlines():
+        if not l.strip().startswith("|"):
+            continue
+        c = _cellules(l)
+        if c and c[0] == "#":
+            entetes = c
+            continue
+        if not entetes or "Gain" not in entetes or not c[0].isdigit():
+            continue
+        v = dict(zip(entetes, c))
+        notes = [_nombre_fr(v.get(k)) for k in ("U", "R", "V", "N", "F")]
+        gain = _nombre_fr(v.get("Gain"))
+        if gain is None or any(n is None for n in notes):
+            continue
+        attendu = sum(p * n for p, n in zip(POIDS_GRILLE, notes))
+        if abs(attendu - gain) > 0.05:
+            faux.append(f"idée n° {c[0]} : gain {gain:.2f} noté, {attendu:.2f} d'après la grille")
+    return faux
+
+
+def jours_ouvres_entre(debut, fin):
+    """Jours de semaine (lundi à vendredi) après debut, jusqu'à fin compris (dates AAAA-MM-JJ)."""
+    d0, d1 = datetime.fromisoformat(debut).date(), datetime.fromisoformat(fin).date()
+    return sum(1 for k in range(1, (d1 - d0).days + 1) if (d0 + timedelta(days=k)).weekday() < 5)
+
+
+def bilans_en_retard(decisions, jour, delai=3):
+    """Décisions réalisées depuis au moins `delai` jours ouvrés et toujours sans bilan."""
+    return [i for i, x in decisions.items()
+            if re.fullmatch(r"\d{4}-\d{2}-\d{2}", x.get("réalisée", "")) and not x.get("bilan")
+            and jours_ouvres_entre(x["réalisée"], jour) >= delai]
+
+
+def commit_sans_decision(agent, message, chemins, decisions):
+    """Vrai si un commit d'agent modifie le programme sans citer une décision connue du journal."""
+    if agent not in ("nuit", "chef", "univers"):
+        return False
+    if not any(c.startswith("scripts/") for c in chemins):
+        return False
+    return not any(i in decisions for i in ID_DECISION.findall(message))
+
+
+def c_decisions(d, heures=30):
+    titre = "Méthode de décision"
+    decisions = lire_decisions(lire(RACINE / "pilotage" / "decisions.md"))
+    al = [f"bilan à faire : {i} ({decisions[i].get('idée', '')[:50]})" for i in bilans_en_retard(decisions, d["date"])]
+    al += gains_incoherents(lire(RACINE / "apprentissage" / "idees.md"))
+    journal = git("log", f"--since={heures} hours ago", "--format=%H%x1f%aI%x1f%s")
+    for ligne in filter(None, journal.splitlines()):
+        sha, quand, message = ligne.split("\x1f", 2)
+        if quand[:10] < DEBUT_METHODE:
+            continue
+        chemins = git("show", "--name-only", "--format=", sha).split()
+        if commit_sans_decision(agent_du_commit(message), message, chemins, decisions):
+            al.append(f"{sha[:7]} « {message[:50]} » : amélioration du code sans décision du journal (D-…)")
+    a_faire = sum(1 for x in decisions.values() if x.get("décision") in ("adoptée", "à l'essai", "provisoire (nuit)")
+                  and not x.get("réalisée"))
+    resume = f"{len(decisions)} décisions, {a_faire} à réaliser, {len(al)} point(s) à voir"
+    return controle("decisions", titre, "alerte" if al else "ok", resume, al)
+
+
 # ---------- assemblage ----------
 
 def resume_court(controles, etat):
@@ -530,7 +627,7 @@ def main():
             controles.append(x or controle(nom, nom, "non_verifiable", "non vérifié (hors ligne)"))
     else:
         controles += [c_prix(d, maintenant), c_liens(d), c_site(d)]
-    controles += [c_documentation(d, maintenant), c_agents(d)]
+    controles += [c_documentation(d, maintenant), c_agents(d), c_decisions(d)]
     pire_niveau = pire(c["niveau"] for c in controles)
     etat = {"probleme": "rouge", "alerte": "orange"}.get(pire_niveau, "vert")
     sortie = {"genere_le": maintenant.isoformat(timespec="minutes"), "fiche": f"{d['date']} ({d.get('moment')})",
