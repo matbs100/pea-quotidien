@@ -28,3 +28,4 @@ la note « Agent PEA Quotidien » et dans la mémoire de Claude.
 | D-20261106-10 | 2026-11-06 | n° 6 · Diversification du top 30 (version réduite) | Claude (pour le chef) | 3,45 | 3 | 2 | 1,9 | à l'essai | | indicateur affiché chaque jour ; calcul testé | |
 | D-20261106-11 | 2026-11-06 | n° 10 · Deuxième source d'éligibilité PEA des ETF | Claude (pour le chef) | 3,25 | 3 | 2 | 1,5 | à l'essai | | 2 sources concordantes pour ≥ 80 % des ETF | |
 | D-20261106-12 | 2026-11-06 | n° 20 · Mention TTF d'après la liste BOFiP | Claude (pour le chef) | 3,25 | 3 | 2 | 1,5 | à l'essai | | mention juste pour 100 % de la liste officielle vérifiée | |
+| D-20261106-13 | 2026-11-06 | Lectures des agents : PDF de sources vérifiées, fiches de lecture dans Obsidian | Mathieu | — | — | — | — | adoptée | 2026-11-06 | au moins une fiche de lecture tous les 3 jours, relue par le chef ; aucune alerte « Lectures » au contrôle | |
