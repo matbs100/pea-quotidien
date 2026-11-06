@@ -56,9 +56,10 @@ cotés à la dernière séance sont retenus. Ce sont des pistes à étudier (fic
 
 ## 3. Liste des titres suivis élargie
 
-- **Tous les ETF éligibles au PEA cotés à Paris** : ajout lancé le 6 novembre à 10 h 50 par une tâche
-  ponctuelle, qui vérifie chaque ETF (cours publiés par Yahoo, éligibilité PEA et ISIN sur Boursorama)
-  avant de l'ajouter. Résultat : voir le commit « Univers : ajout de N ETF éligibles au PEA ».
+- **Tous les ETF éligibles au PEA cotés à Paris** : confié à une tâche ponctuelle qui vérifie chaque ETF
+  (cours publiés par Yahoo, éligibilité PEA et ISIN sur Boursorama) avant de l'ajouter. Le premier essai
+  (10 h 50) s'est arrêté sans rien publier ; relancé à 18 h 25 avec l'obligation d'écrire un rapport.
+  Résultat : [[2026-11-06 Ajout des ETF - rapport]] et le commit « Univers : ajout de N ETF… ».
 - **3 ou 4 ETF à effet de levier** (×2 ou inverses), à la demande du propriétaire, dans une section à
   part (`etf_levier`) : trouvables dans la recherche, avec fiche et contrôle du prix, mais **hors du
   top 30 et des suggestions**. Badge rouge « Effet de levier » et avertissement : ils amplifient les
@@ -94,7 +95,11 @@ cotés à la dernière séance sont retenus. Ce sont des pistes à étudier (fic
 
 ## 6. Points ouverts
 
-- [ ] Vérifier le nombre d'ETF ajoutés par la tâche du 6 novembre (commit « Univers : ajout… »).
+- [ ] Vérifier le nombre d'ETF ajoutés par la tâche relancée le 6 novembre à 18 h 25
+  ([[2026-11-06 Ajout des ETF - rapport]]).
+- [ ] Fiche de clôture du 6 novembre : pas encore publiée à 18 h 15 (passage du chef d'orchestre, état
+  rouge à cause d'un seul lien Yahoo, RS2K.PA, introuvable depuis le cloud). Plusieurs tâches ont été
+  relancées vers 18 h 15 : vérifier qu'une seule notification de clôture est arrivée.
 - [ ] Fiche d'ouverture du 6 novembre : 12 titres avec un cours du 4 novembre (vu par le chef
   d'orchestre de 12 h 30 ?). Les suggestions ignorent ces cours.
 - [ ] Possible plus tard : un lien pour transférer tes achats vers un autre appareil (Mac).
