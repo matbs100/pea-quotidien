@@ -154,7 +154,7 @@ Usage : `python scripts/rendu.py AAAA-MM-JJ`. `modele.html` contient toute la pa
 animations, graphiques en SVG, fiche détaillée, barre de recherche « Mes investissements » avec ses
 calculs) ; `rendu.py` y insère les données du jour en JSON. Les achats saisis dans la barre sont gardés
 dans le navigateur (clé `matin-pea:investissements` du `localStorage`) : ils ne sont ni publiés, ni lus
-par les agents.
+par les agents. Dans le graphique, la moyenne courte est en tirets et la longue en pointillés (lisible sans la couleur, notamment pour les daltoniens ; test `moyennes_mobiles_traits_distincts`).
 
 | Fonction | Rôle |
 |---|---|

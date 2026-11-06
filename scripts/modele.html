@@ -787,10 +787,10 @@ function graphe(zone, det) {
     let mms = [];
     if (moy) {
       const [n1, n2, l1, l2] = src === "s" ? [10, 40, "10 semaines", "40 semaines"] : [50, 200, "50 jours", "200 jours"];
-      mms = [[moyenne(base, n1).slice(i0), "var(--amber)", l1], [moyenne(base, n2).slice(i0), "var(--muted)", l2]];
+      mms = [[moyenne(base, n1).slice(i0), "var(--amber)", l1, "6 3", "dashed"], [moyenne(base, n2).slice(i0), "var(--muted)", l2, "1.5 3", "dotted"]];
       mms.forEach(([l]) => l.forEach((v) => { if (v != null) ys.push(v); }));
       leg.hidden = false;
-      leg.innerHTML = mms.map(([, c, l]) => `<span style="margin-right:14px"><i style="border-color:${c}"></i>moyenne ${l}</span>`).join("");
+      leg.innerHTML = mms.map(([, c, l, , st]) => `<span style="margin-right:14px"><i style="border-color:${c};border-top-style:${st}"></i>moyenne ${l}</span>`).join("");
     } else leg.hidden = true;
     const mn = Math.min(...ys), mx = Math.max(...ys), marge = (mx - mn) * 0.08 || Math.abs(mx) * 0.01 || 1;
     const y0 = mn - marge, y1 = mx + marge;
@@ -806,10 +806,10 @@ function graphe(zone, det) {
     }
     const idx = [0, Math.floor((pts.length - 1) / 2), pts.length - 1];
     const xl = idx.map((i, k) => `<text x="${X(i).toFixed(1)}" y="${H - 6}" font-size="11" fill="var(--muted)" text-anchor="${["start", "middle", "end"][k]}">${fdate(pts[i][0])}</text>`).join("");
-    const chemins = mms.map(([l, c]) => {
+    const chemins = mms.map(([l, c, , tr]) => {
       let s = "", on = false;
       l.forEach((v, i) => { if (v == null) { on = false; return; } s += `${on ? "L" : "M"}${X(i).toFixed(1)},${Y(v).toFixed(1)}`; on = true; });
-      return s ? `<path d="${s}" fill="none" stroke="${c}" stroke-width="1.5" stroke-dasharray="5 3"/>` : "";
+      return s ? `<path d="${s}" fill="none" stroke="${c}" stroke-width="1.5" stroke-dasharray="${tr}"/>` : "";
     }).join("");
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
     svg.innerHTML = `<defs><linearGradient id="g-remp" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${coul}" stop-opacity=".26"/><stop offset="1" stop-color="${coul}" stop-opacity="0"/></linearGradient></defs>
