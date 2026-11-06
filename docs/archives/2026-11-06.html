@@ -381,6 +381,7 @@ const sens = (x) => x == null ? "flat" : x > 0 ? "up" : x < 0 ? "down" : "flat";
 const pct = (x) => x == null ? "—" : (x > 0 ? "+" : "") + fr(x) + " %";
 const dec = (p) => p >= 1000 ? 0 : p >= 10 ? 2 : p >= 1 ? 3 : 4;
 const dev = (m) => m && m.devise ? ` <span class="dev">${m.devise}</span>` : "";  // devise de cotation
+const pxu = (x, u) => x == null ? null : fr(x, dec(x)) + (u ? ` <span class="dev">${u}</span>` : "");  // prix et devise
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const SG = D.suggestions || [];
 const MI = D.mes_investissements || null;
@@ -392,7 +393,7 @@ const nbParts = (q) => fr(q, q % 1 ? 2 : 0) + (q > 1 ? " parts" : " part");
 const SRC = { yahoo: "Yahoo", boursorama: "Boursorama", ft: "Financial Times", wealins: "Wealins" };
 function vf(m) {
   if (!m.verif) return "";
-  const det = Object.entries(m.sources || {}).map(([k, v]) => `${SRC[k]} ${fr(v, dec(v))}`).join(" · ");
+  const det = Object.entries(m.sources || {}).map(([k, v]) => `${SRC[k] || k} ${fr(v, dec(v))}${m.devise ? " " + m.devise : ""}`).join(" · ");
   const lib = { ok: `✓ ${Object.keys(m.sources).length} sources`, ecart: "⚠ écart entre sources", seul: "1 source" }[m.verif];
   return ` <span class="vf ${m.verif}" title="${esc(det)}">${lib}</span>`;
 }
@@ -549,7 +550,6 @@ const TYPE = { indices: "Indice", devises: "Devise", matieres: "Matière premiè
 const PLACEMENT = ["etf", "actions", "petites", "fonds"];
 const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const pctc = (x) => x == null ? null : `<span class="${sens(x)}">${pct(x)}</span>`;
-const prixf = (x) => x == null ? null : fr(x, dec(x));
 const pc1 = (x) => x == null ? null : fr(x, 1) + " %";
 
 // ---------- mes investissements : barre de recherche, achats gardés sur cet appareil ----------
@@ -638,7 +638,7 @@ function totalDe(L) {
 function position(l) {
   const plusieurs = l.achats && l.achats.length > 1;
   const achat = l.prix_revient != null
-    ? `acheté ${fr(l.prix_revient, dec(l.prix_revient))}${plusieurs ? " en moyenne" : ""}${l.depuis ? " · depuis le " + jourCourt(l.depuis) : ""}`
+    ? `acheté ${pxu(l.prix_revient, l.devise)}${plusieurs ? " en moyenne" : ""}${l.depuis ? " · depuis le " + jourCourt(l.depuis) : ""}`
     : l.depuis ? "depuis le " + jourCourt(l.depuis) : "prix d'achat non noté";
   const info = [esc(l.ticker), achat, l.quantite ? nbParts(l.quantite) : "",
     l.prix == null ? "cours indisponible sur cette fiche" : l.date_cours && l.date_cours !== D.date ? (estFonds(l) ? "valeur du " : "cours du ") + jourCourt(l.date_cours) : ""].filter(Boolean).join(" · ");
@@ -847,7 +847,7 @@ function graphe(zone, det) {
       const [jour, v] = pts[i], ev = (v / pts[0][1] - 1) * 100;
       gx.setAttribute("x1", X(i)); gx.setAttribute("x2", X(i)); gx.setAttribute("opacity", ".6");
       gp.setAttribute("cx", X(i)); gp.setAttribute("cy", Y(v)); gp.setAttribute("opacity", "1");
-      info.innerHTML = `${fdate(jour, true)}${src === "s" ? " (semaine)" : ""} · <b>${fr(v, dec(Math.abs(v)))}</b><br><span class="${sens(ev)}">${pct(ev)}</span> depuis le début de la période`;
+      info.innerHTML = `${fdate(jour, true)}${src === "s" ? " (semaine)" : ""} · <b>${fr(v, dec(Math.abs(v)))}${det.devise ? " " + det.devise : ""}</b><br><span class="${sens(ev)}">${pct(ev)}</span> depuis le début de la période`;
     };
     svg.onpointermove = suivre; svg.onpointerdown = suivre;
     svg.onpointerleave = () => { gx.setAttribute("opacity", "0"); gp.setAttribute("opacity", "0"); info.innerHTML = resume; };
@@ -946,9 +946,10 @@ function blocSignal(m, det) {
   const expl = { hausse: "le prix est au-dessus de sa moyenne 20 jours, elle-même au-dessus de la moyenne 50 jours, sans surchauffe (RSI sous 70) : la tendance est haussière.",
     baisse: "le prix est sous sa moyenne 20 jours, elle-même sous la moyenne 50 jours, sans excès de vente (RSI au-dessus de 30) : la tendance est baissière.",
     neutre: "pas de tendance nette, ou une tendance déjà très avancée (RSI au-dessus de 70 ou sous 30)." };
-  const h = (det && det.signaux || []).slice().reverse().map((s) => `<li>${new Date(s.date + "T12:00:00").toLocaleDateString("fr-FR")} · ${S[s.signal]} à ${fr(s.prix, dec(s.prix))} → ${s.resultat ? (s.resultat === "juste" ? "✓ juste" : s.resultat === "faux" ? "✗ faux" : "neutre") + ` (${pct(s.rendement)} en 5 séances)` : "en attente"}</li>`).join("");
+  const u = (det && det.devise) || m.devise || "";
+  const h = (det && det.signaux || []).slice().reverse().map((s) => `<li>${new Date(s.date + "T12:00:00").toLocaleDateString("fr-FR")} · ${S[s.signal]} à ${pxu(s.prix, u)} → ${s.resultat ? (s.resultat === "juste" ? "✓ juste" : s.resultat === "faux" ? "✗ faux" : "neutre") + ` (${pct(s.rendement)} en 5 séances)` : "en attente"}</li>`).join("");
   return bloc("Signal technique", `<p><span class="sig ${m.signal}" style="display:inline-block">${S[m.signal]}</span> Aujourd'hui, ${expl[m.signal]}</p>
-    ${kv([["Moyenne 20 jours", prixf(m.ma20)], ["Moyenne 50 jours", prixf(m.ma50)], ["Moyenne 200 jours", prixf(m.ma200)], ["RSI 14 jours", m.rsi != null ? fr(m.rsi, 0) : null]])}
+    ${kv([["Moyenne 20 jours", pxu(m.ma20, u)], ["Moyenne 50 jours", pxu(m.ma50, u)], ["Moyenne 200 jours", pxu(m.ma200, u)], ["RSI 14 jours", m.rsi != null ? fr(m.rsi, 0) : null]])}
     ${h ? `<ul class="hist">${h}</ul>` : ""}<p class="note">Un signal technique n'est pas une prédiction : sa fiabilité est mesurée en bas de la fiche du jour.</p>`);
 }
 
@@ -973,10 +974,10 @@ function ouvrir(t, pousser = true) {
   if (iv) {
     const plusieurs = iv.achats && iv.achats.length > 1;
     H.push(bloc("Mon investissement", kv([[plusieurs ? "Premier achat" : "Acheté le", iv.depuis && jourCourt(iv.depuis)],
-      [plusieurs ? "Prix d'achat moyen" : "Prix d'achat", prixf(iv.prix_revient)], ["Depuis l'achat", pctc(iv.perf_achat)],
+      [plusieurs ? "Prix d'achat moyen" : "Prix d'achat", pxu(iv.prix_revient, devise)], ["Depuis l'achat", pctc(iv.perf_achat)],
       ["Parts", iv.quantite != null ? fr(iv.quantite, iv.quantite % 1 ? 2 : 0) : null], ["Valeur aujourd'hui", iv.valeur != null ? montant(iv.valeur, iv) : null],
       ["Plus ou moins-value", iv.plus_value != null ? `<span class="${sens(iv.plus_value)}">${montant(iv.plus_value, iv, true)}</span>` : null]])
-      + (plusieurs ? `<ul class="hist">${iv.achats.map((a) => `<li>${a.date ? jourCourt(a.date) : "date non notée"} · ${a.quantite != null ? nbParts(a.quantite) + " à " : ""}${a.prix != null ? fr(a.prix, dec(a.prix)) : "prix non noté"}</li>`).join("")}</ul>` : "")
+      + (plusieurs ? `<ul class="hist">${iv.achats.map((a) => `<li>${a.date ? jourCourt(a.date) : "date non notée"} · ${a.quantite != null ? nbParts(a.quantite) + " à " : ""}${a.prix != null ? pxu(a.prix, devise) : "prix non noté"}</li>`).join("")}</ul>` : "")
       + `<p class="note">${iv.local ? "Gardé sur cet appareil" : "D'après mes-investissements.md"}, frais de courtage non compris.</p>`));
   }
   if (sg) H.push(bloc("Suggestion du jour : " + esc(sg.critere_lib), `<p>${esc(sg.raison)}</p><p class="note">Une suggestion signale un titre à regarder de plus près, pas un titre à acheter.</p>`));
@@ -986,8 +987,8 @@ function ouvrir(t, pousser = true) {
   H.push(bloc("Performances", kv([["1 jour", pctc(m.var_1j)], ["1 semaine", pctc(perfJ(5, m.var_5j))], ["1 mois", pctc(perfJ(21, m.var_1m))], ["3 mois", pctc(perfJ(63, m.var_3m))],
     ["Depuis le 1er janvier", pctc(st.perf_annee)], ["1 an", pctc(perfJ(252, m.var_1a))], ["3 ans", pctc(st.perf_3a)], ["5 ans", pctc(st.perf_5a)]])));
   const se = det.seance || {};
-  H.push(bloc("Chiffres clés", kv([["Prix moyen du jour (VWAP)", prixf(se.vwap)], ["Plus haut du jour", prixf(se.haut_jour)], ["Plus bas du jour", prixf(se.bas_jour)],
-    ["Plus haut 1 an", prixf(st.haut_1a)], ["Plus bas 1 an", prixf(st.bas_1a)], ["Écart au plus haut", pctc(m.ecart_haut)],
+  H.push(bloc("Chiffres clés", kv([["Prix moyen du jour (VWAP)", pxu(se.vwap, devise)], ["Plus haut du jour", pxu(se.haut_jour, devise)], ["Plus bas du jour", pxu(se.bas_jour, devise)],
+    ["Plus haut 1 an", pxu(st.haut_1a, devise)], ["Plus bas 1 an", pxu(st.bas_1a, devise)], ["Écart au plus haut", pctc(m.ecart_haut)],
     ["Jours de hausse (1 an)", st.jours_hausse_1a != null ? fr(st.jours_hausse_1a, 0) + " %" : null],
     ["Échanges moyens", !m.liquidite || !PLACEMENT.includes(m.categorie) ? null : m.liquidite >= 1e6 ? fr(m.liquidite / 1e6, 1) + " M€/jour" : fr(m.liquidite / 1000, 0) + " k€/jour"], ["Parts pour 100 €", parts == null ? null : parts > 0 ? String(parts) : "0 (part > 100 €)"]])));
   if (PLACEMENT.includes(m.categorie)) H.push(blocRisque(m, inf, st));
@@ -999,7 +1000,7 @@ function ouvrir(t, pousser = true) {
   H.push(blocCaract(m, inf, det, t));
   if (PLACEMENT.includes(m.categorie) && !estFonds(m)) H.push(blocSignal(m, det));
   const perimees = Object.entries(m.sources_perimees || {}).map(([k, d]) => `${SRC[k] || k} (${d ? (estFonds(m) ? "valeur du " : "cours du ") + jourCourt(d) : "date inconnue"})`).join(", ");
-  if (m.sources) H.push(bloc("Contrôle du prix", tab(Object.entries(m.sources).map(([k, v]) => [SRC[k] || k, fr(v, dec(v)) + (m.dates_sources && m.dates_sources[k] ? " · valeur du " + jourCourt(m.dates_sources[k]) : "")])) +
+  if (m.sources) H.push(bloc("Contrôle du prix", tab(Object.entries(m.sources).map(([k, v]) => [SRC[k] || k, pxu(v, devise) + (m.dates_sources && m.dates_sources[k] ? " · valeur du " + jourCourt(m.dates_sources[k]) : "")])) +
     `<p class="note">${{ ok: "Les sources concordent.", ecart: "⚠ Les sources ne concordent pas : vérifie le prix avant toute décision.", seul: perimees ? "Une seule source est à jour." : "Une seule source a pu être lue." }[m.verif] || ""}${perimees ? ` Non prise en compte, car pas à jour : ${perimees}.` : ""}</p>`));
   if (det.liens) H.push(bloc("Pour aller plus loin", `<div class="liens">${Object.entries(det.liens).map(([k, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(k)} ↗</a>`).join("")}</div>`));
   if (PLACEMENT.includes(m.categorie) && !$("#sec-inv").hidden) H.push(`<div class="bloc"><button type="button" class="btn" data-ajouter="${esc(t)}">＋ Ajouter à mes investissements</button></div>`);
