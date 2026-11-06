@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1gSPM/",
+  "isin": "IT0005495657",
+  "pea_bourso": true,
+  "secteur": "Énergie en amont",
+  "indice": "FTSE MIB",
+  "valorisation": "8 455 MEUR",
+  "rendement": "3,79%",
+  "per": "28,17",
+  "dernier_dividende": "0,17 EUR (18/05/26)",
+  "per_annee": "2026",
+  "effectif": "30 437",
+  "nb_titres": "1 995 631 862",
+  "capitalisation": "8 455,49 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.saipem.com/",
+  "pays": "Italie"
+ }
+}

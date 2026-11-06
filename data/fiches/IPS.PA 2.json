@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPIPS/",
+  "isin": "FR0000073298",
+  "pea_bourso": true,
+  "secteur": "Services aux entreprises",
+  "indice": "SBF 120",
+  "valorisation": "1 552 MEUR",
+  "rendement": "6,09%",
+  "per": "6,93",
+  "dernier_dividende": "2,00 EUR (01/07/26)",
+  "per_annee": "2026",
+  "effectif": "18 925",
+  "nb_titres": "43 203 225",
+  "capitalisation": "1 551,86 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.ipsos.com/en/cours-de-laction",
+  "pays": "France"
+ }
+}

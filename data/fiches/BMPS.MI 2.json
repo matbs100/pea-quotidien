@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1gBMPS/",
+  "isin": "IT0005508921",
+  "pea_bourso": true,
+  "secteur": "Banque",
+  "indice": "FTSE MIB",
+  "valorisation": "34 194 MEUR",
+  "rendement": "7,39%",
+  "per": "14,16",
+  "dernier_dividende": "0,86 EUR (18/05/26)",
+  "per_annee": "2026",
+  "effectif": "22 079",
+  "nb_titres": "3 038 418 183",
+  "capitalisation": "34 194,36 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.gruppomps.it/en/investor-relations/index.html",
+  "pays": "Italie"
+ }
+}

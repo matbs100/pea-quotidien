@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSCR/",
+  "isin": "FR0010411983",
+  "pea_bourso": true,
+  "secteur": "Assurance",
+  "indice": "SBF 120",
+  "valorisation": "6 221 MEUR",
+  "rendement": "5,79%",
+  "per": "8,35",
+  "dernier_dividende": "1,90 EUR (04/05/26)",
+  "per_annee": "2026",
+  "effectif": "3 610",
+  "nb_titres": "179 389 977",
+  "capitalisation": "6 221,24 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.scor.com/fr/investisseurs",
+  "pays": "France"
+ }
+}

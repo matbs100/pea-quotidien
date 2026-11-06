@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPRF/",
+  "isin": "FR0000121121",
+  "pea_bourso": true,
+  "secteur": "Services d'investissement",
+  "indice": "SBF 120",
+  "valorisation": "3 415 MEUR",
+  "rendement": "6,49%",
+  "per": "27,30",
+  "dernier_dividende": "2,92 EUR (18/05/26)",
+  "per_annee": "2026",
+  "effectif": "602",
+  "nb_titres": "69 165 760",
+  "capitalisation": "3 393,27 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.eurazeo.com/fr",
+  "pays": "France"
+ }
+}
