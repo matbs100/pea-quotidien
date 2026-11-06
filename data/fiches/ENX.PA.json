@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPENX/",
+  "isin": "NL0006294274",
+  "pea_bourso": true,
+  "secteur": "Services d'investissement",
+  "indice": "CAC 40",
+  "valorisation": "17 883 MEUR",
+  "rendement": "2,18%",
+  "per": "20,53",
+  "dernier_dividende": "3,18 EUR (25/05/26)",
+  "per_annee": "2026",
+  "effectif": "3 105",
+  "nb_titres": "101 721 940",
+  "capitalisation": "17 882,72 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.euronext.com/en/investor-relations",
+  "pays": "Pays-Bas"
+ }
+}

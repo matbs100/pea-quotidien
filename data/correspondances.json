@@ -270,5 +270,81 @@
   "boursorama": null,
   "ft": "ALPHA:ATH",
   "echecs": {}
+ },
+ "IBE.MC": {
+  "boursorama": "FF55-IBE",
+  "ft": "IBE:MCE",
+  "echecs": {
+   "boursorama": 1
+  }
+ },
+ "ENX.PA": {
+  "boursorama": "1rPENX",
+  "ft": "ENX:PAR",
+  "echecs": {}
+ },
+ "RS2K.PA": {
+  "boursorama": "1rTRS2K",
+  "ft": "RS2K:PAR:EUR",
+  "echecs": {}
+ },
+ "DCAM.PA": {
+  "boursorama": "1rTDCAM",
+  "ft": "DCAM:PAR:EUR",
+  "echecs": {}
+ },
+ "ALNXT.PA": {
+  "boursorama": "1rPALNXT",
+  "ft": "ALNXT:PAR",
+  "echecs": {
+   "boursorama": 1
+  }
+ },
+ "ALENT.PA": {
+  "boursorama": "1rPALENT",
+  "ft": "ALENT:PAR",
+  "echecs": {}
+ },
+ "ALCOX.PA": {
+  "boursorama": "1rPALCOX",
+  "ft": "ALCOX:PAR",
+  "echecs": {}
+ },
+ "DBV.PA": {
+  "boursorama": "1rPDBV",
+  "ft": "DBV:PAR",
+  "echecs": {}
+ },
+ "ALIMP.PA": {
+  "boursorama": "1rPALIMP",
+  "ft": "ALIMP:PAR",
+  "echecs": {}
+ },
+ "ALTUV.PA": {
+  "boursorama": "1rPALTUV",
+  "ft": "ALTUV:PAR",
+  "echecs": {}
+ },
+ "ALHRS.PA": {
+  "boursorama": "1rPALHRS",
+  "ft": "ALHRS:PAR",
+  "echecs": {}
+ },
+ "ALCLS.PA": {
+  "boursorama": "1rPALCLS",
+  "ft": "ALCLS:PAR",
+  "echecs": {
+   "boursorama": 1
+  }
+ },
+ "ALMKT.PA": {
+  "boursorama": "1rPALMKT",
+  "ft": "ALMKT:PAR",
+  "echecs": {}
+ },
+ "ALNFL.PA": {
+  "boursorama": "1rPALNFL",
+  "ft": "ALNFL:PAR",
+  "echecs": {}
  }
 }
