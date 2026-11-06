@@ -55,7 +55,7 @@ même temps que la routine correspondante sur claude.ai.
 
 | Chemin | Contenu |
 |---|---|
-| `univers.json` | les titres suivis, par catégorie (indices, devises, matières, ETF, actions, petits prix) |
+| `univers.json` | les titres suivis, par catégorie (indices, devises, matières, ETF, ETF à effet de levier, actions, petits prix). Les ETF de `etf_levier` sont traités comme des ETF (fiche, contrôle des prix, recherche) mais restent hors du top 30 et des suggestions, et portent un avertissement |
 | `descriptions.json` | courtes descriptions des titres, rédigées sans copier de site |
 | `mes-investissements.md` | autre façon de noter les achats du propriétaire (code Yahoo ou ISIN, date, prix, quantité, type), un par ligne de tableau, pour les retrouver dans Obsidian. Tenu par le propriétaire seul : les agents le lisent mais ne le modifient jamais (`controle.py` le signale). Public, comme tout le dépôt, contrairement à la barre de recherche |
 | `config.json` | adresse du site et du dépôt (ne pas changer) |

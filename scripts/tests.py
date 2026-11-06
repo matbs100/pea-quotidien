@@ -121,8 +121,10 @@ def catalogue_et_isin():
                     "courbe": [1, 2], "liquidite": 9}],
            "actions": [{"ticker": "AI.PA", "nom": "Air Liquide", "categorie": "actions", "prix": 187.0}],
            "indices": [{"ticker": "^FCHI", "nom": "CAC 40", "categorie": "indices", "prix": 8000.0}]}
+    res["etf_levier"] = [{"ticker": "LQQ.PA", "nom": "Nasdaq x2", "categorie": "etf", "prix": 900.0, "levier": True}]
     cat = c.catalogue(res)
-    assert [m["ticker"] for m in cat] == ["DCAM.PA", "AI.PA"], "le catalogue ne contient que des ETF et des actions"
+    assert [m["ticker"] for m in cat] == ["DCAM.PA", "LQQ.PA", "AI.PA"], "le catalogue ne contient que des ETF et des actions"
+    assert cat[1].get("levier") is True and "levier" not in cat[0], "ETF à effet de levier signalé"
     assert "courbe" not in cat[0] and cat[0]["prix"] == 6.3 and cat[1]["var_1j"] is None
     anciens = (c.DATA, fiches.CACHE)
     with tempfile.TemporaryDirectory() as tmp:

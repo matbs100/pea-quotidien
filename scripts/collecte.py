@@ -304,7 +304,11 @@ def catalogue(res):
     """Titres que la barre de recherche « Mes investissements » peut trouver : tous les ETF et actions
     suivis, avec leur prix du jour (fiches.py y ajoute l'ISIN)."""
     cles = ("ticker", "nom", "categorie", "prix", "var_1j", "var_1m", "date_cours", "signal", "rsi")
-    return [{k: m.get(k) for k in cles} for c in ("etf", "actions", "petites") for m in res.get(c, [])]
+    out = [{k: m.get(k) for k in cles} for c in ("etf", "etf_levier", "actions", "petites") for m in res.get(c, [])]
+    for x, m in zip(out, [m for c in ("etf", "etf_levier", "actions", "petites") for m in res.get(c, [])]):
+        if m.get("levier"):
+            x["levier"] = True
+    return out
 
 
 # ---------- suggestions du jour ----------
@@ -511,7 +515,10 @@ def main():
         for t, nom in u[c].items():
             m = mesures(df, t)
             if m:
-                m.update(ticker=t, nom=nom, categorie=c, signal=signal(m))
+                # ETF à effet de levier : des ETF comme les autres, mais hors classements (trop risqués)
+                m.update(ticker=t, nom=nom, categorie="etf" if c == "etf_levier" else c, signal=signal(m))
+                if c == "etf_levier":
+                    m["levier"] = True
                 res[c].append(m)
     tous = {m["ticker"]: m for c in cats for m in res[c]}
 
@@ -548,7 +555,7 @@ def main():
     except Exception as e:  # noqa: BLE001
         print("Suggestions impossibles :", e, file=sys.stderr)
         sugg = []
-    categories = {t: c for c in cats for t in u[c]}
+    categories = {t: "etf" if c == "etf_levier" else c for c in cats for t in u[c]}
 
     def mesure_de(t):
         if t in tous:
