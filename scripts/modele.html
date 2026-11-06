@@ -214,6 +214,32 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 #inv-total { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 12px; }
 #inv-total .val { font-size: clamp(1.15rem, 4.6vw, 1.6rem); white-space: nowrap; }
 #inv-note a, .vide a { color: var(--accent); }
+.recherche { position: relative; margin-bottom: 12px; }
+.recherche .loupe { position: absolute; left: 13px; top: 13px; width: 20px; height: 20px; color: var(--muted); pointer-events: none; }
+.recherche input { width: 100%; font: 16px var(--font-body); padding: 12px 14px 12px 42px; border-radius: 12px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); -webkit-appearance: none; appearance: none; }
+.recherche input:focus { outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 1px; border-color: var(--accent); }
+.resultats { margin-top: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.res { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 14px; border: 0;
+  border-bottom: 1px solid var(--line); background: none; color: var(--ink); text-align: left; font: 15px var(--font-body); cursor: pointer; }
+.res:last-child { border-bottom: 0; }
+.res:hover, .res:focus-visible { background: var(--surface-2); }
+.res small, .ajout small { display: block; color: var(--muted); font: 12px var(--font-mono); margin-top: 2px; overflow-wrap: anywhere; }
+.res .num { white-space: nowrap; font-size: 14px; }
+.res-vide { padding: 12px 14px; font-size: 14px; color: var(--muted); }
+.ajout { background: var(--surface); border: 1px solid var(--accent); border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; }
+.champs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 12px 0; }
+.champs label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+.champs input { font: 16px var(--font-mono); padding: 9px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); width: 100%; min-width: 0; }
+@media (max-width: 600px) { .champs { grid-template-columns: 1fr 1fr; } .champs label:first-child { grid-column: 1 / -1; } }
+.boutons { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn { border: 0; border-radius: 999px; padding: 10px 18px; font: 600 14px var(--font-body); background: var(--accent); color: var(--bg); cursor: pointer; }
+.btn.sec { background: var(--surface-2); color: var(--ink); }
+.pos { position: relative; }
+.pos.local { padding-right: 52px; }
+.retirer { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: 14px; cursor: pointer; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 600px) { #inv-total { grid-template-columns: 1fr 1fr; } #inv-total .card:first-child { grid-column: 1 / -1; } }
 .pos { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(96px, 150px)); align-items: center; gap: 10px;
   background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
@@ -228,6 +254,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   .pos { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 8px; }
   .pos .t { grid-column: 1 / -1; }
   .pos .c { text-align: left; font-size: 14px; }
+  .pos.local { padding-right: 14px; } .pos.local .t { padding-right: 34px; } .retirer { top: 10px; transform: none; }
 }
 /* suggestions du jour */
 #suggestions { grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
@@ -261,7 +288,14 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   <div class="tape" aria-label="Indices"><div class="tape-in" id="tape"></div></div>
 
   <section id="sec-inv" hidden>
-    <div class="sec-head"><div><h2>Mes investissements</h2><div class="sub">Tes achats, suivis à chaque fiche · touche une ligne pour sa fiche complète</div></div></div>
+    <div class="sec-head"><div><h2>Mes investissements</h2><div class="sub">Tape l'ISIN ou le nom d'un titre pour l'ajouter · touche une ligne pour sa fiche complète</div></div></div>
+    <div class="recherche" role="search">
+      <svg class="loupe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <label for="inv-q" class="vh">Rechercher un titre par ISIN, nom ou code</label>
+      <input id="inv-q" type="search" placeholder="Ex. FR0013412020 ou Air Liquide" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search" aria-controls="inv-res">
+      <div class="resultats" id="inv-res" hidden></div>
+    </div>
+    <div class="ajout" id="inv-form" hidden></div>
     <div class="stat" id="inv-total" hidden></div>
     <div class="alerte" id="inv-erreurs" hidden></div>
     <div class="liste" id="inv"></div>
@@ -347,8 +381,7 @@ const dec = (p) => p >= 1000 ? 0 : p >= 10 ? 2 : p >= 1 ? 3 : 4;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const SG = D.suggestions || [];
 const MI = D.mes_investissements || null;
-const INV = {};
-((MI && MI.lignes) || []).forEach((l) => { INV[l.ticker] = l; });
+let INV = {};  // titre -> position (achats de cet appareil et du fichier), rempli par rendreInvestissements()
 const eur = (x, signe) => x == null ? "—" : (signe && x > 0 ? "+" : "") + fr(x, 2) + " €";
 const jourCourt = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
 const nbParts = (q) => fr(q, q % 1 ? 2 : 0) + (q > 1 ? " parts" : " part");
@@ -472,41 +505,6 @@ function ligne(m, i, sc) {
 $("#top30").innerHTML = D.top30.map((m, i) => ligne(m, i, "score")).join("");
 $("#petites").innerHTML = D.petites.map((m, i) => ligne(m, i, "score_petite")).join("");
 
-// ---------- mes investissements (fichier mes-investissements.md, rempli par Mathieu) ----------
-function position(l) {
-  const plusieurs = l.achats && l.achats.length > 1;
-  const achat = l.prix_revient != null
-    ? `acheté ${fr(l.prix_revient, dec(l.prix_revient))}${plusieurs ? " en moyenne" : ""}${l.depuis ? " · depuis le " + jourCourt(l.depuis) : ""}`
-    : l.depuis ? "depuis le " + jourCourt(l.depuis) : "prix d'achat non noté";
-  return `<div class="pos rv clic" data-t="${esc(l.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(l.nom)}">
-    <div class="t"><strong>${esc(l.nom)}${badge[l.categorie] || ""}${vf(l)}</strong><small>${esc(l.ticker)} · ${achat}${l.quantite ? " · " + nbParts(l.quantite) : ""}${l.date_cours && l.date_cours !== D.date ? " · cours du " + jourCourt(l.date_cours) : ""}</small></div>
-    <div class="c"><span class="num">${fr(l.prix, dec(l.prix))}</span><small class="${sens(l.var_1j)}">${pct(l.var_1j)}</small><em>aujourd'hui</em></div>
-    <div class="c ${sens(l.perf_achat)}">${pct(l.perf_achat)}<em>depuis l'achat</em></div>
-    ${l.valeur != null ? `<div class="c">${eur(l.valeur)}<small class="${sens(l.plus_value)}">${eur(l.plus_value, true)}</small><em>valeur</em></div>` : ""}</div>`;
-}
-if (MI) {
-  $("#sec-inv").hidden = false;
-  const L = MI.lignes || [], E = MI.erreurs || [], T = MI.total;
-  if (T) {
-    $("#inv-total").hidden = false;
-    $("#inv-total").innerHTML = `<div class="card rv"><div class="nom">Valeur aujourd'hui</div><div class="val">${eur(T.valeur)}</div><div class="chg flat">pour ${eur(T.investi)} investis</div></div>
-    <div class="card rv"><div class="nom">Plus ou moins-value</div><div class="val ${sens(T.plus_value)}">${eur(T.plus_value, true)}</div><div class="chg ${sens(T.perf)}">${pct(T.perf)}</div></div>
-    <div class="card rv"><div class="nom">Sur la séance</div><div class="val ${sens(T.var_jour_eur)}">${eur(T.var_jour_eur, true)}</div><div class="chg ${sens(T.var_jour)}">${pct(T.var_jour)}</div></div>`;
-  }
-  if (E.length) {
-    $("#inv-erreurs").hidden = false;
-    $("#inv-erreurs").innerHTML = "<strong>À corriger dans mes-investissements.md</strong><br>" + E.map((e) => `${esc(e.ticker)} : ${esc(e.message)}`).join("<br>");
-  }
-  const fichier = D.url_depot ? `<a href="${D.url_depot}/blob/claude/pea/mes-investissements.md" target="_blank" rel="noopener">mes-investissements.md</a>` : "mes-investissements.md";
-  if (L.length) {
-    $("#inv").innerHTML = L.map(position).join("");
-    $("#inv-note").hidden = false;
-    $("#inv-note").innerHTML = `Prix du jour : ${D.moment === "ouverture" ? "premiers cours de la séance" : "clôture de la séance"}. Prix d'achat sans les frais de courtage${T && !T.complet ? " ; le total ne compte que les titres dont la quantité est notée" : ""}. Liste tenue dans ${fichier}.`;
-  } else if (!E.length) {
-    $("#inv").innerHTML = `<div class="vide">Aucun investissement noté pour l'instant. Note chaque achat (code, date, prix, quantité) dans ${fichier}, depuis Obsidian ou GitHub, ou donne-les à Claude : la fiche suivra leurs prix à chaque séance.</div>`;
-  }
-}
-
 // ---------- suggestions du jour ----------
 function suggestion(s) {
   return `<div class="card sug rv clic" data-t="${esc(s.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(s.nom)}">
@@ -550,6 +548,186 @@ const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const pctc = (x) => x == null ? null : `<span class="${sens(x)}">${pct(x)}</span>`;
 const prixf = (x) => x == null ? null : fr(x, dec(x));
 const pc1 = (x) => x == null ? null : fr(x, 1) + " %";
+
+// ---------- mes investissements : barre de recherche, achats gardés sur cet appareil ----------
+// Les achats ajoutés ici restent dans le navigateur (localStorage) : rien n'est publié. Ceux notés dans
+// mes-investissements.md (calculés par collecte.py) s'affichent aussi, sans bouton pour les retirer.
+const CAT = D.catalogue || [];
+CAT.forEach((m) => { if (!TOUS[m.ticker]) TOUS[m.ticker] = m; });
+const CLE = "matin-pea:investissements";
+let stockageOk = true;
+function lireAchats() {
+  try { const a = JSON.parse(localStorage.getItem(CLE) || "[]"); return Array.isArray(a) ? a.filter((x) => x && x.ticker) : []; }
+  catch (e) { stockageOk = false; return []; }
+}
+function ecrireAchats(a) {
+  try { localStorage.setItem(CLE, JSON.stringify(a)); return true; } catch (e) { stockageOk = false; return false; }
+}
+const sansAccents = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const nombreSaisi = (s) => { const x = parseFloat(String(s || "").replace(/[\s  €]/g, "").replace(",", ".")); return isFinite(x) && x > 0 ? x : null; };
+const estIsin = (s) => /^[A-Z]{2}[A-Z0-9]{9}\d$/.test(s);
+const isinDe = (m) => m.isin || ((CAT.find((c) => c.ticker === m.ticker) || {}).isin) || ((DET[m.ticker] || {}).infos || {}).isin || null;
+
+function chercher(q) {
+  const n = sansAccents(q).trim(), N = n.toUpperCase().replace(/\s+/g, "");
+  if (n.length < 2) return [];
+  const rang = (m) => {
+    const tk = m.ticker.toUpperCase(), nom = sansAccents(m.nom);
+    if (m.isin && m.isin === N) return 0;
+    if (tk === N || tk.split(".")[0] === N) return 1;
+    if (m.isin && N.length >= 4 && m.isin.startsWith(N)) return 2;
+    if (nom.startsWith(n)) return 3;
+    if (nom.includes(n)) return 4;
+    if (tk.startsWith(N)) return 5;
+    return 9;
+  };
+  return CAT.map((m) => [rang(m), m]).filter(([r]) => r < 9)
+    .sort((a, b) => a[0] - b[0] || a[1].nom.localeCompare(b[1].nom, "fr")).slice(0, 6).map(([, m]) => m);
+}
+
+function positionsLocales() {
+  const groupes = {};
+  lireAchats().filter((a) => !a.date || a.date <= D.date).forEach((a) => { (groupes[a.ticker] = groupes[a.ticker] || []).push(a); });
+  return Object.entries(groupes).map(([t, achats]) => {
+    const m = TOUS[t] || {};
+    achats.sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    const complet = achats.every((a) => a.prix && a.quantite);
+    const q = complet ? achats.reduce((s, a) => s + a.quantite, 0) : null;
+    const investi = complet ? achats.reduce((s, a) => s + a.prix * a.quantite, 0) : null;
+    const connus = achats.filter((a) => a.prix).map((a) => a.prix);
+    const pru = complet ? investi / q : connus.length ? connus.reduce((s, x) => s + x, 0) / connus.length : null;
+    const p = m.prix == null ? null : m.prix, v = m.var_1j == null ? null : m.var_1j;
+    const varJour = complet && p != null && v != null && v > -100  // un achat du jour compte depuis son prix d'achat
+      ? achats.reduce((s, a) => s + (a.date === D.date ? a.quantite * (p - a.prix) : a.quantite * p * (1 - 1 / (1 + v / 100))), 0) : null;
+    return { ...m, ticker: t, nom: m.nom || achats[0].nom || t, categorie: m.categorie || achats[0].categorie, achats,
+      depuis: (achats.find((a) => a.date) || {}).date || null, prix_revient: pru, quantite: q,
+      perf_achat: p != null && pru ? (p / pru - 1) * 100 : null, investi, valeur: complet && p != null ? q * p : null,
+      plus_value: complet && p != null ? q * p - investi : null, var_jour_eur: varJour, local: true };
+  });
+}
+
+function totalDe(L) {
+  const avec = L.filter((l) => l.valeur != null);
+  if (!avec.length) return null;
+  const inv = avec.reduce((s, l) => s + l.investi, 0), val = avec.reduce((s, l) => s + l.valeur, 0);
+  const vj = avec.reduce((s, l) => s + (l.var_jour_eur || 0), 0);
+  return { investi: inv, valeur: val, plus_value: val - inv, perf: inv ? (val / inv - 1) * 100 : null,
+    var_jour_eur: vj, var_jour: val - vj ? vj / (val - vj) * 100 : null, complet: avec.length === L.length };
+}
+
+function position(l) {
+  const plusieurs = l.achats && l.achats.length > 1;
+  const achat = l.prix_revient != null
+    ? `acheté ${fr(l.prix_revient, dec(l.prix_revient))}${plusieurs ? " en moyenne" : ""}${l.depuis ? " · depuis le " + jourCourt(l.depuis) : ""}`
+    : l.depuis ? "depuis le " + jourCourt(l.depuis) : "prix d'achat non noté";
+  const info = [esc(l.ticker), achat, l.quantite ? nbParts(l.quantite) : "",
+    l.prix == null ? "cours indisponible sur cette fiche" : l.date_cours && l.date_cours !== D.date ? "cours du " + jourCourt(l.date_cours) : ""].filter(Boolean).join(" · ");
+  return `<div class="pos clic${l.local ? " local" : ""}" data-t="${esc(l.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(l.nom)}">
+    <div class="t"><strong>${esc(l.nom)}${badge[l.categorie] || ""}${vf(l)}</strong><small>${info}</small></div>
+    <div class="c"><span class="num">${l.prix == null ? "—" : fr(l.prix, dec(l.prix))}</span><small class="${sens(l.var_1j)}">${pct(l.var_1j)}</small><em>aujourd'hui</em></div>
+    <div class="c ${sens(l.perf_achat)}">${pct(l.perf_achat)}<em>depuis l'achat</em></div>
+    ${l.valeur != null ? `<div class="c">${eur(l.valeur)}<small class="${sens(l.plus_value)}">${eur(l.plus_value, true)}</small><em>valeur</em></div>` : ""}
+    ${l.local ? `<button type="button" class="retirer" data-retirer="${esc(l.ticker)}" aria-label="Retirer ${esc(l.nom)} de mes investissements">✕</button>` : ""}</div>`;
+}
+
+function rendreInvestissements() {
+  const L = [...positionsLocales(), ...((MI && MI.lignes) || []).map((l) => ({ ...l, local: false }))];
+  INV = {};
+  L.forEach((l) => { if (!INV[l.ticker]) INV[l.ticker] = l; });
+  const T = totalDe(L), tot = $("#inv-total");
+  tot.hidden = !T;
+  if (T) tot.innerHTML = `<div class="card"><div class="nom">Valeur aujourd'hui</div><div class="val">${eur(T.valeur)}</div><div class="chg flat">pour ${eur(T.investi)} investis</div></div>
+    <div class="card"><div class="nom">Plus ou moins-value</div><div class="val ${sens(T.plus_value)}">${eur(T.plus_value, true)}</div><div class="chg ${sens(T.perf)}">${pct(T.perf)}</div></div>
+    <div class="card"><div class="nom">Sur la séance</div><div class="val ${sens(T.var_jour_eur)}">${eur(T.var_jour_eur, true)}</div><div class="chg ${sens(T.var_jour)}">${pct(T.var_jour)}</div></div>`;
+  const E = (MI && MI.erreurs) || [];
+  $("#inv-erreurs").hidden = !E.length;
+  if (E.length) $("#inv-erreurs").innerHTML = "<strong>À corriger dans mes-investissements.md</strong><br>" + E.map((e) => `${esc(e.ticker)} : ${esc(e.message)}`).join("<br>");
+  $("#inv").innerHTML = L.length ? L.map(position).join("")
+    : `<div class="vide">Aucun investissement pour l'instant. Tape l'ISIN ou le nom d'un titre dans la barre ci-dessus, puis indique la date, le prix d'une part et le nombre de parts.</div>`;
+  const notes = [];
+  if (L.length) notes.push(`Prix du jour : ${D.moment === "ouverture" ? "premiers cours de la séance" : "clôture de la séance"}. Prix d'achat sans les frais de courtage${T && !T.complet ? " ; le total ne compte que les titres dont le nombre de parts est noté" : ""}.`);
+  notes.push(stockageOk ? "Tes achats sont gardés seulement sur cet appareil, dans ce navigateur : rien n'est publié."
+    : "Ce navigateur bloque l'enregistrement (navigation privée ?) : tes achats ne seront pas gardés.");
+  $("#inv-note").textContent = notes.join(" ");
+}
+
+const champ = $("#inv-q"), resultats = $("#inv-res");
+let trouves = [];
+function montrerResultats() {
+  const v = champ.value.trim();
+  if (v.length < 2) { resultats.hidden = true; resultats.innerHTML = ""; trouves = []; return; }
+  trouves = chercher(v);
+  resultats.hidden = false;
+  if (trouves.length) {
+    resultats.innerHTML = trouves.map((m) => `<button type="button" class="res" data-choix="${esc(m.ticker)}"><span><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}<small>${esc([m.isin, m.ticker].filter(Boolean).join(" · "))}</small></span><span class="num">${fr(m.prix, dec(m.prix))}</span></button>`).join("");
+    return;
+  }
+  const V = v.toUpperCase().replace(/\s+/g, ""), connus = CAT.filter((m) => m.isin).length;
+  resultats.innerHTML = `<div class="res-vide">${!CAT.length ? "La liste des titres arrive avec la prochaine fiche."
+    : estIsin(V) ? `Cet ISIN ne fait pas partie des ${CAT.length} titres suivis par la fiche${connus < CAT.length ? ` (la recherche par ISIN en connaît ${connus} pour l'instant, la liste se complète chaque jour : essaie aussi le nom)` : ""}. Pour suivre un autre titre, donne son ISIN à Claude.`
+    : "Aucun titre trouvé. Essaie l'ISIN (12 caractères, comme FR0013412020), le nom ou le code."}</div>`;
+}
+
+function formulaire(m) {
+  if (!m) return;
+  resultats.hidden = true;
+  const f = $("#inv-form"), isin = isinDe(m);
+  f.hidden = false;
+  f.innerHTML = `<div><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}<small>${esc([isin, m.ticker].filter(Boolean).join(" · "))}${m.prix != null ? " · cours " + fr(m.prix, dec(m.prix)) : ""}</small></div>
+    <div class="champs">
+      <label>Date d'achat<input id="a-date" type="date" value="${D.date}"></label>
+      <label>Prix d'une part<input id="a-prix" type="text" inputmode="decimal" autocomplete="off" value="${m.prix != null ? String(m.prix).replace(".", ",") : ""}"></label>
+      <label>Nombre de parts<input id="a-q" type="text" inputmode="decimal" autocomplete="off" placeholder="facultatif"></label>
+    </div>
+    <div class="boutons"><button type="button" class="btn" id="a-ok">Ajouter à mes investissements</button><button type="button" class="btn sec" id="a-annuler">Annuler</button></div>
+    <p class="note" id="a-msg" role="status"></p>`;
+  $("#a-annuler").onclick = () => { f.hidden = true; f.innerHTML = ""; };
+  $("#a-ok").onclick = () => {
+    const prix = nombreSaisi($("#a-prix").value), brutQ = $("#a-q").value.trim(), quantite = brutQ ? nombreSaisi(brutQ) : null;
+    const date = $("#a-date").value || D.date, msg = $("#a-msg");
+    if (!prix) { msg.textContent = "Indique le prix d'une part, par exemple 5,42."; return; }
+    if (brutQ && !quantite) { msg.textContent = "Le nombre de parts doit être un nombre positif, par exemple 3."; return; }
+    const maintenant = new Date(), aujourdhui = new Date(maintenant - maintenant.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+    if (date > aujourdhui) { msg.textContent = "La date d'achat est dans le futur."; return; }
+    const achats = lireAchats();
+    achats.push({ ticker: m.ticker, isin, nom: m.nom, categorie: m.categorie, date, prix, quantite, ajoute_le: new Date().toISOString() });
+    if (!ecrireAchats(achats)) { msg.textContent = "Impossible d'enregistrer : ce navigateur bloque le stockage (navigation privée ?)."; return; }
+    f.hidden = true; f.innerHTML = ""; champ.value = ""; montrerResultats();
+    rendreInvestissements();
+    if (date > D.date) $("#inv-note").textContent = "Achat enregistré : il apparaîtra sur les fiches à partir du " + jourCourt(date) + ". " + $("#inv-note").textContent;
+    $("#sec-inv").scrollIntoView({ behavior: reduit ? "auto" : "smooth", block: "start" });
+  };
+  f.scrollIntoView({ behavior: reduit ? "auto" : "smooth", block: "nearest" });
+  $("#a-prix").focus({ preventScroll: true });
+}
+
+if (CAT.length || MI) {
+  $("#sec-inv").hidden = false;
+  rendreInvestissements();
+  champ.addEventListener("input", montrerResultats);
+  champ.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && trouves.length) { e.preventDefault(); formulaire(trouves[0]); }
+    if (e.key === "Escape") { champ.value = ""; montrerResultats(); }
+  });
+  resultats.addEventListener("click", (e) => { const b = e.target.closest("[data-choix]"); if (b) formulaire(TOUS[b.dataset.choix]); });
+  $("#inv").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-retirer]");
+    if (!b) return;
+    e.stopPropagation();  // ne pas ouvrir la fiche du titre
+    const t = b.dataset.retirer, l = INV[t], n = l && l.achats ? l.achats.length : 1;
+    if (!confirm(`Retirer ${l ? l.nom : t} de tes investissements${n > 1 ? ` (ses ${n} achats)` : ""} ?`)) return;
+    ecrireAchats(lireAchats().filter((a) => a.ticker !== t));
+    rendreInvestissements();
+  });
+  $("#f-corps").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-ajouter]");
+    if (!b) return;
+    const m = TOUS[b.dataset.ajouter];
+    fermer();
+    setTimeout(() => formulaire(m), reduit ? 0 : 420);
+  });
+}
+
 const fdate = (d, long) => d.toLocaleDateString("fr-FR", long ? { day: "numeric", month: "long", year: "numeric" } : { day: "numeric", month: "short", year: "2-digit" });
 // Définitions courtes, affichées au toucher ou au survol du libellé (clavier : Tab).
 const DEFS = [
@@ -752,7 +930,7 @@ function ouvrir(t, pousser = true) {
       ["Parts", iv.quantite != null ? fr(iv.quantite, iv.quantite % 1 ? 2 : 0) : null], ["Valeur aujourd'hui", iv.valeur != null ? eur(iv.valeur) : null],
       ["Plus ou moins-value", iv.plus_value != null ? `<span class="${sens(iv.plus_value)}">${eur(iv.plus_value, true)}</span>` : null]])
       + (plusieurs ? `<ul class="hist">${iv.achats.map((a) => `<li>${a.date ? jourCourt(a.date) : "date non notée"} · ${a.quantite != null ? nbParts(a.quantite) + " à " : ""}${a.prix != null ? fr(a.prix, dec(a.prix)) : "prix non noté"}</li>`).join("")}</ul>` : "")
-      + `<p class="note">D'après mes-investissements.md, frais de courtage non compris.</p>`));
+      + `<p class="note">${iv.local ? "Gardé sur cet appareil" : "D'après mes-investissements.md"}, frais de courtage non compris.</p>`));
   }
   if (sg) H.push(bloc("Suggestion du jour : " + esc(sg.critere_lib), `<p>${esc(sg.raison)}</p><p class="note">Une suggestion signale un titre à regarder de plus près, pas un titre à acheter.</p>`));
   H.push(`<div class="bloc"><h3>Historique du prix</h3><div id="f-graphe">${det.j ? "" : "<p class='note'>Historique indisponible.</p>"}</div></div>`);
@@ -776,6 +954,7 @@ function ouvrir(t, pousser = true) {
   if (m.sources) H.push(bloc("Contrôle du prix", tab(Object.entries(m.sources).map(([k, v]) => [SRC[k], fr(v, dec(v))])) +
     `<p class="note">${{ ok: "Les sources concordent.", ecart: "⚠ Les sources ne concordent pas : vérifie le prix avant toute décision.", seul: "Une seule source a pu être lue." }[m.verif] || ""}</p>`));
   if (det.liens) H.push(bloc("Pour aller plus loin", `<div class="liens">${Object.entries(det.liens).map(([k, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(k)} ↗</a>`).join("")}</div>`));
+  if (PLACEMENT.includes(m.categorie) && !$("#sec-inv").hidden) H.push(`<div class="bloc"><button type="button" class="btn" data-ajouter="${esc(t)}">＋ Ajouter à mes investissements</button></div>`);
   H.push(`<p class="note" style="margin-top:22px">Information et apprentissage, pas un conseil en investissement. Données du ${new Date(D.date + "T12:00:00").toLocaleDateString("fr-FR")}.</p>`);
   $("#f-corps").innerHTML = H.join("");
   $("#f-corps").scrollTop = 0;

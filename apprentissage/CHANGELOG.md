@@ -5,6 +5,12 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-06 · Recherche par ISIN dans « Mes investissements »
+- Une barre de recherche en haut de « Mes investissements » : tape un ISIN, un nom ou un code, choisis le titre, puis la date, le prix d'une part et le nombre de parts. Le bouton « Ajouter à mes investissements » existe aussi dans chaque fiche détaillée.
+- Ces achats restent sur ton téléphone (dans le navigateur) : rien n'est publié. Un ✕ retire un titre.
+- La recherche couvre tous les ETF et actions suivis par la fiche ; leurs ISIN se complètent chaque jour.
+- Demandé par Mathieu.
+
 ## 2026-11-06 · Suggestions du jour et suivi de mes investissements
 - Nouvelle partie « Mes investissements » en haut de la fiche : prix du jour de chaque titre acheté, variation sur la séance, évolution depuis l'achat et, si la quantité est notée, valeur et plus-value en euros. Les achats se notent dans `mes-investissements.md` (Obsidian ou GitHub), ou en les donnant à Claude.
 - Nouvelle partie « Suggestions du jour » : jusqu'à 5 actions à regarder de plus près, chacune avec la règle qui l'a choisie et une raison chiffrée (nouveau signal, entrée dans le top 30, plus haut sur un an, repli, gros mouvement). Ce n'est pas une liste d'achats.

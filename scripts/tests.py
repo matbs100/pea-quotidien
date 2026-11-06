@@ -114,6 +114,33 @@ def calcul_de_mes_investissements():
 
 
 @test
+def catalogue_et_isin():
+    import collecte as c
+    import fiches
+    res = {"etf": [{"ticker": "DCAM.PA", "nom": "Amundi PEA Monde", "categorie": "etf", "prix": 6.3, "var_1j": 1.2,
+                    "courbe": [1, 2], "liquidite": 9}],
+           "actions": [{"ticker": "AI.PA", "nom": "Air Liquide", "categorie": "actions", "prix": 187.0}],
+           "indices": [{"ticker": "^FCHI", "nom": "CAC 40", "categorie": "indices", "prix": 8000.0}]}
+    cat = c.catalogue(res)
+    assert [m["ticker"] for m in cat] == ["DCAM.PA", "AI.PA"], "le catalogue ne contient que des ETF et des actions"
+    assert "courbe" not in cat[0] and cat[0]["prix"] == 6.3 and cat[1]["var_1j"] is None
+    anciens = (c.DATA, fiches.CACHE)
+    with tempfile.TemporaryDirectory() as tmp:
+        cache = Path(tmp) / "fiches"
+        cache.mkdir()
+        (cache / "AI.PA.json").write_text(json.dumps({"maj": "2020-01-01", "infos": {"isin": "FR0000120073"}}), encoding="utf-8")
+        (cache / "ZZ.PA.json").write_text("pas du json", encoding="utf-8")
+        c.DATA, fiches.CACHE = Path(tmp), cache
+        try:
+            u = {"_note": "x", "actions": {"AI.PA": "Air Liquide", "ZZ.PA": "Z"}}
+            assert c._isins_connus(u) == {"FR0000120073": "AI.PA"}, "correspondance ISIN -> code"
+            assert fiches.isin_en_cache("AI.PA") == "FR0000120073", "un cache périmé garde son ISIN"
+            assert fiches.isin_en_cache("ZZ.PA") is None and fiches.isin_en_cache("XX.PA") is None
+        finally:
+            c.DATA, fiches.CACHE = anciens
+
+
+@test
 def regles_des_suggestions():
     import collecte as c
     base = dict(prix=10.0, ma20=9.5, ma50=9.0, ma200=8.0, rsi=55.0, var_1j=0.5, var_1m=2.0, var_3m=5.0,
@@ -264,19 +291,22 @@ def rendu_de_bout_en_bout():
                 {m["ticker"]: m for m in dj["top30"]}.get, {}, jour)
             dj["suggestions"] = collecte.suggestions(dj["top30"], dj["top30"], {}, set(), set()) or [
                 dict(m0, critere="forte_variation", critere_lib="Gros mouvement du jour", raison="Test.", deja_suggere=False)]
-            fj.write_text(json.dumps(dj, ensure_ascii=False), encoding="utf-8")
+        if "catalogue" not in dj:
+            dj["catalogue"] = collecte.catalogue({c: [m for m in dj["top30"] if m["categorie"] == c] for c in ("etf", "actions")})
+        fj.write_text(json.dumps(dj, ensure_ascii=False), encoding="utf-8")
         r = subprocess.run([sys.executable, str(c / "scripts" / "rendu.py"), jour],
                            capture_output=True, text=True, timeout=180)
         assert r.returncode == 0, "rendu.py a planté :\n" + r.stderr[-1500:]
         page = (c / "docs" / "index.html").read_text(encoding="utf-8")
         for morceau in ('id="feuille"', "pas un conseil en investissement", "Matin <span>PEA</span>", 'id="top30"',
-                        'id="sec-inv"', 'id="suggestions"'):
+                        'id="sec-inv"', 'id="suggestions"', 'id="inv-q"'):
             assert morceau in page, f"absent de la page : {morceau}"
         assert len(page) < 3_000_000, f"page trop lourde : {len(page) // 1024} Ko"
         m = re.search(r'<script id="donnees" type="application/json">(.*?)</script>', page, re.S)
         assert m, "données de la page introuvables"
         d = json.loads(m.group(1))
-        for k in ("date", "indices", "devises", "top30", "petites", "regles", "suggestions", "mes_investissements"):
+        for k in ("date", "indices", "devises", "top30", "petites", "regles", "suggestions", "mes_investissements",
+                  "catalogue"):
             assert k in d, f"clé absente des données : {k}"
         assert any(x.get("risque") for x in d["top30"]), "aucun badge de risque dans le top 30"
         if (RACINE / "pilotage" / "etat.json").exists():

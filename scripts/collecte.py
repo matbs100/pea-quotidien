@@ -256,8 +256,8 @@ def mes_investissements(entrees, mesure_de, categories, jour):
     groupes, erreurs = {}, []
     for e in entrees:
         if ISIN.fullmatch(e["ticker"]):
-            erreurs.append({"ticker": e["ticker"], "message": "c'est un code ISIN : il faut le code Yahoo "
-                                                              "Finance du titre (Claude peut le trouver)"})
+            erreurs.append({"ticker": e["ticker"], "message": "ISIN pas encore dans les titres suivis par la "
+                                                              "fiche : donne-le à Claude pour qu'il ajoute le titre"})
         else:
             groupes.setdefault(e["ticker"], []).append(e)
     lignes = []
@@ -298,6 +298,13 @@ def mes_investissements(entrees, mesure_de, categories, jour):
                  "perf": r((val / inv - 1) * 100) if inv else None, "var_jour_eur": r(vj),
                  "var_jour": r(vj / (val - vj) * 100) if val - vj else None, "complet": len(avec) == len(lignes)}
     return {"lignes": lignes, "erreurs": erreurs, "total": total}
+
+
+def catalogue(res):
+    """Titres que la barre de recherche « Mes investissements » peut trouver : tous les ETF et actions
+    suivis, avec leur prix du jour (fiches.py y ajoute l'ISIN)."""
+    cles = ("ticker", "nom", "categorie", "prix", "var_1j", "var_1m", "date_cours", "signal", "rsi")
+    return [{k: m.get(k) for k in cles} for c in ("etf", "actions", "petites") for m in res.get(c, [])]
 
 
 # ---------- suggestions du jour ----------
@@ -488,6 +495,10 @@ def main():
     # Investissements notés par Mathieu : une erreur dans le fichier ne doit jamais bloquer la fiche
     try:
         entrees = lire_investissements(FICHIER_INV.read_text(encoding="utf-8")) if FICHIER_INV.exists() else []
+        connus = _isins_connus(u) if any(ISIN.fullmatch(e["ticker"]) for e in entrees) else {}
+        for e in entrees:  # un ISIN connu est remplacé par le code Yahoo du titre
+            if e["ticker"] in connus:
+                e["isin"], e["ticker"] = e["ticker"], connus[e["ticker"]]
     except Exception as e:  # noqa: BLE001
         print("mes-investissements.md illisible :", e, file=sys.stderr)
         entrees = []
@@ -566,7 +577,7 @@ def main():
         "indices": res.get("indices", []), "devises": res.get("devises", []),
         "matieres": res.get("matieres", []),
         "top30": top30, "petites": petites,
-        "suggestions": sugg, "mes_investissements": mes,
+        "suggestions": sugg, "mes_investissements": mes, "catalogue": catalogue(res),
         "bilan_signaux": bilan(lignes),
         "nb_suivis": len(tous),
         "regles": {
@@ -630,6 +641,20 @@ def _signaux_veille(jour):
         return {}
     dernier = max(l["date"] for l in lignes)
     return {l["ticker"]: l["signal"] for l in lignes if l["date"] == dernier}
+
+
+def _isins_connus(u):
+    """ISIN -> code Yahoo des titres suivis, d'après les caractéristiques gardées dans data/fiches/."""
+    par_fichier = {re.sub(r"[^A-Za-z0-9.-]", "_", t): t for c in u if not c.startswith("_") for t in u[c]}
+    out = {}
+    for f in (DATA / "fiches").glob("*.json"):
+        try:
+            isin = json.loads(f.read_text(encoding="utf-8"))["infos"].get("isin")
+        except (ValueError, KeyError, AttributeError):
+            continue
+        if isin and f.stem in par_fichier:
+            out[isin] = par_fichier[f.stem]
+    return out
 
 
 def _prix_simple(df, t):
