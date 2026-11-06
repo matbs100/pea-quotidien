@@ -410,6 +410,13 @@ def controle_du_chef():
 
 
 @test
+def moyennes_mobiles_traits_distincts():
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert '"6 3", "dashed"' in modele and '"1.5 3", "dotted"' in modele, "les deux moyennes doivent avoir un trait différent"
+    assert 'stroke-dasharray="${tr}"' in modele, "le tracé n'utilise pas le style de chaque moyenne"
+
+
+@test
 def garde_fous():
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
     assert "pas un conseil en investissement" in modele, "avertissement retiré du modèle"

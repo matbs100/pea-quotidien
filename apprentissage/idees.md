@@ -24,7 +24,7 @@ Statuts : `à faire`, `en cours`, `fait le AAAA-MM-JJ`, `rejetée : raison`, `é
 | 14 | Bouton clair / sombre manuel | bonnes pratiques web | 2 | 1 | 1 | à faire |
 | 15 | Graphique accessible au clavier (flèches pour parcourir les jours) | accessibilité | 2 | 2 | 1 | à faire |
 | 16 | Écart de suivi des ETF par rapport à leur indice | justETF, documentation des émetteurs | 3 | 4 | 2 | à faire |
-| 18 | Graphiques : ajouter un style de trait (pointillé) en plus de la couleur, et des étiquettes directes en fin de courbe, pour les daltoniens | accessibility.psu.edu/guidelines/charts, nrennie.rbind.io | 3 | 2 | 1 | à faire |
+| 18 | Graphiques : ajouter un style de trait (pointillé) en plus de la couleur, et des étiquettes directes en fin de courbe, pour les daltoniens | accessibility.psu.edu/guidelines/charts, nrennie.rbind.io | 3 | 2 | 1 | fait le 2026-11-06 (traits distincts ; étiquettes en fin de courbe restent à faire) |
 | 17 | Remplacer le graphique maison par lightweight-charts | tradingview/lightweight-charts (Apache-2.0) | 2 | 3 | 3 | rejetée : ajoute une dépendance externe pour un gain faible ; le graphique actuel suffit |
 | 19 | Badge de risque (SRI) sur chaque ligne de la page principale | consigne du chef (demande de Mathieu) | 5 | 2 | 1 | fait le 2026-11-06 |
 | 20 | Mention « TTF 0,4 % » sur les actions françaises de la liste officielle BOFiP (121 sociétés) | Deloitte Avocats, BOFiP | 3 | 3 | 2 | à faire (après vérification de la liste) |

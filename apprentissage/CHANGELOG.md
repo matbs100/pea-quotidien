@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-06 · Moyennes mobiles distinguables sans la couleur
+- Dans le graphique, la moyenne courte est en tirets et la longue en pointillés, avec le même style dans la légende : on les distingue même sans voir les couleurs.
+- Inspiré des guides d'accessibilité des graphiques (Penn State) ; priorité du chef n° 3.
+
 ## 2026-11-06 · Recherche par ISIN dans « Mes investissements »
 - Une barre de recherche en haut de « Mes investissements » : tape un ISIN, un nom ou un code, choisis le titre, puis la date, le prix d'une part et le nombre de parts. Le bouton « Ajouter à mes investissements » existe aussi dans chaque fiche détaillée.
 - Ces achats restent sur ton téléphone (dans le navigateur) : rien n'est publié. Un ✕ retire un titre.
