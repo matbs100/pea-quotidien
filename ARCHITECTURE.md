@@ -22,6 +22,9 @@ Yahoo Finance ──► collecte.py ──► data/jours/AAAA-MM-JJ.json ◄─�
                  git push ──► GitHub Pages (≈ 1 min) ──► notification ntfy sur le téléphone
 ```
 
+`collecte.py` lit aussi `mes-investissements.md` (les achats notés par le propriétaire) pour la partie « Mes
+investissements », et choisit les « Suggestions du jour » par des règles chiffrées.
+
 Tout tourne dans le cloud (routines Claude Code) : le Mac peut être éteint. Le dépôt est rangé
 dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 
@@ -51,6 +54,7 @@ même temps que la routine correspondante sur claude.ai.
 |---|---|
 | `univers.json` | les titres suivis, par catégorie (indices, devises, matières, ETF, actions, petits prix) |
 | `descriptions.json` | courtes descriptions des titres, rédigées sans copier de site |
+| `mes-investissements.md` | les achats du propriétaire (code Yahoo, date, prix, quantité, type), un par ligne de tableau. Tenu par le propriétaire seul : les agents le lisent mais ne le modifient jamais (`controle.py` le signale). Public, comme tout le dépôt |
 | `config.json` | adresse du site et du dépôt (ne pas changer) |
 | `data/jours/` | une capture JSON par jour (écrasée à la clôture) |
 | `data/analyses/` | l'analyse écrite par Claude, une par jour |
@@ -64,7 +68,7 @@ même temps que la routine correspondante sur claude.ai.
 
 ## Les scripts, fonction par fonction
 
-### `collecte.py` : cours, indicateurs, classement, signaux
+### `collecte.py` : cours, indicateurs, classement, signaux, suggestions, mes investissements
 Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de sortie : 0 OK,
 3 cours du jour (ou clôture définitive) pas encore publiés, 4 Bourse fermée.
 
@@ -80,6 +84,11 @@ Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de 
 | `classer(lignes)` | score : 35 % perf 3 mois, 25 % 1 mois, 15 % 1 semaine, 15 % tendance, 10 % faible volatilité ; −10 si RSI > 75 |
 | `evaluer_signaux(jour, prix_du_jour)` | juge les signaux émis il y a au moins 5 séances |
 | `bilan(lignes)` | taux de signaux justes, comparé au repère (part de hausses) |
+| `nombre_fr(txt)` | lit un nombre écrit à la française ou à l'anglaise (« 1 234,56 € », « 512.3 ») |
+| `date_iso(txt)` | « 06/11/2026 » ou « 2026-11-06 » → « 2026-11-06 » ; `None` pour une date impossible |
+| `lire_investissements(texte)` | lit le tableau de `mes-investissements.md` (colonnes reconnues à leur titre, dans n'importe quel ordre) |
+| `mes_investissements(entrees, mesure_de, categories, jour)` | regroupe les achats par titre : prix de revient, évolution depuis l'achat, valeur, plus-value et variation du jour en euros si les quantités sont notées, total ; codes ISIN ou introuvables listés dans `erreurs` |
+| `suggestions(candidats, top30, signaux_veille, top30_veille, deja, n)` | jusqu'à 5 actions à regarder, une par règle : nouveau signal « hausse », entrée dans le top 30, plus haut sur un an, repli (RSI < 40) au-dessus de la moyenne 200 jours, variation d'au moins 3 % ; chacune avec sa raison chiffrée |
 | `paques(annee)` | date de Pâques (algorithme de Meeus) |
 | `bourse_fermee(j)` | jours de fermeture d'Euronext : week-end, 1er janvier, Vendredi saint, lundi de Pâques, 1er mai, 25 et 26 décembre |
 | `attendre_seance(jour, max_minutes)` | attend que Yahoo publie la séance du jour (décalage de 15 min) |
@@ -87,7 +96,11 @@ Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de 
 | `cloture_dans_meta(m, jour)` | vrai si les métadonnées Yahoo montrent un dernier échange du jour, après la fin de séance + 5 min |
 | `cloture_publiee(jour)` | vérifie la clôture définitive (fixing de 17 h 35) sur deux titres témoins |
 | `attendre_cloture(jour, max_minutes)` | attend la clôture définitive, une vérification par minute |
-| `main()` | enchaîne tout et écrit `data/jours/AAAA-MM-JJ.json` |
+| `main()` | enchaîne tout et écrit `data/jours/AAAA-MM-JJ.json` ; une erreur dans les suggestions ou dans `mes-investissements.md` ne bloque jamais la fiche |
+
+Aides internes : `_signaux_veille` (signaux de la dernière clôture, d'après `historique.csv`),
+`_top30_veille`, `_suggestions_recentes` (titres suggérés les 3 jours précédents, pour varier),
+`_prix_simple` (dernier cours d'un fonds à l'historique trop court pour les indicateurs).
 
 ### `verif.py` : contrôle croisé des prix
 Usage : `python scripts/verif.py AAAA-MM-JJ`. Compare chaque prix Yahoo avec Boursorama et le
@@ -134,7 +147,10 @@ animations, graphiques en SVG, fiche détaillée) ; `rendu.py` y insère les don
 |---|---|
 | `md_en_html(md)` | convertit l'analyse Markdown en HTML (titres, listes, gras) |
 | `pct(x)`, `prix(x)`, `pct_simple(x)` | formats français des nombres pour la note |
-| `note_obsidian(d, analyse, url)` | note du jour pour Obsidian : marchés, top 30, petits prix, fiabilité, liens |
+| `note_obsidian(d, analyse, url)` | note du jour pour Obsidian : mes investissements, marchés, analyse, suggestions, top 30, petits prix, fiabilité, liens |
+| `eur(x, signe)` | montant en euros à la française (« 1 234,56 € », « +12,30 € ») |
+| `note_investissements(mes)` | partie « Mes investissements » de la note : total, une ligne par titre, codes à corriger |
+| `note_suggestions(sugg)` | partie « Suggestions du jour » de la note, avec la raison de chaque suggestion |
 | `risque_de(det)` | niveau de risque 1 à 7 du badge de la page principale (SRI officiel, sinon estimé) |
 | `archives()` | page `docs/archives/` qui liste toutes les fiches |
 | `main()` | écrit `docs/index.html`, l'archive du jour et la note ; ajoute la nouveauté du programme et l'état du dernier contrôle |
@@ -186,7 +202,12 @@ JavaScriptCore (`jsc`, présent sur tous les Mac) en local.
   (métadonnées `regularMarketTime` du graphique Yahoo, qui ne demandent pas de « crumb »).
 - **Prix moyen du jour (VWAP)** : somme de (prix typique × volume) / somme des volumes, barres de 5 min.
 - **Risque SRI** : officiel (DIC PRIIPs, lu sur Boursorama) pour les ETF, estimé d'après la volatilité pour les actions.
-- **Contrôle croisé** : médiane de trois sources, tolérance 1 % (2 % en séance).
+- **Contrôle croisé** : médiane de trois sources, tolérance 1 % (2 % en séance). Les suggestions et les
+  investissements du propriétaire sont contrôlés comme le reste.
+- **Suggestions** : règles fixes et publiées, une raison chiffrée par titre, jamais « achète » ni
+  « vends » ; elles signalent des titres à regarder, ce ne sont pas des recommandations.
+- **Mes investissements** : prix de revient pondéré par les quantités ; un achat du jour compte depuis
+  son prix d'achat, pas depuis la clôture de la veille ; frais de courtage non compris.
 - **Politesse** : une requête par seconde au plus, `robots.txt` respecté, caches pour limiter les appels,
   aucune protection anti-robot contournée.
 - **Page autonome** : données JSON compactes intégrées à la page (`<script id="donnees">`), aucun

@@ -55,6 +55,13 @@ def pct_simple(x):
     return "—" if x is None else f"{x:.1f} %".replace(".", ",")
 
 
+def eur(x, signe=False):
+    """Montant en euros à la française : « 1 234,56 € » (« +12,30 € » avec signe)."""
+    if x is None:
+        return "—"
+    return f"{x:{'+' if signe else ''},.2f} €".replace(",", " ").replace(".", ",")
+
+
 VERIF = {"ok": "✅", "ecart": "⚠️", "seul": "·", None: ""}
 
 
@@ -77,15 +84,17 @@ def note_obsidian(d, analyse, url):
         L += [f"> {pastille} Contrôle qualité du {cc['genere_le'][:16].replace('T', ' à ')} : {cc['resume']} "
               f"— voir [[pilotage/README|le pilotage]]", ""]
     L += ["> [!warning] Information et apprentissage, pas un conseil en investissement. "
-          "Vérifier l'éligibilité PEA auprès de la banque.", "",
-          "## Marchés", "", "| Indice | Clôture | 1 jour | 1 mois | Sources |", "|---|---:|---:|---:|:-:|"]
+          "Vérifier l'éligibilité PEA auprès de la banque.", ""]
+    L += note_investissements(d.get("mes_investissements"))
+    L += ["## Marchés", "", "| Indice | Clôture | 1 jour | 1 mois | Sources |", "|---|---:|---:|---:|:-:|"]
     L += [f"| {m['nom']} | {prix(m['prix'])} | {pct(m['var_1j'])} | {pct(m['var_1m'])} | {VERIF[m.get('verif')]} |"
           for m in d["indices"]]
     L += ["", "## Devises et matières premières", "", "| | Cours | 1 jour | 1 mois |", "|---|---:|---:|---:|"]
     L += [f"| {m['nom']} | {prix(m['prix'])} | {pct(m['var_1j'])} | {pct(m['var_1m'])} |"
           for m in d["devises"] + d["matieres"]]
-    L += ["", "## Analyse du jour", "", analyse.strip() or "_Pas d'analyse ce jour._", "",
-          "## Top 30 éligible PEA", "",
+    L += ["", "## Analyse du jour", "", analyse.strip() or "_Pas d'analyse ce jour._", ""]
+    L += note_suggestions(d.get("suggestions", []))
+    L += ["## Top 30 éligible PEA", "",
           "| # | Titre | Type | Prix | 1 j | 1 mois | 3 mois | RSI | Signal | Score | Sources |",
           "|--:|---|---|--:|--:|--:|--:|--:|---|--:|:-:|"]
     typ = {"etf": "ETF", "actions": "Action", "petites": "Petite cap."}
@@ -137,6 +146,41 @@ def note_obsidian(d, analyse, url):
     return "\n".join(L) + "\n"
 
 
+def note_investissements(mes):
+    """Partie « Mes investissements » de la note Obsidian : total, une ligne par titre, codes à corriger."""
+    mes = mes or {}
+    lignes, erreurs, t = mes.get("lignes", []), mes.get("erreurs", []), mes.get("total")
+    L = ["## Mes investissements", ""]
+    if not lignes and not erreurs:
+        return L + ["_Aucun investissement noté : remplis [[mes-investissements]] (une ligne par achat)._", ""]
+    if t:
+        L += [f"- Valeur : **{eur(t['valeur'])}** pour {eur(t['investi'])} investis, soit "
+              f"**{eur(t['plus_value'], True)}** ({pct(t['perf'])}) ; sur la séance : "
+              f"{eur(t['var_jour_eur'], True)} ({pct(t['var_jour'])})"
+              + ("" if t["complet"] else " ; sans les titres dont la quantité n'est pas notée"), ""]
+    if lignes:
+        L += ["| Titre | Prix | Séance | Prix d'achat | Depuis l'achat | Valeur | Plus-value | Sources |",
+              "|---|--:|--:|--:|--:|--:|--:|:-:|"]
+        L += [f"| {m['nom']} (`{m['ticker']}`) | {prix(m.get('prix'))} | {pct(m.get('var_1j'))} | "
+              f"{prix(m.get('prix_revient'))} | {pct(m.get('perf_achat'))} | {eur(m.get('valeur'))} | "
+              f"{eur(m.get('plus_value'), True)} | {VERIF.get(m.get('verif'), '')} |" for m in lignes]
+        L.append("")
+    L += [f"- ⚠️ `{e['ticker']}` : {e['message']}" for e in erreurs]
+    return L + ["", "Frais de courtage non compris. Pour ajouter un achat : [[mes-investissements]].", ""]
+
+
+def note_suggestions(sugg):
+    """Partie « Suggestions du jour » de la note Obsidian (rien s'il n'y en a pas)."""
+    if not sugg:
+        return []
+    L = ["## Suggestions du jour", "",
+         "> [!note] Des actions à regarder de plus près, choisies par des règles chiffrées (voir « Règles ») : "
+         "pas une liste d'achats.", ""]
+    L += [f"- **{s['nom']}** (`{s['ticker']}`, {prix(s.get('prix'))}, {pct(s.get('var_1j'))}) · "
+          f"*{s['critere_lib']}* : {s['raison']}" for s in sugg]
+    return L + [""]
+
+
 def archives():
     fiches = sorted((DOCS / "archives").glob("20*.html"), reverse=True)
     items = "\n".join(f'<li><a href="{f.name}">{f.stem}</a></li>' for f in fiches)
@@ -167,8 +211,9 @@ def main():
     fa = DATA / "analyses" / f"{jour}.md"
     analyse = fa.read_text(encoding="utf-8") if fa.exists() else ""
     d["analyse_html"] = md_en_html(analyse) if analyse else ""
-    for m in d["indices"] + d["devises"] + d["matieres"] + d["top30"] + d["petites"]:
-        m["courbe"] = m.get("courbe", [])[-60:]
+    sugg, mes = d.get("suggestions", []), (d.get("mes_investissements") or {}).get("lignes", [])
+    for m in d["indices"] + d["devises"] + d["matieres"] + d["top30"] + d["petites"] + sugg + mes:
+        m["courbe"] = (m.get("courbe") or [])[-60:]
     fc = RACINE / "apprentissage" / "CHANGELOG.md"
     if fc.exists():
         n = re.search(r"^## (\d{4}-\d{2}-\d{2}) · (.+)$", fc.read_text(encoding="utf-8"), re.M)
@@ -181,7 +226,7 @@ def main():
         d["controle_chef"] = {k: e.get(k, "") for k in ("genere_le", "etat", "resume")}
     fd = RACINE / "descriptions.json"
     textes = json.loads(fd.read_text(encoding="utf-8")).get("titres", {}) if fd.exists() else {}
-    for m in d["top30"] + d["petites"]:
+    for m in d["top30"] + d["petites"] + sugg + mes:
         r = risque_de(d.get("details", {}).get(m["ticker"]))
         if r:
             m["risque"], m["risque_officiel"] = r

@@ -1,8 +1,9 @@
 # Matin PEA
 
-Fiche boursière quotidienne et animée pour un PEA : euro/dollar, grands indices, top 30 éligible PEA
-(actions européennes et ETF), 10 titres liquides à moins de 2 €, et signaux techniques dont la fiabilité
-est mesurée dans le temps. Les prix viennent de Yahoo Finance et sont contrôlés avec Boursorama et le
+Fiche boursière quotidienne et animée pour un PEA : suivi de mes investissements (notés dans
+`mes-investissements.md`), euro/dollar, grands indices, suggestions du jour (actions à regarder, choisies
+par des règles chiffrées), top 30 éligible PEA (actions européennes et ETF), 10 titres liquides à moins
+de 2 €, et signaux techniques dont la fiabilité est mesurée dans le temps. Les prix viennent de Yahoo Finance et sont contrôlés avec Boursorama et le
 Financial Times.
 
 Trois agents Claude travaillent dans le cloud, chacun avec sa consigne :
@@ -26,6 +27,7 @@ Le programme est expliqué fonction par fonction dans `ARCHITECTURE.md`.
 | `descriptions.json` | courtes descriptions rédigées par Claude (aucun texte copié) |
 | `data/` | une capture JSON par jour, historique CSV, signaux, analyses |
 | `univers.json` | les titres suivis |
+| `mes-investissements.md` | mes achats (un par ligne), suivis à chaque fiche ; tenu par le propriétaire seul |
 
 Relancer à la main : `pip install -r requirements.txt`, puis `python scripts/collecte.py`,
 `python scripts/verif.py AAAA-MM-JJ`, `python scripts/fiches.py AAAA-MM-JJ`, `python scripts/rendu.py AAAA-MM-JJ`.

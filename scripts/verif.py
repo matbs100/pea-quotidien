@@ -2,7 +2,7 @@
 
 Usage : python scripts/verif.py AAAA-MM-JJ
 Complète data/jours/AAAA-MM-JJ.json : pour chaque titre affiché (indices, devises, top 30,
-petits prix), ajoute les prix des autres sources, un prix de référence (médiane) et un statut :
+petits prix, suggestions, mes investissements), ajoute les prix des autres sources, un prix de référence (médiane) et un statut :
   ok      toutes les sources disponibles sont d'accord (écart ≤ tolérance)
   ecart   au moins une source s'écarte : à vérifier avant toute décision
   seul    aucune autre source n'a pu être lue
@@ -108,7 +108,8 @@ def main():
     cache = json.loads(fc.read_text(encoding="utf-8")) if fc.exists() else {}
 
     a_verifier = (d["indices"] + [x for x in d["devises"] if x["ticker"] == "EURUSD=X"]
-                  + d["top30"] + d["petites"])
+                  + d["top30"] + d["petites"] + d.get("suggestions", [])
+                  + (d.get("mes_investissements") or {}).get("lignes", []))
     vus, bilan = {}, {"ok": 0, "ecart": 0, "seul": 0, "ecarts": []}
     for m in a_verifier:
         t = m["ticker"]

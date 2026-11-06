@@ -50,6 +50,94 @@ def calculs_collecte():
 
 
 @test
+def lecture_de_mes_investissements():
+    import collecte as c
+    assert c.nombre_fr("1 234,56 €") == 1234.56 and c.nombre_fr("1.234,56") == 1234.56
+    assert c.nombre_fr("1,234.5") == 1234.5 and c.nombre_fr("5,42") == 5.42 and c.nombre_fr("512.3") == 512.3
+    assert c.nombre_fr("") is None and c.nombre_fr("abc") is None and c.nombre_fr(None) is None
+    assert c.date_iso("06/11/2026") == c.date_iso("6/11/26") == c.date_iso("2026-11-6") == "2026-11-06"
+    assert c.date_iso("31/02/2026") is None and c.date_iso("") is None
+    texte = """Un tableau sans colonne Code, ignoré :
+| Exemple | Texte |
+|---|---|
+| a | b |
+
+| Type | Nombre de parts | Code | Prix d'achat (€) | Date d'achat | Nom |
+|:--|--:|---|--:|---|---|
+| ETF | 10 | `dcam.pa` | 5,10 | 15/10/2026 | Amundi PEA Monde |
+| | 2,5 | DCAM.PA | 5.40 | 2026-11-06 | |
+| action | | AI.PA | 170 | 01/10/2026 | |
+| | | FR0013412020 | | | |
+| | | | | | |
+
+| Code | autre tableau, ignoré |
+|---|---|
+| XX.PA | x |
+"""
+    e = c.lire_investissements(texte)
+    assert [x["ticker"] for x in e] == ["DCAM.PA", "DCAM.PA", "AI.PA", "FR0013412020"], e
+    assert e[0] == {"ticker": "DCAM.PA", "nom": "Amundi PEA Monde", "date": "2026-10-15", "prix": 5.1,
+                    "quantite": 10.0, "type": "etf"}, e[0]
+    assert e[1]["quantite"] == 2.5 and e[1]["nom"] is None and e[2]["type"] == "actions" and e[2]["quantite"] is None
+    modele = (RACINE / "mes-investissements.md").read_text(encoding="utf-8")
+    assert "| Code |" in modele, "tableau absent de mes-investissements.md"
+    c.lire_investissements(modele)  # le fichier réel doit toujours se lire sans erreur
+
+
+@test
+def calcul_de_mes_investissements():
+    import collecte as c
+    jour = "2026-11-06"
+    achats = [{"ticker": "DCAM.PA", "nom": "Monde", "date": "2026-10-15", "prix": 5.0, "quantite": 60.0, "type": None},
+              {"ticker": "DCAM.PA", "nom": None, "date": jour, "prix": 6.0, "quantite": 20.0, "type": None},
+              {"ticker": "AI.PA", "nom": None, "date": "2026-10-01", "prix": 160.0, "quantite": None, "type": None},
+              {"ticker": "FR0013412020", "nom": None, "date": None, "prix": None, "quantite": None, "type": None},
+              {"ticker": "ZZZ.PA", "nom": None, "date": None, "prix": 1.0, "quantite": 1.0, "type": None}]
+    cours = {"DCAM.PA": {"prix": 6.6, "var_1j": 10.0, "nom": "Amundi PEA Monde MSCI World", "courbe": [1, 2]},
+             "AI.PA": {"prix": 176.0, "var_1j": -1.0, "nom": "Air Liquide"}}
+    res = c.mes_investissements(achats, cours.get, {"DCAM.PA": "etf"}, jour)
+    L = {x["ticker"]: x for x in res["lignes"]}
+    d = L["DCAM.PA"]
+    assert d["nom"] == "Monde" and d["categorie"] == "etf" and d["quantite"] == 80 and d["depuis"] == "2026-10-15"
+    assert abs(d["prix_revient"] - 5.25) < 1e-9, "prix de revient pondéré faux"
+    assert d["investi"] == 420 and d["valeur"] == 528 and d["plus_value"] == 108 and abs(d["perf_achat"] - 25.71) < 0.01
+    # séance : +10 % sur les 60 parts d'avant (396 € -> 360 € hier : +36 €), +12 € sur les 20 achetées aujourd'hui (0,60 € par part)
+    assert abs(d["var_jour_eur"] - 48.0) < 0.01, d["var_jour_eur"]
+    a = L["AI.PA"]
+    assert a["categorie"] == "actions" and a["valeur"] is None and a["investi"] is None and a["perf_achat"] == 10.0
+    assert {e["ticker"] for e in res["erreurs"]} == {"FR0013412020", "ZZZ.PA"}, res["erreurs"]
+    tot = res["total"]
+    assert tot["valeur"] == 528 and tot["investi"] == 420 and tot["complet"] is False
+    assert "categorie" not in cours["DCAM.PA"], "les mesures du titre ne doivent pas être modifiées"
+    vide = c.mes_investissements([], cours.get, {}, jour)
+    assert vide == {"lignes": [], "erreurs": [], "total": None}
+
+
+@test
+def regles_des_suggestions():
+    import collecte as c
+    base = dict(prix=10.0, ma20=9.5, ma50=9.0, ma200=8.0, rsi=55.0, var_1j=0.5, var_1m=2.0, var_3m=5.0,
+                ecart_haut=-10.0, signal="neutre", score=50.0, categorie="actions")
+    t = lambda nom, **k: dict(base, ticker=nom, nom=nom, **k)
+    cands = [t("A", signal="hausse", score=80.0), t("B", signal="hausse", score=90.0),
+             t("C", ecart_haut=-0.5, var_3m=20.0, rsi=65.0), t("D", rsi=35.0), t("E", var_1j=-6.0),
+             t("F", var_1j=4.0), t("G", rsi=None, ma200=None, ecart_haut=None)]
+    top30, veille, top_veille = [cands[1], cands[2]], {"A": "neutre", "B": "hausse"}, {"C", "X"}
+    s = c.suggestions(cands, top30, veille, top_veille, set())
+    assert [(x["ticker"], x["critere"]) for x in s] == [("A", "nouveau_signal"), ("B", "entree_top30"),
+                                                       ("C", "plus_haut"), ("D", "repli"), ("E", "forte_variation")], s
+    for x in s:
+        assert x["raison"] and x["critere_lib"] and not re.search(r"\b(achète|achetez|vends|vendez)\b", x["raison"], re.I)
+    assert "critere" not in cands[0], "les candidats ne doivent pas être modifiés"
+    assert [x["ticker"] for x in c.suggestions(cands, top30, veille, top_veille, {"E"})][-1] == "F", "titre déjà suggéré"
+    assert len(c.suggestions(cands, top30, veille, top_veille, set(), n=7)) == 6, "second passage"
+    assert len(c.suggestions(cands, top30, veille, top_veille, set(), n=2)) == 2
+    assert c.suggestions([], [], {}, set(), set()) == []
+    assert [x["critere"] for x in c.suggestions(cands, [], {}, set(), set())] == ["plus_haut", "repli", "forte_variation",
+                                                                                 "forte_variation"], "sans la veille"
+
+
+@test
 def fichiers_de_signaux_vides():
     import collecte
     ancien = collecte.DATA
@@ -164,23 +252,39 @@ def rendu_de_bout_en_bout():
                 (c / f).parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy(RACINE / f, c / f)
         (c / "docs" / "archives").mkdir(parents=True)
+        # Suggestions et investissements : fabriqués s'ils manquent (données d'avant ces parties)
+        import collecte
+        fj = c / "data" / "jours" / f"{jour}.json"
+        dj = json.loads(fj.read_text(encoding="utf-8"))
+        if "mes_investissements" not in dj:
+            m0 = dj["top30"][0]
+            dj["mes_investissements"] = collecte.mes_investissements(
+                [{"ticker": m0["ticker"], "nom": None, "date": jour, "prix": m0["prix"], "quantite": 2.0, "type": None},
+                 {"ticker": "ZZZ.PA", "nom": None, "date": None, "prix": None, "quantite": None, "type": None}],
+                {m["ticker"]: m for m in dj["top30"]}.get, {}, jour)
+            dj["suggestions"] = collecte.suggestions(dj["top30"], dj["top30"], {}, set(), set()) or [
+                dict(m0, critere="forte_variation", critere_lib="Gros mouvement du jour", raison="Test.", deja_suggere=False)]
+            fj.write_text(json.dumps(dj, ensure_ascii=False), encoding="utf-8")
         r = subprocess.run([sys.executable, str(c / "scripts" / "rendu.py"), jour],
                            capture_output=True, text=True, timeout=180)
         assert r.returncode == 0, "rendu.py a planté :\n" + r.stderr[-1500:]
         page = (c / "docs" / "index.html").read_text(encoding="utf-8")
-        for morceau in ('id="feuille"', "pas un conseil en investissement", "Matin <span>PEA</span>", 'id="top30"'):
+        for morceau in ('id="feuille"', "pas un conseil en investissement", "Matin <span>PEA</span>", 'id="top30"',
+                        'id="sec-inv"', 'id="suggestions"'):
             assert morceau in page, f"absent de la page : {morceau}"
         assert len(page) < 3_000_000, f"page trop lourde : {len(page) // 1024} Ko"
         m = re.search(r'<script id="donnees" type="application/json">(.*?)</script>', page, re.S)
         assert m, "données de la page introuvables"
         d = json.loads(m.group(1))
-        for k in ("date", "indices", "devises", "top30", "petites", "regles"):
+        for k in ("date", "indices", "devises", "top30", "petites", "regles", "suggestions", "mes_investissements"):
             assert k in d, f"clé absente des données : {k}"
         assert any(x.get("risque") for x in d["top30"]), "aucun badge de risque dans le top 30"
         if (RACINE / "pilotage" / "etat.json").exists():
             assert d.get("controle_chef", {}).get("etat"), "état du contrôle qualité absent de la page"
         note = (c / "notes" / f"{jour}.md").read_text(encoding="utf-8")
         assert "## Top 30" in note and "pas un conseil" in note.lower(), "note Obsidian incomplète"
+        assert "## Mes investissements" in note, "mes investissements absents de la note"
+        assert not d["suggestions"] or "## Suggestions du jour" in note, "suggestions absentes de la note"
         assert (c / "docs" / "archives" / f"{jour}.html").exists() and (c / "docs" / "archives" / "index.html").exists()
         # Syntaxe JavaScript : node (cloud), sinon JavaScriptCore, présent sur tous les Mac
         node = shutil.which("node")
@@ -255,6 +359,13 @@ def controle_du_chef():
     assert c.ecarts_aux_regles("autre", [("D", "scripts/ancien.sh", 10)], "2026-11-06", "2026-11-05") == ([], []), \
         "une suppression faite par le propriétaire n'est pas une faute d'agent"
     assert c.ecarts_aux_regles("nuit", [("D", "scripts/verif.py", 10)], "2026-11-06", "2026-11-05")[0]
+    # mes-investissements.md : tenu par le propriétaire, aucun agent n'y touche
+    for agent in ("fiche", "nuit", "chef"):
+        assert c.ecarts_aux_regles(agent, [("M", "mes-investissements.md", 2)], "2026-11-06", "2026-11-05")[1], agent
+    assert c.ecarts_aux_regles("autre", [("M", "mes-investissements.md", 2)], "2026-11-06", "2026-11-05") == ([], [])
+    d3 = json.loads(json.dumps(d))
+    d3["mes_investissements"] = {"lignes": [], "erreurs": [{"ticker": "ZZZ.PA", "message": "introuvable"}], "total": None}
+    assert any("ZZZ.PA" in x for x in c.anomalies_donnees(d3)[1]), "code à corriger non signalé"
     # documentation : une fonction publique non décrite est repérée
     with tempfile.TemporaryDirectory() as tmp:
         f = Path(tmp) / "essai.py"

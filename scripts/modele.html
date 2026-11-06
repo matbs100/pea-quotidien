@@ -210,6 +210,35 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .astuce { font-size: 13px; color: var(--muted); }
 .moment { margin-top: 8px; font: 500 13px var(--font-mono); color: var(--accent); }
 .nouveau { display: inline-flex; gap: 6px; margin-top: 10px; font-size: 13px; padding: 5px 12px; border-radius: 999px; background: var(--amber-soft); color: var(--amber); text-decoration: none; }
+/* mes investissements */
+#inv-total { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 12px; }
+#inv-total .val { font-size: clamp(1.15rem, 4.6vw, 1.6rem); white-space: nowrap; }
+#inv-note a, .vide a { color: var(--accent); }
+@media (max-width: 600px) { #inv-total { grid-template-columns: 1fr 1fr; } #inv-total .card:first-child { grid-column: 1 / -1; } }
+.pos { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(96px, 150px)); align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.pos .t { min-width: 0; }
+.pos .t strong { display: block; overflow-wrap: anywhere; }
+.pos .t small { color: var(--muted); font: 13px var(--font-mono); }
+.pos .c { font: 15px var(--font-mono); text-align: right; }
+.pos .c small { display: block; font-size: 13px; }
+.pos .c em { display: block; font: normal 11px var(--font-body); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-top: 2px; }
+.vide { background: var(--surface); border: 1px dashed var(--line); border-radius: 14px; padding: 14px 16px; font-size: 14px; }
+@media (max-width: 760px) {
+  .pos { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 8px; }
+  .pos .t { grid-column: 1 / -1; }
+  .pos .c { text-align: left; font-size: 14px; }
+}
+/* suggestions du jour */
+#suggestions { grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
+.sug { display: flex; flex-direction: column; gap: 6px; }
+.sug .kicker { font-size: 11px; line-height: 1.3; letter-spacing: .08em; }
+.sug strong { font: 600 16px/1.3 var(--font-body); }
+.sug .sug-p { font: 14px var(--font-mono); }
+.sug .sug-p small { color: var(--muted); font-size: 12px; margin-left: 6px; }
+.sug .rsq { margin-left: 6px; }
+.sug p { margin: 0; font-size: 14px; }
+@media (max-width: 600px) { #suggestions { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .feuille, .voile { transition: none; } }
 </style>
 </head>
@@ -231,6 +260,14 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   </header>
   <div class="tape" aria-label="Indices"><div class="tape-in" id="tape"></div></div>
 
+  <section id="sec-inv" hidden>
+    <div class="sec-head"><div><h2>Mes investissements</h2><div class="sub">Tes achats, suivis à chaque fiche · touche une ligne pour sa fiche complète</div></div></div>
+    <div class="stat" id="inv-total" hidden></div>
+    <div class="alerte" id="inv-erreurs" hidden></div>
+    <div class="liste" id="inv"></div>
+    <p class="note" id="inv-note" hidden></p>
+  </section>
+
   <section>
     <div class="sec-head"><h2>Les marchés</h2><span class="sub"><span id="sub-marches">Dernière séance</span> · touche une carte pour son historique</span></div>
     <div class="grid" id="indices"></div>
@@ -244,6 +281,12 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   <section>
     <div class="sec-head"><h2>L'analyse du jour</h2><span class="sub">Rédigée par Claude à partir des données</span></div>
     <div class="analyse rv" id="analyse"></div>
+  </section>
+
+  <section id="sec-sugg" hidden>
+    <div class="sec-head"><div><h2>Suggestions du jour</h2><div class="sub">Des actions à regarder de plus près, choisies par des règles chiffrées · pas une liste d'achats</div></div></div>
+    <div class="grid" id="suggestions"></div>
+    <p class="note">Chaque suggestion vient d'une règle publiée en bas de page. Avant toute décision, lis sa fiche, cherche l'actualité de la société et regarde son niveau de risque.</p>
   </section>
 
   <section>
@@ -302,6 +345,13 @@ const sens = (x) => x == null ? "flat" : x > 0 ? "up" : x < 0 ? "down" : "flat";
 const pct = (x) => x == null ? "—" : (x > 0 ? "+" : "") + fr(x) + " %";
 const dec = (p) => p >= 1000 ? 0 : p >= 10 ? 2 : p >= 1 ? 3 : 4;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const SG = D.suggestions || [];
+const MI = D.mes_investissements || null;
+const INV = {};
+((MI && MI.lignes) || []).forEach((l) => { INV[l.ticker] = l; });
+const eur = (x, signe) => x == null ? "—" : (signe && x > 0 ? "+" : "") + fr(x, 2) + " €";
+const jourCourt = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+const nbParts = (q) => fr(q, q % 1 ? 2 : 0) + (q > 1 ? " parts" : " part");
 
 const SRC = { yahoo: "Yahoo", boursorama: "Boursorama", ft: "Financial Times" };
 function vf(m) {
@@ -404,7 +454,7 @@ document.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && e.target.classList && e.target.classList.contains("rsq")) { e.stopPropagation(); e.target.click(); }
 }, true);
-const badge = { etf: '<span class="badge b-etf">ETF</span>', actions: '<span class="badge b-action">Action</span>', petites: '<span class="badge b-petite">Petite cap.</span>' };
+const badge = { etf: '<span class="badge b-etf">ETF</span>', actions: '<span class="badge b-action">Action</span>', petites: '<span class="badge b-petite">Petite cap.</span>', fonds: '<span class="badge b-etf">Fonds</span>' };
 function ligne(m, i, sc) {
   const s = m[sc] ?? 0;
   const parts = m.prix > 0 ? Math.floor(100 / m.prix) : 0;
@@ -421,6 +471,54 @@ function ligne(m, i, sc) {
 }
 $("#top30").innerHTML = D.top30.map((m, i) => ligne(m, i, "score")).join("");
 $("#petites").innerHTML = D.petites.map((m, i) => ligne(m, i, "score_petite")).join("");
+
+// ---------- mes investissements (fichier mes-investissements.md, rempli par le propriétaire) ----------
+function position(l) {
+  const plusieurs = l.achats && l.achats.length > 1;
+  const achat = l.prix_revient != null
+    ? `acheté ${fr(l.prix_revient, dec(l.prix_revient))}${plusieurs ? " en moyenne" : ""}${l.depuis ? " · depuis le " + jourCourt(l.depuis) : ""}`
+    : l.depuis ? "depuis le " + jourCourt(l.depuis) : "prix d'achat non noté";
+  return `<div class="pos rv clic" data-t="${esc(l.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(l.nom)}">
+    <div class="t"><strong>${esc(l.nom)}${badge[l.categorie] || ""}${vf(l)}</strong><small>${esc(l.ticker)} · ${achat}${l.quantite ? " · " + nbParts(l.quantite) : ""}${l.date_cours && l.date_cours !== D.date ? " · cours du " + jourCourt(l.date_cours) : ""}</small></div>
+    <div class="c"><span class="num">${fr(l.prix, dec(l.prix))}</span><small class="${sens(l.var_1j)}">${pct(l.var_1j)}</small><em>aujourd'hui</em></div>
+    <div class="c ${sens(l.perf_achat)}">${pct(l.perf_achat)}<em>depuis l'achat</em></div>
+    ${l.valeur != null ? `<div class="c">${eur(l.valeur)}<small class="${sens(l.plus_value)}">${eur(l.plus_value, true)}</small><em>valeur</em></div>` : ""}</div>`;
+}
+if (MI) {
+  $("#sec-inv").hidden = false;
+  const L = MI.lignes || [], E = MI.erreurs || [], T = MI.total;
+  if (T) {
+    $("#inv-total").hidden = false;
+    $("#inv-total").innerHTML = `<div class="card rv"><div class="nom">Valeur aujourd'hui</div><div class="val">${eur(T.valeur)}</div><div class="chg flat">pour ${eur(T.investi)} investis</div></div>
+    <div class="card rv"><div class="nom">Plus ou moins-value</div><div class="val ${sens(T.plus_value)}">${eur(T.plus_value, true)}</div><div class="chg ${sens(T.perf)}">${pct(T.perf)}</div></div>
+    <div class="card rv"><div class="nom">Sur la séance</div><div class="val ${sens(T.var_jour_eur)}">${eur(T.var_jour_eur, true)}</div><div class="chg ${sens(T.var_jour)}">${pct(T.var_jour)}</div></div>`;
+  }
+  if (E.length) {
+    $("#inv-erreurs").hidden = false;
+    $("#inv-erreurs").innerHTML = "<strong>À corriger dans mes-investissements.md</strong><br>" + E.map((e) => `${esc(e.ticker)} : ${esc(e.message)}`).join("<br>");
+  }
+  const fichier = D.url_depot ? `<a href="${D.url_depot}/blob/claude/pea/mes-investissements.md" target="_blank" rel="noopener">mes-investissements.md</a>` : "mes-investissements.md";
+  if (L.length) {
+    $("#inv").innerHTML = L.map(position).join("");
+    $("#inv-note").hidden = false;
+    $("#inv-note").innerHTML = `Prix du jour : ${D.moment === "ouverture" ? "premiers cours de la séance" : "clôture de la séance"}. Prix d'achat sans les frais de courtage${T && !T.complet ? " ; le total ne compte que les titres dont la quantité est notée" : ""}. Liste tenue dans ${fichier}.`;
+  } else if (!E.length) {
+    $("#inv").innerHTML = `<div class="vide">Aucun investissement noté pour l'instant. Note chaque achat (code, date, prix, quantité) dans ${fichier}, depuis Obsidian ou GitHub, ou donne-les à Claude : la fiche suivra leurs prix à chaque séance.</div>`;
+  }
+}
+
+// ---------- suggestions du jour ----------
+function suggestion(s) {
+  return `<div class="card sug rv clic" data-t="${esc(s.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(s.nom)}">
+    <div class="kicker">${esc(s.critere_lib)}</div>
+    <div><strong>${esc(s.nom)}</strong>${badge[s.categorie] || ""}${risque(s)}${s.deja_suggere ? ' <span class="badge b-action">déjà suggéré</span>' : ""}</div>
+    <div class="sug-p"><span class="num">${fr(s.prix, dec(s.prix))}</span> <span class="${sens(s.var_1j)}">${pct(s.var_1j)}</span><small>${esc(s.ticker)}</small></div>
+    <p>${esc(s.raison)}</p></div>`;
+}
+if (SG.length) {
+  $("#sec-sugg").hidden = false;
+  $("#suggestions").innerHTML = SG.map(suggestion).join("");
+}
 
 document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
   document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", c === b));
@@ -439,15 +537,15 @@ if (C) {
   <div class="card rv"><div class="nom">Écarts entre sources</div><div class="val ${C.ecart ? "down" : ""}">${C.ecart}</div><div class="chg flat">${C.ecarts.map((e) => esc(e.nom) + " : " + Object.entries(e.sources).map(([k, v]) => SRC[k] + " " + fr(v, dec(v))).join(" / ")).join("<br>") || "Aucun"}</div></div>
   <div class="card rv"><div class="nom">Sans deuxième source</div><div class="val">${C.seul}</div><div class="chg flat">Quantalys bloque la lecture automatique</div></div>`;
 }
-$("#regles").innerHTML = Object.entries({ "Score": D.regles.score, "Signal": D.regles.signal, "Filtres": D.regles.filtres })
-  .map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
+$("#regles").innerHTML = Object.entries({ "Score": D.regles.score, "Signal": D.regles.signal, "Filtres": D.regles.filtres, "Suggestions": D.regles.suggestions })
+  .filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
 
 // ---------- fiche détaillée ----------
 const DET = D.details || {};
 const TOUS = {};
-[...D.indices, ...D.devises, ...D.matieres, ...D.top30, ...D.petites].forEach((m) => { if (!TOUS[m.ticker]) TOUS[m.ticker] = m; });
-const TYPE = { indices: "Indice", devises: "Devise", matieres: "Matière première", etf: "ETF", actions: "Action", petites: "Petite capitalisation" };
-const PLACEMENT = ["etf", "actions", "petites"];
+[...D.indices, ...D.devises, ...D.matieres, ...D.top30, ...D.petites, ...SG, ...((MI && MI.lignes) || [])].forEach((m) => { if (!TOUS[m.ticker]) TOUS[m.ticker] = m; });
+const TYPE = { indices: "Indice", devises: "Devise", matieres: "Matière première", etf: "ETF", actions: "Action", petites: "Petite capitalisation", fonds: "Fonds" };
+const PLACEMENT = ["etf", "actions", "petites", "fonds"];
 const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const pctc = (x) => x == null ? null : `<span class="${sens(x)}">${pct(x)}</span>`;
 const prixf = (x) => x == null ? null : fr(x, dec(x));
@@ -646,6 +744,17 @@ function ouvrir(t, pousser = true) {
   const H = [];
   H.push(`<div class="f-prix"><span class="big">${fr(m.prix, dec(m.prix))}${det.devise ? ` <small style="font-size:1rem;color:var(--muted)">${det.devise}</small>` : ""}</span><span class="num ${sens(m.var_1j)}">${pct(m.var_1j)} sur la dernière séance</span>${vf(m)}</div>`);
   if (det.description) H.push(`<p class="f-desc">${esc(det.description)}</p>`);
+  const iv = INV[t], sg = SG.find((s) => s.ticker === t);
+  if (iv) {
+    const plusieurs = iv.achats && iv.achats.length > 1;
+    H.push(bloc("Mon investissement", kv([[plusieurs ? "Premier achat" : "Acheté le", iv.depuis && jourCourt(iv.depuis)],
+      [plusieurs ? "Prix d'achat moyen" : "Prix d'achat", prixf(iv.prix_revient)], ["Depuis l'achat", pctc(iv.perf_achat)],
+      ["Parts", iv.quantite != null ? fr(iv.quantite, iv.quantite % 1 ? 2 : 0) : null], ["Valeur aujourd'hui", iv.valeur != null ? eur(iv.valeur) : null],
+      ["Plus ou moins-value", iv.plus_value != null ? `<span class="${sens(iv.plus_value)}">${eur(iv.plus_value, true)}</span>` : null]])
+      + (plusieurs ? `<ul class="hist">${iv.achats.map((a) => `<li>${a.date ? jourCourt(a.date) : "date non notée"} · ${a.quantite != null ? nbParts(a.quantite) + " à " : ""}${a.prix != null ? fr(a.prix, dec(a.prix)) : "prix non noté"}</li>`).join("")}</ul>` : "")
+      + `<p class="note">D'après mes-investissements.md, frais de courtage non compris.</p>`));
+  }
+  if (sg) H.push(bloc("Suggestion du jour : " + esc(sg.critere_lib), `<p>${esc(sg.raison)}</p><p class="note">Une suggestion signale un titre à regarder de plus près, pas un titre à acheter.</p>`));
   H.push(`<div class="bloc"><h3>Historique du prix</h3><div id="f-graphe">${det.j ? "" : "<p class='note'>Historique indisponible.</p>"}</div></div>`);
   const Jp = serieDe(det.j);
   const perfJ = (n, defaut) => Jp.length > n ? (Jp[Jp.length - 1][1] / Jp[Jp.length - 1 - n][1] - 1) * 100 : defaut; // même série que le graphique
