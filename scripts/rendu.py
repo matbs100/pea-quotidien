@@ -147,12 +147,13 @@ def note_obsidian(d, analyse, url):
 
 
 def note_investissements(mes):
-    """Partie « Mes investissements » de la note Obsidian : total, une ligne par titre, codes à corriger."""
+    """Partie « Mes investissements » de la note Obsidian (achats notés dans mes-investissements.md : ceux de
+    la barre de recherche restent privés, sur le téléphone) : total, une ligne par titre, codes à corriger."""
     mes = mes or {}
     lignes, erreurs, t = mes.get("lignes", []), mes.get("erreurs", []), mes.get("total")
+    if not lignes and not erreurs:  # ceux notés dans la barre de recherche restent sur le téléphone
+        return []
     L = ["## Mes investissements", ""]
-    if not lignes and not erreurs:
-        return L + ["_Aucun investissement noté : remplis [[mes-investissements]] (une ligne par achat)._", ""]
     if t:
         L += [f"- Valeur : **{eur(t['valeur'])}** pour {eur(t['investi'])} investis, soit "
               f"**{eur(t['plus_value'], True)}** ({pct(t['perf'])}) ; sur la séance : "

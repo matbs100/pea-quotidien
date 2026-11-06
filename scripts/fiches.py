@@ -35,6 +35,7 @@ RACINE = Path(__file__).resolve().parent.parent
 DATA = RACINE / "data"
 CACHE = DATA / "fiches"
 VALIDITE_JOURS = 7
+NB_NOUVEAUX_ISIN = 60  # titres du catalogue sans cache lus sur Boursorama par passage (complété peu à peu)
 SEUILS_SRI = [0.5, 5, 12, 20, 30, 80]  # volatilité annuelle (%) -> classes 1 à 7 (PRIIPs, risque de marché)
 PLACES = {"PA": ("Euronext Paris", "EUR"), "AS": ("Euronext Amsterdam", "EUR"),
           "DE": ("Xetra (Francfort)", "EUR"), "MI": ("Borsa Italiana (Milan)", "EUR"),
@@ -164,10 +165,26 @@ def lire_yahoo(t):
     return {k: v for k, v in out.items() if v}
 
 
+def fichier_cache(t):
+    """Fichier de data/fiches/ où sont gardées les caractéristiques d'un titre."""
+    return CACHE / (re.sub(r"[^A-Za-z0-9.-]", "_", t) + ".json")
+
+
+def isin_en_cache(t):
+    """ISIN d'un titre d'après le cache, même périmé (un ISIN ne change pas) ; None s'il est inconnu."""
+    f = fichier_cache(t)
+    if not f.exists():
+        return None
+    try:
+        return json.loads(f.read_text(encoding="utf-8"))["infos"].get("isin")
+    except (ValueError, KeyError, AttributeError):
+        return None
+
+
 def infos(m):
     """Caractéristiques d'un titre, avec un cache de 7 jours."""
     t, cat = m["ticker"], m["categorie"]
-    f = CACHE / (re.sub(r"[^A-Za-z0-9.-]", "_", t) + ".json")
+    f = fichier_cache(t)
     if f.exists():
         c = json.loads(f.read_text(encoding="utf-8"))
         if (date.today() - date.fromisoformat(c["maj"])).days < VALIDITE_JOURS:
@@ -398,10 +415,25 @@ def main():
         }.items() if v}
         details[t] = det
     d["details"] = details
+    # Barre de recherche « Mes investissements » : ISIN de chaque titre suivi, lu dans le cache ; les
+    # titres jamais lus sont complétés peu à peu (NB_NOUVEAUX_ISIN par passage), sans bloquer la fiche
+    nouveaux = 0
+    for m in d.get("catalogue", []):
+        isin = isin_en_cache(m["ticker"])
+        if isin is None and not fichier_cache(m["ticker"]).exists() and nouveaux < NB_NOUVEAUX_ISIN:
+            nouveaux += 1
+            try:
+                isin = infos(m).get("isin")
+            except Exception as e:  # noqa: BLE001
+                print("ISIN illisible pour", m["ticker"], ":", e, file=sys.stderr)
+        if isin:
+            m["isin"] = isin
     fj.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
     nb_sri = sum(1 for x in details.values() if x["infos"].get("sri_officiel"))
     nb_pea = sum(1 for x in details.values() if x["infos"].get("pea_bourso"))
-    print(f"Fiches : {len(details)} titres, {nb_sri} SRI officiels, {nb_pea} éligibles PEA selon Boursorama")
+    nb_isin = sum(1 for m in d.get("catalogue", []) if m.get("isin"))
+    print(f"Fiches : {len(details)} titres, {nb_sri} SRI officiels, {nb_pea} éligibles PEA selon Boursorama ; "
+          f"recherche par ISIN : {nb_isin}/{len(d.get('catalogue', []))} titres ({nouveaux} nouveaux)")
 
 
 if __name__ == "__main__":

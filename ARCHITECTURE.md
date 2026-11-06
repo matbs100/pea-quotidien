@@ -22,8 +22,11 @@ Yahoo Finance ──► collecte.py ──► data/jours/AAAA-MM-JJ.json ◄─�
                  git push ──► GitHub Pages (≈ 1 min) ──► notification ntfy sur le téléphone
 ```
 
-`collecte.py` lit aussi `mes-investissements.md` (les achats notés par le propriétaire) pour la partie « Mes
-investissements », et choisit les « Suggestions du jour » par des règles chiffrées.
+« Mes investissements » : le propriétaire tape un ISIN ou un nom dans la barre de recherche de la fiche ; ses
+achats restent dans son navigateur (`localStorage`, rien n'est publié) et la page calcule leur évolution
+avec le catalogue des titres suivis (prix du jour de `collecte.py`, ISIN ajouté par `fiches.py`). Les
+achats notés dans `mes-investissements.md` sont, eux, calculés par `collecte.py`. Les « Suggestions du
+jour » sont choisies par des règles chiffrées.
 
 Tout tourne dans le cloud (routines Claude Code) : le Mac peut être éteint. Le dépôt est rangé
 dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
@@ -54,7 +57,7 @@ même temps que la routine correspondante sur claude.ai.
 |---|---|
 | `univers.json` | les titres suivis, par catégorie (indices, devises, matières, ETF, actions, petits prix) |
 | `descriptions.json` | courtes descriptions des titres, rédigées sans copier de site |
-| `mes-investissements.md` | les achats du propriétaire (code Yahoo, date, prix, quantité, type), un par ligne de tableau. Tenu par le propriétaire seul : les agents le lisent mais ne le modifient jamais (`controle.py` le signale). Public, comme tout le dépôt |
+| `mes-investissements.md` | autre façon de noter les achats du propriétaire (code Yahoo ou ISIN, date, prix, quantité, type), un par ligne de tableau, pour les retrouver dans Obsidian. Tenu par le propriétaire seul : les agents le lisent mais ne le modifient jamais (`controle.py` le signale). Public, comme tout le dépôt, contrairement à la barre de recherche |
 | `config.json` | adresse du site et du dépôt (ne pas changer) |
 | `data/jours/` | une capture JSON par jour (écrasée à la clôture) |
 | `data/analyses/` | l'analyse écrite par Claude, une par jour |
@@ -88,6 +91,7 @@ Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de 
 | `date_iso(txt)` | « 06/11/2026 » ou « 2026-11-06 » → « 2026-11-06 » ; `None` pour une date impossible |
 | `lire_investissements(texte)` | lit le tableau de `mes-investissements.md` (colonnes reconnues à leur titre, dans n'importe quel ordre) |
 | `mes_investissements(entrees, mesure_de, categories, jour)` | regroupe les achats par titre : prix de revient, évolution depuis l'achat, valeur, plus-value et variation du jour en euros si les quantités sont notées, total ; codes ISIN ou introuvables listés dans `erreurs` |
+| `catalogue(res)` | tous les ETF et actions suivis, avec leur prix du jour : la liste où cherche la barre de recherche « Mes investissements » |
 | `suggestions(candidats, top30, signaux_veille, top30_veille, deja, n)` | jusqu'à 5 actions à regarder, une par règle : nouveau signal « hausse », entrée dans le top 30, plus haut sur un an, repli (RSI < 40) au-dessus de la moyenne 200 jours, variation d'au moins 3 % ; chacune avec sa raison chiffrée |
 | `paques(annee)` | date de Pâques (algorithme de Meeus) |
 | `bourse_fermee(j)` | jours de fermeture d'Euronext : week-end, 1er janvier, Vendredi saint, lundi de Pâques, 1er mai, 25 et 26 décembre |
@@ -98,7 +102,8 @@ Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de 
 | `attendre_cloture(jour, max_minutes)` | attend la clôture définitive, une vérification par minute |
 | `main()` | enchaîne tout et écrit `data/jours/AAAA-MM-JJ.json` ; une erreur dans les suggestions ou dans `mes-investissements.md` ne bloque jamais la fiche |
 
-Aides internes : `_signaux_veille` (signaux de la dernière clôture, d'après `historique.csv`),
+Aides internes : `_isins_connus` (ISIN → code Yahoo, d'après le cache `data/fiches/`, pour accepter un
+ISIN dans `mes-investissements.md`), `_signaux_veille` (signaux de la dernière clôture, d'après `historique.csv`),
 `_top30_veille`, `_suggestions_recentes` (titres suggérés les 3 jours précédents, pour varier),
 `_prix_simple` (dernier cours d'un fonds à l'historique trop court pour les indicateurs).
 
@@ -126,6 +131,8 @@ Usage : `python scripts/fiches.py AAAA-MM-JJ`. Ajoute `details` au JSON du jour 
 | `lire_profil(code)` | page « société » de Boursorama : effectif, pays, site |
 | `lire_yahoo(t)` | repli pour les titres absents de Boursorama |
 | `infos(m)` | caractéristiques d'un titre, gardées 7 jours dans `data/fiches/` |
+| `fichier_cache(t)` | fichier de `data/fiches/` d'un titre |
+| `isin_en_cache(t)` | ISIN d'un titre d'après le cache, même périmé (un ISIN ne change pas) |
 | `nombre(txt)` | « 157 569,38 MEUR » → 157569.38 |
 | `compacte(s)` | historique compact : date de départ, écarts en jours, 5 chiffres significatifs |
 | `r1(x, n)` | arrondi tolérant aux valeurs manquantes |
@@ -137,11 +144,14 @@ Usage : `python scripts/fiches.py AAAA-MM-JJ`. Ajoute `details` au JSON du jour 
 | `signaux_du_titre(t)` | historique des signaux du titre et leur résultat |
 | `description_auto(m, inf)` | description de secours, construite à partir des caractéristiques |
 | `frais(m, inf)` | frais de l'ETF, plafonds légaux du PEA, taxe sur les transactions financières |
-| `main()` | construit les fiches et leurs liens (Boursorama, FT, Yahoo, DIC, justETF) |
+| `main()` | construit les fiches et leurs liens (Boursorama, FT, Yahoo, DIC, justETF) ; ajoute l'ISIN de chaque titre du catalogue (60 titres jamais lus au plus par passage, pour compléter peu à peu sans ralentir la fiche) |
 
 ### `rendu.py` et `modele.html` : le site et la note Obsidian
 Usage : `python scripts/rendu.py AAAA-MM-JJ`. `modele.html` contient toute la page (styles,
-animations, graphiques en SVG, fiche détaillée) ; `rendu.py` y insère les données du jour en JSON.
+animations, graphiques en SVG, fiche détaillée, barre de recherche « Mes investissements » avec ses
+calculs) ; `rendu.py` y insère les données du jour en JSON. Les achats saisis dans la barre sont gardés
+dans le navigateur (clé `matin-pea:investissements` du `localStorage`) : ils ne sont ni publiés, ni lus
+par les agents.
 
 | Fonction | Rôle |
 |---|---|
@@ -207,7 +217,9 @@ JavaScriptCore (`jsc`, présent sur tous les Mac) en local.
 - **Suggestions** : règles fixes et publiées, une raison chiffrée par titre, jamais « achète » ni
   « vends » ; elles signalent des titres à regarder, ce ne sont pas des recommandations.
 - **Mes investissements** : prix de revient pondéré par les quantités ; un achat du jour compte depuis
-  son prix d'achat, pas depuis la clôture de la veille ; frais de courtage non compris.
+  son prix d'achat, pas depuis la clôture de la veille ; frais de courtage non compris. Mêmes calculs dans
+  `collecte.py` (fichier) et dans la page (barre de recherche). Une fiche archivée n'affiche que les
+  achats antérieurs à sa date.
 - **Politesse** : une requête par seconde au plus, `robots.txt` respecté, caches pour limiter les appels,
   aucune protection anti-robot contournée.
 - **Page autonome** : données JSON compactes intégrées à la page (`<script id="donnees">`), aucun
