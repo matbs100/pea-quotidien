@@ -1,15 +1,15 @@
 {
- "genere_le": "2026-11-06T00:30+01:00",
+ "genere_le": "2026-11-06T05:08+01:00",
  "fiche": "2026-11-05 (cloture)",
- "lieu": "local",
+ "lieu": "cloud",
  "etat": "orange",
- "resume": "À surveiller. 12/12 tests, 8/8 prix revérifiés, 29/29 liens valides, site à jour. Points à voir : cohérence des données, analyse du jour.",
+ "resume": "À surveiller. 13/13 tests, 8/8 prix revérifiés, 29/29 liens valides, site à jour. Points à voir : cohérence des données, analyse du jour.",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "12/12 tests réussis",
+   "resume": "13/13 tests réussis",
    "details": []
   },
   {
@@ -74,15 +74,20 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "11 connaissance(s) en attente de vérification (⏳)"
+    "11 connaissance(s) en attente de vérification (⏳)",
+    "3 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
   {
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "15 commit(s), 0 problème(s), 0 alerte(s)",
+   "resume": "19 commit(s), 0 problème(s), 0 alerte(s)",
    "details": [
+    "1b28377 [nuit] Amélioration : badge de risque sur la page principale",
+    "239c2e7 [autre] Consignes : afficher le risque sur la page principale (demande de Math",
+    "7cae52a [autre] Pilotage : passage de mi-journée du chef d'orchestre (12 h 30, jours d",
+    "755edf0 [autre] Contrôle : une suppression faite par le propriétaire n'est plus comptée comme ",
     "8816215 [chef] Chef : rapport du 2026-11-06 (orange)",
     "932b0d1 [autre] Consigne de la fiche : filet de sécurité étendu aux commits du chef d'",
     "55aa480 [autre] Équipe d'agents : chef d'orchestre (controle.py, pilotage/, CHEF.md), ",

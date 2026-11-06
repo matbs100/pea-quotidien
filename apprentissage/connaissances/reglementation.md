@@ -15,14 +15,14 @@ officielle compte pour les valider.
   Statut : ✅ vérifié le 2026-11-06 (service-public.gouv.fr)
 - **Taux des prélèvements sociaux en 2026** : 18,6 % pour le PEA (17,2 % jusqu'en 2025 ; l'assurance vie
   resterait à 17,2 %), d'après une note du propriétaire (« Savoir-faire », sans source citée). Taux exact et
-  application au PEA à confirmer. Source proposée : service-public.gouv.fr ou impots.gouv.fr. Statut : ⏳ à vérifier (le 2026-11-06 : sites officiels bloqués par le réseau du cloud)
+  application au PEA à confirmer. Source proposée : service-public.gouv.fr ou impots.gouv.fr. Statut : ❔ non vérifiable le 2026-11-06 : aucune source officielle accessible ; 18,6 % (CSG 10,6 % + CRDS 0,5 % + prélèvement de solidarité 7,5 %, loi du 30/12/2025) confirmé par plusieurs sites spécialisés (extraits de recherche)
 - **Plafonds de frais du PEA** : 0,5 % par ordre passé en ligne, 1,2 % par ordre passé autrement, 0,4 % par
   an de droits de garde. Source proposée : Code monétaire et financier, articles D221-113-1 à D221-113-7
   (cités par service-public.gouv.fr ; Légifrance bloque les robots, chercher une autre source officielle).
-  Statut : ⏳ à vérifier (le 2026-11-06 : sites officiels bloqués par le réseau du cloud)
+  Statut : ❔ non vérifiable le 2026-11-06 : page officielle inaccessible ; 0,5 % en ligne, 1,2 % autrement, 0,4 %/an de droits de garde confirmés par la presse spécialisée et l'AMF (extraits de recherche)
 - **Taxe sur les transactions financières** : 0,4 % du montant acheté depuis le 1er avril 2025 (0,3 %
   avant), sur les actions françaises de plus d'un milliard d'euros de capitalisation, y compris dans un
-  PEA. Source proposée : BOFiP (série TCA-FIN) ou impots.gouv.fr. Statut : ⏳ à vérifier (le 2026-11-06 : sites officiels bloqués par le réseau du cloud)
+  PEA. Source proposée : BOFiP (série TCA-FIN) ou impots.gouv.fr. Statut : ❔ non vérifiable le 2026-11-06 : BOFiP inaccessible ; 0,4 % depuis le 01/04/2025 confirmé par Legifiscal et MoneyVox (extraits de recherche), à reconfirmer sur BOFiP
 - **Plafonds de versement (compléments)** : PEA-PME-ETI 225 000 € ; cumul PEA + PEA-PME-ETI limité à 225 000 €
   (le PEA classique restant à 150 000 €) ; majeur rattaché au foyer fiscal de ses parents : 20 000 € ;
   les gains ne comptent pas dans le plafond. Source : [service-public.gouv.fr, F2385](https://www.service-public.gouv.fr/particuliers/vosdroits/F2385), lu le 2026-11-06.
