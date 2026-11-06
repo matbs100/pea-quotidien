@@ -1,0 +1,18 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPVLA/",
+  "isin": "FR0004056851",
+  "pea_bourso": true,
+  "secteur": "Produits biopharmaceutiques",
+  "indice": "SBF 120",
+  "valorisation": "476 MEUR",
+  "per_annee": "2026",
+  "effectif": "674",
+  "nb_titres": "190 379 441",
+  "capitalisation": "476,33 MEUR",
+  "marche": "Compartiment B",
+  "site": "https://valneva.com",
+  "pays": "France"
+ }
+}

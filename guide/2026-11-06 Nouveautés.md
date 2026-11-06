@@ -56,10 +56,13 @@ cotés à la dernière séance sont retenus. Ce sont des pistes à étudier (fic
 
 ## 3. Liste des titres suivis élargie
 
-- **Tous les ETF éligibles au PEA cotés à Paris** : confié à une tâche ponctuelle qui vérifie chaque ETF
-  (cours publiés par Yahoo, éligibilité PEA et ISIN sur Boursorama) avant de l'ajouter. Le premier essai
-  (10 h 50) s'est arrêté sans rien publier ; relancé à 18 h 25 avec l'obligation d'écrire un rapport.
-  Résultat : [[2026-11-06 Ajout des ETF - rapport]] et le commit « Univers : ajout de N ETF… ».
+- **70 titres ajoutés le soir, depuis le Mac** (les deux essais dans le cloud, à 10 h 50 et 18 h 25, ne
+  pouvaient rien vérifier : ils tournaient dans un environnement cloud qui bloque pypi.org, Yahoo et
+  Boursorama). Chaque titre a passé deux vérifications : cours du jour sur Yahoo, « éligible PEA » et ISIN
+  sur Boursorama. 25 ETF, 4 ETF à effet de levier et 41 actions ; la liste suivie compte maintenant
+  42 ETF, 4 à effet de levier, 122 actions et 68 petites valeurs. Détail : [[2026-11-06 Ajout des ETF - rapport]].
+- **ISIN** : 224 titres sur 236 ont leur ISIN. Les 70 nouveaux apparaissent dans la recherche dès la fiche
+  de lundi 9 h 15 (il leur faut d'abord un cours).
 - **3 ou 4 ETF à effet de levier** (×2 ou inverses), à la demande de Mathieu, dans une section à
   part (`etf_levier`) : trouvables dans la recherche, avec fiche et contrôle du prix, mais **hors du
   top 30 et des suggestions**. Badge rouge « Effet de levier » et avertissement : ils amplifient les
@@ -80,7 +83,21 @@ cotés à la dernière séance sont retenus. Ce sont des pistes à étudier (fic
 | Quand | Quoi |
 |---|---|
 | 9 h 15 et 17 h 55, jours de bourse | prix de tous les titres suivis, suggestions, ISIN manquants (60 par fiche) ; tes investissements sont recalculés à l'ouverture de la fiche |
-| Samedi à 4 h 20 | nouvelle tâche : recherche des nouveaux ETF éligibles au PEA et des actions entrées dans le CAC 40, le SBF 120 ou l'Euro Stoxx 50 (20 ajouts au plus, chacun vérifié) ; les titres qui ne cotent plus sont signalés, jamais supprimés |
+| Chaque nuit et chaque matin | **l'école des agents** : le chef corrige les devoirs, améliore le manuel des méthodes (`pilotage/methodes.md`), donne de nouveaux devoirs (`pilotage/ecole.md`) : nouveaux fonds, nouvelles données, nouvelles méthodes |
+| Samedi à 4 h 20 | tâche « Titres suivis » (recréée le soir dans le bon environnement, consigne `UNIVERS.md`) : recherche des nouveaux ETF éligibles au PEA et des actions entrées dans le CAC 40, le SBF 120 ou l'Euro Stoxx 50 (20 ajouts au plus, chacun vérifié) ; les titres qui ne cotent plus sont signalés, jamais supprimés |
+
+## 4 bis. Comparaison des prix : seulement les cours du jour
+
+À la demande de Mathieu, une source qui ne donne que le cours de la veille n'est plus prise en compte
+dans le contrôle des prix (fonction `source_perimee()` de `verif.py`) : elle est notée à part
+(`sources_perimees`). Si un marché n'a pas encore ouvert (cours américains à 9 h 15), c'est la dernière
+séance qui compte.
+
+**Wealins** (www.wealins.com/funds-list/) : la liste publie des valeurs liquidatives de fonds d'assurance
+vie, **datées de la veille** (le 6 novembre à 18 h 30, toutes au 5 novembre). Ce ne sont pas les titres de
+la fiche, et la règle ci-dessus l'écarte : il n'est pas utilisé. Il ne servirait que pour suivre des fonds
+Wealins dans « Mes investissements » ; il faudrait alors autoriser `www.wealins.com` dans le réseau du
+cloud.
 
 ## 5. Garde-fous
 
@@ -95,16 +112,16 @@ cotés à la dernière séance sont retenus. Ce sont des pistes à étudier (fic
 
 ## 6. Points ouverts
 
-- [ ] Vérifier le nombre d'ETF ajoutés par la tâche relancée le 6 novembre à 18 h 25
-  ([[2026-11-06 Ajout des ETF - rapport]]).
-- [ ] Fiche de clôture du 6 novembre : pas encore publiée à 18 h 15 (passage du chef d'orchestre, état
-  rouge à cause d'un seul lien Yahoo, RS2K.PA, introuvable depuis le cloud). Plusieurs tâches ont été
-  relancées vers 18 h 15 : vérifier qu'une seule notification de clôture est arrivée.
-- [ ] Fiche d'ouverture du 6 novembre : 12 titres avec un cours du 4 novembre (vu par le chef
-  d'orchestre de 12 h 30 ?). Les suggestions ignorent ces cours.
+- [x] ETF ajoutés (le soir, depuis le Mac) : voir [[2026-11-06 Ajout des ETF - rapport]].
+- [x] Fiche de clôture du 6 novembre publiée (commits `6d2489e` et `e7ac7a5`, rendu régénéré après une
+  fusion : une seule fiche).
+- [ ] Fiche d'ouverture du 6 novembre : 12 titres avec un cours du 4 novembre. Les suggestions ignorent
+  ces cours.
+- [ ] Lundi 9 h 15 : vérifier que les 70 nouveaux titres sont dans la recherche et que la collecte reste
+  assez rapide (236 titres).
 - [ ] Possible plus tard : un lien pour transférer tes achats vers un autre appareil (Mac).
-- [ ] Wealins.com : écarté (le site ne publie pas les cours des titres de la fiche, et le réseau du
-  cloud ne l'atteint pas).
+- [ ] Wealins : seulement si tu veux suivre des fonds Wealins (valeur de la veille) dans « Mes
+  investissements ».
 
 ## 7. Détail technique (pour Claude et les agents)
 

@@ -1,0 +1,22 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTPINR/",
+  "isin": "FR0011869320",
+  "societe": "Amundi Asset Management",
+  "pea_bourso": true,
+  "actif_net": "152M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "13/05/2014",
+  "forme": "FCP",
+  "classe": "Actions Asie/Pacifique",
+  "zone": "Inde",
+  "categorie_ms": "Actions Inde",
+  "affectation": "Capitalisation",
+  "replication": "Synthétique",
+  "frais_entree": "0 %",
+  "frais_sortie": "0 %",
+  "frais_gestion": "0,85 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00000TISZ&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

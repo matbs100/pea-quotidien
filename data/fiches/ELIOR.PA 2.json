@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPELIOR/",
+  "isin": "FR0011950732",
+  "pea_bourso": true,
+  "secteur": "Services d'accueil",
+  "indice": "CAC Mid & Small",
+  "valorisation": "485 MEUR",
+  "rendement": "2,17%",
+  "per": "11,55",
+  "dernier_dividende": "0,04 EUR (17/02/26)",
+  "per_annee": "2026",
+  "effectif": "132 883",
+  "nb_titres": "253 611 809",
+  "capitalisation": "485,16 MEUR",
+  "marche": "Compartiment B",
+  "site": "https://www.eliorgroup.com/fr",
+  "pays": "France"
+ }
+}

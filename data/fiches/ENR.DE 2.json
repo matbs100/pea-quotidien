@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1zENR/",
+  "isin": "DE000ENER6Y0",
+  "pea_bourso": false,
+  "secteur": "Fabrication industrielle",
+  "indice": "DAX",
+  "valorisation": "100 385 MEUR",
+  "rendement": "1,52%",
+  "per": "28,20",
+  "per_annee": "2026",
+  "effectif": "102 985",
+  "nb_titres": "850 000 000",
+  "capitalisation": "99 314,00 MEUR",
+  "marche": "Prime Standard",
+  "site": "https://www.siemens-energy.com/global/en/home/investor-relations.html",
+  "pays": "Allemagne"
+ }
+}

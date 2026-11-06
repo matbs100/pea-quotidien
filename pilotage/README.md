@@ -11,6 +11,11 @@ tout le projet avant la fiche de 9 h 15 :
 3. **Vérification des connaissances** apprises la nuit, avec des sources ouvertes le jour même ;
 4. **Une correction ou un embellissement** de l'interface, testé ;
 5. **Consignes** pour les autres agents, et **rapport** du jour.
+6. **L'école** : il corrige les devoirs des agents, améliore leurs méthodes et leur donne de nouveaux devoirs
+   (nouveaux fonds, données, méthodes) :
+   - [[ecole|ecole.md]] : devoirs donnés et résultats ;
+   - [[methodes|methodes.md]] : le manuel des méthodes, lu par tous les agents ;
+   - [[candidats|candidats.md]] : pistes de nouveaux fonds, vérifiées et ajoutées le samedi (rapports dans `univers/`).
 
 Les jours de bourse, un **second passage à 12 h 30** répare ce qui ne va pas avant la fiche de clôture (fiche d'ouverture manquante ou cassée, bug, commit risqué) et ajoute une partie « Passage de 12 h 30 » au rapport du jour.
 

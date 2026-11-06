@@ -1,0 +1,18 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPNANO/",
+  "isin": "FR0011341205",
+  "pea_bourso": true,
+  "secteur": "Produits biopharmaceutiques",
+  "indice": "SBF 120",
+  "valorisation": "1 376 MEUR",
+  "per_annee": "2026",
+  "effectif": "97",
+  "nb_titres": "50 967 610",
+  "capitalisation": "1 376,13 MEUR",
+  "marche": "Compartiment B",
+  "site": "https://www.nanobiotix.com/",
+  "pays": "France"
+ }
+}

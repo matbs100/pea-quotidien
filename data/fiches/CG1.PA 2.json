@@ -1,0 +1,22 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTCG1/",
+  "isin": "FR0010655712",
+  "societe": "Amundi Asset Management",
+  "pea_bourso": true,
+  "actif_net": "1 413M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "16/09/2008",
+  "forme": "FCP",
+  "classe": "Actions Europe",
+  "zone": "Allemagne",
+  "categorie_ms": "Actions Allemagne Gdes Cap.",
+  "affectation": "Capitalisation",
+  "replication": "Physique",
+  "frais_entree": "0 %",
+  "frais_sortie": "0 %",
+  "frais_gestion": "0,1 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00000259T&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}
