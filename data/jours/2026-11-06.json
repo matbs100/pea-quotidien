@@ -7451,7 +7451,8 @@
    "var_1m": 1.33,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 38.4
+   "rsi": 38.4,
+   "isin": "IT0005712671"
   },
   {
    "ticker": "DBV.PA",
@@ -7476,7 +7477,8 @@
    "var_1m": 49.83,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 53.4
+   "rsi": 53.4,
+   "isin": "FR001401A9Z0"
   },
   {
    "ticker": "NANO.PA",
@@ -7488,7 +7490,8 @@
    "var_1m": 31.58,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 52.9
+   "rsi": 52.9,
+   "isin": "FR0011341205"
   },
   {
    "ticker": "GNFT.PA",
@@ -7513,7 +7516,8 @@
    "var_1m": 0.68,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 48.1
+   "rsi": 48.1,
+   "isin": "FR0004056851"
   },
   {
    "ticker": "ALBPS.PA",
@@ -7525,7 +7529,8 @@
    "var_1m": -9.4,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 54.0
+   "rsi": 54.0,
+   "isin": "FR001400OLP5"
   },
   {
    "ticker": "ALHPI.PA",
@@ -7537,7 +7542,8 @@
    "var_1m": -18.18,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 27.5
+   "rsi": 27.5,
+   "isin": "FR0014010QE1"
   },
   {
    "ticker": "ALMKT.PA",
@@ -7575,7 +7581,8 @@
    "var_1m": -3.0,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 45.7
+   "rsi": 45.7,
+   "isin": "FR0014005AC9"
   },
   {
    "ticker": "ALCLS.PA",
@@ -7611,7 +7618,8 @@
    "var_1m": -76.34,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 18.1
+   "rsi": 18.1,
+   "isin": "FR0013331212"
   },
   {
    "ticker": "ALPAT.PA",
@@ -7623,7 +7631,8 @@
    "var_1m": -5.66,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 51.1
+   "rsi": 51.1,
+   "isin": "FR0010785790"
   },
   {
    "ticker": "ALNFL.PA",
@@ -7674,7 +7683,8 @@
    "var_1m": 21.43,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 56.0
+   "rsi": 56.0,
+   "isin": "FR0013233012"
   },
   {
    "ticker": "ALMDG.PA",
@@ -7686,7 +7696,8 @@
    "var_1m": -10.6,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 30.3
+   "rsi": 30.3,
+   "isin": "FR0010353888"
   },
   {
    "ticker": "ALQGC.PA",
@@ -7698,7 +7709,8 @@
    "var_1m": 0.0,
    "date_cours": "2026-11-05",
    "signal": "neutre",
-   "rsi": 50.0
+   "rsi": 50.0,
+   "isin": "FR0011648971"
   },
   {
    "ticker": "ALVAL.PA",
@@ -7736,7 +7748,8 @@
    "var_1m": 21.3,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 38.6
+   "rsi": 38.6,
+   "isin": "FR00140153G5"
   },
   {
    "ticker": "ALLHB.PA",
@@ -7748,7 +7761,8 @@
    "var_1m": 2.13,
    "date_cours": "2026-11-05",
    "signal": "neutre",
-   "rsi": 53.8
+   "rsi": 53.8,
+   "isin": "FR0007080254"
   },
   {
    "ticker": "ALENT.PA",
@@ -7773,7 +7787,8 @@
    "var_1m": 6.58,
    "date_cours": "2026-11-06",
    "signal": "hausse",
-   "rsi": 53.3
+   "rsi": 53.3,
+   "isin": "FR0013079092"
   },
   {
    "ticker": "ALKAL.PA",
@@ -7785,7 +7800,8 @@
    "var_1m": -23.73,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 31.7
+   "rsi": 31.7,
+   "isin": "FR0010722819"
   },
   {
    "ticker": "ALOKW.PA",
@@ -7797,7 +7813,8 @@
    "var_1m": -24.05,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 37.0
+   "rsi": 37.0,
+   "isin": "FR0013439627"
   },
   {
    "ticker": "ALLPL.PA",
@@ -7809,7 +7826,8 @@
    "var_1m": 4.42,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 47.1
+   "rsi": 47.1,
+   "isin": "FR001400F2Z1"
   },
   {
    "ticker": "ALHRS.PA",
@@ -7834,7 +7852,8 @@
    "var_1m": -5.36,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 40.7
+   "rsi": 40.7,
+   "isin": "FR001400H3A0"
   },
   {
    "ticker": "ALNXT.PA",
@@ -7858,7 +7877,8 @@
    "var_1m": -20.0,
    "date_cours": "2026-11-05",
    "signal": "neutre",
-   "rsi": 26.3
+   "rsi": 26.3,
+   "isin": "FR0010326090"
   },
   {
    "ticker": "ALDLT.PA",
@@ -7870,7 +7890,8 @@
    "var_1m": -3.02,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 45.3
+   "rsi": 45.3,
+   "isin": "FR0013283108"
   },
   {
    "ticker": "ALSPW.PA",
@@ -7895,7 +7916,8 @@
    "var_1m": 0.0,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 40.6
+   "rsi": 40.6,
+   "isin": "FR0011898584"
   },
   {
    "ticker": "ALEUP.PA",
@@ -7907,7 +7929,8 @@
    "var_1m": 0.0,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 37.2
+   "rsi": 37.2,
+   "isin": "FR0014011QJ8"
   },
   {
    "ticker": "ALVDM.PA",
@@ -7919,7 +7942,8 @@
    "var_1m": 0.56,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 71.7
+   "rsi": 71.7,
+   "isin": "FR0004045847"
   },
   {
    "ticker": "ALBIO.PA",
@@ -7956,7 +7980,8 @@
    "var_1m": -32.75,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 36.6
+   "rsi": 36.6,
+   "isin": "FR001400LO86"
   },
   {
    "ticker": "ALSAF.PA",
@@ -7968,7 +7993,8 @@
    "var_1m": 0.0,
    "date_cours": "2026-11-05",
    "signal": "neutre",
-   "rsi": 51.0
+   "rsi": 51.0,
+   "isin": "FR001400ZU25"
   },
   {
    "ticker": "ALIMP.PA",
@@ -7993,7 +8019,8 @@
    "var_1m": 36.92,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 49.8
+   "rsi": 49.8,
+   "isin": "FR0011184241"
   },
   {
    "ticker": "ALHEX.PA",
@@ -8005,7 +8032,8 @@
    "var_1m": -2.78,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 45.6
+   "rsi": 45.6,
+   "isin": "FR0004159473"
   },
   {
    "ticker": "SAB.MC",
@@ -8017,7 +8045,8 @@
    "var_1m": 2.31,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 53.6
+   "rsi": 53.6,
+   "isin": "ES0113860A34"
   },
   {
    "ticker": "SPM.MI",
@@ -8029,7 +8058,8 @@
    "var_1m": -3.84,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 40.5
+   "rsi": 40.5,
+   "isin": "IT0005495657"
   },
   {
    "ticker": "BMPS.MI",
@@ -8041,7 +8071,8 @@
    "var_1m": 3.63,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 52.6
+   "rsi": 52.6,
+   "isin": "IT0005508921"
   },
   {
    "ticker": "ENR.DE",
@@ -8053,7 +8084,8 @@
    "var_1m": -17.12,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 38.4
+   "rsi": 38.4,
+   "isin": "DE000ENER6Y0"
   },
   {
    "ticker": "ALPHA.AT",
@@ -8101,7 +8133,8 @@
    "var_1m": -12.42,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 28.3
+   "rsi": 28.3,
+   "isin": "FR0000051070"
   },
   {
    "ticker": "ATO.PA",
@@ -8113,7 +8146,8 @@
    "var_1m": 16.53,
    "date_cours": "2026-11-06",
    "signal": "hausse",
-   "rsi": 50.1
+   "rsi": 50.1,
+   "isin": "FR001400X2S4"
   },
   {
    "ticker": "CRI.PA",
@@ -8137,7 +8171,8 @@
    "var_1m": -3.99,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 47.7
+   "rsi": 47.7,
+   "isin": "FR0010131409"
   },
   {
    "ticker": "EKI.PA",
@@ -8149,7 +8184,8 @@
    "var_1m": -1.98,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 46.8
+   "rsi": 46.8,
+   "isin": "FR0011466069"
   },
   {
    "ticker": "ALGEN.PA",
@@ -8173,7 +8209,8 @@
    "var_1m": -7.47,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 51.1
+   "rsi": 51.1,
+   "isin": "FR001401A702"
   },
   {
    "ticker": "ALPRI.PA",
@@ -8185,7 +8222,8 @@
    "var_1m": -1.03,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 52.8
+   "rsi": 52.8,
+   "isin": "FR0004044600"
   },
   {
    "ticker": "ALGIL.PA",
@@ -8197,7 +8235,8 @@
    "var_1m": 3.39,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 50.2
+   "rsi": 50.2,
+   "isin": "FR0012819381"
   },
   {
    "ticker": "ALSGD.PA",
@@ -8222,7 +8261,8 @@
    "var_1m": -6.05,
    "date_cours": "2026-11-06",
    "signal": "baisse",
-   "rsi": 41.0
+   "rsi": 41.0,
+   "isin": "FR0011033083"
   },
   {
    "ticker": "MLHK.PA",
@@ -8234,7 +8274,8 @@
    "var_1m": -2.78,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 50.8
+   "rsi": 50.8,
+   "isin": "DE000A11Q133"
   },
   {
    "ticker": "ALAGO.PA",
@@ -8259,7 +8300,8 @@
    "var_1m": 11.71,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 73.0
+   "rsi": 73.0,
+   "isin": "FR0000054132"
   },
   {
    "ticker": "ALTUV.PA",
