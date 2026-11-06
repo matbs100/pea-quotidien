@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPTFI/",
+  "isin": "FR0000054900",
+  "pea_bourso": true,
+  "secteur": "Services de médias et d'édition",
+  "indice": "SBF 120",
+  "valorisation": "1 363 MEUR",
+  "rendement": "10,82%",
+  "per": "13,24",
+  "dernier_dividende": "0,63 EUR (21/04/26)",
+  "per_annee": "2026",
+  "effectif": "3 640",
+  "nb_titres": "211 041 646",
+  "capitalisation": "1 363,33 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.groupe-tf1.fr",
+  "pays": "France"
+ }
+}

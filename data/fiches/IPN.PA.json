@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPIPN/",
+  "isin": "FR0010259150",
+  "pea_bourso": true,
+  "secteur": "Produits biopharmaceutiques",
+  "indice": "SBF 120",
+  "valorisation": "13 301 MEUR",
+  "rendement": "0,90%",
+  "per": "10,42",
+  "dernier_dividende": "1,60 EUR (03/06/26)",
+  "per_annee": "2026",
+  "effectif": "5 535",
+  "nb_titres": "83 814 526",
+  "capitalisation": "13 301,37 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.ipsen.com/fr/investisseurs/",
+  "pays": "France"
+ }
+}

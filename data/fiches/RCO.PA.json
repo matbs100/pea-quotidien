@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPRCO/",
+  "isin": "FR0000130395",
+  "pea_bourso": true,
+  "secteur": "Production de produits alimentaires et de tabac",
+  "indice": "SBF 120",
+  "valorisation": "2 753 MEUR",
+  "rendement": "1,48%",
+  "per": "29,62",
+  "dernier_dividende": "0,75 EUR (28/07/26)",
+  "per_annee": "2026",
+  "effectif": "1 783",
+  "nb_titres": "52 846 274",
+  "capitalisation": "2 753,29 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.remy-cointreau.com/",
+  "pays": "France"
+ }
+}

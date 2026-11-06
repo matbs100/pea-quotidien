@@ -120,6 +120,9 @@ Financial Times (tolérance 1 %, 2 % à l'ouverture). Quantalys n'est pas interr
 | `get(url)` | requête polie : pause de 0,9 s, délai de 20 s, `None` en cas d'échec |
 | `boursorama(code)` | dernier cours sur la page Boursorama (rejette les redirections vers la recherche) |
 | `ft(genre, code)` | dernier cours sur la page « tearsheet » du Financial Times |
+| `date_bourso(page)` / `date_ft(page)` | date du dernier cours affiché par la page Boursorama / FT |
+| `boursorama_date(code)` / `ft_date(genre, code)` | cours et date du cours (les deux fonctions sans `_date` ne renvoient que le cours) |
+| `source_perimee(date_source, jour, date_yahoo)` | règle du propriétaire (06/11) : une source qui ne donne que le cours d'un jour précédent est écartée (notée dans `sources_perimees`) ; si Yahoo n'a pas encore de cours du jour, la dernière séance compte |
 | `codes(m)` | traduit un ticker Yahoo en codes Boursorama et FT (place de cotation, ETF, indice, devise) |
 | `main()` | ajoute sources, prix de référence (médiane) et statut `ok`, `ecart` ou `seul` à chaque titre |
 
@@ -196,7 +199,7 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `fonctions_publiques(chemin)` | liste les fonctions d'un script |
 | `manques_documentation(archi, scripts)` | scripts et fonctions absents de ce document |
 | `c_documentation(d, maintenant)` | ce document, les notes, archives et analyses de chaque jour, les journaux de nuit |
-| `agent_du_commit(message)` | reconnaît l'agent d'après le message de commit |
+| `agent_du_commit(message)` | reconnaît l'agent d'après le message de commit (fiche, nuit, chef, univers pour la tâche du samedi) |
 | `ecarts_aux_regles(agent, fichiers, jour_commit, dernier_jour)` | fichiers hors du rôle de l'agent, données passées modifiées, suppressions, taille du changement |
 | `git(*args)` | lance une commande Git dans le dépôt |
 | `c_agents(d, heures)` | relit les commits des 30 dernières heures |

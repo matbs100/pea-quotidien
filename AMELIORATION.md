@@ -28,7 +28,8 @@ scripts : tu ne dois jamais la casser. Tout est en français.
 
 1. **Préparer.** `PY=python3; $PY -m pip install -q -r requirements.txt`, puis
    `JOUR=$(TZ=Europe/Paris date +%F)` et `NUM=$(TZ=Europe/Paris date +%u)` (1 = lundi). Lis d'abord
-   `pilotage/consignes.md` (consignes du chef) et le dernier rapport de `pilotage/rapports/`, puis
+   `pilotage/consignes.md` (consignes du chef), `pilotage/methodes.md` (le manuel des méthodes, à
+   appliquer), `pilotage/ecole.md` (tes devoirs) et le dernier rapport de `pilotage/rapports/`, puis
    `apprentissage/README.md`, `apprentissage/idees.md`, le haut de `apprentissage/CHANGELOG.md`, les
    3 derniers journaux, les 3 dernières analyses de `data/analyses/` et le bilan des signaux
    (`data/signaux.csv`). Lance `$PY scripts/tests.py` : si les tests échouent déjà, ta seule mission de
@@ -58,6 +59,12 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    Outils : WebSearch, WebFetch, `gh`. WebFetch n'ouvre que les sites autorisés par le réseau du
    cloud : si un site est bloqué, note son domaine dans la partie « Accès bloqués » du journal,
    appuie-toi sur les extraits de WebSearch (en « Source proposée ») et continue.
+2 bis. **Devoirs du chef** (15 minutes au plus) : fais les devoirs qui te sont donnés dans
+   `pilotage/ecole.md`, dans l'ordre. Pour un devoir « nouveaux fonds », note chaque piste dans
+   `pilotage/candidats.md` (`- [ ] CODE.PA · nom · ISIN · source · pourquoi`), seul fichier de
+   `pilotage/` que tu peux modifier ; ne touche pas à `univers.json` (la tâche du samedi vérifie et ajoute).
+   Si tout est fait et qu'il te reste du temps à la fin de la nuit, continue d'apprendre : cherche
+   d'autres fonds, une méthode ou une donnée nouvelle, comme un élève qui révise.
 3. **Noter ce que tu apprends.**
    - `apprentissage/connaissances/<thème>.md` (marches, methodes, reglementation, donnees, design) :
      chaque fait nouveau, avec tes propres mots, sa source et le statut « ⏳ à vérifier », au format
@@ -87,7 +94,8 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    `## Veille du jour` (thème, sources ouvertes avec leurs liens), `## Ce que j'ai appris` (3 à 6
    puces, chacune avec sa source), `## À retenir` (une seule notion ou technique, en une phrase claire,
    pour le « Savoir-faire » du propriétaire), `## Amélioration` (idée choisie, fichiers modifiés, résultat
-   des tests, ou pourquoi rien n'a changé), `## Idées pour la suite`, et `## Accès bloqués` si besoin.
+   des tests, ou pourquoi rien n'a changé), `## Devoirs du chef` (chaque devoir : fait, avec le résultat
+   et ses sources, ou pas fait et pourquoi), `## Idées pour la suite`, et `## Accès bloqués` si besoin.
    Ajoute le lien du journal en tête de la liste « Journaux » de `apprentissage/README.md`.
 6. **Publier.** `git add -A && git commit -m "Amélioration : <titre>"`, ou `"Veille : <thème>"` si
    seules les notes ont changé. Puis `git push origin HEAD:claude/pea`. Ne pousse jamais du code si les

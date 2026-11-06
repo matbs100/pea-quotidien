@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPCOFA/",
+  "isin": "FR0010667147",
+  "pea_bourso": true,
+  "secteur": "Assurance",
+  "indice": "SBF 120",
+  "valorisation": "2 383 MEUR",
+  "rendement": "7,85%",
+  "per": "10,21",
+  "dernier_dividende": "1,25 EUR (26/05/26)",
+  "per_annee": "2026",
+  "nb_titres": "150 179 792",
+  "capitalisation": "2 383,35 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.coface.com/fr/Investisseurs",
+  "pays": "France"
+ }
+}

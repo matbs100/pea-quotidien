@@ -1,0 +1,22 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTCHM/",
+  "isin": "LU1834983634",
+  "societe": "Amundi Luxembourg S.A.",
+  "pea_bourso": true,
+  "actif_net": "33M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "20/06/2024",
+  "forme": "SICAV",
+  "classe": "Actions Secteurs",
+  "zone": "Europe",
+  "categorie_ms": "Actions Secteur Autres",
+  "affectation": "Capitalisation",
+  "replication": "Synthétique",
+  "frais_entree": "0 %",
+  "frais_sortie": "0 %",
+  "frais_gestion": "0,2 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F00001LM5I&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPAMUN/",
+  "isin": "FR0004125920",
+  "pea_bourso": true,
+  "secteur": "Services d'investissement",
+  "indice": "SBF 120",
+  "valorisation": "18 892 MEUR",
+  "rendement": "5,52%",
+  "per": "11,45",
+  "dernier_dividende": "4,25 EUR (09/06/26)",
+  "per_annee": "2026",
+  "nb_titres": "201 086 365",
+  "capitalisation": "18 892,06 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://legroupe.amundi.com/regulated-information",
+  "pays": "France"
+ }
+}
