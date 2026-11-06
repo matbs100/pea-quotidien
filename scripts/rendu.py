@@ -148,6 +148,19 @@ a{{color:var(--a)}}ul{{list-style:none;padding:0}}li{{font-family:ui-monospace,M
 <body><h1>Archives Matin PEA</h1><p><a href="../">← Fiche du jour</a></p><ul>{items}</ul></body></html>"""
 
 
+def risque_de(det):
+    """Niveau de risque (1 à 7) d'un titre pour le badge de la page principale : SRI officiel du DIC,
+    sinon SRI estimé. Renvoie (niveau, officiel) ou None si on ne sait pas."""
+    if not det:
+        return None
+    off = (det.get("infos") or {}).get("sri_officiel")
+    est = (det.get("stats") or {}).get("sri_estime")
+    for niv, officiel in ((off, True), (est, False)):
+        if isinstance(niv, int) and 1 <= niv <= 7:
+            return niv, officiel
+    return None
+
+
 def main():
     jour = sys.argv[1]
     d = json.loads((DATA / "jours" / f"{jour}.json").read_text(encoding="utf-8"))
@@ -168,6 +181,10 @@ def main():
         d["controle_chef"] = {k: e.get(k, "") for k in ("genere_le", "etat", "resume")}
     fd = RACINE / "descriptions.json"
     textes = json.loads(fd.read_text(encoding="utf-8")).get("titres", {}) if fd.exists() else {}
+    for m in d["top30"] + d["petites"]:
+        r = risque_de(d.get("details", {}).get(m["ticker"]))
+        if r:
+            m["risque"], m["risque_officiel"] = r
     for t, x in d.get("details", {}).items():
         x["description"] = textes.get(t) or x.get("description_auto", "")
 

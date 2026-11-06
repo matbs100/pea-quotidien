@@ -23,3 +23,15 @@ officielle compte pour les valider.
 - **Taxe sur les transactions financières** : 0,4 % du montant acheté depuis le 1er avril 2025 (0,3 %
   avant), sur les actions françaises de plus d'un milliard d'euros de capitalisation, y compris dans un
   PEA. Source proposée : BOFiP (série TCA-FIN) ou impots.gouv.fr. Statut : ⏳ à vérifier (le 2026-11-06 : sites officiels bloqués par le réseau du cloud)
+- **Plafonds de versement (compléments)** : PEA-PME-ETI 225 000 € ; cumul PEA + PEA-PME-ETI limité à 225 000 €
+  (le PEA classique restant à 150 000 €) ; majeur rattaché au foyer fiscal de ses parents : 20 000 € ;
+  les gains ne comptent pas dans le plafond. Source : [service-public.gouv.fr, F2385](https://www.service-public.gouv.fr/particuliers/vosdroits/F2385), lu le 2026-11-06.
+  Statut : ⏳ à vérifier
+- **Prélèvements sociaux 18,6 % (confirmation par la presse)** : la CSG passe de 9,2 % à 10,6 % depuis le 1er janvier 2026
+  (loi du 30 décembre 2025), ce qui porte les prélèvements sociaux du PEA à 18,6 % ; le taux s'applique aux gains au
+  moment du retrait, y compris ceux réalisés avant 2026. Retrait avant 5 ans : 12,8 % d'impôt + 18,6 %. Source proposée :
+  [Meilleurtaux Placement](https://placement.meilleurtaux.com/bourse/actualites/2026-fevrier/taux-prelevements-sociaux-applique-pea-passe-desormais-18-6.html)
+  (page bloquée, extrait de recherche). Statut : ⏳ à vérifier (source officielle à trouver : impots.gouv.fr)
+- **TTF 2026** : liste de 121 sociétés françaises publiée au BOFiP le 17 décembre 2025 (capitalisation au 1er décembre 2025 > 1 Md€) ;
+  taux toujours 0,4 %. Source proposée : [Deloitte Avocats](https://blog.avocats.deloitte.fr/taxe-sur-les-transactions-financieres-mise-a-jour-de-la-liste-des-societes-francaises-dans-le-scope/).
+  Statut : ⏳ à vérifier

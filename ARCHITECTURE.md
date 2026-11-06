@@ -135,6 +135,7 @@ animations, graphiques en SVG, fiche détaillée) ; `rendu.py` y insère les don
 | `md_en_html(md)` | convertit l'analyse Markdown en HTML (titres, listes, gras) |
 | `pct(x)`, `prix(x)`, `pct_simple(x)` | formats français des nombres pour la note |
 | `note_obsidian(d, analyse, url)` | note du jour pour Obsidian : marchés, top 30, petits prix, fiabilité, liens |
+| `risque_de(det)` | niveau de risque 1 à 7 du badge de la page principale (SRI officiel, sinon estimé) |
 | `archives()` | page `docs/archives/` qui liste toutes les fiches |
 | `main()` | écrit `docs/index.html`, l'archive du jour et la note ; ajoute la nouveauté du programme et l'état du dernier contrôle |
 

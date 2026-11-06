@@ -143,6 +143,14 @@ def calculs_verif():
 
 
 @test
+def badge_de_risque():
+    import rendu
+    assert rendu.risque_de({"infos": {"sri_officiel": 3}, "stats": {"sri_estime": 5}}) == (3, True), "le SRI officiel prime"
+    assert rendu.risque_de({"infos": {}, "stats": {"sri_estime": 5}}) == (5, False), "repli sur le SRI estimé"
+    assert rendu.risque_de({"infos": {"sri_officiel": 9}, "stats": {}}) is None and rendu.risque_de(None) is None
+
+
+@test
 def rendu_de_bout_en_bout():
     jours = sorted((RACINE / "data" / "jours").glob("20*.json"))
     assert jours, "aucune donnée dans data/jours"
@@ -168,6 +176,7 @@ def rendu_de_bout_en_bout():
         d = json.loads(m.group(1))
         for k in ("date", "indices", "devises", "top30", "petites", "regles"):
             assert k in d, f"clé absente des données : {k}"
+        assert any(x.get("risque") for x in d["top30"]), "aucun badge de risque dans le top 30"
         if (RACINE / "pilotage" / "etat.json").exists():
             assert d.get("controle_chef", {}).get("etat"), "état du contrôle qualité absent de la page"
         note = (c / "notes" / f"{jour}.md").read_text(encoding="utf-8")
