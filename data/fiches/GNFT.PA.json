@@ -1,0 +1,19 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPGNFT/",
+  "isin": "FR0004163111",
+  "pea_bourso": true,
+  "secteur": "Produits biopharmaceutiques",
+  "indice": "SBF 120",
+  "valorisation": "531 MEUR",
+  "per": "98,73",
+  "per_annee": "2026",
+  "effectif": "192",
+  "nb_titres": "50 099 619",
+  "capitalisation": "513,02 MEUR",
+  "marche": "Compartiment B",
+  "site": "https://ir.genfit.com/fr",
+  "pays": "France"
+ }
+}

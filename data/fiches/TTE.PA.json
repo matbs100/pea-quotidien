@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPTTE/",
+  "isin": "FR0000120271",
+  "pea_bourso": true,
+  "secteur": "Prospection et production intégrées de pétrole et de gaz",
+  "indice": "CAC 40",
+  "valorisation": "181 916 MEUR",
+  "rendement": "4,35%",
+  "per": "7,48",
+  "dernier_dividende": "0,90 EUR (30/09/26)",
+  "per_annee": "2026",
+  "effectif": "101 513",
+  "nb_titres": "2 281 656 714",
+  "capitalisation": "179 908,63 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.totalenergies.com",
+  "pays": "France"
+ }
+}

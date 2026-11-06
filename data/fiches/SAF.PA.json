@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSAF/",
+  "isin": "FR0000073272",
+  "pea_bourso": true,
+  "secteur": "Fabrication industrielle",
+  "indice": "CAC 40",
+  "valorisation": "123 621 MEUR",
+  "rendement": "1,51%",
+  "per": "26,63",
+  "dernier_dividende": "3,35 EUR (26/05/26)",
+  "per_annee": "2026",
+  "effectif": "110 778",
+  "nb_titres": "418 344 626",
+  "capitalisation": "123 620,84 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.safran-group.com/",
+  "pays": "France"
+ }
+}

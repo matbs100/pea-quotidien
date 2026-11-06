@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPGLE/",
+  "isin": "FR0000130809",
+  "pea_bourso": true,
+  "secteur": "Banque",
+  "indice": "CAC 40",
+  "valorisation": "47 616 MEUR",
+  "rendement": "3,31%",
+  "per": "7,57",
+  "dernier_dividende": "0,75 EUR (05/10/26)",
+  "per_annee": "2026",
+  "effectif": "110 000",
+  "nb_titres": "739 264 232",
+  "capitalisation": "47 616,01 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://investors.societegenerale.com/",
+  "pays": "France"
+ }
+}

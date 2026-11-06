@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPRMS/",
+  "isin": "FR0000052292",
+  "pea_bourso": true,
+  "secteur": "Biens de consommation",
+  "indice": "CAC 40",
+  "valorisation": "143 838 MEUR",
+  "rendement": "1,44%",
+  "per": "29,51",
+  "dernier_dividende": "13,00 EUR (21/04/26)",
+  "per_annee": "2026",
+  "effectif": "26 494",
+  "nb_titres": "105 569 412",
+  "capitalisation": "143 838,32 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://finance.hermes.com/",
+  "pays": "France"
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPRXL/",
+  "isin": "FR0010451203",
+  "pea_bourso": true,
+  "secteur": "Services industriels",
+  "indice": "SBF 120",
+  "valorisation": "10 727 MEUR",
+  "rendement": "3,48%",
+  "per": "13,52",
+  "dernier_dividende": "1,20 EUR (11/05/26)",
+  "per_annee": "2026",
+  "effectif": "26 601",
+  "nb_titres": "311 385 744",
+  "capitalisation": "10 727,24 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.rexel.com/fr/finance/",
+  "pays": "France"
+ }
+}

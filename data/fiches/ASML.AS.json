@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rAASML/",
+  "isin": "NL0010273215",
+  "pea_bourso": true,
+  "secteur": "Composants électroniques et fabrication",
+  "indice": "EURO STOXX 50",
+  "valorisation": "498 226 MEUR",
+  "rendement": "0,61%",
+  "per": "33,25",
+  "dernier_dividende": "1,88 EUR (26/10/26)",
+  "per_annee": "2026",
+  "effectif": "44 209",
+  "nb_titres": "388 147 751",
+  "capitalisation": "493 646,31 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.asml.com/en/investors",
+  "pays": "Pays-Bas"
+ }
+}

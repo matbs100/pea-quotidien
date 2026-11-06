@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSU/",
+  "isin": "FR0000121972",
+  "pea_bourso": true,
+  "secteur": "Fabrication industrielle",
+  "indice": "CAC 40",
+  "valorisation": "138 014 MEUR",
+  "rendement": "1,97%",
+  "per": "23,20",
+  "dernier_dividende": "4,20 EUR (11/05/26)",
+  "per_annee": "2026",
+  "effectif": "159 844",
+  "nb_titres": "603 605 363",
+  "capitalisation": "137 742,74 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.se.com/ww/fr/about-us/investor-relations",
+  "pays": "France"
+ }
+}

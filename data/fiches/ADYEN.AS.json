@@ -1,0 +1,19 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rAADYEN/",
+  "isin": "NL0012969182",
+  "pea_bourso": true,
+  "secteur": "Financements et services spécialisés",
+  "indice": "EURO STOXX 50",
+  "valorisation": "28 563 MEUR",
+  "per": "21,66",
+  "per_annee": "2026",
+  "effectif": "4 780",
+  "nb_titres": "31 694 884",
+  "capitalisation": "28 563,43 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.adyen.com/investor-relations",
+  "pays": "Pays-Bas"
+ }
+}

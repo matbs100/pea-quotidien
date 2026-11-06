@@ -274,9 +274,7 @@
  "IBE.MC": {
   "boursorama": "FF55-IBE",
   "ft": "IBE:MCE",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "ENX.PA": {
   "boursorama": "1rPENX",
@@ -297,7 +295,7 @@
   "boursorama": "1rPALNXT",
   "ft": "ALNXT:PAR",
   "echecs": {
-   "boursorama": 1
+   "boursorama": 2
   }
  },
  "ALENT.PA": {
@@ -334,7 +332,7 @@
   "boursorama": "1rPALCLS",
   "ft": "ALCLS:PAR",
   "echecs": {
-   "boursorama": 1
+   "boursorama": 2
   }
  },
  "ALMKT.PA": {
@@ -345,6 +343,11 @@
  "ALNFL.PA": {
   "boursorama": "1rPALNFL",
   "ft": "ALNFL:PAR",
+  "echecs": {}
+ },
+ "GNFT.PA": {
+  "boursorama": "1rPGNFT",
+  "ft": "GNFT:PAR",
   "echecs": {}
  }
 }

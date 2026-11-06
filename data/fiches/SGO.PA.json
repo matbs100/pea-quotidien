@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSGO/",
+  "isin": "FR0000125007",
+  "pea_bourso": true,
+  "secteur": "Produits miniers et minéraux",
+  "indice": "CAC 40",
+  "valorisation": "36 667 MEUR",
+  "rendement": "3,54%",
+  "per": "10,88",
+  "dernier_dividende": "2,30 EUR (08/06/26)",
+  "per_annee": "2026",
+  "effectif": "161 688",
+  "nb_titres": "494 834 019",
+  "capitalisation": "36 667,20 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.saint-gobain.com/fr/finance",
+  "pays": "France"
+ }
+}

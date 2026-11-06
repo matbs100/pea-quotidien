@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rAINGA/",
+  "isin": "NL0011821202",
+  "pea_bourso": true,
+  "secteur": "Banque",
+  "indice": "EURO STOXX 50",
+  "valorisation": "82 521 MEUR",
+  "rendement": "4,67%",
+  "per": "11,17",
+  "dernier_dividende": "0,40 EUR (03/08/26)",
+  "per_annee": "2026",
+  "effectif": "64 298",
+  "nb_titres": "2 873 308 933",
+  "capitalisation": "82 550,17 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.ing.com/Investor-relations.htm",
+  "pays": "Pays-Bas"
+ }
+}

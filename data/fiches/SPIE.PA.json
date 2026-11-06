@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSPIE/",
+  "isin": "FR0012757854",
+  "pea_bourso": true,
+  "secteur": "Services aux entreprises",
+  "indice": "SBF 120",
+  "valorisation": "7 699 MEUR",
+  "rendement": "2,87%",
+  "per": "13,95",
+  "dernier_dividende": "0,32 EUR (15/09/26)",
+  "per_annee": "2026",
+  "nb_titres": "172 855 984",
+  "capitalisation": "7 699,01 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.spie.com",
+  "pays": "France"
+ }
+}

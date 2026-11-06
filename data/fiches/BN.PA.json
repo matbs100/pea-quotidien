@@ -1,0 +1,21 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPBN/",
+  "isin": "FR0000120644",
+  "pea_bourso": true,
+  "secteur": "Production de produits alimentaires et de tabac",
+  "indice": "CAC 40",
+  "valorisation": "45 866 MEUR",
+  "rendement": "3,58%",
+  "per": "16,59",
+  "dernier_dividende": "2,25 EUR (04/05/26)",
+  "per_annee": "2026",
+  "effectif": "88 670",
+  "nb_titres": "683 337 177",
+  "capitalisation": "45 865,59 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.danone.com/fr/investisseurs.html",
+  "pays": "France"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1rPSOI/",
+  "isin": "FR0013227113",
+  "pea_bourso": true,
+  "secteur": "Composants électroniques et fabrication",
+  "indice": "SBF 120",
+  "valorisation": "3 379 MEUR",
+  "per_annee": "2026",
+  "effectif": "2 128",
+  "nb_titres": "35 814 320",
+  "capitalisation": "3 378,72 MEUR",
+  "marche": "Compartiment A",
+  "site": "https://www.soitec.com",
+  "pays": "France"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "maj": "2026-11-06",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/cours/1zSIE/",
+  "isin": "DE0007236101",
+  "pea_bourso": false,
+  "secteur": "Fabrication industrielle",
+  "indice": "EURO STOXX 50",
+  "valorisation": "206 174 MEUR",
+  "rendement": "2,11%",
+  "per": "23,28",
+  "per_annee": "2026",
+  "effectif": "318 000",
+  "nb_titres": "782 000 000",
+  "capitalisation": "206 174,30 MEUR",
+  "marche": "Prime Standard",
+  "site": "https://new.siemens.com/global/en/company/investor-relations.html",
+  "pays": "Allemagne"
+ }
+}
