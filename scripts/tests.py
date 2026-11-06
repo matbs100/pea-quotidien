@@ -297,7 +297,7 @@ def rendu_de_bout_en_bout():
         import collecte
         fj = c / "data" / "jours" / f"{jour}.json"
         dj = json.loads(fj.read_text(encoding="utf-8"))
-        if "mes_investissements" not in dj:
+        if not (dj.get("mes_investissements") or {}).get("lignes"):  # aucun achat noté ce jour-là : on en fabrique
             m0 = dj["top30"][0]
             dj["mes_investissements"] = collecte.mes_investissements(
                 [{"ticker": m0["ticker"], "nom": None, "date": jour, "prix": m0["prix"], "quantite": 2.0, "type": None},
