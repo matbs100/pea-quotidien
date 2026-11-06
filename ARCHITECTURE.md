@@ -80,6 +80,8 @@ qu'un agent l'a fait, elle applique la version d'avant. Seul Mathieu (avec Claud
 | `docs/` | le site : `index.html` (dernière fiche) et `archives/` |
 | `notes/` | une note Obsidian par jour |
 | `apprentissage/` | journal de nuit, idées, connaissances, veille GitHub, nouveautés, crédits |
+| `apprentissage/lectures/` | les fiches de lecture des agents (une par PDF lu : lien, résumé, chiffres avec leur page, idées) et la bibliothèque `README.md` |
+| `pilotage/sources-verifiees.md` | les sites où les agents peuvent lire des PDF (organismes officiels, bourses, indices, émetteurs, recherche), avec leur `robots.txt` lu et l'état du réseau du cloud |
 | `pilotage/` | consignes, état et rapports du chef d'orchestre ; `decision.md` (la méthode de décision des améliorations : grille, seuils, vetos, bilans) et `decisions.md` (le journal des décisions, une ligne par décision avec son identifiant `D-AAAAMMJJ-n`) ; école, méthodes, pistes de fonds |
 | `scripts/` | le programme (ci-dessous) |
 
@@ -191,6 +193,27 @@ du cloud doit autoriser `www.wealins.com` ; sinon le cache reste tel quel (le Ma
 | `mesure(isin, c, ft)` | prix d'un fonds pour « Mes investissements » : la valeur la plus récente entre Wealins et le FT (règle de Mathieu), avec les deux sources dans `sources_vl` |
 | `catalogue_page(c, exclus)` | fonds pour la barre de recherche : `[isin, nom, devise, valeur, date, variation]` |
 
+### `lectures.py` : les PDF lus par les agents (bibliothèque)
+Usage : `python scripts/lectures.py telecharger <url>`, `lire <chemin> [1-10]`, `note <url> "<titre>" "<organisme>" [date] [nuit|chef]`, `index`.
+Les agents ne lisent des PDF que sur les sites de `pilotage/sources-verifiees.md` ; le PDF reste dans
+`/tmp/lectures/` (jamais dans le dépôt public : droits d'auteur), et chaque lecture donne une fiche dans
+`apprentissage/lectures/` (lien, résumé avec ses propres mots, chiffres avec leur page, idées).
+
+| Fonction | Rôle |
+|---|---|
+| `domaines_verifies(texte)` | domaines de la table de `pilotage/sources-verifiees.md` |
+| `est_verifie(url, domaines)` | lien en https sur un domaine exact de la liste (un domaine imité est refusé) |
+| `robots_permet(statut, texte, url, agent)` | règle du `robots.txt` (401 ou 403 : tout interdit ; absent : tout permis) |
+| `telecharger(url, domaines, dossier, max_mo)` | vérifie source, `robots.txt`, redirection, type et taille (30 Mo), puis enregistre le PDF hors du dépôt |
+| `pages_demandees(spec, total, maxi)` | « 3-8 » → numéros de pages, bornés au document et à 30 pages |
+| `texte(chemin, spec)` | texte des pages demandées (pypdf), chaque page précédée de son numéro ; jamais enregistré |
+| `slug(texte, n)` | nom de fichier à partir d'un titre |
+| `nouvelle_note(url, titre, organisme, publie_le, auteur, jour, dossier)` | crée la fiche de lecture à remplir (ne remplace jamais une fiche existante) |
+| `mots_resume(texte)` | nombre de mots du résumé d'une fiche (sans la consigne) |
+| `lire_notes(dossier)` | en-têtes des fiches de lecture et longueur de leur résumé |
+| `index(notes)`, `ecrire_index(dossier)` | la bibliothèque `apprentissage/lectures/README.md`, de la plus récente à la plus ancienne |
+| `defauts(notes, domaines, texte_index, jour, debut, jours_sans_lecture)` | ce que le contrôle signale : champ manquant, lien hors liste, résumé hors de 80 à 300 mots, fiche absente de la bibliothèque, aucune lecture depuis 3 jours |
+
 ### `rendu.py` et `modele.html` : le site et la note Obsidian
 Usage : `python scripts/rendu.py AAAA-MM-JJ`. `modele.html` contient toute la page (styles,
 animations, graphiques en SVG, fiche détaillée, barre de recherche « Mes investissements » avec ses
@@ -251,6 +274,7 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `jours_ouvres_entre(debut, fin)` | jours de semaine entre deux dates |
 | `bilans_en_retard(decisions, jour, delai)` | décisions réalisées depuis 3 jours ouvrés et toujours sans bilan |
 | `commit_sans_decision(agent, message, chemins, decisions)` | commit d'agent qui change le programme sans citer une décision connue (`[D-…]`) |
+| `c_lectures(d)` | contrôle « Lectures des agents » (voir `lectures.defauts`) ; un PDF ajouté au dépôt par un agent est un problème (dans `ecarts_aux_regles`) |
 | `c_decisions(d, heures)` | contrôle « Méthode de décision » : bilans en retard, gains mal calculés, améliorations sans décision (commits depuis le 07/11/2026) |
 | `resume_court(controles, etat)` | phrase affichée en bas de la fiche |
 | `main()` | enchaîne les contrôles, écrit `pilotage/etat.json`, affiche le résumé |

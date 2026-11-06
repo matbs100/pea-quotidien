@@ -30,7 +30,8 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    `JOUR=$(TZ=Europe/Paris date +%F)` et `NUM=$(TZ=Europe/Paris date +%u)` (1 = lundi). Lis d'abord
    `pilotage/consignes.md` (consignes du chef), `pilotage/methodes.md` (le manuel des méthodes, à
    appliquer), `pilotage/ecole.md` (tes devoirs), `pilotage/decision.md` (la méthode de décision) et
-   `pilotage/decisions.md` (le journal des décisions), et le dernier rapport de `pilotage/rapports/`, puis
+   `pilotage/decisions.md` (le journal des décisions), `pilotage/sources-verifiees.md` (les sites où tu
+   peux lire des PDF) et le dernier rapport de `pilotage/rapports/`, puis
    `apprentissage/README.md`, `apprentissage/idees.md`, le haut de `apprentissage/CHANGELOG.md`, les
    3 derniers journaux, les 3 dernières analyses de `data/analyses/` et le bilan des signaux
    (`data/signaux.csv`). Lance `$PY scripts/tests.py` : si les tests échouent déjà, ta seule mission de
@@ -66,6 +67,25 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    `pilotage/` que tu peux modifier ; ne touche pas à `univers.json` (la tâche du samedi vérifie et ajoute).
    Si tout est fait et qu'il te reste du temps à la fin de la nuit, continue d'apprendre : cherche
    d'autres fonds, une méthode ou une donnée nouvelle, comme un élève qui révise.
+2 ter. **Lecture du jour** (10 à 15 minutes) : lis au moins UN document PDF lié au thème de la nuit, pris
+   sur un site de `pilotage/sources-verifiees.md` (régulateurs, banques centrales, bourses, fournisseurs
+   d'indices, émetteurs, recherche) et le plus récent possible. Trouve-le avec WebSearch (par exemple
+   `site:amf-france.org ETF filetype:pdf`). Suggestions par thème : lundi, un article d'arXiv ; mardi, BCE,
+   Banque de France ou BRI ; mercredi, arXiv, NBER ou ESMA ; jeudi, W3C ; vendredi, AMF, BOFiP, ESMA ou
+   EIOPA ; samedi, AMF ou La finance pour tous ; dimanche, une méthodologie STOXX ou MSCI, ou le DIC d'un
+   ETF suivi. Puis :
+   a. `$PY scripts/lectures.py telecharger <url>` : refuse tout site hors de la liste, tout `robots.txt`
+      contraire et toute redirection ailleurs ; le PDF va dans `/tmp/lectures/`, jamais dans le dépôt ;
+   b. `$PY scripts/lectures.py lire <chemin> 1-10`, puis les pages suivantes au besoin (30 au plus par appel) ;
+   c. `$PY scripts/lectures.py note <url> "<titre>" "<organisme>" <date de publication> nuit`, puis remplis
+      la fiche créée dans `apprentissage/lectures/` : résumé de 80 à 300 mots **avec tes propres mots**,
+      chiffres et faits clés avec leur page, ce que Matin PEA peut en tirer (modèle :
+      `apprentissage/lectures/2026-11-06-ce-qu-il-faut-savoir-sur-les-etf-avant-d-investir.md`) ;
+   d. chaque fait nouveau va aussi dans `apprentissage/connaissances/` (« ⏳ à vérifier », source : le PDF et
+      sa page), chaque idée dans `apprentissage/idees.md`, notée avec la grille ;
+   e. `$PY scripts/lectures.py index` met à jour la bibliothèque (`apprentissage/lectures/README.md`).
+   Si aucun PDF utile n'est lisible (site bloqué par le réseau du cloud ou par son `robots.txt`), note-le
+   dans « Accès bloqués » et propose une source au chef dans le journal.
 3. **Noter ce que tu apprends.**
    - `apprentissage/connaissances/<thème>.md` (marches, methodes, reglementation, donnees, design) :
      chaque fait nouveau, avec tes propres mots, sa source et le statut « ⏳ à vérifier », au format
@@ -106,7 +126,8 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    puces, chacune avec sa source), `## À retenir` (une seule notion ou technique, en une phrase claire,
    pour le « Savoir-faire » de Mathieu), `## Amélioration` (décision réalisée et son identifiant, fichiers modifiés, résultat
    des tests, ou pourquoi rien n'a changé), `## Devoirs du chef` (chaque devoir : fait, avec le résultat
-   et ses sources, ou pas fait et pourquoi), `## Idées pour la suite`, et `## Accès bloqués` si besoin.
+   et ses sources, ou pas fait et pourquoi), `## Lecture du jour` (lien vers la fiche de lecture et ce
+   qu'elle apporte), `## Idées pour la suite`, et `## Accès bloqués` si besoin.
    Ajoute le lien du journal en tête de la liste « Journaux » de `apprentissage/README.md`.
 6. **Publier.** `git add -A && git commit -m "Amélioration : <titre> [D-…]"` (l'identifiant est
    obligatoire dès que le programme change : `controle.py` le vérifie), ou `"Veille : <thème>"` si
@@ -141,4 +162,7 @@ scripts : tu ne dois jamais la casser. Tout est en français.
   PyPI très répandu, ajouté à `requirements.txt` avec une justification dans le journal.
 - **Respect des sites** : n'ajoute pas à la fiche un site qui interdit les robots (`robots.txt`), ne
   contourne jamais une protection anti-robot, et espace les requêtes.
+- **Droits d'auteur** : un PDF lu ne va jamais dans le dépôt (il est public), ni son texte ; une fiche de
+  lecture résume avec tes propres mots, avec au plus une citation de moins de 15 mots entre guillemets.
+  Seuls les sites de `pilotage/sources-verifiees.md` servent pour les lectures.
 - **Aucune donnée personnelle**, aucun secret, ni le sujet de notification dans le dépôt (il est public).

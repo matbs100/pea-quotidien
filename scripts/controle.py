@@ -461,6 +461,8 @@ def ecarts_aux_regles(agent, fichiers, jour_commit, dernier_jour):
         m = re.match(r"(docs/archives|notes)/(\d{4}-\d{2}-\d{2})\.", chemin)
         if m and m.group(2) < dernier_jour and agent in ("nuit", "chef"):
             al.append(f"{chemin} : fiche d'un jour passé régénérée")
+        if statut.startswith("A") and chemin.lower().endswith(".pdf") and agent in HORS_ROLE:
+            pb.append(f"{chemin} : PDF ajouté au dépôt public (droits d'auteur : seulement le lien et un résumé)")
         if statut.startswith("D") and agent in HORS_ROLE and not chemin.startswith("data/fiches/"):
             (pb if chemin.startswith(("scripts/", "data/")) else al).append(f"{chemin} : fichier supprimé")
     code = sum(n for _, chemin, n in fichiers if chemin.startswith("scripts/"))
@@ -596,6 +598,18 @@ def c_decisions(d, heures=30):
     return controle("decisions", titre, "alerte" if al else "ok", resume, al)
 
 
+def c_lectures(d):
+    """Fiches de lecture des agents (apprentissage/lectures/) : champs, source vérifiée, résumé, bibliothèque,
+    au moins une lecture tous les 3 jours."""
+    import lectures
+    notes = lectures.lire_notes()
+    texte_index = lire(lectures.DOSSIER / "README.md")
+    al = lectures.defauts(notes, lectures.domaines_verifies(), texte_index, d["date"])
+    a_relire = sum(1 for n in notes if n.get("statut", "").startswith("⏳"))
+    resume = f"{len(notes)} lecture(s), {a_relire} à relire par le chef, {len(al)} point(s) à voir"
+    return controle("lectures", "Lectures des agents (PDF de sources vérifiées)", "alerte" if al else "ok", resume, al)
+
+
 # ---------- assemblage ----------
 
 def resume_court(controles, etat):
@@ -627,7 +641,7 @@ def main():
             controles.append(x or controle(nom, nom, "non_verifiable", "non vérifié (hors ligne)"))
     else:
         controles += [c_prix(d, maintenant), c_liens(d), c_site(d)]
-    controles += [c_documentation(d, maintenant), c_agents(d), c_decisions(d)]
+    controles += [c_documentation(d, maintenant), c_agents(d), c_decisions(d), c_lectures(d)]
     pire_niveau = pire(c["niveau"] for c in controles)
     etat = {"probleme": "rouge", "alerte": "orange"}.get(pire_niveau, "vert")
     sortie = {"genere_le": maintenant.isoformat(timespec="minutes"), "fiche": f"{d['date']} ({d.get('moment')})",

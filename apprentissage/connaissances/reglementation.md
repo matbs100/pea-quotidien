@@ -35,3 +35,5 @@ officielle compte pour les valider.
 - **TTF 2026** : liste de 121 sociétés françaises publiée au BOFiP le 17 décembre 2025 (capitalisation au 1er décembre 2025 > 1 Md€) ;
   taux toujours 0,4 %. Source proposée : [Deloitte Avocats](https://blog.avocats.deloitte.fr/taxe-sur-les-transactions-financieres-mise-a-jour-de-la-liste-des-societes-francaises-dans-le-scope/).
   Statut : ⏳ à vérifier
+- **ETF éligibles au PEA** : un ETF n'est accepté dans le PEA que s'il est investi à au moins 75 % en actions de sociétés de l'Union européenne (la réglementation vise l'UE et l'EEE). Source : [AMF, Ce qu'il faut savoir sur les ETF avant d'investir (PDF), p. 6](https://www.amf-france.org/sites/institutionnel/files/pdf/59268/fr/Ce_qu%27il_faut_savoir_sur_les_ETF_avant_d%27investir.pdf), lu le 2026-11-06.
+  Statut : ⏳ à vérifier

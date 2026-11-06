@@ -5,6 +5,11 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-06 · Les agents apprennent aussi dans des PDF de sources vérifiées
+- Chaque nuit, l'agent de veille lit au moins un document PDF d'un site vérifié (AMF, Banque de France, BCE, ESMA, Euronext, fournisseurs d'indices, émetteurs d'ETF, recherche) et en écrit une fiche de lecture dans Obsidian : le lien, un résumé avec ses propres mots, les chiffres avec leur page et ce que la fiche peut en tirer.
+- Le chef d'orchestre relit chaque fiche (le résumé est-il fidèle ?) et peut donner des lectures comme devoirs. La bibliothèque est dans `apprentissage/lectures/`.
+- Les PDF ne sont jamais copiés dans le dépôt (droits d'auteur). Première fiche : le guide de l'AMF sur les ETF. Demandé par Mathieu.
+
 ## 2026-11-06 · Fonds Wealins dans « Mes investissements »
 - La barre de recherche trouve aussi les quelque 1 340 fonds de la liste Wealins (supports d'assurance vie), par ISIN ou par nom, même si les mots sont dans le désordre.
 - Un fonds a pour prix sa dernière valeur liquidative, toujours affichée avec sa date : un fonds calcule sa valeur une fois par jour et Wealins la publie en général le lendemain. Les montants restent dans la devise du fonds (dollar, livre…).
