@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-07 · Avertissement des ETF à effet de levier plus précis
+- L'avertissement affiché sur les ETF à effet de levier reprend maintenant la formulation de l'AMF (guide du 11/06/2026, p. 5) : placements très spéculatifs, faits pour quelques jours ou semaines, pas pour investir à moyen ou long terme. Décision D-20261107-1.
+
 ## 2026-11-07 · Simulateur « et si j'avais investi régulièrement ? »
 - Dans la fiche détaillée de chaque titre (hors fonds Wealins), un nouveau bloc montre ce qu'auraient donné 50 € investis chaque mois pendant 5 ans au plus : somme versée, valeur aujourd'hui et gain ou perte en pourcentage. Il apparaît seulement avec au moins 2 ans d'historique.
 - Calcul sur l'historique hebdomadaire déjà suivi, sans frais ni impôts, avec des parts fractionnées ; l'avertissement « le passé ne prédit pas l'avenir, ni prévision ni conseil » est affiché dessous.

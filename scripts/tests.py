@@ -645,6 +645,12 @@ def garde_fous():
             REMARQUES.append(f"nouvelles dépendances à justifier dans le journal : {', '.join(inconnus)}")
 
 
+@test
+def avertissement_levier_amf():
+    t = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
+    assert "très spéculatifs" in t and "moyen ou long terme" in t, "avertissement levier aligné sur l'AMF"
+
+
 def main():
     echecs = 0
     for f in TESTS:
@@ -664,3 +670,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
