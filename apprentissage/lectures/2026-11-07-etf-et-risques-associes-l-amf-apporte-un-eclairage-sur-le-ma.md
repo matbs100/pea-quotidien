@@ -6,7 +6,7 @@ url: https://www.amf-france.org/sites/institutionnel/files/pdf/56796/fr/ETF_et_r
 publie_le: 2017-02-14
 lu_le: 2026-11-07
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-07
 ---
 # 📄 ETF et risques associés : l'AMF apporte un éclairage sur le marché français des fonds indiciels cotés
 
@@ -33,4 +33,4 @@ il sert de contexte plus que de données à afficher.
 - Rien de nouveau à afficher (chiffres de 2017) ; confirme l'intérêt d'un repère de liquidité (échanges moyens, déjà affichés) pour un débutant.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- ✅ PDF rouvert le 2026-11-07 (AMF) : le lien ouvre bien ce communiqué de 3 pages. Résumé fidèle, rien de copié. Chiffres revérifiés : 477 ETF et 103 Md€ à fin 2016, +66 % (p. 1) ; 2 850 Md€ dans le monde, 7 % de la gestion collective (p. 1) ; décote possible en période de stress (p. 2). Apport limité (chiffres de 2016), bien signalé par la fiche.

@@ -581,7 +581,7 @@ const sansAccents = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, 
 const nombreSaisi = (s) => { const x = parseFloat(String(s || "").replace(/[\s  €]/g, "").replace(",", ".")); return isFinite(x) && x > 0 ? x : null; };
 const estIsin = (s) => /^[A-Z]{2}[A-Z0-9]{9}\d$/.test(s);
 const levier = (m) => m.levier ? '<span class="badge b-levier">Effet de levier</span>' : "";
-const AVERT_LEVIER = "ETF à effet de levier : il amplifie chaque jour les variations de son indice (×2, ou à l'inverse). Les pertes peuvent être très rapides, et il peut perdre de la valeur même si l'indice revient à son niveau de départ. À garder pour une très petite part.";
+const AVERT_LEVIER = "ETF à effet de levier : il amplifie chaque jour les variations de son indice (×2, ou à l'inverse). Les pertes peuvent être très rapides, et il peut perdre de la valeur même si l'indice revient à son niveau de départ. Selon l'AMF, ce sont des placements très spéculatifs, faits pour un pari de quelques jours ou quelques semaines, pas pour investir à moyen ou long terme.";
 const isinDe = (m) => m.isin || ((CAT.find((c) => c.ticker === m.ticker) || {}).isin) || ((DET[m.ticker] || {}).infos || {}).isin || null;
 
 function chercher(q) {

@@ -27,3 +27,7 @@ d'orchestre : une règle par ligne, datée, avec l'agent concerné et l'exemple 
 ## Agent de nuit
 - (06/11, nuit) Une piste de nouveau titre va dans `pilotage/candidats.md`, jamais directement dans
   `univers.json`.
+- (, nuit / nouveaux fonds) Une piste de fonds porte son ticker Yahoo, ouvert et vérifié, pas seulement
+  l'ISIN : deux pistes du 06/11 (Ossiam) ont été écartées faute de cotation à Paris.
+- (, nuit / lectures) Après une lecture, relire le PDF avant d'écrire chaque chiffre : le chef a retrouvé
+  tous ceux des deux fiches du 06-07/11, garde cette méthode.

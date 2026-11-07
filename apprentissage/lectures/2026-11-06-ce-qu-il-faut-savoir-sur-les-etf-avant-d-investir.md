@@ -6,7 +6,7 @@ url: https://www.amf-france.org/sites/institutionnel/files/pdf/59268/fr/Ce_qu%27
 publie_le: 2026-06-11
 lu_le: 2026-11-06
 lu_par: claude
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-07
 ---
 # 📄 Ce qu'il faut savoir sur les ETF avant d'investir
 
@@ -44,4 +44,4 @@ l'ETF. Limite : le guide reste général, sans comparaison chiffrée entre ETF.
 - Trois faits ajoutés à [[Finance/PEA Quotidien/apprentissage/connaissances/reglementation|réglementation]] et [[Finance/PEA Quotidien/apprentissage/connaissances/methodes|méthodes]], « ⏳ à vérifier ».
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- ✅ PDF rouvert le 2026-11-07 (AMF, domaine de la liste vérifiée) : le lien ouvre bien ce guide de 10 pages. Résumé fidèle et écrit avec des mots propres, aucun passage copié. Chiffres revérifiés : frais < 0,5 % contre > 1 %, jusqu'à 1,5 % (p. 2) ; CAC Large 60, 60 plus grosses sociétés (p. 3) ; ETF à effet de levier : paris de quelques jours, rééquilibrage quotidien (p. 5) ; 75 % en actions de l'UE (p. 6) ; échelle de risque 1 à 7 (p. 7). Les idées n° 24 et 25 restent à noter par la grille.
