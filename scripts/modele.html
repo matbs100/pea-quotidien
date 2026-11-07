@@ -941,6 +941,13 @@ function blocPEA(m, inf, det) {
   return bloc("Éligibilité PEA", `<div class="pea ${v === true ? "oui" : v === false ? "non" : "inconnu"}">${txt}</div>`);
 }
 
+function blocSimulation(det, devise) {
+  const s = det.simulation; if (!s) return "";
+  const an = Math.round(s.mois / 12 * 10) / 10;
+  return bloc("Et si j'avais investi régulièrement ?", `<p>Avec ${fr(s.mensuel, 0)} ${devise || "€"} investis chaque mois pendant ${fr(an, an % 1 ? 1 : 0)} ans (depuis ${jourCourt(s.debut)}), soit ${fr(s.verse, 0)} ${devise || "€"} versés, l'ensemble aurait valu ${fr(s.valeur, 0)} ${devise || "€"} aujourd'hui (${pctc(s.perf)}).</p>
+    <p class="note">Simulation sur le passé, sans frais ni impôts, avec des parts fractionnées. Le passé ne prédit pas l'avenir : ce n'est ni une prévision ni un conseil en investissement.</p>`);
+}
+
 function blocSignal(m, det) {
   const S = { hausse: "↗ hausse", baisse: "↘ baisse", neutre: "→ neutre" };
   const expl = { hausse: "le prix est au-dessus de sa moyenne 20 jours, elle-même au-dessus de la moyenne 50 jours, sans surchauffe (RSI sous 70) : la tendance est haussière.",
@@ -995,6 +1002,7 @@ function ouvrir(t, pousser = true) {
   else H.push(bloc("Volatilité", kv([["Volatilité 1 an", pc1(st.vol_1a)], ["Volatilité 5 ans", pc1(st.vol_5a)], ["Pire baisse 1 an", pctc(st.perte_max_1a)],
     ["Pire baisse 5 ans", pctc(st.perte_max_5a)], ["Pire semaine", pctc(st.pire_semaine)], ["Meilleure semaine", pctc(st.meilleure_semaine)]]) +
     `<p class="note">${m.categorie === "indices" ? "Un indice ne s'achète pas directement : on l'achète via un ETF qui le suit." : "Ce n'est pas un placement éligible au PEA : il est affiché comme repère."}</p>`));
+  if (PLACEMENT.includes(m.categorie) && !estFonds(m)) H.push(blocSimulation(det, devise));
   H.push(blocFrais(m, inf, det.frais));
   H.push(blocPEA(m, inf, det));
   H.push(blocCaract(m, inf, det, t));

@@ -5,6 +5,11 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-07 · Simulateur « et si j'avais investi régulièrement ? »
+- Dans la fiche détaillée de chaque titre (hors fonds Wealins), un nouveau bloc montre ce qu'auraient donné 50 € investis chaque mois pendant 5 ans au plus : somme versée, valeur aujourd'hui et gain ou perte en pourcentage. Il apparaît seulement avec au moins 2 ans d'historique.
+- Calcul sur l'historique hebdomadaire déjà suivi, sans frais ni impôts, avec des parts fractionnées ; l'avertissement « le passé ne prédit pas l'avenir, ni prévision ni conseil » est affiché dessous.
+- Inspiration : pédagogie de l'investissement programmé. Décision D-20261106-4.
+
 ## 2026-11-06 · Les agents apprennent aussi dans des PDF de sources vérifiées
 - Chaque nuit, l'agent de veille lit au moins un document PDF d'un site vérifié (AMF, Banque de France, BCE, ESMA, Euronext, fournisseurs d'indices, émetteurs d'ETF, recherche) et en écrit une fiche de lecture dans Obsidian : le lien, un résumé avec ses propres mots, les chiffres avec leur page et ce que la fiche peut en tirer.
 - Le chef d'orchestre relit chaque fiche (le résumé est-il fidèle ?) et peut donner des lectures comme devoirs. La bibliothèque est dans `apprentissage/lectures/`.

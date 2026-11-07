@@ -3,6 +3,7 @@
 Usage : python scripts/rendu.py AAAA-MM-JJ
 Lit data/jours/AAAA-MM-JJ.json et, s'il existe, data/analyses/AAAA-MM-JJ.md (texte de Claude).
 """
+import datetime
 import html
 import json
 import re
@@ -241,6 +242,33 @@ def risque_de(det):
     return None
 
 
+def simulation_mensuelle(serie, mensuel=50, ans=5):
+    """Simulation pédagogique « mensuel € par mois » sur l'historique hebdomadaire d'un titre (`det["s"]`).
+    On achète chaque mois, à la première semaine cotée du mois, des parts (fractions admises) pour `mensuel` €,
+    sur au plus `ans` ans. Renvoie un dict (versé, valeur, perf en %, mois, début) ou None si moins de 2 ans."""
+    if not serie or not serie.get("o") or len(serie["o"]) != len(serie.get("c", [])):
+        return None
+    t0 = datetime.date.fromisoformat(serie["t0"])
+    pts = [(t0 + datetime.timedelta(days=j), c) for j, c in zip(serie["o"], serie["c"]) if c and c > 0]
+    if len(pts) < 2:
+        return None
+    fin = pts[-1][0]
+    limite = fin - datetime.timedelta(days=round(365.25 * ans))
+    pts = [(d, c) for d, c in pts if d >= limite]
+    if (pts[-1][0] - pts[0][0]).days < 730:
+        return None
+    parts, mois, vus = 0.0, 0, set()
+    for d, c in pts:
+        if (d.year, d.month) not in vus:
+            vus.add((d.year, d.month))
+            parts += mensuel / c
+            mois += 1
+    verse = mensuel * mois
+    valeur = parts * pts[-1][1]
+    return {"mensuel": mensuel, "mois": mois, "verse": round(verse, 2), "valeur": round(valeur, 2),
+            "perf": round((valeur / verse - 1) * 100, 1), "debut": pts[0][0].isoformat()}
+
+
 def main():
     jour = sys.argv[1]
     d = json.loads((DATA / "jours" / f"{jour}.json").read_text(encoding="utf-8"))
@@ -270,6 +298,9 @@ def main():
         if r:
             m["risque"], m["risque_officiel"] = r
     for t, x in d.get("details", {}).items():
+        sim = simulation_mensuelle(x.get("s"))
+        if sim:
+            x["simulation"] = sim
         x["description"] = textes.get(t) or x.get("description_auto", "")
 
     modele = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
