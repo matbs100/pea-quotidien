@@ -439,6 +439,22 @@ def calculs_verif():
 
 
 @test
+def simulation_mensuelle():
+    import rendu
+    # prix constant 10 € sur 3 ans, une semaine sur deux : chaque mois on achète 5 parts, valeur = versé
+    o = list(range(0, 1100, 7))
+    r = rendu.simulation_mensuelle({"t0": "2023-01-02", "o": o, "c": [10.0] * len(o)}, 50)
+    assert r and r["verse"] == 50 * r["mois"] and abs(r["valeur"] - r["verse"]) < 0.01 and r["perf"] == 0.0
+    # prix qui double sur la période : la valeur finale dépasse le versé, sans dépasser le double
+    c = [10.0 + 10.0 * i / (len(o) - 1) for i in range(len(o))]
+    r2 = rendu.simulation_mensuelle({"t0": "2023-01-02", "o": o, "c": c}, 50)
+    assert r2["verse"] < r2["valeur"] < 2 * r2["verse"], "achats étalés : gain entre 0 et 100 %"
+    # moins de 2 ans d'historique, ou série vide : pas de simulation
+    assert rendu.simulation_mensuelle({"t0": "2025-01-06", "o": o[:60], "c": [10.0] * 60}) is None
+    assert rendu.simulation_mensuelle(None) is None
+
+
+@test
 def badge_de_risque():
     import rendu
     assert rendu.risque_de({"infos": {"sri_officiel": 3}, "stats": {"sri_estime": 5}}) == (3, True), "le SRI officiel prime"
