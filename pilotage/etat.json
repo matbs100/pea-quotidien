@@ -1,17 +1,16 @@
 {
- "genere_le": "2026-11-07T05:11+01:00",
+ "genere_le": "2026-11-07T05:12+01:00",
  "fiche": "2026-11-06 (cloture)",
  "lieu": "cloud",
  "etat": "rouge",
- "resume": "À corriger. 22/23 tests, 8/8 prix revérifiés, 27/28 liens valides, site à jour. Points à voir : tests garde-fous, liens des fiches détaillées, travail des agents (30 dernières heures), méthode de décision.",
+ "resume": "À corriger. 23/23 tests, 8/8 prix revérifiés, 27/28 liens valides, site à jour. Points à voir : liens des fiches détaillées, travail des agents (30 dernières heures).",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
-   "niveau": "probleme",
-   "resume": "22/23 tests réussis",
+   "niveau": "ok",
+   "resume": "23/23 tests réussis",
    "details": [
-    "✗ methode_de_decision : ",
     "• nouvelles dépendances à justifier dans le journal : pypdf"
    ]
   },
@@ -83,13 +82,14 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "alerte",
-   "resume": "35 commit(s), 0 problème(s), 5 alerte(s)",
+   "resume": "36 commit(s), 0 problème(s), 5 alerte(s)",
    "details": [
     "6d2489e « Matin PEA 2026-11-06 (cloture) » : scripts/collecte.py : hors du rôle de l'agent « fiche »",
     "8019993 « Univers : rapport d'ajout des ETF, aucun ajout » : guide/2026-11-06 Ajout des ETF - rapport.md : hors du rôle de l'agent « univers »",
     "3a38663 « Chef : rapport du 2026-11-06 (orange) ; textes plu » : docs/archives/2026-11-05.html : fiche d'un jour passé régénérée",
     "3a38663 « Chef : rapport du 2026-11-06 (orange) ; textes plu » : notes/2026-11-05.md : fiche d'un jour passé régénérée",
     "1b28377 « Amélioration : badge de risque sur la page princip » : docs/archives/2026-11-05.html : fiche d'un jour passé régénérée",
+    "4ad45d2 [chef] Chef : rapport du 2026-11-07 (orange) ; avertissement des ETF à effet ",
     "d635a94 [univers] Univers : mise à jour hebdomadaire du 2026-11-07 (3 ajouts)",
     "cd880e5 [nuit] Amélioration : simulateur « et si j'avais investi régulièrement ? » [D",
     "2dd94a3 [autre] Mathieu : décision D-20261106-13 (lectures des agents) au journal",
@@ -103,18 +103,15 @@
     "e7ac7a5 [fiche] Matin PEA 2026-11-06 (cloture) : rendu régénéré après rebase",
     "6d2489e [fiche] Matin PEA 2026-11-06 (cloture)",
     "8019993 [univers] Univers : rapport d'ajout des ETF, aucun ajout",
-    "19d41d3 [autre] Mathieu : note du 6 novembre, état de l'ajout des ETF et de la clôture",
-    "f39355c [chef] Chef : passage de 18 h 15 du 2026-11-06 (rouge, lien Yahoo seul)"
+    "19d41d3 [autre] Mathieu : note du 6 novembre, état de l'ajout des ETF et de la clôture"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "alerte",
-   "resume": "16 décisions, 10 à réaliser, 1 point(s) à voir",
-   "details": [
-    "idée n° 27 : gain 3.00 noté, 2.80 d'après la grille"
-   ]
+   "niveau": "ok",
+   "resume": "16 décisions, 9 à réaliser, 0 point(s) à voir",
+   "details": []
   },
   {
    "nom": "lectures",
