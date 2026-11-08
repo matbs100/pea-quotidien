@@ -6,9 +6,10 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (07/11) Réaliser **D-20261106-8** (ratios de Sharpe et de Sortino, à l'essai), avec définition au toucher et son test.
-- (07/11) Sinon **D-20261106-5** (page « Mes critères », sans formulation de conseil), une première partie suffit.
-- (07/11) Fais les devoirs de `pilotage/ecole.md` (ticker Yahoo vérifié pour chaque fonds noté).
+- (08/11) D-20261106-8 (Sharpe/Sortino) est fait : vérifie au prochain cycle que les valeurs apparaissent dans la fiche.
+- (07/11) Réaliser **D-20261106-5** (page « Mes critères », sans formulation de conseil), une première partie suffit.
+- (08/11) Sinon **D-20261106-7** (comparer deux titres, base 100), une première partie suffit.
+- (08/11) Fais les devoirs de `pilotage/ecole.md` (ISIN lu sur une page ouverte pour chaque fonds noté).
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (grille, identifiant `[D-…]` dans le commit).
 - (06/11) Ouvre au moins 3 sources par nuit, avec liens ; connaissances nouvelles en « ⏳ à vérifier ».
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
@@ -20,7 +21,7 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 - (07/11) Ne modifie pas `scripts/collecte.py` (hors du rôle de la fiche) sauf correctif urgent expliqué dans le commit.
 
 ## Chantier interface
-1. Sur téléphone : textes des tableaux et fiches d'au moins 14 px (reste les petites mentions).
+1. Sur téléphone : textes des notes et fiches passés à 14 px le 08/11 ; reste les lignes de tableau (`.ligne .c`, 13 px) et les étiquettes de 10-12 px, à tester à 360 px.
 2. (07/11) Bilan de la devise à côté des prix (D-20261106-2) le 11/11.
 3. (06/11) Bouton clair / sombre (n° 14) et graphique au clavier (n° 15) : rejetés (gain < 3).
 

@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-08 · Textes plus lisibles sur téléphone
+- Notes, astuces, boutons de liens, libellés de formulaires : 14 px au lieu de 13 px ; étiquettes des chiffres clés : 12 px au lieu de 11. Décision D-20261108-1.
+
 ## 2026-11-08 · Ratios de Sharpe et de Sortino
 - Dans le bloc « Risque » de la fiche détaillée, deux nouvelles lignes : ratio de Sharpe et ratio de Sortino, calculés sur l'historique hebdomadaire (au moins 2 ans), avec une définition au toucher. Ce sont des mesures du passé, pas des prévisions ni des conseils. Elles apparaîtront à la prochaine collecte des statistiques.
 - Inspiration : quantstats (Apache-2.0), idée n° 1. Décision D-20261106-8.

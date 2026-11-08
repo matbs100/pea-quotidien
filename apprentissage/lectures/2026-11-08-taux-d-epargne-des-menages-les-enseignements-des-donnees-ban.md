@@ -6,7 +6,7 @@ url: https://www.insee.fr/fr/statistiques/fichier/version-html/9041404/DT2026-13
 publie_le: 2026-09-02
 lu_le: 2026-11-08
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-08
 ---
 # 📄 Taux d'épargne des ménages : les enseignements des données bancaires
 
@@ -24,4 +24,4 @@ Des chercheurs de l'INSEE testent si les comptes bancaires d'un grand échantill
 - Rien pour la fiche directement. Pour le texte d'aide : toujours préciser la méthode d'un chiffre (ici, la définition de l'épargne). Voir idée n° 28 (note de méthode des ratios).
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- ✅ 2026-11-08 : PDF ouvert, le résumé est fidèle et écrit avec ses mots ; 18,5 % / 17 %, 5,8 % / 16,9 % et 180 000 ménages retrouvés. Nuance : le texte dit « échantillon représentatif de la clientèle de La Banque Postale » (pas de la population). Pages : chiffres aux pages 4-5 du PDF, soit 3-4 sans la couverture ; cohérent avec la fiche. insee.fr est dans les sources vérifiées.

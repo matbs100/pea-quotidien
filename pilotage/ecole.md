@@ -7,16 +7,21 @@ Tenu par le chef d'orchestre (étape 8 bis de `CHEF.md`). Chaque matin, il corri
 veille (✅ réussi, 🔁 à refaire, ❌ abandonné) et donne ceux du jour. L'agent de nuit les fait (étape
 2 bis de `AMELIORATION.md`) et rend compte dans la partie `## Devoirs du chef` de son journal.
 
-## Devoirs donnés le 2026-11-07 (pour la nuit du 8 novembre)
-1. **Nouveaux fonds (nuit).** Trouver 3 à 5 ETF ou actions éligibles au PEA, cotés à Paris, absents de
-   `univers.json`, d'un émetteur ou d'un secteur peu présent (iShares, Lyxor, Xtrackers, actions de
-   l'EEE). Pour chacun : ISIN **et ticker Yahoo** (ouvre la page de cotation), source ouverte ; note-les
-   dans `pilotage/candidats.md`.
-2. **Lire (nuit).** Un PDF d'une source de `pilotage/sources-verifiees.md` autre que l'AMF (Banque de
-   France, INSEE, amundietf.fr) sur l'épargne des ménages ou la mesure du risque, avec sa fiche de lecture.
-3. **Réviser (chef).** Revérifier la taxe sur les transactions financières (0,4 %, liste BOFiP).
+## Devoirs donnés le 2026-11-08 (pour la nuit du 9 novembre)
+1. **Nouveaux fonds (nuit, refaire).** Pour les 4 pistes Amundi de `candidats.md` (MWRD, MFE, CEU, CEM) :
+   lire l'ISIN sur une page ouverte (Boursorama ou amundietf.fr) et noter l'éligibilité PEA lue ; puis 2 pistes
+   d'un émetteur **absent** de `univers.json` (vérifie d'abord la liste des émetteurs).
+2. **Nouvelles données (nuit).** Une source ouverte pour les frais courants ou l'encours des ETF
+   (fiche émetteur, Euronext) : ce qu'elle donne, son `robots.txt`, son coût ; note-le dans `connaissances/donnees.md`.
+3. **Réviser (chef).** Horaires et jours fermés d'Euronext (source officielle, encore ⏳).
 
-## Résultats du 2026-11-07 (devoirs du 2026-11-06)
+## Résultats du 2026-11-08 (devoirs du 2026-11-07)
+- 1 Nouveaux fonds : 🔁 4 pistes avec ticker, mais ISIN et éligibilité non lus, et émetteur déjà présent.
+- 2 Lire : ✅ fiche INSEE relue, fidèle (robots.txt de la Banque de France noté).
+- 3 Réviser la TTF (chef) : ✅ liste BOFiP du 17/12/2025, 0,4 % et seuil 1 Md€ (extrait de recherche) ;
+  ❔ le nombre de 121 sociétés ne vient que de la presse.
+
+## Archive : Résultats du 2026-11-07 (devoirs du 2026-11-06)
 - 1 Nouveaux fonds : ✅ 5 pistes notées, 3 ajoutées par la tâche du samedi (EEMU, E40, 50E), 2 écartées
   faute de cotation à Paris. À améliorer : le ticker n'avait pas été cherché (règle ajoutée).
 - 2 Nouvelles méthodes : ✅ écart de suivi, erreur de suivi, encours expliqués ; idée n° 26 en attente (justifié).
