@@ -757,6 +757,8 @@ const DEFS = [
   [/^Volatilité/, "Ampleur des variations habituelles du prix sur un an. Plus elle est haute, plus le prix bouge fort, à la hausse comme à la baisse."],
   [/^Pire baisse/, "Plus grande chute entre un sommet et le creux suivant sur la période. Donne une idée de la perte qu'on aurait pu subir."],
   [/^Bêta/, "Sensibilité au CAC 40 : 1,2 signifie qu'en moyenne le titre bouge de 1,2 % quand le CAC 40 bouge de 1 %."],
+  [/^Sharpe/, "Rendement moyen rapporté à la volatilité, sans tenir compte des taux d'intérêt : plus il est haut, plus le titre a rapporté pour chaque unité de risque subie dans le passé. Ne dit rien de l'avenir."],
+  [/^Sortino/, "Comme le Sharpe, mais seules les baisses comptent comme du risque. Un titre qui bouge surtout à la hausse a un Sortino supérieur à son Sharpe. Mesure du passé, pas une promesse."],
   [/^RSI/, "Indice de force relative, de 0 à 100. Au-dessus de 70, la hausse récente est jugée rapide ; sous 30, la baisse l'est. Ce n'est pas un ordre d'achat ou de vente."],
   [/^PER/, "Prix de l'action divisé par le bénéfice par action : le nombre d'années de bénéfices que l'on paie."],
   [/^Rendement du dividende/, "Dividende annuel divisé par le prix de l'action."],
@@ -877,7 +879,8 @@ function blocRisque(m, inf, st) {
     <div class="jauge" role="img" aria-label="Niveau de risque ${niv} sur 7">${cases}</div><div class="jauge-leg"><span>Plus faible</span><span>Plus élevé</span></div>
     ${kv([["Volatilité 1 an", pc1(st.vol_1a)], [`Volatilité ${st.sri_base === "1 an" ? "" : st.sri_base}`, st.sri_base === "1 an" ? null : pc1(st.vol_5a)],
       ["Pire baisse 1 an", pctc(st.perte_max_1a)], [`Pire baisse ${st.sri_base === "1 an" ? "" : st.sri_base}`, st.sri_base === "1 an" ? null : pctc(st.perte_max_5a)],
-      ["Pire semaine", pctc(st.pire_semaine)], ["Meilleure semaine", pctc(st.meilleure_semaine)], ["Bêta / CAC 40", st.beta_cac != null ? fr(st.beta_cac, 2) : null]])}
+      ["Pire semaine", pctc(st.pire_semaine)], ["Meilleure semaine", pctc(st.meilleure_semaine)], ["Bêta / CAC 40", st.beta_cac != null ? fr(st.beta_cac, 2) : null],
+      [`Sharpe ${st.sri_base}`, st.sharpe != null ? fr(st.sharpe, 2) : null], [`Sortino ${st.sri_base}`, st.sortino != null ? fr(st.sortino, 2) : null]])}
     <p class="note">${expl}${concret} La volatilité mesure l'ampleur des variations habituelles sur un an. Le bêta dit de combien le titre bouge en moyenne quand le CAC 40 bouge de 1 % (3 ans, données hebdomadaires).</p>`);
 }
 

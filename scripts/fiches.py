@@ -242,6 +242,18 @@ def sri_estime(vol):
     return 7
 
 
+def ratios_rendement(rs, periodes=52):
+    """Ratios de Sharpe et de Sortino (taux sans risque pris à 0) d'après des rendements périodiques `rs`.
+    Sharpe = rendement moyen / écart-type ; Sortino = rendement moyen / écart-type des seules baisses ;
+    les deux sont ramenés à l'année. Renvoie (sharpe, sortino), None si la mesure est impossible."""
+    rs = rs.dropna()
+    if len(rs) < 30:
+        return None, None
+    sd, bas = rs.std(), math.sqrt((rs.clip(upper=0) ** 2).mean())
+    k = math.sqrt(periodes)
+    return (r1(rs.mean() / sd * k, 2) if sd > 0 else None), (r1(rs.mean() / bas * k, 2) if bas > 0 else None)
+
+
 def statistiques(sj, ss, cac):
     out = {}
     an = sj.tail(253)
@@ -258,6 +270,8 @@ def statistiques(sj, ss, cac):
         out["vol_5a"] = r1(rs.std() * math.sqrt(52) * 100)
         out["perte_max_5a"] = perte_max(ss)
         out["pire_semaine"], out["meilleure_semaine"] = r1(rs.min() * 100), r1(rs.max() * 100)
+        if out["annees_hist"] >= 2:
+            out["sharpe"], out["sortino"] = ratios_rendement(rs)
         if out["annees_hist"] >= 2.9:
             out["perf_3a"] = r1((ss.iloc[-1] / ss[ss.index >= ss.index[-1] - pd.Timedelta(days=1096)].iloc[0] - 1) * 100)
         if out["annees_hist"] >= 4.8:

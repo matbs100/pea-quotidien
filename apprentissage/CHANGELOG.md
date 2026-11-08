@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-08 · Ratios de Sharpe et de Sortino
+- Dans le bloc « Risque » de la fiche détaillée, deux nouvelles lignes : ratio de Sharpe et ratio de Sortino, calculés sur l'historique hebdomadaire (au moins 2 ans), avec une définition au toucher. Ce sont des mesures du passé, pas des prévisions ni des conseils. Elles apparaîtront à la prochaine collecte des statistiques.
+- Inspiration : quantstats (Apache-2.0), idée n° 1. Décision D-20261106-8.
+
 ## 2026-11-07 · Avertissement des ETF à effet de levier plus précis
 - L'avertissement affiché sur les ETF à effet de levier reprend maintenant la formulation de l'AMF (guide du 11/06/2026, p. 5) : placements très spéculatifs, faits pour quelques jours ou semaines, pas pour investir à moyen ou long terme. Décision D-20261107-1.
 

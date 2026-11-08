@@ -15,3 +15,4 @@ tags: [pea, connaissances, donnees]
 - **Cours de Paris sur Yahoo** : diffusés avec 15 minutes de décalage ; les barres d'une minute
   s'arrêtent à 17 h 29, le fixing de clôture (17 h 35) n'apparaît que dans le cours quotidien et les
   métadonnées. Source : observations du programme le 2026-11-05. Statut : ⏳ à vérifier
+- **Mesure du taux d'épargne** : selon un document de travail de l'INSEE (sept. 2026), les comptes bancaires d'un échantillon de clients donnent 5,8 % en 2022 contre 16,9 % dans les comptes nationaux, mais leurs variations trimestrielles suivent la comptabilité nationale (p. 3-4). Source : [INSEE, DT 2026-13](https://www.insee.fr/fr/statistiques/fichier/version-html/9041404/DT2026-13.pdf), lu le 2026-11-08. Statut : ⏳ à vérifier

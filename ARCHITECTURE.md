@@ -161,7 +161,8 @@ Usage : `python scripts/fiches.py AAAA-MM-JJ`. Ajoute `details` au JSON du jour 
 | `r1(x, n)` | arrondi tolérant aux valeurs manquantes |
 | `perte_max(s)` | pire baisse depuis un plus haut |
 | `sri_estime(vol)` | SRI PRIIPs estimé d'après la volatilité (seuils 0,5 / 5 / 12 / 20 / 30 / 80 %) |
-| `statistiques(sj, ss, cac)` | volatilités 1 et 5 ans, pires baisses, performances, bêta face au CAC 40, SRI estimé |
+| `ratios_rendement(rs, periodes)` | ratios de Sharpe et de Sortino (taux sans risque 0) ramenés à l'année ; None sous 30 points |
+| `statistiques(sj, ss, cac)` | volatilités 1 et 5 ans, pires baisses, performances, bêta face au CAC 40, Sharpe et Sortino (dès 2 ans), SRI estimé |
 | `stats_seance(b, jour)` | prix moyen du jour (VWAP), plus haut et plus bas de la séance, d'après les barres de 5 min |
 | `lien_yahoo(t)` | lien vers la page Yahoo Finance internationale (la française renvoie souvent 404) |
 | `signaux_du_titre(t)` | historique des signaux du titre et leur résultat |

@@ -415,6 +415,14 @@ def calculs_fiches():
         assert st.get(k) is not None, f"statistique manquante : {k}"
     assert abs(st["beta_cac"] - 1) < 0.01, "le bêta d'une série face à elle-même doit valoir 1"
     assert st["perte_max_1a"] <= 0 and 1 <= st["sri_estime"] <= 7
+    assert st.get("sharpe") is not None and st.get("sortino") is not None, "ratios de Sharpe et de Sortino"
+    haus = pd.Series([0.01, 0.03] * 30)
+    sh, so = fiches.ratios_rendement(haus, 52)
+    assert abs(sh - 0.02 / haus.std() * 52 ** 0.5) < 0.01 and so is None, "aucune baisse : Sortino impossible"
+    mix = pd.Series([0.02, -0.01] * 30)
+    sh, so = fiches.ratios_rendement(mix, 52)
+    assert so > sh > 0, "Sortino > Sharpe quand les hausses dominent"
+    assert fiches.ratios_rendement(mix.head(10)) == (None, None), "trop peu de données"
     c = fiches.compacte(sj)
     assert len(c["o"]) == len(c["c"]) == 300 and c["o"][0] == 0
 
