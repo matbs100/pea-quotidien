@@ -444,5 +444,30 @@
   "boursorama": "1rPEDEN",
   "ft": "EDEN:PAR",
   "echecs": {}
+ },
+ "VU.PA": {
+  "boursorama": "1rPVU",
+  "ft": "VU:PAR",
+  "echecs": {}
+ },
+ "TE.PA": {
+  "boursorama": "1rPTE",
+  "ft": "TE:PAR",
+  "echecs": {}
+ },
+ "ADP.PA": {
+  "boursorama": "1rPADP",
+  "ft": "ADP:PAR",
+  "echecs": {}
+ },
+ "IPN.PA": {
+  "boursorama": "1rPIPN",
+  "ft": "IPN:PAR",
+  "echecs": {}
+ },
+ "ADOC.PA": {
+  "boursorama": "1rPADOC",
+  "ft": "ADOC:PAR",
+  "echecs": {}
  }
 }
