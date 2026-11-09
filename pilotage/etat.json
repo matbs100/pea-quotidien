@@ -1,15 +1,15 @@
 {
- "genere_le": "2026-11-09T05:11+01:00",
- "fiche": "2026-11-06 (cloture)",
+ "genere_le": "2026-11-09T12:36+01:00",
+ "fiche": "2026-11-09 (ouverture)",
  "lieu": "cloud",
  "etat": "rouge",
- "resume": "À corriger. 24/24 tests, 8/8 prix revérifiés, 27/28 liens valides, site à jour. Points à voir : liens des fiches détaillées.",
+ "resume": "À corriger. 25/25 tests, 25/28 liens valides, site à jour. Points à voir : cohérence des données, analyse du jour, liens des fiches détaillées, travail des agents (30 dernières heures).",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "24/24 tests réussis",
+   "resume": "25/25 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf"
    ]
@@ -20,52 +20,65 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-06 (cloture), générée le 2026-11-06T18:26+01:00",
-    "fiche attendue à cette heure : 2026-11-06 (cloture)"
+    "dernière fiche : 2026-11-09 (ouverture), générée le 2026-11-09T09:21+01:00",
+    "fiche attendue à cette heure : 2026-11-09 (ouverture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "ok",
-   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 52 confirmés, 1 écart(s)",
-   "details": []
+   "niveau": "alerte",
+   "resume": "59 cours examinés, 0 problème(s), 8 alerte(s) ; entre sources : 48 confirmés, 2 écart(s)",
+   "details": [
+    "HLT.PA : cours daté du 2026-11-06, pas du 2026-11-09",
+    "FOO.PA : cours daté du 2026-11-06, pas du 2026-11-09",
+    "INS.PA : cours daté du 2026-11-06, pas du 2026-11-09",
+    "CD8.PA : cours daté du 2026-11-06, pas du 2026-11-09",
+    "UTI.PA : cours daté du 2026-11-06, pas du 2026-11-09",
+    "PINR.PA : cours daté du 2026-11-06, pas du 2026-11-09",
+    "PLEM.PA : cours daté du 2026-11-06, pas du 2026-11-09",
+    "TRV.PA : cours daté du 2026-11-06, pas du 2026-11-09"
+   ]
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
-   "niveau": "ok",
-   "resume": "326 mots, 0 remarque(s)",
-   "details": []
+   "niveau": "alerte",
+   "resume": "305 mots, 1 remarque(s)",
+   "details": [
+    "titre manquant : L'actualité et les estimations"
+   ]
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-06 (cloture)",
+   "resume": "régénérée avec la fiche du 2026-11-09 (ouverture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "ok",
-   "resume": "8/8 prix identiques sur Boursorama",
+   "niveau": "non_verifiable",
+   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
    "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "probleme",
-   "resume": "27/28 liens valides sur 8 titres, 4 non ouverts (robots.txt)",
+   "resume": "25/28 liens valides sur 8 titres, 4 non ouverts (robots.txt)",
    "details": [
-    "ALTUV.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/ALTUV.PA/)"
+    "INS.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/INS.PA/)",
+    "PLEM.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/PLEM.PA/)",
+    "UTI.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/UTI.PA/)"
    ]
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-06 (cloture)",
+   "resume": "le site affiche la fiche du 2026-11-09 (ouverture)",
    "details": []
   },
   {
@@ -81,13 +94,15 @@
   {
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
-   "niveau": "ok",
-   "resume": "4 commit(s), 0 problème(s), 0 alerte(s)",
+   "niveau": "alerte",
+   "resume": "4 commit(s), 0 problème(s), 2 alerte(s)",
    "details": [
-    "58463d7 [nuit] Amélioration : « Mes critères », filtre du Top 30 [D-20261109-1]",
-    "95ae15b [chef] Chef : rapport du 2026-11-08 (vert) ; textes de fiche à 14 px [D-20261",
-    "a0a0306 [nuit] Veille : correction du gain de l'idée n° 28 (2,70), tests 23/23",
-    "4e5e8ad [nuit] Amélioration : ratios de Sharpe et de Sortino [D-20261106-8]"
+    "58463d7 « Amélioration : « Mes critères », filtre du Top 30  » : docs/archives/2026-11-06.html : fiche d'un jour passé régénérée",
+    "58463d7 « Amélioration : « Mes critères », filtre du Top 30  » : notes/2026-11-06.md : fiche d'un jour passé régénérée",
+    "f037dc6 [autre] le propriétaire : prix d'un ETF à côté des indices, filtre ETF / Actions, pres",
+    "2a6ef8a [fiche] Matin PEA 2026-11-09 (ouverture)",
+    "ce55bd4 [chef] Chef : rapport du 2026-11-09 (orange)",
+    "58463d7 [nuit] Amélioration : « Mes critères », filtre du Top 30 [D-20261109-1]"
    ]
   },
   {
