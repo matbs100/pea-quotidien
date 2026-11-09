@@ -61,6 +61,15 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    Outils : WebSearch, WebFetch, `gh`. WebFetch n'ouvre que les sites autorisés par le réseau du
    cloud : si un site est bloqué, note son domaine dans la partie « Accès bloqués » du journal,
    appuie-toi sur les extraits de WebSearch (en « Source proposée ») et continue.
+   **Chaque nuit, quel que soit le thème : 10 minutes de presse économique.** Lis au moins 4 sources
+   différentes parmi Les Echos, Investir, Boursorama, Zonebourse / MarketScreener, BFM Bourse, Le Figaro
+   Bourse, Capital, L'Agefi, Reuters, Bloomberg, Financial Times, The Economist, CNBC, MarketWatch : les
+   tendances de fond (pas seulement la séance), les **estimations** (consensus des analystes, objectifs de
+   cours, prévisions de résultats, d'inflation et de taux) et ce qu'elles disent des secteurs et des pays
+   suivis par la fiche. Note les faits dans `apprentissage/connaissances/marches.md` (« ⏳ à vérifier »,
+   avec la source) et les pistes pour la fiche dans `idees.md`. Le propriétaire ouvre l'accès du réseau cloud au
+   plus grand nombre de sites possible : profite de chaque site qui répond, et note ceux qui restent
+   bloqués dans « Accès bloqués ».
 2 bis. **Devoirs du chef** (15 minutes au plus) : fais les devoirs qui te sont donnés dans
    `pilotage/ecole.md`, dans l'ordre. Pour un devoir « nouveaux fonds », note chaque piste dans
    `pilotage/candidats.md` (`- [ ] CODE.PA · nom · ISIN · source · pourquoi`), seul fichier de
@@ -121,6 +130,16 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    propre décision et que tout est au vert après la première.
    Ne régénère pas les fiches des jours passés : ne garde que les modifications de `docs/` et `notes/`
    du dernier jour.
+4 bis. **L'innovation de la semaine** (demande du propriétaire : le site doit progresser, pas seulement les
+   connaissances). Chaque **vendredi soir et chaque samedi**, au lieu de la petite touche de l'étape 4 si
+   aucune n'est prioritaire, réalise une **nouveauté visible** sur le site, nourrie par ta veille de la
+   semaine : un nouveau bloc utile (calendrier des résultats et de la BCE, comparateur d'ETF, frais
+   cumulés sur 10 ans, carte des secteurs, glossaire au survol, mode « débutant », alertes…), un graphique
+   plus parlant ou une source de données nouvelle. Mêmes règles que l'étape 4 (décision notée avec la
+   grille, tests, `ARCHITECTURE.md`, CHANGELOG), mais jusqu'à **600 lignes** modifiées, et vérifie la page
+   dans un navigateur au format téléphone si un navigateur est disponible. Le titre du CHANGELOG commence
+   par « ✨ Nouveauté : » pour que le propriétaire la voie dans la notification du matin. Une nouveauté qui
+   n'aboutit pas : annule tout (étape 4 d) et garde l'idée pour la semaine suivante.
 5. **Journal.** Écris `apprentissage/journal/$JOUR.md`, avec un en-tête `date` et ces titres :
    `## Veille du jour` (thème, sources ouvertes avec leurs liens), `## Ce que j'ai appris` (3 à 6
    puces, chacune avec sa source), `## À retenir` (une seule notion ou technique, en une phrase claire,

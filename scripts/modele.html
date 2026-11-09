@@ -72,6 +72,14 @@ h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 700; }
 .card .nom { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .card .val { font: 500 1.35rem var(--font-mono); margin-top: 4px; }
 .card .chg { font: 13px var(--font-mono); }
+.val-l { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; }
+.val-l .val { white-space: nowrap; }
+.etfx { font: 500 14px var(--font-mono); color: var(--ink); text-align: right; line-height: 1.15; }
+.etfx { margin-top: 6px; white-space: nowrap; }
+.etfx small { display: block; font: 10px var(--font-body); color: var(--muted); }
+.f-etf { display: inline-flex; flex-wrap: wrap; text-align: left; align-items: baseline; gap: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 12px; padding: 6px 12px; font: 500 1.05rem var(--font-mono); cursor: pointer; }
+.f-etf small { font: 12px var(--font-body); color: var(--muted); }
+.ligne[hidden], .card[hidden] { display: none; }
 .card svg { position: absolute; right: 10px; bottom: 10px; width: 90px; height: 34px; opacity: .9; }
 
 /* analyse */
@@ -308,7 +316,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   </section>
 
   <section>
-    <div class="sec-head"><h2>Les marchés</h2><span class="sub"><span id="sub-marches">Dernière séance</span> · touche une carte pour son historique</span></div>
+    <div class="sec-head"><h2>Les marchés</h2><span class="sub"><span id="sub-marches">Dernière séance</span> · à droite, le prix d'une part d'ETF qui suit l'indice · touche une carte pour son historique</span></div>
     <div class="grid" id="indices"></div>
   </section>
 
@@ -342,12 +350,13 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   <section>
     <div class="sec-head">
       <div><h2>Top 30 éligible PEA</h2><div class="sub">Classement par critères chiffrés, pas une liste d'achats · touche une ligne pour sa fiche complète (graphique, risque, frais…)</div></div>
-      <div class="chips" role="group" aria-label="Filtrer">
+      <div class="chips" id="chips-top" role="group" aria-label="Filtrer">
         <button class="chip" aria-pressed="true" data-f="tous">Tous</button>
         <button class="chip" aria-pressed="false" data-f="etf">ETF</button>
         <button class="chip" aria-pressed="false" data-f="actions">Actions</button>
       </div>
     </div>
+    <p class="note" id="top-nb" aria-live="polite" hidden></p>
     <div class="liste" id="top30"></div>
   </section>
 
@@ -476,8 +485,24 @@ function compte(el, cible, d, suffixe = "") {
 const tape = D.indices.map((m) => `<span><b>${esc(m.nom)}</b>${fr(m.prix, dec(m.prix))} <span class="${sens(m.var_1j)}">${pct(m.var_1j)}</span></span>`).join("");
 $("#tape").innerHTML = tape + tape;
 
+// Un indice ne s'achète pas : on montre à côté le prix d'une part d'un ETF éligible au PEA qui le suit
+// (le premier de la liste qui a un cours). Indices sans ETF suivi : rien n'est affiché.
+const ETF_INDICE = { "^FCHI": ["CAC.PA", "CACC.PA", "E40.PA"], "^STOXX50E": ["MSE.PA", "C50.PA", "ETDD.PA", "50E.PA"],
+  "^STOXX": ["ETZ.PA"], "^GDAXI": ["DAX.PA", "CG1.PA"], "^GSPC": ["PSP5.PA", "ESE.PA"], "^NDX": ["PUST.PA", "PANX.PA"] };
+function etfIndice(t) {
+  const cat = D.catalogue || [];
+  for (const code of ETF_INDICE[t] || []) { const e = cat.find((c) => c.ticker === code && c.prix > 0); if (e) return e; }
+  return null;
+}
+const dateCourte = (j) => new Date(j + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
+function prixEtf(m) {
+  const e = etfIndice(m.ticker); if (!e) return "";
+  const vieux = e.date_cours && e.date_cours !== D.date ? ` · ${dateCourte(e.date_cours)}` : "";
+  return `<div class="etfx" title="Prix d'une part de ${esc(e.nom)}">${fr(e.prix, dec(e.prix))}\u00a0€<small>1 part d'ETF${vieux ? "<br>" + vieux.slice(3) : ""}</small></div>`;
+}
+
 function carte(m, unite = "") {
-  return `<div class="card rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}"><div class="nom">${esc(m.nom)}${vf(m)}</div><div class="val">${fr(m.prix, dec(m.prix))}${unite}</div>
+  return `<div class="card rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}"><div class="nom">${esc(m.nom)}${vf(m)}</div><div class="val-l"><div class="val">${fr(m.prix, dec(m.prix))}${unite}</div>${m.categorie === "indices" ? prixEtf(m) : ""}</div>
     <div class="chg ${sens(m.var_1j)}">${pct(m.var_1j)} <span class="flat">· 1 mois ${pct(m.var_1m)}</span></div>${spark(m.courbe.slice(-60), sens(m.var_1m))}</div>`;
 }
 $("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
@@ -528,7 +553,7 @@ $("#petites").innerHTML = D.petites.map((m, i) => ligne(m, i, "score_petite")).j
 function filtrerCriteres(liste, c, det) {
   return liste.filter((m) => {
     const perte = (((det[m.ticker] || {}).stats) || {}).perte_max_1a;
-    if (c.type && m.categorie !== c.type) return false;
+    if (c.type && (m.categorie === "petites" ? "actions" : m.categorie) !== c.type) return false;
     if (c.risque && !(m.risque && m.risque <= c.risque)) return false;
     if (c.perte && !(typeof perte === "number" && -perte < c.perte)) return false;
     return true;
@@ -570,9 +595,13 @@ if (SG.length) {
   $("#suggestions").innerHTML = SG.map(suggestion).join("");
 }
 
-document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
-  document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", c === b));
+document.querySelectorAll("#chips-top .chip").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll("#chips-top .chip").forEach((c) => c.setAttribute("aria-pressed", c === b));
   document.querySelectorAll("#top30 .ligne").forEach((l) => { l.hidden = !(b.dataset.f === "tous" || l.dataset.cat === b.dataset.f); });
+  const n = document.querySelectorAll("#top30 .ligne:not([hidden])").length, f = b.dataset.f;
+  $("#top-nb").hidden = f === "tous";
+  $("#top-nb").textContent = f === "etf" ? `${n} ETF dans le top 30 aujourd'hui (ETF à effet de levier exclus).`
+    : `${n} actions dans le top 30 aujourd'hui (petites capitalisations comprises).`;
 }));
 
 const B = D.bilan_signaux;
@@ -1025,6 +1054,9 @@ function ouvrir(t, pousser = true) {
   const H = [];
   const devise = det.devise || m.devise;
   H.push(`<div class="f-prix"><span class="big">${fr(m.prix, dec(m.prix))}${devise ? ` <small style="font-size:1rem;color:var(--muted)">${devise}</small>` : ""}</span><span class="num ${sens(m.var_1j)}">${pct(m.var_1j)} ${estFonds(m) ? "depuis la valeur précédente" : "sur la dernière séance"}</span>${vf(m)}</div>`);
+  const etf = m.categorie === "indices" ? etfIndice(t) : null;
+  if (etf) H.push(`<p class="note" style="margin-top:10px">Un indice ne s'achète pas directement. Une part d'un ETF éligible au PEA qui le suit coûte :</p>
+    <button type="button" class="f-etf" data-ouvrir="${esc(etf.ticker)}">${fr(etf.prix, dec(etf.prix))}\u00a0€ <small>${esc(etf.nom)} · ${esc(etf.ticker)}${etf.date_cours && etf.date_cours !== D.date ? " · cours du " + dateCourte(etf.date_cours) : ""} ›</small></button>`);
   if (estFonds(m) && m.date_cours) H.push(`<p class="note">Valeur liquidative du ${new Date(m.date_cours + "T12:00:00").toLocaleDateString("fr-FR")} : un fonds n'est pas coté en continu, sa valeur est calculée une fois par jour.</p>`);
   if (det.description) H.push(`<p class="f-desc">${esc(det.description)}</p>`);
   if (m.levier) H.push(`<div class="alerte" style="margin-top:12px">${AVERT_LEVIER}</div>`);
@@ -1093,6 +1125,7 @@ document.addEventListener("keydown", (e) => {
   if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches("[data-t]")) { e.preventDefault(); ouvrir(e.target.dataset.t); }
 });
 document.addEventListener("click", (e) => { const c = e.target.closest("[data-t]"); if (c && !feuille.contains(c)) ouvrir(c.dataset.t); });
+document.addEventListener("click", (e) => { const b = e.target.closest("[data-ouvrir]"); if (b) ouvrir(b.dataset.ouvrir); });
 const lienDirect = decodeURIComponent(location.hash.slice(1));
 if (lienDirect && TOUS[lienDirect]) { history.replaceState(null, "", location.pathname + location.search); ouvrir(lienDirect); }
 

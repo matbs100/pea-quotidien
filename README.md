@@ -29,6 +29,10 @@ Le programme est expliqué fonction par fonction dans `ARCHITECTURE.md`.
 | `univers.json` | les titres suivis |
 | `mes-investissements.md` | mes achats (un par ligne), suivis à chaque fiche ; tenu par le propriétaire seul |
 
+Sur le Mac : double-clic sur **`Matin PEA.command`** (prépare Python, fait la fiche du jour, copie les notes
+dans Obsidian, lance le contrôle et propose de publier). Sites à autoriser pour le cloud :
+[`guide/Domaines à autoriser.md`](guide/Domaines%20à%20autoriser.md).
+
 Relancer à la main : `pip install -r requirements.txt`, puis `python scripts/collecte.py`,
 `python scripts/verif.py AAAA-MM-JJ`, `python scripts/fiches.py AAAA-MM-JJ`, `python scripts/rendu.py AAAA-MM-JJ`.
 Contrôler tout le projet : `python scripts/controle.py` (ou `--hors-ligne`), puis `python scripts/tests.py`.

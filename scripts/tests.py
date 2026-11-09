@@ -679,6 +679,21 @@ def avertissement_levier_amf():
     assert "très spéculatifs" in t and "moyen ou long terme" in t, "avertissement levier aligné sur l'AMF"
 
 
+@test
+def filtre_top30_et_prix_etf_des_indices():
+    """Le filtre ETF / Actions masque vraiment les lignes, et les ETF montrés à côté des indices sont suivis."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert ".ligne[hidden]" in modele, "sans .ligne[hidden] { display: none }, le filtre du top 30 ne masque rien"
+    assert 'id="chips-top"' in modele, "boutons de filtre du top 30 introuvables"
+    bloc = re.search(r"const ETF_INDICE = (\{.*?\});", modele, re.S)
+    assert bloc, "table ETF_INDICE absente"
+    codes = set(re.findall(r'"([A-Z0-9]+\.PA)"', bloc.group(1)))
+    univers = json.loads((RACINE / "univers.json").read_text(encoding="utf-8"))
+    suivis = {t for c, v in univers.items() if not c.startswith("_") and isinstance(v, dict) for t in v}
+    manquants = sorted(codes - suivis)
+    assert not manquants, f"ETF d'indice absents de univers.json : {manquants}"
+
+
 def main():
     echecs = 0
     for f in TESTS:

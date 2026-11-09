@@ -15,7 +15,7 @@ Yahoo Finance ──► collecte.py ──► data/jours/AAAA-MM-JJ.json ◄─�
                                          │      ▲
                                          │      └── fiches.py (Boursorama, Yahoo : historique, SRI, frais)
                                          ▼
-                  Claude écrit data/analyses/AAAA-MM-JJ.md (6 parties, 350 mots au plus)
+                  Claude écrit data/analyses/AAAA-MM-JJ.md (7 parties dont l'actualité et les estimations, 450 mots au plus ; revue de presse dans data/presse/)
                                          ▼
                 rendu.py + modele.html ──► docs/ (site GitHub Pages)  et  notes/ (Obsidian)
                                          ▼
@@ -234,6 +234,8 @@ par les agents. Dans le graphique, la moyenne courte est en tirets et la longue 
 | `risque_de(det)` | niveau de risque 1 à 7 du badge de la page principale (SRI officiel, sinon estimé) |
 | `simulation_mensuelle(serie, mensuel, ans)` | simulateur pédagogique « 50 € par mois » sur 5 ans au plus, d'après la série hebdomadaire ; None sous 2 ans d'historique (bloc « Et si j'avais investi régulièrement ? ») |
 | `filtrerCriteres(liste, c, det)` (JavaScript, `modele.html`) | filtre le Top 30 selon « Mes critères » : type, risque maximum, baisse maximale sur 1 an ; un titre sans la donnée n'est pas retenu ; critères gardés dans `localStorage` |
+| `ETF_INDICE`, `etfIndice(t)`, `prixEtf(m)` (JavaScript, `modele.html`) | à côté de chaque indice, prix d'une part du premier ETF éligible au PEA de la table `ETF_INDICE` qui a un cours (avec sa date si elle n'est pas celle de la fiche) ; dans la fiche de l'indice, bouton vers la fiche de l'ETF |
+| boutons `#chips-top` (JavaScript, `modele.html`) | filtre ETF / Actions du Top 30 (les petites capitalisations comptent comme actions) ; la règle CSS `.ligne[hidden]` est indispensable |
 | `date_vl(m)` | « (valeur du 05/11) » après le prix d'un fonds dans la note |
 | `prix_dev(x, m)` | prix suivi de la devise du titre dans la note (« 6,177 EUR ») ; sans devise pour un indice |
 | `fonds_wealins(d)` | fonds de `data/wealins.json` pour la barre de recherche, en tableaux compacts, sans ceux que la fiche suit déjà |
@@ -281,6 +283,13 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `c_decisions(d, heures)` | contrôle « Méthode de décision » : bilans en retard, gains mal calculés, améliorations sans décision (commits depuis le 07/11/2026) |
 | `resume_court(controles, etat)` | phrase affichée en bas de la fiche |
 | `main()` | enchaîne les contrôles, écrit `pilotage/etat.json`, affiche le résumé |
+
+### `mac.sh` et `Matin PEA.command` : le lanceur du Mac
+Double-clic sur `Matin PEA.command` : crée `.venv` et installe `requirements.txt` (seulement s'il a changé),
+récupère la dernière version (`git pull --ff-only`, sauté si des fichiers sont modifiés), puis propose :
+fiche du jour (collecte → verif → fiches → rendu, ouverture dans le navigateur), copie des notes dans le
+coffre Obsidian (`Matin PEA/` : Fiches, Guide, Apprentissage ; chemin gardé dans `.matin-pea-local`, non
+publié), contrôle et tests, et publication sur `claude/pea` après confirmation.
 
 ### `tests.py` : les garde-fous
 Usage : `python scripts/tests.py` (sans réseau, quelques secondes). Aucun agent ne publie de code

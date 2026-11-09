@@ -36,8 +36,22 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
 3 bis. Fiches détaillées : `$PY scripts/fiches.py $JOUR` (historique de prix sur 5 ans, risque SRI,
    frais, caractéristiques, éligibilité PEA selon Boursorama ; à la clôture, prix moyen du jour).
    Compte 2 à 3 minutes. Non bloquant : si le script échoue, continue sans les fiches.
-4. Analyse : lis `data/jours/$JOUR.json`, les 5 dernières analyses de `data/analyses/` et
-   `data/signaux.csv`. Écris `data/analyses/$JOUR.md`, **350 mots au plus**, avec exactement ces
+3 ter. Revue de presse et estimations (10 minutes au plus, non bloquant). Avec WebSearch (mode
+   « extended » pour l'actualité du jour) puis WebFetch, lis **au moins 5 sources différentes**, datées
+   du jour ou de la veille, dont au moins 2 françaises et 1 internationale. Pistes : Les Echos et
+   Investir, Boursorama (actualités), Zonebourse / MarketScreener, ABC Bourse, BFM Bourse, Le Figaro
+   Bourse, Capital, Reuters, Bloomberg, Financial Times, CNBC, MarketWatch, communiqués de la BCE, de
+   l'AMF et d'Euronext. Cherche : ce qui fait bouger les indices et les titres du top 30 et des
+   suggestions, les **estimations** publiées (consensus des analystes, objectifs de cours, révisions,
+   résultats attendus ou publiés face aux attentes, prévisions d'inflation et de taux des banques
+   centrales) et le **calendrier** des jours qui viennent (résultats, BCE, Fed, chiffres d'inflation).
+   Écris `data/presse/$JOUR.md` : une puce par information, **avec tes propres mots**, sa source et son
+   lien (au plus une citation de moins de 15 mots par source). Une estimation est l'avis d'analystes,
+   jamais une certitude : écris « selon le consensus de … », « X analystes visent … ». Un site bloqué :
+   note-le en bas du fichier (« Accès bloqués ») et continue avec les autres. À la clôture, complète
+   le fichier du matin au lieu de le réécrire.
+4. Analyse : lis `data/jours/$JOUR.json`, `data/presse/$JOUR.md`, les 5 dernières analyses de `data/analyses/` et
+   `data/signaux.csv`. Écris `data/analyses/$JOUR.md`, **450 mots au plus**, avec exactement ces
    titres de niveau 3 :
    - `### Le marché en une phrase`
    - `### Ce que disent les données` (3 à 5 puces, chiffres à l'appui)
@@ -45,6 +59,9 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
      tendances qui se confirment ou s'inversent)
    - `### Fiabilité des signaux` (taux de signaux justes comparé au repère ; dis franchement si les
      signaux ne font pas mieux que le hasard)
+   - `### L'actualité et les estimations` (3 à 5 puces tirées de `data/presse/$JOUR.md` : ce qui
+     explique les mouvements du jour, les estimations d'analystes et les rendez-vous à venir ; chaque
+     puce finit par sa source en lien Markdown)
    - `### À garder en tête` (risques, écarts entre sources à vérifier, petits prix ; cite les titres
      du top 30 que Boursorama n'indique pas éligibles au PEA : `details[ticker].infos.pea_bourso` vaut
      `false` dans le JSON du jour)

@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .venv/
 *.pdf
+.matin-pea-local
+.matin-pea-local.tmp

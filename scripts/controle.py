@@ -37,7 +37,7 @@ EMOJI = {"ok": "✅", "non_verifiable": "⚪", "alerte": "🟠", "probleme": "�
 COULEUR = {"vert": "🟢", "orange": "🟠", "rouge": "🔴"}
 RESEAU = ("prix", "liens", "site")
 TITRES_ANALYSE = ["Le marché en une phrase", "Ce que disent les données", "Ce qui a changé",
-                  "Fiabilité des signaux", "À garder en tête", "Pour apprendre"]
+                  "Fiabilité des signaux", "L'actualité et les estimations", "À garder en tête", "Pour apprendre"]
 CONSEIL = re.compile(r"(?<![A-Za-z]['’])\b(achète|achetez|vends|vendez)\b|\bmets?\s+\d+\s?€", re.I)
 RANG_MOMENT = {"ouverture": 0, "cloture": 1}
 
@@ -210,8 +210,8 @@ def c_analyse(d):
     pb, al = [], []
     al += [f"titre manquant : {t}" for t in TITRES_ANALYSE if f"### {t}" not in texte]
     mots = sum(1 for w in texte.split() if re.search(r"[A-Za-zÀ-ÿ0-9]", w))
-    if mots > 380:
-        al.append(f"{mots} mots (350 au plus)")
+    if mots > 480:
+        al.append(f"{mots} mots (450 au plus)")
     if d.get("moment") == "cloture" and not texte.lstrip().startswith("*Mise à jour à la clôture"):
         al.append("la version de clôture ne commence pas par « Mise à jour à la clôture de la séance »")
     if CONSEIL.search(texte):

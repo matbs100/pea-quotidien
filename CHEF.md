@@ -134,6 +134,12 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
      « Priorités pour l'agent de nuit » de l'étape 8 (avec leur identifiant) ;
    - tu peux affiner la méthode (poids, seuils) une fois par semaine au plus, avec la raison dans la
      partie « Historique de la méthode » de `pilotage/decision.md` et dans ton rapport.
+7 bis. **Veiller à l'innovation et à la presse.** Vérifie que `data/presse/` est rempli chaque jour de
+   bourse avec au moins 5 sources différentes et des estimations attribuées à leurs auteurs (jamais
+   présentées comme sûres), et qu'une « ✨ Nouveauté » est arrivée sur le site cette semaine (étape 4 bis
+   d'`AMELIORATION.md`). Sinon, donne dans `pilotage/consignes.md` une nouveauté précise à réaliser, tirée
+   des idées les mieux notées, et un devoir de presse dans `pilotage/ecole.md`. Relis chaque nouveauté
+   comme une amélioration : tests, rendu au téléphone, aucun conseil personnalisé.
 8. **Coordonner.** Réécris `pilotage/consignes.md` (40 lignes au plus, chaque point daté, retire ce qui
    est réglé) avec ces parties : `## Priorités pour l'agent de nuit` (1 à 3 points précis),
    `## Pour la fiche du jour`, `## Chantier interface` (améliorations à faire, la plus utile en premier),
