@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-09 · « Mes critères » : réduire le Top 30 à ce qui compte pour toi
+- Nouvelle section avant le Top 30 : tu choisis un risque maximum (sur 7), la plus forte baisse acceptée sur 1 an et le type (ETF ou actions) ; la liste se réduit aux titres du Top 30 qui remplissent ces critères. Les critères restent sur ton appareil. Un titre dont la donnée manque n'est pas retenu. Ce n'est pas un conseil. Première partie : les critères de frais et d'horizon viendront ensuite.
+- Inspiration : séparation préférence / capacité de risque (arXiv 2603.09303). Décisions D-20261106-5 et D-20261109-1.
+
 ## 2026-11-08 · Textes plus lisibles sur téléphone
 - Notes, astuces, boutons de liens, libellés de formulaires : 14 px au lieu de 13 px ; étiquettes des chiffres clés : 12 px au lieu de 11. Décision D-20261108-1.
 

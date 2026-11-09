@@ -654,6 +654,26 @@ def garde_fous():
 
 
 @test
+def mes_criteres_filtrent():
+    """La page « Mes critères » : le filtre JavaScript est exécuté avec node sur des cas connus."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert 'id="sec-crit"' in modele and "Ce n'est ni un conseil" in modele, "page Mes critères absente"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : filtre de « Mes critères » non exécuté")
+        return
+    fn = re.search(r"function filtrerCriteres\(.*?\n}\n", modele, re.S).group(0)
+    essai = fn + """
+const L = [{ticker:"A",categorie:"etf",risque:4},{ticker:"B",categorie:"actions",risque:6},{ticker:"C",categorie:"actions",risque:3},{ticker:"D",categorie:"actions"}];
+const det = {A:{stats:{perte_max_1a:-12}},B:{stats:{perte_max_1a:-40}},C:{stats:{perte_max_1a:-20}}};
+const ids = (c) => filtrerCriteres(L, c, det).map((m) => m.ticker).join("");
+console.log([ids({}), ids({risque:4}), ids({type:"actions"}), ids({perte:25}), ids({risque:5, type:"actions"})].join("|"));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "ABCD|AC|BCD|AC|C", f"filtre de critères faux : {r.stdout!r} {r.stderr[-300:]}"
+
+
+@test
 def avertissement_levier_amf():
     t = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
     assert "très spéculatifs" in t and "moyen ou long terme" in t, "avertissement levier aligné sur l'AMF"

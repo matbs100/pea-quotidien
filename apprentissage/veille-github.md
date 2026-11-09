@@ -24,3 +24,5 @@ Une ligne par projet étudié, mise à jour quand l'agent le revoit. **Licence**
 | [mementum/backtrader](https://github.com/mementum/backtrader) | 23 671 | GPL-3.0 | 2026-11 | Backtests : idées de méthode seulement | #12 (pas de code) |
 | [kernc/backtesting.py](https://github.com/kernc/backtesting.py) | 9 196 | AGPL-3.0 | 2026-08 | Backtests simples : idées seulement | #12 (pas de code) |
 | [wilsonfreitas/awesome-quant](https://github.com/wilsonfreitas/awesome-quant) | 30 490 | — | 2026-11 | Liste de bibliothèques et ressources : point de départ pour la veille | sources |
+| [myinvestpilot/invest-alchemy](https://github.com/myinvestpilot/invest-alchemy) | 771 | non indiquée (page ouverte le 2026-11-09) | 2026-11 | Assistant pour portefeuilles d'ETF : signaux, robots à versements périodiques ; données chinoises | idée seulement (pas de code, pas de licence) |
+| [pseudo-longinus/quant-buddy-view](https://github.com/pseudo-longinus/quant-buddy-view) | 50 | MIT | 2026-11 | Tableaux de bord de recherche partageables (résultat de recherche, README non ouvert) | aucune |

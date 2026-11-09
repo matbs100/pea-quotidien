@@ -233,6 +233,7 @@ par les agents. Dans le graphique, la moyenne courte est en tirets et la longue 
 | `note_suggestions(sugg)` | partie « Suggestions du jour » de la note, avec la raison de chaque suggestion |
 | `risque_de(det)` | niveau de risque 1 à 7 du badge de la page principale (SRI officiel, sinon estimé) |
 | `simulation_mensuelle(serie, mensuel, ans)` | simulateur pédagogique « 50 € par mois » sur 5 ans au plus, d'après la série hebdomadaire ; None sous 2 ans d'historique (bloc « Et si j'avais investi régulièrement ? ») |
+| `filtrerCriteres(liste, c, det)` (JavaScript, `modele.html`) | filtre le Top 30 selon « Mes critères » : type, risque maximum, baisse maximale sur 1 an ; un titre sans la donnée n'est pas retenu ; critères gardés dans `localStorage` |
 | `date_vl(m)` | « (valeur du 05/11) » après le prix d'un fonds dans la note |
 | `prix_dev(x, m)` | prix suivi de la devise du titre dans la note (« 6,177 EUR ») ; sans devise pour un indice |
 | `fonds_wealins(d)` | fonds de `data/wealins.json` pour la barre de recherche, en tableaux compacts, sans ceux que la fiche suit déjà |
