@@ -7,7 +7,20 @@ Tenu par le chef d'orchestre (étape 8 bis de `CHEF.md`). Chaque matin, il corri
 veille (✅ réussi, 🔁 à refaire, ❌ abandonné) et donne ceux du jour. L'agent de nuit les fait (étape
 2 bis de `AMELIORATION.md`) et rend compte dans la partie `## Devoirs du chef` de son journal.
 
-## Devoirs donnés le 2026-11-08 (pour la nuit du 9 novembre)
+## Devoirs donnés le 2026-11-09 (pour la nuit du 10 novembre)
+1. **Nouveaux fonds (nuit, 3e essai, plus petit).** Un seul fonds : MWRD. Ouvre la page Boursorama ou la fiche
+   amundietf.fr (adresse trouvée par recherche, pas devinée) et note l'ISIN **lu** et la mention PEA lue. Si aucune
+   page ne s'ouvre, écris-le et passe à un autre fonds.
+2. **Nouvelles données (nuit).** Même devoir que hier, plus petit : trouve l'adresse exacte d'une fiche
+   `amundietf.fr` et dis si elle donne frais courants et encours ; note son `robots.txt`.
+3. **Réviser (chef).** Horaires Euronext : toujours sans page officielle ; refaire avec `live.euronext.com`.
+
+## Résultats du 2026-11-09 (devoirs du 2026-11-08)
+- 1 Nouveaux fonds : 🔁 2e fois de suite : ISIN lus dans des extraits de recherche seulement, pages bloquées ou vides ; découpé en un seul fonds.
+- 2 Nouvelles données : 🔁 aucune source ouverte ; découpé en une seule adresse à trouver.
+- 3 Réviser Euronext (chef) : 🔁 aucune page officielle (recherche : sites tiers en désaccord sur l'enchère de clôture).
+
+## Archive : Devoirs donnés le 2026-11-08 (pour la nuit du 9 novembre)
 1. **Nouveaux fonds (nuit, refaire).** Pour les 4 pistes Amundi de `candidats.md` (MWRD, MFE, CEU, CEM) :
    lire l'ISIN sur une page ouverte (Boursorama ou amundietf.fr) et noter l'éligibilité PEA lue ; puis 2 pistes
    d'un émetteur **absent** de `univers.json` (vérifie d'abord la liste des émetteurs).

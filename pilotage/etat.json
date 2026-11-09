@@ -1,15 +1,15 @@
 {
- "genere_le": "2026-11-08T05:11+01:00",
+ "genere_le": "2026-11-09T05:11+01:00",
  "fiche": "2026-11-06 (cloture)",
  "lieu": "cloud",
- "etat": "vert",
- "resume": "Tout est en ordre. 23/23 tests, 8/8 prix revérifiés, 28/28 liens valides, site à jour.",
+ "etat": "rouge",
+ "resume": "À corriger. 24/24 tests, 8/8 prix revérifiés, 27/28 liens valides, site à jour. Points à voir : liens des fiches détaillées.",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "23/23 tests réussis",
+   "resume": "24/24 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf"
    ]
@@ -55,9 +55,11 @@
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
-   "niveau": "ok",
-   "resume": "28/28 liens valides sur 8 titres, 4 non ouverts (robots.txt)",
-   "details": []
+   "niveau": "probleme",
+   "resume": "27/28 liens valides sur 8 titres, 4 non ouverts (robots.txt)",
+   "details": [
+    "ALTUV.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/ALTUV.PA/)"
+   ]
   },
   {
    "nom": "site",
@@ -72,7 +74,7 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "12 connaissance(s) en attente de vérification (⏳)",
+    "15 connaissance(s) en attente de vérification (⏳)",
     "2 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
@@ -80,30 +82,26 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "8 commit(s), 0 problème(s), 0 alerte(s)",
+   "resume": "4 commit(s), 0 problème(s), 0 alerte(s)",
    "details": [
+    "58463d7 [nuit] Amélioration : « Mes critères », filtre du Top 30 [D-20261109-1]",
+    "95ae15b [chef] Chef : rapport du 2026-11-08 (vert) ; textes de fiche à 14 px [D-20261",
     "a0a0306 [nuit] Veille : correction du gain de l'idée n° 28 (2,70), tests 23/23",
-    "4e5e8ad [nuit] Amélioration : ratios de Sharpe et de Sortino [D-20261106-8]",
-    "60c0b74 [chef] Chef : idée n° 27 rejetée (gain recalculé 2,80), tests 23/23",
-    "4ad45d2 [chef] Chef : rapport du 2026-11-07 (orange) ; avertissement des ETF à effet ",
-    "d635a94 [univers] Univers : mise à jour hebdomadaire du 2026-11-07 (3 ajouts)",
-    "cd880e5 [nuit] Amélioration : simulateur « et si j'avais investi régulièrement ? » [D",
-    "2dd94a3 [autre] le propriétaire : décision D-20261106-13 (lectures des agents) au journal",
-    "cda14f9 [autre] le propriétaire : lectures des agents (PDF de sources vérifiées, fiches de lec"
+    "4e5e8ad [nuit] Amélioration : ratios de Sharpe et de Sortino [D-20261106-8]"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
    "niveau": "ok",
-   "resume": "19 décisions, 8 à réaliser, 0 point(s) à voir",
+   "resume": "21 décisions, 8 à réaliser, 0 point(s) à voir",
    "details": []
   },
   {
    "nom": "lectures",
    "titre": "Lectures des agents (PDF de sources vérifiées)",
    "niveau": "ok",
-   "resume": "3 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
+   "resume": "4 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
    "details": []
   }
  ]

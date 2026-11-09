@@ -31,4 +31,5 @@ d'orchestre : une règle par ligne, datée, avec l'agent concerné et l'exemple 
   l'ISIN : deux pistes du 06/11 (Ossiam) ont été écartées faute de cotation à Paris.
 - (, nuit / lectures) Après une lecture, relire le PDF avant d'écrire chaque chiffre : le chef a retrouvé
   tous ceux des deux fiches du 06-07/11, garde cette méthode.
+- (09/11, nuit / tous devoirs) Quand les pages sont bloquées deux nuits de suite, ne cherche pas à deviner une adresse : cherche-la avec WebSearch (`site:amundietf.fr …`), ouvre-la, et à défaut note « bloqué » et passe au devoir suivant. Exemple : adresse amundietf.fr devinée en 404 le 09/11.
 - (08/11, nuit / nouveaux fonds) Une piste porte l'ISIN **lu** sur une page ouverte, jamais « à recouper » ; avant de proposer un émetteur « peu présent », compter ses fonds dans `univers.json`. Exemple : 4 pistes Amundi du 08/11 sans ISIN, alors que l'émetteur est déjà présent.

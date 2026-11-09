@@ -6,10 +6,10 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (08/11) D-20261106-8 (Sharpe/Sortino) est fait : vérifie au prochain cycle que les valeurs apparaissent dans la fiche.
-- (07/11) Réaliser **D-20261106-5** (page « Mes critères », sans formulation de conseil), une première partie suffit.
-- (08/11) Sinon **D-20261106-7** (comparer deux titres, base 100), une première partie suffit.
-- (08/11) Fais les devoirs de `pilotage/ecole.md` (ISIN lu sur une page ouverte pour chaque fonds noté).
+- (09/11) D-20261106-8 (Sharpe/Sortino) : vérifie que les valeurs apparaissent dans la prochaine fiche.
+- (09/11) Réaliser **D-20261109-2** (« Mes critères » : titres écartés faute de donnée), petit.
+- (09/11) Puis **D-20261106-6** (carte de chaleur des rendements par mois), une première partie suffit ; sinon **D-20261106-7** (comparer deux titres).
+- (08/11) Fais les devoirs de `pilotage/ecole.md` (un seul fonds, ISIN lu sur une page ouverte ; voir `methodes.md`).
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (grille, identifiant `[D-…]` dans le commit).
 - (06/11) Ouvre au moins 3 sources par nuit, avec liens ; connaissances nouvelles en « ⏳ à vérifier ».
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
