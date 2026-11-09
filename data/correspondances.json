@@ -349,5 +349,100 @@
   "boursorama": "1rPGNFT",
   "ft": "GNFT:PAR",
   "echecs": {}
+ },
+ "WKL.AS": {
+  "boursorama": "1rAWKL",
+  "ft": "WKL:AEX",
+  "echecs": {}
+ },
+ "BIM.PA": {
+  "boursorama": "1rPBIM",
+  "ft": "BIM:PAR",
+  "echecs": {}
+ },
+ "HLT.PA": {
+  "boursorama": "1rTHLT",
+  "ft": "HLT:PAR:EUR",
+  "echecs": {}
+ },
+ "FOO.PA": {
+  "boursorama": "1rTFOO",
+  "ft": "FOO:PAR:EUR",
+  "echecs": {}
+ },
+ "DEC.PA": {
+  "boursorama": "1rPDEC",
+  "ft": "DEC:PAR",
+  "echecs": {}
+ },
+ "ALBPS.PA": {
+  "boursorama": "1rPALBPS",
+  "ft": "ALBPS:PAR",
+  "echecs": {}
+ },
+ "GET.PA": {
+  "boursorama": "1rPGET",
+  "ft": "GET:PAR",
+  "echecs": {}
+ },
+ "INS.PA": {
+  "boursorama": "1rTINS",
+  "ft": "INS:PAR:EUR",
+  "echecs": {}
+ },
+ "RCO.PA": {
+  "boursorama": "1rPRCO",
+  "ft": "RCO:PAR",
+  "echecs": {}
+ },
+ "HEIA.AS": {
+  "boursorama": "1rAHEIA",
+  "ft": "HEIA:AEX",
+  "echecs": {}
+ },
+ "DIM.PA": {
+  "boursorama": "1rPDIM",
+  "ft": "DIM:PAR",
+  "echecs": {}
+ },
+ "MF.PA": {
+  "boursorama": "1rPMF",
+  "ft": "MF:PAR",
+  "echecs": {}
+ },
+ "CD8.PA": {
+  "boursorama": "1rTCD8",
+  "ft": "CD8:PAR:EUR",
+  "echecs": {}
+ },
+ "UTI.PA": {
+  "boursorama": "1rTUTI",
+  "ft": "UTI:PAR:EUR",
+  "echecs": {}
+ },
+ "PINR.PA": {
+  "boursorama": "1rTPINR",
+  "ft": "PINR:PAR:EUR",
+  "echecs": {}
+ },
+ "TRV.PA": {
+  "boursorama": "1rTTRV",
+  "ft": "TRV:PAR:EUR",
+  "echecs": {}
+ },
+ "VIV.PA": {
+  "boursorama": "1rPVIV",
+  "ft": "VIV:PAR",
+  "echecs": {}
+ },
+ "ELIOR.PA": {
+  "boursorama": "1rPELIOR",
+  "ft": "ELIOR:PAR",
+  "echecs": {}
+ },
+ "EDEN.PA": {
+  "boursorama": "1rPEDEN",
+  "ft": "EDEN:PAR",
+  "echecs": {}
  }
 }

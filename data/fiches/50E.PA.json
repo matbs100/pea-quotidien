@@ -1,0 +1,22 @@
+{
+ "maj": "2026-11-09",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rT50E/",
+  "isin": "IE00B4K6B022",
+  "societe": "HSBC Investment Funds (Luxembourg) S.A.",
+  "pea_bourso": true,
+  "actif_net": "2 442M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "05/10/2009",
+  "forme": "Open Ended Investment Company",
+  "classe": "Actions Europe",
+  "zone": "Eurozone",
+  "categorie_ms": "Actions Zone Euro Grandes Cap.",
+  "affectation": "Distribution",
+  "replication": "Physique",
+  "frais_entree": "3 %",
+  "frais_sortie": "3 %",
+  "frais_gestion": "0,05 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F000005EWG&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}

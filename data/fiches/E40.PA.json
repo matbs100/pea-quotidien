@@ -1,0 +1,22 @@
+{
+ "maj": "2026-11-09",
+ "infos": {
+  "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTE40/",
+  "isin": "FR0010150458",
+  "societe": "BNP PARIBAS ASSET MANAGEMENT Europe",
+  "pea_bourso": true,
+  "actif_net": "203M  • 31/10/2026",
+  "sri_officiel": 4,
+  "creation": "07/03/2005",
+  "forme": "FCP",
+  "classe": "Actions Europe",
+  "zone": "France",
+  "categorie_ms": "Actions France Grandes Cap.",
+  "affectation": "Distribution",
+  "replication": "Physique",
+  "frais_entree": "0 %",
+  "frais_sortie": "0 %",
+  "frais_gestion": "0,25 %",
+  "dic": "https://doc.morningstar.com/LatestDoc.aspx?clientid=boursorama&key=507703e53b7dec23&language=454&investmentid=F0GBR05U0B&documenttype=299&market=1443&investmenttype=1&format=PDF&frame=0"
+ }
+}
