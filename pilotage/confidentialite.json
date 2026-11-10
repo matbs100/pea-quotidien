@@ -1,13 +1,13 @@
 {
  "_explication": "Termes protégés : seulement leur empreinte HMAC-SHA256 (clé secrète hors du dépôt). Pour en ajouter un : python3 scripts/confidentialite.py --empreinte \"terme\" avec la clé, puis coller l'empreinte ici.",
  "empreintes": [
-  "084d7927d9139301a8b69efc9233f419f1b57b38863ba348095a434fb046c7b4",
-  "3e902ac0295a11d988ad4ea84008ee0611b26caad241ec2b2f9951205a0d6e6a",
-  "5e0d88cb71706db6fc46cbbd8cefbd85614e1c80b202d880e1658f2e6e5e131c",
-  "74057567aac9c3e3e021e299c215e861f7c3aa8e579f324f0fb7b39fd714fb78",
-  "8097483e510b402e64fb9462a6d344db4655f95fa08746f21f799812e9077706",
-  "aab72c5b0b73bbd456bc80a373055230e5a40ebca9afec5e5d1a0c2865720bed",
-  "f519d41f56cb8eecf017f232579f3b8af5d4f48340c9e19776814a7aa9ad59ba"
+  "4e2a6a5e264b5ee632e1a74479362203a1c74adf884a8ee4b54e0011d79f7016",
+  "83835246ae7483749fea629bab4c6831b5d870b7bf34e0db4c5c3ebd88db8fab",
+  "89b7a2c83a505c46b7e63ce471b04e6078bdda3cdd675d9857e566ee39823f77",
+  "89b8770728cb247233aad93865d07efd918c64362ec137687d0e97c0a9d48db1",
+  "a4e1ea46a9a12f85e98af04a90bf23304cbc93b7402d4470d4df7db360191b90",
+  "b7bd59e052b32235e2361708e8f63d7b3e6f772a35a38a8ef74a991931fbc4e3",
+  "d2fae88dbc9b80fffe3380725c5c770d75a56deaa152dd38686222f56578b2e4"
  ],
  "emails_autorises": [
   "noreply@anthropic\\.com",
