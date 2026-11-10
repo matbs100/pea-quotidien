@@ -26,7 +26,7 @@ def dernier_changement(points):
         return None
     actuel = pts[-1][1]
     depuis, avant = pts[0][0], None
-    for (d0, v0), (d1, v1) in zip(pts, pts[1:]):
+    for (_, v0), (d1, v1) in zip(pts, pts[1:], strict=False):  # paires voisines : longueurs volontairement inégales
         if v1 != v0:
             depuis, avant = d1, v0
     return {"taux": actuel, "depuis": depuis, "precedent": avant, "releve": pts[-1][0]}

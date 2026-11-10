@@ -10,6 +10,7 @@ dans [[Finance/PEA Quotidien/pilotage/sources-verifiees|les sources vérifiées]
 vérifier » jusqu'à la relecture du chef.
 
 ## Journal
+- [2026-11-10-nuit](2026-11-10-nuit.md) · zip strict, versions des bibliothèques
 
 - [[Finance/PEA Quotidien/apprentissage/code/2026-11-10|10/11/2026]] : CSP, empreintes et `strict-dynamic`
 
