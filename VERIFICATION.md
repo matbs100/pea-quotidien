@@ -68,7 +68,8 @@ Tes quatre missions, dans cet ordre :
    - `$PY scripts/tests.py` (tout doit passer) ; `$PY scripts/controle.py --hors-ligne > /tmp/controle.md`
      puis `git checkout -- pilotage/etat.json` (ce fichier est celui du chef).
    - Analyse statique avec des outils installés pour la séance, jamais ajoutés à `requirements.txt` :
-     `$PY -m pip install -q ruff pip-audit`, `ruff check scripts --select E9,F,B --output-format concise`,
+     `$PY -m pip install -q ruff pip-audit`, `ruff check scripts --target-version py39 --select E9,F,B --output-format concise` (le Mac utilise
+     Python 3.9 : rien qui demande Python 3.10 ou plus, comme `zip(..., strict=)`, `match` ou `X | Y` dans les types),
      `pip-audit -r requirements.txt` (failles connues des bibliothèques, base OSV de PyPI).
    - Le site en ligne montre-t-il la dernière fiche (voir la ligne « Site en ligne » du contrôle d'hier
      dans `pilotage/etat.json`, ou `curl -s` de l'adresse de `config.json`) ?

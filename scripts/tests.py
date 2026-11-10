@@ -32,6 +32,17 @@ def compilation_des_scripts():
 
 
 @test
+def compatible_python_39():
+    """Le lanceur du Mac tourne avec Python 3.9 : pas de syntaxe ni d'option réservées à 3.10 ou plus."""
+    import ast
+    for p in sorted(SCRIPTS.glob("*.py")):
+        source = p.read_text(encoding="utf-8")
+        ast.parse(source, feature_version=(3, 9))  # refuse « match », gestionnaires de contexte entre parenthèses…
+        if p.name != "tests.py":  # ce fichier cite le motif cherché
+            assert not re.search(r"\bzip\([^\n]*strict\s*=", source), f"{p.name} : l'option stricte de zip demande Python 3.10"
+
+
+@test
 def calculs_collecte():
     import pandas as pd
     import collecte
