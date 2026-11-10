@@ -7,7 +7,17 @@ Tenu par le chef d'orchestre (étape 8 bis de `CHEF.md`). Chaque matin, il corri
 veille (✅ réussi, 🔁 à refaire, ❌ abandonné) et donne ceux du jour. L'agent de nuit les fait (étape
 2 bis de `AMELIORATION.md`) et rend compte dans la partie `## Devoirs du chef` de son journal.
 
-## Devoirs donnés le 2026-11-09 (pour la nuit du 10 novembre)
+## Devoirs donnés le 2026-11-10 (pour la nuit du 11 novembre)
+1. **Nouveaux fonds (nuit).** MWRD : lire sur Boursorama (ou une fiche amundietf.fr trouvée par WebSearch) la mention « éligible PEA » ; sinon noter « non lue » et passer à CEU.
+2. **Lire (nuit).** Un PDF d'une source vérifiée : méthodologie de l'indice MSCI World ou publication de l'AMF sur l'épargne ; fiche de lecture avec pages.
+3. **Réviser (chef).** Horaires de séance d'Euronext Paris : ouvrir le document « Cash markets trading hours » lié par la page officielle.
+
+## Résultats du 2026-11-10 (devoirs du 2026-11-09)
+- 1 Nouveaux fonds : ✅ MWRD, ISIN IE000BI8OT95 lu sur Finect ; éligibilité PEA non lue (devoir suivant).
+- 2 Nouvelles données : 🔁 en partie : robots.txt noté, frais et encours trouvés sur Finect, pas d'adresse amundietf.fr ; abandonné au profit de Finect.
+- 3 Réviser Euronext (chef) : ✅ jours de fermeture 2026 confirmés (page officielle) ; 🔁 horaires de séance (document séparé).
+
+## Archive : Devoirs donnés le 2026-11-09 (pour la nuit du 10 novembre)
 1. **Nouveaux fonds (nuit, 3e essai, plus petit).** Un seul fonds : MWRD. Ouvre la page Boursorama ou la fiche
    amundietf.fr (adresse trouvée par recherche, pas devinée) et note l'ISIN **lu** et la mention PEA lue. Si aucune
    page ne s'ouvre, écris-le et passe à un autre fonds.

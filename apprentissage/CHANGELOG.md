@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-10 · Nettoyage d'un import inutile (D-20261110-2)
+
+`scripts/wealins.py` n'importe plus `date` (inutilisé). Aucun effet sur la fiche.
+
 ## 2026-11-10 · « Mes critères » dit combien de titres sont écartés faute de donnée
 - Quand tu règles un critère de risque ou de baisse sur 1 an, le bilan indique maintenant combien de titres du Top 30 sont écartés parce que cette donnée manque, au lieu de les cacher en silence. Ce n'est pas un conseil. Décision D-20261109-2.
 

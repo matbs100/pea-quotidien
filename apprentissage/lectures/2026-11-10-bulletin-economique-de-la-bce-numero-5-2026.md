@@ -6,7 +6,7 @@ url: https://www.ecb.europa.eu/pub/pdf/ecbu/eb202605.fr.pdf
 publie_le: 2026-08
 lu_le: 2026-11-10
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-10
 ---
 # 📄 Bulletin économique de la BCE, numéro 5 / 2026
 
@@ -35,4 +35,4 @@ Ce n'est pas une prévision de marché et rien n'y concerne un titre précis.
 - Idée n° 32 : un petit encadré « contexte des taux » (dernier taux de la BCE, date de la prochaine réunion), avec lien vers la BCE. Notée dans `idees.md`.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- Relue le 2026-11-10 sur le PDF : chiffres des pages 3-4 exacts (23 juillet, 2,8 % / 3,2 %, 8,5 % / 10,8 %, 6,2 %, euro numérique), résumé en mots propres, rien de copié, site dans les sources vérifiées. Note : après la hausse du 10/09, la BCE a laissé ses taux inchangés le 29/10 (extrait de recherche BCE) : à préciser dans l'idée n° 32.

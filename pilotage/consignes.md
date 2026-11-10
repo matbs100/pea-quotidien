@@ -6,8 +6,8 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (09/11) D-20261106-8 (Sharpe/Sortino) : vérifie que les valeurs apparaissent dans la prochaine fiche.
-- (09/11) Réaliser **D-20261109-2** (« Mes critères » : titres écartés faute de donnée), petit.
+- (10/11) Réaliser **D-20261110-1** (encadré taux BCE) : taux lus à la source, jamais écrits en dur sans date ; sinon D-20261106-6 (carte de chaleur).
+- (09/11) D-20261106-8 (Sharpe/Sortino) : vérifie que les valeurs apparaissent dans la fiche du 10/11.
 - (09/11) Puis **D-20261106-6** (carte de chaleur des rendements par mois), une première partie suffit ; sinon **D-20261106-7** (comparer deux titres).
 - (08/11) Fais les devoirs de `pilotage/ecole.md` (un seul fonds, ISIN lu sur une page ouverte ; voir `methodes.md`).
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (grille, identifiant `[D-…]` dans le commit).
@@ -31,4 +31,5 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 ## Pour le vérificateur du code
 1. (10/11, demande du propriétaire) Premier passage : contrôle complet de confidentialité (`--site --commits 0`), dépôt, commits et site ; aucune information personnelle nulle part. Un ancien commit touché se signale au propriétaire, sans réécrire l'historique.
 2. (10/11) Revoir `scripts/confidentialite.py` (faux positifs, catégories manquantes) et les ajouts du 09/11 (frais, devises, OPCVM, sécurité de la page).
-3. (10/11) Première veille : versions et failles de yfinance, pandas, requests, pypdf (`pip-audit`), et une technique de l'OWASP sur la politique de sécurité des pages (CSP).
+3. (10/11, chef) Un historique Git contient des informations protégées (voir rapport) : ne rien réécrire, le propriétaire décide. Reste : `zip(..., strict=)` (B905) seulement si le comportement est testé.
+4. (10/11) Première veille : versions et failles de yfinance, pandas, requests, pypdf (`pip-audit`), et une technique de l'OWASP sur la politique de sécurité des pages (CSP).
