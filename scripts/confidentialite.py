@@ -184,11 +184,17 @@ def analyser_commits(k, conf, n=50):
 
 
 def analyser_site(k, conf):
+    entete = {"User-Agent": "MatinPEA-confidentialite/1.0"}
     try:
         url = json.loads((RACINE / "config.json").read_text(encoding="utf-8")).get("url_site", "")
-        req = urllib.request.Request(url, headers={"User-Agent": "MatinPEA-confidentialite/1.0"})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            texte = r.read().decode("utf-8", errors="replace")
+        try:  # requests (certificats à jour) ; urllib échoue sur le Python du Mac (SSL « EOF »)
+            import requests
+            reponse = requests.get(url, headers=entete, timeout=30)
+            reponse.raise_for_status()
+            texte = reponse.text
+        except ImportError:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=entete), timeout=30) as r:
+                texte = r.read().decode("utf-8", errors="replace")
     except Exception as e:  # noqa: BLE001  site injoignable : signalé, pas bloquant
         return [("site en ligne", 0, f"non vérifié ({type(e).__name__})", ORANGE)]
     return [("site en ligne", n, cat, g) for n, cat, g in analyser_texte(texte, k, set(conf.get("empreintes", [])), conf)]
