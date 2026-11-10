@@ -26,3 +26,7 @@ Notées par le chef d'orchestre et l'agent de nuit dans la semaine ; vérifiées
 - [ ] MWRD.PA · Amundi Core MSCI World UCITS ETF Acc · IE000BI8OT95 (extraits de recherche, page non ouverte : getquin, Trackinsight) · frais 0,12-0,13 % selon les sources · éligibilité PEA non confirmée (aucune page ouverte l'indique) · à lire sur Boursorama par la tâche du samedi
 - [ ] CEM.PA · Amundi MSCI Europe Small Cap ESG Broad Transition Acc · LU1681041544 (extraits : easybourse, Borsa Italiana) · frais 0,23 % (TradingView : 0,57 %) · éligibilité PEA non confirmée · à lire sur Boursorama
 - [ ] EQQQ.PA · Invesco EQQQ NASDAQ-100 UCITS ETF · ISIN non lu · émetteur Invesco absent de `univers.json` (émetteurs présents : Amundi, BNP Paribas Easy, HSBC, iShares) ; cotation Yahoo ouverte le 09/11 (Paris, EUR, 593,5) · ETF américain : probablement non éligible PEA (fonds physique), à vérifier avant tout ajout
+
+## Notes de la nuit du 10/11
+- [ ] MWRD.PA · Amundi Core MSCI World UCITS ETF Acc · IE000BI8OT95 (lu sur Finect le 10/11) · frais 0,12 %, encours 16,9 Md€ · éligibilité PEA non lue (la page ne la mentionne pas) · fonds irlandais, probablement non éligible : à vérifier sur Boursorama avant tout ajout
+

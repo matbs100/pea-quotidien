@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-10 · « Mes critères » dit combien de titres sont écartés faute de donnée
+- Quand tu règles un critère de risque ou de baisse sur 1 an, le bilan indique maintenant combien de titres du Top 30 sont écartés parce que cette donnée manque, au lieu de les cacher en silence. Ce n'est pas un conseil. Décision D-20261109-2.
+
 ## 2026-11-10 · Frais de chaque titre, devise de chaque cours, OPCVM éligibles au PEA, sécurité
 - Frais : sur chaque ligne (Top 30, critères, recherche) et dans chaque fiche, frais de gestion annuels et frais de transaction (courtage BNP Paribas Bourse Start en ligne, plafonné à 0,5 % dans le PEA ; TTF 0,4 % ; droits de garde 0,4 % + 5 € par ligne), avec une simulation pour 100, 500 ou 1 000 € et le total sur un an. Demande du propriétaire.
 - Devises : chaque cours affiche sa devise (EUR, USD, DKK…), et « pts » pour un indice.

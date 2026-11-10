@@ -46,6 +46,7 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 - Il n'exécute jamais de code téléchargé.
 
 ## Journaux
+- [2026-11-10](journal/2026-11-10.md)
 - [2026-11-09](journal/2026-11-09.md) : open source (Invest Alchemy) ; « Mes critères » (D-20261109-1)
 - [2026-11-08](journal/2026-11-08.md) : limites des données et du Sharpe ; ratios de Sharpe et de Sortino
 - [2026-11-07](journal/2026-11-07.md) : mesurer un ETF (écart de suivi) ; simulateur « et si j'avais investi régulièrement ? »

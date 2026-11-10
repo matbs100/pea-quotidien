@@ -630,6 +630,14 @@ function filtrerCriteres(liste, c, det) {
     return true;
   });
 }
+// Titres écartés parce qu'une donnée demandée manque (et non parce qu'ils ne remplissent pas le critère).
+function ecartesSansDonnee(liste, c, det) {
+  return liste.filter((m) => {
+    const perte = (((det[m.ticker] || {}).stats) || {}).perte_max_1a;
+    if (c.type && (m.categorie === "petites" ? "actions" : m.categorie) !== c.type) return false;
+    return (c.risque && !m.risque) || (c.perte && typeof perte !== "number");
+  }).length;
+}
 const CLE_CRIT = "matin-pea:criteres";
 function criteres() {
   return { risque: +$("#cr-risque").value || 0, perte: +$("#cr-perte").value || 0, type: $("#cr-type").value };
@@ -639,7 +647,9 @@ function rendreCriteres(sauver) {
   if (sauver) { try { localStorage.setItem(CLE_CRIT, JSON.stringify(c)); } catch (e) {} }
   const r = filtrerCriteres(D.top30, c, D.details || {});
   const actif = c.risque || c.perte || c.type;
-  $("#cr-bilan").textContent = actif ? `${r.length} titre${r.length > 1 ? "s" : ""} du Top 30 sur ${D.top30.length} correspond${r.length > 1 ? "ent" : ""} à tes critères. Ces critères restent sur cet appareil. Ce n'est ni un conseil ni une recommandation : la décision t'appartient.` : "Aucun critère choisi : choisis-en un pour réduire la liste.";
+  const nd = ecartesSansDonnee(D.top30, c, D.details || {});
+  const sans = nd ? ` ${nd} titre${nd > 1 ? "s" : ""} écarté${nd > 1 ? "s" : ""} faute de donnée (risque ou baisse sur 1 an indisponible).` : "";
+  $("#cr-bilan").textContent = actif ? `${r.length} titre${r.length > 1 ? "s" : ""} du Top 30 sur ${D.top30.length} correspond${r.length > 1 ? "ent" : ""} à tes critères.${sans} Ces critères restent sur cet appareil. Ce n'est ni un conseil ni une recommandation : la décision t'appartient.` : "Aucun critère choisi : choisis-en un pour réduire la liste.";
   $("#cr-liste").innerHTML = actif ? r.map((m, i) => ligne(m, i, "score")).join("") : "";
   document.querySelectorAll("#cr-liste .rv").forEach((el) => el.classList.add("vu"));
   document.querySelectorAll("#cr-liste .score i").forEach((i) => i.style.width = i.dataset.w + "%");

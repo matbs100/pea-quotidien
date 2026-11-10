@@ -671,6 +671,13 @@ console.log([ids({}), ids({risque:4}), ids({type:"actions"}), ids({perte:25}), i
 """
     r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
     assert r.stdout.strip() == "ABCD|AC|BCD|AC|C", f"filtre de critères faux : {r.stdout!r} {r.stderr[-300:]}"
+    # D-20261109-2 : titres écartés faute de donnée (D n'a ni risque ni baisse ; seuls A, B, C ont une baisse)
+    fn2 = re.search(r"function ecartesSansDonnee\(.*?\n}\n", modele, re.S).group(0)
+    essai2 = fn + fn2 + essai[len(fn):].split("const ids")[0] + """
+console.log([ecartesSansDonnee(L, {}, det), ecartesSansDonnee(L, {risque:4}, det), ecartesSansDonnee(L, {perte:25}, det), ecartesSansDonnee(L, {perte:25, type:"etf"}, det)].join("|"));
+"""
+    r = subprocess.run([node, "-e", essai2], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "0|1|1|0", f"titres écartés faute de donnée faux : {r.stdout!r} {r.stderr[-300:]}"
 
 
 @test
