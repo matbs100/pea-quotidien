@@ -39,6 +39,7 @@ dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 | Heure (Paris) | Agent | Consigne | Rôle |
 |---|---|---|---|
 | 3 h, chaque nuit | **Veille et amélioration** | `AMELIORATION.md` | apprend (marchés, design, pédagogie, open source), note ce qu'il apprend dans `apprentissage/`, fait une amélioration testée |
+| 4 h, chaque jour | **Vérificateur du code** | `VERIFICATION.md` | sous la direction du chef : confidentialité du propriétaire (`confidentialite.py`, avec la clé secrète de la routine), tests, contrôle, analyse statique (`ruff`) et failles des bibliothèques (`pip-audit`), revue des commits du jour, une correction au plus (« Code : … [correctif] »), apprentissage quotidien dans des sources fiables (`apprentissage/code/`), idées ; rapport dans `pilotage/code/` |
 | 5 h, chaque jour | **Chef d'orchestre** | `CHEF.md` | contrôle tout (`controle.py`), vérifie les faits appris, relit les commits des autres, annule ce qui casse, corrige un bug ou embellit l'interface, écrit `pilotage/` |
 | 12 h 30, jours de bourse | **Chef d'orchestre, passage de mi-journée** | routine dédiée (lit `CHEF.md`) | vérifie la fiche d'ouverture, la refait et corrige le programme si besoin, s'assure que la clôture pourra tourner ; pas d'embellissement |
 | 9 h 15 et 17 h 55, jours de bourse | **Fiche du jour** | `ROUTINE.md` | collecte, contrôle des prix, fiches détaillées, analyse, site, notification |
@@ -276,6 +277,7 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `manques_documentation(archi, scripts)` | scripts et fonctions absents de ce document |
 | `c_documentation(d, maintenant)` | ce document, les notes, archives et analyses de chaque jour, les journaux de nuit |
 | `agent_du_commit(message)` | reconnaît l'agent d'après le message de commit (fiche, nuit, chef, univers pour la tâche du samedi) |
+| `message_affiche(message)` | message de commit recopié dans `pilotage/etat.json` (public) : sans le préfixe d'un commit du propriétaire |
 | `ecarts_aux_regles(agent, fichiers, jour_commit, dernier_jour)` | fichiers hors du rôle de l'agent, données passées modifiées, suppressions, taille du changement |
 | `git(*args)` | lance une commande Git dans le dépôt |
 | `c_agents(d, heures)` | relit les commits des 30 dernières heures |
@@ -323,7 +325,7 @@ trouve : fichier, ligne et catégorie seulement.
 Double-clic sur `Matin PEA.command` : crée `.venv` et installe `requirements.txt` (seulement s'il a changé),
 récupère la dernière version (`git pull --ff-only`, sauté si des fichiers sont modifiés), puis propose :
 fiche du jour (collecte → verif → fiches → rendu, ouverture dans le navigateur), copie des notes dans le
-coffre Obsidian (`Matin PEA/` : Fiches, Guide, Apprentissage ; chemin gardé dans `.matin-pea-local`, non
+coffre Obsidian (sautée si le projet est déjà dans un coffre, pour ne jamais créer de doublon) (`Matin PEA/` : Fiches, Guide, Apprentissage ; chemin gardé dans `.matin-pea-local`, non
 publié), contrôle et tests, et publication sur `claude/pea` après confirmation.
 
 ### `tests.py` : les garde-fous

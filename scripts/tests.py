@@ -731,7 +731,7 @@ def confidentialite():
     conf = cf.regles()
     k = b"cle-de-test"
     emp = {cf.empreinte("Zorglub", k)}
-    t = "Bonjour Zorglub,\nécrire à jean.dupont@exemple.fr ou noreply@anthropic.com\n/Users/jdupont/Documents\n" \
+    t = "Bonjour Zorglub,\nécrire à jean.dupont" + "@exemple.fr ou noreply@anthropic.com\n/Users/jdupont/Documents\n" \
         "https://www.site.com/global/en/home/page\nIBAN " + "FR76" + " 3000 6000 0112 3456 7890 189 · ISIN FR0000120073\n" \
         "curl ntfy" + ".sh/abcdef123 · ntfy.sh/<sujet>\n"  # valeurs coupées : le scanner relit ce fichier
     trouves = cf.analyser_texte(t, k, emp, conf)
@@ -752,6 +752,8 @@ def confidentialite():
     assert not cf.doublons(cf.fichiers_suivis()), "doublons « … 2 » dans le dépôt"
     # rôle du vérificateur du code dans le contrôle du chef
     assert c.agent_du_commit("Code : rapport du 2026-11-10 (vert)") == "code"
+    assert c.message_affiche("Untel : frais de chaque titre") == "frais de chaque titre"
+    assert c.message_affiche("Chef : rapport du 2026-11-10 (vert)").startswith("Chef :")
     ok = [("M", "scripts/rendu.py", 30), ("A", "pilotage/code/2026-11-10.md", 40), ("M", "ARCHITECTURE.md", 3),
           ("A", "apprentissage/code/2026-11-10.md", 20), ("M", "scripts/tests.py", 15)]
     assert c.ecarts_aux_regles("code", ok, "2026-11-10", "2026-11-09") == ([], [])

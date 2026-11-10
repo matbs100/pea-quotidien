@@ -27,3 +27,8 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 
 ## Interdits temporaires
 - Aucun.
+
+## Pour le vérificateur du code
+1. (10/11, demande du propriétaire) Premier passage : contrôle complet de confidentialité (`--site --commits 0`), dépôt, commits et site ; aucune information personnelle nulle part. Un ancien commit touché se signale au propriétaire, sans réécrire l'historique.
+2. (10/11) Revoir `scripts/confidentialite.py` (faux positifs, catégories manquantes) et les ajouts du 09/11 (frais, devises, OPCVM, sécurité de la page).
+3. (10/11) Première veille : versions et failles de yfinance, pandas, requests, pypdf (`pip-audit`), et une technique de l'OWASP sur la politique de sécurité des pages (CSP).

@@ -116,9 +116,23 @@ coffre_obsidian() {
   printf '%s' "$coffre"
 }
 
+coffre_englobant() {  # coffre Obsidian qui contient déjà le projet (dossier .obsidian au-dessus)
+  local d="$RACINE"
+  while [ "$d" != "/" ]; do
+    [ -d "$d/.obsidian" ] && { printf '%s' "$d"; return 0; }
+    d=$(dirname "$d")
+  done
+  return 1
+}
+
 vers_obsidian() {
   titre "Copie dans Obsidian"
-  local coffre cible
+  local coffre cible englobant
+  # Le projet est déjà dans le coffre (synchronisé par git pull) : une copie ferait des doublons.
+  if englobant=$(coffre_englobant); then
+    vert "Déjà dans ton coffre Obsidian ($(basename "$englobant")) : tout y est, aucune copie (pas de doublon)."
+    return 0
+  fi
   coffre=$(coffre_obsidian) || return 1
   cible="$coffre/Matin PEA"
   mkdir -p "$cible/Fiches" "$cible/Guide" "$cible/Apprentissage"

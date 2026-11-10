@@ -1,6 +1,6 @@
 """Lectures des agents : des PDF de sources vérifiées, une fiche de lecture par document dans Obsidian.
 
-Usage (agent de nuit, chef d'orchestre) :
+Usage (agent de nuit, chef d'orchestre, vérificateur du code) :
   python scripts/lectures.py telecharger <url>
       vérifie que le lien est sur un site de pilotage/sources-verifiees.md, que son robots.txt le permet,
       qu'il ne redirige pas ailleurs et que c'est bien un PDF (30 Mo au plus), puis l'enregistre dans
@@ -8,7 +8,7 @@ Usage (agent de nuit, chef d'orchestre) :
   python scripts/lectures.py lire <chemin du PDF> [1-10]
       affiche le texte des pages demandées (10 par défaut, 30 au plus par appel), avec leur numéro,
       pour écrire la fiche ; le texte n'est jamais enregistré.
-  python scripts/lectures.py note <url> "<titre>" "<organisme>" [<date de publication>] [nuit|chef]
+  python scripts/lectures.py note <url> "<titre>" "<organisme>" [<date de publication>] [nuit|chef|code]
       crée apprentissage/lectures/AAAA-MM-JJ-<titre>.md à remplir (résumé, chiffres clés avec leur page,
       ce que Matin PEA peut en tirer) ; ne remplace jamais une fiche existante.
   python scripts/lectures.py index
@@ -30,6 +30,7 @@ from zoneinfo import ZoneInfo
 
 RACINE = Path(__file__).resolve().parent.parent
 SOURCES = RACINE / "pilotage" / "sources-verifiees.md"
+AGENTS = {"nuit": "de nuit", "chef": "chef d'orchestre", "code": "vérificateur du code"}  # auteur d'une fiche
 DOSSIER = RACINE / "apprentissage" / "lectures"
 TELECHARGEMENTS = Path("/tmp/lectures")
 MAX_MO = 30
@@ -151,7 +152,7 @@ statut: ⏳ à vérifier
 ---
 # 📄 {titre}
 
-[Lire le PDF]({url}) · {organisme}{f" · publié le {publie_le}" if publie_le else ""} · lu le {jour} par l'agent {"de nuit" if auteur == "nuit" else "chef d'orchestre"}
+[Lire le PDF]({url}) · {organisme}{f" · publié le {publie_le}" if publie_le else ""} · lu le {jour} par l'agent {AGENTS.get(auteur, "chef d'orchestre")}
 
 ## Résumé
 (80 à 300 mots, avec tes propres mots : de quoi parle le document, ce qu'il montre, ses limites.)

@@ -47,3 +47,32 @@ fournisseur d'indices, d'un émetteur du produit ou d'une institution de recherc
 `robots.txt` permet de lire ses PDF ; il l'écrit dans son rapport, avec « réseau : à autoriser par
 Le propriétaire » (lui seul règle les domaines autorisés du cloud). Jamais de blog, de forum, de site commercial
 ni de média qui vend des conseils.
+
+## Code, sécurité et confidentialité (vérificateur du code)
+
+Ajoutées le 10 novembre 2026 pour l'apprentissage quotidien du vérificateur du code ; `robots.txt` lus ce
+jour-là (tous autorisent la lecture). Documentation officielle, organismes publics et journaux techniques
+reconnus seulement : pas de blog inconnu ni de forum.
+
+| Domaine | Organisme | Type | Ce qu'on y trouve | Réseau du cloud |
+|---|---|---|---|---|
+| `docs.python.org` | Python Software Foundation | documentation officielle | nouveautés de chaque version (« What's New »), bibliothèque standard | autorisé |
+| `www.python.org` | Python Software Foundation | éditeur | versions publiées, avis de sécurité | autorisé |
+| `peps.python.org` | Python (PEP) | normes du langage | propositions d'évolution du langage | autorisé |
+| `blog.python.org` | Python Insider (équipe Python) | journal technique | annonces de versions et de correctifs | autorisé |
+| `pypi.org` | Python Package Index | registre | versions et notes de version des bibliothèques du projet | autorisé |
+| `pandas.pydata.org` | pandas | documentation officielle | nouveautés et changements de pandas | autorisé |
+| `osv.dev` | Open Source Vulnerabilities (Google, open source) | base de failles | failles connues des bibliothèques Python | autorisé |
+| `nvd.nist.gov` | NIST (États-Unis) | base de failles officielle | fiches CVE | autorisé |
+| `csrc.nist.gov` | NIST | normes (PDF) | développement sécurisé (SSDF), cryptographie | autorisé |
+| `owasp.org` | OWASP Foundation | sécurité du web | Top 10 des risques, guides (PDF) | autorisé |
+| `cheatsheetseries.owasp.org` | OWASP | fiches pratiques | échappement, en-têtes de sécurité, politique de contenu (CSP) | autorisé |
+| `developer.mozilla.org` | Mozilla (MDN) | documentation du web | HTML, CSS, JavaScript, sécurité des pages, accessibilité | autorisé |
+| `www.cnil.fr` | CNIL | autorité (France) | protection des données personnelles, guide RGPD du développeur (PDF) | autorisé |
+| `cyber.gouv.fr` | ANSSI | agence publique (France) | guides de sécurité informatique (PDF) | autorisé |
+| `docs.github.com` | GitHub | documentation officielle | Git, GitHub Pages, confidentialité de l'adresse e-mail des commits | autorisé |
+| `github.blog` | GitHub | journal technique | nouveautés et changelog de GitHub | autorisé |
+| `lwn.net` | LWN.net | journal technique reconnu | actualité du logiciel libre et de Python | autorisé |
+| `code.claude.com` | Anthropic | documentation officielle | Claude Code, routines, *skills* des agents | autorisé |
+| `docs.claude.com` | Anthropic | documentation officielle | bonnes pratiques des agents et des *skills* | autorisé |
+

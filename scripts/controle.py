@@ -43,13 +43,13 @@ RANG_MOMENT = {"ouverture": 0, "cloture": 1}
 
 # Fichiers que chaque agent ne doit pas modifier (le chef juge les cas limites)
 HORS_ROLE = {  # mes-investissements.md : tenu par le propriétaire seul, aucun agent n'y touche
-    "fiche": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "ARCHITECTURE.md", "config.json",
+    "fiche": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "ARCHITECTURE.md", "config.json",
               "pilotage/*", "apprentissage/*", "mes-investissements.md", "guide/*"],
-    "nuit": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "config.json", "pilotage/*", "data/*",
+    "nuit": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "config.json", "pilotage/*", "data/*",
              "mes-investissements.md", "guide/*"],
-    "chef": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "config.json", "data/jours/*",
+    "chef": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "config.json", "data/jours/*",
              "data/analyses/*", "data/signaux.csv", "data/historique.csv", "mes-investissements.md", "guide/*"],
-    "univers": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "ARCHITECTURE.md",
+    "univers": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "ARCHITECTURE.md",
                 "config.json", "data/*", "docs/*", "notes/*", "apprentissage/*", "mes-investissements.md",
                 "guide/*", "pilotage/*"],
     # vérificateur du code : code, tests, documentation, son rapport et son journal ; jamais les données
@@ -455,6 +455,14 @@ def agent_du_commit(message):
     return "autre"
 
 
+def message_affiche(message):
+    """Message de commit tel qu'il est recopié dans pilotage/etat.json (public) : un commit du
+    propriétaire perd son préfixe « … : », qui pourrait contenir un nom."""
+    if agent_du_commit(message) == "autre":
+        return re.sub(r"^[^:«»\n]{1,30}\s:\s", "", message)
+    return message
+
+
 def ecarts_aux_regles(agent, fichiers, jour_commit, dernier_jour):
     """fichiers : [(statut Git, chemin, lignes modifiées)]. Renvoie (problèmes, alertes)."""
     pb, al = [], []
@@ -500,9 +508,10 @@ def c_agents(d, heures=30):
             fichiers.append((statuts.get(chemin, "M"), chemin, n))
         jour = str(datetime.fromisoformat(quand).astimezone(PARIS).date())
         p, a = ecarts_aux_regles(agent, fichiers, jour, d["date"])
-        pb += [f"{sha[:7]} « {message[:50]} » : {x}" for x in p]
-        al += [f"{sha[:7]} « {message[:50]} » : {x}" for x in a]
-        vus.append(f"{sha[:7]} [{agent}] {message[:70]}")
+        m = message_affiche(message)
+        pb += [f"{sha[:7]} « {m[:50]} » : {x}" for x in p]
+        al += [f"{sha[:7]} « {m[:50]} » : {x}" for x in a]
+        vus.append(f"{sha[:7]} [{agent}] {m[:70]}")
     niveau = "probleme" if pb else "alerte" if al else "ok"
     resume = f"{len(vus)} commit(s), {len(pb)} problème(s), {len(al)} alerte(s)"
     return controle("agents", titre, niveau, resume, pb + al + vus)
@@ -602,7 +611,7 @@ def c_decisions(d, heures=30):
             continue
         chemins = git("show", "--name-only", "--format=", sha).split()
         if commit_sans_decision(agent_du_commit(message), message, chemins, decisions):
-            al.append(f"{sha[:7]} « {message[:50]} » : amélioration du code sans décision du journal (D-…)")
+            al.append(f"{sha[:7]} « {message_affiche(message)[:50]} » : amélioration du code sans décision du journal (D-…)")
     a_faire = sum(1 for x in decisions.values() if x.get("décision") in ("adoptée", "à l'essai", "provisoire (nuit)")
                   and not x.get("réalisée"))
     resume = f"{len(decisions)} décisions, {a_faire} à réaliser, {len(al)} point(s) à voir"

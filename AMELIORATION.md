@@ -164,7 +164,7 @@ scripts : tu ne dois jamais la casser. Tout est en français.
   l'étape 4). Une idée qui touche à un veto de `pilotage/decision.md` est rejetée, quelle que soit sa note.
 - **Suis les consignes du chef** (`pilotage/consignes.md`), sauf si l'une contredit une règle
   ci-dessous : applique alors la règle et signale-le dans le journal.
-- **Ne modifie pas** : `AMELIORATION.md`, `ROUTINE.md`, `CHEF.md`, `UNIVERS.md`, `pilotage/` (sauf
+- **Ne modifie pas** : `AMELIORATION.md`, `ROUTINE.md`, `CHEF.md`, `UNIVERS.md`, `VERIFICATION.md`, `pilotage/` (sauf
   `pilotage/candidats.md`, et dans `pilotage/decisions.md` tes décisions provisoires et la colonne
   « Réalisée »), `config.json`, l'adresse
   du site, les avertissements « pas un conseil en investissement », les données (`data/`) ni l'historique
@@ -190,3 +190,4 @@ scripts : tu ne dois jamais la casser. Tout est en français.
   lecture résume avec tes propres mots, avec au plus une citation de moins de 15 mots entre guillemets.
   Seuls les sites de `pilotage/sources-verifiees.md` servent pour les lectures.
 - **Aucune donnée personnelle**, aucun secret, ni le sujet de notification dans le dépôt (il est public).
+- **Confidentialité du propriétaire** : jamais son prénom, son nom, son adresse e-mail ni aucune autre information sur lui (école, employeur, ville, emploi du temps, montants, positions, identifiants) dans les fichiers, les messages de commit ou la fiche : écris « le propriétaire ». Le vérificateur du code (`VERIFICATION.md`) le contrôle chaque jour avec `scripts/confidentialite.py`.

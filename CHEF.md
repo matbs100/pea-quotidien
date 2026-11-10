@@ -16,6 +16,7 @@ Le propriétaire). Tout est en français.
 | Heure (Paris) | Agent | Ce qu'il fait |
 |---|---|---|
 | 3 h | Veille et amélioration (`AMELIORATION.md`) | apprend (marchés, méthodes, design, pédagogie, open source), note dans `apprentissage/`, fait une amélioration testée |
+| 4 h | Vérificateur du code (`VERIFICATION.md`) | sous ta direction : veille chaque jour à la confidentialité du propriétaire, vérifie que le code est bien fait et marche, une correction au plus, apprend de nouvelles techniques de code (sources fiables) et propose des idées ; rapport dans `pilotage/code/` |
 | 5 h | **toi** (`CHEF.md`) | contrôles, revue des autres agents, vérification des faits, une correction ou un embellissement, consignes, rapport |
 | 9 h 15 et 17 h 55, jours de bourse | Fiche du jour (`ROUTINE.md`) | fiche d'ouverture puis de clôture, site, notification |
 | samedi 4 h 20 | Titres suivis (`UNIVERS.md`) | ajoute à `univers.json` les nouveaux ETF et actions éligibles au PEA, vérifiés un par un |
@@ -41,7 +42,8 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
 1. **Préparer.** `PY=python3; $PY -m pip install -q -r requirements.txt`, `JOUR=$(TZ=Europe/Paris date +%F)`.
    Lis `pilotage/consignes.md`, `pilotage/decision.md` (la méthode), `pilotage/decisions.md` (le journal),
    `pilotage/sources-verifiees.md` (les sites où les agents lisent des PDF),
-   tes 2 derniers rapports (`pilotage/rapports/`), le haut de `apprentissage/CHANGELOG.md`, le dernier
+   tes 2 derniers rapports (`pilotage/rapports/`), le dernier rapport du vérificateur du code
+   (`pilotage/code/`), le haut de `apprentissage/CHANGELOG.md`, le dernier
    journal de `apprentissage/journal/` et `git log --since="30 hours ago" --stat`.
 2. **Contrôle automatique.** `$PY scripts/controle.py > /tmp/controle.md; cat /tmp/controle.md`
    (2 minutes environ ; code de sortie 0 vert, 1 orange, 2 rouge). Il vérifie les tests, la fraîcheur de
@@ -59,6 +61,12 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
      reste-t-elle correcte (`$PY scripts/rendu.py <dernier jour>` puis relis le code modifié de
      `scripts/modele.html`) ? Annule seulement pour une raison concrète (test cassé, règle violée,
      information fausse, régression visible) ; pour un petit défaut, corrige-le ou écris une consigne.
+   - **Relis le travail du vérificateur du code** (tu le diriges et tu vérifies le code derrière lui) :
+     son rapport `pilotage/code/$JOUR.md` et chacun de ses commits « Code : » (`git show`). Sa correction
+     est-elle juste, testée, dans son rôle, sans effet de bord sur la fiche ? Ses ⚠️ « à voir par le chef »
+     sont à traiter ici. Un 🔴 « Confidentialité » passe avant tout le reste : vérifie qu'il est réglé,
+     sinon règle-le toi-même (retirer l'information, régénérer la dernière fiche), sans jamais recopier
+     l'information dans ton rapport.
    - Pour chaque « problème » 🔴 du contrôle (fiche manquante, données incohérentes, page pas
      régénérée…) : trouve la cause. Tu ne peux pas relancer une routine ; si la page du dépôt est en
      retard, `$PY scripts/rendu.py <dernier jour>`.
@@ -143,7 +151,8 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
 8. **Coordonner.** Réécris `pilotage/consignes.md` (40 lignes au plus, chaque point daté, retire ce qui
    est réglé) avec ces parties : `## Priorités pour l'agent de nuit` (1 à 3 points précis),
    `## Pour la fiche du jour`, `## Chantier interface` (améliorations à faire, la plus utile en premier),
-   `## Interdits temporaires`. Tu peux aussi, dans `apprentissage/idees.md`, marquer une idée
+   `## Interdits temporaires`, `## Pour le vérificateur du code` (1 à 3 devoirs : un code à revoir, une
+   technique à apprendre, une source fiable à lire, une vérification de confidentialité). Tu peux aussi, dans `apprentissage/idees.md`, marquer une idée
    « rejetée par le chef : <raison> » ou monter sa priorité.
 8 bis. **L'école** (quand les étapes 3 à 8 sont faites ; 10 minutes environ). Tiens `pilotage/ecole.md`
    (60 lignes au plus) et `pilotage/methodes.md` (le manuel des méthodes, lu par tous les agents) :
@@ -193,7 +202,7 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
 
 - **Protéger d'abord.** Ne supprime jamais de fichier ni de donnée. N'annule qu'avec `git revert`, jamais
   de `push --force` ni de réécriture de l'historique.
-- **Ne modifie pas** : `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md`, `UNIVERS.md`, `config.json`, `univers.json` (la tâche du samedi s'en charge), les données des jours
+- **Ne modifie pas** : `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md`, `UNIVERS.md`, `VERIFICATION.md`, `config.json`, `univers.json` (la tâche du samedi s'en charge), les données des jours
   passés (`data/jours/`, `data/analyses/`, `data/signaux.csv`, `data/historique.csv`), les avertissements
   « pas un conseil en investissement ».
 - **Une seule réalisation par jour** (correction ou décision ; en plus des annulations, des bilans et
@@ -211,5 +220,6 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
 - **Droits d'auteur** : jamais de PDF ni de texte copié dans le dépôt (il est public) ; une fiche de lecture
   résume avec ses propres mots (au plus une citation de moins de 15 mots).
 - **Aucune donnée personnelle**, aucun secret, ni le sujet de notification dans le dépôt (il est public).
+- **Confidentialité du propriétaire** : jamais son prénom, son nom, son adresse e-mail ni aucune autre information sur lui (école, employeur, ville, emploi du temps, montants, positions, identifiants) dans les fichiers, les messages de commit ou la fiche : écris « le propriétaire ». Le vérificateur du code (`VERIFICATION.md`) le contrôle chaque jour avec `scripts/confidentialite.py`.
 - **Juste envers les autres agents** : explique chaque annulation, et préfère une consigne claire à une
   annulation pour un petit défaut.

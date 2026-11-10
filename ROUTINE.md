@@ -117,12 +117,13 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
 - Ne modifie pas les scripts, sauf pour corriger un bug évident qui bloque la fiche. Dans ce cas,
   explique la correction dans le message de commit.
 - **Filet de sécurité** : si un script plante et qu'un commit « Amélioration : … » (agent de nuit) ou
-  « Chef : … » (chef d'orchestre) a moins de 24 h
-  (`git log -E --since="24 hours ago" --grep="^(Amélioration|Chef) :"`), annule-le avec
+  « Chef : … » (chef d'orchestre) ou « Code : … » (vérificateur du code) a moins de 24 h
+  (`git log -E --since="24 hours ago" --grep="^(Amélioration|Chef|Code) :"`), annule-le avec
   `git revert --no-edit <commit>`, relance l'étape, note « annulée le $JOUR : <raison> » sur l'idée
   correspondante dans `apprentissage/idees.md` s'il y en a une, et commence la notification par
   « Changement automatique annulé : <titre du commit> ».
 - Ne touche pas à `apprentissage/` (sauf l'idée proposée à l'étape 5 ter et la ligne d'idée en cas
   d'annulation), ni à `pilotage/`,
-  `ARCHITECTURE.md`, `AMELIORATION.md` ou `CHEF.md` : c'est le travail des autres agents.
+  `ARCHITECTURE.md`, `AMELIORATION.md`, `CHEF.md` ou `VERIFICATION.md` : c'est le travail des autres agents.
 - Ne touche pas aux fichiers de données des jours précédents.
+- **Confidentialité du propriétaire** : jamais son prénom, son nom, son adresse e-mail ni aucune autre information sur lui (école, employeur, ville, emploi du temps, montants, positions) dans la fiche, l'analyse, la note, la notification ou les messages de commit : écris « le propriétaire » ou « tu ».
