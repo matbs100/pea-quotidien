@@ -1,15 +1,15 @@
 {
- "genere_le": "2026-11-10T09:59+01:00",
+ "genere_le": "2026-11-10T12:36+01:00",
  "fiche": "2026-11-10 (ouverture)",
  "lieu": "cloud",
  "etat": "rouge",
- "resume": "À corriger. 29/29 tests, 24/29 liens valides, site à jour. Points à voir : liens des fiches détaillées, travail des agents (30 dernières heures).",
+ "resume": "À corriger. 31/31 tests, 23/29 liens valides, site à jour. Points à voir : liens des fiches détaillées, travail des agents (30 dernières heures).",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "29/29 tests réussis",
+   "resume": "31/31 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf"
    ]
@@ -21,7 +21,7 @@
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
     "dernière fiche : 2026-11-10 (ouverture), générée le 2026-11-10T09:25+01:00",
-    "fiche attendue à cette heure : 2026-11-09 (cloture)"
+    "fiche attendue à cette heure : 2026-11-10 (ouverture)"
    ]
   },
   {
@@ -56,12 +56,13 @@
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "probleme",
-   "resume": "24/29 liens valides sur 8 titres, 5 non ouverts (robots.txt)",
+   "resume": "23/29 liens valides sur 8 titres, 5 non ouverts (robots.txt)",
    "details": [
     "PLEM.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/PLEM.PA/)",
     "CD8.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/CD8.PA/)",
     "PINR.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/PINR.PA/)",
     "TRV.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/TRV.PA/)",
+    "DSY.PA · Boursorama : réponse 429 (https://www.boursorama.com/cours/1rPDSY/)",
     "HLT.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/HLT.PA/)"
    ]
   },
@@ -86,13 +87,17 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "alerte",
-   "resume": "18 commit(s), 0 problème(s), 5 alerte(s)",
+   "resume": "21 commit(s), 0 problème(s), 5 alerte(s)",
    "details": [
     "ceb6c31 « Amélioration : encadré « Le contexte des taux » de » : data/taux_bce.json : hors du rôle de l'agent « nuit »",
     "0fd4b0c « Chef : rapport du 2026-11-10 (orange) ; import inu » : docs/archives/2026-11-09.html : fiche d'un jour passé régénérée",
     "0fd4b0c « Chef : rapport du 2026-11-10 (orange) ; import inu » : notes/2026-11-09.md : fiche d'un jour passé régénérée",
     "857db8b « Amélioration : « Mes critères » annonce les titres » : docs/archives/2026-11-09.html : fiche d'un jour passé régénérée",
     "857db8b « Amélioration : « Mes critères » annonce les titres » : notes/2026-11-09.md : fiche d'un jour passé régénérée",
+    "54390f0 [autre] notification refusée par ntfy au cloud (quota par adresse partagée) re",
+    "bbcb69c [autre] taux.py compatible avec Python 3.9 (Mac) ; test compatible_python_39 ;",
+    "40214e2 [autre] historique Git nettoyé, point de confidentialité clos dans les rapport",
+    "c36d281 [chef] Chef : passage de 10 h du 2026-11-10 (orange) ; revue de l'encadré BCE",
     "a96555f [code] Code : rapport du 2026-11-10 passage de 4 h (vert) ; taux.py : zip exp",
     "ceb6c31 [nuit] Amélioration : encadré « Le contexte des taux » de la BCE [D-20261110-",
     "9a41c4c [autre] le contrôle de confidentialité lit aussi le site depuis le Mac (reques",
@@ -103,11 +108,7 @@
     "857db8b [nuit] Amélioration : « Mes critères » annonce les titres écartés faute de do",
     "52c8e10 [autre] empreintes de confidentialité avec la clé du vérificateur",
     "800a755 [autre] clé de confidentialité du vérificateur rangée dans .matin-pea-local (j",
-    "8d806af [autre] nouvel agent « Vérificateur du code » (4 h, sous la direction du chef)",
-    "7e957c6 [autre] confidentialité (prénom retiré du dépôt, contrôle quotidien des inform",
-    "b3d3178 [autre] frais de chaque titre, devise de chaque cours, OPCVM éligibles au PEA,",
-    "3c56f17 [fiche] Matin PEA 2026-11-09 (cloture)",
-    "62e632f [chef] Chef : passage de mi-journée du 2026-11-09 (orange)"
+    "8d806af [autre] nouvel agent « Vérificateur du code » (4 h, sous la direction du chef)"
    ]
   },
   {
