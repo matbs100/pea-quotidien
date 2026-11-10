@@ -469,5 +469,15 @@
   "boursorama": "1rPADOC",
   "ft": "ADOC:PAR",
   "echecs": {}
+ },
+ "IPS.PA": {
+  "boursorama": "1rPIPS",
+  "ft": "IPS:PAR",
+  "echecs": {}
+ },
+ "ALKAL.PA": {
+  "boursorama": "1rPALKAL",
+  "ft": "ALKAL:PAR",
+  "echecs": {}
  }
 }
