@@ -11,3 +11,5 @@ vérifier » jusqu'à la relecture du chef.
 
 ## Journal
 
+- [[Finance/PEA Quotidien/apprentissage/code/2026-11-10|10/11/2026]] : CSP, empreintes et `strict-dynamic`
+
