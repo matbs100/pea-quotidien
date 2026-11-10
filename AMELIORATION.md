@@ -130,6 +130,11 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    propre décision et que tout est au vert après la première.
    Ne régénère pas les fiches des jours passés : ne garde que les modifications de `docs/` et `notes/`
    du dernier jour.
+   **Chaque premier lundi du mois : relire `opcvm.json`.** Pour chaque fonds, vérifie dans son DIC ou sa
+   fiche les frais courants, droits d'entrée et de sortie, la commission de surperformance et le SRI ;
+   corrige et mets à jour `verifie_le`. Un fonds devenu inéligible au PEA ou fermé : retire-le et note-le.
+   Vérifie aussi la grille de courtage `TARIF` de `modele.html` (BNP Paribas publie ses tarifs chaque
+   1er janvier).
 4 bis. **L'innovation de la semaine** (demande du propriétaire : le site doit progresser, pas seulement les
    connaissances). Chaque **vendredi soir et chaque samedi**, au lieu de la petite touche de l'étape 4 si
    aucune n'est prioritaire, réalise une **nouveauté visible** sur le site, nourrie par ta veille de la

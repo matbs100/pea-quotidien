@@ -2,6 +2,10 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
+<!-- Sécurité : seuls le script de cette page (repéré par son empreinte, calculée par rendu.py) et les polices
+     Google peuvent se charger ; aucun envoi de données, aucun formulaire vers l'extérieur. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src '__EMPREINTE_SCRIPT__'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matin PEA</title>
 <meta name="theme-color" content="#0d1412">
@@ -80,6 +84,12 @@ h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 700; }
 .f-etf { display: inline-flex; flex-wrap: wrap; text-align: left; align-items: baseline; gap: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 12px; padding: 6px 12px; font: 500 1.05rem var(--font-mono); cursor: pointer; }
 .f-etf small { font: 12px var(--font-body); color: var(--muted); }
 .ligne[hidden], .card[hidden] { display: none; }
+.fxl { display: block; margin-top: 2px; font: 12px var(--font-body); color: var(--muted); }
+.opc { display: grid; grid-template-columns: minmax(0, 1fr) auto 76px; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; }
+.opc .t { min-width: 0; } .opc .t strong { display: block; } .opc .t small { display: block; color: var(--muted); font: 12px var(--font-body); }
+.opc .c { font: 13px var(--font-mono); text-align: right; } .opc .c em { display: block; font: 11px var(--font-body); color: var(--muted); font-style: normal; }
+@media (max-width: 600px) { .opc { grid-template-columns: minmax(0, 1fr) auto; } .opc .c.v1 { display: none; } }
+#b-frais .chips { margin: 0 0 10px; }
 .card svg { position: absolute; right: 10px; bottom: 10px; width: 90px; height: 34px; opacity: .9; }
 
 /* analyse */
@@ -360,6 +370,12 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
     <div class="liste" id="top30"></div>
   </section>
 
+  <section id="sec-opc" hidden>
+    <div class="sec-head"><div><h2>OPCVM éligibles au PEA</h2><div class="sub">Fonds (SICAV et FCP) gérés par une équipe, achetés auprès de ta banque · valeur calculée une fois par jour · pas une liste d'achats</div></div></div>
+    <div class="liste" id="opcvm"></div>
+    <p class="note" id="opc-note"></p>
+  </section>
+
   <section>
     <div class="sec-head"><div><h2>10 petits prix (moins de 2 €)</h2><div class="sub">Les mieux classés parmi les titres liquides sous 2 €</div></div></div>
     <div class="alerte">Petit prix ne veut pas dire bon marché : ce sont souvent des sociétés fragiles (biotechs, entreprises en difficulté), très volatiles, où l'on peut perdre beaucoup. À garder pour une très petite part, ou juste à observer.</div>
@@ -397,15 +413,31 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 
 <script id="donnees" type="application/json">/*__DONNEES__*/</script>
 <script>
+// Sécurité : la page refuse de s'afficher dans le cadre (iframe) d'un autre site, pour qu'on ne puisse pas
+// la recouvrir d'un piège à clics. Elle propose alors de s'ouvrir normalement.
+if (window.top !== window.self) {
+  let memeSite = false;
+  try { memeSite = window.top.location.origin === location.origin; } catch (e) { memeSite = false; }
+  if (!memeSite) {
+    document.body.innerHTML = '<p style="padding:24px;font:16px system-ui">Matin PEA ne s\'affiche pas dans le cadre d\'un autre site. <a target="_top" rel="noopener noreferrer"></a></p>';
+    const a = document.querySelector("a"); a.href = location.href; a.textContent = "Ouvrir la fiche";
+    throw new Error("Page affichée dans un cadre : arrêt.");
+  }
+}
 const D = JSON.parse(document.getElementById("donnees").textContent);
 const $ = (s) => document.querySelector(s);
 const fr = (x, d = 2) => x == null ? "—" : x.toLocaleString("fr-FR", { minimumFractionDigits: d, maximumFractionDigits: d });
 const sens = (x) => x == null ? "flat" : x > 0 ? "up" : x < 0 ? "down" : "flat";
 const pct = (x) => x == null ? "—" : (x > 0 ? "+" : "") + fr(x) + " %";
 const dec = (p) => p >= 1000 ? 0 : p >= 10 ? 2 : p >= 1 ? 3 : 4;
-const dev = (m) => m && m.devise ? ` <span class="dev">${m.devise}</span>` : "";  // devise de cotation
+// Devise de chaque cours (« pts » pour un indice, qui se compte en points) : affichée partout où un prix l'est
+const UNITE = { "EURUSD=X": "USD", "EURGBP=X": "GBP", "EURCHF=X": "CHF", "EURJPY=X": "JPY", "GC=F": "USD", "BZ=F": "USD", "CL=F": "USD", "BTC-EUR": "EUR", "BTC-USD": "USD" };
+const deviseDe = (m) => !m ? null : m.devise ? m.devise : m.categorie === "indices" || String(m.ticker || "").startsWith("^") ? "pts"
+  : UNITE[m.ticker] || (/\.(PA|AS|BR|LS|IR|DE|F|MI|MC|HE|AT|VI)$/.test(m.ticker || "") ? "EUR" : null);
+const dev = (m) => { const u = deviseDe(m); return u ? ` <span class="dev">${u}</span>` : ""; };  // devise de cotation
 const pxu = (x, u) => x == null ? null : fr(x, dec(x)) + (u ? ` <span class="dev">${u}</span>` : "");  // prix et devise
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const lienSur = (u) => /^https:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? String(u) : null;  // seulement des liens https
 const SG = D.suggestions || [];
 const MI = D.mes_investissements || null;
 let INV = {};  // titre -> position (achats de cet appareil et du fichier), rempli par rendreInvestissements()
@@ -416,7 +448,7 @@ const nbParts = (q) => fr(q, q % 1 ? 2 : 0) + (q > 1 ? " parts" : " part");
 const SRC = { yahoo: "Yahoo", boursorama: "Boursorama", ft: "Financial Times", wealins: "Wealins" };
 function vf(m) {
   if (!m.verif) return "";
-  const det = Object.entries(m.sources || {}).map(([k, v]) => `${SRC[k] || k} ${fr(v, dec(v))}${m.devise ? " " + m.devise : ""}`).join(" · ");
+  const det = Object.entries(m.sources || {}).map(([k, v]) => `${SRC[k] || k} ${fr(v, dec(v))}${deviseDe(m) ? " " + deviseDe(m) : ""}`).join(" · ");
   const lib = { ok: `✓ ${Object.keys(m.sources).length} sources`, ecart: "⚠ écart entre sources", seul: "1 source" }[m.verif];
   return ` <span class="vf ${m.verif}" title="${esc(det)}">${lib}</span>`;
 }
@@ -462,7 +494,7 @@ if (CC && CC.etat) {
     + quand.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }).replace(":", " h ");
   el.hidden = false;
   el.innerHTML = `${pastille} <strong>Contrôle qualité${lib}</strong> · ${esc(CC.resume)}`
-    + (D.url_depot ? ` · <a href="${D.url_depot}/tree/claude/pea/pilotage" target="_blank" rel="noopener">rapports du chef d'orchestre</a>` : "");
+    + (D.url_depot ? ` · <a href="${esc(D.url_depot)}/tree/claude/pea/pilotage" target="_blank" rel="noopener noreferrer">rapports du chef d'orchestre</a>` : "");
 }
 
 // euro / dollar
@@ -482,7 +514,7 @@ function compte(el, cible, d, suffixe = "") {
 }
 
 // bandeau
-const tape = D.indices.map((m) => `<span><b>${esc(m.nom)}</b>${fr(m.prix, dec(m.prix))} <span class="${sens(m.var_1j)}">${pct(m.var_1j)}</span></span>`).join("");
+const tape = D.indices.map((m) => `<span><b>${esc(m.nom)}</b>${fr(m.prix, dec(m.prix))}${dev(m)} <span class="${sens(m.var_1j)}">${pct(m.var_1j)}</span></span>`).join("");
 $("#tape").innerHTML = tape + tape;
 
 // Un indice ne s'achète pas : on montre à côté le prix d'une part d'un ETF éligible au PEA qui le suit
@@ -501,8 +533,8 @@ function prixEtf(m) {
   return `<div class="etfx" title="Prix d'une part de ${esc(e.nom)}">${fr(e.prix, dec(e.prix))}\u00a0€<small>1 part d'ETF${vieux ? "<br>" + vieux.slice(3) : ""}</small></div>`;
 }
 
-function carte(m, unite = "") {
-  return `<div class="card rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}"><div class="nom">${esc(m.nom)}${vf(m)}</div><div class="val-l"><div class="val">${fr(m.prix, dec(m.prix))}${unite}</div>${m.categorie === "indices" ? prixEtf(m) : ""}</div>
+function carte(m) {
+  return `<div class="card rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}"><div class="nom">${esc(m.nom)}${vf(m)}</div><div class="val-l"><div class="val">${fr(m.prix, dec(m.prix))}${dev(m)}</div>${m.categorie === "indices" ? prixEtf(m) : ""}</div>
     <div class="chg ${sens(m.var_1j)}">${pct(m.var_1j)} <span class="flat">· 1 mois ${pct(m.var_1m)}</span></div>${spark(m.courbe.slice(-60), sens(m.var_1m))}</div>`;
 }
 $("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
@@ -531,12 +563,50 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && e.target.classList && e.target.classList.contains("rsq")) { e.stopPropagation(); e.target.click(); }
 }, true);
 const badge = { etf: '<span class="badge b-etf">ETF</span>', actions: '<span class="badge b-action">Action</span>', petites: '<span class="badge b-petite">Petite cap.</span>', fonds: '<span class="badge b-etf">Fonds</span>' };
+// ---------- frais : gestion (chaque année) et transaction (à l'achat, à la revente) ----------
+// Courtage et garde : grille BNP Paribas (conditions au 1er janvier 2026, offre Bourse Start, ordres en ligne sur
+// Euronext), dans la limite des plafonds du PEA (art. D. 221-111-1 du Code monétaire et financier) : 0,5 % par
+// ordre en ligne ; garde 0,4 % de la valeur + 5 € par ligne et par an. La TTF (0,4 %) s'ajoute hors plafond.
+const TARIF = {
+  libelle: "BNP Paribas, offre Bourse Start, ordre passé en ligne sur Euronext (grille au 1er janvier 2026)",
+  courtage: (M) => Math.min(M <= 1000 ? 5 : M <= 3000 ? 10 : 0.005 * M, 0.005 * M),
+  garde: (M) => 0.004 * Math.min(M, 50000) + 0.002 * Math.max(0, Math.min(M, 150000) - 50000) + 0.001 * Math.max(0, M - 150000) + 5,
+  ttf: 0.4,
+};
+function fraisDe(m) {  // { g : gestion %/an, e / s : entrée / sortie %, ttf, opc (OPCVM), perf (surperformance) }
+  // (appelée dès le rendu des listes : n'utilise que D, pas les constantes définies plus bas)
+  if (!m || !["etf", "actions", "petites", "fonds"].includes(m.categorie)) return null;
+  if (m.source === "opcvm") return { g: m.frais_courants, e: m.entree_max, s: m.sortie_max, perf: m.surperformance, opc: true };
+  if (m.categorie === "fonds") return null;  // fonds Wealins : frais dans le contrat d'assurance vie, pas dans le PEA
+  const d = ((D.details || {})[m.ticker] || {}).frais, fx = m.fx || ((D.catalogue || []).find((c) => c.ticker === m.ticker) || {}).fx;
+  const action = m.categorie !== "etf";
+  if (d) return { g: action ? 0 : d.gestion, e: d.entree, s: d.sortie, ttf: !!d.ttf };
+  if (fx) return { g: action ? 0 : fx.g, e: fx.e, s: fx.s, ttf: !!fx.ttf };
+  return { g: action ? 0 : null };
+}
+function couts(m, M) {
+  const f = fraisDe(m); if (!f) return null;
+  const achat = f.opc ? (f.e != null ? M * f.e / 100 : null) : TARIF.courtage(M);
+  const ttf = f.ttf ? M * TARIF.ttf / 100 : 0;
+  const gestion = f.g != null ? M * f.g / 100 : null;
+  const garde = TARIF.garde(M);
+  const revente = f.opc ? (f.s != null ? M * f.s / 100 : null) : TARIF.courtage(M);
+  const total = [achat, gestion, revente].every((x) => x != null) ? achat + ttf + gestion + garde + revente : null;
+  return { f, achat, ttf, gestion, garde, revente, total };
+}
+function fraisCourt(m) {  // résumé des frais pour une ligne de liste
+  const f = fraisDe(m); if (!f) return "";
+  const g = f.g == null ? "frais/an : voir le DIC" : f.g === 0 ? "aucun frais annuel" : `frais ${fr(f.g, 2)} %/an`;
+  const a = f.opc ? (f.e != null ? ` · entrée jusqu'à ${fr(f.e, 0)} %` : "") : ` · achat de 100 € : ${eur(TARIF.courtage(100))}${f.ttf ? " + 0,40 € de TTF" : ""}`;
+  return `<span class="fxl">${g}${a}</span>`;
+}
+
 function ligne(m, i, sc) {
   const s = m[sc] ?? 0;
   const parts = m.prix > 0 ? Math.floor(100 / m.prix) : 0;
   return `<div class="ligne rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}" data-cat="${m.categorie === "petites" ? "actions" : m.categorie}">
     <div class="rg">${String(i + 1).padStart(2, "0")}</div>
-    <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"} ${risque(m)}</small></div>
+    <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"} ${risque(m)}${fraisCourt(m)}</small></div>
     <div class="c px"><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span><em>prix</em></div>
     <div class="cs"><div class="c ${sens(m.var_1j)}">${pct(m.var_1j)}<em>1 jour</em></div>
     <div class="c ${sens(m.var_1m)}">${pct(m.var_1m)}<em>1 mois</em></div>
@@ -547,6 +617,7 @@ function ligne(m, i, sc) {
 }
 $("#top30").innerHTML = D.top30.map((m, i) => ligne(m, i, "score")).join("");
 $("#petites").innerHTML = D.petites.map((m, i) => ligne(m, i, "score_petite")).join("");
+let FICHE = null;  // titre de la fiche ouverte (pour recalculer ses frais)
 
 // ---------- mes critères : réduit le Top 30 aux titres qui remplissent les critères choisis ----------
 // Un critère vide est ignoré ; un titre sans la donnée demandée n'est pas retenu (on ne devine rien).
@@ -637,18 +708,41 @@ CAT.forEach((m) => { if (!TOUS[m.ticker]) TOUS[m.ticker] = m; });
 const NB_SUIVIS = CAT.length, NB_ISIN_SUIVIS = CAT.filter((m) => m.isin).length;
 // Fonds de la liste Wealins (supports d'assurance vie) : trouvables par ISIN ou par nom. Leur prix est leur
 // dernière valeur liquidative publiée (souvent celle de la veille), toujours affichée avec sa date.
+const OPC = (D.opcvm || []).filter((m) => m && m.isin);
+OPC.forEach((m) => { CAT.push(m); if (!TOUS[m.ticker]) TOUS[m.ticker] = m; });
+const NB_OPC = OPC.length;
 ((D.fonds_wealins && D.fonds_wealins.l) || []).forEach(([isin, nom, devise, vl, dvl, v]) => {
+  if (TOUS[isin] && TOUS[isin].source === "opcvm") return;  // déjà suivi comme OPCVM éligible au PEA
   const m = { ticker: isin, isin, nom, categorie: "fonds", wealins: true, prix: vl, devise, date_cours: dvl, var_1j: v };
   CAT.push(m);
   if (!TOUS[isin]) TOUS[isin] = m;
 });
-const NB_FONDS = CAT.length - NB_SUIVIS;
+const NB_FONDS = CAT.length - NB_SUIVIS - NB_OPC;
+function ligneOpc(m) {
+  return `<div class="opc rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}">
+    <div class="t"><strong>${esc(m.nom)}${badge.fonds}${m.sri ? ` <span class="badge b-action">SRI ${m.sri}/7</span>` : ""}</strong><small>${esc(m.societe || "")} · ${esc(m.zone || "")}</small>${fraisCourt(m)}</div>
+    <div class="c px"><span class="num">${m.prix != null ? fr(m.prix, dec(m.prix)) + dev(m) : "—"}</span><em>${m.date_cours ? "valeur du " + jourCourt(m.date_cours) : "valeur à la prochaine collecte"}</em></div>
+    <div class="c v1 ${sens(m.var_1j)}">${pct(m.var_1j)}<em>1 jour</em></div></div>`;
+}
+if (OPC.length) {
+  $("#sec-opc").hidden = false;
+  $("#opcvm").innerHTML = OPC.map(ligneOpc).join("");
+  $("#opc-note").textContent = "Contrairement à un ETF, un OPCVM ne s'échange pas en Bourse en continu : l'ordre passe par la banque et s'exécute à la prochaine valeur liquidative. Ses frais courants sont souvent bien plus élevés (1,5 à 2,5 % par an contre 0,1 à 0,5 % pour un ETF), en échange d'une gestion active qui ne bat pas toujours son indice. Frais relevés dans le DIC de chaque fonds, à revérifier avant toute décision.";
+}
 const estFonds = (m) => !!m && m.categorie === "fonds";
 const valeurDu = (m) => m.date_cours ? "valeur du " + jourCourt(m.date_cours) : "";
 const CLE = "matin-pea:investissements";
 let stockageOk = true;
 function lireAchats() {
-  try { const a = JSON.parse(localStorage.getItem(CLE) || "[]"); return Array.isArray(a) ? a.filter((x) => x && x.ticker) : []; }
+  try {  // données de cet appareil : on ne garde que des champs attendus, aux formats attendus
+    const a = JSON.parse(localStorage.getItem(CLE) || "[]");
+    const num = (x) => typeof x === "number" && isFinite(x) && x > 0 ? x : null;
+    return Array.isArray(a) ? a.filter((x) => x && typeof x.ticker === "string" && /^[A-Za-z0-9.^=_-]{1,24}$/.test(x.ticker)).slice(0, 500).map((x) => ({
+      ticker: x.ticker, isin: estIsin(String(x.isin || "")) ? x.isin : null, nom: String(x.nom || x.ticker).slice(0, 120),
+      categorie: ["etf", "actions", "petites", "fonds"].includes(x.categorie) ? x.categorie : "actions",
+      date: /^\d{4}-\d{2}-\d{2}$/.test(String(x.date || "")) ? x.date : null, prix: num(x.prix), quantite: num(x.quantite),
+      ajoute_le: String(x.ajoute_le || "").slice(0, 40) })) : [];
+  }
   catch (e) { stockageOk = false; return []; }
 }
 function ecrireAchats(a) {
@@ -757,7 +851,7 @@ function montrerResultats() {
   trouves = chercher(v);
   resultats.hidden = false;
   if (trouves.length) {
-    resultats.innerHTML = trouves.map((m) => `<button type="button" class="res" data-choix="${esc(m.ticker)}"><span><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([m.isin, m.ticker !== m.isin && m.ticker, m.wealins && "liste Wealins, " + valeurDu(m)].filter(Boolean).join(" · "))}</small></span><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span></button>`).join("");
+    resultats.innerHTML = trouves.map((m) => `<button type="button" class="res" data-choix="${esc(m.ticker)}"><span><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([m.isin, m.ticker !== m.isin && m.ticker, m.wealins && "liste Wealins, " + valeurDu(m)].filter(Boolean).join(" · "))}${fraisCourt(m)}</small></span><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span></button>`).join("");
     return;
   }
   const V = v.toUpperCase().replace(/\s+/g, ""), connus = NB_ISIN_SUIVIS;
@@ -771,12 +865,12 @@ function formulaire(m) {
   resultats.hidden = true;
   const f = $("#inv-form"), isin = isinDe(m);
   f.hidden = false;
-  f.innerHTML = `<div><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([isin, m.ticker !== isin && m.ticker].filter(Boolean).join(" · "))}${m.prix != null ? (estFonds(m) && m.date_cours ? " · " + valeurDu(m) + " : " : " · cours ") + fr(m.prix, dec(m.prix)) + (m.devise ? " " + m.devise : "") : ""}</small></div>
+  f.innerHTML = `<div><strong>${esc(m.nom)}</strong>${badge[m.categorie] || ""}${levier(m)}<small>${esc([isin, m.ticker !== isin && m.ticker].filter(Boolean).join(" · "))}${m.prix != null ? (estFonds(m) && m.date_cours ? " · " + valeurDu(m) + " : " : " · cours ") + fr(m.prix, dec(m.prix)) + (deviseDe(m) ? " " + deviseDe(m) : "") : ""}</small></div>
     ${m.levier ? `<div class="alerte" style="margin:12px 0 0">${AVERT_LEVIER}</div>` : ""}
     ${estFonds(m) ? `<p class="note" style="margin:10px 0 0">Un fonds publie la valeur d'une part (valeur liquidative) une fois par jour, souvent le lendemain : la fiche affichera chaque jour sa dernière valeur connue, avec sa date.</p>` : ""}
     <div class="champs">
       <label>Date d'achat<input id="a-date" type="date" value="${D.date}"></label>
-      <label>${estFonds(m) ? "Valeur d'une part à l'achat" : "Prix d'une part"}${m.devise ? " (" + m.devise + ")" : ""}<input id="a-prix" type="text" inputmode="decimal" autocomplete="off" value="${m.prix != null ? String(m.prix).replace(".", ",") : ""}"></label>
+      <label>${estFonds(m) ? "Valeur d'une part à l'achat" : "Prix d'une part"}${deviseDe(m) ? " (" + deviseDe(m) + ")" : ""}<input id="a-prix" type="text" inputmode="decimal" autocomplete="off" value="${m.prix != null ? String(m.prix).replace(".", ",") : ""}"></label>
       <label>Nombre de parts<input id="a-q" type="text" inputmode="decimal" autocomplete="off" placeholder="facultatif"></label>
     </div>
     <div class="boutons"><button type="button" class="btn" id="a-ok">Ajouter à mes investissements</button><button type="button" class="btn sec" id="a-annuler">Annuler</button></div>
@@ -961,23 +1055,42 @@ function blocRisque(m, inf, st) {
     <p class="note">${expl}${concret} La volatilité mesure l'ampleur des variations habituelles sur un an. Le bêta dit de combien le titre bouge en moyenne quand le CAC 40 bouge de 1 % (3 ans, données hebdomadaires).</p>`);
 }
 
-function blocFrais(m, inf, fx) {
-  if (!fx) return "";
-  const L = [];
-  if (m.categorie === "etf") {
-    if (fx.gestion != null) L.push(["Frais de gestion annuels", `<b>${fr(fx.gestion, 2)} %</b> · soit ${fr(5 * fx.gestion, 2)} € par an pour 500 € placés`]);
-    if (fx.entree != null || fx.sortie != null) L.push(["Frais d'entrée / de sortie", `${fr(fx.entree || 0, 0)} % / ${fr(fx.sortie || 0, 0)} %`]);
-    L.push(["Comment sont-ils payés ?", "Prélevés chaque jour dans le prix de l'ETF : tu ne les vois pas passer, mais ils réduisent la performance"]);
-  } else L.push(["Frais de gestion", "Aucun : une action n'a pas de frais annuels"]);
-  L.push(["Courtage dans un PEA", `0,5 % maximum par ordre passé en ligne (1,2 % en agence) : au plus 0,50 € pour un achat de 100 € en ligne`]);
-  if (fx.ttf) L.push(["Taxe sur les transactions financières", "0,4 % à l'achat, même dans un PEA (société française de plus de 1 Md€ de capitalisation) : 0,40 € pour 100 €"]);
-  L.push(["Droits de garde", "0,4 % par an maximum dans un PEA, souvent 0 € chez les courtiers en ligne"]);
-  return bloc("Frais", tab(L) + `<p class="note">Plafonds légaux du PEA (décret n° 2020-95). BNP Paribas peut facturer moins : vérifie sa grille tarifaire.</p>`);
+let MONTANT = 500;  // montant de la simulation des frais (boutons 100, 500, 1 000 €)
+function blocFrais(m) {
+  const c = couts(m, MONTANT); if (!c) return "";
+  const { f } = c, M = MONTANT, L = [], p = (x) => fr(x / M * 100, 2) + " %";
+  if (f.opc) {
+    L.push(["Frais courants (chaque année)", f.g != null ? `<b>${fr(f.g, 2)} %</b> par an, soit ${eur(c.gestion)} pour ${fr(M, 0)} € · déjà déduits de la valeur du fonds : tu ne les vois pas passer` : "Non publiés ici : voir le DIC du fonds"]);
+    if (f.perf) L.push(["Commission de surperformance", `${esc(f.perf)} · prélevée seulement quand le fonds fait mieux que sa référence`]);
+    L.push([`Droits d'entrée (achat de ${fr(M, 0)} €)`, f.e != null ? `jusqu'à ${fr(f.e, 0)} %, soit au plus ${eur(c.achat)} · souvent réduits ou nuls en ligne : demande le taux à ta banque` : "Non publiés ici : voir le DIC"]);
+    L.push(["Frais de sortie (revente)", f.s == null ? "Non publiés ici : voir le DIC" : f.s === 0 ? "Aucun" : `${fr(f.s, 0)} %, soit ${eur(c.revente)}`]);
+  } else {
+    L.push(["Frais de gestion (chaque année)", m.categorie === "etf"
+      ? (f.g != null ? `<b>${fr(f.g, 2)} %</b> par an, soit ${eur(c.gestion)} pour ${fr(M, 0)} € · déjà déduits du prix de l'ETF : tu ne les vois pas passer` : "Non connus pour l'instant : voir le DIC (lien plus bas)")
+      : "Aucun : une action n'a pas de frais annuels"]);
+    L.push([`Courtage à l'achat (${fr(M, 0)} €)`, `${eur(c.achat)} (${p(c.achat)})`]);
+    if (f.ttf) L.push(["Taxe sur les transactions financières", `0,4 % à l'achat : ${eur(c.ttf)} · société française de plus de 1 Md€ de capitalisation, due même dans un PEA`]);
+    L.push([`Courtage à la revente (${fr(M, 0)} €)`, `${eur(c.revente)} (${p(c.revente)})`]);
+  }
+  L.push(["Droits de garde (chaque année)", `0,4 % (jusqu'à 50 000 €) + 5 € par ligne : ${eur(c.garde)} par an pour ${fr(M, 0)} € sur cette ligne`]);
+  L.push(["Total sur 1 an : achat, 1 an de détention, revente", c.total != null ? `<b>${eur(c.total)}</b>, soit ${p(c.total)} des ${fr(M, 0)} €` : "Incomplet : une donnée manque (voir le DIC)"]);
+  const btn = [100, 500, 1000].map((v) => `<button type="button" class="chip" data-montant="${v}" aria-pressed="${v === M}">${fr(v, 0)} €</button>`).join("");
+  return `<div class="bloc" id="b-frais"><h3>Frais</h3><div class="chips" role="group" aria-label="Montant de la simulation">${btn}</div>${tab(L)}
+    <p class="note">Courtage et droits de garde : ${TARIF.libelle}, dans la limite des plafonds du PEA (0,5 % par ordre en ligne ; garde 0,4 % + 5 € par ligne et par an ; art. D. 221-111-1 du Code monétaire et financier).${f.opc ? " Dans un PEA, seuls les droits d'entrée peuvent être prélevés à la souscription d'un fonds." : ""} Les droits de garde portent sur toute la ligne, une seule fois par an. D'autres banques facturent moins (souvent 0 € de garde en ligne) : compare avant d'ouvrir ou de transférer un PEA.</p></div>`;
 }
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-montant]"); if (!b || !FICHE) return;
+  MONTANT = +b.dataset.montant;
+  const el = $("#b-frais"); if (el) el.outerHTML = blocFrais(FICHE);
+});
 
 const SFDR = { "Article 6": "pas d'objectif de durabilité affiché", "Article 8": "promeut des caractéristiques environnementales ou sociales", "Article 9": "a un objectif d'investissement durable" };
 function blocCaract(m, inf, det, t) {
-  const devise = det.devise || m.devise;
+  const devise = det.devise || deviseDe(m);
+  if (m.source === "opcvm") return bloc("Caractéristiques", tab([["ISIN", esc(m.isin)], ["Société de gestion", m.societe && esc(m.societe)], ["Orientation", m.zone && esc(m.zone)],
+    ["Devise", devise], ["Risque (SRI du DIC)", m.sri ? m.sri + " sur 7" : "non publié ici : voir le DIC"], ["Aussi éligible au PEA-PME", m.pea_pme ? "oui" : null],
+    ["Valeur liquidative", m.date_cours ? "du " + jourCourt(m.date_cours) + (m.source_vl ? " (" + esc(m.source_vl) + ")" : "") + ", calculée une fois par jour" : "pas encore lue : elle le sera à la prochaine collecte"]])
+    + `<p class="note">Frais et risque relevés le ${D.opcvm_verifie_le ? jourCourt(D.opcvm_verifie_le) : "9 novembre 2026"} sur la fiche du fonds (tirée de son DIC). Ils peuvent changer : relis le DIC avant toute décision. Un OPCVM se souscrit au prix de la prochaine valeur liquidative, inconnue au moment de l'ordre.</p>`);
   if (estFonds(m) && (m.wealins || m.source === "wealins" || inf.source_infos === "Wealins")) {
     const sf = inf.sfdr || m.sfdr;
     const F = [["ISIN", inf.isin || m.isin], ["Devise", devise],
@@ -1002,7 +1115,7 @@ function blocCaract(m, inf, det, t) {
     L.push(["Secteur", inf.secteur], ["Pays du siège", inf.pays], ["Marché", inf.marche], ["Indice", inf.indice],
       ["Capitalisation", inf.capitalisation || inf.valorisation], ["Nombre d'actions", inf.nb_titres], ["Salariés", inf.effectif],
       [`PER estimé${inf.per_annee ? " " + inf.per_annee : ""}`, inf.per], ["Rendement du dividende", inf.rendement], ["Dernier dividende", inf.dernier_dividende],
-      ["Site de l'entreprise", inf.site && `<a href="${esc(inf.site)}" target="_blank" rel="noopener">${esc(inf.site.replace(/^https?:\/\//, "").slice(0, 40))}</a>`]);
+      ["Site de l'entreprise", lienSur(inf.site) && `<a href="${esc(inf.site)}" target="_blank" rel="noopener noreferrer">${esc(inf.site.replace(/^https?:\/\//, "").slice(0, 40))}</a>`]);
   }
   const note = PLACEMENT.includes(m.categorie) && m.categorie !== "etf"
     ? `<p class="note">PER : prix de l'action divisé par le bénéfice par action, soit le nombre d'années de bénéfices que tu paies. Rendement : dividende annuel divisé par le prix.${inf.source_infos ? " Données : " + esc(inf.source_infos) + "." : " Données : Boursorama."}</p>` : "";
@@ -1011,6 +1124,7 @@ function blocCaract(m, inf, det, t) {
 
 function blocPEA(m, inf, det) {
   if (!PLACEMENT.includes(m.categorie)) return "";
+  if (m.source === "opcvm") return bloc("Éligibilité PEA", `<div class="pea oui">✓ <b>Éligible au PEA</b> d'après sa documentation (au moins 75 % investis en actions de sociétés de l'Union européenne ou de l'Espace économique européen). Vérifie que BNP Paribas le propose dans son PEA : toutes les banques ne distribuent pas tous les fonds.</div>`);
   if (estFonds(m) && (m.wealins || m.source === "wealins" || inf.source_infos === "Wealins"))
     return bloc("Éligibilité PEA", `<div class="pea inconnu">Fonds de la liste des supports d'assurance vie de Wealins : cette source n'indique pas s'il est éligible au PEA. Un fonds n'y est éligible que s'il investit en permanence au moins 75 % en actions éligibles au PEA (sociétés de l'Union européenne ou de l'Espace économique européen).</div>`);
   const v = inf.pea_bourso;
@@ -1042,17 +1156,21 @@ function blocSignal(m, det) {
 
 function ouvrir(t, pousser = true) {
   const m = TOUS[t]; if (!m) return;
+  FICHE = m;
   let det = DET[t] || {};
-  if (estFonds(m) && m.isin && !det.liens)  // fonds Wealins sans fiche détaillée : liens vers ses pages
+  if (m.source === "opcvm")  // OPCVM éligible au PEA : caractéristiques de opcvm.json
+    det = { ...det, infos: { isin: m.isin, sri_officiel: m.sri, ...(det.infos || {}) }, liens: { "Fiche du fonds (pea.fr)": m.url_source,
+      "Financial Times": `https://markets.ft.com/data/funds/tearsheet/summary?s=${m.isin}:EUR` } };
+  else if (estFonds(m) && m.isin && !det.liens)  // fonds Wealins sans fiche détaillée : liens vers ses pages
     det = { ...det, infos: { isin: m.isin, ...(det.infos || {}) }, liens: { "Wealins (fiche du fonds)": `https://www.wealins.com/funds/${m.isin.toLowerCase()}/`,
       "Financial Times": `https://markets.ft.com/data/funds/tearsheet/summary?s=${m.isin}:${m.devise || "EUR"}` } };
   const inf = det.infos || {}, st = det.stats || {};
-  $("#f-type").textContent = TYPE[m.categorie] + (det.place ? " · " + det.place : "");
+  $("#f-type").textContent = (m.source === "opcvm" ? "OPCVM éligible au PEA" : TYPE[m.categorie]) + (det.place ? " · " + det.place : "");
   $("#f-titre").textContent = m.nom;
   $("#f-sous").textContent = (inf.isin === t ? ["ISIN " + t] : [t, inf.isin && "ISIN " + inf.isin]).filter(Boolean).join(" · ");
   const parts = m.prix > 0 && PLACEMENT.includes(m.categorie) && (!estFonds(m) || (m.devise || "EUR") === "EUR") ? Math.floor(100 / m.prix) : null;
   const H = [];
-  const devise = det.devise || m.devise;
+  const devise = det.devise || deviseDe(m);
   H.push(`<div class="f-prix"><span class="big">${fr(m.prix, dec(m.prix))}${devise ? ` <small style="font-size:1rem;color:var(--muted)">${devise}</small>` : ""}</span><span class="num ${sens(m.var_1j)}">${pct(m.var_1j)} ${estFonds(m) ? "depuis la valeur précédente" : "sur la dernière séance"}</span>${vf(m)}</div>`);
   const etf = m.categorie === "indices" ? etfIndice(t) : null;
   if (etf) H.push(`<p class="note" style="margin-top:10px">Un indice ne s'achète pas directement. Une part d'un ETF éligible au PEA qui le suit coûte :</p>
@@ -1071,7 +1189,7 @@ function ouvrir(t, pousser = true) {
       + `<p class="note">${iv.local ? "Gardé sur cet appareil" : "D'après mes-investissements.md"}, frais de courtage non compris.</p>`));
   }
   if (sg) H.push(bloc("Suggestion du jour : " + esc(sg.critere_lib), `<p>${esc(sg.raison)}</p><p class="note">Une suggestion signale un titre à regarder de plus près, pas un titre à acheter.</p>`));
-  H.push(`<div class="bloc"><h3>Historique du prix</h3><div id="f-graphe">${det.j ? "" : estFonds(m) ? "<p class='note'>L'historique de ce fonds est sur sa fiche Wealins (lien plus bas). Pour l'avoir ici, avec ses statistiques, note le fonds dans mes-investissements.md (le nombre de parts peut rester vide).</p>" : "<p class='note'>Historique indisponible.</p>"}</div></div>`);
+  H.push(`<div class="bloc"><h3>Historique du prix</h3><div id="f-graphe">${det.j ? "" : m.source === "opcvm" ? "<p class='note'>L'historique de ce fonds est sur sa fiche (liens plus bas). Sa valeur liquidative est lue chaque jour sur Yahoo Finance ou le Financial Times.</p>" : estFonds(m) ? "<p class='note'>L'historique de ce fonds est sur sa fiche Wealins (lien plus bas). Pour l'avoir ici, avec ses statistiques, note le fonds dans mes-investissements.md (le nombre de parts peut rester vide).</p>" : "<p class='note'>Historique indisponible.</p>"}</div></div>`);
   const Jp = serieDe(det.j);
   const perfJ = (n, defaut) => Jp.length > n ? (Jp[Jp.length - 1][1] / Jp[Jp.length - 1 - n][1] - 1) * 100 : defaut; // même série que le graphique
   H.push(bloc("Performances", kv([["1 jour", pctc(m.var_1j)], ["1 semaine", pctc(perfJ(5, m.var_5j))], ["1 mois", pctc(perfJ(21, m.var_1m))], ["3 mois", pctc(perfJ(63, m.var_3m))],
@@ -1086,14 +1204,14 @@ function ouvrir(t, pousser = true) {
     ["Pire baisse 5 ans", pctc(st.perte_max_5a)], ["Pire semaine", pctc(st.pire_semaine)], ["Meilleure semaine", pctc(st.meilleure_semaine)]]) +
     `<p class="note">${m.categorie === "indices" ? "Un indice ne s'achète pas directement : on l'achète via un ETF qui le suit." : "Ce n'est pas un placement éligible au PEA : il est affiché comme repère."}</p>`));
   if (PLACEMENT.includes(m.categorie) && !estFonds(m)) H.push(blocSimulation(det, devise));
-  H.push(blocFrais(m, inf, det.frais));
+  H.push(blocFrais(m));
   H.push(blocPEA(m, inf, det));
   H.push(blocCaract(m, inf, det, t));
   if (PLACEMENT.includes(m.categorie) && !estFonds(m)) H.push(blocSignal(m, det));
   const perimees = Object.entries(m.sources_perimees || {}).map(([k, d]) => `${SRC[k] || k} (${d ? (estFonds(m) ? "valeur du " : "cours du ") + jourCourt(d) : "date inconnue"})`).join(", ");
   if (m.sources) H.push(bloc("Contrôle du prix", tab(Object.entries(m.sources).map(([k, v]) => [SRC[k] || k, pxu(v, devise) + (m.dates_sources && m.dates_sources[k] ? " · valeur du " + jourCourt(m.dates_sources[k]) : "")])) +
     `<p class="note">${{ ok: "Les sources concordent.", ecart: "⚠ Les sources ne concordent pas : vérifie le prix avant toute décision.", seul: perimees ? "Une seule source est à jour." : "Une seule source a pu être lue." }[m.verif] || ""}${perimees ? ` Non prise en compte, car pas à jour : ${perimees}.` : ""}</p>`));
-  if (det.liens) H.push(bloc("Pour aller plus loin", `<div class="liens">${Object.entries(det.liens).map(([k, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(k)} ↗</a>`).join("")}</div>`));
+  if (det.liens) H.push(bloc("Pour aller plus loin", `<div class="liens">${Object.entries(det.liens).filter(([, u]) => lienSur(u)).map(([k, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(k)} ↗</a>`).join("")}</div>`));
   if (PLACEMENT.includes(m.categorie) && !$("#sec-inv").hidden) H.push(`<div class="bloc"><button type="button" class="btn" data-ajouter="${esc(t)}">＋ Ajouter à mes investissements</button></div>`);
   H.push(`<p class="note" style="margin-top:22px">Information et apprentissage, pas un conseil en investissement. Données du ${new Date(D.date + "T12:00:00").toLocaleDateString("fr-FR")}.</p>`);
   $("#f-corps").innerHTML = H.join("");

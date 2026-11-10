@@ -58,7 +58,8 @@ def telecharger(tickers):
 
 
 def devise_de(t):
-    """Devise de cotation d'un titre, d'après sa place (suffixe du code Yahoo) ; None si inconnue."""
+    """Devise de cotation d'un titre, d'après sa place (suffixe du code Yahoo) ; None si inconnue.
+    (Indices, devises et matières premières : leur unité est affichée par la page, voir deviseDe.)"""
     if t.startswith("^") or "=" in t or "." not in t:
         return None
     return DEVISES.get(t.rsplit(".", 1)[1])
@@ -576,9 +577,21 @@ def main():
     fil_wealins.join(timeout=600)
     fonds_w = _fonds_wealins()
 
+    # OPCVM éligibles au PEA (opcvm.json) : valeur liquidative et frais ; jamais bloquant
+    try:
+        import opcvm
+        liste_opcvm = opcvm.mesurer_tout()
+    except Exception as e:  # noqa: BLE001
+        print("OPCVM impossibles :", e, file=sys.stderr)
+        liste_opcvm = []
+
+    par_isin_opcvm = {m["isin"]: m for m in liste_opcvm if m.get("prix")}
+
     def mesure_de(t):
         if t in tous:
             return tous[t]
+        if t in par_isin_opcvm:  # OPCVM éligible au PEA suivi par la fiche
+            return par_isin_opcvm[t]
         if ISIN.fullmatch(t):  # fonds de la liste Wealins (valeur liquidative la plus récente, avec le FT)
             try:
                 import wealins
@@ -613,7 +626,7 @@ def main():
         "indices": res.get("indices", []), "devises": res.get("devises", []),
         "matieres": res.get("matieres", []),
         "top30": top30, "petites": petites,
-        "suggestions": sugg, "mes_investissements": mes, "catalogue": catalogue(res),
+        "suggestions": sugg, "mes_investissements": mes, "catalogue": catalogue(res), "opcvm": liste_opcvm,
         "bilan_signaux": bilan(lignes),
         "wealins": {"maj": fonds_w.get("maj"), "nb_fonds": len(fonds_w.get("fonds", {}))},
         "nb_suivis": len(tous),

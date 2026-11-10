@@ -5,7 +5,12 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
-## 2026-11-09 · Prix d'un ETF à côté des indices, filtre ETF / Actions corrigé
+## 2026-11-10 · Frais de chaque titre, devise de chaque cours, OPCVM éligibles au PEA, sécurité
+- Frais : sur chaque ligne (Top 30, critères, recherche) et dans chaque fiche, frais de gestion annuels et frais de transaction (courtage BNP Paribas Bourse Start en ligne, plafonné à 0,5 % dans le PEA ; TTF 0,4 % ; droits de garde 0,4 % + 5 € par ligne), avec une simulation pour 100, 500 ou 1 000 € et le total sur un an. Demande du propriétaire.
+- Devises : chaque cours affiche sa devise (EUR, USD, DKK…), et « pts » pour un indice.
+- OPCVM : nouvelle section « OPCVM éligibles au PEA » (11 SICAV et FCP, `opcvm.json`), avec frais courants, droits d'entrée et de sortie, commission de surperformance, SRI ; valeur liquidative lue chaque jour (`scripts/opcvm.py`) ; un OPCVM se saisit aussi dans « Mes investissements » par son ISIN.
+- Sécurité : politique de sécurité du contenu (seul le script de la page, repéré par son empreinte, peut s'exécuter), aucune fuite d'adresse vers les sites externes (no-referrer, noopener noreferrer), refus d'être affichée dans le cadre d'un autre site, liens externes limités au https, données de l'appareil relues et nettoyées.
+ à côté des indices, filtre ETF / Actions corrigé
 - Sur chaque carte d'indice (CAC 40, Euro Stoxx 50, Stoxx 600, DAX, S&P 500, Nasdaq 100), le prix d'une part d'un ETF éligible au PEA qui le suit s'affiche à droite des points ; dans la fiche de l'indice, un bouton ouvre la fiche de cet ETF. Demande du propriétaire.
 - Top 30 : les boutons « ETF » et « Actions » masquent maintenant vraiment les autres lignes (le style des lignes l'empêchait), avec le nombre de titres affichés.
 - Agents : revue de presse et estimations d'analystes chaque jour de bourse (`data/presse/`, nouvelle partie de l'analyse), presse économique chaque nuit, et une « ✨ Nouveauté » visible sur le site chaque fin de semaine. Lanceur Mac en double-clic (`Matin PEA.command`).

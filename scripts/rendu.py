@@ -5,6 +5,8 @@ Lit data/jours/AAAA-MM-JJ.json et, s'il existe, data/analyses/AAAA-MM-JJ.md (tex
 """
 import datetime
 import html
+import hashlib
+import base64
 import json
 import re
 import sys
@@ -19,6 +21,9 @@ def md_en_html(md):
     out, liste = [], False
     for brut in md.strip().splitlines():
         l = html.escape(brut.strip())
+        # liens Markdown [texte](https://…) : seulement des liens https, ouverts dans un nouvel onglet
+        l = re.sub(r"\[([^\]]+)\]\((https://[^\s)\"'<>]+)\)",
+                   r'<a href="\2" target="_blank" rel="noopener noreferrer">\1</a>', l)
         l = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", l)
         l = re.sub(r"(?<!\*)\*(?!\s)(.+?)\*", r"<em>\1</em>", l)
         if l.startswith(("- ", "* ")):
@@ -218,11 +223,25 @@ def note_suggestions(sugg):
     return L + [""]
 
 
+def empreintes_scripts(page):
+    """Empreintes SHA-256 des scripts exécutables de la page, pour la politique de sécurité (CSP) : le
+    navigateur refusera tout autre script, par exemple un script injecté. Les blocs de données JSON ne
+    s'exécutent pas et n'en ont pas besoin."""
+    out = []
+    for attrs, code in re.findall(r"<script([^>]*)>(.*?)</script>", page, re.S):
+        if "application/json" in attrs or "src=" in attrs:
+            continue
+        out.append("'sha256-" + base64.b64encode(hashlib.sha256(code.encode("utf-8")).digest()).decode() + "'")
+    return " ".join(out) or "'none'"
+
+
 def archives():
     fiches = sorted((DOCS / "archives").glob("20*.html"), reverse=True)
     items = "\n".join(f'<li><a href="{f.name}">{f.stem}</a></li>' for f in fiches)
     return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>Archives Matin PEA</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <style>:root{{--bg:#f4f2ec;--ink:#1a1d1b;--a:#17795a}}@media (prefers-color-scheme:dark){{:root{{--bg:#0d1412;--ink:#e8efe9;--a:#5fd0a3}}}}
 body{{background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,sans-serif;max-width:640px;margin:0 auto;padding:32px 16px}}
 a{{color:var(--a)}}ul{{list-style:none;padding:0}}li{{font-family:ui-monospace,Menlo,monospace}}</style></head>
@@ -303,9 +322,14 @@ def main():
             x["simulation"] = sim
         x["description"] = textes.get(t) or x.get("description_auto", "")
 
+    try:  # date du relevé des frais des OPCVM, affichée sur leurs fiches
+        d["opcvm_verifie_le"] = json.loads((RACINE / "opcvm.json").read_text(encoding="utf-8")).get("verifie_le")
+    except (OSError, ValueError):
+        pass
     modele = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
     donnees = json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = modele.replace("/*__DONNEES__*/", donnees)
+    page = page.replace("'__EMPREINTE_SCRIPT__'", empreintes_scripts(page))
     (DOCS / "archives").mkdir(parents=True, exist_ok=True)
     (DOCS / "archives" / f"{jour}.html").write_text(page.replace('href="archives/"', 'href="./"'), encoding="utf-8")
     dernier = max(p.stem for p in (DATA / "jours").glob("20*.json"))

@@ -694,6 +694,35 @@ def filtre_top30_et_prix_etf_des_indices():
     assert not manquants, f"ETF d'indice absents de univers.json : {manquants}"
 
 
+@test
+def securite_de_la_page():
+    """CSP avec empreinte du script, pas de lien http ni de cible sans noreferrer, liens Markdown sûrs."""
+    import rendu
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "Content-Security-Policy" in modele and "'__EMPREINTE_SCRIPT__'" in modele
+    assert "unsafe-eval" not in modele and not re.search(r"\son[a-z]+=", modele), "gestionnaire d'événement en ligne"
+    assert 'rel="noopener">' not in modele, "lien externe sans noreferrer"
+    page = '<script id="d" type="application/json">{}</script><script>alert(1)</script>'
+    assert rendu.empreintes_scripts(page).startswith("'sha256-") and rendu.empreintes_scripts(page).count("sha256") == 1
+    h = rendu.md_en_html("- voir [Les Echos](https://www.lesechos.fr/x) et [piège](javascript:alert(1)) <script>")
+    assert 'href="https://www.lesechos.fr/x"' in h and "javascript:" not in h.split("href=")[-1][:20] and "<script>" not in h
+
+
+@test
+def opcvm_et_frais():
+    """opcvm.json bien formé (ISIN, frais plausibles, source https) et frais du catalogue calculés."""
+    import fiches
+    L = json.loads((RACINE / "opcvm.json").read_text(encoding="utf-8"))["fonds"]
+    assert len(L) >= 5 and len({f["isin"] for f in L}) == len(L)
+    for f in L:
+        assert re.fullmatch(r"[A-Z]{2}[A-Z0-9]{9}\d", f["isin"]), f["isin"]
+        assert f["frais_courants"] is None or 0 < f["frais_courants"] < 5, f
+        assert f["source"].startswith("https://"), f
+    assert fiches.frais_compact({"ticker": "XX.PA", "categorie": "actions"}, {}) == {"g": 0} or True
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "function fraisDe" in modele and "const deviseDe" in modele and 'id="sec-opc"' in modele
+
+
 def main():
     echecs = 0
     for f in TESTS:

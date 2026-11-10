@@ -6215,7 +6215,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 41.9,
-   "isin": "FR0011550185"
+   "isin": "FR0011550185",
+   "fx": {
+    "g": 0.12,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "ETZ.PA",
@@ -6228,7 +6233,12 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 60.1,
-   "isin": "FR0011550193"
+   "isin": "FR0011550193",
+   "fx": {
+    "g": 0.06,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "EEMK.PA",
@@ -6241,7 +6251,12 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 41.5,
-   "isin": "LU1291097779"
+   "isin": "LU1291097779",
+   "fx": {
+    "g": 0.13,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "PSP5.PA",
@@ -6254,7 +6269,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 41.7,
-   "isin": "FR0011871128"
+   "isin": "FR0011871128",
+   "fx": {
+    "g": 0.15,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "PE500.PA",
@@ -6267,7 +6287,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 34.0,
-   "isin": "FR0013412285"
+   "isin": "FR0013412285",
+   "fx": {
+    "g": 0.25,
+    "e": 0.0
+   }
   },
   {
    "ticker": "PUST.PA",
@@ -6280,7 +6304,12 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 36.0,
-   "isin": "FR0011871110"
+   "isin": "FR0011871110",
+   "fx": {
+    "g": 0.3,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "PANX.PA",
@@ -6293,7 +6322,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 31.6,
-   "isin": "FR0013412269"
+   "isin": "FR0013412269",
+   "fx": {
+    "g": 0.3,
+    "e": 0.0
+   }
   },
   {
    "ticker": "CW8.PA",
@@ -6306,7 +6339,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 44.3,
-   "isin": "LU1681043599"
+   "isin": "LU1681043599",
+   "fx": {
+    "g": 0.28,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "DCAM.PA",
@@ -6319,7 +6357,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 44.4,
-   "isin": "FR001400U5Q4"
+   "isin": "FR001400U5Q4",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0
+   }
   },
   {
    "ticker": "EWLD.PA",
@@ -6332,7 +6374,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 44.3,
-   "isin": "LU2655993207"
+   "isin": "LU2655993207",
+   "fx": {
+    "g": 0.28,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "WPEA.PA",
@@ -6345,7 +6392,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 44.5,
-   "isin": "IE0002XZSHO1"
+   "isin": "IE0002XZSHO1",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "PAEEM.PA",
@@ -6358,7 +6410,12 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 41.8,
-   "isin": "FR0013412020"
+   "isin": "FR0013412020",
+   "fx": {
+    "g": 0.3,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "PTPXE.PA",
@@ -6371,7 +6428,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 39.4,
-   "isin": "FR0013411980"
+   "isin": "FR0013411980",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0
+   }
   },
   {
    "ticker": "RS2K.PA",
@@ -6384,7 +6445,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 53.1,
-   "isin": "LU1681038672"
+   "isin": "LU1681038672",
+   "fx": {
+    "g": 0.25,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "CAC.PA",
@@ -6397,7 +6463,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 65.1,
-   "isin": "FR0007052782"
+   "isin": "FR0007052782",
+   "fx": {
+    "g": 0.25,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "C40.PA",
@@ -6410,7 +6481,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 65.5,
-   "isin": "LU1681046931"
+   "isin": "LU1681046931",
+   "fx": {
+    "g": 0.15,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "MSE.PA",
@@ -6423,7 +6499,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.5,
-   "isin": "FR0007054358"
+   "isin": "FR0007054358",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0
+   }
   },
   {
    "ticker": "PCEU.PA",
@@ -6436,7 +6516,12 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 60.9,
-   "isin": "FR0013412038"
+   "isin": "FR0013412038",
+   "fx": {
+    "g": 0.15,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "PLEM.PA",
@@ -6449,7 +6534,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 64.2,
-   "isin": "FR0011440478"
+   "isin": "FR0011440478",
+   "fx": {
+    "g": 0.55,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "GPEA.PA",
@@ -6462,7 +6552,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 43.0,
-   "isin": "FR0014017NX3"
+   "isin": "FR0014017NX3",
+   "fx": {
+    "g": 0.3,
+    "e": 0.0
+   }
   },
   {
    "ticker": "PAASI.PA",
@@ -6475,7 +6569,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 40.0,
-   "isin": "FR0013412012"
+   "isin": "FR0013412012",
+   "fx": {
+    "g": 0.3,
+    "e": 0.0
+   }
   },
   {
    "ticker": "PAEJ.PA",
@@ -6488,7 +6586,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 42.7,
-   "isin": "FR0011869312"
+   "isin": "FR0011869312",
+   "fx": {
+    "g": 0.6,
+    "e": 0.0
+   }
   },
   {
    "ticker": "PINR.PA",
@@ -6501,7 +6603,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 79.5,
-   "isin": "FR0011869320"
+   "isin": "FR0011869320",
+   "fx": {
+    "g": 0.85,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "PMEH.PA",
@@ -6514,7 +6621,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 71.0,
-   "isin": "FR0011869304"
+   "isin": "FR0011869304",
+   "fx": {
+    "g": 0.4,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "OBLI.PA",
@@ -6527,7 +6639,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 85.1,
-   "isin": "FR0013346681"
+   "isin": "FR0013346681",
+   "fx": {
+    "g": 0.25,
+    "e": 0.0
+   }
   },
   {
    "ticker": "CACC.PA",
@@ -6540,7 +6656,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 64.5,
-   "isin": "FR0013380607"
+   "isin": "FR0013380607",
+   "fx": {
+    "g": 0.25,
+    "e": 0.0
+   }
   },
   {
    "ticker": "C50.PA",
@@ -6553,7 +6673,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.7,
-   "isin": "LU1681047236"
+   "isin": "LU1681047236",
+   "fx": {
+    "g": 0.05,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "ETDD.PA",
@@ -6566,7 +6691,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.1,
-   "isin": "FR0012739431"
+   "isin": "FR0012739431",
+   "fx": {
+    "g": 0.03,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "DAX.PA",
@@ -6579,7 +6709,12 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 58.4,
-   "isin": "LU0252633754"
+   "isin": "LU0252633754",
+   "fx": {
+    "g": 0.08,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "CG1.PA",
@@ -6592,7 +6727,12 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 58.5,
-   "isin": "FR0010655712"
+   "isin": "FR0010655712",
+   "fx": {
+    "g": 0.1,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "CD8.PA",
@@ -6605,7 +6745,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 66.7,
-   "isin": "FR0010717090"
+   "isin": "FR0010717090",
+   "fx": {
+    "g": 0.3,
+    "e": 0.0
+   }
   },
   {
    "ticker": "MMS.PA",
@@ -6618,7 +6762,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 53.8,
-   "isin": "LU1598689153"
+   "isin": "LU1598689153",
+   "fx": {
+    "g": 0.3,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "PABZ.PA",
@@ -6631,7 +6780,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 59.2,
-   "isin": "LU2182388582"
+   "isin": "LU2182388582",
+   "fx": {
+    "g": 0.08,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "TNO.PA",
@@ -6644,7 +6798,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 42.9,
-   "isin": "LU1834988518"
+   "isin": "LU1834988518",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "HLT.PA",
@@ -6657,7 +6816,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 75.6,
-   "isin": "LU1834986900"
+   "isin": "LU1834986900",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0
+   }
   },
   {
    "ticker": "BNK.PA",
@@ -6670,7 +6833,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 55.3,
-   "isin": "LU1834983477"
+   "isin": "LU1834983477",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "INS.PA",
@@ -6683,7 +6851,12 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 64.1,
-   "isin": "LU1834987973"
+   "isin": "LU1834987973",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "FOO.PA",
@@ -6696,7 +6869,12 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 64.1,
-   "isin": "LU1834985845"
+   "isin": "LU1834985845",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "TRV.PA",
@@ -6709,7 +6887,12 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 65.4,
-   "isin": "LU1834988781"
+   "isin": "LU1834988781",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "CHM.PA",
@@ -6722,7 +6905,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 55.3,
-   "isin": "LU1834983634"
+   "isin": "LU1834983634",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "IND.PA",
@@ -6735,7 +6923,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 55.9,
-   "isin": "LU1834987890"
+   "isin": "LU1834987890",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "UTI.PA",
@@ -6748,7 +6941,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 74.2,
-   "isin": "LU1834988864"
+   "isin": "LU1834988864",
+   "fx": {
+    "g": 0.2,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "EEMU.PA",
@@ -6761,7 +6959,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 57.4,
-   "isin": "LU1291098827"
+   "isin": "LU1291098827",
+   "fx": {
+    "g": 0.03,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "E40.PA",
@@ -6774,7 +6977,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 64.7,
-   "isin": "FR0010150458"
+   "isin": "FR0010150458",
+   "fx": {
+    "g": 0.25,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "50E.PA",
@@ -6787,7 +6995,12 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.6,
-   "isin": "IE00B4K6B022"
+   "isin": "IE00B4K6B022",
+   "fx": {
+    "g": 0.05,
+    "e": 3.0,
+    "s": 3.0
+   }
   },
   {
    "ticker": "LVC.PA",
@@ -6801,7 +7014,11 @@
    "signal": "neutre",
    "rsi": 63.3,
    "levier": true,
-   "isin": "FR0010592014"
+   "isin": "FR0010592014",
+   "fx": {
+    "g": 0.4,
+    "e": 0.0
+   }
   },
   {
    "ticker": "LQQ.PA",
@@ -6815,7 +7032,11 @@
    "signal": "baisse",
    "rsi": 34.6,
    "levier": true,
-   "isin": "FR0010342592"
+   "isin": "FR0010342592",
+   "fx": {
+    "g": 0.6,
+    "e": 0.0
+   }
   },
   {
    "ticker": "CL2.PA",
@@ -6829,7 +7050,12 @@
    "signal": "neutre",
    "rsi": 40.1,
    "levier": true,
-   "isin": "FR0010755611"
+   "isin": "FR0010755611",
+   "fx": {
+    "g": 0.35,
+    "e": 0.0,
+    "s": 0.0
+   }
   },
   {
    "ticker": "BX4.PA",
@@ -6843,7 +7069,11 @@
    "signal": "neutre",
    "rsi": 35.8,
    "levier": true,
-   "isin": "FR0010411884"
+   "isin": "FR0010411884",
+   "fx": {
+    "g": 0.6,
+    "e": 0.0
+   }
   },
   {
    "ticker": "AI.PA",
@@ -6856,7 +7086,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 77.9,
-   "isin": "FR0000120073"
+   "isin": "FR0000120073",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "AIR.PA",
@@ -6869,7 +7103,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 63.0,
-   "isin": "NL0000235190"
+   "isin": "NL0000235190",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALO.PA",
@@ -6882,7 +7119,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 16.9,
-   "isin": "FR0010220475"
+   "isin": "FR0010220475",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "MT.AS",
@@ -6895,7 +7136,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 52.6,
-   "isin": "LU1598757687"
+   "isin": "LU1598757687",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "CS.PA",
@@ -6908,7 +7152,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 64.3,
-   "isin": "FR0000120628"
+   "isin": "FR0000120628",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "BNP.PA",
@@ -6921,7 +7169,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 60.8,
-   "isin": "FR0000131104"
+   "isin": "FR0000131104",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "EN.PA",
@@ -6934,7 +7186,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 60.3,
-   "isin": "FR0000120503"
+   "isin": "FR0000120503",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "CAP.PA",
@@ -6947,7 +7203,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 53.8,
-   "isin": "FR0000125338"
+   "isin": "FR0000125338",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "CA.PA",
@@ -6960,7 +7220,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 35.3,
-   "isin": "FR0000120172"
+   "isin": "FR0000120172",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ACA.PA",
@@ -6973,7 +7237,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 51.2,
-   "isin": "FR0000045072"
+   "isin": "FR0000045072",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "BN.PA",
@@ -6986,7 +7254,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 69.1,
-   "isin": "FR0000120644"
+   "isin": "FR0000120644",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "DSY.PA",
@@ -6999,7 +7271,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 66.8,
-   "isin": "FR0014003TT8"
+   "isin": "FR0014003TT8",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "EDEN.PA",
@@ -7012,7 +7288,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 35.9,
-   "isin": "FR0010908533"
+   "isin": "FR0010908533",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ENGI.PA",
@@ -7025,7 +7305,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 68.1,
-   "isin": "FR0010208488"
+   "isin": "FR0010208488",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "EL.PA",
@@ -7038,7 +7322,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 69.8,
-   "isin": "FR0000121667"
+   "isin": "FR0000121667",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ERF.PA",
@@ -7051,7 +7339,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 67.0,
-   "isin": "FR0014000MR3"
+   "isin": "FR0014000MR3",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "RMS.PA",
@@ -7064,7 +7356,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 54.1,
-   "isin": "FR0000052292"
+   "isin": "FR0000052292",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "KER.PA",
@@ -7077,7 +7373,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 40.2,
-   "isin": "FR0000121485"
+   "isin": "FR0000121485",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "OR.PA",
@@ -7090,7 +7390,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 68.8,
-   "isin": "FR0000120321"
+   "isin": "FR0000120321",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "LR.PA",
@@ -7103,7 +7407,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 51.8,
-   "isin": "FR0010307819"
+   "isin": "FR0010307819",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "MC.PA",
@@ -7116,7 +7424,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 53.4,
-   "isin": "FR0000121014"
+   "isin": "FR0000121014",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ML.PA",
@@ -7129,7 +7441,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.8,
-   "isin": "FR001400AJ45"
+   "isin": "FR001400AJ45",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ORA.PA",
@@ -7142,7 +7458,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 62.9,
-   "isin": "FR0000133308"
+   "isin": "FR0000133308",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "RI.PA",
@@ -7155,7 +7475,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 68.0,
-   "isin": "FR0000120693"
+   "isin": "FR0000120693",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "PUB.PA",
@@ -7168,7 +7492,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 59.7,
-   "isin": "FR0000130577"
+   "isin": "FR0000130577",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "RNO.PA",
@@ -7181,7 +7509,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 60.1,
-   "isin": "FR0000131906"
+   "isin": "FR0000131906",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SAF.PA",
@@ -7194,7 +7526,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 53.2,
-   "isin": "FR0000073272"
+   "isin": "FR0000073272",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SGO.PA",
@@ -7207,7 +7543,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 72.2,
-   "isin": "FR0000125007"
+   "isin": "FR0000125007",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SAN.PA",
@@ -7220,7 +7560,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 79.7,
-   "isin": "FR0000120578"
+   "isin": "FR0000120578",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SU.PA",
@@ -7233,7 +7577,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 38.4,
-   "isin": "FR0000121972"
+   "isin": "FR0000121972",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "GLE.PA",
@@ -7246,7 +7594,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.6,
-   "isin": "FR0000130809"
+   "isin": "FR0000130809",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "STLAP.PA",
@@ -7259,7 +7611,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 47.8,
-   "isin": "NL00150001Q9"
+   "isin": "NL00150001Q9",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "STMPA.PA",
@@ -7272,7 +7627,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 42.3,
-   "isin": "NL0000226223"
+   "isin": "NL0000226223",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "TEP.PA",
@@ -7285,7 +7643,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 33.2,
-   "isin": "FR0000051807"
+   "isin": "FR0000051807",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "HO.PA",
@@ -7298,7 +7660,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 48.8,
-   "isin": "FR0000121329"
+   "isin": "FR0000121329",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "TTE.PA",
@@ -7311,7 +7677,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 42.3,
-   "isin": "FR0000120271"
+   "isin": "FR0000120271",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "URW.PA",
@@ -7324,7 +7694,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 63.2,
-   "isin": "FR0013326246"
+   "isin": "FR0013326246",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "VIE.PA",
@@ -7337,7 +7711,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 78.7,
-   "isin": "FR0000124141"
+   "isin": "FR0000124141",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "DG.PA",
@@ -7350,7 +7728,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 63.8,
-   "isin": "FR0000125486"
+   "isin": "FR0000125486",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ENX.PA",
@@ -7363,7 +7745,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 38.9,
-   "isin": "NL0006294274"
+   "isin": "NL0006294274",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "BVI.PA",
@@ -7376,7 +7761,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 69.2,
-   "isin": "FR0006174348"
+   "isin": "FR0006174348",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "AC.PA",
@@ -7389,7 +7778,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 71.9,
-   "isin": "FR0000120404"
+   "isin": "FR0000120404",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "AM.PA",
@@ -7402,7 +7795,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 63.0,
-   "isin": "FR0014004L86"
+   "isin": "FR0014004L86",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "FGR.PA",
@@ -7414,7 +7811,10 @@
    "var_1m": 8.54,
    "date_cours": "2026-11-09",
    "signal": "neutre",
-   "rsi": 67.3
+   "rsi": 67.3,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "BOL.PA",
@@ -7427,7 +7827,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 47.2,
-   "isin": "FR0000039299"
+   "isin": "FR0000039299",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "GTT.PA",
@@ -7440,7 +7844,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 37.1,
-   "isin": "FR0011726835"
+   "isin": "FR0011726835",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ELIS.PA",
@@ -7453,7 +7861,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 70.2,
-   "isin": "FR0012435121"
+   "isin": "FR0012435121",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "NEX.PA",
@@ -7466,7 +7878,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 51.4,
-   "isin": "FR0000044448"
+   "isin": "FR0000044448",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "RXL.PA",
@@ -7479,7 +7895,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.0,
-   "isin": "FR0010451203"
+   "isin": "FR0010451203",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SPIE.PA",
@@ -7492,7 +7912,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 63.5,
-   "isin": "FR0012757854"
+   "isin": "FR0012757854",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SOI.PA",
@@ -7505,7 +7929,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 36.4,
-   "isin": "FR0013227113"
+   "isin": "FR0013227113",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "VK.PA",
@@ -7518,7 +7946,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 57.8,
-   "isin": "FR0013506730"
+   "isin": "FR0013506730",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ATE.PA",
@@ -7531,7 +7963,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 56.6,
-   "isin": "FR0000071946"
+   "isin": "FR0000071946",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SOP.PA",
@@ -7544,7 +7980,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 72.6,
-   "isin": "FR0000050809"
+   "isin": "FR0000050809",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "AF.PA",
@@ -7557,7 +7997,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 80.1,
-   "isin": "FR001400J770"
+   "isin": "FR001400J770",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ETL.PA",
@@ -7570,7 +8014,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 54.1,
-   "isin": "FR0010221234"
+   "isin": "FR0010221234",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "UBI.PA",
@@ -7583,7 +8031,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 46.6,
-   "isin": "FR0000054470"
+   "isin": "FR0000054470",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "VIRI.PA",
@@ -7596,7 +8047,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 55.9,
-   "isin": "FR001400PVN6"
+   "isin": "FR001400PVN6",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ASML.AS",
@@ -7609,7 +8063,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 40.7,
-   "isin": "NL0010273215"
+   "isin": "NL0010273215",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ADYEN.AS",
@@ -7622,7 +8079,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 48.2,
-   "isin": "NL0012969182"
+   "isin": "NL0012969182",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "PRX.AS",
@@ -7635,7 +8095,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 65.0,
-   "isin": "NL0013654783"
+   "isin": "NL0013654783",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "INGA.AS",
@@ -7648,7 +8111,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 50.0,
-   "isin": "NL0011821202"
+   "isin": "NL0011821202",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "PHIA.AS",
@@ -7661,7 +8127,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 84.3,
-   "isin": "NL0000009538"
+   "isin": "NL0000009538",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "SAP.DE",
@@ -7674,7 +8143,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 60.3,
-   "isin": "DE0007164600"
+   "isin": "DE0007164600",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "SIE.DE",
@@ -7687,7 +8159,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 51.3,
-   "isin": "DE0007236101"
+   "isin": "DE0007236101",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALV.DE",
@@ -7700,7 +8175,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 63.2,
-   "isin": "DE0008404005"
+   "isin": "DE0008404005",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "DTE.DE",
@@ -7713,7 +8191,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 51.1,
-   "isin": "DE0005557508"
+   "isin": "DE0005557508",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "RHM.DE",
@@ -7726,7 +8207,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 32.3,
-   "isin": "DE0007030009"
+   "isin": "DE0007030009",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "IFX.DE",
@@ -7739,7 +8223,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 41.0,
-   "isin": "DE0006231004"
+   "isin": "DE0006231004",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ENEL.MI",
@@ -7752,7 +8239,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 75.8,
-   "isin": "IT0003128367"
+   "isin": "IT0003128367",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ISP.MI",
@@ -7765,7 +8255,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 57.4,
-   "isin": "IT0000072618"
+   "isin": "IT0000072618",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "RACE.MI",
@@ -7778,7 +8271,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 61.2,
-   "isin": "NL0011585146"
+   "isin": "NL0011585146",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ITX.MC",
@@ -7791,7 +8287,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 68.0,
-   "isin": "ES0148396007"
+   "isin": "ES0148396007",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "IBE.MC",
@@ -7804,7 +8303,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 75.7,
-   "isin": "ES0144580Y14"
+   "isin": "ES0144580Y14",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "SAN.MC",
@@ -7817,7 +8319,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 47.0,
-   "isin": "ES0113900J37"
+   "isin": "ES0113900J37",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "NOVO-B.CO",
@@ -7829,7 +8334,10 @@
    "var_1m": 6.88,
    "date_cours": "2026-11-09",
    "signal": "neutre",
-   "rsi": 56.0
+   "rsi": 56.0,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "NOKIA.HE",
@@ -7841,7 +8349,10 @@
    "var_1m": -20.71,
    "date_cours": "2026-11-09",
    "signal": "baisse",
-   "rsi": 40.0
+   "rsi": 40.0,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "AKE.PA",
@@ -7854,7 +8365,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.4,
-   "isin": "FR0010313833"
+   "isin": "FR0010313833",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "AMUN.PA",
@@ -7867,7 +8382,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 67.4,
-   "isin": "FR0004125920"
+   "isin": "FR0004125920",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "BB.PA",
@@ -7880,7 +8399,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 43.6,
-   "isin": "FR0000120966"
+   "isin": "FR0000120966",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "BIM.PA",
@@ -7893,7 +8416,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 59.4,
-   "isin": "FR0013280286"
+   "isin": "FR0013280286",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "COFA.PA",
@@ -7906,7 +8433,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 57.8,
-   "isin": "FR0010667147"
+   "isin": "FR0010667147",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "DBG.PA",
@@ -7919,7 +8450,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.2,
-   "isin": "FR0000053381"
+   "isin": "FR0000053381",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "DEC.PA",
@@ -7932,7 +8467,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 69.1,
-   "isin": "FR0000077919"
+   "isin": "FR0000077919",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "DIM.PA",
@@ -7945,7 +8484,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 62.5,
-   "isin": "FR0013154002"
+   "isin": "FR0013154002",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ERA.PA",
@@ -7958,7 +8501,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 43.5,
-   "isin": "FR0000131757"
+   "isin": "FR0000131757",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "FNAC.PA",
@@ -7971,7 +8518,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 55.7,
-   "isin": "FR0011476928"
+   "isin": "FR0011476928",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "FR.PA",
@@ -7984,7 +8535,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 33.9,
-   "isin": "FR0013176526"
+   "isin": "FR0013176526",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "GET.PA",
@@ -7997,7 +8552,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 68.0,
-   "isin": "FR0010533075"
+   "isin": "FR0010533075",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "IPN.PA",
@@ -8010,7 +8569,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 69.4,
-   "isin": "FR0010259150"
+   "isin": "FR0010259150",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "IPS.PA",
@@ -8023,7 +8586,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 48.1,
-   "isin": "FR0000073298"
+   "isin": "FR0000073298",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "MF.PA",
@@ -8036,7 +8603,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 72.2,
-   "isin": "FR0000121204"
+   "isin": "FR0000121204",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "NK.PA",
@@ -8049,7 +8620,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 64.8,
-   "isin": "FR0000120859"
+   "isin": "FR0000120859",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "RCO.PA",
@@ -8062,7 +8637,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 62.6,
-   "isin": "FR0000130395"
+   "isin": "FR0000130395",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "RF.PA",
@@ -8075,7 +8654,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 61.2,
-   "isin": "FR0000121121"
+   "isin": "FR0000121121",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "RUI.PA",
@@ -8088,7 +8671,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 52.6,
-   "isin": "FR0013269123"
+   "isin": "FR0013269123",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SCR.PA",
@@ -8101,7 +8688,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 59.3,
-   "isin": "FR0010411983"
+   "isin": "FR0010411983",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SK.PA",
@@ -8114,7 +8705,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 57.1,
-   "isin": "FR0000121709"
+   "isin": "FR0000121709",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "SW.PA",
@@ -8127,7 +8722,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 64.3,
-   "isin": "FR0000121220"
+   "isin": "FR0000121220",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "TE.PA",
@@ -8140,7 +8739,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 68.5,
-   "isin": "NL0014559478"
+   "isin": "NL0014559478",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "TFI.PA",
@@ -8153,7 +8755,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 68.5,
-   "isin": "FR0000054900"
+   "isin": "FR0000054900",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "TRI.PA",
@@ -8166,7 +8772,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 62.5,
-   "isin": "FR0005691656"
+   "isin": "FR0005691656",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "VCT.PA",
@@ -8179,7 +8789,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 76.0,
-   "isin": "FR0000031775"
+   "isin": "FR0000031775",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "VIRP.PA",
@@ -8192,7 +8806,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 74.1,
-   "isin": "FR0000031577"
+   "isin": "FR0000031577",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "VIV.PA",
@@ -8205,7 +8823,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 59.7,
-   "isin": "FR0000127771"
+   "isin": "FR0000127771",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "WLN.PA",
@@ -8218,7 +8840,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 52.9,
-   "isin": "FR00140182K6"
+   "isin": "FR00140182K6",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "EXA.PA",
@@ -8231,7 +8856,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 53.2,
-   "isin": "FR0000062671"
+   "isin": "FR0000062671",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "AYV.PA",
@@ -8244,7 +8873,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 65.6,
-   "isin": "FR0013258662"
+   "isin": "FR0013258662",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "PLX.PA",
@@ -8257,7 +8890,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 25.7,
-   "isin": "NL0015001W49"
+   "isin": "NL0015001W49",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "OPM.PA",
@@ -8270,7 +8906,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 41.7,
-   "isin": "FR0000124570"
+   "isin": "FR0000124570",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "FRVIA.PA",
@@ -8283,7 +8923,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 53.5,
-   "isin": "FR0000121147"
+   "isin": "FR0000121147",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "TKO.PA",
@@ -8296,7 +8940,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 58.0,
-   "isin": "FR0013230612"
+   "isin": "FR0013230612",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ANTIN.PA",
@@ -8309,7 +8957,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 58.5,
-   "isin": "FR0014005AL0"
+   "isin": "FR0014005AL0",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "VU.PA",
@@ -8322,7 +8974,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 66.8,
-   "isin": "FR0010282822"
+   "isin": "FR0010282822",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ADP.PA",
@@ -8335,7 +8991,11 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 66.5,
-   "isin": "FR0010340141"
+   "isin": "FR0010340141",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ELIOR.PA",
@@ -8348,7 +9008,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 64.1,
-   "isin": "FR0011950732"
+   "isin": "FR0011950732",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "EXENS.PA",
@@ -8361,7 +9024,11 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 41.1,
-   "isin": "FR001400Q9V2"
+   "isin": "FR001400Q9V2",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "AD.AS",
@@ -8374,7 +9041,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 63.6,
-   "isin": "NL0011794037"
+   "isin": "NL0011794037",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "WKL.AS",
@@ -8387,7 +9057,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 63.6,
-   "isin": "NL0000395903"
+   "isin": "NL0000395903",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "HEIA.AS",
@@ -8400,7 +9073,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 76.9,
-   "isin": "NL0000009165"
+   "isin": "NL0000009165",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "UCG.MI",
@@ -8413,7 +9089,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 62.6,
-   "isin": "IT0005239360"
+   "isin": "IT0005239360",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ENI.MI",
@@ -8426,7 +9105,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 42.7,
-   "isin": "IT0003132476"
+   "isin": "IT0003132476",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "TIT.MI",
@@ -8439,7 +9121,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 40.4,
-   "isin": "IT0005712671"
+   "isin": "IT0005712671",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "DBV.PA",
@@ -8452,7 +9137,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 57.9,
-   "isin": "FR0010417345"
+   "isin": "FR0010417345",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALSEN.PA",
@@ -8465,7 +9153,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 51.5,
-   "isin": "FR001401A9Z0"
+   "isin": "FR001401A9Z0",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "NANO.PA",
@@ -8478,7 +9169,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 57.6,
-   "isin": "FR0011341205"
+   "isin": "FR0011341205",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "GNFT.PA",
@@ -8491,7 +9186,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.6,
-   "isin": "FR0004163111"
+   "isin": "FR0004163111",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "VLA.PA",
@@ -8504,7 +9202,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 53.0,
-   "isin": "FR0004056851"
+   "isin": "FR0004056851",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALBPS.PA",
@@ -8517,7 +9218,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 56.9,
-   "isin": "FR001400OLP5"
+   "isin": "FR001400OLP5",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALHPI.PA",
@@ -8530,7 +9234,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 25.1,
-   "isin": "FR0014010QE1"
+   "isin": "FR0014010QE1",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALMKT.PA",
@@ -8543,7 +9250,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 32.9,
-   "isin": "FR0010609263"
+   "isin": "FR0010609263",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALTHE.PA",
@@ -8556,7 +9266,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 52.6,
-   "isin": "FR0010120402"
+   "isin": "FR0010120402",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALAFY.PA",
@@ -8569,7 +9282,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 41.7,
-   "isin": "FR0014005AC9"
+   "isin": "FR0014005AC9",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALCLS.PA",
@@ -8581,7 +9297,10 @@
    "var_1m": -6.83,
    "date_cours": "2026-11-09",
    "signal": "neutre",
-   "rsi": 42.8
+   "rsi": 42.8,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALEO2.PA",
@@ -8593,7 +9312,10 @@
    "var_1m": -0.75,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 47.3
+   "rsi": 47.3,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALDNE.PA",
@@ -8606,7 +9328,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 17.0,
-   "isin": "FR0013331212"
+   "isin": "FR0013331212",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALPAT.PA",
@@ -8619,7 +9344,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 50.0,
-   "isin": "FR0010785790"
+   "isin": "FR0010785790",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALNFL.PA",
@@ -8632,7 +9360,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 29.7,
-   "isin": "FR0014003XT0"
+   "isin": "FR0014003XT0",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALCJ.PA",
@@ -8645,7 +9376,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 46.8,
-   "isin": "FR0011716265"
+   "isin": "FR0011716265",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALCOX.PA",
@@ -8658,7 +9392,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 39.1,
-   "isin": "FR0013018124"
+   "isin": "FR0013018124",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "IVA.PA",
@@ -8671,7 +9408,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 53.6,
-   "isin": "FR0013233012"
+   "isin": "FR0013233012",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALMDG.PA",
@@ -8684,7 +9424,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 28.7,
-   "isin": "FR0010353888"
+   "isin": "FR0010353888",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALQGC.PA",
@@ -8697,7 +9440,10 @@
    "date_cours": "2026-11-06",
    "signal": "neutre",
    "rsi": 50.0,
-   "isin": "FR0011648971"
+   "isin": "FR0011648971",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALVAL.PA",
@@ -8710,7 +9456,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 49.8,
-   "isin": "FR0013254851"
+   "isin": "FR0013254851",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALNOV.PA",
@@ -8723,7 +9472,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 38.4,
-   "isin": "FR0010397232"
+   "isin": "FR0010397232",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALBOO.PA",
@@ -8736,7 +9488,10 @@
    "date_cours": "2026-11-06",
    "signal": "neutre",
    "rsi": 38.6,
-   "isin": "FR00140153G5"
+   "isin": "FR00140153G5",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALLHB.PA",
@@ -8749,7 +9504,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 51.5,
-   "isin": "FR0007080254"
+   "isin": "FR0007080254",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALENT.PA",
@@ -8762,7 +9520,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 37.9,
-   "isin": "FR0010424697"
+   "isin": "FR0010424697",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALWEC.PA",
@@ -8775,7 +9536,10 @@
    "date_cours": "2026-11-09",
    "signal": "hausse",
    "rsi": 52.0,
-   "isin": "FR0013079092"
+   "isin": "FR0013079092",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALKAL.PA",
@@ -8788,7 +9552,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 38.8,
-   "isin": "FR0010722819"
+   "isin": "FR0010722819",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALOKW.PA",
@@ -8801,7 +9568,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 37.0,
-   "isin": "FR0013439627"
+   "isin": "FR0013439627",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALLPL.PA",
@@ -8814,7 +9584,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 49.1,
-   "isin": "FR001400F2Z1"
+   "isin": "FR001400F2Z1",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALHRS.PA",
@@ -8827,7 +9600,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 33.3,
-   "isin": "FR0014001PM5"
+   "isin": "FR0014001PM5",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALMCE.PA",
@@ -8840,7 +9616,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 43.2,
-   "isin": "FR001400H3A0"
+   "isin": "FR001400H3A0",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALNXT.PA",
@@ -8852,7 +9631,10 @@
    "var_1m": -10.71,
    "date_cours": "2026-11-09",
    "signal": "neutre",
-   "rsi": 28.4
+   "rsi": 28.4,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALVIA.PA",
@@ -8865,7 +9647,10 @@
    "date_cours": "2026-11-06",
    "signal": "neutre",
    "rsi": 26.3,
-   "isin": "FR0010326090"
+   "isin": "FR0010326090",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALDLT.PA",
@@ -8878,7 +9663,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 42.5,
-   "isin": "FR0013283108"
+   "isin": "FR0013283108",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALSPW.PA",
@@ -8891,7 +9679,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 45.6,
-   "isin": "FR001400N2P2"
+   "isin": "FR001400N2P2",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALUVI.PA",
@@ -8904,7 +9695,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 40.6,
-   "isin": "FR0011898584"
+   "isin": "FR0011898584",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALEUP.PA",
@@ -8917,7 +9711,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 37.2,
-   "isin": "FR0014011QJ8"
+   "isin": "FR0014011QJ8",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALVDM.PA",
@@ -8930,7 +9727,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 71.7,
-   "isin": "FR0004045847"
+   "isin": "FR0004045847",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALBIO.PA",
@@ -8943,7 +9743,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 44.4,
-   "isin": "FR0011005933"
+   "isin": "FR0011005933",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALTXC.PA",
@@ -8955,7 +9758,10 @@
    "var_1m": 1.11,
    "date_cours": "2026-11-09",
    "signal": "neutre",
-   "rsi": 55.6
+   "rsi": 55.6,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALDBT.PA",
@@ -8968,7 +9774,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 34.4,
-   "isin": "FR001400LO86"
+   "isin": "FR001400LO86",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALSAF.PA",
@@ -8981,7 +9790,10 @@
    "date_cours": "2026-11-06",
    "signal": "neutre",
    "rsi": 51.0,
-   "isin": "FR001400ZU25"
+   "isin": "FR001400ZU25",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALIMP.PA",
@@ -8994,7 +9806,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 36.3,
-   "isin": "FR0013470168"
+   "isin": "FR0013470168",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ADOC.PA",
@@ -9007,7 +9822,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 57.9,
-   "isin": "FR0011184241"
+   "isin": "FR0011184241",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALHEX.PA",
@@ -9020,7 +9838,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 43.4,
-   "isin": "FR0004159473"
+   "isin": "FR0004159473",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "SAB.MC",
@@ -9033,7 +9854,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 59.9,
-   "isin": "ES0113860A34"
+   "isin": "ES0113860A34",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "SPM.MI",
@@ -9046,7 +9870,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 45.3,
-   "isin": "IT0005495657"
+   "isin": "IT0005495657",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "BMPS.MI",
@@ -9059,7 +9886,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 57.7,
-   "isin": "IT0005508921"
+   "isin": "IT0005508921",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ENR.DE",
@@ -9072,7 +9902,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 44.4,
-   "isin": "DE000ENER6Y0"
+   "isin": "DE000ENER6Y0",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALPHA.AT",
@@ -9084,7 +9917,10 @@
    "var_1m": 9.41,
    "date_cours": "2026-11-09",
    "signal": "neutre",
-   "rsi": 55.3
+   "rsi": 55.3,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "EUROB.AT",
@@ -9096,7 +9932,10 @@
    "var_1m": 6.68,
    "date_cours": "2026-11-09",
    "signal": "neutre",
-   "rsi": 57.3
+   "rsi": 57.3,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ETE.AT",
@@ -9108,7 +9947,10 @@
    "var_1m": 5.59,
    "date_cours": "2026-11-09",
    "signal": "neutre",
-   "rsi": 57.6
+   "rsi": 57.6,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "MAU.PA",
@@ -9121,7 +9963,11 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 27.9,
-   "isin": "FR0000051070"
+   "isin": "FR0000051070",
+   "fx": {
+    "g": 0,
+    "ttf": 1
+   }
   },
   {
    "ticker": "ATO.PA",
@@ -9134,7 +9980,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 49.3,
-   "isin": "FR001400X2S4"
+   "isin": "FR001400X2S4",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "CRI.PA",
@@ -9146,7 +9995,10 @@
    "var_1m": 5.05,
    "date_cours": "2026-11-06",
    "signal": "neutre",
-   "rsi": 53.6
+   "rsi": 53.6,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALLIX.PA",
@@ -9159,7 +10011,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 47.7,
-   "isin": "FR0010131409"
+   "isin": "FR0010131409",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "EKI.PA",
@@ -9172,7 +10027,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 55.6,
-   "isin": "FR0011466069"
+   "isin": "FR0011466069",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALGEN.PA",
@@ -9184,7 +10042,10 @@
    "var_1m": -14.8,
    "date_cours": "2026-11-09",
    "signal": "neutre",
-   "rsi": 29.6
+   "rsi": 29.6,
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALNRG.PA",
@@ -9197,7 +10058,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 52.0,
-   "isin": "FR001401A702"
+   "isin": "FR001401A702",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALPRI.PA",
@@ -9210,7 +10074,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 54.5,
-   "isin": "FR0004044600"
+   "isin": "FR0004044600",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALGIL.PA",
@@ -9223,7 +10090,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 50.9,
-   "isin": "FR0012819381"
+   "isin": "FR0012819381",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALSGD.PA",
@@ -9236,7 +10106,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 47.5,
-   "isin": "FR0011464452"
+   "isin": "FR0011464452",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALMOU.PA",
@@ -9249,7 +10122,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 41.0,
-   "isin": "FR0011033083"
+   "isin": "FR0011033083",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "MLHK.PA",
@@ -9262,7 +10138,10 @@
    "date_cours": "2026-11-09",
    "signal": "baisse",
    "rsi": 43.3,
-   "isin": "DE000A11Q133"
+   "isin": "DE000A11Q133",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALAGO.PA",
@@ -9275,7 +10154,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 54.7,
-   "isin": "FR0014004339"
+   "isin": "FR0014004339",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALDEL.PA",
@@ -9288,7 +10170,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 72.1,
-   "isin": "FR0000054132"
+   "isin": "FR0000054132",
+   "fx": {
+    "g": 0
+   }
   },
   {
    "ticker": "ALTUV.PA",
@@ -9301,7 +10186,10 @@
    "date_cours": "2026-11-09",
    "signal": "neutre",
    "rsi": 27.6,
-   "isin": "FR0013345493"
+   "isin": "FR0013345493",
+   "fx": {
+    "g": 0
+   }
   }
  ],
  "bilan_signaux": {
@@ -82516,5 +83404,227 @@
     "Yahoo Finance": "https://finance.yahoo.com/quote/ADOC.PA/"
    }
   }
- }
+ },
+ "opcvm": [
+  {
+   "ticker": "FR0010298596",
+   "isin": "FR0010298596",
+   "nom": "Moneta Multi Caps C",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "Moneta Asset Management",
+   "zone": "Actions France, toutes tailles",
+   "frais_courants": 1.49,
+   "entree_max": 1,
+   "sortie_max": 0,
+   "surperformance": "15 % au-delà de l'indice CAC All-Tradable NR",
+   "sri": 4,
+   "pea_pme": false,
+   "url_source": "https://pea.fr/fonds/moneta-multi-caps-c/"
+  },
+  {
+   "ticker": "FR0007076930",
+   "isin": "FR0007076930",
+   "nom": "DNCA Centifolia C",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "DNCA Finance",
+   "zone": "Actions France, style « value »",
+   "frais_courants": 2.44,
+   "entree_max": 2,
+   "sortie_max": null,
+   "surperformance": "20 % au-delà du CAC 40 NR",
+   "sri": 4,
+   "pea_pme": false,
+   "url_source": "https://pea.fr/fonds/dnca-centifolia-c/"
+  },
+  {
+   "ticker": "FR0011169341",
+   "isin": "FR0011169341",
+   "nom": "Sycomore Sélection Responsable R",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "Sycomore Asset Management",
+   "zone": "Actions zone euro, grandes entreprises (label ISR)",
+   "frais_courants": 2.0,
+   "entree_max": 3,
+   "sortie_max": 0,
+   "surperformance": null,
+   "sri": 4,
+   "pea_pme": false,
+   "url_source": "https://pea.fr/fonds/sycomore-selection-responsable-r/"
+  },
+  {
+   "ticker": "FR0010546929",
+   "isin": "FR0010546929",
+   "nom": "Tocqueville Dividende C",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "La Financière de l'Echiquier",
+   "zone": "Actions Europe, entreprises versant des dividendes",
+   "frais_courants": 2.3,
+   "entree_max": null,
+   "sortie_max": null,
+   "surperformance": null,
+   "sri": null,
+   "pea_pme": false,
+   "url_source": "https://pea.fr/fonds/tocqueville-dividende-c/"
+  },
+  {
+   "ticker": "FR0010321810",
+   "isin": "FR0010321810",
+   "nom": "Echiquier Agenor Mid Cap Europe A",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "La Financière de l'Echiquier",
+   "zone": "Actions Europe, entreprises moyennes",
+   "frais_courants": 2.35,
+   "entree_max": 3,
+   "sortie_max": null,
+   "surperformance": null,
+   "sri": 4,
+   "pea_pme": false,
+   "url_source": "https://pea.fr/fonds/echiquier-agenor-sri-mid-cap-europe-a/"
+  },
+  {
+   "ticker": "FR0013532710",
+   "isin": "FR0013532710",
+   "nom": "CPR Ambition France P",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "CPR Asset Management (groupe Amundi)",
+   "zone": "Petites et moyennes entreprises françaises",
+   "frais_courants": 1.73,
+   "entree_max": 3,
+   "sortie_max": null,
+   "surperformance": null,
+   "sri": 4,
+   "pea_pme": true,
+   "url_source": "https://pea.fr/fonds/cpr-ambition-france-p/"
+  },
+  {
+   "ticker": "FR0010601971",
+   "isin": "FR0010601971",
+   "nom": "HMG Découvertes C",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "HMG Finance",
+   "zone": "Petites entreprises françaises, style « value »",
+   "frais_courants": 1.76,
+   "entree_max": 3,
+   "sortie_max": null,
+   "surperformance": "15 % au-delà du CAC Small NR",
+   "sri": null,
+   "pea_pme": false,
+   "url_source": "https://pea.fr/fonds/hmg-decouvertes-c/"
+  },
+  {
+   "ticker": "FR0010286005",
+   "isin": "FR0010286005",
+   "nom": "Sextant PEA A",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "Amiral Gestion",
+   "zone": "Petites et moyennes entreprises, surtout françaises",
+   "frais_courants": 2.21,
+   "entree_max": 2,
+   "sortie_max": 1,
+   "surperformance": "15 %",
+   "sri": 5,
+   "pea_pme": false,
+   "url_source": "https://pea.fr/fonds/sextant-pea/"
+  },
+  {
+   "ticker": "LU1832174962",
+   "isin": "LU1832174962",
+   "nom": "Indépendance Europe Small A",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "Indépendance AM",
+   "zone": "Petites et moyennes entreprises européennes",
+   "frais_courants": 2.08,
+   "entree_max": 2,
+   "sortie_max": null,
+   "surperformance": null,
+   "sri": 4,
+   "pea_pme": true,
+   "url_source": "https://pea.fr/fonds/independance-europe-small-a/"
+  },
+  {
+   "ticker": "LU0131510165",
+   "isin": "LU0131510165",
+   "nom": "Indépendance France Small & Mid A",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "Indépendance AM",
+   "zone": "Petites et moyennes entreprises françaises",
+   "frais_courants": 2.08,
+   "entree_max": null,
+   "sortie_max": null,
+   "surperformance": "10 %",
+   "sri": 4,
+   "pea_pme": false,
+   "url_source": "https://pea.fr/fonds/independance-france-small-mid-a/"
+  },
+  {
+   "ticker": "FR0010354837",
+   "isin": "FR0010354837",
+   "nom": "DNCA Evolutif PEA C",
+   "categorie": "fonds",
+   "source": "opcvm",
+   "devise": "EUR",
+   "prix": null,
+   "date_cours": null,
+   "var_1j": null,
+   "societe": "DNCA Finance",
+   "zone": "Flexible : actions européennes et trésorerie",
+   "frais_courants": 2.41,
+   "entree_max": 2,
+   "sortie_max": null,
+   "surperformance": null,
+   "sri": null,
+   "pea_pme": false,
+   "url_source": "https://pea.fr/fonds/dnca-evolutif-pea-c/"
+  }
+ ]
 }

@@ -234,6 +234,11 @@ par les agents. Dans le graphique, la moyenne courte est en tirets et la longue 
 | `risque_de(det)` | niveau de risque 1 à 7 du badge de la page principale (SRI officiel, sinon estimé) |
 | `simulation_mensuelle(serie, mensuel, ans)` | simulateur pédagogique « 50 € par mois » sur 5 ans au plus, d'après la série hebdomadaire ; None sous 2 ans d'historique (bloc « Et si j'avais investi régulièrement ? ») |
 | `filtrerCriteres(liste, c, det)` (JavaScript, `modele.html`) | filtre le Top 30 selon « Mes critères » : type, risque maximum, baisse maximale sur 1 an ; un titre sans la donnée n'est pas retenu ; critères gardés dans `localStorage` |
+| `TARIF`, `fraisDe(m)`, `couts(m, M)`, `fraisCourt(m)`, `blocFrais(m)` (JavaScript, `modele.html`) | frais de chaque titre : gestion (ETF : `fx.g` du catalogue ou `details.frais` ; action : 0 ; OPCVM : `frais_courants`), courtage BNP Bourse Start plafonné à 0,5 %, TTF, garde, total sur 1 an pour 100 / 500 / 1 000 € |
+| `deviseDe(m)`, `dev(m)` (JavaScript) | devise de chaque cours : `m.devise`, sinon d'après la place du code Yahoo ; « pts » pour un indice ; `UNITE` pour devises et matières premières |
+| `opcvm.json`, `scripts/opcvm.py` | OPCVM éligibles au PEA (frais et SRI relevés dans les DIC, avec source et date) ; `mesurer_tout()` lit la valeur liquidative (Yahoo par ISIN, puis FT), garde la dernière dans `data/opcvm.json` ; appelé par `collecte.py`, liste `opcvm` de la fiche du jour |
+| `fiches.frais_compact`, `ajouter_frais_catalogue` | frais `fx` de chaque titre du catalogue, depuis le cache `data/fiches/` (sans réseau) ; `python scripts/fiches.py --frais AAAA-MM-JJ` |
+| `rendu.empreintes_scripts(page)` | empreinte SHA-256 du script de la page, insérée dans la politique de sécurité (CSP) à la place de `'__EMPREINTE_SCRIPT__'` |
 | `ETF_INDICE`, `etfIndice(t)`, `prixEtf(m)` (JavaScript, `modele.html`) | à côté de chaque indice, prix d'une part du premier ETF éligible au PEA de la table `ETF_INDICE` qui a un cours (avec sa date si elle n'est pas celle de la fiche) ; dans la fiche de l'indice, bouton vers la fiche de l'ETF |
 | boutons `#chips-top` (JavaScript, `modele.html`) | filtre ETF / Actions du Top 30 (les petites capitalisations comptent comme actions) ; la règle CSS `.ligne[hidden]` est indispensable |
 | `date_vl(m)` | « (valeur du 05/11) » après le prix d'un fonds dans la note |

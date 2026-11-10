@@ -372,6 +372,38 @@ def frais(m, inf):
     return out
 
 
+def infos_en_cache(t):
+    """Caractéristiques gardées dans data/fiches/, même périmées (frais et ISIN changent rarement) ; {} sinon."""
+    try:
+        return json.loads(fichier_cache(t).read_text(encoding="utf-8"))["infos"] or {}
+    except (OSError, ValueError, KeyError):
+        return {}
+
+
+def frais_compact(m, inf=None):
+    """Frais d'un titre du catalogue, en court pour la page : g = frais de gestion annuels (%), e / s =
+    frais d'entrée / de sortie (%), ttf = taxe sur les transactions financières. None si rien n'est connu."""
+    fx = frais(m, infos_en_cache(m["ticker"]) if inf is None else inf)
+    if not fx:
+        return None
+    out = {k: fx[c] for k, c in (("g", "gestion"), ("e", "entree"), ("s", "sortie")) if fx.get(c) is not None}
+    if m["categorie"] in ("actions", "petites"):
+        out["g"] = 0  # une action n'a pas de frais annuels
+    if fx.get("ttf"):
+        out["ttf"] = 1
+    return out or None
+
+
+def ajouter_frais_catalogue(d):
+    """Ajoute « fx » (frais) à chaque titre du catalogue, d'après le cache : sans réseau. Renvoie le nombre."""
+    n = 0
+    for m in d.get("catalogue", []):
+        fx = frais_compact(m)
+        if fx:
+            m["fx"], n = fx, n + 1
+    return n
+
+
 def fiche_fonds_wealins(m):
     """Fiche détaillée d'un fonds de la liste Wealins (noté dans mes-investissements.md) : historique de la
     valeur liquidative (jusqu'à 5 ans, lu sur la page du fonds), statistiques, gestionnaire, SFDR, DIC.
@@ -400,6 +432,13 @@ def fiche_fonds_wealins(m):
 
 
 def main():
+    if sys.argv[1] == "--frais":  # sans réseau : seulement les frais du catalogue, d'après le cache
+        fj = DATA / "jours" / f"{sys.argv[2]}.json"
+        d = json.loads(fj.read_text(encoding="utf-8"))
+        n = ajouter_frais_catalogue(d)
+        fj.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"Frais connus : {n}/{len(d.get('catalogue', []))} titres")
+        return
     jour = sys.argv[1]
     fj = DATA / "jours" / f"{jour}.json"
     d = json.loads(fj.read_text(encoding="utf-8"))
@@ -485,7 +524,9 @@ def main():
                 print("ISIN illisible pour", m["ticker"], ":", e, file=sys.stderr)
         if isin:
             m["isin"] = isin
+    nb_fx = ajouter_frais_catalogue(d)
     fj.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"Frais connus : {nb_fx}/{len(d.get('catalogue', []))} titres")
     nb_sri = sum(1 for x in details.values() if x["infos"].get("sri_officiel"))
     nb_pea = sum(1 for x in details.values() if x["infos"].get("pea_bourso"))
     nb_isin = sum(1 for m in d.get("catalogue", []) if m.get("isin"))
