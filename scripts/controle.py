@@ -52,12 +52,17 @@ HORS_ROLE = {  # mes-investissements.md : tenu par le propriétaire seul, aucun 
     "univers": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "ARCHITECTURE.md",
                 "config.json", "data/*", "docs/*", "notes/*", "apprentissage/*", "mes-investissements.md",
                 "guide/*", "pilotage/*"],
+    # vérificateur du code : code, tests, documentation, son rapport et son journal ; jamais les données
+    "code": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "config.json",
+             "univers.json", "data/*", "pilotage/*", "apprentissage/*", "mes-investissements.md", "guide/*"],
 }
-# exceptions : idées proposées (fiche, samedi) ; pistes de nouveaux titres et décisions provisoires (nuit)
+# exceptions : idées proposées (fiche, samedi, vérificateur) ; pistes et décisions provisoires (nuit)
 PERMIS = {"fiche": ["apprentissage/idees.md"], "nuit": ["pilotage/candidats.md", "pilotage/decisions.md"],
-          "univers": ["pilotage/candidats.md", "apprentissage/idees.md"]}
-PERMIS_MOTIFS = {"univers": ["pilotage/univers/*"]}
-MAX_LIGNES = {"nuit": 300, "chef": 250}         # lignes de code modifiées par passage
+          "univers": ["pilotage/candidats.md", "apprentissage/idees.md"],
+          "code": ["apprentissage/idees.md", "apprentissage/lectures/README.md", "pilotage/sources-verifiees.md"]}
+PERMIS_MOTIFS = {"univers": ["pilotage/univers/*"],
+                 "code": ["pilotage/code/*", "apprentissage/code/*", "apprentissage/lectures/*"]}
+MAX_LIGNES = {"nuit": 300, "chef": 250, "code": 200}   # lignes de code modifiées par passage
 
 
 def controle(nom, titre, niveau, resume, details=None):
@@ -443,6 +448,8 @@ def agent_du_commit(message):
         return "chef"
     if message.startswith("Univers :"):
         return "univers"
+    if message.startswith("Code :"):
+        return "code"
     if message.startswith("Revert"):
         return "annulation"
     return "autre"
@@ -571,10 +578,14 @@ def bilans_en_retard(decisions, jour, delai=3):
 
 
 def commit_sans_decision(agent, message, chemins, decisions):
-    """Vrai si un commit d'agent modifie le programme sans citer une décision connue du journal."""
-    if agent not in ("nuit", "chef", "univers"):
+    """Vrai si un commit d'agent modifie le programme sans citer une décision connue du journal.
+    Le vérificateur du code peut aussi corriger un bug ou une fuite d'information sans décision,
+    s'il l'annonce par « [correctif] » ou « [confidentialité] » dans le message."""
+    if agent not in ("nuit", "chef", "univers", "code"):
         return False
     if not any(c.startswith("scripts/") for c in chemins):
+        return False
+    if agent == "code" and re.search(r"\[(correctif|confidentialité)\]", message):
         return False
     return not any(i in decisions for i in ID_DECISION.findall(message))
 
@@ -612,6 +623,25 @@ def c_lectures(d):
 
 # ---------- assemblage ----------
 
+def c_confidentialite(d, heures=30):
+    """Aucune information personnelle dans le dépôt public (voir confidentialite.py). Sans la clé secrète,
+    seuls les motifs génériques sont cherchés ; le vérificateur du code fait le contrôle complet chaque jour.
+    Une fuite dans un ancien commit est une alerte : seul le propriétaire peut réécrire l'historique."""
+    import confidentialite as cf
+    conf, k = cf.regles(), cf.cle()
+    fichiers = cf.analyser_depot(k, conf)
+    depuis = git("log", f"--since={heures} hours ago", "--format=%h").split()
+    commits = cf.analyser_commits(k, conf, len(depuis)) if depuis else []
+    details = [f"{lieu}{f' (ligne {n})' if n else ''} : {cat}" for lieu, n, cat, _ in fichiers + commits]
+    if not k:
+        details.append("termes protégés : vérifiés chaque jour par le vérificateur du code (clé absente ici)")
+    rouge = any(g == cf.ROUGE for *_, g in fichiers)
+    niveau = "probleme" if rouge else "alerte" if fichiers or commits else "ok"
+    resume = f"{len(fichiers)} point(s) dans les fichiers, {len(commits)} dans les commits récents" \
+        if fichiers or commits else "aucune information personnelle trouvée"
+    return controle("confidentialite", "Confidentialité (dépôt public)", niveau, resume, details)
+
+
 def resume_court(controles, etat):
     """Phrase affichée en bas de la fiche : « À surveiller. 11/11 tests, 8/8 prix revérifiés… »."""
     c = {x["nom"]: x for x in controles}
@@ -641,7 +671,7 @@ def main():
             controles.append(x or controle(nom, nom, "non_verifiable", "non vérifié (hors ligne)"))
     else:
         controles += [c_prix(d, maintenant), c_liens(d), c_site(d)]
-    controles += [c_documentation(d, maintenant), c_agents(d), c_decisions(d), c_lectures(d)]
+    controles += [c_documentation(d, maintenant), c_agents(d), c_decisions(d), c_lectures(d), c_confidentialite(d)]
     pire_niveau = pire(c["niveau"] for c in controles)
     etat = {"probleme": "rouge", "alerte": "orange"}.get(pire_niveau, "vert")
     sortie = {"genere_le": maintenant.isoformat(timespec="minutes"), "fiche": f"{d['date']} ({d.get('moment')})",

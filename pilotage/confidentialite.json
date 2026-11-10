@@ -1,0 +1,30 @@
+{
+ "_explication": "Termes protégés : seulement leur empreinte HMAC-SHA256 (clé secrète hors du dépôt). Pour en ajouter un : python3 scripts/confidentialite.py --empreinte \"terme\" avec la clé, puis coller l'empreinte ici.",
+ "empreintes": [
+  "084d7927d9139301a8b69efc9233f419f1b57b38863ba348095a434fb046c7b4",
+  "3e902ac0295a11d988ad4ea84008ee0611b26caad241ec2b2f9951205a0d6e6a",
+  "5e0d88cb71706db6fc46cbbd8cefbd85614e1c80b202d880e1658f2e6e5e131c",
+  "74057567aac9c3e3e021e299c215e861f7c3aa8e579f324f0fb7b39fd714fb78",
+  "8097483e510b402e64fb9462a6d344db4655f95fa08746f21f799812e9077706",
+  "aab72c5b0b73bbd456bc80a373055230e5a40ebca9afec5e5d1a0c2865720bed",
+  "f519d41f56cb8eecf017f232579f3b8af5d4f48340c9e19776814a7aa9ad59ba"
+ ],
+ "emails_autorises": [
+  "noreply@anthropic\\.com",
+  "[a-z0-9._+-]+@users\\.noreply\\.github\\.com",
+  "git@github\\.com",
+  "[a-z0-9._+-]+@example\\.(com|org|net)"
+ ],
+ "auteurs_autorises": [
+  "claude",
+  "matbs100"
+ ],
+ "dossiers_autorises": [
+  "Shared",
+  "vous",
+  "moi",
+  "utilisateur",
+  "user",
+  "runner"
+ ]
+}

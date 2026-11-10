@@ -286,8 +286,38 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `commit_sans_decision(agent, message, chemins, decisions)` | commit d'agent qui change le programme sans citer une décision connue (`[D-…]`) |
 | `c_lectures(d)` | contrôle « Lectures des agents » (voir `lectures.defauts`) ; un PDF ajouté au dépôt par un agent est un problème (dans `ecarts_aux_regles`) |
 | `c_decisions(d, heures)` | contrôle « Méthode de décision » : bilans en retard, gains mal calculés, améliorations sans décision (commits depuis le 07/11/2026) |
+| `c_confidentialite(d, heures)` | contrôle « Confidentialité » : aucune information personnelle dans les fichiers publiés (🔴) ni dans les commits récents (🟠) ; voir `confidentialite.py` |
 | `resume_court(controles, etat)` | phrase affichée en bas de la fiche |
 | `main()` | enchaîne les contrôles, écrit `pilotage/etat.json`, affiche le résumé |
+
+### `confidentialite.py` : aucune information personnelle dans le dépôt public
+Usage : `python3 scripts/confidentialite.py [--site] [--commits N] [--json]` (N = 0 : tout l'historique) ;
+`--empreinte "terme"` calcule l'empreinte d'un nouveau terme protégé. Ne modifie rien. Code de sortie :
+0 rien, 1 points à revoir, 2 information personnelle. Les termes protégés (identité du propriétaire, sujet
+de notification…) ne sont **jamais** écrits en clair : seulement leur empreinte HMAC-SHA256 dans
+`pilotage/confidentialite.json`, avec une clé secrète hors du dépôt (variable `CONF_CLE` de la routine du
+vérificateur, ou ligne `CONF_CLE=` de `.matin-pea-local` sur le Mac). Le rapport ne recopie jamais ce qu'il
+trouve : fichier, ligne et catégorie seulement.
+
+| Fonction | Rôle |
+|---|---|
+| `regles(chemin)` | lit `pilotage/confidentialite.json` (empreintes, adresses techniques, auteurs et dossiers autorisés) |
+| `cle()` | clé secrète : variable `CONF_CLE`, sinon `.matin-pea-local` ; `None` si absente |
+| `normalise(mot)` | minuscules, sans accents ni ponctuation de bord |
+| `empreinte(terme, k)` | HMAC-SHA256 du terme normalisé |
+| `mots(texte)` | mots candidats : formes entières (adresse, identifiant) et morceaux |
+| `email_autorise(adresse, autorises)` | adresse technique autorisée (noreply…) |
+| `iban_valide(texte)` | IBAN dont la clé modulo 97 est juste (évite les faux positifs) |
+| `analyser_texte(texte, k, empreintes, conf)` | (ligne, catégorie, gravité) : terme protégé, e-mail, dossier personnel, téléphone, IBAN, clé d'API, sujet ntfy |
+| `fichiers_suivis()` | fichiers suivis par Git (ce qui est publié) |
+| `lire_texte(chemin)` | texte d'un fichier, `None` s'il est binaire ou trop gros |
+| `doublons(fichiers)` | copies « nom 2.md » créées par la synchronisation |
+| `analyser_depot(k, conf)` | tous les fichiers publiés et les doublons |
+| `analyser_commits(k, conf, n)` | auteurs et messages des n derniers commits (0 : tout l'historique) |
+| `analyser_site(k, conf)` | la page en ligne |
+| `gravite(points)` | 0, 1 ou 2 |
+| `rapport(points, k)` | rapport Markdown, sans jamais la valeur trouvée |
+| `main(args)` | options de la ligne de commande |
 
 ### `mac.sh` et `Matin PEA.command` : le lanceur du Mac
 Double-clic sur `Matin PEA.command` : crée `.venv` et installe `requirements.txt` (seulement s'il a changé),

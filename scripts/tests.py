@@ -723,6 +723,44 @@ def opcvm_et_frais():
     assert "function fraisDe" in modele and "const deviseDe" in modele and 'id="sec-opc"' in modele
 
 
+@test
+def confidentialite():
+    """Aucune information personnelle dans le dépôt public ; le scanner ne recopie jamais ce qu'il trouve."""
+    import confidentialite as cf
+    import controle as c
+    conf = cf.regles()
+    k = b"cle-de-test"
+    emp = {cf.empreinte("Zorglub", k)}
+    t = "Bonjour Zorglub,\nécrire à jean.dupont@exemple.fr ou noreply@anthropic.com\n/Users/jdupont/Documents\n" \
+        "https://www.site.com/global/en/home/page\nIBAN " + "FR76" + " 3000 6000 0112 3456 7890 189 · ISIN FR0000120073\n" \
+        "curl ntfy" + ".sh/abcdef123 · ntfy.sh/<sujet>\n"  # valeurs coupées : le scanner relit ce fichier
+    trouves = cf.analyser_texte(t, k, emp, conf)
+    cats = {(n, cat) for n, cat, _ in trouves}
+    assert (1, "terme protégé (identité du propriétaire)") in cats
+    assert (2, "adresse e-mail") in cats and (3, "chemin d'un dossier personnel") in cats
+    assert (5, "IBAN") in cats and (6, "sujet de notification ntfy") in cats
+    assert not any(n == 4 for n, _ in cats), "un lien « site.com/home/… » n'est pas un dossier personnel"
+    assert cf.analyser_texte("écrire à noreply@anthropic.com", k, emp, conf) == []
+    assert cf.analyser_texte("Bonjour Zorglub", None, emp, conf) == [], "sans clé, pas de termes protégés"
+    assert cf.iban_valide("FR76" + "30006000011234567890189") and not cf.iban_valide("FR0000120073")
+    assert cf.doublons(["a.md", "a 2.md", "b 2.md", "ALEO2.PA.json"]) == ["a 2.md"]
+    rapport = cf.rapport([("x.md", 1, "terme protégé (identité du propriétaire)", cf.ROUGE)], k)
+    assert "zorglub" not in rapport.lower() and "🔴" in rapport
+    # le dépôt lui-même : aucune information personnelle dans les fichiers publiés
+    rouges = [p for p in cf.analyser_depot(cf.cle(), conf) if p[3] == cf.ROUGE]
+    assert not rouges, f"{len(rouges)} information(s) personnelle(s) dans le dépôt : {[(l, n, x) for l, n, x, _ in rouges][:5]}"
+    assert not cf.doublons(cf.fichiers_suivis()), "doublons « … 2 » dans le dépôt"
+    # rôle du vérificateur du code dans le contrôle du chef
+    assert c.agent_du_commit("Code : rapport du 2026-11-10 (vert)") == "code"
+    ok = [("M", "scripts/rendu.py", 30), ("A", "pilotage/code/2026-11-10.md", 40), ("M", "ARCHITECTURE.md", 3),
+          ("A", "apprentissage/code/2026-11-10.md", 20), ("M", "scripts/tests.py", 15)]
+    assert c.ecarts_aux_regles("code", ok, "2026-11-10", "2026-11-09") == ([], [])
+    assert c.ecarts_aux_regles("code", [("M", "CHEF.md", 2)], "2026-11-10", "2026-11-09")[1]
+    assert c.ecarts_aux_regles("code", [("M", "data/jours/2026-11-09.json", 2)], "2026-11-10", "2026-11-09")[1]
+    assert not c.commit_sans_decision("code", "Code : fuite retirée [confidentialité]", ["scripts/rendu.py"], {})
+    assert c.commit_sans_decision("code", "Code : nouvelle fonction", ["scripts/rendu.py"], {})
+
+
 def main():
     echecs = 0
     for f in TESTS:
