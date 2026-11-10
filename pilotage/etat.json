@@ -1,15 +1,15 @@
 {
- "genere_le": "2026-11-10T05:12+01:00",
- "fiche": "2026-11-09 (cloture)",
+ "genere_le": "2026-11-10T09:59+01:00",
+ "fiche": "2026-11-10 (ouverture)",
  "lieu": "cloud",
  "etat": "rouge",
- "resume": "À corriger. 28/28 tests, 8/8 prix revérifiés, 23/27 liens valides, site à jour. Points à voir : liens des fiches détaillées, travail des agents (30 dernières heures), confidentialité (dépôt public).",
+ "resume": "À corriger. 29/29 tests, 24/29 liens valides, site à jour. Points à voir : liens des fiches détaillées, travail des agents (30 dernières heures).",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "28/28 tests réussis",
+   "resume": "29/29 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf"
    ]
@@ -20,7 +20,7 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-09 (cloture), générée le 2026-11-09T17:59+01:00",
+    "dernière fiche : 2026-11-10 (ouverture), générée le 2026-11-10T09:25+01:00",
     "fiche attendue à cette heure : 2026-11-09 (cloture)"
    ]
   },
@@ -35,40 +35,41 @@
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "322 mots, 0 remarque(s)",
+   "resume": "310 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-09 (cloture)",
+   "resume": "régénérée avec la fiche du 2026-11-10 (ouverture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "ok",
-   "resume": "8/8 prix identiques sur Boursorama",
+   "niveau": "non_verifiable",
+   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
    "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "probleme",
-   "resume": "23/27 liens valides sur 8 titres, 5 non ouverts (robots.txt)",
+   "resume": "24/29 liens valides sur 8 titres, 5 non ouverts (robots.txt)",
    "details": [
-    "CD8.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/CD8.PA/)",
-    "INS.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/INS.PA/)",
     "PLEM.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/PLEM.PA/)",
-    "UTI.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/UTI.PA/)"
+    "CD8.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/CD8.PA/)",
+    "PINR.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/PINR.PA/)",
+    "TRV.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/TRV.PA/)",
+    "HLT.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/HLT.PA/)"
    ]
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-09 (cloture)",
+   "resume": "le site affiche la fiche du 2026-11-10 (ouverture)",
    "details": []
   },
   {
@@ -77,7 +78,7 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "18 connaissance(s) en attente de vérification (⏳)",
+    "23 connaissance(s) en attente de vérification (⏳)",
     "3 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
@@ -85,48 +86,50 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "alerte",
-   "resume": "14 commit(s), 0 problème(s), 2 alerte(s)",
+   "resume": "18 commit(s), 0 problème(s), 5 alerte(s)",
    "details": [
-    "58463d7 « Amélioration : « Mes critères », filtre du Top 30  » : docs/archives/2026-11-06.html : fiche d'un jour passé régénérée",
-    "58463d7 « Amélioration : « Mes critères », filtre du Top 30  » : notes/2026-11-06.md : fiche d'un jour passé régénérée",
-    "6c28ef9 [code] Code : gain de l'idée 33 corrigé selon la grille [correctif]",
-    "fb8f8b3 [code] Code : rapport du 2026-11-10 (vert) ; documentation des fonctions [cor",
-    "97629e3 [nuit] Amélioration : « Mes critères » annonce les titres écartés faute de do",
-    "b8d397c [autre] empreintes de confidentialité avec la clé du vérificateur",
-    "09ec66c [autre] clé de confidentialité du vérificateur rangée dans .matin-pea-local (j",
-    "2439b9a [autre] nouvel agent « Vérificateur du code » (4 h, sous la direction du chef)",
-    "b5422e3 [autre] confidentialité (prénom retiré du dépôt, contrôle quotidien des inform",
-    "af1a637 [autre] frais de chaque titre, devise de chaque cours, OPCVM éligibles au PEA,",
-    "61c26ee [fiche] Matin PEA 2026-11-09 (cloture)",
-    "5c7ded8 [chef] Chef : passage de mi-journée du 2026-11-09 (orange)",
-    "f037dc6 [autre] prix d'un ETF à côté des indices, filtre ETF / Actions, presse et inno",
-    "2a6ef8a [fiche] Matin PEA 2026-11-09 (ouverture)",
-    "ce55bd4 [chef] Chef : rapport du 2026-11-09 (orange)",
-    "58463d7 [nuit] Amélioration : « Mes critères », filtre du Top 30 [D-20261109-1]"
+    "ceb6c31 « Amélioration : encadré « Le contexte des taux » de » : data/taux_bce.json : hors du rôle de l'agent « nuit »",
+    "0fd4b0c « Chef : rapport du 2026-11-10 (orange) ; import inu » : docs/archives/2026-11-09.html : fiche d'un jour passé régénérée",
+    "0fd4b0c « Chef : rapport du 2026-11-10 (orange) ; import inu » : notes/2026-11-09.md : fiche d'un jour passé régénérée",
+    "857db8b « Amélioration : « Mes critères » annonce les titres » : docs/archives/2026-11-09.html : fiche d'un jour passé régénérée",
+    "857db8b « Amélioration : « Mes critères » annonce les titres » : notes/2026-11-09.md : fiche d'un jour passé régénérée",
+    "a96555f [code] Code : rapport du 2026-11-10 passage de 4 h (vert) ; taux.py : zip exp",
+    "ceb6c31 [nuit] Amélioration : encadré « Le contexte des taux » de la BCE [D-20261110-",
+    "9a41c4c [autre] le contrôle de confidentialité lit aussi le site depuis le Mac (reques",
+    "964c49e [fiche] Matin PEA 2026-11-10 (ouverture)",
+    "0fd4b0c [chef] Chef : rapport du 2026-11-10 (orange) ; import inutile retiré de weali",
+    "e83b6f0 [code] Code : gain de l'idée 33 corrigé selon la grille [correctif]",
+    "12a67ce [code] Code : rapport du 2026-11-10 (vert) ; documentation des fonctions [cor",
+    "857db8b [nuit] Amélioration : « Mes critères » annonce les titres écartés faute de do",
+    "52c8e10 [autre] empreintes de confidentialité avec la clé du vérificateur",
+    "800a755 [autre] clé de confidentialité du vérificateur rangée dans .matin-pea-local (j",
+    "8d806af [autre] nouvel agent « Vérificateur du code » (4 h, sous la direction du chef)",
+    "7e957c6 [autre] confidentialité (prénom retiré du dépôt, contrôle quotidien des inform",
+    "b3d3178 [autre] frais de chaque titre, devise de chaque cours, OPCVM éligibles au PEA,",
+    "3c56f17 [fiche] Matin PEA 2026-11-09 (cloture)",
+    "62e632f [chef] Chef : passage de mi-journée du 2026-11-09 (orange)"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
    "niveau": "ok",
-   "resume": "23 décisions, 8 à réaliser, 0 point(s) à voir",
+   "resume": "23 décisions, 7 à réaliser, 0 point(s) à voir",
    "details": []
   },
   {
    "nom": "lectures",
    "titre": "Lectures des agents (PDF de sources vérifiées)",
    "niveau": "ok",
-   "resume": "5 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
+   "resume": "6 lecture(s), 1 à relire par le chef, 0 point(s) à voir",
    "details": []
   },
   {
    "nom": "confidentialite",
    "titre": "Confidentialité (dépôt public)",
-   "niveau": "alerte",
-   "resume": "0 point(s) dans les fichiers, 2 dans les commits récents",
+   "niveau": "ok",
+   "resume": "aucune information personnelle trouvée",
    "details": [
-    "commit af1a637 : adresse e-mail personnelle de l'auteur",
-    "commit f037dc6 : adresse e-mail personnelle de l'auteur",
     "termes protégés : vérifiés chaque jour par le vérificateur du code (clé absente ici)"
    ]
   }
