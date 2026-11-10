@@ -479,5 +479,20 @@
   "boursorama": "1rPALKAL",
   "ft": "ALKAL:PAR",
   "echecs": {}
+ },
+ "SW.PA": {
+  "boursorama": "1rPSW",
+  "ft": "SW:PAR",
+  "echecs": {}
+ },
+ "EUROB.AT": {
+  "boursorama": null,
+  "ft": "EUROB:ATH",
+  "echecs": {}
+ },
+ "AD.AS": {
+  "boursorama": "1rAAD",
+  "ft": "AD:AEX",
+  "echecs": {}
  }
 }

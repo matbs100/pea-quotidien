@@ -1,40 +1,40 @@
 {
  "vl": {
   "FR0010298596": {
-   "prix": 470.64,
-   "date_cours": "2026-11-06",
-   "var_1j": -0.47,
-   "source_vl": "Yahoo Finance"
+   "prix": 476.52,
+   "date_cours": "2026-11-09",
+   "var_1j": 1.25,
+   "source_vl": "Financial Times"
   },
   "FR0007076930": {
-   "prix": 562.82,
-   "date_cours": "2026-11-06",
-   "var_1j": -1.02,
-   "source_vl": "Yahoo Finance"
+   "prix": 567.04,
+   "date_cours": "2026-11-09",
+   "var_1j": 0.75,
+   "source_vl": "Financial Times"
   },
   "FR0011169341": {
-   "prix": 588.96,
-   "date_cours": "2026-11-06",
-   "var_1j": -0.59,
-   "source_vl": "Yahoo Finance"
+   "prix": 602.06,
+   "date_cours": "2026-11-09",
+   "var_1j": 2.22,
+   "source_vl": "Financial Times"
   },
   "FR0010546929": {
-   "prix": 40.79,
-   "date_cours": "2026-11-06",
-   "var_1j": -1.23,
-   "source_vl": "Yahoo Finance"
+   "prix": 41.45,
+   "date_cours": "2026-11-09",
+   "var_1j": 1.62,
+   "source_vl": "Financial Times"
   },
   "FR0010321810": {
-   "prix": 468.06,
-   "date_cours": "2026-11-06",
-   "var_1j": null,
+   "prix": 473.99,
+   "date_cours": "2026-11-09",
+   "var_1j": 1.27,
    "source_vl": "Financial Times"
   },
   "FR0013532710": {
-   "prix": 166.04,
-   "date_cours": "2026-11-06",
-   "var_1j": -0.38,
-   "source_vl": "Yahoo Finance"
+   "prix": 168.65,
+   "date_cours": "2026-11-09",
+   "var_1j": 1.57,
+   "source_vl": "Financial Times"
   },
   "FR0010601971": {
    "prix": 337.2,
@@ -43,10 +43,10 @@
    "source_vl": "Yahoo Finance"
   },
   "FR0010286005": {
-   "prix": 1163.77,
-   "date_cours": "2026-11-06",
-   "var_1j": -0.56,
-   "source_vl": "Yahoo Finance"
+   "prix": 1185.78,
+   "date_cours": "2026-11-09",
+   "var_1j": 1.89,
+   "source_vl": "Financial Times"
   },
   "LU1832174962": {
    "prix": 239.73,
@@ -61,10 +61,10 @@
    "source_vl": "Yahoo Finance"
   },
   "FR0010354837": {
-   "prix": 207.58,
-   "date_cours": "2026-11-06",
-   "var_1j": -0.78,
-   "source_vl": "Yahoo Finance"
+   "prix": 210.6,
+   "date_cours": "2026-11-09",
+   "var_1j": 1.45,
+   "source_vl": "Financial Times"
   }
  },
  "maj": "2026-11-10"
