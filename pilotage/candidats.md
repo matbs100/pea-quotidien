@@ -30,3 +30,7 @@ Notées par le chef d'orchestre et l'agent de nuit dans la semaine ; vérifiées
 ## Notes de la nuit du 10/11
 - [ ] MWRD.PA · Amundi Core MSCI World UCITS ETF Acc · IE000BI8OT95 (lu sur Finect le 10/11) · frais 0,12 %, encours 16,9 Md€ · éligibilité PEA non lue (la page ne la mentionne pas) · fonds irlandais, probablement non éligible : à vérifier sur Boursorama avant tout ajout
 
+
+## Notes de la nuit du 10/11 (devoir 1)
+- [ ] MWRD.PA · Amundi Core MSCI World UCITS ETF Acc · IE000BI8OT95 (lu sur Boursorama le 2026-11-10) · frais de gestion max 0,08 %, droits d'entrée et de sortie 0 % · éligibilité PEA **non lue** (la page ne la mentionne pas ; un extrait de recherche Trackinsight la suggère, non confirmé) · à lire sur une liste officielle avant tout ajout
+- CEU : le code `CEU` de Boursorama est une action canadienne (ISIN CA15713J1049, non éligible), pas l'ETF Amundi : devoir 1 passé à CEU sans résultat ; l'ETF reste à retrouver par son ISIN.

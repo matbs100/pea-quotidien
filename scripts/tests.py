@@ -731,6 +731,20 @@ def opcvm_et_frais():
 
 
 @test
+def taux_bce():
+    """Dernier changement d'un taux lu dans un CSV de la BCE ; l'encadré existe dans la page, sans taux en dur."""
+    import taux
+    csv_ = "KEY,TIME_PERIOD,OBS_VALUE\nA,2026-09-14,2.25\nA,2026-09-15,2.25\nA,2026-09-16,2.5\nA,2026-09-17,2.5\n"
+    r = taux.dernier_changement(taux.lire_csv(csv_))
+    assert r == {"taux": 2.5, "depuis": "2026-09-16", "precedent": 2.25, "releve": "2026-09-17"}, r
+    r = taux.dernier_changement([("2026-01-01", "2.0"), ("2026-01-02", "2.0")])
+    assert r["precedent"] is None and r["depuis"] == "2026-01-01"
+    assert taux.dernier_changement([]) is None
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert 'id="sec-taux"' in modele and "D.taux_bce" in modele and "2,50" not in modele
+
+
+@test
 def confidentialite():
     """Aucune information personnelle dans le dépôt public ; le scanner ne recopie jamais ce qu'il trouve."""
     import confidentialite as cf

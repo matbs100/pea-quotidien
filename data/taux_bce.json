@@ -1,0 +1,21 @@
+{
+ "depot": {
+  "taux": 2.5,
+  "depuis": "2026-09-16",
+  "precedent": 2.25,
+  "releve": "2026-11-10"
+ },
+ "refinancement": {
+  "taux": 2.65,
+  "depuis": "2026-09-16",
+  "precedent": 2.4,
+  "releve": "2026-11-10"
+ },
+ "pret_marginal": {
+  "taux": 2.9,
+  "depuis": "2026-09-16",
+  "precedent": 2.65,
+  "releve": "2026-11-10"
+ },
+ "source": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html"
+}

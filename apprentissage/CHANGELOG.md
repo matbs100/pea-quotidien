@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-10 · Le contexte des taux de la BCE
+- Nouvel encadré sous l'analyse du jour : les trois taux directeurs de la Banque centrale européenne (dépôt 2,50 %, refinancement 2,65 %, prêt marginal 2,90 %), avec leur date d'entrée en vigueur, le taux précédent et un lien vers la BCE. Les taux sont lus chaque jour à la source (`scripts/taux.py`), jamais écrits en dur ; sans réseau, le dernier relevé est affiché avec sa date. Information de contexte, pas un conseil. Inspiration : bulletin économique de la BCE n° 5/2026. Décision D-20261110-1.
+
 ## 2026-11-10 · Nettoyage d'un import inutile (D-20261110-2)
 
 `scripts/wealins.py` n'importe plus `date` (inutilisé). Aucun effet sur la fiche.

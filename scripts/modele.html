@@ -340,6 +340,12 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
     <div class="analyse rv" id="analyse"></div>
   </section>
 
+  <section id="sec-taux" hidden>
+    <div class="sec-head"><div><h2>Le contexte des taux</h2><div class="sub">Taux directeurs de la Banque centrale européenne, lus à la source</div></div></div>
+    <div class="stat" id="taux"></div>
+    <p class="note" id="taux-note"></p>
+  </section>
+
   <section id="sec-sugg" hidden>
     <div class="sec-head"><div><h2>Suggestions du jour</h2><div class="sub">Des actions à regarder de plus près, choisies par des règles chiffrées · pas une liste d'achats</div></div></div>
     <div class="grid" id="suggestions"></div>
@@ -738,6 +744,22 @@ if (OPC.length) {
   $("#sec-opc").hidden = false;
   $("#opcvm").innerHTML = OPC.map(ligneOpc).join("");
   $("#opc-note").textContent = "Contrairement à un ETF, un OPCVM ne s'échange pas en Bourse en continu : l'ordre passe par la banque et s'exécute à la prochaine valeur liquidative. Ses frais courants sont souvent bien plus élevés (1,5 à 2,5 % par an contre 0,1 à 0,5 % pour un ETF), en échange d'une gestion active qui ne bat pas toujours son indice. Frais relevés dans le DIC de chaque fonds, à revérifier avant toute décision.";
+}
+// Encadré des taux de la BCE : valeurs lues par scripts/taux.py, jamais écrites ici ; texte inséré sans HTML
+const TX = D.taux_bce || {};
+function carteTaux(nom, t) {
+  if (!t || t.taux == null) return "";
+  const evol = t.precedent == null ? "" : ` (avant : ${fr(t.precedent)} %)`;
+  return `<div class="card"><div class="val num">${fr(t.taux)} %</div><em>${esc(nom)} · en vigueur depuis le ${jourCourt(t.depuis)}${esc(evol)}</em></div>`;
+}
+const cartesTaux = [carteTaux("Taux de dépôt", TX.depot), carteTaux("Refinancement", TX.refinancement), carteTaux("Prêt marginal", TX.pret_marginal)].join("");
+if (cartesTaux) {
+  $("#sec-taux").hidden = false;
+  $("#taux").innerHTML = cartesTaux;
+  const n = $("#taux-note");
+  n.textContent = "Le taux de dépôt est celui que la BCE guide : il influence les taux des livrets et des crédits, et le prix des obligations. Information sur le contexte, pas un conseil. Dernier relevé du " + jourCourt(TX.depot.releve) + " · ";
+  const u = lienSur(TX.source);
+  if (u) { const a = document.createElement("a"); a.href = u; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = "source : BCE"; n.appendChild(a); }
 }
 const estFonds = (m) => !!m && m.categorie === "fonds";
 const valeurDu = (m) => m.date_cours ? "valeur du " + jourCourt(m.date_cours) : "";

@@ -326,6 +326,11 @@ def main():
         d["opcvm_verifie_le"] = json.loads((RACINE / "opcvm.json").read_text(encoding="utf-8")).get("verifie_le")
     except (OSError, ValueError):
         pass
+    try:  # taux directeurs de la BCE (lus à la source, cache en cas d'échec)
+        import taux
+        d["taux_bce"] = taux.mesurer()
+    except Exception:
+        pass
     modele = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
     donnees = json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = modele.replace("/*__DONNEES__*/", donnees)
