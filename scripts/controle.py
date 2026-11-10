@@ -57,7 +57,8 @@ HORS_ROLE = {  # mes-investissements.md : tenu par le propriétaire seul, aucun 
              "univers.json", "data/*", "pilotage/*", "apprentissage/*", "mes-investissements.md", "guide/*"],
 }
 # exceptions : idées proposées (fiche, samedi, vérificateur) ; pistes et décisions provisoires (nuit)
-PERMIS = {"fiche": ["apprentissage/idees.md"], "nuit": ["pilotage/candidats.md", "pilotage/decisions.md"],
+PERMIS = {"fiche": ["apprentissage/idees.md", "pilotage/notification.json"],  # notification à renvoyer par le Mac
+          "nuit": ["pilotage/candidats.md", "pilotage/decisions.md"],
           "univers": ["pilotage/candidats.md", "apprentissage/idees.md"],
           "code": ["apprentissage/idees.md", "apprentissage/lectures/README.md", "pilotage/sources-verifiees.md"]}
 PERMIS_MOTIFS = {"univers": ["pilotage/univers/*"],

@@ -790,9 +790,23 @@ def confidentialite():
           ("A", "apprentissage/code/2026-11-10.md", 20), ("M", "scripts/tests.py", 15)]
     assert c.ecarts_aux_regles("code", ok, "2026-11-10", "2026-11-09") == ([], [])
     assert c.ecarts_aux_regles("code", [("M", "CHEF.md", 2)], "2026-11-10", "2026-11-09")[1]
+    # la fiche peut laisser une notification refusée par ntfy, que le relais du Mac renverra
+    assert c.ecarts_aux_regles("fiche", [("A", "pilotage/notification.json", 7)], "2026-11-10", "2026-11-09") == ([], [])
     assert c.ecarts_aux_regles("code", [("M", "data/jours/2026-11-09.json", 2)], "2026-11-10", "2026-11-09")[1]
     assert not c.commit_sans_decision("code", "Code : fuite retirée [confidentialité]", ["scripts/rendu.py"], {})
     assert c.commit_sans_decision("code", "Code : nouvelle fonction", ["scripts/rendu.py"], {})
+
+
+@test
+def renvoi_de_notification():
+    """Le Mac renvoie une seule fois la notification du jour refusée par ntfy au cloud."""
+    import renvoi_notification as rn
+    n = {"date": "2026-11-10", "moment": "ouverture", "titre": "Matin PEA", "message": "CAC 40 +1,2 %"}
+    assert rn.a_renvoyer(n, "2026-11-10", "")
+    assert not rn.a_renvoyer(n, "2026-11-10", "2026-11-10 ouverture"), "déjà renvoyée"
+    assert not rn.a_renvoyer(n, "2026-11-11", ""), "notification d'un autre jour"
+    assert not rn.a_renvoyer(None, "2026-11-10", "") and not rn.a_renvoyer({**n, "message": ""}, "2026-11-10", "")
+    assert rn.a_renvoyer({**n, "moment": "cloture"}, "2026-11-10", "2026-11-10 ouverture"), "clôture après l'ouverture"
 
 
 def main():

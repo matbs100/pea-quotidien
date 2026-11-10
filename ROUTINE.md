@@ -90,9 +90,17 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
 7. Publication : `git add -A && git commit -m "Matin PEA $JOUR ($MOMENT)" && git push origin HEAD:claude/pea`.
 8. Notification sur le téléphone, envoyée dès que la fiche est publiée :
    ```
-   curl -s -H "Title: <titre>" -H "Tags: chart_with_upwards_trend" \
-     -H "Click: {{URL_SITE}}" -d "<résumé>" https://ntfy.sh/{{TOPIC_NTFY}}
+   CODE=$(curl -s -o /tmp/ntfy.txt -w '%{http_code}' -H "Title: <titre>" -H "Tags: chart_with_upwards_trend" \
+     -H "Click: {{URL_SITE}}" -d "<résumé>" https://ntfy.sh/{{TOPIC_NTFY}}); echo "$CODE"; cat /tmp/ntfy.txt
    ```
+   **Si ntfy refuse** (code différent de 200, par exemple 429 « daily message quota reached » : ntfy.sh compte
+   son quota gratuit par adresse Internet, et celles du cloud sont partagées par beaucoup d'utilisateurs) :
+   a. envoie le même titre et le même résumé par la notification de la session (outil `PushNotification`) ;
+   b. écris `pilotage/notification.json` (sans jamais le sujet ntfy, qui ne va pas dans le dépôt public) :
+      `{"date": "$JOUR", "moment": "$MOMENT", "titre": "<titre>", "message": "<résumé>", "erreur": "<code et message de ntfy>"}`,
+      puis `git add pilotage/notification.json && git commit -m "Matin PEA $JOUR ($MOMENT) : notification à renvoyer"`
+      et `git push origin HEAD:claude/pea`. Le relais du Mac la renverra depuis la connexion du propriétaire.
+   Si ntfy accepte (200), ne crée pas ce fichier.
    - À l'ouverture : titre « Matin PEA du $JOUR · ouverture ». Résumé en 2 lignes : CAC 40 et
      Euro Stoxx 50 depuis l'ouverture, S&P 500 et Nasdaq (clôture de la veille), 1 € en dollars, les
      3 premiers du top 30, et le nombre d'écarts entre sources s'il y en a. Si

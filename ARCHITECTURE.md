@@ -44,7 +44,7 @@ dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 | 12 h 30, jours de bourse | **Chef d'orchestre, passage de mi-journée** | routine dédiée (lit `CHEF.md`) | vérifie la fiche d'ouverture, la refait et corrige le programme si besoin, s'assure que la clôture pourra tourner ; pas d'embellissement |
 | 9 h 15 et 17 h 55, jours de bourse | **Fiche du jour** | `ROUTINE.md` | collecte, contrôle des prix, fiches détaillées, analyse, site, notification |
 | samedi à 4 h 20 | **Mise à jour des titres suivis** | `UNIVERS.md` | ajoute à `univers.json` les nouveaux ETF éligibles au PEA et les actions entrées dans le CAC 40, le SBF 120 ou l'Euro Stoxx 50, chacun vérifié (Yahoo, Boursorama) ; 20 ajouts au plus ; signale sans les supprimer les titres qui ne cotent plus |
-| 9 h 40 et 18 h 40, si le Mac est allumé | **Relais du Mac** | tâche planifiée de l'appli Claude | `git pull` dans Obsidian, vérifie le site en ligne, recopie l'essentiel dans les notes |
+| 9 h 40 et 18 h 40, si le Mac est allumé | **Relais du Mac** | tâche planifiée de l'appli Claude | `git pull` dans Obsidian, vérifie le site en ligne, recopie l'essentiel dans les notes ; renvoie depuis le Mac la notification que ntfy a refusée au cloud (`pilotage/notification.json`, quota gratuit compté par adresse Internet, partagée dans le cloud) |
 
 Les agents ne se parlent pas directement : ils communiquent par des fichiers du dépôt.
 - `pilotage/consignes.md` : les consignes du chef, que les autres agents lisent en premier ;
@@ -322,6 +322,19 @@ trouve : fichier, ligne et catégorie seulement.
 | `gravite(points)` | 0, 1 ou 2 |
 | `rapport(points, k)` | rapport Markdown, sans jamais la valeur trouvée |
 | `main(args)` | options de la ligne de commande |
+
+### `renvoi_notification.py` : la notification refusée au cloud, renvoyée par le Mac
+Usage : `python3 scripts/renvoi_notification.py <sujet ntfy>` (appelé par le relais du Mac ; le sujet n'est
+jamais écrit dans le dépôt). ntfy.sh compte son quota gratuit par adresse Internet, partagée dans le cloud :
+quand il refuse (429), la fiche laisse le message dans `pilotage/notification.json` et ce script le renvoie
+une seule fois depuis la connexion du Mac (trace dans `.matin-pea-local`, non publié).
+
+| Fonction | Rôle |
+|---|---|
+| `deja_renvoyee()` | « date moment » de la dernière notification renvoyée par ce Mac |
+| `a_renvoyer(notif, aujourd_hui, deja)` | notification du jour, complète, pas encore renvoyée |
+| `noter_renvoi(notif)` | garde la trace du renvoi dans `.matin-pea-local` |
+| `main(args)` | lit le fichier, renvoie par ntfy, affiche une ligne de résultat |
 
 ### `mac.sh` et `Matin PEA.command` : le lanceur du Mac
 Double-clic sur `Matin PEA.command` : crée `.venv` et installe `requirements.txt` (seulement s'il a changé),
