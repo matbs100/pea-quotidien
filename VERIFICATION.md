@@ -36,8 +36,10 @@ Tes quatre missions, dans cet ordre :
 ## Déroulé (30 minutes au plus)
 
 1. **Préparer.** `PY=python3; $PY -m pip install -q -r requirements.txt`, `JOUR=$(TZ=Europe/Paris date +%F)`.
-   La routine te donne une **clé secrète** : `export CONF_CLE=<la clé du message de la routine>`. Ne l'écris
-   jamais dans un fichier, un commit ou un rapport. Vérifie que ton adresse d'auteur est anonyme :
+   La routine te donne une **clé secrète** : range-la dans `.matin-pea-local`, fichier ignoré par Git et
+   jamais publié (`printf 'CONF_CLE=%s\n' '<la clé du message de la routine>' > .matin-pea-local`) ;
+   `confidentialite.py`, les tests et le contrôle la lisent là. Ne l'écris jamais ailleurs (fichier suivi,
+   commit, rapport). Vérifie que ton adresse d'auteur est anonyme :
    `git config user.email` doit finir par `noreply@anthropic.com` ou `users.noreply.github.com`
    (sinon `git config user.name "Claude"` et `git config user.email "noreply@anthropic.com"`).
    Lis `pilotage/consignes.md` (surtout « Pour le vérificateur du code »), ton dernier rapport
@@ -46,7 +48,8 @@ Tes quatre missions, dans cet ordre :
 
 2. **Confidentialité (priorité absolue).**
    - `$PY scripts/confidentialite.py --site --commits 0 > /tmp/conf.md; echo $?; cat /tmp/conf.md`
-     (0 rien, 1 à revoir, 2 information personnelle). `git grep -c "$CONF_CLE"` doit ne rien trouver.
+     (0 rien, 1 à revoir, 2 information personnelle). `git check-ignore -q .matin-pea-local && git grep -c "$(sed -n 's/^CONF_CLE=//p' .matin-pea-local)"`
+     doit confirmer que le fichier est ignoré et que la clé n'est dans aucun fichier suivi.
    - **🔴 dans un fichier** : corrige tout de suite, à la source (script, modèle de page, consigne, texte
      d'analyse, donnée) : retire l'information ou remplace-la par « le propriétaire ». Si la page ou les
      notes sont touchées, `$PY scripts/rendu.py <dernier jour de data/jours>` (et la fiche d'archive du jour
