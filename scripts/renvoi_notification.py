@@ -1,4 +1,5 @@
-"""Renvoie depuis le Mac la notification que ntfy.sh a refusée au cloud (relais du Mac, 9 h 40 et 18 h 40).
+"""Renvoie la notification que ntfy.sh a refusée au cloud : par GitHub Actions dès que la fiche la dépose
+(`.github/workflows/renvoi-notification.yml`), ou depuis le Mac (relais, 9 h 40 et 18 h 40).
 
 ntfy.sh compte son quota gratuit par adresse Internet ; les machines du cloud partagent la leur avec
 beaucoup d'utilisateurs, d'où des refus « daily message quota reached » (429). La fiche du cloud laisse
@@ -9,6 +10,7 @@ Usage : python3 scripts/renvoi_notification.py <sujet ntfy>
 Affiche une ligne de résultat. Code de sortie : 0 renvoyée ou rien à faire, 1 échec.
 """
 import json
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -66,7 +68,8 @@ def main(args):
         return 1
     noter_renvoi(notif)
     quand = {"ouverture": "d'ouverture", "cloture": "de clôture"}.get(notif.get("moment"), "du jour")
-    print(f"📲 Notification {quand} renvoyée depuis le Mac (ntfy l'avait refusée au cloud).")
+    depuis = "GitHub" if os.environ.get("GITHUB_ACTIONS") else "le Mac"
+    print(f"📲 Notification {quand} renvoyée depuis {depuis} (ntfy l'avait refusée au cloud).")
     return 0
 
 

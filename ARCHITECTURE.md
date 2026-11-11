@@ -328,7 +328,9 @@ trouve : fichier, ligne et catégorie seulement.
 Usage : `python3 scripts/renvoi_notification.py <sujet ntfy>` (appelé par le relais du Mac ; le sujet n'est
 jamais écrit dans le dépôt). ntfy.sh compte son quota gratuit par adresse Internet, partagée dans le cloud :
 quand il refuse (429), la fiche laisse le message dans `pilotage/notification.json` et ce script le renvoie
-une seule fois depuis la connexion du Mac (trace dans `.matin-pea-local`, non publié).
+une seule fois depuis la connexion du Mac (trace dans `.matin-pea-local`, non publié). Il tourne aussi dans
+GitHub Actions (`.github/workflows/renvoi-notification.yml`, sujet dans le secret `NTFY_TOPIC` du dépôt) dès
+que la fiche dépose le fichier : la notification part alors même Mac éteint.
 
 | Fonction | Rôle |
 |---|---|
@@ -336,6 +338,23 @@ une seule fois depuis la connexion du Mac (trace dans `.matin-pea-local`, non pu
 | `a_renvoyer(notif, aujourd_hui, deja)` | notification du jour, complète, pas encore renvoyée |
 | `noter_renvoi(notif)` | garde la trace du renvoi dans `.matin-pea-local` |
 | `main(args)` | lit le fichier, renvoie par ntfy, affiche une ligne de résultat |
+
+### `obsidian.py` : les résumés lus par Obsidian (sans relais du Mac)
+Usage : `python3 scripts/obsidian.py` (lancé par le chef à l'étape 10, sans réseau ; n'écrit que ce qui change).
+Le coffre Obsidian contient ce dépôt, tenu à jour par le plugin Obsidian « Git » ; ses notes intègrent
+ces fichiers avec `![[…]]` : `pilotage/obsidian-decisions.md` (40 décisions, les plus récentes d'abord) et
+`apprentissage/a-retenir.md` (la phrase « À retenir » de chaque nuit depuis le 11/11/2026, sauf ❌ du chef).
+
+| Fonction | Rôle |
+|---|---|
+| `jj_mm(date)` | « 2026-11-11 » → « 11/11 » |
+| `ligne_decision(d)` | une décision → une ligne (idée, décision, gain, réalisation, bilan) |
+| `resume_decisions(texte, nombre)` | les décisions les plus récentes d'abord |
+| `section(texte, titre)` | contenu d'une partie « ## titre » d'un journal |
+| `a_retenir(texte)` | phrase « À retenir », vide si le chef l'a marquée fausse (❌) |
+| `resume_retenir(journaux, debut)` | une ligne par nuit, la plus ancienne d'abord |
+| `ecrire_si_change(chemin, contenu)` | écrit seulement si le contenu change |
+| `main()` | écrit les deux fichiers et affiche ce qui a changé |
 
 ### `mac.sh` et `Matin PEA.command` : le lanceur du Mac
 Double-clic sur `Matin PEA.command` : crée `.venv` et installe `requirements.txt` (seulement s'il a changé),

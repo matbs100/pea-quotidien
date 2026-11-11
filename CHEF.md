@@ -192,7 +192,8 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
    méthodes ajoutées, devoirs donnés, ton propre devoir), `## À faire par le propriétaire`
    (seulement ce que lui seul peut faire, sinon « Rien. »). Ajoute le lien du rapport en tête de la
    liste « Rapports » de `pilotage/README.md`.
-10. **Publier.** `$PY scripts/controle.py --hors-ligne` (met à jour `pilotage/etat.json` avec l'état
+10. **Publier.** `$PY scripts/obsidian.py` (résumés lus par Obsidian : `pilotage/obsidian-decisions.md` et
+    `apprentissage/a-retenir.md` ; ne les écris jamais à la main), puis `$PY scripts/controle.py --hors-ligne` (met à jour `pilotage/etat.json` avec l'état
     final, en gardant les résultats réseau du matin), `$PY scripts/tests.py`, puis
     `git add -A && git commit -m "Chef : rapport du $JOUR (<vert|orange|rouge>)"` (ajoute « ; <correction> »
     s'il y en a une) et `git push origin HEAD:claude/pea`. Jamais de code poussé si un test échoue. Pas de

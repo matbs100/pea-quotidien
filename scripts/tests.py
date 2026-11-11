@@ -828,6 +828,26 @@ def renvoi_de_notification():
     assert rn.a_renvoyer({**n, "moment": "cloture"}, "2026-11-10", "2026-11-10 ouverture"), "clôture après l'ouverture"
 
 
+@test
+def resumes_obsidian():
+    """Décisions et « À retenir » écrits dans le dépôt pour Obsidian, sans le relais du Mac."""
+    import obsidian as ob
+    journal = ("| ID | Date | Idée | Par | Gain | Coût | Risque | Priorité | Décision | Réalisée | Indicateur | Bilan |\n"
+               "|---|---|---|---|---|---|---|---|---|---|---|---|\n"
+               "| D-20261110-1 | 2026-11-10 | Encadré taux | Claude (chef) | 3,40 | 3 | 1 | 1,8 | adoptée | 2026-11-10 | x | ✅ gardée |\n"
+               "| D-20261111-1 | 2026-11-11 | Aide MSCI | Claude (chef) | 2,95 | 1 | 1 | — | rejetée | | gain < 3 | |\n")
+    r = ob.resume_decisions(journal).splitlines()
+    assert r[2] == "- **11/11** · `D-20261111-1` · Aide MSCI → rejetée (gain 2,95)", r[2]
+    assert r[3].endswith("(gain 3,40) ; réalisée le 10/11 ; bilan : ✅ gardée"), r[3]
+    assert len(ob.resume_decisions(journal, nombre=1).splitlines()) == 3
+    bon = "# J\n\n## À retenir\nUne phrase\nsur deux lignes.\n\n## Amélioration\n- x\n"
+    faux = bon + "\n## Vérification du chef\n- ❌ À retenir : faux selon l'AMF.\n"
+    assert ob.a_retenir(bon) == "Une phrase sur deux lignes." and ob.a_retenir(faux) == ""
+    lignes = ob.resume_retenir([("2026-11-12", bon), ("2026-11-10", bon), ("2026-11-11", faux)]).splitlines()
+    assert lignes[2] == "- **12/11** : Une phrase sur deux lignes. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-12|journal]]"
+    assert len(lignes) == 3, "avant le 11/11 et phrase fausse exclues"
+
+
 def main():
     echecs = 0
     for f in TESTS:

@@ -4,8 +4,8 @@ tags: [pea, agent, pilotage, decision]
 # 🗳️ Journal des décisions
 
 Une ligne par décision, prise avec la [[decision|méthode de décision]]. Tenu par le chef d'orchestre ;
-l'agent de nuit y ajoute ses décisions provisoires. Le relais du Mac recopie les nouvelles décisions dans
-la note « Agent PEA Quotidien » et dans la mémoire de Claude.
+l'agent de nuit y ajoute ses décisions provisoires. Le chef les résume dans `pilotage/obsidian-decisions.md`
+(`scripts/obsidian.py`), que la note « Agent PEA Quotidien » d'Obsidian intègre.
 
 - **Décision** : `adoptée`, `à l'essai`, `provisoire (nuit)`, `correction`, `en attente`, `rejetée`, `annulée`.
 - **Réalisée** : date du commit qui la réalise (vide tant qu'elle ne l'est pas).

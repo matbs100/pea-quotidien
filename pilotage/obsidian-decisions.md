@@ -1,0 +1,28 @@
+Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidian.py` depuis [[Finance/PEA Quotidien/pilotage/decisions|le journal des décisions]]).
+
+- **11/11** · `D-20261111-3` · n° 37 et 38 · test du mois manquant, légende de l'échelle de couleur → rejetée (gain 2,05 / 2,75)
+- **11/11** · `D-20261111-2` · n° 36 · Mois par mois : moyenne par mois → rejetée (gain 2,90)
+- **11/11** · `D-20261111-1` · n° 34 · Aide « Qu'est-ce que le MSCI World ? » → rejetée (gain 2,95)
+- **10/11** · `D-20261110-2` · Nettoyage : import inutile retiré de `scripts/wealins.py` (demande du vérificateur du code) → correction (gain —) ; réalisée le 10/11
+- **10/11** · `D-20261110-1` · n° 32 · Encadré « contexte des taux » (dernier taux BCE : dépôt 2,50 % depuis le 16/09, inchangé le 29/10, lien BCE) → adoptée (gain 3,40) ; réalisée le 10/11
+- **09/11** · `D-20261109-2` · n° 31 · « Mes critères » : dire combien de titres du Top 30 sont écartés faute de donnée (au lieu de les cacher en silence) → à l'essai (confirmée par le chef) (gain 3,20) ; réalisée le 10/11 ; bilan : confirmée le 2026-11-10 : code relu (textContent), test node, 28/28 ; bilan attendu le 2026-11-13
+- **09/11** · `D-20261109-1` · n° 30 · « Mes critères », première partie : filtre du Top 30 (risque max, baisse max sur 1 an, type) → adoptée (confirmée par le chef) (gain 3,75) ; réalisée le 09/11 ; bilan : confirmée par le chef le 2026-11-09 (code relu, test node, mention « ni conseil ni recommandation ») ; bilan attendu le 2026-11-12
+- **08/11** · `D-20261108-3` · n° 28 · Méthode des ratios dans l'aide du Sharpe → rejetée (gain 2,70)
+- **08/11** · `D-20261108-2` · n° 29 · `lectures.py lire` garde les sauts de page (doublon) → rejetée (gain —)
+- **08/11** · `D-20261108-1` · Chantier interface : textes des notes, astuces, liens et libellés de fiche portés à 14 px (étiquettes de 11 à 12 px) → correction (gain 3,00) ; réalisée le 08/11
+- **07/11** · `D-20261107-3` · n° 27 · Lien Yahoo en 404 depuis le cloud : orange et non rouge au contrôle → rejetée (gain 2,80)
+- **07/11** · `D-20261107-2` · n° 24 · Recoupement entre mes ETF (diversification seulement apparente) → à l'essai (gain 3,45)
+- **07/11** · `D-20261107-1` · n° 25 · Avertissement des ETF à effet de levier aligné sur l'AMF (texte vérifié p. 5 du guide) → correction (gain 3,15) ; réalisée le 07/11
+- **06/11** · `D-20261106-13` · Lectures des agents : PDF de sources vérifiées, fiches de lecture dans Obsidian → adoptée (gain —) ; réalisée le 06/11
+- **06/11** · `D-20261106-12` · n° 20 · Mention TTF d'après la liste BOFiP → à l'essai (gain 3,25)
+- **06/11** · `D-20261106-11` · n° 10 · Deuxième source d'éligibilité PEA des ETF → à l'essai (gain 3,25)
+- **06/11** · `D-20261106-10` · n° 6 · Diversification du top 30 (version réduite) → à l'essai (gain 3,45)
+- **06/11** · `D-20261106-9` · n° 8 · Fiche installable (manifeste et icône, sans service worker) → à l'essai (gain 3,20)
+- **06/11** · `D-20261106-8` · n° 1 · Ratios de Sharpe et de Sortino → à l'essai (gain 3,35) ; réalisée le 08/11
+- **06/11** · `D-20261106-7` · n° 7 · Comparer deux titres (base 100) → adoptée (gain 3,85)
+- **06/11** · `D-20261106-6` · n° 2 · Rendements mois par mois en carte de chaleur → adoptée (gain 3,55) ; réalisée le 2026-11-11 (fiche d'un titre)
+- **06/11** · `D-20261106-5` · n° 21 · Page « Mes critères » → adoptée (gain 4,20) ; réalisée le 2026-11-09 (1re partie : filtre du Top 30, D-20261109-1)
+- **06/11** · `D-20261106-4` · n° 3 · Simulateur « 50 € par mois depuis 5 ans » → adoptée (gain 4,45) ; réalisée le 07/11
+- **06/11** · `D-20261106-3` · Méthode de décision et journal des décisions → adoptée (gain —) ; réalisée le 06/11
+- **06/11** · `D-20261106-2` · n° 23 · Devise à côté de chaque prix (page et note) → adoptée (gain 3,70) ; réalisée le 06/11 ; bilan : ✅ gardée le 2026-11-11 : `devise_de` testée, devises présentes dans la fiche du 10/11
+- **06/11** · `D-20261106-1` · n° 22 · Fonds Wealins dans « Mes investissements » → adoptée (gain 4,45) ; réalisée le 06/11
