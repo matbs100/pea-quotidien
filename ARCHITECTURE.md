@@ -339,6 +339,23 @@ que la fiche dépose le fichier : la notification part alors même Mac éteint.
 | `noter_renvoi(notif)` | garde la trace du renvoi dans `.matin-pea-local` |
 | `main(args)` | lit le fichier, renvoie par ntfy, affiche une ligne de résultat |
 
+### `secours.py` : la fiche de secours, sans Claude (GitHub Actions)
+Lancé par `.github/workflows/fiche-secours.yml` (lun.–ven., UTC 8 h 50 et 9 h 50 pour l'ouverture, 17 h 40 et
+18 h 40 pour la clôture). Si la fiche de ce moment est déjà publiée par l'agent Claude, il ne fait rien ; sinon
+il enchaîne collecte, contrôle des prix, fiches détaillées, analyse automatique (chiffres seuls, sans presse),
+rendu, publication (commit « Matin PEA … : fiche de secours sans Claude ») et notification ntfy (secret
+`NTFY_TOPIC`). Le site continue donc de se mettre à jour même sans abonnement Claude.
+
+| Fonction | Rôle |
+|---|---|
+| `fr(x, dec)` / `pct(x)` | nombres et variations à la française |
+| `moment_publie(jour)` | moment de la fiche déjà publiée (lu dans `notes/`) |
+| `a_faire(moment, publie)` | vrai si la fiche de ce moment manque (une clôture remplace une ouverture) |
+| `analyse_auto(d, veille)` | analyse à partir des chiffres, avec les sept titres attendus par le contrôle |
+| `notification(d)` | titre et message, comme ceux de l'agent Claude |
+| `envoyer(titre, message, sujet, url_site)` | envoi par ntfy, renvoie le code HTTP |
+| `main(args)` | `verifier`, `analyse`, `notification` ou `envoyer` |
+
 ### `obsidian.py` : les résumés lus par Obsidian (sans relais du Mac)
 Usage : `python3 scripts/obsidian.py` (lancé par le chef à l'étape 10, sans réseau ; n'écrit que ce qui change).
 Le coffre Obsidian contient ce dépôt, tenu à jour par le plugin Obsidian « Git » ; ses notes intègrent

@@ -88,6 +88,9 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
    source « fiche du $JOUR ». Pas de code : le chef d'orchestre la décidera. Rien à signaler : rien à écrire.
 6. Rendu : `$PY scripts/rendu.py $JOUR` (fiche animée dans `docs/`, note Obsidian dans `notes/`).
 7. Publication : `git add -A && git commit -m "Matin PEA $JOUR ($MOMENT)" && git push origin HEAD:claude/pea`.
+   Si le push est refusé parce qu'une **fiche de secours** (commit « … : fiche de secours sans Claude », publiée par
+   GitHub Actions quand tu es en retard) est arrivée entre-temps : `git pull --rebase -X theirs origin claude/pea`,
+   relance `$PY scripts/rendu.py $JOUR`, recommite si besoin et repousse : ta fiche remplace celle de secours.
 8. Notification sur le téléphone, envoyée dès que la fiche est publiée :
    ```
    CODE=$(curl -s -o /tmp/ntfy.txt -w '%{http_code}' -H "Title: <titre>" -H "Tags: chart_with_upwards_trend" \

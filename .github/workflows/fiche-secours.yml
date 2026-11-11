@@ -1,0 +1,96 @@
+# Fiche de secours, sans Claude : publie la fiche si l'agent Claude ne l'a pas fait (abonnement arrêté,
+# quota épuisé, panne). Passe après chaque passage prévu de l'agent ; si la fiche de ce moment est déjà
+# publiée, ne fait rien. Analyse écrite à partir des chiffres seuls (scripts/secours.py).
+# Horaires en UTC : ouverture 8 h 50 et 9 h 50 (Paris : 9 h 50-11 h 50), clôture 17 h 40 et 18 h 40
+# (Paris : 18 h 40-20 h 40), selon l'heure d'été ou d'hiver.
+name: Fiche de secours
+on:
+  schedule:
+    - cron: "50 8,9 * * 1-5"
+    - cron: "40 17,18 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      moment:
+        description: "ouverture ou cloture (vide : selon l'heure de Paris)"
+        required: false
+        default: ""
+      essai:
+        description: "essai : fabrique la fiche sans la publier ni notifier"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: fiche
+  cancel-in-progress: false
+jobs:
+  fiche:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/pea
+      - name: Jour et moment
+        id: quand
+        run: |
+          JOUR=$(TZ=Europe/Paris date +%F); HEURE=$(TZ=Europe/Paris date +%H)
+          MOMENT="${{ github.event.inputs.moment }}"
+          [ -z "$MOMENT" ] && MOMENT=$([ "$HEURE" -lt 13 ] && echo ouverture || echo cloture)
+          echo "jour=$JOUR" >> "$GITHUB_OUTPUT"; echo "moment=$MOMENT" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event.inputs.essai }}" = "true" ]; then echo "faire=1" >> "$GITHUB_OUTPUT"; echo "Essai : fiche fabriquée sans publication."
+          elif python3 scripts/secours.py verifier "$JOUR" "$MOMENT"; then echo "faire=1" >> "$GITHUB_OUTPUT"; else echo "faire=0" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-python@v5
+        if: steps.quand.outputs.faire == '1'
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Fiche du jour (collecte, contrôle, fiches, analyse, rendu)
+        id: fiche
+        if: steps.quand.outputs.faire == '1'
+        env:
+          JOUR: ${{ steps.quand.outputs.jour }}
+          MOMENT: ${{ steps.quand.outputs.moment }}
+        run: |
+          python -m pip install -q -r requirements.txt
+          set +e
+          python scripts/collecte.py "$JOUR" "$MOMENT"; CODE=$?
+          if [ "$CODE" = 3 ] || { [ "$CODE" != 0 ] && [ "$CODE" != 4 ]; }; then sleep 120; python scripts/collecte.py "$JOUR" "$MOMENT"; CODE=$?; fi
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+          [ "$CODE" = 4 ] && { echo "Bourse fermée."; exit 0; }
+          [ "$CODE" != 0 ] && { echo "Collecte échouée ($CODE)."; exit 0; }
+          set -e
+          python scripts/verif.py "$JOUR" || echo "Contrôle des prix incomplet (non bloquant)."
+          python scripts/fiches.py "$JOUR" || echo "Fiches détaillées incomplètes (non bloquant)."
+          python scripts/secours.py analyse "$JOUR"
+          python scripts/rendu.py "$JOUR"
+          sed -n '/## Analyse du jour/,/### Pour apprendre/p' "notes/$JOUR.md"
+      - name: Publier (si l'agent Claude n'a pas publié entre-temps)
+        id: publier
+        if: steps.quand.outputs.faire == '1' && steps.fiche.outputs.code == '0' && github.event.inputs.essai != 'true'
+        env:
+          JOUR: ${{ steps.quand.outputs.jour }}
+          MOMENT: ${{ steps.quand.outputs.moment }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch -q origin claude/pea
+          if git show "origin/claude/pea:notes/$JOUR.md" 2>/dev/null | grep -Eq "^moment: *(cloture|$MOMENT)$"; then
+            echo "L'agent Claude a publié pendant ce temps : rien à faire."; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data docs notes
+          git commit -q -m "Matin PEA $JOUR ($MOMENT) : fiche de secours sans Claude"
+          git push origin HEAD:claude/pea && echo "publie=1" >> "$GITHUB_OUTPUT"
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null 2>&1 || echo "Reconstruction du site demandée par le push seul."
+      - name: Notification
+        if: github.event.inputs.essai != 'true' && (steps.publier.outputs.publie == '1' || (steps.fiche.outputs.code != '0' && steps.fiche.outputs.code != '4' && steps.fiche.outputs.code != ''))
+        env:
+          JOUR: ${{ steps.quand.outputs.jour }}
+          CODE: ${{ steps.fiche.outputs.code }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          [ -z "$NTFY_TOPIC" ] && { echo "Secret NTFY_TOPIC absent : pas de notification."; exit 0; }
+          if [ "$CODE" = 0 ]; then python scripts/secours.py envoyer "$JOUR" "$NTFY_TOPIC"
+          else python scripts/secours.py envoyer "$JOUR" "$NTFY_TOPIC" "cours du jour indisponibles (code $CODE)"; fi

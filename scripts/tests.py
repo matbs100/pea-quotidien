@@ -848,6 +848,31 @@ def resumes_obsidian():
     assert len(lignes) == 3, "avant le 11/11 et phrase fausse exclues"
 
 
+@test
+def fiche_de_secours():
+    """Sans Claude : la fiche de secours ne remplace jamais une fiche publiée et écrit une analyse conforme."""
+    import controle as c
+    import secours as s
+    assert s.a_faire("ouverture", "") and s.a_faire("cloture", "ouverture") and s.a_faire("cloture", "")
+    assert not s.a_faire("ouverture", "ouverture") and not s.a_faire("ouverture", "cloture") and not s.a_faire("cloture", "cloture")
+    assert s.pct(0.656) == "+0,66 %" and s.pct(-1.2) == "−1,20 %" and s.fr(8332.87, 0) == "8 333" and s.pct(None) == "—"
+    ind = lambda k, p, v: {"ticker": k, "nom": k, "prix": p, "var_1j": v, "rsi": 55.0, "ma200": 100.0}
+    d = {"date": "2026-11-12", "moment": "cloture", "indices": [ind("^FCHI", 8000, -3.5), ind("^STOXX50E", 6000, -1.0)],
+         "devises": [ind("EURUSD=X", 1.1, 0.1)], "top30": [{"ticker": "A.PA", "nom": "Alpha", "var_1j": 2.0},
+                                                           {"ticker": "B.PA", "nom": "Beta", "var_1j": -1.0}],
+         "bilan_signaux": {"jugees": 4, "justes": 3}, "controle_sources": {"ok": 2, "ecart": 1, "seul": 0},
+         "details": {"B.PA": {"infos": {"pea_bourso": False}}}}
+    a = s.analyse_auto(d, {"top30": [{"ticker": "A.PA"}, {"ticker": "Z.PA"}]})
+    assert a.startswith("*Mise à jour à la clôture"), "titre de clôture attendu par le contrôle"
+    assert all(f"### {t}" in a for t in c.TITRES_ANALYSE), "les sept titres de l'analyse"
+    assert not c.CONSEIL.search(a), "aucune formulation de conseil"
+    assert "Paris termine en baisse" in a and "1 entrée(s) (Beta), 1 sortie(s)" in a and "3 signaux justes sur 4" in a
+    assert "éligibles au PEA par Boursorama : Beta" in a
+    titre, msg = s.notification(d)
+    assert titre == "Clôture du 2026-11-12" and msg.startswith("⚠️ CAC 40 −3,50 %"), msg
+    assert s.analyse_auto({**d, "moment": "ouverture"}, {}).startswith("*Premiers cours")
+
+
 def main():
     echecs = 0
     for f in TESTS:
