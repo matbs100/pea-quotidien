@@ -494,5 +494,22 @@
   "boursorama": "1rAAD",
   "ft": "AD:AEX",
   "echecs": {}
+ },
+ "AMUN.PA": {
+  "boursorama": "1rPAMUN",
+  "ft": "AMUN:PAR",
+  "echecs": {}
+ },
+ "SAB.MC": {
+  "boursorama": "FF55-SAB",
+  "ft": "SAB:MCE",
+  "echecs": {
+   "boursorama": 1
+  }
+ },
+ "ALDBT.PA": {
+  "boursorama": "1rPALDBT",
+  "ft": "ALDBT:PAR",
+  "echecs": {}
  }
 }
