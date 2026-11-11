@@ -6,7 +6,7 @@ url: https://www.msci.com/eqb/methodology/meth_docs/MSCI_GIMIMethodology_May2026
 publie_le: 2026-05-01
 lu_le: 2026-11-10
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-11
 ---
 # 📄 MSCI Global Investable Market Indexes Methodology
 
@@ -26,4 +26,4 @@ Ce livre de règles explique comment MSCI construit ses indices d'actions du mon
 - Une aide au toucher « qu'est-ce que le MSCI World ? » (≈ 85 % de la capitalisation de chaque pays développé, pondéré par la capitalisation flottante) : idée n° 34 dans `apprentissage/idees.md`.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- 2026-11-11 : PDF ouvert (192 pages, mai 2026). Cibles de couverture 70 % ± 5 %, 85 % ± 5 %, 99 % (+1 % / -0,5 %) lues p. 24 ; All Cap et micro-capitalisations p. 13 ; résumé fidèle, rien de copié. ✅

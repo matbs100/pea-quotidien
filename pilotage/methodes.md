@@ -33,3 +33,5 @@ d'orchestre : une règle par ligne, datée, avec l'agent concerné et l'exemple 
   tous ceux des deux fiches du 06-07/11, garde cette méthode.
 - (09/11, nuit / tous devoirs) Quand les pages sont bloquées deux nuits de suite, ne cherche pas à deviner une adresse : cherche-la avec WebSearch (`site:amundietf.fr …`), ouvre-la, et à défaut note « bloqué » et passe au devoir suivant. Exemple : adresse amundietf.fr devinée en 404 le 09/11.
 - (08/11, nuit / nouveaux fonds) Une piste porte l'ISIN **lu** sur une page ouverte, jamais « à recouper » ; avant de proposer un émetteur « peu présent », compter ses fonds dans `univers.json`. Exemple : 4 pistes Amundi du 08/11 sans ISIN, alors que l'émetteur est déjà présent.
+- (11/11, nuit) **Pas plus de deux nuits sur un même fonds** : si la page ouverte ne mentionne pas « éligible PEA », noter « non éligible probable » dans `candidats.md` et passer au suivant. Exemple : MWRD, trois jours de devoirs sans réponse.
+- (11/11, nuit) **Une fiche de lecture cite des pages lisibles** : le chef relit chaque chiffre à la page indiquée ; garde cette précision (exemple : fiche arXiv du 11/11, tous les chiffres exacts).

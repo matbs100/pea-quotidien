@@ -17,7 +17,7 @@ la note « Agent PEA Quotidien » et dans la mémoire de Claude.
 | ID | Date | Idée | Par | Gain | Coût | Risque | Priorité | Décision | Réalisée | Indicateur | Bilan |
 |---|---|---|---|--:|--:|--:|--:|---|---|---|---|
 | D-20261106-1 | 2026-11-06 | n° 22 · Fonds Wealins dans « Mes investissements » | Propriétaire | 4,45 | 3 | 1 | 4,9 | adoptée | 2026-11-06 | ≥ 1 000 fonds trouvables ; liste relue chaque jour ; aucune erreur de fonds au contrôle | |
-| D-20261106-2 | 2026-11-06 | n° 23 · Devise à côté de chaque prix (page et note) | Propriétaire | 3,70 | 1 | 1 | 5,4 | adoptée | 2026-11-06 | toute ligne de prix d'un placement montre sa devise (test) | |
+| D-20261106-2 | 2026-11-06 | n° 23 · Devise à côté de chaque prix (page et note) | Propriétaire | 3,70 | 1 | 1 | 5,4 | adoptée | 2026-11-06 | toute ligne de prix d'un placement montre sa devise (test) | ✅ gardée le 2026-11-11 : `devise_de` testée, devises présentes dans la fiche du 10/11 |
 | D-20261106-3 | 2026-11-06 | Méthode de décision et journal des décisions | Propriétaire | — | — | — | — | adoptée | 2026-11-06 | chaque amélioration cite une décision ; aucun bilan en retard (contrôle) | |
 | D-20261106-4 | 2026-11-06 | n° 3 · Simulateur « 50 € par mois depuis 5 ans » | Claude (pour le chef) | 4,45 | 3 | 1 | 4,9 | adoptée | 2026-11-07 | calcul juste sur 3 cas testés ; avertissement visible ; aucune formulation de conseil | |
 | D-20261106-5 | 2026-11-06 | n° 21 · Page « Mes critères » | Claude (pour le chef) | 4,20 | 3 | 2 | 3,4 | adoptée | 2026-11-09 (1re partie : filtre du Top 30, D-20261109-1) | critères gardés sur le téléphone ; liste filtrée juste (test) ; aucune formulation de conseil | |
@@ -39,3 +39,6 @@ la note « Agent PEA Quotidien » et dans la mémoire de Claude.
 | D-20261109-2 | 2026-11-09 | n° 31 · « Mes critères » : dire combien de titres du Top 30 sont écartés faute de donnée (au lieu de les cacher en silence) | Claude (chef) | 3,20 | 1 | 1 | 4,4 | à l'essai (confirmée par le chef) | 2026-11-10 | message exact dans le bilan du filtre ; test node sur un titre sans donnée | confirmée le 2026-11-10 : code relu (textContent), test node, 28/28 ; bilan attendu le 2026-11-13 |
 | D-20261110-1 | 2026-11-10 | n° 32 · Encadré « contexte des taux » (dernier taux BCE : dépôt 2,50 % depuis le 16/09, inchangé le 29/10, lien BCE) | Claude (chef) | 3,40 | 3 | 1 | 1,8 | adoptée | 2026-11-10 | chiffres égaux à la BCE ; aucune formulation de conseil | |
 | D-20261110-2 | 2026-11-10 | Nettoyage : import inutile retiré de `scripts/wealins.py` (demande du vérificateur du code) | Claude (chef) | — | 1 | 1 | — | correction | 2026-11-10 | tests 28/28 ; ruff sans F401 | |
+| D-20261111-1 | 2026-11-11 | n° 34 · Aide « Qu'est-ce que le MSCI World ? » | Claude (chef) | 2,95 | 1 | 1 | — | rejetée | | gain < 3 |  |
+| D-20261111-2 | 2026-11-11 | n° 36 · Mois par mois : moyenne par mois | Claude (chef) | 2,90 | 1 | 1 | — | rejetée | | gain < 3 |  |
+| D-20261111-3 | 2026-11-11 | n° 37 et 38 · test du mois manquant, légende de l'échelle de couleur | Claude (chef) | 2,05 / 2,75 | 1 | 1 | — | rejetée | | gain < 3 |  |

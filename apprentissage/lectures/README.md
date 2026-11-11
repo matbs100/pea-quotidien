@@ -8,8 +8,8 @@ Ce fichier est refait par `python scripts/lectures.py index`.
 
 | Lu le | Fiche de lecture | Organisme | Document | Statut |
 |---|---|---|---|---|
-| 2026-11-11 | [[2026-11-11-revisiting-the-structure-of-trend-premia-when-diversificatio\|Revisiting the Structure of Trend Premia: When Diversification Hides Redundancy]] | arXiv (Etienne et coll., Ai For Alpha) | [PDF](https://arxiv.org/pdf/2510.23150v1) | ⏳ à vérifier |
-| 2026-11-10 | [[2026-11-10-msci-global-investable-market-indexes-methodology\|MSCI Global Investable Market Indexes Methodology]] | MSCI | [PDF](https://www.msci.com/eqb/methodology/meth_docs/MSCI_GIMIMethodology_May2026.pdf) | ⏳ à vérifier |
+| 2026-11-11 | [[2026-11-11-revisiting-the-structure-of-trend-premia-when-diversificatio\|Revisiting the Structure of Trend Premia: When Diversification Hides Redundancy]] | arXiv (Etienne et coll., Ai For Alpha) | [PDF](https://arxiv.org/pdf/2510.23150v1) | ✅ relue le 2026-11-11 |
+| 2026-11-10 | [[2026-11-10-msci-global-investable-market-indexes-methodology\|MSCI Global Investable Market Indexes Methodology]] | MSCI | [PDF](https://www.msci.com/eqb/methodology/meth_docs/MSCI_GIMIMethodology_May2026.pdf) | ✅ relue le 2026-11-11 |
 | 2026-11-10 | [[2026-11-10-bulletin-economique-de-la-bce-numero-5-2026\|Bulletin économique de la BCE, numéro 5 / 2026]] | Banque centrale européenne | [PDF](https://www.ecb.europa.eu/pub/pdf/ecbu/eb202605.fr.pdf) | ✅ relue le 2026-11-10 |
 | 2026-11-09 | [[2026-11-09-investor-risk-profiles-of-large-language-models\|Investor risk profiles of large language models]] | arXiv (Cho, Bae, Kim, Université de Corée) | [PDF](https://arxiv.org/pdf/2603.09303) | ✅ relue le 2026-11-09 |
 | 2026-11-08 | [[2026-11-08-taux-d-epargne-des-menages-les-enseignements-des-donnees-ban\|Taux d'épargne des ménages : les enseignements des données bancaires]] | INSEE | [PDF](https://www.insee.fr/fr/statistiques/fichier/version-html/9041404/DT2026-13.pdf) | ✅ relue le 2026-11-08 |

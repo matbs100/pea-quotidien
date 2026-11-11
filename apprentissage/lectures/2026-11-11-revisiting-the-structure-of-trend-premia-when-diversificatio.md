@@ -6,7 +6,7 @@ url: https://arxiv.org/pdf/2510.23150v1
 publie_le: 2025-10-27
 lu_le: 2026-11-11
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-11
 ---
 # 📄 Revisiting the Structure of Trend Premia: When Diversification Hides Redundancy
 
@@ -25,4 +25,4 @@ Des chercheurs d'une société de gestion française se demandent si combiner de
 - Rien pour la fiche : confirme qu'il ne faut pas multiplier les moyennes mobiles (le signal actuel utilise 20 et 50 jours) ni les régler sur le passé. Voir `connaissances/methodes.md`.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- 2026-11-11 : PDF ouvert (42 pages). Résumé fidèle et rédigé avec des mots propres. Vérifiés : durées 20/60/125/250/500 jours (p. 1 et 4), frais de gestion fixes de 50 points de base (p. 15), fenêtres d'entraînement de 8 ans et évaluations hors échantillon de 6 mois (p. 15 et 34). Site arxiv.org présent dans `sources-verifiees.md`. ✅
