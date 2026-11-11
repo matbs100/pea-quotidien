@@ -196,6 +196,12 @@ body.fige { overflow: hidden; }
 .f-prix { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
 .f-prix .big { font: 500 2.1rem/1.1 var(--font-mono); letter-spacing: -.02em; }
 .f-desc { margin-top: 10px; color: var(--ink); max-width: 70ch; }
+.carte-mois { width: 100%; border-collapse: separate; border-spacing: 2px; table-layout: fixed; font: 11px var(--font-mono); }
+.carte-mois th { font-weight: 500; color: var(--muted); padding: 2px 0; text-align: center; }
+.carte-mois th.an { text-align: left; width: 38px; }
+.carte-mois td { text-align: center; padding: 6px 0; border-radius: 4px; background: var(--surface-2); color: var(--ink); }
+.carte-mois td.up { background: color-mix(in srgb, var(--up) calc(var(--i) * 70%), var(--surface-2)); }
+.carte-mois td.down { background: color-mix(in srgb, var(--down) calc(var(--i) * 70%), var(--surface-2)); }
 .bloc { margin-top: 24px; }
 .bloc h3 { font-size: 1.08rem; margin-bottom: 10px; }
 .onglets { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
@@ -1167,6 +1173,26 @@ function blocPEA(m, inf, det) {
   return bloc("Éligibilité PEA", `<div class="pea ${v === true ? "oui" : v === false ? "non" : "inconnu"}">${txt}</div>`);
 }
 
+function rendementsMensuels(serie) {  // D-20261106-6 : rendement de chaque mois civil d'après la dernière clôture hebdomadaire du mois
+  const fin = new Map();
+  serie.forEach(([d, v]) => { if (v != null) fin.set(d.getFullYear() * 12 + d.getMonth(), v); });
+  const out = {};
+  for (const [k, v] of fin) {
+    const av = fin.get(k - 1);
+    if (av) (out[Math.floor(k / 12)] = out[Math.floor(k / 12)] || Array(12).fill(null))[k % 12] = (v / av - 1) * 100;
+  }
+  return out;
+}
+function blocMois(det) {
+  const R = rendementsMensuels(serieDe(det.s));
+  const ans = Object.keys(R).sort().reverse().slice(0, 5);
+  if (!ans.length) return "";
+  const M = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
+  const cell = (x) => x == null ? "<td></td>" : `<td class="${sens(x)}" style="--i:${Math.min(Math.abs(x) / 8, 1).toFixed(2)}" title="${pct(x)}">${x > 0 ? "+" : ""}${Math.round(x)}</td>`;
+  return bloc("Mois par mois", `<table class="carte-mois"><thead><tr><th class="an"></th>${M.map((m) => `<th>${m}</th>`).join("")}</tr></thead><tbody>${ans.map((a) => `<tr><th class="an">${a}</th>${R[a].map(cell).join("")}</tr>`).join("")}</tbody></table>
+    <p class="note">Rendement de chaque mois en %, arrondi (vert : hausse, rouge : baisse ; touche une case pour la valeur exacte). Calculé sur les clôtures hebdomadaires, donc approximatif ; le mois en cours n'est pas terminé. Le passé ne prédit pas l'avenir.</p>`);
+}
+
 function blocSimulation(det, devise) {
   const s = det.simulation; if (!s) return "";
   const an = Math.round(s.mois / 12 * 10) / 10;
@@ -1236,6 +1262,7 @@ function ouvrir(t, pousser = true) {
     ["Pire baisse 5 ans", pctc(st.perte_max_5a)], ["Pire semaine", pctc(st.pire_semaine)], ["Meilleure semaine", pctc(st.meilleure_semaine)]]) +
     `<p class="note">${m.categorie === "indices" ? "Un indice ne s'achète pas directement : on l'achète via un ETF qui le suit." : "Ce n'est pas un placement éligible au PEA : il est affiché comme repère."}</p>`));
   if (PLACEMENT.includes(m.categorie) && !estFonds(m)) H.push(blocSimulation(det, devise));
+  if (det.s) H.push(blocMois(det));
   H.push(blocFrais(m));
   H.push(blocPEA(m, inf, det));
   H.push(blocCaract(m, inf, det, t));

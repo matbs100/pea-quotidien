@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-11 · Carte « Mois par mois » dans la fiche de chaque titre
+- Dans la fiche d'un titre, nouveau bloc « Mois par mois » : le rendement de chaque mois des 5 dernières années, une ligne par année, en vert pour une hausse et en rouge pour une baisse (plus la couleur est foncée, plus l'écart est grand). Touche une case pour la valeur exacte. Calculé sur les clôtures hebdomadaires, donc approximatif ; le passé ne prédit pas l'avenir. Inspiration : tableaux de rendements mensuels des outils de suivi de portefeuille. Décision D-20261106-6.
+
 ## 2026-11-10 · Le contexte des taux de la BCE
 - Nouvel encadré sous l'analyse du jour : les trois taux directeurs de la Banque centrale européenne (dépôt 2,50 %, refinancement 2,65 %, prêt marginal 2,90 %), avec leur date d'entrée en vigueur, le taux précédent et un lien vers la BCE. Les taux sont lus chaque jour à la source (`scripts/taux.py`), jamais écrits en dur ; sans réseau, le dernier relevé est affiché avec sa date. Information de contexte, pas un conseil. Inspiration : bulletin économique de la BCE n° 5/2026. Décision D-20261110-1.
 

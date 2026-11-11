@@ -692,6 +692,25 @@ console.log([ecartesSansDonnee(L, {}, det), ecartesSansDonnee(L, {risque:4}, det
 
 
 @test
+def carte_mois_par_mois():
+    """D-20261106-6 : les rendements mensuels de la fiche sont calculés avec node sur un cas connu."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "function blocMois" in modele and "Le passé ne prédit pas l'avenir" in modele, "carte mois par mois absente"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : carte mois par mois non exécutée")
+        return
+    fn = re.search(r"function rendementsMensuels\(.*?\n}\n", modele, re.S).group(0)
+    essai = fn + """
+const S = [["2025-12-15", 100], ["2025-12-29", 100], ["2026-01-12", 105], ["2026-01-26", 110], ["2026-02-09", 99], ["2026-03-02", null]].map(([d, v]) => [new Date(d + "T12:00:00"), v]);
+const R = rendementsMensuels(S);
+console.log([Object.keys(R).join(","), R[2026][0].toFixed(1), R[2026][1].toFixed(1), R[2026][2], R[2025]].join("|"));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "2026|10.0|-10.0||", f"rendements mensuels faux : {r.stdout!r} {r.stderr[-300:]}"
+
+
+@test
 def avertissement_levier_amf():
     t = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
     assert "très spéculatifs" in t and "moyen ou long terme" in t, "avertissement levier aligné sur l'AMF"

@@ -46,6 +46,7 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 - Il n'exécute jamais de code téléchargé.
 
 ## Journaux
+- [2026-11-11](journal/2026-11-11.md) : indicateurs et méthodes ; carte « Mois par mois » (D-20261106-6)
 - [2026-11-10](journal/2026-11-10.md)
 - [2026-11-09](journal/2026-11-09.md) : open source (Invest Alchemy) ; « Mes critères » (D-20261109-1)
 - [2026-11-08](journal/2026-11-08.md) : limites des données et du Sharpe ; ratios de Sharpe et de Sortino
