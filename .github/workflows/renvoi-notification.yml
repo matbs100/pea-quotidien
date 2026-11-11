@@ -1,0 +1,29 @@
+# Renvoie la notification que ntfy.sh a refusée au cloud (quota par adresse Internet partagée).
+# Déclenché quand la fiche dépose pilotage/notification.json ; le sujet ntfy est le secret NTFY_TOPIC
+# du dépôt (jamais écrit ici). Sans le secret, ne fait rien.
+name: Renvoi de la notification
+on:
+  push:
+    branches: [claude/pea]
+    paths: [pilotage/notification.json]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: renvoi-notification
+jobs:
+  renvoi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -q requests
+      - name: Renvoyer par ntfy
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          if [ -z "$NTFY_TOPIC" ]; then echo "Secret NTFY_TOPIC absent : rien envoyé."; exit 0; fi
+          python scripts/renvoi_notification.py "$NTFY_TOPIC"
