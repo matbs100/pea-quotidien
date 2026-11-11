@@ -881,3 +881,260 @@ date,ticker,nom,categorie,prix,var_1j,var_1m,var_3m,rsi,volatilite,liquidite,sig
 2026-11-10,ALAGO.PA,e-Pango,petites,0.1672,-2.22,8.43,-8.63,50.7,49.4,120545,neutre,41.8
 2026-11-10,ALDEL.PA,Delfingen,petites,35.0,-0.57,8.7,17.45,70.1,41.7,48155,neutre,
 2026-11-10,ALTUV.PA,Tuvalu,petites,0.796,0.76,-20.4,-41.04,29.3,47.3,19716,neutre,
+2026-11-11,^FCHI,CAC 40,indices,8332.87,0.66,6.45,-3.52,68.9,13.4,518935881996,neutre,
+2026-11-11,^STOXX50E,Euro Stoxx 50,indices,6393.39,1.04,3.67,-2.24,62.0,16.7,132080746977,neutre,
+2026-11-11,^STOXX,Stoxx Europe 600,indices,663.05,0.72,4.42,0.79,64.6,12.2,105970168297,hausse,
+2026-11-11,^GDAXI,DAX (Allemagne),indices,26662.77,1.2,5.55,0.84,63.5,17.2,1495617777651,hausse,
+2026-11-11,^FTSE,FTSE 100 (Londres),indices,10835.47,0.78,1.74,0.58,56.4,12.3,8238551122963,hausse,
+2026-11-11,^GSPC,S&P 500,indices,7620.03,1.32,-2.38,-2.29,49.8,22.2,41673307669186,baisse,
+2026-11-11,^IXIC,Nasdaq Composite,indices,25564.7,1.99,-6.03,-4.62,46.6,31.1,222594829935741,baisse,
+2026-11-11,^NDX,Nasdaq 100,indices,28484.54,2.68,-6.82,-5.32,46.9,36.0,240292019333073,baisse,
+2026-11-11,^DJI,Dow Jones,indices,52294.17,0.12,1.21,-2.87,51.7,20.5,26494997032527,hausse,
+2026-11-11,^N225,Nikkei 225 (Japon),indices,60459.58,2.87,-12.43,-8.81,39.8,35.7,12036285813066,baisse,
+2026-11-11,^HSI,Hang Seng (Hong Kong),indices,24557.04,0.44,1.43,-4.27,58.8,21.7,74741241989326,neutre,
+2026-11-11,^VIX,VIX (indice de la peur),indices,17.77,-8.68,16.37,24.7,48.0,303.9,0,neutre,
+2026-11-11,EURUSD=X,1 € en dollars,devises,1.1096,-1.12,-0.57,-3.81,36.8,6.2,0,baisse,
+2026-11-11,EURGBP=X,1 € en livres,devises,0.8354,0.06,-1.11,-2.29,32.7,2.6,0,baisse,
+2026-11-11,EURCHF=X,1 € en francs suisses,devises,0.9238,0.46,-0.75,-1.61,49.0,5.3,0,neutre,
+2026-11-11,EURJPY=X,1 € en yens,devises,177.32,0.02,0.23,-3.57,49.9,6.3,0,neutre,
+2026-11-11,GC=F,"Or (once, $)",matieres,4008.1,-0.55,-4.05,-9.33,42.8,24.2,682435672,baisse,
+2026-11-11,BZ=F,Pétrole Brent ($),matieres,93.88,2.61,-11.17,7.82,37.1,63.0,4042326,neutre,
+2026-11-11,BTC-EUR,Bitcoin (€),matieres,66837.02,1.26,-10.63,-0.64,38.8,32.7,1589937845763219,baisse,
+2026-11-11,ESE.PA,BNP Paribas Easy S&P 500,etf,34.8,1.99,-1.4,2.26,54.0,16.3,8043947,hausse,59.3
+2026-11-11,ETZ.PA,BNP Paribas Easy Stoxx Europe 600,etf,21.91,0.76,4.53,1.06,64.5,12.8,2013333,hausse,66.8
+2026-11-11,EEMK.PA,BNP Paribas Easy MSCI Emerging,etf,16.61,3.42,-4.07,-2.14,51.0,29.2,2913590,neutre,46.4
+2026-11-11,PSP5.PA,Amundi PEA S&P 500,etf,60.33,1.99,-1.41,2.25,53.9,16.2,4171417,hausse,58.9
+2026-11-11,PE500.PA,Amundi PEA S&P 500 ESG,etf,55.5,1.72,-3.23,-1.12,45.7,14.0,1091351,neutre,42.7
+2026-11-11,PUST.PA,Amundi PEA Nasdaq-100,etf,102.8,3.2,-5.79,-0.93,48.0,28.7,6025004,baisse,41.3
+2026-11-11,PANX.PA,Amundi PEA Nasdaq-100 (PANX),etf,80.17,3.25,-8.1,0.12,43.5,27.6,1942637,baisse,36.8
+2026-11-11,CW8.PA,Amundi MSCI World (CW8),etf,711.81,1.78,-0.62,1.54,55.2,14.8,6994393,hausse,59.8
+2026-11-11,DCAM.PA,Amundi PEA Monde MSCI World,etf,6.356,1.78,-0.55,1.61,55.3,14.6,9994449,hausse,60.8
+2026-11-11,EWLD.PA,Amundi PEA MSCI World (EWLD),etf,42.16,1.75,-0.67,1.52,55.1,14.2,861945,hausse,59.5
+2026-11-11,WPEA.PA,iShares MSCI World Swap PEA,etf,7.176,1.74,-0.57,1.6,55.1,14.4,6682440,hausse,60.0
+2026-11-11,PAEEM.PA,Amundi PEA MSCI Emerging Markets,etf,34.94,3.57,-3.97,-1.69,51.1,30.9,3268227,neutre,48.0
+2026-11-11,PTPXE.PA,Amundi PEA Japan Topix,etf,39.07,2.05,-4.03,-1.34,47.2,19.7,636461,baisse,40.1
+2026-11-11,RS2K.PA,Amundi Russell 2000 PEA,etf,386.13,1.91,3.45,-2.63,59.2,17.6,820098,hausse,57.0
+2026-11-11,CAC.PA,Amundi CAC 40,etf,84.44,0.57,6.58,-3.07,69.1,13.9,4579613,neutre,59.0
+2026-11-11,C40.PA,Amundi CAC 40 ESG,etf,147.14,0.49,7.32,-3.41,68.9,15.5,807177,neutre,59.4
+2026-11-11,MSE.PA,Amundi Euro Stoxx 50,etf,72.99,0.97,3.8,-2.03,61.9,17.5,4488039,neutre,61.0
+2026-11-11,PCEU.PA,Amundi PEA MSCI Europe,etf,41.08,0.83,4.64,1.18,64.6,13.1,833516,hausse,67.3
+2026-11-11,PLEM.PA,Amundi PEA Emerging ESG,etf,22.49,0.56,4.19,3.21,66.2,19.4,137828,neutre,72.2
+2026-11-11,GPEA.PA,Amundi PEA Global (MSCI ACWI),etf,5.134,2.01,-0.96,1.1,54.7,15.8,1467993,hausse,53.6
+2026-11-11,PAASI.PA,Amundi PEA Asie Émergente (MSCI EM Asia),etf,37.87,4.18,-4.16,-2.86,50.7,35.1,1566189,neutre,43.9
+2026-11-11,PAEJ.PA,Amundi PEA Asie Pacifique hors Japon,etf,26.42,3.34,-3.35,-2.26,51.2,32.0,449115,neutre,45.2
+2026-11-11,PINR.PA,Amundi PEA Inde (MSCI India),etf,24.8,0.06,11.84,7.99,81.3,15.0,495224,neutre,72.9
+2026-11-11,PMEH.PA,Amundi PEA Immobilier Europe (FTSE EPRA/NAREIT),etf,12.6,-0.51,7.4,-4.28,65.8,12.0,116121,hausse,53.8
+2026-11-11,OBLI.PA,Amundi PEA Euro Court Terme (monétaire),etf,9.84,0.01,0.18,0.59,85.9,0.3,924977,neutre,48.5
+2026-11-11,CACC.PA,"Amundi CAC 40 (capitalisation, CACC)",etf,42.39,0.57,6.53,-3.15,68.3,14.1,7585797,neutre,58.2
+2026-11-11,C50.PA,Amundi Core Euro Stoxx 50,etf,172.16,0.86,3.79,-1.99,61.7,17.8,2087965,neutre,61.0
+2026-11-11,ETDD.PA,BNP Paribas Easy Euro Stoxx 50,etf,21.1,0.93,3.71,-2.02,61.9,17.1,694408,neutre,61.1
+2026-11-11,DAX.PA,Amundi DAX II,etf,242.4,1.17,5.57,0.85,63.0,17.8,602921,hausse,65.4
+2026-11-11,CG1.PA,Amundi DAX (CG1),etf,470.45,1.0,5.38,0.74,62.8,17.8,279307,hausse,64.4
+2026-11-11,CD8.PA,Amundi MSCI EMU High Dividend,etf,225.6,0.33,7.07,4.59,69.8,15.1,437573,hausse,73.8
+2026-11-11,MMS.PA,Amundi MSCI EMU Small Cap ESG,etf,435.65,0.52,2.22,-3.5,57.5,13.9,564611,neutre,54.7
+2026-11-11,PABZ.PA,Amundi MSCI EMU Climate Paris Aligned,etf,95.74,0.79,4.3,-1.54,63.9,15.3,204008,neutre,63.9
+2026-11-11,TNO.PA,Amundi Stoxx Europe 600 Technologie,etf,119.26,2.58,-0.68,-1.73,53.0,25.3,642369,neutre,54.1
+2026-11-11,HLT.PA,Amundi Stoxx Europe 600 Santé,etf,170.54,-0.11,15.07,13.27,72.6,17.2,3471961,neutre,81.6
+2026-11-11,BNK.PA,Amundi Stoxx Europe 600 Banques,etf,71.5,0.72,1.63,-5.36,59.6,27.8,5087404,neutre,53.1
+2026-11-11,FOO.PA,Amundi Stoxx Europe 600 Consommation de base,etf,103.78,-0.48,9.13,9.33,64.4,19.0,81949,hausse,75.1
+2026-11-11,TRV.PA,Amundi Stoxx Europe 600 Consommation discrétionnaire,etf,27.16,-0.17,7.46,0.8,65.7,17.2,129634,hausse,60.5
+2026-11-11,CHM.PA,Amundi Stoxx Europe 600 Matériaux de base,etf,208.2,0.87,-0.26,2.06,56.0,18.4,58598,neutre,63.0
+2026-11-11,IND.PA,Amundi Stoxx Europe 600 Industrie,etf,150.36,0.87,1.62,-5.36,58.0,18.5,187061,neutre,46.9
+2026-11-11,UTI.PA,Amundi Stoxx Europe 600 Services aux collectivités,etf,108.94,0.48,6.74,6.82,71.6,13.9,1649401,neutre,71.4
+2026-11-11,EEMU.PA,BNP Paribas Easy MSCI EMU Min TE,etf,20.81,0.56,3.38,-1.93,61.6,15.5,2139815,neutre,59.9
+2026-11-11,E40.PA,BNP Paribas Easy CAC 40 ESG,etf,13.49,0.64,7.34,-3.69,68.7,15.8,179366,neutre,59.0
+2026-11-11,50E.PA,HSBC Euro Stoxx 50,etf,67.39,0.9,3.8,-1.91,62.2,17.1,1843736,neutre,62.1
+2026-11-11,LVC.PA,Amundi CAC 40 Daily (2x) Leveraged,etf,45.63,1.19,12.69,-7.54,67.5,28.0,5385711,neutre,
+2026-11-11,LQQ.PA,Amundi Nasdaq-100 Daily (2x) Leveraged,etf,9.048,6.02,-13.13,-8.15,44.9,56.2,7267618,baisse,
+2026-11-11,CL2.PA,Amundi MSCI USA Daily (2x) Leveraged,etf,33.26,4.2,-3.51,2.91,53.0,32.5,1581106,hausse,
+2026-11-11,BX4.PA,Amundi CAC 40 Daily (-2x) Inverse,etf,0.603,-1.29,-11.64,7.3,32.1,27.3,4375629,neutre,
+2026-11-11,AI.PA,Air Liquide,actions,192.16,0.96,13.7,14.2,80.5,14.7,174656728,neutre,79.1
+2026-11-11,AIR.PA,Airbus,actions,210.7,1.18,12.98,-2.18,66.9,32.3,233847281,hausse,70.3
+2026-11-11,ALO.PA,Alstom,actions,10.42,-0.29,-36.66,-35.8,16.0,93.1,33556664,neutre,2.1
+2026-11-11,MT.AS,ArcelorMittal,actions,59.54,1.74,5.49,-6.59,60.7,34.9,84966647,neutre,57.3
+2026-11-11,CS.PA,AXA,actions,46.12,0.09,9.78,2.38,67.9,25.2,131556451,hausse,75.4
+2026-11-11,BNP.PA,BNP Paribas,actions,95.77,0.11,6.14,-11.72,64.6,32.0,235660469,neutre,52.1
+2026-11-11,EN.PA,Bouygues,actions,43.82,0.41,8.3,-8.04,66.0,20.0,28871802,neutre,57.2
+2026-11-11,CAP.PA,Capgemini,actions,123.95,0.61,3.9,14.45,54.9,30.2,76254773,neutre,59.2
+2026-11-11,CA.PA,Carrefour,actions,13.95,0.14,-13.14,-11.71,42.8,55.7,46518740,baisse,21.6
+2026-11-11,ACA.PA,Crédit Agricole,actions,15.87,-0.09,-0.28,-18.59,52.9,21.8,97397257,neutre,31.6
+2026-11-11,BN.PA,Danone,actions,68.06,-0.38,15.87,1.22,69.2,21.0,103366205,hausse,70.0
+2026-11-11,DSY.PA,Dassault Systèmes,actions,25.34,0.32,12.42,16.88,61.6,36.4,50515373,hausse,75.2
+2026-11-11,EDEN.PA,Edenred,actions,25.49,-1.54,-12.71,-10.81,46.2,50.0,15968146,baisse,28.0
+2026-11-11,ENGI.PA,Engie,actions,24.76,0.49,7.56,-3.73,67.6,20.7,102625793,hausse,58.7
+2026-11-11,EL.PA,EssilorLuxottica,actions,182.55,-2.69,24.78,12.3,59.1,64.3,184588011,hausse,68.4
+2026-11-11,ERF.PA,Eurofins,actions,88.0,0.27,12.16,24.93,69.0,18.4,25953973,hausse,82.8
+2026-11-11,RMS.PA,Hermès,actions,1353.5,0.59,5.37,-14.12,54.0,36.3,133434220,neutre,34.4
+2026-11-11,KER.PA,Kering,actions,189.28,-0.12,-9.87,-29.52,40.5,65.6,85740578,baisse,7.2
+2026-11-11,OR.PA,L'Oréal,actions,446.65,0.63,15.37,17.69,67.4,30.1,201571118,hausse,82.0
+2026-11-11,LR.PA,Legrand,actions,138.6,2.21,0.84,-1.49,57.6,41.0,104131778,neutre,54.5
+2026-11-11,MC.PA,LVMH,actions,403.1,0.52,4.96,-12.06,53.8,23.5,245403209,neutre,36.7
+2026-11-11,ML.PA,Michelin,actions,33.63,-0.27,-0.77,-2.89,57.1,32.8,56129073,neutre,47.9
+2026-11-11,ORA.PA,Orange,actions,15.42,0.36,11.1,-6.0,66.8,22.7,69349598,neutre,57.5
+2026-11-11,RI.PA,Pernod Ricard,actions,71.22,-1.3,8.7,2.98,65.2,27.9,55616067,hausse,66.7
+2026-11-11,PUB.PA,Publicis,actions,104.6,0.63,3.62,2.75,63.4,22.5,52248801,hausse,62.5
+2026-11-11,RNO.PA,Renault,actions,29.31,-0.44,7.52,2.38,62.3,39.9,41672607,hausse,65.2
+2026-11-11,SAF.PA,Safran,actions,312.5,-0.06,-0.1,-13.31,57.1,48.2,228820693,neutre,33.7
+2026-11-11,SGO.PA,Saint-Gobain,actions,75.5,-1.1,15.58,-10.05,70.3,23.6,85957595,neutre,59.3
+2026-11-11,SAN.PA,Sanofi,actions,86.61,0.77,22.43,14.68,81.0,25.7,223513015,neutre,73.7
+2026-11-11,SU.PA,Schneider Electric,actions,242.5,3.04,-8.28,-20.86,45.8,39.2,351032498,neutre,25.6
+2026-11-11,GLE.PA,Société Générale,actions,67.61,0.21,4.27,-16.97,62.1,30.6,121963213,neutre,43.2
+2026-11-11,STLAP.PA,Stellantis,actions,3.713,-3.16,-5.55,-19.46,40.1,71.5,21613405,baisse,7.6
+2026-11-11,STMPA.PA,STMicroelectronics,actions,42.17,5.16,-3.79,-9.41,50.0,64.8,103240425,neutre,31.2
+2026-11-11,TEP.PA,Teleperformance,actions,71.3,3.3,-4.45,0.62,42.5,63.1,19976750,neutre,31.9
+2026-11-11,HO.PA,Thales,actions,230.4,-0.99,4.35,-14.79,50.6,25.3,54286729,neutre,35.6
+2026-11-11,TTE.PA,TotalEnergies,actions,79.37,1.5,-0.65,5.96,45.8,23.3,337454871,neutre,52.9
+2026-11-11,URW.PA,Unibail-Rodamco-Westfield,actions,93.38,-1.89,5.9,-9.78,55.8,16.8,25569749,neutre,45.0
+2026-11-11,VIE.PA,Veolia,actions,34.3,0.03,7.93,0.79,73.7,14.3,57347051,neutre,66.8
+2026-11-11,DG.PA,Vinci,actions,114.75,0.0,7.65,-4.07,66.0,17.5,103354002,hausse,59.9
+2026-11-11,ENX.PA,Euronext,actions,167.4,2.64,0.84,5.35,47.7,30.5,57181116,neutre,52.3
+2026-11-11,BVI.PA,Bureau Veritas,actions,30.05,0.3,9.75,9.0,70.1,19.1,28610406,neutre,78.3
+2026-11-11,AC.PA,Accor,actions,52.4,-0.08,15.55,12.3,75.4,30.0,44834987,neutre,77.8
+2026-11-11,AM.PA,Dassault Aviation,actions,307.6,-1.54,8.62,-3.51,58.4,20.5,14523299,hausse,55.8
+2026-11-11,FGR.PA,Eiffage,actions,108.7,-0.09,8.85,-10.02,70.5,17.6,27199729,neutre,56.4
+2026-11-11,BOL.PA,Bolloré,actions,3.708,0.54,0.49,-4.14,48.3,18.0,3844514,neutre,35.5
+2026-11-11,GTT.PA,GTT,actions,187.0,1.08,-13.27,-9.4,40.8,53.2,32004208,baisse,25.9
+2026-11-11,ELIS.PA,Elis,actions,24.36,-0.81,11.23,-1.77,69.2,21.2,8433236,hausse,62.5
+2026-11-11,NEX.PA,Nexans,actions,132.9,4.15,1.37,-5.07,59.1,54.1,22235480,neutre,47.6
+2026-11-11,RXL.PA,Rexel,actions,36.61,1.53,7.14,-1.37,61.8,37.1,28817276,neutre,62.5
+2026-11-11,SPIE.PA,Spie,actions,45.88,-0.3,9.19,-3.51,67.1,24.2,14618921,hausse,58.0
+2026-11-11,SOI.PA,Soitec,actions,108.35,11.93,-25.43,-16.14,43.1,114.5,43728855,baisse,12.7
+2026-11-11,VK.PA,Vallourec,actions,19.61,0.9,5.74,8.43,61.0,32.1,12711237,hausse,71.4
+2026-11-11,ATE.PA,Alten,actions,86.95,0.87,4.38,17.5,55.3,30.9,4376166,neutre,61.1
+2026-11-11,SOP.PA,Sopra Steria,actions,196.7,0.05,13.18,6.38,72.9,21.7,7534829,neutre,75.6
+2026-11-11,AF.PA,Air France-KLM,actions,14.56,1.08,37.44,19.3,82.6,56.0,17494994,neutre,80.2
+2026-11-11,ETL.PA,Eutelsat,actions,1.834,0.19,33.92,-14.5,52.5,105.6,5292220,hausse,51.1
+2026-11-11,UBI.PA,Ubisoft,actions,4.607,2.2,-8.95,-15.47,50.5,57.1,3254764,neutre,32.7
+2026-11-11,VIRI.PA,Viridien,actions,92.15,-2.23,3.6,-7.29,49.3,49.9,2974895,neutre,30.2
+2026-11-11,ASML.AS,ASML,actions,1403.8,3.14,-6.88,-11.01,47.5,52.3,1013413521,baisse,29.9
+2026-11-11,ADYEN.AS,Adyen,actions,874.6,0.22,-6.2,-17.61,47.2,58.1,135559907,baisse,18.6
+2026-11-11,PRX.AS,Prosus,actions,36.97,-1.39,3.77,-0.39,60.4,27.6,109898604,neutre,53.3
+2026-11-11,INGA.AS,ING,actions,30.16,1.23,0.2,-2.35,55.5,31.9,210929882,neutre,49.8
+2026-11-11,PHIA.AS,Philips,actions,27.13,0.26,22.1,14.67,80.2,30.1,59161492,neutre,64.2
+2026-11-11,SAP.DE,SAP,actions,210.95,0.48,6.93,17.1,58.8,27.1,443636723,hausse,72.3
+2026-11-11,SIE.DE,Siemens,actions,277.0,2.01,0.91,-2.46,55.9,33.8,295062978,neutre,49.3
+2026-11-11,ALV.DE,Allianz,actions,463.6,0.02,9.47,4.72,66.4,23.0,212182212,hausse,74.9
+2026-11-11,DTE.DE,Deutsche Telekom,actions,26.19,1.04,4.3,-8.65,51.4,26.7,200851103,neutre,34.2
+2026-11-11,RHM.DE,Rheinmetall,actions,794.1,-6.94,-16.71,-33.94,28.9,75.3,242804397,neutre,2.6
+2026-11-11,IFX.DE,Infineon,actions,52.12,6.26,-6.93,-15.57,49.6,66.0,240482010,neutre,25.7
+2026-11-11,ENEL.MI,Enel,actions,9.852,0.29,9.38,3.76,74.0,18.3,147626321,neutre,72.1
+2026-11-11,ISP.MI,Intesa Sanpaolo,actions,6.302,-1.41,1.73,-8.89,54.4,29.8,296739062,neutre,39.1
+2026-11-11,RACE.MI,Ferrari,actions,375.45,0.85,6.92,5.23,63.3,22.3,156882626,hausse,67.0
+2026-11-11,ITX.MC,Inditex,actions,60.08,-0.1,12.7,5.93,69.1,26.3,111938321,hausse,79.3
+2026-11-11,IBE.MC,Iberdrola,actions,23.2,0.91,7.61,14.85,78.2,15.1,193917569,neutre,74.6
+2026-11-11,SAN.MC,Banco Santander,actions,11.29,0.34,-6.14,-11.38,50.8,41.8,301153326,neutre,35.8
+2026-11-11,NOVO-B.CO,Novo Nordisk,actions,272.7,0.44,6.25,-7.47,55.7,34.5,1367912195,neutre,39.9
+2026-11-11,NOKIA.HE,Nokia,actions,7.746,4.14,-10.91,-15.73,46.6,66.8,129130590,baisse,19.9
+2026-11-11,AKE.PA,Arkema,actions,58.7,1.47,7.71,-5.63,63.4,19.0,11071371,neutre,54.7
+2026-11-11,AMUN.PA,Amundi,actions,97.6,0.51,9.91,1.72,72.9,18.0,13740816,neutre,77.8
+2026-11-11,BB.PA,Bic,actions,65.0,0.31,-1.22,-2.11,48.5,14.0,2043009,baisse,45.1
+2026-11-11,BIM.PA,bioMérieux,actions,92.2,0.6,7.96,26.13,61.4,29.1,16493405,hausse,72.5
+2026-11-11,COFA.PA,Coface,actions,16.16,0.0,2.6,0.62,59.1,15.5,2236606,neutre,64.1
+2026-11-11,DBG.PA,Derichebourg,actions,8.295,1.65,6.69,-9.79,59.6,22.9,797572,neutre,50.7
+2026-11-11,DEC.PA,JCDecaux,actions,27.6,0.15,10.22,15.0,72.6,33.4,3978628,neutre,85.7
+2026-11-11,DIM.PA,Sartorius Stedim Biotech,actions,226.8,1.52,6.18,22.26,61.6,26.1,22280191,hausse,77.3
+2026-11-11,ERA.PA,Eramet,actions,38.48,7.43,3.33,-16.49,50.2,58.6,1284586,neutre,23.9
+2026-11-11,FNAC.PA,Fnac Darty,actions,34.95,0.29,1.16,1.01,62.8,3.7,221845,hausse,60.8
+2026-11-11,FR.PA,Valeo,actions,11.52,3.69,-15.51,-21.14,40.6,55.0,12442342,baisse,22.8
+2026-11-11,GET.PA,Getlink,actions,20.28,0.2,6.46,7.81,70.1,10.6,13528029,neutre,74.1
+2026-11-11,IPN.PA,Ipsen,actions,167.3,0.78,17.32,7.24,73.5,20.0,18432814,neutre,83.4
+2026-11-11,IPS.PA,Ipsos,actions,35.86,0.06,-1.21,-8.94,49.1,27.7,2733668,neutre,32.4
+2026-11-11,MF.PA,Wendel,actions,89.35,-0.45,11.34,1.25,71.0,14.0,2205171,neutre,74.4
+2026-11-11,NK.PA,Imerys,actions,25.36,0.4,15.38,5.75,67.4,52.6,1944005,hausse,70.3
+2026-11-11,RCO.PA,Rémy Cointreau,actions,52.8,0.48,15.69,10.55,65.2,37.1,4824079,hausse,82.2
+2026-11-11,RF.PA,Eurazeo,actions,49.38,-0.12,8.53,-4.58,55.6,26.1,3276259,hausse,52.1
+2026-11-11,RUI.PA,Rubis,actions,36.02,2.04,2.91,4.28,57.3,23.0,4993888,hausse,63.0
+2026-11-11,SCR.PA,SCOR,actions,35.2,0.4,5.96,1.79,63.5,23.3,13123574,hausse,67.0
+2026-11-11,SK.PA,SEB,actions,57.55,-0.86,3.69,-1.79,56.7,31.6,2504566,neutre,53.4
+2026-11-11,SW.PA,Sodexo,actions,61.2,-0.73,10.97,7.75,65.3,28.5,20952064,hausse,81.2
+2026-11-11,TE.PA,Technip Energies,actions,35.12,-0.62,15.83,12.2,69.9,35.2,13919092,hausse,80.4
+2026-11-11,TFI.PA,TF1,actions,6.385,-1.24,10.85,-9.37,61.5,21.2,1619628,neutre,52.1
+2026-11-11,TRI.PA,Trigano,actions,134.9,-0.74,6.72,-13.46,60.1,24.7,2356424,neutre,40.3
+2026-11-11,VCT.PA,Vicat,actions,67.5,-1.03,15.19,3.37,72.5,28.9,2081515,neutre,73.5
+2026-11-11,VIRP.PA,Virbac,actions,358.0,0.14,10.15,7.67,73.5,13.4,1691910,neutre,72.0
+2026-11-11,VIV.PA,Vivendi,actions,1.671,1.21,10.74,-1.36,61.1,39.8,2824775,hausse,54.8
+2026-11-11,WLN.PA,Worldline,actions,11.38,0.34,5.55,-10.84,53.9,65.7,5140462,neutre,38.4
+2026-11-11,EXA.PA,Exail Technologies,actions,125.6,0.0,0.32,0.72,54.7,3.7,3230738,hausse,58.6
+2026-11-11,AYV.PA,Ayvens,actions,9.86,-0.45,11.66,-12.9,65.2,25.4,10036768,neutre,55.9
+2026-11-11,PLX.PA,Pluxee,actions,12.3,-1.28,-17.78,-17.78,35.3,64.5,2029180,baisse,21.6
+2026-11-11,OPM.PA,OPmobility,actions,9.57,1.0,0.0,-24.76,43.5,27.7,1322303,neutre,26.5
+2026-11-11,FRVIA.PA,Forvia,actions,8.754,1.2,0.18,-5.12,50.6,43.4,8149287,neutre,35.5
+2026-11-11,TKO.PA,Tikehau Capital,actions,17.02,0.71,5.71,-1.62,59.3,30.5,709368,hausse,52.6
+2026-11-11,ANTIN.PA,Antin Infrastructure Partners,actions,7.63,-0.78,5.12,-13.17,57.9,23.8,237549,hausse,36.7
+2026-11-11,VU.PA,Vusion,actions,146.8,3.38,18.77,12.15,66.3,44.3,7287557,hausse,80.9
+2026-11-11,ADP.PA,Aéroports de Paris (ADP),actions,117.0,-0.93,10.9,5.41,62.4,23.2,12863602,hausse,73.1
+2026-11-11,ELIOR.PA,Elior,actions,1.927,-0.87,8.81,-10.37,61.2,26.0,627378,neutre,48.8
+2026-11-11,EXENS.PA,Exosens,actions,52.8,-1.86,-7.37,-20.96,39.3,38.3,4651984,baisse,9.9
+2026-11-11,AD.AS,Ahold Delhaize,actions,35.22,0.51,11.42,8.7,69.9,28.2,78476200,hausse,77.2
+2026-11-11,WKL.AS,Wolters Kluwer,actions,88.42,1.14,12.15,28.55,61.5,38.7,93170684,hausse,75.5
+2026-11-11,HEIA.AS,Heineken,actions,83.36,-1.07,14.88,13.38,72.5,19.2,56144112,neutre,81.8
+2026-11-11,UCG.MI,UniCredit,actions,84.24,0.83,9.4,-1.16,67.2,40.2,388061618,neutre,70.7
+2026-11-11,ENI.MI,Eni,actions,25.2,1.82,-1.83,7.56,46.2,30.7,218966437,neutre,51.3
+2026-11-11,TIT.MI,Telecom Italia,petites,5.898,2.43,4.39,-22.72,48.5,24.5,16788166,neutre,33.2
+2026-11-11,DBV.PA,DBV Technologies,petites,2.134,6.38,30.84,-9.81,65.0,72.5,2375132,neutre,58.3
+2026-11-11,ALSEN.PA,Sensorion,petites,8.28,2.73,41.54,-42.5,48.1,124.5,170855,neutre,25.7
+2026-11-11,NANO.PA,Nanobiotix,petites,29.08,0.21,47.69,-9.97,59.2,94.8,6063634,neutre,57.8
+2026-11-11,GNFT.PA,Genfit,petites,10.94,3.01,38.66,-15.98,55.4,99.3,3343789,neutre,46.9
+2026-11-11,VLA.PA,Valneva,petites,2.677,3.32,5.73,-10.77,57.8,47.4,1084559,neutre,47.0
+2026-11-11,ALBPS.PA,Biophytis,petites,0.0411,-0.48,-10.26,-46.27,51.5,221.0,1182693,neutre,23.4
+2026-11-11,ALHPI.PA,Hopium,petites,0.0025,0.0,-24.24,-41.86,23.0,46.3,30703,neutre,
+2026-11-11,ALMKT.PA,Mauna Kea Technologies,petites,0.0949,1.39,-15.12,-35.79,34.6,54.5,42696,baisse,
+2026-11-11,ALTHE.PA,Theranexus,petites,0.66,3.13,1.54,-1.2,49.9,81.0,102226,neutre,40.4
+2026-11-11,ALAFY.PA,Afyren,petites,2.225,0.23,5.95,-23.28,44.2,40.7,17302,baisse,
+2026-11-11,ALCLS.PA,Cellectis,petites,1.351,28.79,28.67,-50.29,62.0,132.3,465654,neutre,44.2
+2026-11-11,ALEO2.PA,Eo2,petites,2.64,-0.75,-0.75,0.76,42.7,22.0,3632,baisse,
+2026-11-11,ALDNE.PA,Don't Nod,petites,0.074,12.12,-76.13,-82.38,22.1,200.1,4079,neutre,
+2026-11-11,ALPAT.PA,Plant Advanced Technologies,petites,3.98,0.0,-5.24,-9.95,50.0,52.4,1072,neutre,
+2026-11-11,ALNFL.PA,NFL Biosciences,petites,0.397,1.53,-31.31,-52.28,32.5,95.8,40022,baisse,
+2026-11-11,ALCJ.PA,Crossject,petites,1.4,4.17,10.24,-3.18,63.6,41.8,174563,neutre,62.1
+2026-11-11,ALCOX.PA,Nicox,petites,0.296,2.78,-1.5,-23.12,46.2,38.4,36375,neutre,
+2026-11-11,IVA.PA,Inventiva,petites,3.505,4.32,32.51,-9.66,58.8,74.4,1869139,neutre,47.1
+2026-11-11,ALMDG.PA,MDxHealth,petites,7.47,0.27,-15.11,-26.76,31.2,38.1,68755,baisse,7.9
+2026-11-11,ALQGC.PA,Quantum Genomics,petites,0.0721,0.0,0.0,0.0,50.0,0.0,0,neutre,
+2026-11-11,ALVAL.PA,Valbiotis,petites,0.615,0.99,12.02,-28.49,47.9,59.5,79589,neutre,29.2
+2026-11-11,ALNOV.PA,Novacyt,petites,0.44,2.56,-5.58,-15.06,46.8,31.4,49293,baisse,
+2026-11-11,ALBOO.PA,Boostheat,petites,0.36,0.0,2.86,-35.48,27.8,73.7,251,neutre,
+2026-11-11,ALLHB.PA,Les Hôtels Baverez,petites,71.5,0.0,-0.69,-4.67,51.5,28.2,12814,neutre,
+2026-11-11,ALENT.PA,Entech,petites,0.4955,1.12,-25.49,11.22,36.6,91.3,16898,baisse,
+2026-11-11,ALWEC.PA,We.Connect,petites,24.3,-0.82,6.58,-3.95,52.7,33.7,27452,hausse,
+2026-11-11,ALKAL.PA,Kalray,petites,3.84,10.98,-5.07,-41.73,49.6,82.1,391584,neutre,24.3
+2026-11-11,ALOKW.PA,Okwind,petites,0.171,0.0,-25.65,-33.2,34.0,67.4,3534,baisse,
+2026-11-11,ALLPL.PA,Lepermislibre,petites,0.0538,-1.1,16.96,-18.24,50.6,66.6,1615,neutre,
+2026-11-11,ALHRS.PA,Hydrogen Refueling Solutions,petites,0.619,0.49,-23.67,-52.24,34.3,45.8,17289,baisse,
+2026-11-11,ALMCE.PA,McPhy,petites,5.35,0.0,-6.14,-2.73,43.2,36.9,5537,baisse,
+2026-11-11,ALNXT.PA,Nextedia,petites,0.246,-1.6,-10.55,-23.36,26.3,30.8,11202,neutre,
+2026-11-11,ALVIA.PA,Visiativ,petites,6.0,0.0,-20.0,-31.31,26.3,71.8,157,neutre,
+2026-11-11,ALDLT.PA,Delta Drone,petites,22.0,-2.65,-5.98,-39.23,43.3,53.1,122429,neutre,11.6
+2026-11-11,ALSPW.PA,Spineway,petites,0.0934,0.0,-22.17,-28.04,44.2,82.9,13114,baisse,
+2026-11-11,ALUVI.PA,Uv Germi,petites,2.32,0.0,-1.28,-13.75,40.6,34.3,5263,baisse,
+2026-11-11,ALEUP.PA,Europlasma,petites,0.0002,0.0,0.0,-66.67,37.2,0.0,9846,neutre,
+2026-11-11,ALVDM.PA,Voluntis,petites,179.5,0.0,0.0,0.56,52.0,1.7,185358,neutre,52.9
+2026-11-11,ALBIO.PA,Biosynex,petites,0.824,-1.67,-3.06,-11.4,46.2,44.1,9507,baisse,
+2026-11-11,ALTXC.PA,Texcell,petites,9.1,0.0,1.11,1.11,55.6,10.0,5948,neutre,
+2026-11-11,ALDBT.PA,DBT,petites,0.047,2.17,-28.79,-7.11,40.2,74.3,202903,baisse,18.4
+2026-11-11,ALSAF.PA,Safe,petites,0.64,0.0,0.0,0.0,51.0,0.0,0,neutre,
+2026-11-11,ALIMP.PA,Implanet,petites,0.1368,5.23,-26.45,-24.17,39.1,50.7,6262,baisse,
+2026-11-11,ADOC.PA,Adocia,petites,4.38,15.26,116.83,5.64,77.0,145.6,1749872,neutre,68.2
+2026-11-11,ALHEX.PA,Hexaom,petites,20.8,0.97,-3.26,-27.02,44.7,43.0,133576,baisse,12.6
+2026-11-11,SAB.MC,Banco de Sabadell,petites,3.748,-0.5,4.61,2.85,62.3,29.1,47842067,neutre,70.8
+2026-11-11,SPM.MI,Saipem,petites,4.327,1.03,-7.15,-5.03,46.4,42.0,67895619,neutre,27.6
+2026-11-11,BMPS.MI,Monte dei Paschi,petites,11.45,-1.26,2.23,-4.84,55.6,30.4,99076670,neutre,45.9
+2026-11-11,ENR.DE,Siemens Energy,petites,132.76,10.78,-7.2,-17.4,52.1,78.2,399412733,neutre,26.3
+2026-11-11,ALPHA.AT,Alpha Bank,petites,4.846,1.51,14.73,3.11,61.4,46.1,36621732,neutre,75.8
+2026-11-11,EUROB.AT,Eurobank,petites,4.86,0.83,9.34,8.0,61.2,41.8,62803581,neutre,79.5
+2026-11-11,ETE.AT,Banque nationale de Grèce,petites,17.33,0.26,6.61,8.24,59.5,42.9,51789068,neutre,75.3
+2026-11-11,MAU.PA,Maurel & Prom,petites,7.155,0.92,-13.48,-7.69,30.7,31.7,1362223,baisse,17.1
+2026-11-11,ATO.PA,Atos,petites,24.5,-0.89,13.22,-17.12,48.5,79.4,4165133,neutre,31.5
+2026-11-11,CRI.PA,Chargeurs,petites,7.68,-0.65,3.78,-8.02,52.9,26.3,75480,neutre,39.0
+2026-11-11,ALLIX.PA,Wallix,petites,22.85,0.22,-8.42,-3.18,47.8,31.9,174996,neutre,25.9
+2026-11-11,EKI.PA,Ekinops,petites,2.455,5.59,-1.8,-3.35,58.6,65.6,186417,neutre,45.3
+2026-11-11,ALGEN.PA,Genomic Vision,petites,1.91,1.6,-14.73,-22.98,32.2,40.9,20756,baisse,
+2026-11-11,ALNRG.PA,Energisme,petites,3.69,8.21,0.0,-16.14,56.9,82.3,5605,neutre,
+2026-11-11,ALPRI.PA,Prismaflex,petites,7.62,0.0,-3.3,-12.41,48.1,21.6,2449,neutre,
+2026-11-11,ALGIL.PA,Groupe Guillin,petites,19.75,-1.0,2.33,-7.71,49.2,29.7,131669,neutre,34.1
+2026-11-11,ALSGD.PA,Smart Good Things,petites,0.089,1.14,4.83,1.14,50.2,26.2,21851,neutre,
+2026-11-11,ALMOU.PA,Moulinvest,petites,20.1,-1.47,-5.19,-10.27,40.6,36.6,11603,baisse,
+2026-11-11,MLHK.PA,Hunyvers,petites,30.0,1.01,-5.36,-4.76,43.8,37.0,11461,baisse,
+2026-11-11,ALAGO.PA,e-Pango,petites,0.1599,-4.37,6.6,-7.84,44.1,52.3,135902,baisse,34.0
+2026-11-11,ALDEL.PA,Delfingen,petites,35.1,0.29,12.14,17.39,70.5,41.7,43989,neutre,
+2026-11-11,ALTUV.PA,Tuvalu,petites,0.8,0.5,-18.37,-40.3,30.5,47.4,19889,baisse,

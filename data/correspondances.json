@@ -332,7 +332,7 @@
   "boursorama": "1rPALCLS",
   "ft": "ALCLS:PAR",
   "echecs": {
-   "boursorama": 2
+   "boursorama": 3
   }
  },
  "ALMKT.PA": {
@@ -510,6 +510,11 @@
  "ALDBT.PA": {
   "boursorama": "1rPALDBT",
   "ft": "ALDBT:PAR",
+  "echecs": {}
+ },
+ "BN.PA": {
+  "boursorama": "1rPBN",
+  "ft": "BN:PAR",
   "echecs": {}
  }
 }
