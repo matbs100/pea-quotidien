@@ -19,6 +19,7 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 |---|---|
 | [Journaux](journal/) | une note par nuit : sources, ce qui a été appris, ce qui a changé, vérification du chef |
 | [Connaissances](connaissances/README.md) | les faits appris, par thème (marchés, méthodes, réglementation, données, design), avec leur statut |
+| [Design](design/README.md) | l'étude de marché, le catalogue de motifs, la mémoire et le journal de l'agent design (`DESIGN.md`) |
 | [Idées](idees.md) | les idées d'amélioration, notées et suivies (à faire, fait, rejetée) |
 | [Veille GitHub](veille-github.md) | les projets open source étudiés, avec leur licence |
 | [Nouveautés](CHANGELOG.md) | ce qui a changé dans le programme, du plus récent au plus ancien |

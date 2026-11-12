@@ -38,6 +38,7 @@ dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 
 | Heure (Paris) | Agent | Consigne | Rôle |
 |---|---|---|---|
+| 1 h 30, chaque nuit | **Design** | `DESIGN.md` | étude de marché quotidienne du design (GitHub, sites originaux, galeries d'artefacts Claude, thèmes Shopify, vidéos et fils YouTube, TikTok, X, Reddit : seulement ce qui est lisible sans contourner d'anti-robot), catalogue de motifs dans `apprentissage/design/`, une amélioration de l'apparence de la page au plus (« Design : … [D-…] »), prouvée sans perte d'information par `design.py` ; relu par le chef à 5 h |
 | 3 h, chaque nuit | **Veille et amélioration** | `AMELIORATION.md` | apprend (marchés, design, pédagogie, open source), note ce qu'il apprend dans `apprentissage/`, fait une amélioration testée |
 | 4 h, chaque jour | **Vérificateur du code** | `VERIFICATION.md` | sous la direction du chef : confidentialité du propriétaire (`confidentialite.py`, avec la clé secrète de la routine), tests, contrôle, analyse statique (`ruff`) et failles des bibliothèques (`pip-audit`), revue des commits du jour, une correction au plus (« Code : … [correctif] »), apprentissage quotidien dans des sources fiables (`apprentissage/code/`), idées ; rapport dans `pilotage/code/` |
 | 5 h, chaque jour | **Chef d'orchestre** | `CHEF.md` | contrôle tout (`controle.py`), vérifie les faits appris, relit les commits des autres, annule ce qui casse, corrige un bug ou embellit l'interface, écrit `pilotage/` |
@@ -52,6 +53,7 @@ Les agents ne se parlent pas directement : ils communiquent par des fichiers du 
 - `pilotage/verifie.json` : les alertes 🟠 que le chef a vérifiées lui-même (preuve à l'appui), comptées ✔ par le contrôle pour ce jour ou ce commit seulement ;
 - `pilotage/rapports/` : un rapport du chef par jour ;
 - `apprentissage/` : ce que l'agent de nuit apprend (journal, idées, connaissances) ;
+- `apprentissage/design/` et `pilotage/design/` : l'étude de marché, le catalogue de motifs, la mémoire (`lecons.md`) et le journal de l'agent design ; les souhaits du propriétaire (`souhaits.md`, recopiés par la fonction mémoire) et les déplacements déclarés (`deplacements.json`) ;
 - `pilotage/decision.md` et `pilotage/decisions.md` : **la méthode de décision** et son journal. Tous les
   agents proposent des idées (notées avec la grille : utilité, résultats, visuel, avantage de la nouveauté,
   fiabilité ; coût et risque à part) ; le chef décide chaque matin (adoptée, à l'essai, en attente,
@@ -59,7 +61,7 @@ Les agents ne se parlent pas directement : ils communiquent par des fichiers du 
   tard (gardée, à ajuster, annulée). Le propriétaire a autorisé (06/11/2026) l'adoption sans sa validation de ce
   que la méthode juge utile ; chaque commit d'amélioration cite sa décision (`[D-…]`).
 
-Les consignes sont dans `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md` et `UNIVERS.md` : depuis le 06/11/2026,
+Les consignes sont dans `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md`, `UNIVERS.md`, `VERIFICATION.md` et `DESIGN.md` : depuis le 06/11/2026,
 chaque routine dit seulement « lis ce fichier et applique-le » (la routine de la fiche garde en plus
 l'adresse de notification, qui ne doit pas être dans le dépôt public). Pour changer une consigne, il
 suffit donc de modifier le fichier. Les agents ne modifient jamais ces fichiers : si une routine voit
@@ -251,6 +253,8 @@ par les agents. Dans le graphique, la moyenne courte est en tirets et la longue 
 | `prix_dev(x, m)` | prix suivi de la devise du titre dans la note (« 6,177 EUR ») ; sans devise pour un indice |
 | `fonds_wealins(d)` | fonds de `data/wealins.json` pour la barre de recherche, en tableaux compacts, sans ceux que la fiche suit déjà |
 | `archives()` | page `docs/archives/` qui liste toutes les fiches |
+| `donnees_du_jour(jour)` | données de la fiche complétées comme la page les lit (analyse en HTML, courbes raccourcies, nouveauté, état du contrôle, risque, simulation, taux BCE) ; renvoie `(d, analyse)` |
+| `page_html(d, modele)` | page autonome : le modèle (`scripts/modele.html` par défaut, ou un texte donné, par exemple une ancienne version pour `design.py rendre`) rempli avec les données, avec les empreintes CSP |
 | `main()` | écrit `docs/index.html`, l'archive du jour et la note ; ajoute la nouveauté du programme et l'état du dernier contrôle |
 
 ### `controle.py` : le contrôle qualité du chef d'orchestre
@@ -297,8 +301,28 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `c_lectures(d)` | contrôle « Lectures des agents » (voir `lectures.defauts`) ; un PDF ajouté au dépôt par un agent est un problème (dans `ecarts_aux_regles`) |
 | `c_decisions(d, heures)` | contrôle « Méthode de décision » : bilans en retard, gains mal calculés, améliorations sans décision (commits depuis le 07/11/2026) |
 | `c_confidentialite(d, heures)` | contrôle « Confidentialité » : aucune information personnelle dans les fichiers publiés (🔴) ni dans les commits récents (🟠) ; voir `confidentialite.py` |
+| `c_design(heures)` | contrôle « Design : aucune information retirée » : pour chaque commit des 30 dernières heures qui touche `scripts/modele.html` (tout agent), `design.comparer_modeles` entre la version d'avant et celle du commit ; un titre, un champ de données, un identifiant ou un avertissement retiré sans déplacement déclaré, un contraste sous 4,5 ou un nouveau site externe = 🔴 ; un texte reformulé, des textes sous 12 px, une page bien plus lourde = 🟠 |
 | `resume_court(controles, etat)` | phrase affichée en bas de la fiche |
 | `main()` | enchaîne les contrôles, écrit `pilotage/etat.json`, affiche le résumé |
+
+### `design.py` : le garde-fou de l'agent design (aucune information retirée)
+Usage : `python3 scripts/design.py inventaire [REF]`, `comparer AVANT [APRES]` (codes 0 / 1 / 2),
+`rendre AVANT [APRES] [--jour=J] [--dossier=D]`. Un déplacement volontaire se déclare dans
+`pilotage/design/deplacements.json` (`commit`, `retire`, `nouveau`, `raison`) ; il n'est accepté que si le nouvel élément existe.
+
+| Fonction | Rôle |
+|---|---|
+| `git(*args)` | commande Git dans le dépôt, texte de sortie |
+| `lire_modele(ref)` | `scripts/modele.html` du fichier de travail, ou d'un commit (`git show`) |
+| `texte_visible(fragment)` | morceaux de texte visibles d'un fragment HTML (sans scripts ni styles) |
+| `cles_des_donnees()` | noms des champs des données de la dernière fiche, plus ceux ajoutés par `rendu.py` |
+| `inventaire(modele, cles)` | ce que la page montre ou lit : titres (h1–h4 et `bloc("…")`), identifiants, champs de données lus par le JavaScript, textes visibles, avertissements « pas un conseil » |
+| `contraste(c1, c2)` | rapport de contraste WCAG entre deux couleurs hexadécimales (1 à 21) |
+| `mesures(modele)` | taille, contraste minimal des couleurs de texte sur les fonds (clair et sombre), textes sous 12 px, boutons sans nom, images sans `alt`, sites externes, nombre de sections |
+| `deplacements_acceptes(commit)` | déplacements déclarés pour un commit dans `pilotage/design/deplacements.json` |
+| `comparer_modeles(avant, apres, commit, cles)` | `(niveau, lignes)` : 0 rien de retiré, 1 à revoir, 2 information retirée ou page dégradée |
+| `rendre(avant, apres, jour, dossier)` | construit les deux pages avec les mêmes données (`rendu.donnees_du_jour`, `rendu.page_html`) ; avec Playwright (facultatif, installé pour la séance) : captures téléphone et ordinateur, et nombres ou mots affichés avant et plus après |
+| `main()` | ligne de commande |
 
 ### `confidentialite.py` : aucune information personnelle dans le dépôt public
 Usage : `python3 scripts/confidentialite.py [--site] [--commits N] [--json]` (N = 0 : tout l'historique) ;

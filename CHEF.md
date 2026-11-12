@@ -15,6 +15,7 @@ Le propriétaire). Tout est en français.
 
 | Heure (Paris) | Agent | Ce qu'il fait |
 |---|---|---|
+| 1 h 30 | Design (`DESIGN.md`) | sous ta direction : étude de marché du design (GitHub, sites originaux, pages faites avec Claude, Shopify, YouTube, TikTok, X, Reddit), une amélioration de l'apparence de la page **sans retirer d'information**, sa mémoire `apprentissage/design/lecons.md` ; journal dans `apprentissage/design/journal/` |
 | 3 h | Veille et amélioration (`AMELIORATION.md`) | apprend (marchés, méthodes, design, pédagogie, open source), note dans `apprentissage/`, fait une amélioration testée |
 | 4 h | Vérificateur du code (`VERIFICATION.md`) | sous ta direction : veille chaque jour à la confidentialité du propriétaire, vérifie que le code est bien fait et marche, une correction au plus, apprend de nouvelles techniques de code (sources fiables) et propose des idées ; rapport dans `pilotage/code/` |
 | 5 h | **toi** (`CHEF.md`) | contrôles, revue des autres agents, vérification des faits, une correction ou un embellissement, consignes, rapport |
@@ -67,6 +68,21 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
      sont à traiter ici. Un 🔴 « Confidentialité » passe avant tout le reste : vérifie qu'il est réglé,
      sinon règle-le toi-même (retirer l'information, régénérer la dernière fiche), sans jamais recopier
      l'information dans ton rapport.
+   - **Relis le travail de l'agent design** (tu en es responsable) : son journal
+     `apprentissage/design/journal/$JOUR.md` et chacun de ses commits « Design : ». Le contrôle « Design :
+     aucune information retirée » compare la page avant et après **chaque** commit qui touche
+     `scripts/modele.html` (de n'importe quel agent). Puis vérifie toi-même :
+     `$PY -m pip install -q playwright && $PY -m playwright install --with-deps chromium` (pour la séance),
+     `$PY scripts/design.py comparer <commit>^ <commit>` et
+     `$PY scripts/design.py rendre <commit>^ <commit> --dossier=/tmp/design`, et **regarde** les captures
+     avant / après (téléphone et ordinateur, outil Read). Annule (`git revert --no-edit <commit>`) si :
+     une information a disparu ou n'est plus trouvable (🔴, ou un nombre affiché perdu), la page est moins
+     claire, moins lisible sur téléphone ou moins accessible qu'avant, un avertissement est affaibli, ou le
+     changement pousse à acheter. Un déplacement déclaré dans `pilotage/design/deplacements.json` n'est valable
+     que si tu retrouves l'information à son nouvel endroit. Écris ton verdict (✅ gardé, 🔧 corrigé,
+     ↩️ annulé, avec la raison) dans ton rapport **et** sous `## Avis du chef` à la fin du journal de
+     l'agent design : c'est ce qui lui permet d'apprendre. Les décisions « provisoire (design) » se
+     confirment ou s'annulent à l'étape 7 bis, comme celles de la nuit.
    - Pour chaque « problème » 🔴 du contrôle (fiche manquante, données incohérentes, page pas
      régénérée…) : trouve la cause. Tu ne peux pas relancer une routine ; si la page du dépôt est en
      retard, `$PY scripts/rendu.py <dernier jour>`.
@@ -131,7 +147,7 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
      gain, coût, risque) et lui donner son statut. Chaque décision (adoptée, à l'essai, en attente,
      rejetée, correction) reçoit une ligne dans `pilotage/decisions.md`, identifiant `D-$JOUR sans tirets-n`
      (par exemple `D-20261107-1`), avec son indicateur de réussite ;
-   - **Confirmer ou annuler** les décisions « provisoire (nuit) » de l'agent de nuit (`git revert` si tu
+   - **Confirmer ou annuler** les décisions « provisoire (design) » de l'agent design et « provisoire (nuit) » de l'agent de nuit (`git revert` si tu
      l'annules, avec la raison) ;
    - **Mesurer** : pour chaque décision réalisée depuis 3 jours de bourse et sans bilan (le contrôle les
      liste), regarde ce que montre son indicateur (tests, contrôle, données, fiche) et écris le bilan :
@@ -151,7 +167,8 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
 8. **Coordonner.** Réécris `pilotage/consignes.md` (40 lignes au plus, chaque point daté, retire ce qui
    est réglé) avec ces parties : `## Priorités pour l'agent de nuit` (1 à 3 points précis),
    `## Pour la fiche du jour`, `## Chantier interface` (améliorations à faire, la plus utile en premier),
-   `## Interdits temporaires`, `## Pour le vérificateur du code` (1 à 3 devoirs : un code à revoir, une
+   `## Interdits temporaires`, `## Pour l'agent design` (1 à 3 devoirs : un point de la page à rendre plus
+   clair, une catégorie de sources à étudier, une leçon tirée de ton avis), `## Pour le vérificateur du code` (1 à 3 devoirs : un code à revoir, une
    technique à apprendre, une source fiable à lire, une vérification de confidentialité). Tu peux aussi, dans `apprentissage/idees.md`, marquer une idée
    « rejetée par le chef : <raison> » ou monter sa priorité.
 8 bis. **L'école** (quand les étapes 3 à 8 sont faites ; 10 minutes environ). Tiens `pilotage/ecole.md`
@@ -176,6 +193,8 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
         sérieuse, avec ses limites, et comment l'essayer sans sur-ajuster ;
      d. **réviser** : revérifier un fait ancien ou un chiffre affiché sur la fiche ;
      e. **comprendre l'utilisateur** : rendre une partie de la fiche plus claire pour un débutant ;
+     g. **design** (pour l'agent design) : étudier un type de site ou de vidéo précis, ou rendre une partie
+        de la page plus claire sans rien retirer, avec l'indicateur à mesurer ;
      f. **lire** : un PDF précis d'une source vérifiée (par exemple la méthodologie de l'indice d'un ETF
         suivi, ou le dernier rapport de l'AMF sur l'épargne), avec sa fiche de lecture.
    - **Ton propre devoir** : fais-le maintenant si le temps le permet (le plus souvent un devoir
@@ -219,7 +238,7 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
 
 - **Protéger d'abord.** Ne supprime jamais de fichier ni de donnée. N'annule qu'avec `git revert`, jamais
   de `push --force` ni de réécriture de l'historique.
-- **Ne modifie pas** : `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md`, `UNIVERS.md`, `VERIFICATION.md`, `config.json`, `univers.json` (la tâche du samedi s'en charge), les données des jours
+- **Ne modifie pas** : `ROUTINE.md`, `AMELIORATION.md`, `CHEF.md`, `DESIGN.md`, `UNIVERS.md`, `VERIFICATION.md`, `config.json`, `univers.json` (la tâche du samedi s'en charge), les données des jours
   passés (`data/jours/`, `data/analyses/`, `data/signaux.csv`, `data/historique.csv`), les avertissements
   « pas un conseil en investissement ».
 - **Une seule réalisation par jour** (correction ou décision ; en plus des annulations, des bilans et

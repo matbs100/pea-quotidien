@@ -44,27 +44,34 @@ RANG_MOMENT = {"ouverture": 0, "cloture": 1}
 
 # Fichiers que chaque agent ne doit pas modifier (le chef juge les cas limites)
 HORS_ROLE = {  # mes-investissements.md : tenu par le propriétaire seul, aucun agent n'y touche
-    "fiche": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "ARCHITECTURE.md", "config.json",
+    "fiche": ["DESIGN.md", "scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "ARCHITECTURE.md", "config.json",
               "pilotage/*", "apprentissage/*", "mes-investissements.md", "guide/*"],
-    "nuit": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "config.json", "pilotage/*", "data/*",
+    "nuit": ["DESIGN.md", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "config.json", "pilotage/*", "data/*",
              "mes-investissements.md", "guide/*"],
-    "chef": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "config.json", "data/jours/*",
+    "chef": ["DESIGN.md", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "config.json", "data/jours/*",
              "data/analyses/*", "data/signaux.csv", "data/historique.csv", "mes-investissements.md", "guide/*"],
-    "univers": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "ARCHITECTURE.md",
+    "univers": ["DESIGN.md", "scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "ARCHITECTURE.md",
                 "config.json", "data/*", "docs/*", "notes/*", "apprentissage/*", "mes-investissements.md",
                 "guide/*", "pilotage/*"],
     # vérificateur du code : code, tests, documentation, son rapport et son journal ; jamais les données
-    "code": ["AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "config.json",
+    "code": ["DESIGN.md", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "config.json",
              "univers.json", "data/*", "pilotage/*", "apprentissage/*", "mes-investissements.md", "guide/*"],
+    # agent design : seulement l'apparence de la page (modele.html), la page régénérée, son étude et son journal
+    "design": ["scripts/*", "AMELIORATION.md", "CHEF.md", "ROUTINE.md", "UNIVERS.md", "VERIFICATION.md", "DESIGN.md",
+               "ARCHITECTURE.md", "config.json", "univers.json", "data/*", "pilotage/*", "apprentissage/*",
+               "mes-investissements.md", "guide/*", "descriptions.json"],
 }
 # exceptions : idées proposées (fiche, samedi, vérificateur) ; pistes et décisions provisoires (nuit)
 PERMIS = {"fiche": ["apprentissage/idees.md", "pilotage/notification.json"],  # notification à renvoyer par le Mac
           "nuit": ["pilotage/candidats.md", "pilotage/decisions.md"],
           "univers": ["pilotage/candidats.md", "apprentissage/idees.md"],
-          "code": ["apprentissage/idees.md", "apprentissage/lectures/README.md", "pilotage/sources-verifiees.md"]}
+          "code": ["apprentissage/idees.md", "apprentissage/lectures/README.md", "pilotage/sources-verifiees.md"],
+          "design": ["scripts/modele.html", "apprentissage/idees.md", "apprentissage/CHANGELOG.md",
+                     "pilotage/decisions.md", "pilotage/candidats.md"]}
 PERMIS_MOTIFS = {"univers": ["pilotage/univers/*"],
-                 "code": ["pilotage/code/*", "apprentissage/code/*", "apprentissage/lectures/*"]}
-MAX_LIGNES = {"nuit": 300, "chef": 250, "code": 200}   # lignes de code modifiées par passage
+                 "code": ["pilotage/code/*", "apprentissage/code/*", "apprentissage/lectures/*"],
+                 "design": ["pilotage/design/*", "apprentissage/design/*"]}
+MAX_LIGNES = {"nuit": 300, "chef": 250, "code": 200, "design": 200}   # lignes de code modifiées par passage
 
 
 def controle(nom, titre, niveau, resume, details=None):
@@ -486,6 +493,8 @@ def agent_du_commit(message):
         return "univers"
     if message.startswith("Code :"):
         return "code"
+    if message.startswith("Design :"):
+        return "design"
     if message.startswith("Revert"):
         return "annulation"
     return "autre"
@@ -648,6 +657,35 @@ def commit_sans_decision(agent, message, chemins, decisions):
     return not any(i in decisions for i in ID_DECISION.findall(message))
 
 
+def c_design(heures=30):
+    """Chaque commit des dernières heures qui touche la page (scripts/modele.html), quel que soit son
+    agent : aucune information retirée (titres, champs, avertissements…), contraste et accessibilité
+    pas dégradés (scripts/design.py)."""
+    titre = "Design : aucune information retirée de la page"
+    try:
+        import design
+    except ImportError:
+        return controle("design", titre, "non_verifiable", "scripts/design.py absent")
+    shas = git("log", f"--since={heures} hours ago", "--format=%H", "--", "scripts/modele.html").split()
+    if not shas:
+        return controle("design", titre, "ok", "page inchangée depuis 30 h")
+    cles, pb, al, vus = design.cles_des_donnees(), [], [], []
+    for sha in reversed(shas):
+        message = message_affiche(git("log", "-1", "--format=%s", sha).strip())
+        avant = git("show", f"{sha}^:scripts/modele.html")
+        if not avant:
+            continue
+        niveau, lignes = design.comparer_modeles(avant, git("show", f"{sha}:scripts/modele.html"), sha[:7], cles)
+        entete = f"{sha[:7]} « {message[:50]} »"
+        pb += [f"{entete} : {x[2:]}" for x in lignes if x.startswith("🔴")]
+        al += [f"{entete} : {x[2:]}" for x in lignes if x.startswith("🟠")]
+        vus.append(f"{entete} : {['rien de retiré', 'à revoir', 'information retirée'][niveau]}")
+    al, levees = appliquer_verifications(al, None, lire_verifications()) if al else (al, [])
+    niveau = "probleme" if pb else "alerte" if al else "ok"
+    return controle("design", titre, niveau, f"{len(shas)} changement(s) de la page, {len(pb)} retrait(s), "
+                    f"{len(al)} point(s) à revoir", pb + al + levees + vus)
+
+
 def c_decisions(d, heures=30):
     titre = "Méthode de décision"
     decisions = lire_decisions(lire(RACINE / "pilotage" / "decisions.md"))
@@ -729,7 +767,7 @@ def main():
             controles.append(x or controle(nom, nom, "non_verifiable", "non vérifié (hors ligne)"))
     else:
         controles += [c_prix(d, maintenant), c_liens(d), c_site(d)]
-    controles += [c_documentation(d, maintenant), c_agents(d), c_decisions(d), c_lectures(d), c_confidentialite(d)]
+    controles += [c_documentation(d, maintenant), c_agents(d), c_design(), c_decisions(d), c_lectures(d), c_confidentialite(d)]
     pire_niveau = pire(c["niveau"] for c in controles)
     etat = {"probleme": "rouge", "alerte": "orange"}.get(pire_niveau, "vert")
     sortie = {"genere_le": maintenant.isoformat(timespec="minutes"), "fiche": f"{d['date']} ({d.get('moment')})",

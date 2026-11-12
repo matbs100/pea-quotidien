@@ -288,8 +288,8 @@ def simulation_mensuelle(serie, mensuel=50, ans=5):
             "perf": round((valeur / verse - 1) * 100, 1), "debut": pts[0][0].isoformat()}
 
 
-def main():
-    jour = sys.argv[1]
+def donnees_du_jour(jour):
+    """Données de la fiche du jour, complétées comme la page les lit. Renvoie (d, analyse)."""
     d = json.loads((DATA / "jours" / f"{jour}.json").read_text(encoding="utf-8"))
     fa = DATA / "analyses" / f"{jour}.md"
     analyse = fa.read_text(encoding="utf-8") if fa.exists() else ""
@@ -331,10 +331,22 @@ def main():
         d["taux_bce"] = taux.mesurer()
     except Exception:
         pass
-    modele = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
+    return d, analyse
+
+
+def page_html(d, modele=None):
+    """Page autonome : le modèle (scripts/modele.html par défaut) rempli avec les données."""
+    if modele is None:
+        modele = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
     donnees = json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = modele.replace("/*__DONNEES__*/", donnees)
-    page = page.replace("'__EMPREINTE_SCRIPT__'", empreintes_scripts(page))
+    return page.replace("'__EMPREINTE_SCRIPT__'", empreintes_scripts(page))
+
+
+def main():
+    jour = sys.argv[1]
+    d, analyse = donnees_du_jour(jour)
+    page = page_html(d)
     (DOCS / "archives").mkdir(parents=True, exist_ok=True)
     (DOCS / "archives" / f"{jour}.html").write_text(page.replace('href="archives/"', 'href="./"'), encoding="utf-8")
     dernier = max(p.stem for p in (DATA / "jours").glob("20*.json"))

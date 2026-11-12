@@ -921,6 +921,35 @@ def fiche_de_secours():
     assert s.analyse_auto({**d, "moment": "ouverture"}, {}).startswith("*Premiers cours")
 
 
+@test
+def design_sans_perte_d_information():
+    """Agent design : retirer un titre, un champ de données ou un avertissement de la page est signalé 🔴,
+    un déplacement déclaré dans pilotage/design/deplacements.json est accepté, un contraste trop faible aussi signalé."""
+    import controle as c
+    import design as g
+    assert c.agent_du_commit("Design : cartes plus lisibles [D-20261113-1]") == "design"
+    pb, al = c.ecarts_aux_regles("design", [("M", "scripts/modele.html", 40), ("A", "apprentissage/design/etudes/x.md", 9)],
+                                 "2026-11-13", "2026-11-12")
+    assert not pb and not al, (pb, al)
+    _, al = c.ecarts_aux_regles("design", [("M", "scripts/collecte.py", 3)], "2026-11-13", "2026-11-12")
+    assert al and "hors du rôle" in al[0]
+    theme = (":root{--bg: #ffffff; --surface: #ffffff; --ink: #111111; --muted: #555555; --accent: #17795a; "
+             "--up: #17795a; --down: #b8392c;}")
+    avant = ("<style>" + theme + "</style><body><section><h2>Les marchés</h2><p>Pas un conseil en investissement</p>"
+             "<div id=\"indices\"></div></section><script>x(d.indices, m.var_1j)</script></body>")
+    cles = {"indices", "var_1j", "prix"}
+    assert g.comparer_modeles(avant, avant, "", cles)[0] == 0
+    apres = avant.replace("<h2>Les marchés</h2>", "").replace("m.var_1j", "m.autre")
+    niveau, lignes = g.comparer_modeles(avant, apres, "", cles)
+    assert niveau == 2 and any("titre retiré" in x for x in lignes) and any("champ retiré : var_1j" in x for x in lignes)
+    assert g.comparer_modeles(avant, avant.replace("Pas un conseil en investissement", ""), "", cles)[0] == 2
+    assert g.comparer_modeles(avant, avant.replace("--muted: #555555", "--muted: #dddddd"), "", cles)[0] == 2
+    assert g.comparer_modeles(avant, avant.replace("<p>", "<p><img src=\"https://cdn.example/x.png\" alt=\"\">"), "", cles)[0] == 2
+    assert g.contraste("#000000", "#ffffff") == 21.0
+    inv = g.inventaire((SCRIPTS / "modele.html").read_text(encoding="utf-8"))
+    assert "Top 30 éligible PEA" in inv["titre"] and "top30" in inv["champ"] and inv["avertissement"], "inventaire de la vraie page"
+
+
 def main():
     echecs = 0
     for f in TESTS:
