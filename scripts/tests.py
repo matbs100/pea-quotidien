@@ -593,6 +593,18 @@ def controle_du_chef():
     pb, _ = c.anomalies_donnees(abime)
     for morceau in ("29 titres", "prix invalide", "moins de 2 €"):
         assert any(morceau in x for x in pb), f"anomalie non repérée : {morceau}"
+    # lien Yahoo en 404 depuis le cloud : toléré seulement si le symbole a des cours collectés
+    y = "https://finance.yahoo.com/quote/%s/"
+    d3 = {"date": "2026-11-05", "top30": [titre("OK.PA", "etf")], "petites": [],
+          "details": {"OK.PA": {"j": {"o": [0, 1]}, "liens": {"Yahoo Finance": y % "OK.PA"}},
+                      "KO.PA": {"j": {"o": []}, "liens": {"Yahoo Finance": y % "KO.PA"}}}}
+    vrai = c.verifier_lien
+    c.verifier_lien = lambda lib, url, info: ("casse", "page introuvable (404)")
+    try:
+        r3 = c.c_liens(d3, k=2)
+    finally:
+        c.verifier_lien = vrai
+    assert any("KO.PA" in x for x in r3["details"]) and not any("OK.PA" in x for x in r3["details"]), r3
     # chiffres de l'analyse comparés aux données (arrondi toléré, chiffres sur un mois ignorés)
     d2 = {"indices": [{"nom": "CAC 40", "var_1j": 0.34}, {"nom": "S&P 500", "var_1j": -4.36}]}
     assert c.chiffres_incoherents("CAC 40 **+0,34 %**, S&P 500 **−4,4 %**.", d2) == []

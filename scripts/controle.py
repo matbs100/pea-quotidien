@@ -344,6 +344,11 @@ def c_liens(d, k=8):
     for t in choix:
         for lib, url in (det[t].get("liens") or {}).items():
             statut, pourquoi = verifier_lien(lib, url, det[t].get("infos") or {})
+            if (statut == "casse" and "finance.yahoo.com/quote/" in url
+                    and (det[t].get("j") or {}).get("o")):
+                # la page HTML de Yahoo répond 404 aux adresses du cloud, mais le symbole a bien donné
+                # un historique de cours à la collecte (et l'API de Yahoo est interdite par son robots.txt)
+                statut, pourquoi = "non_controle", "page Yahoo en 404 depuis le cloud, symbole valide (cours collectés)"
             compte[statut] = compte.get(statut, 0) + 1
             if statut in ("casse", "revoir"):
                 details.append(f"{t} · {lib} : {pourquoi} ({url})")

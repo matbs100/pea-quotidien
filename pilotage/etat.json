@@ -1,15 +1,15 @@
 {
- "genere_le": "2026-11-11T12:37+01:00",
- "fiche": "2026-11-11 (ouverture)",
+ "genere_le": "2026-11-12T05:13+01:00",
+ "fiche": "2026-11-11 (cloture)",
  "lieu": "cloud",
  "etat": "rouge",
- "resume": "À corriger. 32/32 tests, 27/28 liens valides, site à jour. Points à voir : cohérence des données, liens des fiches détaillées, travail des agents (30 dernières heures), méthode de décision.",
+ "resume": "À corriger. 35/35 tests, 8/8 prix revérifiés, 26/28 liens valides, site à jour. Points à voir : liens des fiches détaillées, travail des agents (30 dernières heures).",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "32/32 tests réussis",
+   "resume": "35/35 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf"
    ]
@@ -20,54 +20,45 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-11 (ouverture), générée le 2026-11-11T09:19+01:00",
-    "fiche attendue à cette heure : 2026-11-11 (ouverture)"
+    "dernière fiche : 2026-11-11 (cloture), générée le 2026-11-11T17:59+01:00",
+    "fiche attendue à cette heure : 2026-11-11 (cloture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "alerte",
-   "resume": "59 cours examinés, 0 problème(s), 9 alerte(s) ; entre sources : 53 confirmés, 1 écart(s)",
-   "details": [
-    "FOO.PA : cours daté du 2026-11-09, pas du 2026-11-11",
-    "INS.PA : cours daté du 2026-11-09, pas du 2026-11-11",
-    "HLT.PA : cours daté du 2026-11-09, pas du 2026-11-11",
-    "CD8.PA : cours daté du 2026-11-09, pas du 2026-11-11",
-    "UTI.PA : cours daté du 2026-11-09, pas du 2026-11-11",
-    "PINR.PA : cours daté du 2026-11-09, pas du 2026-11-11",
-    "PLEM.PA : cours daté du 2026-11-09, pas du 2026-11-11",
-    "PCEU.PA : cours daté du 2026-11-09, pas du 2026-11-11",
-    "ALAGO.PA : cours daté du 2026-11-09, pas du 2026-11-11"
-   ]
+   "niveau": "ok",
+   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 53 confirmés, 0 écart(s)",
+   "details": []
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "297 mots, 0 remarque(s)",
+   "resume": "339 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-11 (ouverture)",
+   "resume": "régénérée avec la fiche du 2026-11-11 (cloture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "non_verifiable",
-   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
+   "niveau": "ok",
+   "resume": "8/8 prix identiques sur Boursorama",
    "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "probleme",
-   "resume": "27/28 liens valides sur 8 titres, 4 non ouverts (robots.txt)",
+   "resume": "26/28 liens valides sur 8 titres, 4 non ouverts (robots.txt)",
    "details": [
+    "FOO.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/FOO.PA/)",
     "CD8.PA · Yahoo Finance : page introuvable (404) (https://finance.yahoo.com/quote/CD8.PA/)"
    ]
   },
@@ -75,7 +66,7 @@
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-11 (ouverture)",
+   "resume": "le site affiche la fiche du 2026-11-11 (cloture)",
    "details": []
   },
   {
@@ -84,52 +75,41 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "24 connaissance(s) en attente de vérification (⏳)",
-    "4 connaissance(s) non vérifiable(s) (❔)"
+    "27 connaissance(s) en attente de vérification (⏳)",
+    "5 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
   {
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "alerte",
-   "resume": "17 commit(s), 0 problème(s), 3 alerte(s)",
+   "resume": "16 commit(s), 0 problème(s), 1 alerte(s)",
    "details": [
     "603ec85 « Amélioration : carte « Mois par mois » dans la fic » : docs/archives/2026-11-10.html : fiche d'un jour passé régénérée",
-    "ceb6c31 « Amélioration : encadré « Le contexte des taux » de » : data/taux_bce.json : hors du rôle de l'agent « nuit »",
-    "ceb6c31 « Amélioration : encadré « Le contexte des taux » de » : docs/archives/2026-11-10.html : fiche d'un jour passé régénérée",
+    "f0570f5 [code] Code : gain de l'idée 40 corrigé (2,00) pour que le test de la méthode",
+    "2ab962e [code] Code : rapport du 2026-11-12 (vert)",
+    "e614895 [nuit] Amélioration : comparer deux titres en base 100 dans le graphique [D-2",
+    "26cc723 [autre] la fiche Claude ne remplace plus la fiche autonome ; autonome/ et docs",
+    "3886019 [autre] fiche de secours sans Claude par GitHub Actions (scripts/secours.py, a",
+    "c701395 [autre] GitHub Actions renvoie la notification refusée par ntfy au cloud (secr",
+    "4b790a8 [autre] résumés Obsidian écrits par le chef (scripts/obsidian.py), plus de cop",
+    "c6bd2e1 [fiche] Matin PEA 2026-11-11 (cloture) : notification à renvoyer",
+    "b5856fe [fiche] Matin PEA 2026-11-11 (cloture)",
+    "4f96f74 [chef] Chef : passage de mi-journée du 2026-11-11 (orange)",
     "c453e08 [fiche] Matin PEA 2026-11-11 (ouverture) : notification à renvoyer",
     "8d01431 [fiche] Matin PEA 2026-11-11 (ouverture)",
     "94caa41 [chef] Chef : rapport du 2026-11-11 (orange)",
     "7bc72c1 [code] Code : gain de l'idée 37 corrigé (2,05) [correctif]",
     "b0f8fbe [code] Code : rapport du 2026-11-11 (vert)",
-    "603ec85 [nuit] Amélioration : carte « Mois par mois » dans la fiche d'un titre [D-202",
-    "27ba71b [fiche] Matin PEA 2026-11-10 (cloture) : notification à renvoyer",
-    "0d0d4b6 [fiche] Matin PEA 2026-11-10 (cloture)",
-    "21884ed [chef] Chef : passage de mi-journée du 2026-11-10 (orange)",
-    "54390f0 [autre] notification refusée par ntfy au cloud (quota par adresse partagée) re",
-    "bbcb69c [autre] taux.py compatible avec Python 3.9 (Mac) ; test compatible_python_39 ;",
-    "40214e2 [autre] historique Git nettoyé, point de confidentialité clos dans les rapport",
-    "c36d281 [chef] Chef : passage de 10 h du 2026-11-10 (orange) ; revue de l'encadré BCE",
-    "a96555f [code] Code : rapport du 2026-11-10 passage de 4 h (vert) ; taux.py : zip exp",
-    "ceb6c31 [nuit] Amélioration : encadré « Le contexte des taux » de la BCE [D-20261110-",
-    "9a41c4c [autre] le contrôle de confidentialité lit aussi le site depuis le Mac (reques",
-    "964c49e [fiche] Matin PEA 2026-11-10 (ouverture)"
+    "603ec85 [nuit] Amélioration : carte « Mois par mois » dans la fiche d'un titre [D-202"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "alerte",
-   "resume": "26 décisions, 6 à réaliser, 7 point(s) à voir",
-   "details": [
-    "bilan à faire : D-20261106-1 (n° 22 · Fonds Wealins dans « Mes investissements »)",
-    "bilan à faire : D-20261106-3 (Méthode de décision et journal des décisions)",
-    "bilan à faire : D-20261106-4 (n° 3 · Simulateur « 50 € par mois depuis 5 ans »)",
-    "bilan à faire : D-20261106-8 (n° 1 · Ratios de Sharpe et de Sortino)",
-    "bilan à faire : D-20261106-13 (Lectures des agents : PDF de sources vérifiées, fi)",
-    "bilan à faire : D-20261107-1 (n° 25 · Avertissement des ETF à effet de levier al)",
-    "bilan à faire : D-20261108-1 (Chantier interface : textes des notes, astuces, li)"
-   ]
+   "niveau": "ok",
+   "resume": "29 décisions, 6 à réaliser, 0 point(s) à voir",
+   "details": []
   },
   {
    "nom": "lectures",

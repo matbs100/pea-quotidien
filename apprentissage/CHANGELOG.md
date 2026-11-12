@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-12 · Contrôle qualité : les liens Yahoo ne sont plus signalés à tort
+- Depuis le cloud, la page HTML de Yahoo Finance répond « 404 » pour des symboles pourtant valides (FOO.PA, CD8.PA). Le contrôle quotidien ne les compte plus comme cassés quand le symbole a bien des cours collectés : plus de faux rouge. Aucun effet sur la fiche. Décision D-20261112-1.
+
 ## 2026-11-12 · Comparer deux titres (base 100) dans le graphique
 - Dans la fiche d'un titre, sous « Historique du prix », un menu « Comparer avec… » ajoute la courbe d'un autre placement : les deux courbes partent de 100 au début de la période choisie (1 mois à 5 ans), pour voir lequel a le plus progressé. Touche le graphique pour les deux valeurs d'un jour. Comparaison du passé : ni prévision ni conseil. Inspiration : comparateurs base 100 des outils de suivi de portefeuille. Décision D-20261106-7.
 

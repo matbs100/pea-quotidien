@@ -273,7 +273,7 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `cours_comparables(d, maintenant)` | vrai si aucune séance n'a eu lieu depuis la clôture de la fiche |
 | `c_prix(d, maintenant, n)` | revérifie 8 prix tirés au sort sur Boursorama |
 | `verifier_lien(lib, url, info)` | un lien de fiche : page existante, bon titre (ISIN ou symbole), robots.txt respecté |
-| `c_liens(d, k)` | tous les liens de 8 titres tirés au sort chaque jour (dont 4 ETF) |
+| `c_liens(d, k)` | tous les liens de 8 titres tirés au sort chaque jour (dont 4 ETF) ; un lien Yahoo en 404 depuis le cloud n'est pas « cassé » si le symbole a des cours collectés |
 | `donnees_de_page(html)` | extrait les données JSON d'une page de la fiche |
 | `c_page_depot(d)` | `docs/index.html` montre-t-elle la dernière fiche ? |
 | `c_site(d)` | le site en ligne montre-t-il la dernière fiche ? |

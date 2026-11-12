@@ -34,6 +34,7 @@ Les jours de bourse, un **second passage à 12 h 30** répare ce qui ne va pas a
 
 ## Rapports
 
+- [2026-11-12](rapports/2026-11-12.md) · 🟠
 - [2026-11-11](rapports/2026-11-11.md) · 🟠
 - [2026-11-10](rapports/2026-11-10.md) · 🟠
 - [2026-11-09](rapports/2026-11-09.md) · 🟠
