@@ -10,6 +10,7 @@ dans [[Finance/PEA Quotidien/pilotage/sources-verifiees|les sources vérifiées]
 vérifier » jusqu'à la relecture du chef.
 
 ## Journal
+- [[Finance/PEA Quotidien/apprentissage/code/2026-11-12|12/11/2026]] : OWASP CSP (défense en profondeur), symboles Yahoo vérifiés
 - [[Finance/PEA Quotidien/apprentissage/code/2026-11-11|11/11/2026]] : versions PyPI, CSP selon MDN
 - [2026-11-10-nuit](2026-11-10-nuit.md) · zip strict, versions des bibliothèques
 
