@@ -605,6 +605,21 @@ def controle_du_chef():
     finally:
         c.verifier_lien = vrai
     assert any("KO.PA" in x for x in r3["details"]) and not any("OK.PA" in x for x in r3["details"]), r3
+    # page régénérée : la dernière fiche connue au moment du commit est permise, pas les plus anciennes
+    jrs = ["2026-11-10", "2026-11-11", "2026-11-12"]
+    assert c.jour_de_reference(jrs, "2026-11-12") == "2026-11-11"
+    assert c.jour_de_reference(jrs, "2026-11-14") == "2026-11-12", "samedi : la fiche du vendredi"
+    assert c.ecarts_aux_regles("chef", [("M", "docs/archives/2026-11-11.html", 4)], "2026-11-12", "2026-11-11") == ([], [])
+    assert c.ecarts_aux_regles("chef", [("M", "docs/archives/2026-11-10.html", 4)], "2026-11-12", "2026-11-11")[1]
+    # alertes vérifiées par le chef : levées seulement avec une preuve, le bon jour, jamais un problème
+    vf = [{"alerte": "P0.PA : cours daté", "jour": "2026-11-05", "preuve": "Boursorama ouvert : aucun échange le 05/11", "le": "2026-11-05"},
+          {"alerte": "P1.PA : cours daté", "jour": "2026-11-05", "preuve": "court"},
+          {"alerte": "régénérée", "jour": "abc1234", "preuve": "nouveau gabarit, données du jour inchangées", "le": "2026-11-05"}]
+    al = ["P0.PA : cours daté du 2026-11-04, pas du 2026-11-05", "P1.PA : cours daté du 2026-11-04, pas du 2026-11-05"]
+    reste, levees = c.appliquer_verifications(al, "2026-11-05", [v for v in vf if len(v["preuve"]) >= 20])
+    assert reste == [al[1]] and len(levees) == 1, (reste, levees)
+    assert c.appliquer_verifications(al[:1], "2026-11-06", vf[:1])[0] == al[:1], "vérification d'un autre jour"
+    assert c.appliquer_verifications(["abc1234 « x » : notes/a.md : fiche régénérée"], "abc1234", vf)[0] == []
     # chiffres de l'analyse comparés aux données (arrondi toléré, chiffres sur un mois ignorés)
     d2 = {"indices": [{"nom": "CAC 40", "var_1j": 0.34}, {"nom": "S&P 500", "var_1j": -4.36}]}
     assert c.chiffres_incoherents("CAC 40 **+0,34 %**, S&P 500 **−4,4 %**.", d2) == []

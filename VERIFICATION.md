@@ -80,6 +80,9 @@ Tes quatre missions, dans cet ordre :
    liens https seulement, politique de sécurité de la page intacte, aucun `eval`, aucun secret), lisible,
    testé (un test pour chaque nouvelle fonction de calcul) et décrit dans `ARCHITECTURE.md` ? Note pour
    chacun ✅ bon, 🔧 corrigé par toi ou ⚠️ à voir par le chef. Tu n'annules rien : c'est le rôle du chef.
+   Relis aussi les entrées ajoutées à `pilotage/verifie.json` depuis hier (alertes levées par le chef) :
+   chaque preuve doit être concrète (source ouverte, constat) et l'alerte vraiment sans gravité ; sinon ⚠️ à
+   voir par le chef, avec la raison.
 
 5. **Une correction au plus**, 200 lignes modifiées au plus, dans cet ordre de priorité : une fuite
    d'information, un test qui échoue, un bug trouvé à l'étape 3 ou 4, une faille signalée par

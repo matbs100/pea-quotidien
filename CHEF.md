@@ -182,8 +182,24 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
      « nouveaux fonds » ou « réviser »), sinon reporte-le. Ce que tu apprends va dans
      `apprentissage/connaissances/` avec son statut, comme pour l'agent de nuit.
    Au passage de mi-journée, ne donne pas de devoirs : fais seulement le tien si tout le reste va bien.
-9. **Rapport.** Écris `pilotage/rapports/$JOUR.md` (400 mots au plus), avec un en-tête `date` et
-   `etat`, puis ces parties : `## État général` (🟢, 🟠 ou 🔴 et deux phrases), `## Contrôles` (le
+9. **Viser le vert, puis rapport.** Ton travail est réussi quand le contrôle est 🟢 « Tout est en
+   ordre » : un 🟠 « À surveiller » sur la fiche veut dire que tu n'as pas fini. Avant d'écrire, relance
+   `$PY scripts/controle.py --hors-ligne` et reprends **chaque** alerte 🟠 restante, une par une :
+   - **corrige-la** si le programme est en cause (étape 7 : elle passe avant toute autre réalisation) ;
+   - sinon **vérifie-la toi-même** : ouvre une source (Boursorama, Euronext, site de l'émetteur) pour un
+     cours ancien ou un gros mouvement, `git show <commit>` pour un commit d'agent. Si la donnée est juste
+     ou le commit sans danger, ajoute à `pilotage/verifie.json` une entrée
+     `{"alerte": "<morceau exact du texte de l'alerte>", "jour": "<date de la fiche, ou les 7 premiers
+     caractères du commit>", "preuve": "<ce que tu as ouvert et constaté, avec la source>", "le": "$JOUR"}`.
+     Le contrôle la compte alors ✔ vérifiée (preuve de 20 caractères au moins ; jamais pour un 🔴 ;
+     valable pour ce jour ou ce commit seulement, donc les entrées anciennes ne servent plus) ;
+   - si tu ne peux ni corriger ni prouver (source bloquée, donnée vraiment fausse), **laisse l'alerte** :
+     n'écris jamais une preuve que tu n'as pas constatée. Explique-la dans le rapport et donne au
+     vérificateur du code ou à la fiche la consigne qui l'empêchera demain.
+   Relance le contrôle jusqu'au vert. Le vérificateur du code relit `pilotage/verifie.json` chaque jour.
+   Écris ensuite `pilotage/rapports/$JOUR.md` (400 mots au plus), avec un en-tête `date` et
+   `etat`, puis ces parties : `## État général` (🟢, 🟠 ou 🔴 et deux phrases ; si ce n'est pas 🟢,
+   chaque alerte restante et pourquoi tu n'as pas pu la régler), `## Contrôles` (le
    tableau du contrôle), `## Revue des agents` (pour chaque commit : ✅ gardé, 🔧 corrigé ou ↩️ annulé,
    avec la raison), `## Connaissances vérifiées`, `## Lectures` (fiches relues, sources ajoutées),
    `## Prix et liens`, `## Publication et Obsidian`,

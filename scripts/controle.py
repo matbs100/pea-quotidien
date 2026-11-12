@@ -29,6 +29,7 @@ from zoneinfo import ZoneInfo
 RACINE = Path(__file__).resolve().parent.parent
 DATA = RACINE / "data"
 ETAT = RACINE / "pilotage" / "etat.json"
+VERIFIE = RACINE / "pilotage" / "verifie.json"   # alertes 🟠 vérifiées par le chef, preuve à l'appui
 PARIS = ZoneInfo("Europe/Paris")
 sys.path.insert(0, str(RACINE / "scripts"))
 
@@ -120,6 +121,32 @@ def c_fraicheur(d, maintenant):
     return controle("fraicheur", titre, "ok", "la dernière fiche est bien celle attendue", details)
 
 
+# ---------- alertes vérifiées par le chef (pilotage/verifie.json) ----------
+
+def lire_verifications():
+    """Entrées valides : {"alerte": morceau du texte de l'alerte, "jour": date de la fiche ou du commit,
+    "preuve": source ouverte ou raison concrète (20 caractères au moins), "le": date de la vérification}."""
+    try:
+        brut = json.loads(lire(VERIFIE) or "[]")
+    except ValueError:
+        return []
+    return [v for v in brut if isinstance(v, dict) and len(str(v.get("alerte", ""))) >= 8
+            and len(str(v.get("preuve", "")).strip()) >= 20 and v.get("jour")]
+
+
+def appliquer_verifications(alertes, jour, verifs):
+    """Sépare les alertes en (restantes, vérifiées). Seule une alerte (jamais un problème 🔴) peut être
+    levée, par une entrée du même jour (fiche ou commit) dont le texte figure dans l'alerte."""
+    restantes, levees = [], []
+    for a in alertes:
+        v = next((v for v in verifs if v["alerte"] in a and v["jour"] in (jour, a[:7])), None)
+        if v:
+            levees.append(f"✔ vérifié par le chef le {v.get('le', '?')} : {a} — {v['preuve']}")
+        else:
+            restantes.append(a)
+    return restantes, levees
+
+
 # ---------- données et analyse ----------
 
 def anomalies_donnees(d):
@@ -179,13 +206,16 @@ def anomalies_donnees(d):
 
 def c_donnees(d):
     pb, al = anomalies_donnees(d)
+    al, levees = appliquer_verifications(al, d["date"], lire_verifications())
     n = sum(len(d.get(g, [])) for g in ("indices", "devises", "matieres", "top30", "petites"))
     niveau = "probleme" if pb else "alerte" if al else "ok"
     cs = d.get("controle_sources") or {}
     resume = f"{n} cours examinés, {len(pb)} problème(s), {len(al)} alerte(s)"
     if cs:
         resume += f" ; entre sources : {cs.get('ok', 0)} confirmés, {cs.get('ecart', 0)} écart(s)"
-    return controle("donnees", "Cohérence des données", niveau, resume, pb + al)
+    if levees:
+        resume += f" ; {len(levees)} vérifiée(s) par le chef"
+    return controle("donnees", "Cohérence des données", niveau, resume, pb + al + levees)
 
 
 def chiffres_incoherents(analyse, d):
@@ -495,6 +525,13 @@ def ecarts_aux_regles(agent, fichiers, jour_commit, dernier_jour):
     return pb, al
 
 
+def jour_de_reference(jours, jour_commit):
+    """Dernière fiche existante au moment d'un commit : celle du jour même ou, sinon, la plus récente
+    d'avant. La régénérer (nouveau gabarit, vérification du rendu) est normal ; les plus anciennes, non."""
+    avant = [j for j in jours if j < jour_commit]
+    return max(avant) if avant else jour_commit
+
+
 def git(*args):
     return subprocess.run(["git", "-C", str(RACINE), *args], capture_output=True, text=True, timeout=60).stdout
 
@@ -502,7 +539,9 @@ def git(*args):
 def c_agents(d, heures=30):
     titre = "Travail des agents (30 dernières heures)"
     journal = git("log", f"--since={heures} hours ago", "--format=%H%x1f%aI%x1f%s")
-    pb, al, vus = [], [], []
+    pb, al, vus, levees = [], [], [], []
+    verifs = lire_verifications()
+    jours = [f.stem for f in (DATA / "jours").glob("20*.json")]
     for ligne in filter(None, journal.splitlines()):
         sha, quand, message = ligne.split("\x1f", 2)
         agent = agent_du_commit(message)
@@ -513,14 +552,18 @@ def c_agents(d, heures=30):
             n = (int(a) if a.isdigit() else 0) + (int(s) if s.isdigit() else 0)
             fichiers.append((statuts.get(chemin, "M"), chemin, n))
         jour = str(datetime.fromisoformat(quand).astimezone(PARIS).date())
-        p, a = ecarts_aux_regles(agent, fichiers, jour, d["date"])
+        p, a = ecarts_aux_regles(agent, fichiers, jour, jour_de_reference(jours, jour))
         m = message_affiche(message)
         pb += [f"{sha[:7]} « {m[:50]} » : {x}" for x in p]
-        al += [f"{sha[:7]} « {m[:50]} » : {x}" for x in a]
+        restantes, lv = appliquer_verifications([f"{sha[:7]} « {m[:50]} » : {x}" for x in a], sha[:7], verifs)
+        al += restantes
+        levees += lv
         vus.append(f"{sha[:7]} [{agent}] {m[:70]}")
     niveau = "probleme" if pb else "alerte" if al else "ok"
     resume = f"{len(vus)} commit(s), {len(pb)} problème(s), {len(al)} alerte(s)"
-    return controle("agents", titre, niveau, resume, pb + al + vus)
+    if levees:
+        resume += f" ; {len(levees)} vérifiée(s) par le chef"
+    return controle("agents", titre, niveau, resume, pb + al + levees + vus)
 
 
 # ---------- méthode de décision (pilotage/decision.md) ----------

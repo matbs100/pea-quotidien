@@ -49,6 +49,7 @@ dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 Les agents ne se parlent pas directement : ils communiquent par des fichiers du dépôt.
 - `pilotage/consignes.md` : les consignes du chef, que les autres agents lisent en premier ;
 - `pilotage/etat.json` : le dernier contrôle, affiché en bas de la fiche ;
+- `pilotage/verifie.json` : les alertes 🟠 que le chef a vérifiées lui-même (preuve à l'appui), comptées ✔ par le contrôle pour ce jour ou ce commit seulement ;
 - `pilotage/rapports/` : un rapport du chef par jour ;
 - `apprentissage/` : ce que l'agent de nuit apprend (journal, idées, connaissances) ;
 - `pilotage/decision.md` et `pilotage/decisions.md` : **la méthode de décision** et son journal. Tous les
@@ -263,6 +264,8 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `lire(chemin)` | lit un fichier, texte vide s'il n'existe pas |
 | `c_tests()` | lance `tests.py` |
 | `fiche_attendue(maintenant)` | quelle fiche devrait être en ligne à cette heure (avec des marges) |
+| `lire_verifications()` | entrées valides de `pilotage/verifie.json` (texte de l'alerte, jour ou commit, preuve de 20 caractères au moins) |
+| `appliquer_verifications(alertes, jour, verifs)` | sépare les alertes restantes de celles vérifiées par le chef pour ce jour ou ce commit (jamais un 🔴) |
 | `c_fraicheur(d, maintenant)` | la dernière fiche est-elle celle attendue, et la clôture postérieure au fixing ? |
 | `anomalies_donnees(d)` | prix impossibles, RSI hors de 0-100, top 30 incomplet, moins de 8 ETF, petits prix ≥ 2 €, cours pas datés du jour… |
 | `c_donnees(d)` | résume `anomalies_donnees` et le contrôle entre sources |
@@ -283,6 +286,7 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `agent_du_commit(message)` | reconnaît l'agent d'après le message de commit (fiche, nuit, chef, univers pour la tâche du samedi) |
 | `message_affiche(message)` | message de commit recopié dans `pilotage/etat.json` (public) : sans le préfixe d'un commit du propriétaire |
 | `ecarts_aux_regles(agent, fichiers, jour_commit, dernier_jour)` | fichiers hors du rôle de l'agent, données passées modifiées, suppressions, taille du changement |
+| `jour_de_reference(jours, jour_commit)` | dernière fiche existante au moment d'un commit : la régénérer est permis, pas les plus anciennes |
 | `git(*args)` | lance une commande Git dans le dépôt |
 | `c_agents(d, heures)` | relit les commits des 30 dernières heures |
 | `lire_decisions(texte)` | lignes du journal `pilotage/decisions.md` (identifiant → colonnes) |

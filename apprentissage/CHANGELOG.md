@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-12 · Contrôle qualité : le chef doit atteindre le vert
+- Une alerte 🟠 « À surveiller » ne reste plus en suspens : le chef la corrige, ou la vérifie lui-même sur une source et l'inscrit avec sa preuve dans `pilotage/verifie.json` ; le contrôle la compte alors ✔ vérifiée. Une alerte non prouvée reste orange, un 🔴 ne peut jamais être levé. Le vérificateur du code relit ces preuves chaque jour. Le contrôle ne signale plus non plus la régénération de la dernière fiche existante au moment du commit (le chef la refait chaque matin pour vérifier le rendu) : seules les pages plus anciennes restent signalées. Décision du propriétaire.
+
 ## 2026-11-12 · Contrôle qualité : les liens Yahoo ne sont plus signalés à tort
 - Depuis le cloud, la page HTML de Yahoo Finance répond « 404 » pour des symboles pourtant valides (FOO.PA, CD8.PA). Le contrôle quotidien ne les compte plus comme cassés quand le symbole a bien des cours collectés : plus de faux rouge. Aucun effet sur la fiche. Décision D-20261112-1.
 
