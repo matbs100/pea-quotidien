@@ -49,15 +49,15 @@
    "source_vl": "Yahoo Finance"
   },
   "LU1832174962": {
-   "prix": 244.26,
-   "date_cours": "2026-11-09",
-   "var_1j": 1.89,
+   "prix": 246.23,
+   "date_cours": "2026-11-10",
+   "var_1j": 0.81,
    "source_vl": "Yahoo Finance"
   },
   "LU0131510165": {
-   "prix": 931.96,
-   "date_cours": "2026-11-09",
-   "var_1j": 0.75,
+   "prix": 937.99,
+   "date_cours": "2026-11-10",
+   "var_1j": 0.65,
    "source_vl": "Yahoo Finance"
   },
   "FR0010354837": {
@@ -67,5 +67,5 @@
    "source_vl": "Yahoo Finance"
   }
  },
- "maj": "2026-11-11"
+ "maj": "2026-11-12"
 }

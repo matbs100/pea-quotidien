@@ -295,7 +295,7 @@
   "boursorama": "1rPALNXT",
   "ft": "ALNXT:PAR",
   "echecs": {
-   "boursorama": 2
+   "boursorama": 3
   }
  },
  "ALENT.PA": {
@@ -515,6 +515,11 @@
  "BN.PA": {
   "boursorama": "1rPBN",
   "ft": "BN:PAR",
+  "echecs": {}
+ },
+ "ETE.AT": {
+  "boursorama": null,
+  "ft": "ETE:ATH",
   "echecs": {}
  }
 }
