@@ -711,6 +711,27 @@ console.log([Object.keys(R).join(","), R[2026][0].toFixed(1), R[2026][1].toFixed
 
 
 @test
+def comparer_deux_titres_base_100():
+    """D-20261106-7 : deux séries ramenées à 100 (node, cas connu) ; avertissement présent."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "function aligner100" in modele and "Comparer avec" in modele and "ni prévision ni conseil" in modele, "comparaison absente"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : comparaison base 100 non exécutée")
+        return
+    fn = re.search(r"function aligner100\(.*?\n}\n", modele, re.S).group(0)
+    essai = fn + """
+const m = (L) => L.map(([d, v]) => [new Date(d + "T12:00:00"), v]);
+const A = m([["2026-01-05", 50], ["2026-01-06", 55], ["2026-01-07", 60]]);
+const B = m([["2026-01-02", 200], ["2026-01-06", 220], ["2026-01-09", 400]]);
+const r = aligner100(A, B), v = aligner100(A, m([["2026-01-06", 10]]));
+console.log([r.a.join(","), r.b.map((x) => x.toFixed(0)).join(","), v.b.map((x) => x == null ? "n" : x.toFixed(0)).join(",")].join("|"));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "100,110.00000000000001,120|100,110,110|n,100,100", f"base 100 fausse : {r.stdout!r} {r.stderr[-300:]}"
+
+
+@test
 def avertissement_levier_amf():
     t = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
     assert "très spéculatifs" in t and "moyen ou long terme" in t, "avertissement levier aligné sur l'AMF"

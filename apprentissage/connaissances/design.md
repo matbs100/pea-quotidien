@@ -11,3 +11,6 @@ tags: [pea, connaissances, design]
 - **Pas d'information seulement au survol** : un téléphone n'a pas de survol ; les définitions et les
   valeurs du graphique doivent aussi s'afficher au toucher. Source : journal de nuit du 2026-11-05
   (guides d'accessibilité des graphiques de Penn State). Statut : ⏳ à vérifier (le 2026-11-06 : sites officiels bloqués par le réseau du cloud)
+- **Palette des courbes en mode sombre** : ne pas réutiliser la palette claire ; éclaircir et désaturer le vert et le rouge, viser 6 à 8 couleurs bien distinctes, vérifier chaque couleur contre le fond. Exemple donné : vert hsl(145, 65 %, 55 %), rouge hsl(0, 70 %, 60 %), fond hsl(225, 15 %, 10 %). Source : [ColorArchive, couleurs fintech en mode sombre](https://color-archive.vercel.app/guides/fintech-dark-mode-colors/), lu le 2026-11-12 (guide d'un site de design, pas une norme). Statut : ⏳ à vérifier
+- **Lisibilité d'un tableau de bord dense** : contraste élevé texte/fond, en mode sombre un gris très clair sur un fond bleu-noir plutôt que du blanc pur ; concevoir autour de la personne qui lit plutôt que des données disponibles. Source proposée (extrait de recherche du 2026-11-12) : Databricks (blog, version française) et Lazarev (agence). Statut : ⏳ à vérifier
+

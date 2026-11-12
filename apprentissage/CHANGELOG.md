@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-12 · Comparer deux titres (base 100) dans le graphique
+- Dans la fiche d'un titre, sous « Historique du prix », un menu « Comparer avec… » ajoute la courbe d'un autre placement : les deux courbes partent de 100 au début de la période choisie (1 mois à 5 ans), pour voir lequel a le plus progressé. Touche le graphique pour les deux valeurs d'un jour. Comparaison du passé : ni prévision ni conseil. Inspiration : comparateurs base 100 des outils de suivi de portefeuille. Décision D-20261106-7.
+
 ## 2026-11-11 · Carte « Mois par mois » dans la fiche de chaque titre
 - Dans la fiche d'un titre, nouveau bloc « Mois par mois » : le rendement de chaque mois des 5 dernières années, une ligne par année, en vert pour une hausse et en rouge pour une baisse (plus la couleur est foncée, plus l'écart est grand). Touche une case pour la valeur exacte. Calculé sur les clôtures hebdomadaires, donc approximatif ; le passé ne prédit pas l'avenir. Inspiration : tableaux de rendements mensuels des outils de suivi de portefeuille. Décision D-20261106-6.
 
