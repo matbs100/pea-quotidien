@@ -521,5 +521,15 @@
   "boursorama": null,
   "ft": "ETE:ATH",
   "echecs": {}
+ },
+ "DAX.PA": {
+  "boursorama": "1rTDAX",
+  "ft": "DAX:PAR:EUR",
+  "echecs": {}
+ },
+ "VCT.PA": {
+  "boursorama": "1rPVCT",
+  "ft": "VCT:PAR",
+  "echecs": {}
  }
 }

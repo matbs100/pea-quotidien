@@ -7,34 +7,34 @@
    "source_vl": "Yahoo Finance"
   },
   "FR0007076930": {
-   "prix": 567.04,
-   "date_cours": "2026-11-09",
-   "var_1j": 0.75,
-   "source_vl": "Yahoo Finance"
+   "prix": 572.06,
+   "date_cours": "2026-11-10",
+   "var_1j": 0.89,
+   "source_vl": "Financial Times"
   },
   "FR0011169341": {
-   "prix": 602.06,
-   "date_cours": "2026-11-09",
-   "var_1j": 2.22,
-   "source_vl": "Yahoo Finance"
+   "prix": 605.62,
+   "date_cours": "2026-11-10",
+   "var_1j": 0.59,
+   "source_vl": "Financial Times"
   },
   "FR0010546929": {
-   "prix": 41.45,
-   "date_cours": "2026-11-09",
-   "var_1j": 1.62,
-   "source_vl": "Yahoo Finance"
+   "prix": 41.79,
+   "date_cours": "2026-11-10",
+   "var_1j": 0.82,
+   "source_vl": "Financial Times"
   },
   "FR0010321810": {
-   "prix": 473.99,
-   "date_cours": "2026-11-09",
-   "var_1j": 0.0,
+   "prix": 475.33,
+   "date_cours": "2026-11-10",
+   "var_1j": 0.28,
    "source_vl": "Financial Times"
   },
   "FR0013532710": {
-   "prix": 168.65,
-   "date_cours": "2026-11-09",
-   "var_1j": 1.57,
-   "source_vl": "Yahoo Finance"
+   "prix": 168.83,
+   "date_cours": "2026-11-10",
+   "var_1j": 0.11,
+   "source_vl": "Financial Times"
   },
   "FR0010601971": {
    "prix": 341.35,
@@ -43,10 +43,10 @@
    "source_vl": "Yahoo Finance"
   },
   "FR0010286005": {
-   "prix": 1185.78,
-   "date_cours": "2026-11-09",
-   "var_1j": 1.89,
-   "source_vl": "Yahoo Finance"
+   "prix": 1190.36,
+   "date_cours": "2026-11-10",
+   "var_1j": 0.39,
+   "source_vl": "Financial Times"
   },
   "LU1832174962": {
    "prix": 246.23,
@@ -61,10 +61,10 @@
    "source_vl": "Yahoo Finance"
   },
   "FR0010354837": {
-   "prix": 210.6,
-   "date_cours": "2026-11-09",
-   "var_1j": 1.45,
-   "source_vl": "Yahoo Finance"
+   "prix": 211.82,
+   "date_cours": "2026-11-10",
+   "var_1j": 0.58,
+   "source_vl": "Financial Times"
   }
  },
  "maj": "2026-11-12"
