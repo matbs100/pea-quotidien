@@ -45,7 +45,9 @@ Tes trois missions, chaque nuit :
 2. **Regarder la page comme un débutant.** `$PY scripts/design.py rendre HEAD --dossier=/tmp/design` puis
    regarde les captures `/tmp/design/apres-telephone.png` et `apres-ordinateur.png` (outil Read). Note la page
    sur 5 avec la grille ci-dessous (une ligne par critère, avec la raison) et écris le **point le plus
-   gênant** : là où un débutant se perd, hésite ou ne voit pas l'essentiel.
+   gênant** : là où un débutant se perd, hésite ou ne voit pas l'essentiel. Pour les graphiques, ouvre
+   aussi au moins une fiche d'action et une fiche d'ETF (clic sur une ligne du Top 30 dans Playwright, ou
+   `#<code>` à la fin de l'adresse) et regarde leurs graphiques en capture.
 
    | Critère | Question |
    |---|---|
@@ -54,7 +56,8 @@ Tes trois missions, chaque nuit :
    | Hiérarchie | L'essentiel est-il en haut et en gros, le détail plus bas ou derrière un clic clairement signalé ? |
    | Attrait | La page donne-t-elle envie de revenir (soin, rythme, couleurs, animations sobres) ? |
    | Accessibilité | Contrastes, tailles de texte, boutons assez grands (44 px), lisible au clavier et au lecteur d'écran ? |
-   | Téléphone | Rien ne déborde à 390 px, rien n'est trop petit, rien de caché par erreur ? |
+   | Téléphone | Rien ne déborde à 390 px, rien n'est trop petit, rien de caché par erreur ? Les gestes habituels marchent-ils (glisser vers le bas pour fermer une fiche) ? |
+   | Graphiques | Chaque graphique (page et fiches d'un titre) est-il **bien fait** (type adapté : courbe pour une évolution, barres pour comparer), **bien écrit** (titre, axes, unités et devise, dates, légende, source), **visible** (taille, épaisseur des traits, contraste en clair et en sombre, lisible à 390 px, valeurs au toucher) ? Manque-t-il un graphique qui rendrait une information plus claire qu'un tableau, ou y en a-t-il un inutile ? |
 
 3. **Étude de marché (15 minutes).** Ouvre **3 sources** de catégories différentes, à tour de rôle
    (reprends la rotation de ton dernier journal) :
@@ -80,7 +83,9 @@ Tes trois missions, chaque nuit :
    problème qu'il règle · comment l'appliquer ici · ⏳ à essayer`). Un réseau social qui bloque la lecture
    (connexion obligatoire, anti-robot) : passe à une autre source, **ne contourne jamais** une protection.
 
-4. **Décider une amélioration (5 minutes).** Prends le point le plus gênant de l'étape 2 et le motif qui le
+4. **Décider une amélioration (5 minutes).** **D'abord les tâches demandées par le propriétaire**
+   (`pilotage/design/souhaits.md`, partie « Tâches demandées… », cases non cochées, dans l'ordre) : tant qu'il
+   en reste une, c'est ton amélioration de la nuit (découpe-la si elle dépasse 200 lignes). Sinon, prends le point le plus gênant de l'étape 2 et le motif qui le
    règle le mieux (ou un point du « Chantier interface » / des devoirs du chef). Note-le avec la grille de
    `pilotage/decision.md` et inscris-le dans `pilotage/decisions.md` avec le statut **« provisoire (design) »**,
    un identifiant `D-$JOUR sans tirets-n` et son **indicateur de réussite** (par exemple « le titre du marché
@@ -112,7 +117,8 @@ Tes trois missions, chaque nuit :
 
 6. **T'améliorer (5 minutes).** Écris `apprentissage/design/journal/$JOUR.md` : `## Note de la page`
    (grille avant / après), `## Étude de marché` (les 3 sources, rotation), `## Ce que j'ai changé` (avec
-   la décision, le résultat de `design.py comparer` et `rendre`), `## Ce que j'ai appris`,
+   la décision, le résultat de `design.py comparer` et `rendre`), `## Graphiques` (chacun : ✅ bien fait ou
+   ce qui ne va pas ; graphique à ajouter ou à retirer, avec la raison), `## Ce que j'ai appris`,
    `## Devoirs du chef` (le résultat de chaque devoir). Puis mets à jour **ta mémoire**
    `apprentissage/design/lecons.md` (60 lignes au plus, une leçon par ligne, datée) : ce qui a marché (bilan
    ✅ du chef), ce qui a été annulé et pourquoi (↩️), ce que le propriétaire aime ou n'aime pas
