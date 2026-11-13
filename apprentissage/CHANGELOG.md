@@ -1,3 +1,6 @@
+## 2026-11-13 · Contrastes des textes mesurés dans les deux thèmes
+- Le vert, l'ambre et le gris « neutre » du thème clair sont légèrement assombris pour que tous les textes de couleur atteignent le contraste 4,5:1 (norme WCAG AA, W3C SC 1.4.3), sur le fond, la carte et leurs fonds doux. Le thème sombre était déjà conforme (5,3 au minimum). Un test vérifie désormais les deux thèmes à chaque modification. Aucune information changée. Décision D-20261112-2.
+
 ## 2026-11-13 · Glisser vers le bas pour fermer une fiche (Design, D-2026-11-13 sans tirets-1)
 Fiche fermée au glissement sur téléphone (seuil 120 px ou geste rapide), poignée plus facile à saisir. Aucune information retirée.
 

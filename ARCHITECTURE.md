@@ -412,6 +412,7 @@ publié), contrôle et tests, et publication sur `claude/pea` après confirmatio
 ### `tests.py` : les garde-fous
 Usage : `python scripts/tests.py` (sans réseau, quelques secondes). Aucun agent ne publie de code
 si un test échoue. Chaque nouvelle fonction de calcul doit avoir son test.
+`contrastes_des_deux_themes` (D-20261112-2) lit les couleurs des thèmes de `modele.html` et exige 4,5:1 (WCAG AA) pour chaque texte de couleur sur le fond, la carte et la carte 2, dans le thème clair et le sombre.
 La syntaxe JavaScript de la page est vérifiée avec `node --check` dans le cloud, ou avec
 JavaScriptCore (`jsc`, présent sur tous les Mac) en local.
 

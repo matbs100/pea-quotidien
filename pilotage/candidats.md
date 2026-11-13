@@ -40,3 +40,6 @@ Notées par le chef d'orchestre et l'agent de nuit dans la semaine ; vérifiées
 - [ ] S6EW · Ossiam STOXX Europe 600 ESG Equal Weight NR UCITS ETF 1C · LU0599613147 (lu sur francetransactions.com le 12/11) · « éligible au PEA » lu sur la même page · frais de gestion 0,35 % · ticker S6EW lu ; cotation Paris non confirmée (page muette ; Yahoo S6EW.PA répond mais le dernier cours est vide : peu échangé, à surveiller)
 - [ ] (ticker non lu) · Ossiam Europe ESG Machine Learning UCITS ETF 1C · LU0599612842 (lu sur francetransactions.com le 12/11) · « éligible au PEA » lu · frais de gestion 0,65 % · ticker et place de cotation non lus (MLEU.PA et EUMV.PA : introuvables sur Yahoo) : à retrouver avant tout ajout
 - Invesco EURO STOXX High Dividend Low Volatility (IE00BZ4BMM98) : **non éligible au PEA** (justETF, ouvert le 12/11, « Éligible au PEA : Non ») et sans cotation à Paris : écarté malgré la liste de pea.fr.
+
+## Notes de la nuit du 13/11 (devoir 1)
+- S6EW · Ossiam STOXX Europe 600 ESG Equal Weight · LU0599613147 · seconde source : un extrait de recherche (TradingView) confirme le ticker « S6EW FP » à Paris, mais aucune page lue ne mentionne « éligible PEA » hors francetransactions.com : éligibilité **non confirmée** par une seconde source. Autre émetteur : pas trouvé cette nuit.
