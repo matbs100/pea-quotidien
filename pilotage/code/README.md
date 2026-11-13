@@ -9,6 +9,7 @@ public ni sur le site), contrôle que le code est bien fait et marche, fait au p
 apprend une technique de code dans une source fiable et propose une idée. Le chef relit son travail à 5 h.
 
 ## Rapports
+- [[2026-11-13|2026-11-13]] · vert · aucune correction
 - [[2026-11-12|2026-11-12]] · vert · aucune correction
 - [[2026-11-11|2026-11-11]] · vert · aucune correction
 
