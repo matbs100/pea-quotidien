@@ -1,1 +1,14 @@
-[]
+[
+ {
+  "alerte": "amélioration du code sans entrée dans apprentissage/CHANGELOG.md",
+  "jour": "a486024",
+  "preuve": "git show 1c9636f : l'entrée « Contrastes des textes mesurés dans les deux thèmes » (D-20261112-2) est dans apprentissage/CHANGELOG.md, ajoutée par le commit suivant de la même nuit.",
+  "le": "2026-11-13"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle de l'agent « design »",
+  "jour": "8d13507",
+  "preuve": "git show 8d13507 -- data/taux_bce.json : seule la date « releve » passe du 2026-11-12 au 2026-11-13 (3 lignes), taux inchangés (2,50 / 2,65 / 2,90) ; régénération du rendu, sans gravité.",
+  "le": "2026-11-13"
+ }
+]

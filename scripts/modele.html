@@ -201,7 +201,7 @@ body.fige { overflow: hidden; }
 .f-prix .big { font: 500 2.1rem/1.1 var(--font-mono); letter-spacing: -.02em; }
 .f-desc { margin-top: 10px; color: var(--ink); max-width: 70ch; }
 .carte-mois { width: 100%; border-collapse: separate; border-spacing: 2px; table-layout: fixed; font: 11px var(--font-mono); }
-.carte-mois th { font-weight: 500; color: var(--muted); padding: 2px 0; text-align: center; }
+.carte-mois th { font-weight: 500; color: var(--muted); padding: 2px 0; text-align: center; letter-spacing: -.4px; }
 .carte-mois th.an { text-align: left; width: 38px; }
 .carte-mois td { text-align: center; padding: 6px 0; border-radius: 4px; background: var(--surface-2); color: var(--ink); }
 .carte-mois td.up { background: color-mix(in srgb, var(--up) calc(var(--i) * 70%), var(--surface-2)); }
@@ -1236,7 +1236,7 @@ function blocMois(det) {
   const R = rendementsMensuels(serieDe(det.s));
   const ans = Object.keys(R).sort().reverse().slice(0, 5);
   if (!ans.length) return "";
-  const M = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
+  const M = ["jan", "fév", "mar", "avr", "mai", "jun", "jul", "aoû", "sep", "oct", "nov", "déc"];  // 3 lettres : plus d'initiales qui se répètent (D-20261113-2)
   const cell = (x) => x == null ? "<td></td>" : `<td class="${sens(x)}" style="--i:${Math.min(Math.abs(x) / 8, 1).toFixed(2)}" title="${pct(x)}">${x > 0 ? "+" : ""}${Math.round(x)}</td>`;
   return bloc("Mois par mois", `<table class="carte-mois"><thead><tr><th class="an"></th>${M.map((m) => `<th>${m}</th>`).join("")}</tr></thead><tbody>${ans.map((a) => `<tr><th class="an">${a}</th>${R[a].map(cell).join("")}</tr>`).join("")}</tbody></table>
     <p class="note">Rendement de chaque mois en %, arrondi (vert : hausse, rouge : baisse ; touche une case pour la valeur exacte). Calculé sur les clôtures hebdomadaires, donc approximatif ; le mois en cours n'est pas terminé. Le passé ne prédit pas l'avenir.</p>`);

@@ -723,6 +723,7 @@ def carte_mois_par_mois():
     """D-20261106-6 : les rendements mensuels de la fiche sont calculés avec node sur un cas connu."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
     assert "function blocMois" in modele and "Le passé ne prédit pas l'avenir" in modele, "carte mois par mois absente"
+    assert 'const M = ["jan", "fév", "mar"' in modele, "mois en 3 lettres (D-20261113-2) : les initiales se répètent"
     node = shutil.which("node")
     if not node:
         REMARQUES.append("node absent : carte mois par mois non exécutée")

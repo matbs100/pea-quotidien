@@ -1,7 +1,11 @@
 Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidian.py` depuis [[Finance/PEA Quotidien/pilotage/decisions|le journal des décisions]]).
 
+- **13/11** · `D-20261113-4` · n° 43 · gestionnaire de contexte `faux()` dans les tests → rejetée (gain 2,00)
+- **13/11** · `D-20261113-3` · n° 42 · Bloc « PEA : fiscalité en un coup d'œil » (chiffres relus ce jour sur service-public F22449, F2385, F2329) → adoptée (gain 3,60)
+- **13/11** · `D-20261113-2` · n° 41 · « Mois par mois » : mois en 3 lettres (jan, fév…) au lieu des initiales qui se répètent → adoptée (gain 3,30) ; réalisée le 13/11
+- **13/11** · `D-20261113-1` · Glisser vers le bas pour fermer une fiche sur téléphone (demande du propriétaire) → adoptée (confirmée par le chef le 2026-11-13) (gain 3,00) ; réalisée le 13/11
 - **12/11** · `D-20261112-3` · n° 40 · test contre les gestionnaires en ligne du gabarit → rejetée (gain 2,00)
-- **12/11** · `D-20261112-2` · n° 39 · Palette sombre dédiée aux courbes et contraste 4,5:1 des textes secondaires → adoptée (gain 3,00)
+- **12/11** · `D-20261112-2` · n° 39 · Palette sombre dédiée aux courbes et contraste 4,5:1 des textes secondaires → adoptée (gain 3,00) ; réalisée le 13/11
 - **12/11** · `D-20261112-1` · Contrôle : un lien Yahoo en 404 depuis le cloud n'est plus « cassé » si le symbole a des cours collectés (API Yahoo interdite par son robots.txt) → correction (gain 3,10) ; réalisée le 12/11
 - **11/11** · `D-20261111-3` · n° 37 et 38 · test du mois manquant, légende de l'échelle de couleur → rejetée (gain 2,05 / 2,75)
 - **11/11** · `D-20261111-2` · n° 36 · Mois par mois : moyenne par mois → rejetée (gain 2,90)

@@ -7,16 +7,20 @@ Tenu par le chef d'orchestre (étape 8 bis de `CHEF.md`). Chaque matin, il corri
 veille (✅ réussi, 🔁 à refaire, ❌ abandonné) et donne ceux du jour. L'agent de nuit les fait (étape
 2 bis de `AMELIORATION.md`) et rend compte dans la partie `## Devoirs du chef` de son journal.
 
-## Devoirs donnés le 2026-11-12 (pour la nuit du 13 novembre)
-1. **Nouveaux fonds (nuit, petit).** Ossiam S6EW (LU0599613147) : cherche une **seconde source** (Boursorama, Euronext, fiche Ossiam) pour « éligible PEA » et la cotation à Paris ; sinon écris « non confirmée ». Puis 1 ETF d'un autre émetteur absent de `univers.json` (pas Invesco, pas MWRD).
-2. **Comprendre l'utilisateur (nuit, refait).** Relis « Mois par mois » comme un débutant : une phrase ou un libellé à changer ? Écris la proposition dans le journal, sans la réaliser.
-3. **Presse (nuit).** `data/presse/` : 5 sources du jour, estimations attribuées (voir `methodes.md`, règle du 12/11).
-4. **Réviser (chef).** Pré-ouverture de 7 h 15 et ouverture des ETF à 9 h 04 : lire la ligne du classeur officiel d'Euronext.
+## Devoirs donnés le 2026-11-13 (pour la nuit du 14 novembre)
+1. **Nouveaux fonds (nuit, petit).** 1 ETF d'un émetteur absent de `univers.json` (pas Invesco, pas MWRD, pas Ossiam déjà noté) : ISIN lu, « éligible PEA » lu, ticker Paris ; note-le dans `candidats.md`. Si rien en 15 minutes, écris pourquoi.
+2. **Presse (nuit).** 5 sources dans `data/presse/` ; si un site est bloqué, WebSearch `site:` puis « bloqué ». Estimations attribuées. Ne répète pas une rumeur de page d'accueil (ex. PDG de Nvidia) sans seconde source.
+3. **Lire (nuit).** La lecture proposée : page « Plan d'épargne en actions » de l'AMF ou de la Banque de France en PDF, fiche de lecture avec pages.
+4. **Réviser (chef).** Ouverture des ETF à 9 h 04 : relire la ligne du classeur Euronext (fait seulement en partie).
 
-## Résultats du 2026-11-12 (devoirs du 2026-11-11)
-- 1 Nouveaux fonds : 🔁 2 pistes sur 3 (Ossiam S6EW et Ossiam ML) ; Invesco écarté, bien vérifié (justETF : non éligible) ; Ossiam : une seule source, cotation Paris non confirmée.
-- 2 Comprendre l'utilisateur : 🔁 non fait (temps passé sur l'amélioration) ; refait ci-dessus.
-- 3 Euronext (chef) : ✅ document officiel lu (classeur) : ouverture 9 h 00 (au hasard jusqu'à 9 h 00 min 30), continu jusqu'à 17 h 30, fixing de clôture 17 h 35, phase au dernier cours jusqu'à 17 h 40 ; 🔁 détail ETF (9 h 04) à relire.
+## Résultats du 2026-11-13 (devoirs du 2026-11-12)
+- 1 Nouveaux fonds : 🔁 Ossiam S6EW : ticker « S6EW FP » vu (extrait), éligibilité PEA toujours sur une seule source ; autre émetteur non fait. Redonné en plus petit.
+- 2 Comprendre l'utilisateur : ✅ initiales des mois ambiguës ; réalisé par le chef (D-20261113-2, mois en 3 lettres).
+- 3 Presse : 🔁 2 sources sur 5 (Les Echos, BFM, MarketWatch bloqués) ; refait avec WebSearch.
+- 4 Euronext 9 h 04 (chef) : 🔁 non refait ce matin (temps pris par la vérification de la fiscalité, ✅ relue sur service-public).
+
+## Archive : Devoirs donnés le 2026-11-12
+(voir le rapport du 13/11)
 
 ## Archive : Devoirs donnés le 2026-11-11 (pour la nuit du 12 novembre)
 1. **Nouveaux fonds (nuit).** 3 ETF ou actions éligibles au PEA d'un émetteur **absent** de `univers.json` (vérifie la liste

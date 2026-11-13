@@ -1,15 +1,18 @@
-## 2026-11-13 · Contrastes des textes mesurés dans les deux thèmes
-- Le vert, l'ambre et le gris « neutre » du thème clair sont légèrement assombris pour que tous les textes de couleur atteignent le contraste 4,5:1 (norme WCAG AA, W3C SC 1.4.3), sur le fond, la carte et leurs fonds doux. Le thème sombre était déjà conforme (5,3 au minimum). Un test vérifie désormais les deux thèmes à chaque modification. Aucune information changée. Décision D-20261112-2.
-
-## 2026-11-13 · Glisser vers le bas pour fermer une fiche (Design, D-2026-11-13 sans tirets-1)
-Fiche fermée au glissement sur téléphone (seuil 120 px ou geste rapide), poignée plus facile à saisir. Aucune information retirée.
-
 ---
 tags: [pea, agent, apprentissage]
 ---
 # 🛠 Nouveautés du programme
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
+
+## 2026-11-13 · « Mois par mois » : mois en trois lettres
+- Les initiales J, F, M, A… se répétaient (J trois fois, M deux fois) : la carte affiche maintenant jan, fév, mar, avr, mai, jun, jul, aoû, sep, oct, nov, déc. Aucun chiffre changé. Décision D-20261113-2.
+
+## 2026-11-13 · Glisser vers le bas pour fermer une fiche (Design, D-20261113-1)
+Fiche fermée au glissement sur téléphone (seuil 120 px ou geste rapide), poignée plus facile à saisir. Aucune information retirée.
+
+## 2026-11-13 · Contrastes des textes mesurés dans les deux thèmes
+- Le vert, l'ambre et le gris « neutre » du thème clair sont légèrement assombris pour que tous les textes de couleur atteignent le contraste 4,5:1 (norme WCAG AA, W3C SC 1.4.3), sur le fond, la carte et leurs fonds doux. Le thème sombre était déjà conforme (5,3 au minimum). Un test vérifie désormais les deux thèmes à chaque modification. Aucune information changée. Décision D-20261112-2.
 
 ## 2026-11-12 · Contrôle qualité : le chef doit atteindre le vert
 - Une alerte 🟠 « À surveiller » ne reste plus en suspens : le chef la corrige, ou la vérifie lui-même sur une source et l'inscrit avec sa preuve dans `pilotage/verifie.json` ; le contrôle la compte alors ✔ vérifiée. Une alerte non prouvée reste orange, un 🔴 ne peut jamais être levé. Le vérificateur du code relit ces preuves chaque jour. Le contrôle ne signale plus non plus la régénération de la dernière fiche existante au moment du commit (le chef la refait chaque matin pour vérifier le rendu) : seules les pages plus anciennes restent signalées. Décision du propriétaire.
