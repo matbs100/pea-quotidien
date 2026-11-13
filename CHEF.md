@@ -78,7 +78,10 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
      avant / après (téléphone et ordinateur, outil Read). Annule (`git revert --no-edit <commit>`) si :
      une information a disparu ou n'est plus trouvable (🔴, ou un nombre affiché perdu), la page est moins
      claire, moins lisible sur téléphone ou moins accessible qu'avant, un avertissement est affaibli, ou le
-     changement pousse à acheter. Un déplacement déclaré dans `pilotage/design/deplacements.json` n'est valable
+     changement pousse à acheter. Vérifie aussi que les **tâches demandées par le propriétaire**
+     (`pilotage/design/souhaits.md`) avancent (une case non cochée depuis plus de 2 nuits devient le devoir n° 1
+     « Pour l'agent design ») et que les graphiques restent bien faits, bien écrits et lisibles sur téléphone.
+     Un déplacement déclaré dans `pilotage/design/deplacements.json` n'est valable
      que si tu retrouves l'information à son nouvel endroit. Écris ton verdict (✅ gardé, 🔧 corrigé,
      ↩️ annulé, avec la raison) dans ton rapport **et** sous `## Avis du chef` à la fin du journal de
      l'agent design : c'est ce qui lui permet d'apprendre. Les décisions « provisoire (design) » se
