@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-06",
+ "maj": "2026-11-13",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/cours/FF55-IBE/",
   "isin": "ES0144580Y14",
@@ -7,11 +7,12 @@
   "secteur": "Services publics",
   "indice": "EURO STOXX 50",
   "valorisation": "120 350 MEUR",
-  "rendement": "3,34%",
-  "per": "21,53",
+  "rendement": "3,27%",
+  "per": "21,97",
   "dernier_dividende": "0,43 EUR (06/07/26)",
   "per_annee": "2026",
-  "nb_titres": "0",
+  "nb_titres": "6 673 141 516",
+  "capitalisation": "120 350,11 MEUR",
   "marche": "Mercado Continuo",
   "site": "https://www.iberdrola.com",
   "pays": "Espagne"

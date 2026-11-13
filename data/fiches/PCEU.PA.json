@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-05",
+ "maj": "2026-11-13",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTPCEU/",
   "isin": "FR0013412038",
@@ -8,7 +8,7 @@
   "actif_net": "393M  • 31/10/2026",
   "sri_officiel": 4,
   "creation": "25/04/2019",
-  "forme": "ETF",
+  "forme": "FCP",
   "classe": "Actions Europe",
   "zone": "Europe",
   "categorie_ms": "Actions Europe Gdes Cap. Mixte",
