@@ -187,7 +187,11 @@ body.fige { overflow: hidden; }
   .feuille.ouvert { opacity: 1; transform: translate(-50%, -50%); }
   .f-poignee { display: none; }
 }
-.f-poignee { width: 42px; height: 5px; border-radius: 4px; background: var(--line); margin: 10px auto 0; flex: none; }
+.f-poignee { width: 42px; height: 5px; border-radius: 4px; background: var(--line); margin: 10px auto 0; flex: none; touch-action: none; }
+.f-poignee::after { content: ""; display: block; width: 100%; height: 30px; margin-top: -12px; }
+.f-tete { touch-action: none; }
+.f-corps { overscroll-behavior: contain; }
+.feuille.glisse { transition: none; }
 .f-tete { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid var(--line); flex: none; }
 .f-tete h2 { font-size: clamp(1.3rem, 4.5vw, 1.8rem); margin-top: 6px; }
 .f-tete .sub { font-family: var(--font-mono); font-size: 12px; margin-top: 4px; }
@@ -1338,6 +1342,31 @@ function cacher() {
   setTimeout(() => { if (!feuille.classList.contains("ouvert")) { voile.hidden = true; feuille.hidden = true; } }, reduit ? 0 : 400);
   if (avant && avant.focus) avant.focus({ preventScroll: true });
 }
+/* Glisser vers le bas pour fermer (téléphone) : la fiche suit le doigt, se ferme au-delà de 120 px ou d'un geste rapide */
+(function () {
+  const corps = $("#f-corps"); let y0 = 0, t0 = 0, dy = 0, actif = false, ok = false;
+  const large = () => matchMedia("(min-width: 900px)").matches;
+  feuille.addEventListener("touchstart", (e) => {
+    if (large() || e.touches.length !== 1) { ok = false; return; }
+    ok = !corps.contains(e.target) || corps.scrollTop <= 0;
+    y0 = e.touches[0].clientY; t0 = Date.now(); dy = 0; actif = false;
+  }, { passive: true });
+  feuille.addEventListener("touchmove", (e) => {
+    if (!ok) return;
+    dy = e.touches[0].clientY - y0;
+    if (!actif) { if (dy > 8) { actif = true; feuille.classList.add("glisse"); } else if (dy < -8) { ok = false; return; } else return; }
+    feuille.style.transform = "translate(-50%, " + Math.max(0, dy) + "px)";
+  }, { passive: true });
+  function fin() {
+    if (!actif) return;
+    actif = false; ok = false; feuille.classList.remove("glisse");
+    const rapide = dy > 40 && (Date.now() - t0) < 250;
+    feuille.style.transform = "";
+    if (dy > 120 || rapide) fermer();
+  }
+  feuille.addEventListener("touchend", fin, { passive: true });
+  feuille.addEventListener("touchcancel", fin, { passive: true });
+})();
 function fermer() { if (history.state && history.state.fiche) history.back(); else cacher(); }
 addEventListener("popstate", () => { const t = decodeURIComponent(location.hash.slice(1)); if (t && TOUS[t]) ouvrir(t, false); else if (!feuille.hidden) cacher(); });
 $("#f-fermer").addEventListener("click", fermer);

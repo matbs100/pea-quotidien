@@ -5,7 +5,7 @@ projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). 
 
 ## Tâches demandées par le propriétaire (à faire en premier, dans l'ordre)
 
-- [ ] 2026-11-13 · **Glisser vers le bas pour fermer une fiche sur téléphone** (action, ETF, fonds, indice…).
+- [x] 2026-11-13 · fait le 2026-11-13 [D-20261113-1] · **Glisser vers le bas pour fermer une fiche sur téléphone** (action, ETF, fonds, indice…).
   Aujourd'hui, seule la croix ✕ ferme la fiche. À faire dans `scripts/modele.html` (fenêtre `#feuille`,
   fonction `fermer()`) : suivre le doigt (`touchstart` / `touchmove` / `touchend`, `{passive: true}`), la
   fiche descend avec le doigt, se ferme au-delà d'un seuil (environ 120 px ou un geste rapide) et revient en

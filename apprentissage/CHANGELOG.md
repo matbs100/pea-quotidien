@@ -1,3 +1,6 @@
+## 2026-11-13 · Glisser vers le bas pour fermer une fiche (Design, D-2026-11-13 sans tirets-1)
+Fiche fermée au glissement sur téléphone (seuil 120 px ou geste rapide), poignée plus facile à saisir. Aucune information retirée.
+
 ---
 tags: [pea, agent, apprentissage]
 ---
