@@ -950,6 +950,24 @@ def design_sans_perte_d_information():
     assert "Top 30 éligible PEA" in inv["titre"] and "top30" in inv["champ"] and inv["avertissement"], "inventaire de la vraie page"
 
 
+@test
+def contrastes_des_deux_themes():
+    """D-20261112-2 : dans le thème clair et le thème sombre, les textes de couleur (encre, gris, accent, hausse,
+    baisse, neutre, ambre) ont au moins 4,5:1 (WCAG AA) sur le fond, la carte et la carte 2 ; accent et ambre
+    aussi sur leur fond doux."""
+    import design as g
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    blocs = re.findall(r"(?::root(?::not\(\[data-theme=\"light\"\]\))?|:root\[data-theme=\"dark\"\])\s*\{([^}]*--bg:[^}]*)\}", modele)
+    assert len(blocs) == 3, "clair, sombre automatique, sombre choisi"
+    for bloc in blocs:
+        v = dict(re.findall(r"--([\w-]+):\s*(#[0-9a-fA-F]{6})", bloc))
+        for nom in ("ink", "muted", "accent", "up", "down", "flat", "amber"):
+            for fond in ("bg", "surface", "surface-2"):
+                c = g.contraste(v[nom], v[fond])
+                assert c >= 4.5, f"{nom} sur {fond} : {c} < 4,5 ({v[nom]} sur {v[fond]})"
+        assert g.contraste(v["accent"], v["accent-soft"]) >= 4.5 and g.contraste(v["amber"], v["amber-soft"]) >= 4.5
+
+
 def main():
     echecs = 0
     for f in TESTS:
