@@ -531,5 +531,20 @@
   "boursorama": "1rPVCT",
   "ft": "VCT:PAR",
   "echecs": {}
+ },
+ "RUI.PA": {
+  "boursorama": "1rPRUI",
+  "ft": "RUI:PAR",
+  "echecs": {}
+ },
+ "CG1.PA": {
+  "boursorama": "1rTCG1",
+  "ft": "CG1:PAR:EUR",
+  "echecs": {}
+ },
+ "ERA.PA": {
+  "boursorama": "1rPERA",
+  "ft": "ERA:PAR",
+  "echecs": {}
  }
 }

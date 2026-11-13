@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-05",
+ "maj": "2026-11-13",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTETZ/",
   "isin": "FR0011550193",
@@ -8,7 +8,7 @@
   "actif_net": "1 408M  • 31/10/2026",
   "sri_officiel": 4,
   "creation": "16/09/2013",
-  "forme": "ETF",
+  "forme": "SICAV",
   "classe": "Actions Europe",
   "zone": "Europe",
   "categorie_ms": "Actions Europe Gdes Cap. Mixte",
