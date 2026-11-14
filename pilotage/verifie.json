@@ -10,5 +10,17 @@
   "jour": "8d13507",
   "preuve": "git show 8d13507 -- data/taux_bce.json : seule la date « releve » passe du 2026-11-12 au 2026-11-13 (3 lignes), taux inchangés (2,50 / 2,65 / 2,90) ; régénération du rendu, sans gravité.",
   "le": "2026-11-13"
+ },
+ {
+  "alerte": "IBE.MC : 23.7 dans la fiche, 18.04 sur Boursorama",
+  "jour": "2026-11-13",
+  "preuve": "Yahoo et FT donnent tous deux 23,70 € (fiche du 13/11, champ sources). Page Boursorama FF55-IBE ouverte le 14/11 : cours vide (last nul, aucune cotation), donc le 18,04 ne vient pas d'une cotation d'Iberdrola ; la page de la place espagnole n'est pas fiable pour ce contrôle.",
+  "le": "2026-11-14"
+ },
+ {
+  "alerte": "data/presse/2026-11-14.md : hors du rôle de l'agent « nuit »",
+  "jour": "0b729b5",
+  "preuve": "git show 0b729b5 --stat : data/presse/2026-11-14.md, 9 lignes, revue de presse demandée par pilotage/consignes.md et ecole.md (devoir 2) ; contenu relu : chiffres attribués à Zonebourse et Moneyvox, aucun conseil.",
+  "le": "2026-11-14"
  }
 ]

@@ -114,7 +114,9 @@ def mesures(modele):
     m["boutons_sans_nom"] = len([b for b in re.findall(r"<button\b([^>]*)>\s*</button>", modele)
                                  if "aria-label" not in b])
     m["images_sans_alt"] = len([i for i in re.findall(r"<img\b([^>]*)>", modele) if "alt=" not in i])
-    m["sites_externes"] = sorted(set(re.findall(r"""(?:src|href)=["']https://([^/"']+)""", modele)))
+    # Seules les ressources chargées par la page comptent ; un lien <a href> (source citée) n'en charge aucune.
+    m["sites_externes"] = sorted({h for balise in re.findall(r"<(?!a\b)[^>]*>", modele)
+                                  for h in re.findall(r"""(?:src|href)=["']https://([^/"']+)""", balise)})
     m["sections"] = len(re.findall(r"<section\b", modele))
     return m
 

@@ -6,7 +6,7 @@ url: https://www.amf-france.org/sites/institutionnel/files/private/2023-12/2023_
 publie_le: 2023-12-01
 lu_le: 2026-11-14
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-14
 ---
 # 📄 Dans un PEA (plan d'épargne en actions), ce qu'il faut savoir
 
@@ -35,4 +35,4 @@ fiscalité ; les taux se lisent sur les pages à jour de l'administration.
 - Confirme le plafond et la règle des 5 ans du nouveau bloc fiscalité (D-20261113-3). Idée : ajouter les cas d'exception au retrait avant 5 ans dans ce bloc (idée n° 44, notée dans idees.md).
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- Relue le 14/11 : le PDF (1 page, amf-france.org) s'ouvre ; plafond 150 000 €, un plan par personne, règle des 5 ans, exceptions (retraite anticipée, licenciement, invalidité) et 75 % d'actions exacts à la page 1 ; résumé reformulé, rien de copié ; le site est dans `sources-verifiees.md`. ✅

@@ -1,7 +1,8 @@
 Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidian.py` depuis [[Finance/PEA Quotidien/pilotage/decisions|le journal des décisions]]).
 
+- **14/11** · `D-20261114-2` · Garde-fou design : un lien `<a href>` vers une source citée n'est plus pris pour un site chargé par la page (faux 🔴 sur le bloc fiscalité) → correction (gain —) ; réalisée le 14/11
 - **13/11** · `D-20261113-4` · n° 43 · gestionnaire de contexte `faux()` dans les tests → rejetée (gain 2,00)
-- **13/11** · `D-20261113-3` · n° 42 · Bloc « PEA : fiscalité en un coup d'œil » (chiffres relus ce jour sur service-public F22449, F2385, F2329) → adoptée (gain 3,60)
+- **13/11** · `D-20261113-3` · n° 42 · Bloc « PEA : fiscalité en un coup d'œil » (chiffres relus ce jour sur service-public F22449, F2385, F2329) → adoptée (gain 3,60) ; réalisée le 14/11
 - **13/11** · `D-20261113-2` · n° 41 · « Mois par mois » : mois en 3 lettres (jan, fév…) au lieu des initiales qui se répètent → adoptée (gain 3,30) ; réalisée le 13/11
 - **13/11** · `D-20261113-1` · Glisser vers le bas pour fermer une fiche sur téléphone (demande du propriétaire) → adoptée (confirmée par le chef le 2026-11-13) (gain 3,00) ; réalisée le 13/11
 - **12/11** · `D-20261112-3` · n° 40 · test contre les gestionnaires en ligne du gabarit → rejetée (gain 2,00)
@@ -10,8 +11,8 @@ Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidi
 - **11/11** · `D-20261111-3` · n° 37 et 38 · test du mois manquant, légende de l'échelle de couleur → rejetée (gain 2,05 / 2,75)
 - **11/11** · `D-20261111-2` · n° 36 · Mois par mois : moyenne par mois → rejetée (gain 2,90)
 - **11/11** · `D-20261111-1` · n° 34 · Aide « Qu'est-ce que le MSCI World ? » → rejetée (gain 2,95)
-- **10/11** · `D-20261110-2` · Nettoyage : import inutile retiré de `scripts/wealins.py` (demande du vérificateur du code) → correction (gain —) ; réalisée le 10/11
-- **10/11** · `D-20261110-1` · n° 32 · Encadré « contexte des taux » (dernier taux BCE : dépôt 2,50 % depuis le 16/09, inchangé le 29/10, lien BCE) → adoptée (gain 3,40) ; réalisée le 10/11
+- **10/11** · `D-20261110-2` · Nettoyage : import inutile retiré de `scripts/wealins.py` (demande du vérificateur du code) → correction (gain —) ; réalisée le 10/11 ; bilan : ✅ gardée (14/11) : 38/38 tests ; le vérificateur du code a lancé ruff le 14/11 sans signaler F401
+- **10/11** · `D-20261110-1` · n° 32 · Encadré « contexte des taux » (dernier taux BCE : dépôt 2,50 % depuis le 16/09, inchangé le 29/10, lien BCE) → adoptée (gain 3,40) ; réalisée le 10/11 ; bilan : ✅ gardée (14/11) : taux BCE 2,50 % égal à `data/taux_bce.json`, lien BCE présent, aucun conseil, tests verts
 - **09/11** · `D-20261109-2` · n° 31 · « Mes critères » : dire combien de titres du Top 30 sont écartés faute de donnée (au lieu de les cacher en silence) → à l'essai (confirmée par le chef) (gain 3,20) ; réalisée le 10/11 ; bilan : confirmée le 2026-11-10 : code relu (textContent), test node, 28/28 ; bilan attendu le 2026-11-13
 - **09/11** · `D-20261109-1` · n° 30 · « Mes critères », première partie : filtre du Top 30 (risque max, baisse max sur 1 an, type) → adoptée (confirmée par le chef) (gain 3,75) ; réalisée le 09/11 ; bilan : confirmée par le chef le 2026-11-09 (code relu, test node, mention « ni conseil ni recommandation ») ; bilan attendu le 2026-11-12
 - **08/11** · `D-20261108-3` · n° 28 · Méthode des ratios dans l'aide du Sharpe → rejetée (gain 2,70)

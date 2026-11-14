@@ -302,7 +302,7 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `c_lectures(d)` | contrôle « Lectures des agents » (voir `lectures.defauts`) ; un PDF ajouté au dépôt par un agent est un problème (dans `ecarts_aux_regles`) |
 | `c_decisions(d, heures)` | contrôle « Méthode de décision » : bilans en retard, gains mal calculés, améliorations sans décision (commits depuis le 07/11/2026) |
 | `c_confidentialite(d, heures)` | contrôle « Confidentialité » : aucune information personnelle dans les fichiers publiés (🔴) ni dans les commits récents (🟠) ; voir `confidentialite.py` |
-| `c_design(heures)` | contrôle « Design : aucune information retirée » : pour chaque commit des 30 dernières heures qui touche `scripts/modele.html` (tout agent), `design.comparer_modeles` entre la version d'avant et celle du commit ; un titre, un champ de données, un identifiant ou un avertissement retiré sans déplacement déclaré, un contraste sous 4,5 ou un nouveau site externe = 🔴 ; un texte reformulé, des textes sous 12 px, une page bien plus lourde = 🟠 |
+| `c_design(heures)` | contrôle « Design : aucune information retirée » : pour chaque commit des 30 dernières heures qui touche `scripts/modele.html` (tout agent), `design.comparer_modeles` entre la version d'avant et celle du commit ; un titre, un champ de données, un identifiant ou un avertissement retiré sans déplacement déclaré, un contraste sous 4,5 ou un nouveau site externe chargé (`src`, `<link href>` ; un lien `<a href>` vers une source n'en charge aucun) = 🔴 ; un texte reformulé, des textes sous 12 px, une page bien plus lourde = 🟠 |
 | `resume_court(controles, etat)` | phrase affichée en bas de la fiche |
 | `main()` | enchaîne les contrôles, écrit `pilotage/etat.json`, affiche le résumé |
 

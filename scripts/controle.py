@@ -329,8 +329,10 @@ def c_prix(d, maintenant, n=8):
     lus = ok + len(ecarts)
     if not lus:
         return controle("prix", titre, "non_verifiable", "Boursorama injoignable d'ici", illisibles)
-    resume = f"{ok}/{lus} prix identiques sur Boursorama"
-    details = ecarts + ([f"illisibles : {', '.join(illisibles)}"] if illisibles else [])
+    # un écart que le chef a vérifié (pilotage/verifie.json) compte comme confirmé, avec sa preuve
+    ecarts, levees = appliquer_verifications(ecarts, d["date"], lire_verifications())
+    resume = f"{ok + len(levees)}/{lus} prix identiques sur Boursorama" + (f" ({len(levees)} écart(s) vérifié(s))" if levees else "")
+    details = ecarts + levees + ([f"illisibles : {', '.join(illisibles)}"] if illisibles else [])
     return controle("prix", titre, "alerte" if ecarts else "ok", resume, details)
 
 

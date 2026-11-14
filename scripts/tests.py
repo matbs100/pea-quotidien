@@ -959,6 +959,8 @@ def design_sans_perte_d_information():
     assert g.comparer_modeles(avant, avant.replace("Pas un conseil en investissement", ""), "", cles)[0] == 2
     assert g.comparer_modeles(avant, avant.replace("--muted: #555555", "--muted: #dddddd"), "", cles)[0] == 2
     assert g.comparer_modeles(avant, avant.replace("<p>", "<p><img src=\"https://cdn.example/x.png\" alt=\"\">"), "", cles)[0] == 2
+    lien = avant.replace("<p>", "<p>Source : <a href=\"https://www.service-public.gouv.fr/x\">service-public</a>")
+    assert g.comparer_modeles(avant, lien, "", cles)[0] == 0, "un simple lien <a> vers une source n'est pas une ressource chargée"
     assert g.contraste("#000000", "#ffffff") == 21.0
     inv = g.inventaire((SCRIPTS / "modele.html").read_text(encoding="utf-8"))
     assert "Top 30 éligible PEA" in inv["titre"] and "top30" in inv["champ"] and inv["avertissement"], "inventaire de la vraie page"

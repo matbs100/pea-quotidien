@@ -7,7 +7,19 @@ Tenu par le chef d'orchestre (étape 8 bis de `CHEF.md`). Chaque matin, il corri
 veille (✅ réussi, 🔁 à refaire, ❌ abandonné) et donne ceux du jour. L'agent de nuit les fait (étape
 2 bis de `AMELIORATION.md`) et rend compte dans la partie `## Devoirs du chef` de son journal.
 
-## Devoirs donnés le 2026-11-13 (pour la nuit du 14 novembre)
+## Devoirs donnés le 2026-11-14 (pour la nuit du 15 novembre)
+1. **Presse (nuit, petit).** Découpé : seulement 3 sources, une par nuit à ouvrir **entières** (Zonebourse, Moneyvox, puis une troisième trouvée par WebSearch `site:`), chacune avec un chiffre attribué. Écris les sources bloquées.
+2. **Nouveaux fonds (nuit, petit).** Ne cherche plus par émetteur : prends les ETF **déjà écartés** par la tâche du samedi (`pilotage/univers/2026-11-14.md`, `pea_bourso: False`) et lis sur le site de l'émetteur si « éligible PEA » est écrit ; une ligne par fonds dans `candidats.md`.
+3. **Lire (nuit).** Une fiche de lecture sur la page « Plan d'épargne en actions » de la Banque de France ou de l'Euronext (PDF), pages citées. Ajoute les cas d'exception au retrait avant 5 ans seulement si la source officielle les confirme (idée 44).
+4. **Réviser (chef).** Ouverture des ETF à 9 h 04 (Euronext) : reporté deux fois, à faire d'abord demain.
+
+## Résultats du 2026-11-14 (devoirs du 2026-11-13)
+- 1 Nouveaux fonds : 🔁 aucune piste confirmée en 15 minutes (CEU : code Boursorama = action canadienne) ; la tâche du samedi a, elle, ajouté MFE, S6EW, ITP, CLARI (S6EW confirmé via Boursorama). Redonné autrement.
+- 2 Presse : 🔁 deuxième fois de suite 2 sources sur 5 : découpé en plus petit (devoir 1).
+- 3 Lire : ✅ fiche AMF relue, chiffres exacts à la page 1.
+- 4 Euronext 9 h 04 (chef) : 🔁 reporté une deuxième fois (temps pris par le garde-fou de design).
+
+## Archive : Devoirs donnés le 2026-11-13 (pour la nuit du 14 novembre)
 1. **Nouveaux fonds (nuit, petit).** 1 ETF d'un émetteur absent de `univers.json` (pas Invesco, pas MWRD, pas Ossiam déjà noté) : ISIN lu, « éligible PEA » lu, ticker Paris ; note-le dans `candidats.md`. Si rien en 15 minutes, écris pourquoi.
 2. **Presse (nuit).** 5 sources dans `data/presse/` ; si un site est bloqué, WebSearch `site:` puis « bloqué ». Estimations attribuées. Ne répète pas une rumeur de page d'accueil (ex. PDG de Nvidia) sans seconde source.
 3. **Lire (nuit).** La lecture proposée : page « Plan d'épargne en actions » de l'AMF ou de la Banque de France en PDF, fiche de lecture avec pages.
