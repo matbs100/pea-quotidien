@@ -71,7 +71,9 @@
   "UTI.PA": "Amundi Stoxx Europe 600 Services aux collectivités",
   "EEMU.PA": "BNP Paribas Easy MSCI EMU Min TE",
   "E40.PA": "BNP Paribas Easy CAC 40 ESG",
-  "50E.PA": "HSBC Euro Stoxx 50"
+  "50E.PA": "HSBC Euro Stoxx 50",
+  "MFE.PA": "Amundi Core MSCI EMU (Dist)",
+  "S6EW.PA": "Ossiam STOXX Europe 600 ESG Equal Weight"
  },
  "etf_levier": {
   "LVC.PA": "Amundi CAC 40 Daily (2x) Leveraged",
@@ -201,7 +203,9 @@
   "WKL.AS": "Wolters Kluwer",
   "HEIA.AS": "Heineken",
   "UCG.MI": "UniCredit",
-  "ENI.MI": "Eni"
+  "ENI.MI": "Eni",
+  "ITP.PA": "Interparfums",
+  "CLARI.PA": "Clariane"
  },
  "petites": {
   "TIT.MI": "Telecom Italia",
