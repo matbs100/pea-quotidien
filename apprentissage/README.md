@@ -47,6 +47,7 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 - Il n'exécute jamais de code téléchargé.
 
 ## Journaux
+- [2026-11-14](journal/2026-11-14.md) : compréhension ; bloc fiscalité du PEA (D-20261113-3)
 - [2026-11-13](journal/2026-11-13.md) : réglementation ; contrastes des deux thèmes (D-20261112-2)
 - [2026-11-12](journal/2026-11-12.md) : esthétique ; comparer deux titres (D-20261106-7)
 - [2026-11-11](journal/2026-11-11.md) : indicateurs et méthodes ; carte « Mois par mois » (D-20261106-6)

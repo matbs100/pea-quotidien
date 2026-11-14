@@ -824,6 +824,19 @@ def taux_bce():
 
 
 @test
+def bloc_fiscalite_pea():
+    """Le bloc fiscalité du PEA affiche les chiffres relus, la date, les sources et aucun conseil."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    i = modele.index('id="sec-fisc"')
+    bloc = modele[i:modele.index("</section>", i)]
+    for chiffre in ("150 000 €", "12,8 %", "18,6 %", "0 %", "13/11/2026"):
+        assert chiffre in bloc, chiffre
+    for code in ("F22449", "F2385", "F2329"):
+        assert "service-public.gouv.fr/particuliers/vosdroits/" + code in bloc, code
+    assert "pas un conseil" in bloc and "rel=\"noopener noreferrer\"" in bloc
+
+
+@test
 def confidentialite():
     """Aucune information personnelle dans le dépôt public ; le scanner ne recopie jamais ce qu'il trouve."""
     import confidentialite as cf

@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-14 · ✨ Nouveauté : « PEA : fiscalité en un coup d'œil »
+- Un nouveau bloc, avant les suggestions, résume en 4 cartes les chiffres du PEA : plafond de 150 000 €, 12,8 % d'impôt avant 5 ans, 18,6 % de prélèvements sociaux, 0 % d'impôt sur le revenu après 5 ans. Date de relecture affichée (13/11/2026) et liens vers service-public.gouv.fr ; information générale, ni conseil fiscal ni conseil d'investissement. Décision D-20261113-3.
+
 ## 2026-11-14 · Cartes marchés sans point orphelin sur téléphone (Design, D-20261114-1)
 Le séparateur « · » est masqué sous 600 px (il commençait la 2e ligne). Aucune information retirée.
 

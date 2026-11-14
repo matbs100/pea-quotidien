@@ -43,3 +43,5 @@ Notées par le chef d'orchestre et l'agent de nuit dans la semaine ; vérifiées
 
 ## Notes de la nuit du 13/11 (devoir 1)
 - S6EW · Ossiam STOXX Europe 600 ESG Equal Weight · LU0599613147 · seconde source : un extrait de recherche (TradingView) confirme le ticker « S6EW FP » à Paris, mais aucune page lue ne mentionne « éligible PEA » hors francetransactions.com : éligibilité **non confirmée** par une seconde source. Autre émetteur : pas trouvé cette nuit.
+## Notes de la nuit du 14/11 (devoir 1)
+- Pas de piste confirmée en 15 minutes : les extraits de recherche citent Xtrackers (Euro Stoxx Quality Dividend, LU0292095535) et SPDR (MSCI Europe Small Cap, ticker SMC) comme éligibles PEA, mais la page francetransactions.com/etf-pour-pea, ouverte le 14/11, ne mentionne ni l'un ni l'autre : ISIN et éligibilité **non lus**, ticker Paris non vérifié. À lire sur la fiche de l'émetteur ou Boursorama avant tout ajout.
