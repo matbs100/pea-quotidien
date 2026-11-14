@@ -50,3 +50,6 @@ l'agent de nuit y ajoute ses décisions provisoires. Le chef les résume dans `p
 | D-20261113-2 | 2026-11-13 | n° 41 · « Mois par mois » : mois en 3 lettres (jan, fév…) au lieu des initiales qui se répètent | Claude (chef) | 3,30 | 1 | 1 | — | adoptée | 2026-11-13 | cases sans débordement à 360 px (mesuré) ; test du libellé | |
 | D-20261113-3 | 2026-11-13 | n° 42 · Bloc « PEA : fiscalité en un coup d'œil » (chiffres relus ce jour sur service-public F22449, F2385, F2329) | Claude (chef) | 3,60 | 3 | 1 | 2,9 | adoptée | | chiffres égaux à la page officielle, date de vérification affichée, aucun conseil | |
 | D-20261113-4 | 2026-11-13 | n° 43 · gestionnaire de contexte `faux()` dans les tests | Claude (chef) | 2,00 | 2 | 1 | — | rejetée | | gain < 3 | |
+
+## D-20261114-1 · Cartes des marchés : plus de point orphelin sur téléphone (provisoire (design))
+Grille de décision : gain de clarté faible mais sûr, risque nul (aucun texte retiré, seul le séparateur « · » est masqué sous 600 px), coût 4 lignes. Indicateur : la ligne « 1 mois … » commence sans « · » sur chaque carte à 390 px.

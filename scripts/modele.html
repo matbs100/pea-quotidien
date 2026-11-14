@@ -167,7 +167,7 @@ footer a { color: var(--accent); }
   .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .card { padding: 12px; } .card .val { font-size: 1.15rem; }
   .card .nom { white-space: normal; } .card .nom .vf { display: table; margin: 4px 0 0; }
-  .card .chg span { display: block; }
+  .card .chg span { display: block; margin-top: 2px; } .card .chg .pt { display: none; }
   .card svg { position: static; display: block; width: 100%; height: 28px; margin-top: 8px; }
 }
 /* fiche détaillée */
@@ -552,7 +552,7 @@ function prixEtf(m) {
 
 function carte(m) {
   return `<div class="card rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}"><div class="nom">${esc(m.nom)}${vf(m)}</div><div class="val-l"><div class="val">${fr(m.prix, dec(m.prix))}${dev(m)}</div>${m.categorie === "indices" ? prixEtf(m) : ""}</div>
-    <div class="chg ${sens(m.var_1j)}">${pct(m.var_1j)} <span class="flat">· 1 mois ${pct(m.var_1m)}</span></div>${spark(m.courbe.slice(-60), sens(m.var_1m))}</div>`;
+    <div class="chg ${sens(m.var_1j)}">${pct(m.var_1j)} <span class="flat"><i class="pt">· </i>1 mois ${pct(m.var_1m)}</span></div>${spark(m.courbe.slice(-60), sens(m.var_1m))}</div>`;
 }
 $("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
 $("#devises").innerHTML = [...D.devises, ...D.matieres].map((m) => carte(m)).join("");

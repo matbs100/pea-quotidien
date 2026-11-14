@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-14 · Cartes marchés sans point orphelin sur téléphone (Design, D-20261114-1)
+Le séparateur « · » est masqué sous 600 px (il commençait la 2e ligne). Aucune information retirée.
+
 ## 2026-11-13 · « Mois par mois » : mois en trois lettres
 - Les initiales J, F, M, A… se répétaient (J trois fois, M deux fois) : la carte affiche maintenant jan, fév, mar, avr, mai, jun, jul, aoû, sep, oct, nov, déc. Aucun chiffre changé. Décision D-20261113-2.
 
