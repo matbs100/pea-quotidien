@@ -834,6 +834,7 @@ def bloc_fiscalite_pea():
     for code in ("F22449", "F2385", "F2329"):
         assert "service-public.gouv.fr/particuliers/vosdroits/" + code in bloc, code
     assert "pas un conseil" in bloc and "rel=\"noopener noreferrer\"" in bloc
+    assert 'id="fisc-exceptions"' in bloc and "licenciement" in bloc and "invalidité" in bloc and "mise à la retraite" in bloc
 
 
 @test
