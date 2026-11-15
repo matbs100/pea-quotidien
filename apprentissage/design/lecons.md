@@ -10,8 +10,11 @@ Une leçon par ligne, datée, 60 lignes au plus. Relue chaque nuit avant de trav
 
 - 2026-11-14 · Masquer un séparateur « · » en mobile règle l'orphelin sans retirer d'information.
 
+- 2026-11-15 · Mesurer un chevauchement avec getBoundingClientRect à 320/360/390 px ; garder les textes ≥ 12 px (sinon 🟠).
+
 ## Ce qui a été annulé, et pourquoi
 
 ## Erreurs à ne plus refaire
+- 2026-11-15 · Ma capture cliquait sur la bulle de risque au lieu d'ouvrir la fiche : ouvrir une fiche par l'adresse #code.
 - 2026-11-13 · Ne jamais charger une police, une image ou un script depuis un autre site : la politique de sécurité de la page (CSP) le bloque et `design.py` le signale 🔴.
 - 2026-11-14 · Captures : défiler avant de photographier (blocs `.rv`) ; installer Chromium via `python3 -m playwright install chromium`.

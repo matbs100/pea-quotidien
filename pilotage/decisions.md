@@ -54,3 +54,4 @@ l'agent de nuit y ajoute ses décisions provisoires. Le chef les résume dans `p
 
 ## D-20261114-1 · Cartes des marchés : plus de point orphelin sur téléphone (provisoire (design))
 Grille de décision : gain de clarté faible mais sûr, risque nul (aucun texte retiré, seul le séparateur « · » est masqué sous 600 px), coût 4 lignes. Indicateur : la ligne « 1 mois … » commence sans « · » sur chaque carte à 390 px.
+- D-20261115-1 · 2026-11-15 · Top 30 : variations sans chevauchement à 360 px · **provisoire (design)** · indicateur : 0 ligne sur 30 avec chevauchement à 320, 360 et 390 px (était 25/30 à 360 px) · réalisée 2026-11-15

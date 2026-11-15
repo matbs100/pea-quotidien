@@ -140,6 +140,16 @@ h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 700; }
   .ligne .cs .c:nth-child(4) { display: none; }
 }
 @media (min-width: 761px) { .ligne .cs { display: contents; } }
+/* Petits téléphones : les variations ne passent plus sous la pastille de signal */
+@media (max-width: 400px) {
+  .ligne { column-gap: 8px; }
+  .ligne .cs { gap: 7px; } .ligne .c { font-size: 12px; }
+  .ligne .sig { padding: 5px 6px; }
+}
+@media (max-width: 340px) {
+  .ligne { grid-template-areas: "rg t prix" "rg c c" "rg sig sig"; }
+  .ligne .sig { justify-self: start; }
+}
 
 .vf { white-space: nowrap; font: 600 10px/1 var(--font-body); padding: 3px 6px; border-radius: 6px; margin-left: 6px; vertical-align: 2px; letter-spacing: .04em; }
 .vf.ok { background: var(--accent-soft); color: var(--accent); }

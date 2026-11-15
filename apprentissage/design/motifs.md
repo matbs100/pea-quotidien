@@ -6,3 +6,5 @@ Bonnes idées vues ailleurs. Format : `- [ ] Nom · vu sur <lien> · problème r
 - [ ] Résumé d'abord, détail replié · vu sur https://www.nngroup.com/articles/progressive-disclosure/ · page longue, le débutant se perd · replier « Ce que disent les données » derrière un bouton à l'intitulé clair (2 niveaux au plus) · ⏳ à essayer
 - [ ] Intitulé court et descriptif sur un détail replié · vu sur https://design-system.service.gov.uk/components/details/ · on n'ose pas cliquer · libellé qui annonce le contenu · ⏳ à essayer
 - [x] Une ligne de variation sans point orphelin · vu sur les cartes marchés (constat sur capture) · le « · » commence la 2e ligne sur téléphone · masquer le point en mobile · ✅ essayé le 2026-11-14
+- [ ] Bascule Tableau / Graphique pour les rendements · vu sur https://www.justetf.com/fr/etf-profile.html?isin=IE00B4L5Y983 · même donnée, deux lectures · bouton sur le bloc des variations d'une fiche · ⏳ à essayer
+- [x] Pas de chevauchement dans une ligne de tableau mobile · vu sur https://www.nngroup.com/articles/mobile-tables/ · colonnes illisibles · réduire les écarts et la taille aux petites largeurs · ✅ essayé le 2026-11-15
