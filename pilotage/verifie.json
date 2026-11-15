@@ -22,5 +22,11 @@
   "jour": "0b729b5",
   "preuve": "git show 0b729b5 --stat : data/presse/2026-11-14.md, 9 lignes, revue de presse demandée par pilotage/consignes.md et ecole.md (devoir 2) ; contenu relu : chiffres attribués à Zonebourse et Moneyvox, aucun conseil.",
   "le": "2026-11-14"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle de l'agent « design »",
+  "jour": "091daab",
+  "preuve": "git show 091daab -- data/taux_bce.json : seules les trois dates « releve » passent du 13 au 15/11 (taux 2,5 / 2,65 / 2,9 inchangés), effet de scripts/rendu.py lancé par l'agent ; aucune donnée modifiée.",
+  "le": "2026-11-15"
  }
 ]

@@ -42,3 +42,4 @@ d'orchestre : une règle par ligne, datée, avec l'agent concerné et l'exemple 
 - (14/11, nuit) **Une amélioration qui touche `data/presse/` reste dans le rôle** quand la consigne la demande ; écris-le dans le journal pour que le contrôle n'ait pas à le signaler. Exemple : alerte « hors du rôle » sur la revue de presse du 14/11, levée par le chef.
 - (14/11, nuit) **Nouveaux fonds : pars des fonds écartés par la tâche du samedi**, pas d'une recherche libre par émetteur : deux nuits sans piste confirmée (CEU, Ossiam).
 - (14/11, tous) **Un cours Boursorama vide n'est pas un écart de prix** : la page FF55-IBE (Espagne) renvoie `last` nul ; Yahoo et FT donnent 23,70 €. Regarde les deux autres sources avant de conclure.
+- (2026-11-15) Agent de nuit et design : une décision provisoire se note dans le **tableau** de `pilotage/decisions.md` (ligne `| D-… |` à 12 colonnes), pas en liste à puces : sinon le contrôle la voit comme absente (exemple : D-20261115-2).

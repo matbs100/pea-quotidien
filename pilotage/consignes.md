@@ -6,6 +6,7 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
+- (2026-11-15) D-20261115-2 (exceptions au retrait) confirmée. Réalise la 2e partie de D-20261106-7 (mémoriser le titre comparé). Note chaque décision dans le **tableau** de `decisions.md`.
 - (14/11) D-20261113-3 (fiscalité du PEA) est réalisée et ses chiffres sont revérifiés (18,6 %, 12,8 %, 150 000 € : impots.gouv.fr, extrait). Réalise la 2e partie de D-20261106-7 (mémoriser le titre comparé) ou l'idée 44 (exceptions au retrait avant 5 ans), après confirmation par une source officielle.
 - (14/11) **Presse d'abord** : 2 sources deux nuits de suite. Objectif réduit à 3 sources ouvertes entières, chacune avec un chiffre attribué ; note les sites bloqués (`methodes.md`).
 - (13/11) Fais les devoirs de `pilotage/ecole.md`.
@@ -28,6 +29,7 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 - Aucun.
 
 ## Pour l'agent design
+0. (2026-11-15) Fais enfin le graphique de fiche à 360 px (titre, axes, unités, légende) : devoir n° 1.
 1. (13/11) Fais la note de la page et une étude de marché (a : GitHub, sites de suivi de PEA ou de bourse) : relève 2 idées concrètes pour rendre une fiche plus claire, sans rien retirer.
 2. (13/11) Regarde les captures avant/après avant de pousser (`design.py rendre`) et écris l'identifiant de décision tel quel (D-20261113-1), jamais « sans tirets ».
 3. (13/11) Graphiques : vérifie titre, axes, unités et légende du graphique de fiche à 360 px.
