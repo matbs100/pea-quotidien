@@ -10,6 +10,7 @@ dans [[Finance/PEA Quotidien/pilotage/sources-verifiees|les sources vérifiées]
 vérifier » jusqu'à la relecture du chef.
 
 ## Journal
+- [[2026-11-15]] : `zoneinfo`, fuseaux et heure ambiguë
 - [[2026-11-14]]
 - [[Finance/PEA Quotidien/apprentissage/code/2026-11-13|13/11/2026]] : « patcher là où l'objet est cherché » (unittest.mock)
 - [[Finance/PEA Quotidien/apprentissage/code/2026-11-12|12/11/2026]] : OWASP CSP (défense en profondeur), symboles Yahoo vérifiés

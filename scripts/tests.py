@@ -838,6 +838,18 @@ def bloc_fiscalite_pea():
 
 
 @test
+def changelog_du_plus_recent_au_plus_ancien():
+    """Les entrées de CHANGELOG.md restent sous l'introduction et sont rangées de la plus récente à la plus ancienne."""
+    import re
+    texte = (RACINE / "apprentissage" / "CHANGELOG.md").read_text(encoding="utf-8")
+    entrees = list(re.finditer(r"^## (\d{4}-\d{2}-\d{2}) · ", texte, re.M))
+    assert entrees, "aucune entrée datée"
+    assert texte.index("# 🛠 Nouveautés du programme") < entrees[0].start(), "entrée au-dessus de l'en-tête"
+    dates = [m.group(1) for m in entrees]
+    assert dates == sorted(dates, reverse=True), "entrées pas dans l'ordre du plus récent au plus ancien"
+
+
+@test
 def confidentialite():
     """Aucune information personnelle dans le dépôt public ; le scanner ne recopie jamais ce qu'il trouve."""
     import confidentialite as cf
