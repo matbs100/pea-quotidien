@@ -5,6 +5,12 @@ projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). 
 
 ## Tâches demandées par le propriétaire (à faire en premier, dans l'ordre)
 
+- [ ] 2026-11-16 · **Trouver un ISIN absent de la fiche.** Le propriétaire veut pouvoir chercher un titre non suivi.
+  Un cours en direct est écarté (CSP `connect-src 'self'`, CORS des sites : il faudrait un serveur relais).
+  Retenu (idée n° 48, `apprentissage/idees.md`) : quand un ISIN valide n'est pas suivi, afficher les liens
+  « Chercher cet ISIN sur Boursorama · justETF · Euronext » (nouvel onglet) ; la phrase « donne son ISIN à
+  Claude » reste. Tester les adresses avec un vrai ISIN.
+
 - [ ] 2026-11-16 · **Effet « verre dépoli » (style liquid glass) sur les éléments flottants seulement.**
   Le fond animé `.blobs` donne déjà de la couleur à faire transparaître. À faire dans `scripts/modele.html` :
   surface semi-transparente + `backdrop-filter: blur(…) saturate(…)` (avec `-webkit-`), liseré clair d'1 px
