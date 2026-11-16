@@ -1,6 +1,8 @@
 Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidian.py` depuis [[Finance/PEA Quotidien/pilotage/decisions|le journal des décisions]]).
 
 - **15/11** · `D-20261115-2` · n° 44 · Bloc fiscalité : exceptions au retrait avant 5 ans (licenciement, invalidité 2e/3e catégorie, mise à la retraite par l'employeur) → adoptée (confirmée par le chef le 2026-11-15) (gain 3,30) ; réalisée le 15/11
+- **16/11** · `D-20261116-1` · Graphique de fiche : devise (« Prix en EUR · axe de droite ») et libellé accessible complet → adoptée (confirmée par le chef le 2026-11-16) (gain —) ; réalisée le 16/11
+- **16/11** · `D-20261116-2` · n° 7 (2e partie) · Comparer deux titres : le titre comparé est mémorisé sur l'appareil et repris à l'ouverture d'une fiche → adoptée (confirmée par le chef le 2026-11-16) (gain 3,85) ; réalisée le 16/11
 - **15/11** · `D-20261115-1` · Top 30 : variations sans chevauchement à 360 px → adoptée (confirmée par le chef le 2026-11-15) (gain —) ; réalisée le 15/11
 - **14/11** · `D-20261114-1` · Cartes des marchés : plus de point orphelin sur téléphone → adoptée (confirmée par le chef le 2026-11-15) (gain —) ; réalisée le 14/11
 - **14/11** · `D-20261114-2` · Garde-fou design : un lien `<a href>` vers une source citée n'est plus pris pour un site chargé par la page (faux 🔴 sur le bloc fiscalité) → correction (gain —) ; réalisée le 14/11

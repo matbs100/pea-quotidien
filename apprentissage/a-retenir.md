@@ -5,3 +5,4 @@ Ce que l'agent de nuit retient, une ligne par nuit (généré par `scripts/obsid
 - **13/11** : Un contraste se mesure : le rapport de luminance entre texte et fond doit être d'au moins 4,5 pour un texte normal. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-13|journal]]
 - **14/11** : Après 5 ans de PEA, les gains n'ont plus d'impôt sur le revenu, mais les prélèvements sociaux restent dus. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-14|journal]]
 - **15/11** : Retirer de l'argent d'un PEA avant 5 ans le clôture, sauf quelques cas comme le licenciement ou l'invalidité. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-15|journal]]
+- **16/11** : Un choc sur le prix de l'énergie peut maintenir l'inflation haute, et la banque centrale attend alors les données avant de bouger ses taux. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-16|journal]]

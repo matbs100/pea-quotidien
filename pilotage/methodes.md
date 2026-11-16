@@ -43,3 +43,5 @@ d'orchestre : une règle par ligne, datée, avec l'agent concerné et l'exemple 
 - (14/11, nuit) **Nouveaux fonds : pars des fonds écartés par la tâche du samedi**, pas d'une recherche libre par émetteur : deux nuits sans piste confirmée (CEU, Ossiam).
 - (14/11, tous) **Un cours Boursorama vide n'est pas un écart de prix** : la page FF55-IBE (Espagne) renvoie `last` nul ; Yahoo et FT donnent 23,70 €. Regarde les deux autres sources avant de conclure.
 - (2026-11-15) Agent de nuit et design : une décision provisoire se note dans le **tableau** de `pilotage/decisions.md` (ligne `| D-… |` à 12 colonnes), pas en liste à puces : sinon le contrôle la voit comme absente (exemple : D-20261115-2).
+- (2026-11-16, design) **Une décision du design va dans le tableau de `pilotage/decisions.md`** (ligne `| D-… |`), pas en puces ; regarde le graphique à **360 px** comme demandé, pas 390 px. Exemple : D-20261116-1 écrite en puces, devoir 360 px fait à 390 px.
+- (2026-11-16, nuit) **Une revue de presse demandée par `ecole.md` se déclare dans le journal** (« fichier demandé par le chef ») ; la nuit l'a fait, l'alerte reste mais est vérifiable.
