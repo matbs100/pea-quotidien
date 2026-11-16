@@ -34,5 +34,17 @@
   "jour": "09b4ed2",
   "preuve": "git show 09b4ed2 -- data/presse : revue de presse demandée par ecole.md (devoir 1) ; page Boursorama actualités ouverte le 16/11 : future CAC NOV 26 à 8 392 (+0,21 %), titre Reuters « meilleure semaine depuis juin » confirmés (Brent 95,17 $ à l'ouverture contre 95,33 $ noté : cours mouvant) ; aucun conseil.",
   "le": "2026-11-16"
+ },
+ {
+  "alerte": "PLEM.PA : cours daté du 2026-11-13",
+  "jour": "2026-11-16",
+  "preuve": "Boursorama (page 1rTPLEM) ouverte à 12 h 34 : valeur liquidative du 16/11/2026 affichée ; la fiche de 9 h 22 portait la dernière valeur connue du 13/11, décalage normal d'un ETF.",
+  "le": "2026-11-16"
+ },
+ {
+  "alerte": "ETZ.PA : cours daté du 2026-11-13",
+  "jour": "2026-11-16",
+  "preuve": "Boursorama (page 1rTETZ) ouverte à 12 h 34 : valeur liquidative du 16/11/2026 affichée ; la fiche de 9 h 22 portait la dernière valeur connue du 13/11, décalage normal d'un ETF.",
+  "le": "2026-11-16"
  }
 ]

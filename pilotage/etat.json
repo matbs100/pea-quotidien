@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-16T05:12+01:00",
- "fiche": "2026-11-13 (cloture)",
+ "genere_le": "2026-11-16T12:36+01:00",
+ "fiche": "2026-11-16 (ouverture)",
  "lieu": "cloud",
- "etat": "vert",
- "resume": "Tout est en ordre. 41/41 tests, 8/8 prix revérifiés, 25/25 liens valides, site à jour.",
+ "etat": "orange",
+ "resume": "À surveiller. 41/41 tests, 18/18 liens valides, site à jour. Points à voir : cohérence des données.",
  "controles": [
   {
    "nom": "tests",
@@ -20,52 +20,56 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-13 (cloture), générée le 2026-11-13T17:57+01:00",
-    "fiche attendue à cette heure : 2026-11-13 (cloture)"
+    "dernière fiche : 2026-11-16 (ouverture), générée le 2026-11-16T09:22+01:00",
+    "fiche attendue à cette heure : 2026-11-16 (ouverture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "ok",
-   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 52 confirmés, 1 écart(s)",
-   "details": []
+   "niveau": "alerte",
+   "resume": "59 cours examinés, 0 problème(s), 3 alerte(s) ; entre sources : 52 confirmés, 2 écart(s) ; 2 vérifiée(s) par le chef",
+   "details": [
+    "INS.PA : cours daté du 2026-11-13, pas du 2026-11-16",
+    "FOO.PA : cours daté du 2026-11-13, pas du 2026-11-16",
+    "EUROB.AT : cours daté du 2026-11-13, pas du 2026-11-16",
+    "✔ vérifié par le chef le 2026-11-16 : PLEM.PA : cours daté du 2026-11-13, pas du 2026-11-16 — Boursorama (page 1rTPLEM) ouverte à 12 h 34 : valeur liquidative du 16/11/2026 affichée ; la fiche de 9 h 22 portait la dernière valeur connue du 13/11, décalage normal d'un ETF.",
+    "✔ vérifié par le chef le 2026-11-16 : ETZ.PA : cours daté du 2026-11-13, pas du 2026-11-16 — Boursorama (page 1rTETZ) ouverte à 12 h 34 : valeur liquidative du 16/11/2026 affichée ; la fiche de 9 h 22 portait la dernière valeur connue du 13/11, décalage normal d'un ETF."
+   ]
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "382 mots, 0 remarque(s)",
+   "resume": "304 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-13 (cloture)",
+   "resume": "régénérée avec la fiche du 2026-11-16 (ouverture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "ok",
-   "resume": "8/8 prix identiques sur Boursorama (1 écart(s) vérifié(s))",
-   "details": [
-    "✔ vérifié par le chef le 2026-11-14 : IBE.MC : 23.7 dans la fiche, 18.04 sur Boursorama — Yahoo et FT donnent tous deux 23,70 € (fiche du 13/11, champ sources). Page Boursorama FF55-IBE ouverte le 14/11 : cours vide (last nul, aucune cotation), donc le 18,04 ne vient pas d'une cotation d'Iberdrola ; la page de la place espagnole n'est pas fiable pour ce contrôle."
-   ]
+   "niveau": "non_verifiable",
+   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
+   "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "25/25 liens valides sur 8 titres, 9 non ouverts (robots.txt)",
+   "resume": "18/18 liens valides sur 8 titres, 6 non ouverts (robots.txt), 7 injoignables d'ici",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-13 (cloture)",
+   "resume": "le site affiche la fiche du 2026-11-16 (ouverture)",
    "details": []
   },
   {
@@ -82,27 +86,22 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "7 commit(s), 0 problème(s), 0 alerte(s) ; 2 vérifiée(s) par le chef",
+   "resume": "5 commit(s), 0 problème(s), 0 alerte(s) ; 1 vérifiée(s) par le chef",
    "details": [
     "✔ vérifié par le chef le 2026-11-16 : 09b4ed2 « Amélioration : titre comparé mémorisé sur l'appare » : data/presse/2026-11-16.md : hors du rôle de l'agent « nuit » — git show 09b4ed2 -- data/presse : revue de presse demandée par ecole.md (devoir 1) ; page Boursorama actualités ouverte le 16/11 : future CAC NOV 26 à 8 392 (+0,21 %), titre Reuters « meilleure semaine depuis juin » confirmés (Brent 95,17 $ à l'ouverture contre 95,33 $ noté : cours mouvant) ; aucun conseil.",
-    "✔ vérifié par le chef le 2026-11-15 : 091daab « Design : lignes du Top 30 sans chevauchement sur p » : data/taux_bce.json : hors du rôle de l'agent « design » — git show 091daab -- data/taux_bce.json : seules les trois dates « releve » passent du 13 au 15/11 (taux 2,5 / 2,65 / 2,9 inchangés), effet de scripts/rendu.py lancé par l'agent ; aucune donnée modifiée.",
+    "ce1b8d8 [fiche] Matin PEA 2026-11-16 (ouverture)",
+    "ecf548d [chef] Chef : rapport du 2026-11-16 (vert)",
     "d63107d [code] Code : rapport du 2026-11-16 (vert) ; test du geste de fermeture [corr",
     "09b4ed2 [nuit] Amélioration : titre comparé mémorisé sur l'appareil [D-20261116-2]",
-    "cae79c7 [design] Design : unité sur le graphique de fiche [D-20261116-1]",
-    "72f91aa [chef] Chef : rapport du 2026-11-15 (vert) ; décisions du jour mises au table",
-    "28ff7a8 [code] Code : rapport du 2026-11-15 (vert) ; test de l'ordre du CHANGELOG [co",
-    "f4208cf [nuit] Amélioration : exceptions au retrait avant 5 ans dans le bloc fiscalit",
-    "091daab [design] Design : lignes du Top 30 sans chevauchement sur petit téléphone [D-20"
+    "cae79c7 [design] Design : unité sur le graphique de fiche [D-20261116-1]"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
    "niveau": "ok",
-   "resume": "4 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
+   "resume": "2 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
    "details": [
-    "091daab « Design : lignes du Top 30 sans chevauchement sur p » : rien de retiré",
-    "f4208cf « Amélioration : exceptions au retrait avant 5 ans d » : rien de retiré",
     "cae79c7 « Design : unité sur le graphique de fiche [D-202611 » : rien de retiré",
     "09b4ed2 « Amélioration : titre comparé mémorisé sur l'appare » : rien de retiré"
    ]
