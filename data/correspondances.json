@@ -77,7 +77,9 @@
  "SAP.DE": {
   "boursorama": "1zSAP",
   "ft": "SAP:FRA",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "SOP.PA": {
   "boursorama": "1rPSOP",
@@ -227,7 +229,9 @@
  "ALSGD.PA": {
   "boursorama": "1rPALSGD",
   "ft": "ALSGD:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ETL.PA": {
   "boursorama": "1rPETL",
@@ -383,7 +387,9 @@
  "GET.PA": {
   "boursorama": "1rPGET",
   "ft": "GET:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "INS.PA": {
   "boursorama": "1rTINS",
@@ -565,6 +571,11 @@
  "AM.PA": {
   "boursorama": "1rPAM",
   "ft": "AM:PAR",
+  "echecs": {}
+ },
+ "SPM.MI": {
+  "boursorama": "1gSPM",
+  "ft": "SPM:MIL",
   "echecs": {}
  }
 }
