@@ -5,6 +5,20 @@ projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). 
 
 ## Tâches demandées par le propriétaire (à faire en premier, dans l'ordre)
 
+- [ ] 2026-11-16 · **Effet « verre dépoli » (style liquid glass) sur les éléments flottants seulement.**
+  Le fond animé `.blobs` donne déjà de la couleur à faire transparaître. À faire dans `scripts/modele.html` :
+  surface semi-transparente + `backdrop-filter: blur(…) saturate(…)` (avec `-webkit-`), liseré clair d'1 px
+  et légère ombre, **seulement** sur ce qui flotte : en-tête et poignée de la fiche détaillée (`.feuille`),
+  info-bulle `#bulle-r`. **Ne pas** l'appliquer aux cartes de prix, tableaux ni graphiques (`.card`,
+  `.ligne`, SVG) : ils restent opaques. Ne pas créer d'en-tête collant pour l'occasion.
+  Précautions : `@supports not (backdrop-filter: blur(1px))` → surface opaque actuelle ;
+  `@media (prefers-reduced-transparency: reduce)` → surface opaque ; contrastes ≥ 4,5 dans les deux thèmes
+  (test `contrastes_des_deux_themes`) ; flou modéré (≤ 20 px) pour ne pas ralentir un téléphone.
+  Passe par la grille de `pilotage/decision.md` : si le gain est < 3 ou si c'est moins lisible sur les
+  captures 360 px (clair et sombre, fiche ouverte au-dessus du Top 30), ne le garde pas et explique pourquoi.
+  Indicateur : `design.py comparer` 🟢, aucune information retirée, contrastes inchangés ou meilleurs.
+  Quand c'est fait (ou écarté) : cocher la case avec la date et la décision `[D-…]`.
+
 - [x] 2026-11-13 · fait le 2026-11-13 [D-20261113-1] · **Glisser vers le bas pour fermer une fiche sur téléphone** (action, ETF, fonds, indice…).
   Aujourd'hui, seule la croix ✕ ferme la fiche. À faire dans `scripts/modele.html` (fenêtre `#feuille`,
   fonction `fermer()`) : suivre le doigt (`touchstart` / `touchmove` / `touchend`, `{passive: true}`), la

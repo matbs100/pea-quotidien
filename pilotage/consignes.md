@@ -28,6 +28,7 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 - Aucun.
 
 ## Pour l'agent design
+- (16/11, propriétaire) **En premier** : la tâche « effet verre dépoli sur les éléments flottants » de `pilotage/design/souhaits.md` (pas sur les cartes ni les tableaux ; repli opaque ; captures 360 px clair et sombre).
 0. (16/11) Unité du graphique ✅ (D-20261116-1). Reste : le regarder à **360 px** (pas 390) et sur une fiche ETF qui a un historique ; étude de marché (a) toujours non faite.
 1. (13/11) Fais la note de la page et une étude de marché (a : GitHub, sites de suivi de PEA ou de bourse) : relève 2 idées concrètes pour rendre une fiche plus claire, sans rien retirer.
 2. (16/11) Note ta décision dans le **tableau** de `decisions.md`, pas en puces. (13/11) Regarde les captures avant/après avant de pousser (`design.py rendre`) et écris l'identifiant de décision tel quel (D-20261113-1), jamais « sans tirets ».
