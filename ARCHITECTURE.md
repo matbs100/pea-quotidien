@@ -412,6 +412,8 @@ coffre Obsidian (sautée si le projet est déjà dans un coffre, pour ne jamais 
 publié), contrôle et tests, et publication sur `claude/pea` après confirmation.
 
 ### `tests.py` : les garde-fous
+
+Test `glisser_pour_fermer` (16/11) : extrait le bloc « glisser vers le bas » de `modele.html`, l'exécute dans node avec des éléments simulés et vérifie la fermeture au-delà de 120 px ou pour un geste rapide (> 40 px en moins de 250 ms).
 Usage : `python scripts/tests.py` (sans réseau, quelques secondes). Aucun agent ne publie de code
 si un test échoue. Chaque nouvelle fonction de calcul doit avoir son test.
 `changelog_du_plus_recent_au_plus_ancien` vérifie que les entrées de `apprentissage/CHANGELOG.md` restent sous l'en-tête et rangées de la plus récente à la plus ancienne.

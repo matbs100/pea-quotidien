@@ -64,3 +64,5 @@ Statuts : `proposée`, `adoptée D-…`, `à l'essai D-…`, `en attente : raiso
 | 47 | Une page statique par titre, comme le site en lecture seule du projet xang1234/stock-screener (mis à jour chaque jour après la clôture) | GitHub, page lue le 16/11 (Apache-2.0) | Matin PEA a déjà une fiche par titre : idée seulement, aucun code repris | 2 | 1 | 2 | 1 | 4 | 1,80 | 3 | 2 | rejetée : gain < 3 (doublon de la fiche détaillée) |
 
 - 2026-11-15 (code) : test qui repère `date.today()` ou `datetime.now()` sans fuseau dans `scripts/` (la date du jour doit venir de `ZoneInfo("Europe/Paris")`). Source : docs.python.org (zoneinfo), lu le 15/11. Grille : U 3, R 2, V 0, N 2, F 5 ; C 1, Ri 1. Statut : proposée.
+
+- (2026-11-16, code) Test de la politique de sécurité de la page : `object-src` et `base-uri` restreints. Utilité 4, résultats 3, visuel 1, nouveauté 2, fiabilité 5 ; coût faible, risque nul. Inspiration : fiche OWASP CSP.

@@ -1016,6 +1016,38 @@ console.log([titreAGarder("CW8.PA", o), titreAGarder("XXX", o), titreAGarder("",
     assert r.stdout.strip() == "CW8.PA||||", f"mémoire de comparaison fausse : {r.stdout!r} {r.stderr[-300:]}"
 
 
+@test
+def glisser_pour_fermer():
+    """Le geste « glisser vers le bas » ferme la fiche au-delà de 120 px ou s'il est rapide (node, éléments simulés)."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    m = re.search(r"\(function \(\) \{\n  const corps = \$\(\"#f-corps\"\).*?\n\}\)\(\);", modele, re.S)
+    assert m, "bloc « glisser pour fermer » introuvable"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : geste de fermeture non exécuté")
+        return
+    essai = """
+let ferme = 0, maintenant = 0; Date.now = () => maintenant;
+const corps = { contains: () => false, scrollTop: 0 };
+const $ = () => corps, matchMedia = () => ({ matches: false });
+const ecouteurs = {};
+const feuille = { addEventListener: (n, f) => { ecouteurs[n] = f; }, classList: { add() {}, remove() {} }, style: {} };
+function fermer() { ferme++; }
+""" + m.group(0) + """
+function geste(dy, duree) {
+  const av = ferme; maintenant = 1000;
+  ecouteurs.touchstart({ touches: [{ clientY: 100 }], target: {} });
+  maintenant += duree;
+  ecouteurs.touchmove({ touches: [{ clientY: 100 + dy }] });
+  ecouteurs.touchend();
+  return ferme - av;
+}
+console.log([geste(121, 600), geste(119, 600), geste(60, 100), geste(30, 100), geste(-50, 100)].join("|"));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "1|0|1|0|0", f"seuil de glissement faux : {r.stdout!r} {r.stderr[-300:]}"
+
+
 def main():
     echecs = 0
     for f in TESTS:
