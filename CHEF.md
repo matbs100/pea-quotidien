@@ -167,6 +167,16 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
    d'`AMELIORATION.md`). Sinon, donne dans `pilotage/consignes.md` une nouveauté précise à réaliser, tirée
    des idées les mieux notées, et un devoir de presse dans `pilotage/ecole.md`. Relis chaque nouveauté
    comme une amélioration : tests, rendu au téléphone, aucun conseil personnalisé.
+   **Progrès de chaque jour** (demande du propriétaire, 16/11 : la fiche doit être meilleure chaque jour,
+   jamais pire). Chaque matin, compte depuis ton dernier rapport : (a) les **améliorations réalisées** et
+   gardées (design, nuit, code : décisions « fait le » du journal) ; (b) les **nouvelles idées** notées
+   dans `apprentissage/idees.md` par tous les agents ; (c) le **stock** d'idées « proposée » ou
+   « adoptée » non réalisées dont le gain est ≥ 3,5. Écris ces trois nombres en première ligne de
+   `## Décisions` (« Progrès : 2 réalisées, 4 idées, stock 5 »). Si (a) = 0, ta réalisation de l'étape 7
+   devient **obligatoire** et passe avant l'école (une amélioration visible ou une correction, jamais
+   rien) ; si (b) < 3 ou (c) < 3, propose toi-même les idées manquantes, tirées de la veille, des
+   bilans ou de l'étude de marché du design. Une réalisation qui rend la page moins claire, plus lente ou
+   retire une information est annulée (`git revert`) : « meilleure », pas seulement « différente ».
 8. **Coordonner.** Réécris `pilotage/consignes.md` (40 lignes au plus, chaque point daté, retire ce qui
    est réglé) avec ces parties : `## Priorités pour l'agent de nuit` (1 à 3 points précis),
    `## Pour la fiche du jour`, `## Chantier interface` (améliorations à faire, la plus utile en premier),
