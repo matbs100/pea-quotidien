@@ -1082,8 +1082,9 @@ function graphe(zone, det) {
       ${grille}${xl}<path d="${d}L${X(pts.length - 1).toFixed(1)},${H - b}L${X(0).toFixed(1)},${H - b}Z" fill="url(#g-remp)"/>
       <path class="g-ligne" d="${d}" fill="none" stroke="${coul}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${chemins}
       <line class="g-x" y1="${h}" y2="${H - b}" stroke="var(--muted)" opacity="0"/><circle class="g-pt" r="5" fill="${coul}" stroke="var(--bg)" stroke-width="2" opacity="0"/>`;
-    const resume = `<span class="${sens(perf)}" style="font-weight:600">${pct(perf)}</span> sur ${p[0] === "5A" ? (lib5 === "Max" ? "tout l'historique" : "5 ans") : p[1]}<br>du ${fdate(pts[0][0], true)} au ${fdate(pts[pts.length - 1][0], true)}`;
+    const resume = `<span class="${sens(perf)}" style="font-weight:600">${pct(perf)}</span> sur ${p[0] === "5A" ? (lib5 === "Max" ? "tout l'historique" : "5 ans") : p[1]}<br>du ${fdate(pts[0][0], true)} au ${fdate(pts[pts.length - 1][0], true)}${det.devise ? `<br><span style="color:var(--muted)">Prix en ${esc(det.devise)} · axe de droite</span>` : ""}`;
     info.innerHTML = resume;
+    svg.setAttribute("aria-label", `Historique du prix${det.devise ? " en " + det.devise : ""}, ${pct(perf)} sur la période`);
     const lg = svg.querySelector(".g-ligne");
     if (!reduit && lg.getTotalLength) {
       const L = lg.getTotalLength();

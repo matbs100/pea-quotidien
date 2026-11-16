@@ -3,7 +3,10 @@ tags: [pea, agent, apprentissage]
 ---
 # 🛠 Nouveautés du programme
 
-Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
+Du plus récent au plus ancien. Chaque entrée commence par `## 2026-11-16 · Unité (devise) sur le graphique de fiche (Design, D-20261116-1)
+Le résumé du graphique de fiche indique « Prix en EUR · axe de droite » et le libellé lu par les lecteurs d'écran contient la devise et la variation. Aucune information retirée.
+
+## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
 ## 2026-11-15 · ✨ Nouveauté : exceptions au retrait avant 5 ans dans le bloc fiscalité
 Une note sous les 4 cartes dit que licenciement, invalidité (2e ou 3e catégorie) et mise à la retraite par l'employeur évitent la clôture du PEA, pour le titulaire ou son conjoint. Source : service-public.gouv.fr F22449 (page vérifiée le 15/04/2026). Décision D-20261115-2.
