@@ -1028,6 +1028,10 @@ function aligner100(ptsA, serieB) {  // D-20261106-7 : deux séries ramenées à
   });
   return { a, b };
 }
+const CLE_CMP = "matin-pea:comparaison";  // titre comparé, gardé sur l'appareil (D-20261116-2)
+function titreAGarder(memo, options) {  // le titre mémorisé n'est repris que s'il est encore proposé
+  return typeof memo === "string" && memo && options.includes(memo) ? memo : null;
+}
 const PERIODES = [["1M", "1 mois", 21, "j"], ["3M", "3 mois", 63, "j"], ["6M", "6 mois", 126, "j"], ["1A", "1 an", 252, "j"], ["5A", "5 ans", 1830, "s"]];
 let redessiner = null;
 function graphe(zone, det) {
@@ -1035,9 +1039,11 @@ function graphe(zone, det) {
   const dispo = PERIODES.filter((p) => (p[3] === "s" ? S.length > 10 : J.length > 5));
   let per = "1A", moy = false, autre = null;
   const lib5 = (det.stats && det.stats.annees_hist < 4.8) ? "Max" : "5 ans";
+  const proposes = Object.keys(DET).filter((t) => TOUS[t] && TOUS[t] !== FICHE && DET[t].j && PLACEMENT.includes(TOUS[t].categorie)).sort();
+  try { autre = titreAGarder(localStorage.getItem(CLE_CMP), proposes); } catch (e) {}
   zone.innerHTML = `<div class="onglets" role="group" aria-label="Période">${dispo.map((p) => `<button class="chip" data-p="${p[0]}" aria-pressed="${p[0] === per}">${p[0] === "5A" ? lib5 : p[1]}</button>`).join("")}
     <button class="chip" data-mm aria-pressed="false">Moyennes mobiles</button>
-    <select class="chip" id="cmp" aria-label="Comparer avec un autre titre (base 100)"><option value="">Comparer avec…</option>${Object.keys(DET).filter((t) => TOUS[t] && TOUS[t] !== FICHE && DET[t].j && PLACEMENT.includes(TOUS[t].categorie)).sort().map((t) => `<option value="${esc(t)}">${esc(TOUS[t].nom)} (${esc(t)})</option>`).join("")}</select></div>
+    <select class="chip" id="cmp" aria-label="Comparer avec un autre titre (base 100)"><option value="">Comparer avec…</option>${proposes.map((t) => `<option value="${esc(t)}"${t === autre ? " selected" : ""}>${esc(TOUS[t].nom)} (${esc(t)})</option>`).join("")}</select></div>
     <div class="graphe"><div class="g-info" aria-live="polite"></div><svg role="img" aria-label="Historique du prix"></svg><div class="g-leg" hidden></div></div>`;
   const svg = zone.querySelector("svg"), info = zone.querySelector(".g-info"), leg = zone.querySelector(".g-leg");
   function dessiner() {
@@ -1134,7 +1140,7 @@ function graphe(zone, det) {
     svg.onpointermove = suivre; svg.onpointerdown = suivre;
     svg.onpointerleave = () => { gx.setAttribute("opacity", "0"); info.innerHTML = resume; };
   }
-  zone.querySelector("#cmp").addEventListener("change", (e) => { autre = e.target.value || null; dessiner(); });
+  zone.querySelector("#cmp").addEventListener("change", (e) => { autre = e.target.value || null; try { localStorage.setItem(CLE_CMP, autre || ""); } catch (x) {} dessiner(); });
   zone.querySelectorAll("[data-p]").forEach((bt) => bt.addEventListener("click", () => {
     per = bt.dataset.p; zone.querySelectorAll("[data-p]").forEach((x) => x.setAttribute("aria-pressed", x === bt)); dessiner();
   }));

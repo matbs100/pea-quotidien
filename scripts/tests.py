@@ -997,6 +997,25 @@ def contrastes_des_deux_themes():
         assert g.contraste(v["accent"], v["accent-soft"]) >= 4.5 and g.contraste(v["amber"], v["amber-soft"]) >= 4.5
 
 
+@test
+def comparaison_memorisee():
+    """D-20261116-2 : le titre comparé mémorisé n'est repris que s'il est encore proposé (node)."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "function titreAGarder" in modele and 'const CLE_CMP = "matin-pea:comparaison"' in modele, "mémoire de la comparaison absente"
+    assert "localStorage.setItem(CLE_CMP" in modele, "le titre comparé n'est pas enregistré"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : mémoire de la comparaison non exécutée")
+        return
+    fn = re.search(r"function titreAGarder\(.*?\n}\n", modele, re.S).group(0)
+    essai = fn + """
+const o = ["CW8.PA", "EWLD.PA"];
+console.log([titreAGarder("CW8.PA", o), titreAGarder("XXX", o), titreAGarder("", o), titreAGarder(null, o), titreAGarder(5, o)].join("|"));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "CW8.PA||||", f"mémoire de comparaison fausse : {r.stdout!r} {r.stderr[-300:]}"
+
+
 def main():
     echecs = 0
     for f in TESTS:
@@ -1016,4 +1035,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
