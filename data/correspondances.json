@@ -546,5 +546,25 @@
   "boursorama": "1rPERA",
   "ft": "ERA:PAR",
   "echecs": {}
+ },
+ "ITP.PA": {
+  "boursorama": "1rPITP",
+  "ft": "ITP:PAR",
+  "echecs": {}
+ },
+ "SCR.PA": {
+  "boursorama": "1rPSCR",
+  "ft": "SCR:PAR",
+  "echecs": {}
+ },
+ "ENI.MI": {
+  "boursorama": "1gENI",
+  "ft": "ENI:MIL",
+  "echecs": {}
+ },
+ "AM.PA": {
+  "boursorama": "1rPAM",
+  "ft": "AM:PAR",
+  "echecs": {}
  }
 }

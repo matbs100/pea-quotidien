@@ -1,14 +1,14 @@
 {
- "maj": "2026-11-06",
+ "maj": "2026-11-16",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/cours/1rPALCOX/",
   "isin": "FR0013018124",
   "pea_bourso": true,
   "secteur": "Produits biopharmaceutiques",
-  "valorisation": "28 MEUR",
+  "valorisation": "29 MEUR",
   "per_annee": "2026",
   "nb_titres": "99 068 712",
-  "capitalisation": "28,09 MEUR",
+  "capitalisation": "28,73 MEUR",
   "marche": "Euronext Growth Paris",
   "site": "https://www.nicox.com/fr/",
   "pays": "France"
