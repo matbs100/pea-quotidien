@@ -77,9 +77,7 @@
  "SAP.DE": {
   "boursorama": "1zSAP",
   "ft": "SAP:FRA",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "SOP.PA": {
   "boursorama": "1rPSOP",
@@ -229,9 +227,7 @@
  "ALSGD.PA": {
   "boursorama": "1rPALSGD",
   "ft": "ALSGD:PAR",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "ETL.PA": {
   "boursorama": "1rPETL",
@@ -278,7 +274,9 @@
  "IBE.MC": {
   "boursorama": "FF55-IBE",
   "ft": "IBE:MCE",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ENX.PA": {
   "boursorama": "1rPENX",
@@ -387,9 +385,7 @@
  "GET.PA": {
   "boursorama": "1rPGET",
   "ft": "GET:PAR",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "INS.PA": {
   "boursorama": "1rTINS",
@@ -576,6 +572,83 @@
  "SPM.MI": {
   "boursorama": "1gSPM",
   "ft": "SPM:MIL",
+  "echecs": {}
+ },
+ "MC.PA": {
+  "boursorama": "1rPMC",
+  "ft": "MC:PAR",
+  "echecs": {}
+ },
+ "TTE.PA": {
+  "boursorama": "1rPTTE",
+  "ft": "TTE:PAR",
+  "echecs": {}
+ },
+ "AIR.PA": {
+  "boursorama": "1rPAIR",
+  "ft": "AIR:PAR",
+  "echecs": {}
+ },
+ "ML.PA": {
+  "boursorama": "1rPML",
+  "ft": "ML:PAR",
+  "echecs": {}
+ },
+ "RMS.PA": {
+  "boursorama": "1rPRMS",
+  "ft": "RMS:PAR",
+  "echecs": {}
+ },
+ "BNP.PA": {
+  "boursorama": "1rPBNP",
+  "ft": "BNP:PAR",
+  "echecs": {}
+ },
+ "ASML.AS": {
+  "boursorama": "1rAASML",
+  "ft": "ASML:AEX",
+  "echecs": {}
+ },
+ "SIE.DE": {
+  "boursorama": "1zSIE",
+  "ft": "SIE:FRA",
+  "echecs": {}
+ },
+ "NOVO-B.CO": {
+  "boursorama": null,
+  "ft": "NOVO B:CPH",
+  "echecs": {}
+ },
+ "NOKIA.HE": {
+  "boursorama": null,
+  "ft": "NOKIA:HEL",
+  "echecs": {
+   "ft": 1
+  }
+ },
+ "CW8.PA": {
+  "boursorama": "1rTCW8",
+  "ft": "CW8:PAR:EUR",
+  "echecs": {}
+ },
+ "PUST.PA": {
+  "boursorama": "1rTPUST",
+  "ft": "PUST:PAR:EUR",
+  "echecs": {}
+ },
+ "PTPXE.PA": {
+  "boursorama": "1rTPTPXE",
+  "ft": "PTPXE:PAR:EUR",
+  "echecs": {}
+ },
+ "PAASI.PA": {
+  "boursorama": "1rTPAASI",
+  "ft": "PAASI:PAR:EUR",
+  "echecs": {}
+ },
+ "PAEEM.PA": {
+  "boursorama": "1rTPAEEM",
+  "ft": "PAEEM:PAR:EUR",
   "echecs": {}
  }
 }

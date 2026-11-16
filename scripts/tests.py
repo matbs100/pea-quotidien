@@ -1048,6 +1048,98 @@ console.log([geste(121, 600), geste(119, 600), geste(60, 100), geste(30, 100), g
     assert r.stdout.strip() == "1|0|1|0|0", f"seuil de glissement faux : {r.stdout!r} {r.stderr[-300:]}"
 
 
+@test
+def lecture_des_dic():
+    """dic.py lit le SRI et les frais d'un DIC en anglais et en français, malgré les ligatures et les
+    retours à la ligne, et vérifie que le document cite bien l'ISIN demandé."""
+    import dic
+    en = ("Product XYZ ETF LU0000000001 - Currency: EUR. We have classiﬁed this product as 5 out of 7, which "
+          "is a medium-high risk class. Entry costs We do not charge an entry fee. Ongoing costs taken each year "
+          "Management fees and other\nadministrative or operating costs 0.20% of the value of your investment "
+          "per year. Transaction costs 0.05% of the value of your investment per year.")
+    r = dic.analyser(en, "LU0000000001")
+    assert r == {"sri": 5, "frais_courants": 0.2, "couts_transaction": 0.05, "isin_ok": True}, r
+    fr_ = ("Produit ABC (FR0000000002). Nous avons classé ce Produit dans la classe de risque 4 sur 7. Date de "
+           "production du document d'informations clés : 16/04/2026. Coûts récurrents prélevés chaque année 14 EUR "
+           "0,14 % de la valeur de votre investissement par an. Frais de gestion et autres frais administratifs et "
+           "d’exploitation Coûts de transaction Il n'existe actuellement pas de coûts de transaction pour ce Produit.")
+    r = dic.analyser(fr_, "FR0000000002")
+    assert r == {"sri": 4, "frais_courants": 0.14, "couts_transaction": 0.0, "date_doc": "16/04/2026",
+                 "isin_ok": True}, r
+    assert dic.analyser(fr_, "FR0000000009")["isin_ok"] is False, "un DIC d'un autre fonds doit être repéré"
+    amundi = ("Nous avons classé ce produit dans la classe de risque 5 sur 7. Coûts récurrents prélevés chaque année "
+              "Frais de gestion et autres coûts administratifs ou d'exploitation 0,30% de la valeur de votre "
+              "investissement par an. 30,00 EUR Coûts de transaction Nous ne chargeons pas de frais de transaction "
+              "pour ce produit 0,00 EUR")
+    r = dic.analyser(amundi)
+    assert r == {"sri": 5, "frais_courants": 0.3, "couts_transaction": 0.0}, f"tournure d'Amundi : {r}"
+    amundi_en = ("We have classified this product as 4 out of 7. Management fees and other administrative or operating "
+                 "costs 0.38% of the value of your investment per year. 38.00 EUR Transaction costs We do not charge a "
+                 "transaction fee for this product 0.00 EUR")
+    r = dic.analyser(amundi_en)
+    assert r == {"sri": 4, "frais_courants": 0.38, "couts_transaction": 0.0}, f"tournure anglaise d'Amundi : {r}"
+    ossiam = ("We have classified the fund in risk class 4, which is a medium risk class. Ongoing costs Portfolio "
+              "transaction costs 0.15% of the value of your investment per year. EUR 15 Other ongoing costs 0.30% of "
+              "the value of your investment per year. EUR 30 Incidental costs")
+    r = dic.analyser(ossiam)
+    assert r == {"sri": 4, "frais_courants": 0.3, "couts_transaction": 0.15}, f"transaction avant les frais : {r}"
+    colle = ("Wehaveclassifiedthisproductas4outof7. Ongoingcoststakeneachyear Managementfeesandotheradministrative"
+             "oroperatingcosts0.05%ofthevalueofyourinvestmentperyear. 5EUR Transactioncosts0.09%ofthevalueofyour"
+             "investmentperyear.")
+    r = dic.analyser(colle)
+    assert r == {"sri": 4, "frais_courants": 0.05, "couts_transaction": 0.09}, f"mots collés : {r}"
+    colonnes = ("Coûts récurrents 0,22% de la valeur de votre investissement par an. Management costs and other "
+                "administrative and operating costs Transaction costs 0.15% of the value of your investment per year.")
+    r = dic.analyser(colonnes)
+    assert r == {"frais_courants": 0.22, "couts_transaction": 0.15}, f"pourcentage avant son étiquette : {r}"
+    assert dic.analyser("Rien d'utile ici.") == {}, "texte sans chiffres : rien"
+    base = {"titres": {"A.PA": {"sri": 3, "lu_le": "2026-11-17"}, "B.PA": {"erreur": "x", "lu_le": "2026-11-17"}}}
+    assert dic.dic_de("A.PA", base) and not dic.dic_de("B.PA", base) and not dic.dic_de("C.PA", base)
+    assert dic.a_relire(None) and dic.a_relire({"erreur": "x", "lu_le": "2099-01-01"})
+    assert not dic.a_relire({"sri": 3, "lu_le": "2099-01-01"}) and dic.a_relire({"sri": 3, "lu_le": "2000-01-01"})
+
+
+@test
+def valeurs_connues():
+    """Les 30 valeurs connues (demande du propriétaire, 17/11) : 30 titres déjà suivis, ETF et actions,
+    sans ETF S&P 500 ; collecte.valeurs_connues garde l'ordre, ajoute la zone et ignore un titre sans cours."""
+    import collecte
+    u = json.loads((RACINE / "univers.json").read_text(encoding="utf-8"))
+    liste = u["_connues"]["titres"]
+    suivis = {t: c for c in u if not c.startswith("_") for t in u[c]}
+    assert len(liste) == 30, f"{len(liste)} valeurs connues au lieu de 30"
+    assert all(t in suivis for t in liste), [t for t in liste if t not in suivis]
+    assert all(z.strip() for z in liste.values()), "chaque valeur connue a une zone"
+    cats = {suivis[t] for t in liste}
+    assert {"etf", "actions"} <= cats and "etf_levier" not in cats, cats
+    assert not any("S&P 500" in u["etf"].get(t, "") for t in liste), "pas d'ETF S&P 500 (demande du propriétaire)"
+    tous = {t: {"ticker": t, "prix": 1.0} for t in list(liste)[1:]}
+    r = collecte.valeurs_connues(u, tous)
+    assert [m["ticker"] for m in r] == list(liste)[1:], "ordre de la liste non gardé"
+    assert all(m["zone"] == liste[m["ticker"]] for m in r) and "zone" not in tous[r[0]["ticker"]], "zone mal posée"
+    assert collecte.valeurs_connues({}, tous) == [], "sans liste : aucune valeur connue"
+    page = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert 'id="sec-connues"' in page and "D.connues" in page, "bloc des valeurs connues absent de la page"
+
+
+@test
+def frais_et_risque_du_dic():
+    """Le DIC officiel passe avant Boursorama : SRI, frais courants (au lieu des frais de gestion maximum)
+    et coûts de transaction ; sans DIC, rien ne change."""
+    import fiches
+    base = {"titres": {"X.PA": {"sri": 5, "frais_courants": 0.38, "couts_transaction": 0.02, "source": "Fundsquare",
+                                "page": "https://www.fundsquare.net/search-results?search=X", "lu_le": "2026-11-17"}}}
+    bourso = {"isin": "LU0000000001", "sri_officiel": 4, "frais_gestion": "0,28 %", "frais_entree": "0 %"}
+    inf = fiches.avec_dic("X.PA", bourso, base)
+    assert inf["sri_officiel"] == 5 and inf["sri_boursorama"] == 4 and inf["frais_courants"] == 0.38, inf
+    assert inf["dic_source"] == "Fundsquare" and bourso["sri_officiel"] == 4, "avec_dic ne doit pas modifier son entrée"
+    fx = fiches.frais({"categorie": "etf", "ticker": "X.PA"}, inf)
+    assert fx["gestion"] == 0.38 and fx["transaction"] == 0.02 and fx["source_gestion"] == "DIC", fx
+    assert fiches.avec_dic("Y.PA", bourso, base) is bourso, "sans DIC : caractéristiques inchangées"
+    fx = fiches.frais({"categorie": "etf", "ticker": "Y.PA"}, bourso)
+    assert fx["gestion"] == 0.28 and "source_gestion" not in fx and "transaction" not in fx, fx
+
+
 def main():
     echecs = 0
     for f in TESTS:

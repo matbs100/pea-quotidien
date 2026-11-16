@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-05",
+ "maj": "2026-11-17",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTMSE/",
   "isin": "FR0007054358",
@@ -8,7 +8,7 @@
   "actif_net": "4 793M  • 31/10/2026",
   "sri_officiel": 4,
   "creation": "19/02/2001",
-  "forme": "ETF",
+  "forme": "SICAV",
   "classe": "Actions Europe",
   "zone": "Eurozone",
   "categorie_ms": "Actions Zone Euro Grandes Cap.",

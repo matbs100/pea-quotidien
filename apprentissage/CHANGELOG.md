@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-16 · ✨ Nouveauté : 30 valeurs connues, et risque et frais lus dans le DIC officiel (Propriétaire, D-20261116-3 et D-20261116-4)
+Nouveau bloc « 30 valeurs connues » sous le Top 30 : grandes actions européennes cotées depuis longtemps et ETF répandus (Monde, Nasdaq-100, Japon, Asie, émergents, Inde), la même liste chaque jour. Le risque (SRI) et les frais courants de chaque ETF sont maintenant lus dans son DIC officiel (Fundsquare, sinon Amundi ETF) plutôt que sur Boursorama, qui donnait les frais maximum du prospectus ; la fiche affiche aussi les coûts de transaction du fonds et des liens vers Fundsquare et Quantalys.
+
 ## 2026-11-16 · Comparaison de deux titres : le choix est mémorisé (Nuit, D-20261116-2)
 Le titre choisi dans « Comparer avec… » est gardé sur l'appareil (jamais publié) et repris à l'ouverture d'une fiche s'il est encore proposé ; choisir « Comparer avec… » efface la comparaison. Source : idée n° 7, 2e partie (D-20261106-7).
 

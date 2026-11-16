@@ -310,6 +310,13 @@ def mes_investissements(entrees, mesure_de, categories, jour):
     return {"lignes": lignes, "erreurs": erreurs, "total": total}
 
 
+def valeurs_connues(u, tous):
+    """Les 30 valeurs connues de univers.json (« _connues ») avec leurs mesures du jour, dans l'ordre de la
+    liste, chacune avec sa zone ; un titre sans cours aujourd'hui est simplement absent (jamais bloquant)."""
+    liste = (u.get("_connues") or {}).get("titres") or {}
+    return [dict(tous[t], zone=zone) for t, zone in liste.items() if t in tous]
+
+
 def catalogue(res):
     """Titres que la barre de recherche « Mes investissements » peut trouver : tous les ETF et actions
     suivis, avec leur prix du jour (fiches.py y ajoute l'ISIN)."""
@@ -551,6 +558,7 @@ def main():
     etf = [m for m in tries if m["categorie"] == "etf"][:8]
     reste = [m for m in tries if m not in etf][:30 - len(etf)]
     top30 = sorted(etf + reste, key=lambda m: -m["score"])
+    connues = valeurs_connues(u, tous)
 
     # 10 titres < 2 € : liquides, triés par score, en évitant ceux montrés les 3 derniers jours
     deja = _petites_recentes(jour, 3)
@@ -625,7 +633,7 @@ def main():
         "genere_le": datetime.now(PARIS).isoformat(timespec="minutes"),
         "indices": res.get("indices", []), "devises": res.get("devises", []),
         "matieres": res.get("matieres", []),
-        "top30": top30, "petites": petites,
+        "top30": top30, "petites": petites, "connues": connues,
         "suggestions": sugg, "mes_investissements": mes, "catalogue": catalogue(res), "opcvm": liste_opcvm,
         "bilan_signaux": bilan(lignes),
         "wealins": {"maj": fonds_w.get("maj"), "nb_fonds": len(fonds_w.get("fonds", {}))},

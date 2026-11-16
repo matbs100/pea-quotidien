@@ -409,6 +409,12 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
     <div class="liste" id="top30"></div>
   </section>
 
+  <section id="sec-connues" hidden>
+    <div class="sec-head"><div><h2>30 valeurs connues</h2><div class="sub">Grandes actions européennes cotées depuis longtemps et ETF répandus (Monde, États-Unis, Japon, Asie, pays émergents), tous éligibles au PEA · la même liste chaque jour, pas une liste d'achats · touche une ligne pour sa fiche complète</div></div></div>
+    <div class="liste" id="connues"></div>
+    <p class="note">Pas d'actions américaines ou asiatiques en direct : elles ne sont pas éligibles au PEA. Ces zones passent par des ETF éligibles, qui suivent leur indice grâce à un contrat d'échange. Risque et frais des ETF : lus dans leur DIC officiel quand il est disponible.</p>
+  </section>
+
   <section id="sec-opc" hidden>
     <div class="sec-head"><div><h2>OPCVM éligibles au PEA</h2><div class="sub">Fonds (SICAV et FCP) gérés par une équipe, achetés auprès de ta banque · valeur calculée une fois par jour · pas une liste d'achats</div></div></div>
     <div class="liste" id="opcvm"></div>
@@ -619,7 +625,7 @@ function fraisDe(m) {  // { g : gestion %/an, e / s : entrée / sortie %, ttf, o
   if (m.categorie === "fonds") return null;  // fonds Wealins : frais dans le contrat d'assurance vie, pas dans le PEA
   const d = ((D.details || {})[m.ticker] || {}).frais, fx = m.fx || ((D.catalogue || []).find((c) => c.ticker === m.ticker) || {}).fx;
   const action = m.categorie !== "etf";
-  if (d) return { g: action ? 0 : d.gestion, e: d.entree, s: d.sortie, ttf: !!d.ttf };
+  if (d) return { g: action ? 0 : d.gestion, e: d.entree, s: d.sortie, ttf: !!d.ttf, tr: action ? null : d.transaction, dic: !action && d.source_gestion === "DIC" };
   if (fx) return { g: action ? 0 : fx.g, e: fx.e, s: fx.s, ttf: !!fx.ttf };
   return { g: action ? 0 : null };
 }
@@ -628,10 +634,11 @@ function couts(m, M) {
   const achat = f.opc ? (f.e != null ? M * f.e / 100 : null) : TARIF.courtage(M);
   const ttf = f.ttf ? M * TARIF.ttf / 100 : 0;
   const gestion = f.g != null ? M * f.g / 100 : null;
+  const transaction = f.tr != null ? M * f.tr / 100 : 0;  // coûts de transaction du fonds (DIC), déjà dans son prix
   const garde = TARIF.garde(M);
   const revente = f.opc ? (f.s != null ? M * f.s / 100 : null) : TARIF.courtage(M);
-  const total = [achat, gestion, revente].every((x) => x != null) ? achat + ttf + gestion + garde + revente : null;
-  return { f, achat, ttf, gestion, garde, revente, total };
+  const total = [achat, gestion, revente].every((x) => x != null) ? achat + ttf + gestion + transaction + garde + revente : null;
+  return { f, achat, ttf, gestion, transaction, garde, revente, total };
 }
 function fraisCourt(m) {  // résumé des frais pour une ligne de liste
   const f = fraisDe(m); if (!f) return "";
@@ -640,12 +647,12 @@ function fraisCourt(m) {  // résumé des frais pour une ligne de liste
   return `<span class="fxl">${g}${a}</span>`;
 }
 
-function ligne(m, i, sc) {
+function ligne(m, i, sc, connue = false) {  // connue : liste fixe des valeurs connues (pas de rang, zone affichée)
   const s = m[sc] ?? 0;
   const parts = m.prix > 0 ? Math.floor(100 / m.prix) : 0;
   return `<div class="ligne rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}" data-cat="${m.categorie === "petites" ? "actions" : m.categorie}">
-    <div class="rg">${String(i + 1).padStart(2, "0")}</div>
-    <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"} ${risque(m)}${fraisCourt(m)}</small></div>
+    <div class="rg">${connue ? "" : String(i + 1).padStart(2, "0")}</div>
+    <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)}${connue && m.zone ? " · " + esc(m.zone) : ""} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"} ${risque(m)}${fraisCourt(m)}</small></div>
     <div class="c px"><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span><em>prix</em></div>
     <div class="cs"><div class="c ${sens(m.var_1j)}">${pct(m.var_1j)}<em>1 jour</em></div>
     <div class="c ${sens(m.var_1m)}">${pct(m.var_1m)}<em>1 mois</em></div>
@@ -655,6 +662,10 @@ function ligne(m, i, sc) {
     <div class="sig ${m.signal}">${{ hausse: "↗ hausse", baisse: "↘ baisse", neutre: "→ neutre" }[m.signal]}</div></div>`;
 }
 $("#top30").innerHTML = D.top30.map((m, i) => ligne(m, i, "score")).join("");
+if ((D.connues || []).length) {  // 30 valeurs connues : liste fixe (univers.json, « _connues »)
+  $("#connues").innerHTML = D.connues.map((m, i) => ligne(m, i, "score", true)).join("");
+  $("#sec-connues").hidden = false;
+}
 $("#petites").innerHTML = D.petites.map((m, i) => ligne(m, i, "score_petite")).join("");
 let FICHE = null;  // titre de la fiche ouverte (pour recalculer ses frais)
 
@@ -742,7 +753,7 @@ $("#regles").innerHTML = Object.entries({ "Score": D.regles.score, "Signal": D.r
 // ---------- fiche détaillée ----------
 const DET = D.details || {};
 const TOUS = {};
-[...D.indices, ...D.devises, ...D.matieres, ...D.top30, ...D.petites, ...SG, ...((MI && MI.lignes) || [])].forEach((m) => { if (!TOUS[m.ticker]) TOUS[m.ticker] = m; });
+[...D.indices, ...D.devises, ...D.matieres, ...D.top30, ...(D.connues || []), ...D.petites, ...SG, ...((MI && MI.lignes) || [])].forEach((m) => { if (!TOUS[m.ticker]) TOUS[m.ticker] = m; });
 const TYPE = { indices: "Indice", devises: "Devise", matieres: "Matière première", etf: "ETF", actions: "Action", petites: "Petite capitalisation", fonds: "Fonds" };
 const PLACEMENT = ["etf", "actions", "petites", "fonds"];
 const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1155,8 +1166,9 @@ function blocRisque(m, inf, st) {
   if (!niv) return "";
   const cases = [1, 2, 3, 4, 5, 6, 7].map((k) => `<span class="${k === niv ? "on" : ""}"${k === niv ? ` style="background:hsl(${140 - (k - 1) * 22} 58% 40%)"` : ""}>${k}</span>`).join("");
   const vol = st.vol_5a != null && st.annees_hist >= 2 ? st.vol_5a : st.vol_1a;
+  const srcDic = inf.dic_source ? ` Lu dans le DIC officiel du fonds (${inf.dic_source === "Fundsquare" ? "Fundsquare, Bourse de Luxembourg" : "site de l'émetteur, " + esc(inf.dic_source)}${inf.dic_date ? `, document du ${esc(inf.dic_date)}` : ""}${inf.dic_lu_le ? `, relu le ${jourCourt(inf.dic_lu_le)}` : ""}).${inf.sri_boursorama ? ` Boursorama affichait ${inf.sri_boursorama}/7.` : ""}` : "";
   const expl = off
-    ? `C'est l'indicateur synthétique de risque (SRI) du DIC, le document d'informations clés imposé par le règlement européen PRIIPs. Il va de 1 (risque le plus faible) à 7 (le plus élevé).${est ? ` Notre propre calcul, à partir de la volatilité, donne ${est}/7.` : ""}`
+    ? `C'est l'indicateur synthétique de risque (SRI) du DIC, le document d'informations clés imposé par le règlement européen PRIIPs. Il va de 1 (risque le plus faible) à 7 (le plus élevé).${srcDic}${est ? ` Notre propre calcul, à partir de la volatilité, donne ${est}/7.` : ""}`
     : estFonds(m) ? `Le SRI officiel de ce fonds figure dans son DIC (lien plus bas). Ce niveau-ci est une estimation, calculée comme le volet « risque de marché » du SRI PRIIPs à partir de la volatilité de sa valeur liquidative sur ${st.sri_base} (${fr(vol, 1)} % par an). Seuils : moins de 0,5 % → 1 ; 5 % → 2 ; 12 % → 3 ; 20 % → 4 ; 30 % → 5 ; 80 % → 6 ; au-delà → 7.`
     : `Une action n'a pas de DIC, donc pas de SRI officiel. Ce niveau est calculé comme le volet « risque de marché » du SRI PRIIPs, à partir de la volatilité sur ${st.sri_base} (${fr(vol, 1)} % par an). Seuils : moins de 0,5 % → 1 ; 5 % → 2 ; 12 % → 3 ; 20 % → 4 ; 30 % → 5 ; 80 % → 6 ; au-delà → 7.`;
   const pire = st.perte_max_5a != null ? st.perte_max_5a : st.perte_max_1a;
@@ -1181,9 +1193,10 @@ function blocFrais(m) {
     L.push([`Droits d'entrée (achat de ${fr(M, 0)} €)`, f.e != null ? `jusqu'à ${fr(f.e, 0)} %, soit au plus ${eur(c.achat)} · souvent réduits ou nuls en ligne : demande le taux à ta banque` : "Non publiés ici : voir le DIC"]);
     L.push(["Frais de sortie (revente)", f.s == null ? "Non publiés ici : voir le DIC" : f.s === 0 ? "Aucun" : `${fr(f.s, 0)} %, soit ${eur(c.revente)}`]);
   } else {
-    L.push(["Frais de gestion (chaque année)", m.categorie === "etf"
-      ? (f.g != null ? `<b>${fr(f.g, 2)} %</b> par an, soit ${eur(c.gestion)} pour ${fr(M, 0)} € · déjà déduits du prix de l'ETF : tu ne les vois pas passer` : "Non connus pour l'instant : voir le DIC (lien plus bas)")
+    L.push([f.dic ? "Frais courants (chaque année)" : "Frais de gestion (chaque année)", m.categorie === "etf"
+      ? (f.g != null ? `<b>${fr(f.g, 2)} %</b> par an, soit ${eur(c.gestion)} pour ${fr(M, 0)} € · déjà déduits du prix de l'ETF : tu ne les vois pas passer${f.dic ? " · lus dans son DIC officiel (frais réels de la dernière année, l'équivalent du TER)" : " · maximum prévu par le prospectus (Boursorama)"}` : "Non connus pour l'instant : voir le DIC (lien plus bas)")
       : "Aucun : une action n'a pas de frais annuels"]);
+    if (m.categorie === "etf" && f.tr != null) L.push(["Coûts de transaction du fonds (chaque année)", f.tr === 0 ? "Aucun d'après le DIC" : `${fr(f.tr, 2)} % par an, soit ${eur(c.transaction)} · estimation du DIC : achats et ventes faits par le fonds, déjà dans son prix`]);
     L.push([`Courtage à l'achat (${fr(M, 0)} €)`, `${eur(c.achat)} (${p(c.achat)})`]);
     if (f.ttf) L.push(["Taxe sur les transactions financières", `0,4 % à l'achat : ${eur(c.ttf)} · société française de plus de 1 Md€ de capitalisation, due même dans un PEA`]);
     L.push([`Courtage à la revente (${fr(M, 0)} €)`, `${eur(c.revente)} (${p(c.revente)})`]);

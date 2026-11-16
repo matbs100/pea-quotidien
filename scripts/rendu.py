@@ -114,6 +114,16 @@ def note_obsidian(d, analyse, url):
         L.append(f"| {i} | {m['nom']} (`{m['ticker']}`) | {typ[m['categorie']]} | {prix_dev(m['prix'], m)} | "
                  f"{pct(m['var_1j'])} | {pct(m['var_1m'])} | {pct(m['var_3m'])} | {m['rsi']:.0f} | "
                  f"{m['signal']} | {m['score']:.0f} | {VERIF[m.get('verif')]} |")
+    if d.get("connues"):
+        L += ["", "## 30 valeurs connues", "",
+              "> Grandes actions européennes cotées depuis longtemps et ETF répandus, éligibles au PEA : la même "
+              "liste chaque jour (`univers.json`, « _connues »). Pas une liste d'achats.", "",
+              "| Titre | Zone | Type | Prix | 1 j | 1 mois | 3 mois | Signal | Sources |",
+              "|---|---|---|--:|--:|--:|--:|---|:-:|"]
+        for m in d["connues"]:
+            L.append(f"| {m['nom']} (`{m['ticker']}`) | {m.get('zone', '')} | {typ.get(m['categorie'], '')} | "
+                     f"{prix_dev(m['prix'], m)} | {pct(m.get('var_1j'))} | {pct(m.get('var_1m'))} | "
+                     f"{pct(m.get('var_3m'))} | {m.get('signal', '')} | {VERIF[m.get('verif')]} |")
     L += ["", "## 10 petits prix (moins de 2 €)", "",
           "> [!caution] Sociétés souvent fragiles et très volatiles : risque de perte élevé.", "",
           "| # | Titre | Prix | 1 mois | 3 mois | Liquidité €/j | Signal | Déjà vu |",
@@ -138,11 +148,12 @@ def note_obsidian(d, analyse, url):
     if det:
         L += ["", "## Fiches détaillées", "",
               "> PEA : éligibilité indiquée par Boursorama pour cette place de cotation (à confirmer auprès de BNP Paribas). "
-              "SRI : risque de 1 à 7, officiel (DIC) pour les ETF, estimé à partir de la volatilité pour les actions.", "",
-              "| Titre | ISIN | PEA | Risque | Frais gestion | PER | Rendement | Volatilité 1 an | Pire baisse 1 an |",
+              "SRI : risque de 1 à 7, officiel (DIC) pour les ETF, estimé à partir de la volatilité pour les actions. "
+              "Frais : frais courants lus dans le DIC officiel (« DIC »), sinon frais de gestion maximum de Boursorama.", "",
+              "| Titre | ISIN | PEA | Risque | Frais/an | PER | Rendement | Volatilité 1 an | Pire baisse 1 an |",
               "|---|---|:-:|:-:|--:|--:|--:|--:|--:|"]
         vu = set()
-        for m in d["top30"] + d["petites"]:
+        for m in d["top30"] + d.get("connues", []) + d["petites"]:
             x = det.get(m["ticker"])
             if not x or m["ticker"] in vu:
                 continue
@@ -152,7 +163,7 @@ def note_obsidian(d, analyse, url):
             sri = f"{i['sri_officiel']}/7 (DIC)" if i.get("sri_officiel") else (
                 f"{st['sri_estime']}/7 (estimé)" if st.get("sri_estime") else "—")
             L.append(f"| {m['nom']} (`{m['ticker']}`) | {i.get('isin', '—')} | {pea} | {sri} | "
-                     f"{i.get('frais_gestion', '—')} | {i.get('per', '—')} | {i.get('rendement', '—')} | "
+                     f"{frais_note(i)} | {i.get('per', '—')} | {i.get('rendement', '—')} | "
                      f"{pct_simple(st.get('vol_1a'))} | {pct_simple(st.get('perte_max_1a'))} |")
     L += ["", "## Règles", ""] + [f"- **{k}** : {v}" for k, v in d["regles"].items()]
     return "\n".join(L) + "\n"
@@ -248,6 +259,14 @@ a{{color:var(--a)}}ul{{list-style:none;padding:0}}li{{font-family:ui-monospace,M
 <body><h1>Archives Matin PEA</h1><p><a href="../">← Fiche du jour</a></p><ul>{items}</ul></body></html>"""
 
 
+def frais_note(i):
+    """Frais annuels d'un ETF pour la note : frais courants du DIC officiel s'ils sont connus (« 0,15 % (DIC) »),
+    sinon les frais de gestion maximum lus sur Boursorama, sinon « — »."""
+    if i.get("frais_courants") is not None:
+        return f"{i['frais_courants']:.2f} % (DIC)".replace(".", ",")
+    return i.get("frais_gestion", "—")
+
+
 def risque_de(det):
     """Niveau de risque (1 à 7) d'un titre pour le badge de la page principale : SRI officiel du DIC,
     sinon SRI estimé. Renvoie (niveau, officiel) ou None si on ne sait pas."""
@@ -295,7 +314,8 @@ def donnees_du_jour(jour):
     analyse = fa.read_text(encoding="utf-8") if fa.exists() else ""
     d["analyse_html"] = md_en_html(analyse) if analyse else ""
     sugg, mes = d.get("suggestions", []), (d.get("mes_investissements") or {}).get("lignes", [])
-    for m in d["indices"] + d["devises"] + d["matieres"] + d["top30"] + d["petites"] + sugg + mes:
+    connues = d.get("connues", [])
+    for m in d["indices"] + d["devises"] + d["matieres"] + d["top30"] + connues + d["petites"] + sugg + mes:
         m["courbe"] = (m.get("courbe") or [])[-60:]
     fc = RACINE / "apprentissage" / "CHANGELOG.md"
     if fc.exists():
@@ -312,7 +332,7 @@ def donnees_du_jour(jour):
         d["controle_chef"] = {k: e.get(k, "") for k in ("genere_le", "etat", "resume")}
     fd = RACINE / "descriptions.json"
     textes = json.loads(fd.read_text(encoding="utf-8")).get("titres", {}) if fd.exists() else {}
-    for m in d["top30"] + d["petites"] + sugg + mes:
+    for m in d["top30"] + connues + d["petites"] + sugg + mes:
         r = risque_de(d.get("details", {}).get(m["ticker"]))
         if r:
             m["risque"], m["risque_officiel"] = r

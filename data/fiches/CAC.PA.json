@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-05",
+ "maj": "2026-11-17",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTCAC/",
   "isin": "FR0007052782",
@@ -8,7 +8,7 @@
   "actif_net": "4 112M  • 31/10/2026",
   "sri_officiel": 4,
   "creation": "13/12/2000",
-  "forme": "ETF",
+  "forme": "SICAV",
   "classe": "Actions Europe",
   "zone": "France",
   "categorie_ms": "Actions France Grandes Cap.",

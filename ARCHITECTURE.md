@@ -71,7 +71,7 @@ qu'un agent l'a fait, elle applique la version d'avant. Seul le propriétaire (a
 
 | Chemin | Contenu |
 |---|---|
-| `univers.json` | les titres suivis, par catégorie (indices, devises, matières, ETF, ETF à effet de levier, actions, petits prix). Les ETF de `etf_levier` sont traités comme des ETF (fiche, contrôle des prix, recherche) mais restent hors du top 30 et des suggestions, et portent un avertissement |
+| `univers.json` | les titres suivis, par catégorie (indices, devises, matières, ETF, ETF à effet de levier, actions, petits prix). Les ETF de `etf_levier` sont traités comme des ETF (fiche, contrôle des prix, recherche) mais restent hors du top 30 et des suggestions, et portent un avertissement. La clé `_connues` (ignorée par les boucles sur les catégories, comme toute clé qui commence par « _ ») liste les 30 valeurs connues choisies par le propriétaire, avec leur zone : grandes actions européennes et ETF répandus, affichés chaque jour à côté du top 30 |
 | `descriptions.json` | courtes descriptions des titres, rédigées sans copier de site |
 | `guide/` | notes pour le propriétaire (dans Obsidian) : ce qui a été ajouté et comment s'en servir. Les agents ne les modifient pas |
 | `mes-investissements.md` | autre façon de noter les achats du propriétaire (code Yahoo ou ISIN, date, prix, quantité, type), un par ligne de tableau, pour les retrouver dans Obsidian. Tenu par le propriétaire seul : les agents le lisent mais ne le modifient jamais (`controle.py` le signale). Public, comme tout le dépôt, contrairement à la barre de recherche |
@@ -80,6 +80,7 @@ qu'un agent l'a fait, elle applique la version d'avant. Seul le propriétaire (a
 | `data/analyses/` | l'analyse écrite par Claude, une par jour |
 | `data/historique.csv`, `data/signaux.csv` | historique des cours de clôture et des signaux, jugés 5 séances plus tard |
 | `data/correspondances.json`, `data/fiches/` | caches : codes Boursorama / FT trouvés, caractéristiques des titres (7 jours) |
+| `data/dic.json` | chiffres lus dans le DIC officiel (PRIIPs) de chaque ETF par `dic.py` : SRI, frais courants, coûts de transaction, date du document, source (Fundsquare ou Amundi ETF), date de lecture (relu après 30 jours) |
 | `data/wealins.json` | les fonds de la liste Wealins (nom, ISIN, devise, dernière valeur liquidative et sa date, valeur précédente), un par ligne, relus une fois par jour par `wealins.py` |
 | `docs/` | le site : `index.html` (dernière fiche) et `archives/` |
 | `notes/` | une note Obsidian par jour |
@@ -106,6 +107,7 @@ Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de 
 | `signal(m)` | signal à 5 séances : « hausse » si prix > MM20 > MM50 et RSI < 70, « baisse » à l'inverse, sinon « neutre » |
 | `rang(serie)` | rang en centiles, pour combiner des mesures d'échelles différentes |
 | `classer(lignes)` | score : 35 % perf 3 mois, 25 % 1 mois, 15 % 1 semaine, 15 % tendance, 10 % faible volatilité ; −10 si RSI > 75 |
+| `valeurs_connues(u, tous)` | les 30 valeurs connues de `univers.json` (« _connues ») avec leurs mesures du jour et leur zone, dans l'ordre de la liste (`connues` du JSON du jour) |
 | `evaluer_signaux(jour, prix_du_jour)` | juge les signaux émis il y a au moins 5 séances |
 | `bilan(lignes)` | taux de signaux justes, comparé au repère (part de hausses) |
 | `nombre_fr(txt)` | lit un nombre écrit à la française ou à l'anglaise (« 1 234,56 € », « 512.3 ») |
@@ -171,9 +173,30 @@ Usage : `python scripts/fiches.py AAAA-MM-JJ`. Ajoute `details` au JSON du jour 
 | `lien_yahoo(t)` | lien vers la page Yahoo Finance internationale (la française renvoie souvent 404) |
 | `signaux_du_titre(t)` | historique des signaux du titre et leur résultat |
 | `description_auto(m, inf)` | description de secours, construite à partir des caractéristiques |
-| `frais(m, inf)` | frais de l'ETF, plafonds légaux du PEA, taxe sur les transactions financières |
+| `avec_dic(t, inf, base)` | caractéristiques complétées par le DIC officiel (`data/dic.json`) : son SRI et ses frais courants passent avant ceux de Boursorama (ancien SRI gardé dans `sri_boursorama` s'il diffère) ; ne modifie pas son entrée |
+| `frais(m, inf)` | frais de l'ETF (frais courants du DIC, sinon frais de gestion maximum de Boursorama ; coûts de transaction du DIC), plafonds légaux du PEA, taxe sur les transactions financières |
 | `fiche_fonds_wealins(m)` | fiche d'un fonds Wealins noté dans `mes-investissements.md` : historique de la valeur liquidative (jusqu'à 5 ans, page du fonds), statistiques, SRI estimé, gestionnaire, SFDR, lien du DIC |
 | `main()` | construit les fiches et leurs liens (Boursorama, FT, Yahoo, DIC, justETF) ; ajoute l'ISIN de chaque titre du catalogue (60 titres jamais lus au plus par passage, pour compléter peu à peu sans ralentir la fiche) |
+
+### `dic.py` : risque et frais lus dans le DIC officiel des ETF
+Usage : `python scripts/dic.py` (titres sans lecture ou lus il y a plus de 30 jours), `--tout`, ou des codes
+Yahoo. Lancé par la fiche du jour avant `fiches.py`. Sources : Fundsquare (onglet Documents, DIC « en cours »)
+puis Amundi ETF ; `robots.txt` vérifié avant chaque lecture (Morningstar et Quantalys ne sont jamais lus).
+Aucun texte n'est gardé : seulement les chiffres, dans `data/dic.json`.
+
+| Fonction | Rôle |
+|---|---|
+| `normaliser(texte)`, `compact(texte)` | ligatures, espaces insécables, retours à la ligne ramenés à une forme simple ; version sans espaces ni majuscules, qui résiste aux mots collés par l'extraction des PDF |
+| `_apres(c, libelle, fin, pourcents, sans)` | valeur qui suit une étiquette : premier « x % … par an » avant l'étiquette suivante, ou 0 si une phrase « pas de frais de transaction » s'y trouve |
+| `analyser(texte, isin)` | SRI (« 4 sur 7 », « 4 out of 7 », « risk class 4 »), frais courants (après « frais de gestion et autres frais administratifs… », « management fees/costs and other… » ou « other ongoing costs » ; sinon le premier pourcentage des coûts récurrents), coûts de transaction (après leur étiquette, 0 si « pas de frais de transaction »), date du document, ISIN cité |
+| `texte_pdf(octets)` | texte des 6 premières pages d'un PDF (`pypdf`) ; vide s'il est illisible |
+| `permis(s, url)` | le `robots.txt` du site permet-il cette adresse ? (lu une fois par site ; injoignable = non) |
+| `lien_fundsquare(s, isin)` | lien du DIC « en cours » sur Fundsquare (bloc `courantKIDD`), ou `None` |
+| `session()`, `page_fundsquare(isin)` | session HTTP (en-tête du robot Matin PEA) ; adresse stable de la page du fonds sur Fundsquare (recherche par ISIN), affichée comme lien |
+| `telecharger_pdf(s, url)` | télécharge un DIC si le `robots.txt` le permet ; `None` si la réponse n'est pas un PDF |
+| `infos_fiche(ticker)`, `etf_suivis()` | ISIN d'un titre d'après le cache de `fiches.py` ; ETF suivis (`etf` et `etf_levier` de `univers.json`) |
+| `lire_dic(s, ticker, isin)` | essaie Fundsquare puis l'émetteur ; garde un DIC seulement s'il cite l'ISIN demandé |
+| `dic_de(ticker, base)`, `a_relire(e)`, `charger()` | lecture de `data/dic.json` (entrées valides seulement), relecture après 30 jours |
 
 ### `wealins.py` : les fonds de la liste Wealins
 Usage : `python scripts/wealins.py [--forcer]` (`collecte.py` l'appelle aussi, dans un fil parallèle qui
@@ -228,6 +251,7 @@ par les agents. Dans le graphique, la moyenne courte est en tirets et la longue 
 
 | Fonction | Rôle |
 |---|---|
+| `frais_note(i)` | frais annuels d'un ETF pour la note Obsidian : frais courants du DIC (« 0,15 % (DIC) »), sinon frais de gestion maximum de Boursorama |
 | `md_en_html(md)` | convertit l'analyse Markdown en HTML (titres, listes, gras) |
 | `pct(x)`, `prix(x)`, `pct_simple(x)` | formats français des nombres pour la note |
 | `note_obsidian(d, analyse, url)` | note du jour pour Obsidian : mes investissements, marchés, analyse, suggestions, top 30, petits prix, fiabilité, liens |

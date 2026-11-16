@@ -164,7 +164,7 @@ def main():
     cache = json.loads(fc.read_text(encoding="utf-8")) if fc.exists() else {}
 
     a_verifier = (d["indices"] + [x for x in d["devises"] if x["ticker"] == "EURUSD=X"]
-                  + d["top30"] + d["petites"] + d.get("suggestions", [])
+                  + d["top30"] + d["petites"] + d.get("connues", []) + d.get("suggestions", [])
                   + (d.get("mes_investissements") or {}).get("lignes", []))
     vus, bilan = {}, {"ok": 0, "ecart": 0, "seul": 0, "ecarts": []}
     for m in a_verifier:

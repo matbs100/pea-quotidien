@@ -12,7 +12,9 @@ Tu travailles dans le dépôt Git du projet Matin PEA (branche `claude/pea`), à
    - ETF éligibles au PEA cotés à Paris absents de `univers.json` (nouveaux lancements compris) → section `etf`. Pas d'ETF d'obligations.
    - ETF à effet de levier ou inverses → section `etf_levier`, seulement si elle compte moins de 4 titres ou si l'un d'eux a cessé de coter. Jamais dans `etf`.
    - Actions éligibles au PEA (siège dans l'Union européenne ou l'Espace économique européen) des indices CAC 40, SBF 120 et Euro Stoxx 50 absentes de `univers.json` (nouvelles entrées dans ces indices, introductions en Bourse importantes) → section `actions`.
-   Au plus 20 ajouts par semaine.
+   Au plus 20 ajouts par semaine. Ne touche jamais à la clé `_connues` de `univers.json` : ce sont les
+   30 valeurs connues affichées chaque jour, choisies par le propriétaire (tu peux seulement signaler dans
+   ton rapport un titre de cette liste qui n'a plus de cours).
 3. Vérifie chaque candidat, sans exception, avant de l'ajouter :
    a. le code Yahoo renvoie des cours récents : `$PY -c "import yfinance as yf; print(yf.Ticker('XXX.PA').history(period='5d'))"` ;
    b. Boursorama le dit éligible au PEA et l'ISIN correspond à ta source : `cd scripts && $PY -c "import fiches; print(fiches.lire_bourso('CODE', ETF))"` avec CODE = `1rT` + mnémonique pour un ETF de Paris (ETF=True), `1rP` + mnémonique pour une action de Paris (ETF=False) ; pour une action d'une autre place, voir `PLACES` dans `scripts/verif.py`. Il faut `pea_bourso: True` et un ISIN.

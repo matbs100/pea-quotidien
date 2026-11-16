@@ -1,0 +1,496 @@
+{
+ "titres": {
+  "50E.PA": {
+   "isin": "IE00B4K6B022",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=IE00B4K6B022",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.05,
+   "couts_transaction": 0.09
+  },
+  "BNK.PA": {
+   "isin": "LU1834983477",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1834983477",
+   "lu_le": "2026-11-17",
+   "sri": 5,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0
+  },
+  "BX4.PA": {
+   "isin": "FR0010411884",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0010411884/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 6,
+   "frais_courants": 0.6,
+   "couts_transaction": 0.0,
+   "date_doc": "12/06/2026"
+  },
+  "C40.PA": {
+   "isin": "LU1681046931",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1681046931",
+   "lu_le": "2026-11-17",
+   "sri": 5,
+   "frais_courants": 0.25,
+   "couts_transaction": 0.13
+  },
+  "C50.PA": {
+   "isin": "LU1681047236",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1681047236",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.09,
+   "couts_transaction": 0.05
+  },
+  "CAC.PA": {
+   "isin": "FR0007052782",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0007052782/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.25,
+   "couts_transaction": 0.03,
+   "date_doc": "05/06/2026"
+  },
+  "CACC.PA": {
+   "isin": "FR0013380607",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0013380607/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.25,
+   "couts_transaction": 0.03,
+   "date_doc": "05/06/2026"
+  },
+  "CD8.PA": {
+   "isin": "FR0010717090",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0010717090/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.09,
+   "date_doc": "28/04/2026"
+  },
+  "CG1.PA": {
+   "isin": "FR0010655712",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0010655712/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.1,
+   "couts_transaction": 0.01,
+   "date_doc": "02/11/2026"
+  },
+  "CHM.PA": {
+   "isin": "LU1834983634",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1834983634",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0
+  },
+  "CL2.PA": {
+   "isin": "FR0010755611",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0010755611/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 6,
+   "frais_courants": 0.5,
+   "couts_transaction": 0.0,
+   "date_doc": "28/04/2026"
+  },
+  "CW8.PA": {
+   "isin": "LU1681043599",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1681043599",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.38,
+   "couts_transaction": 0.0
+  },
+  "DAX.PA": {
+   "isin": "LU0252633754",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU0252633754",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.15,
+   "couts_transaction": 0.01
+  },
+  "DCAM.PA": {
+   "isin": "FR001400U5Q4",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR001400U5Q4/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.2,
+   "couts_transaction": 0.0,
+   "date_doc": "28/04/2026"
+  },
+  "E40.PA": {
+   "isin": "FR0010150458",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=FR0010150458",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.25,
+   "couts_transaction": 0.09,
+   "date_doc": "16/04/2026"
+  },
+  "EEMK.PA": {
+   "isin": "LU1291097779",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1291097779",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.27,
+   "couts_transaction": 0.09,
+   "date_doc": "30/06/2026"
+  },
+  "EEMU.PA": {
+   "isin": "LU1291098827",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1291098827",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.15,
+   "couts_transaction": 0.15,
+   "date_doc": "30/06/2026"
+  },
+  "ESE.PA": {
+   "isin": "FR0011550185",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=FR0011550185",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.14,
+   "couts_transaction": 0.0,
+   "date_doc": "16/04/2026"
+  },
+  "ETDD.PA": {
+   "isin": "FR0012739431",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=FR0012739431",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.1,
+   "couts_transaction": 0.06,
+   "date_doc": "16/04/2026"
+  },
+  "ETZ.PA": {
+   "isin": "FR0011550193",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=FR0011550193",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.19,
+   "couts_transaction": 0.0,
+   "date_doc": "16/04/2026"
+  },
+  "EWLD.PA": {
+   "isin": "LU2655993207",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU2655993207",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.38,
+   "couts_transaction": 0.0
+  },
+  "FOO.PA": {
+   "isin": "LU1834985845",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1834985845",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0
+  },
+  "GPEA.PA": {
+   "isin": "FR0014017NX3",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0014017NX3/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0,
+   "date_doc": "06/07/2026"
+  },
+  "HLT.PA": {
+   "isin": "LU1834986900",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1834986900",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0
+  },
+  "IND.PA": {
+   "isin": "LU1834987890",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1834987890",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0
+  },
+  "INS.PA": {
+   "isin": "LU1834987973",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1834987973",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0
+  },
+  "LQQ.PA": {
+   "isin": "FR0010342592",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0010342592/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 6,
+   "frais_courants": 0.6,
+   "couts_transaction": 0.0,
+   "date_doc": "12/06/2026"
+  },
+  "LVC.PA": {
+   "isin": "FR0010592014",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0010592014/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 6,
+   "frais_courants": 0.4,
+   "couts_transaction": 0.0,
+   "date_doc": "12/06/2026"
+  },
+  "MFE.PA": {
+   "isin": "LU1646360971",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1646360971",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.12,
+   "couts_transaction": 0.12
+  },
+  "MMS.PA": {
+   "isin": "LU1598689153",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1598689153",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.4,
+   "couts_transaction": 0.0
+  },
+  "MSE.PA": {
+   "isin": "FR0007054358",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0007054358/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.2,
+   "couts_transaction": 0.02,
+   "date_doc": "28/04/2026"
+  },
+  "OBLI.PA": {
+   "isin": "FR0013346681",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0013346681/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 1,
+   "frais_courants": 0.25,
+   "couts_transaction": 0.0,
+   "date_doc": "12/06/2026"
+  },
+  "PAASI.PA": {
+   "isin": "FR0013412012",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0013412012/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0,
+   "date_doc": "05/06/2026"
+  },
+  "PABZ.PA": {
+   "isin": "LU2182388582",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU2182388582",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.15,
+   "couts_transaction": 0.16
+  },
+  "PAEEM.PA": {
+   "isin": "FR0013412020",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0013412020/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0,
+   "date_doc": "13/07/2026"
+  },
+  "PAEJ.PA": {
+   "isin": "FR0011869312",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0011869312/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.6,
+   "couts_transaction": 0.0,
+   "date_doc": "12/06/2026"
+  },
+  "PANX.PA": {
+   "isin": "FR0013412269",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0013412269/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 5,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0,
+   "date_doc": "05/06/2026"
+  },
+  "PCEU.PA": {
+   "isin": "FR0013412038",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0013412038/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.15,
+   "couts_transaction": 0.0,
+   "date_doc": "05/06/2026"
+  },
+  "PE500.PA": {
+   "isin": "FR0013412285",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0013412285/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.25,
+   "couts_transaction": 0.0,
+   "date_doc": "05/06/2026"
+  },
+  "PINR.PA": {
+   "isin": "FR0011869320",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0011869320/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.85,
+   "couts_transaction": 0.0,
+   "date_doc": "12/06/2026"
+  },
+  "PLEM.PA": {
+   "isin": "FR0011440478",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0011440478/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.55,
+   "couts_transaction": 0.0,
+   "date_doc": "13/07/2026"
+  },
+  "PMEH.PA": {
+   "isin": "FR0011869304",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0011869304/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 5,
+   "frais_courants": 0.4,
+   "couts_transaction": 0.0,
+   "date_doc": "12/06/2026"
+  },
+  "PSP5.PA": {
+   "isin": "FR0011871128",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0011871128/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.12,
+   "couts_transaction": 0.0,
+   "date_doc": "06/08/2026"
+  },
+  "PTPXE.PA": {
+   "isin": "FR0013411980",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0013411980/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.2,
+   "couts_transaction": 0.0,
+   "date_doc": "05/06/2026"
+  },
+  "PUST.PA": {
+   "isin": "FR0011871110",
+   "source": "Amundi ETF",
+   "page": "https://www.amundietf.fr/pdfDocuments/kid-priips/FR0011871110/FRA/FRA",
+   "lu_le": "2026-11-17",
+   "sri": 5,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0,
+   "date_doc": "12/06/2026"
+  },
+  "RS2K.PA": {
+   "isin": "LU1681038672",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1681038672",
+   "lu_le": "2026-11-17",
+   "sri": 5,
+   "frais_courants": 0.35,
+   "couts_transaction": 0.0
+  },
+  "S6EW.PA": {
+   "isin": "LU0599613147",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU0599613147",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.15,
+   "date_doc": "31/12/2025"
+  },
+  "TNO.PA": {
+   "isin": "LU1834988518",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1834988518",
+   "lu_le": "2026-11-17",
+   "sri": 5,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0
+  },
+  "TRV.PA": {
+   "isin": "LU1834988781",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1834988781",
+   "lu_le": "2026-11-17",
+   "sri": 5,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0
+  },
+  "UTI.PA": {
+   "isin": "LU1834988864",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1834988864",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.3,
+   "couts_transaction": 0.0
+  },
+  "WPEA.PA": {
+   "isin": "IE0002XZSHO1",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=IE0002XZSHO1",
+   "lu_le": "2026-11-17",
+   "sri": 4,
+   "frais_courants": 0.2,
+   "couts_transaction": 0.0
+  }
+ },
+ "maj": "2026-11-17",
+ "_note": "Chiffres lus dans le DIC officiel (PRIIPs) de chaque ETF par scripts/dic.py : Fundsquare d'abord, sinon le site de l'émetteur (Amundi ETF). Frais en % par an."
+}

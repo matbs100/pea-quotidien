@@ -33,9 +33,13 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
      en cas de nouvel échec, envoie « Fiche non générée : <raison> » (étape 8) et arrête-toi.
 3. Contrôle des prix : `$PY scripts/verif.py $JOUR` (compare Yahoo avec Boursorama et le
    Financial Times). Les échecs de lecture d'une source ne sont pas bloquants.
-3 bis. Fiches détaillées : `$PY scripts/fiches.py $JOUR` (historique de prix sur 5 ans, risque SRI,
-   frais, caractéristiques, éligibilité PEA selon Boursorama ; à la clôture, prix moyen du jour).
-   Compte 2 à 3 minutes. Non bloquant : si le script échoue, continue sans les fiches.
+3 bis. DIC officiels puis fiches détaillées. D'abord `$PY scripts/dic.py` : relit le DIC (document
+   d'informations clés PRIIPs) des ETF dont la lecture a plus de 30 jours, sur Fundsquare puis chez Amundi ETF,
+   et note leur risque (SRI) et leurs frais courants dans `data/dic.json` (quelques secondes ; non bloquant :
+   un DIC illisible garde ses anciennes valeurs). Puis `$PY scripts/fiches.py $JOUR` (historique de prix sur
+   5 ans, risque SRI et frais courants du DIC en priorité, caractéristiques, éligibilité PEA selon
+   Boursorama ; à la clôture, prix moyen du jour). Compte 2 à 3 minutes. Non bloquant : si le script
+   échoue, continue sans les fiches.
 3 ter. Revue de presse et estimations (10 minutes au plus, non bloquant). Avec WebSearch (mode
    « extended » pour l'actualité du jour) puis WebFetch, lis **au moins 5 sources différentes**, datées
    du jour ou de la veille, dont au moins 2 françaises et 1 internationale. Pistes : Les Echos et

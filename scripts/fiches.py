@@ -5,9 +5,11 @@ Ajoute « details » à data/jours/AAAA-MM-JJ.json, pour chaque indice, devise, 
 titre du top 30, petit prix, suggestion du jour et investissement noté par le propriétaire :
 - historique de prix : 14 mois en quotidien et 5 ans en hebdomadaire (graphique interactif) ;
 - statistiques : performances, plus haut et plus bas, volatilité, pire baisse, bêta face au CAC 40 ;
-- risque : SRI officiel du DIC (document PRIIPs) pour les ETF, lu sur Boursorama ; pour les
-  actions (qui n'ont pas de DIC), SRI estimé à partir de la volatilité sur 5 ans avec les seuils PRIIPs ;
-- frais : frais de gestion des ETF, plafonds légaux du PEA, taxe sur les transactions financières ;
+- risque : SRI officiel du DIC (document PRIIPs) pour les ETF, lu dans le DIC lui-même par dic.py
+  (Fundsquare d'abord, data/dic.json), à défaut sur Boursorama ; pour les actions (qui n'ont pas de DIC),
+  SRI estimé à partir de la volatilité sur 5 ans avec les seuils PRIIPs ;
+- frais : frais courants des ETF lus dans le DIC (à défaut, « frais de gestion maximum » de Boursorama),
+  coûts de transaction du fonds, plafonds légaux du PEA, taxe sur les transactions financières ;
 - caractéristiques : ISIN, éligibilité PEA indiquée par Boursorama, secteur, valorisation, PER…
 Les caractéristiques sont gardées 7 jours dans data/fiches/ pour limiter les requêtes.
 Aucun texte n'est copié des sites : seulement des données chiffrées et factuelles.
@@ -29,6 +31,7 @@ import yfinance as yf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verif import codes, get  # noqa: E402  mêmes codes de place et même politesse que verif.py
+import dic as dics  # noqa: E402  chiffres des DIC officiels (data/dic.json, écrit par dic.py)
 
 warnings.filterwarnings("ignore")
 RACINE = Path(__file__).resolve().parent.parent
@@ -351,15 +354,49 @@ def description_auto(m, inf):
     return ""
 
 
+_BASE_DIC = None
+
+
+def avec_dic(t, inf, base=None):
+    """Caractéristiques complétées par le DIC officiel du titre (data/dic.json, lu par dic.py) : son SRI et
+    ses frais courants passent avant ceux de Boursorama, qui donne les « frais de gestion maximum » du
+    prospectus. Ne modifie pas `inf` ; le renvoie tel quel si le titre n'a pas de DIC lu."""
+    global _BASE_DIC
+    if base is None:
+        if _BASE_DIC is None:
+            _BASE_DIC = dics.charger()
+        base = _BASE_DIC
+    e = dics.dic_de(t, base)
+    if not e:
+        return inf
+    out = dict(inf)
+    if e.get("sri"):
+        if inf.get("sri_officiel") and inf["sri_officiel"] != e["sri"]:
+            out["sri_boursorama"] = inf["sri_officiel"]
+        out["sri_officiel"] = e["sri"]
+    for cle, dest in (("frais_courants", "frais_courants"), ("couts_transaction", "couts_transaction"),
+                      ("date_doc", "dic_date"), ("source", "dic_source"), ("page", "dic_page"),
+                      ("lu_le", "dic_lu_le")):
+        if e.get(cle) is not None:
+            out[dest] = e[cle]
+    return out
+
+
 def frais(m, inf):
     cat, t = m["categorie"], m["ticker"]
     if cat not in ("etf", "actions", "petites"):
         return None
     out = {"courtage_max": 0.5, "courtage_agence_max": 1.2, "garde_max": 0.4}
     if cat == "etf":
-        g = nombre(inf.get("frais_gestion"))
+        g = inf.get("frais_courants")  # DIC officiel d'abord (frais réels de la dernière année)
+        if g is not None:
+            out["source_gestion"] = "DIC"
+        else:
+            g = nombre(inf.get("frais_gestion"))  # sinon Boursorama : maximum prévu par le prospectus
         if g is not None:
             out["gestion"] = g
+        if inf.get("couts_transaction") is not None:
+            out["transaction"] = inf["couts_transaction"]
         for k in ("frais_entree", "frais_sortie"):
             v = nombre(inf.get(k))
             if v is not None:
@@ -383,7 +420,7 @@ def infos_en_cache(t):
 def frais_compact(m, inf=None):
     """Frais d'un titre du catalogue, en court pour la page : g = frais de gestion annuels (%), e / s =
     frais d'entrée / de sortie (%), ttf = taxe sur les transactions financières. None si rien n'est connu."""
-    fx = frais(m, infos_en_cache(m["ticker"]) if inf is None else inf)
+    fx = frais(m, avec_dic(m["ticker"], infos_en_cache(m["ticker"])) if inf is None else inf)
     if not fx:
         return None
     out = {k: fx[c] for k, c in (("g", "gestion"), ("e", "entree"), ("s", "sortie")) if fx.get(c) is not None}
@@ -443,7 +480,7 @@ def main():
     fj = DATA / "jours" / f"{jour}.json"
     d = json.loads(fj.read_text(encoding="utf-8"))
     tous = {}
-    for cle in ("indices", "devises", "matieres", "top30", "petites"):
+    for cle in ("indices", "devises", "matieres", "top30", "petites", "connues"):
         for m in d.get(cle, []):
             tous.setdefault(m["ticker"], m)
     # Suggestions du jour et investissements notés par le propriétaire : fiche détaillée aussi
@@ -487,7 +524,7 @@ def main():
         sj, ss = serie(dj, t), serie(ds, t)
         if sj is None:
             continue
-        inf = infos(m)
+        inf = avec_dic(t, infos(m))
         suffixe = t.rsplit(".", 1)[1] if "." in t and not t.startswith("^") else None
         place, devise = PLACES.get(suffixe, (None, None))
         det = {"j": compacte(sj), "s": compacte(ss) if ss is not None else None,
@@ -505,8 +542,17 @@ def main():
             "Boursorama": inf.get("url_boursorama") or (f"https://www.boursorama.com/cours/{bc}/" if bc else None),
             "Financial Times": f"https://markets.ft.com/data/{fcode[0]}/tearsheet/summary?s={fcode[1]}" if fcode else None,
             "Yahoo Finance": lien_yahoo(t),
+            "DIC officiel et documents du fonds (Fundsquare)": inf.get("dic_page")
+            if inf.get("dic_source") == "Fundsquare" else None,
+            f"DIC officiel ({inf.get('dic_source')}, PDF)": inf.get("dic_page")
+            if inf.get("dic_source") not in (None, "Fundsquare") else None,
             "DIC (document PRIIPs, PDF)": inf.get("dic"),
             "justETF": f"https://www.justetf.com/fr/etf-profile.html?isin={inf['isin']}"
+            if m["categorie"] == "etf" and inf.get("isin") else None,
+            # Quantalys : référence choisie par le propriétaire (prix, risque, frais), lisible seulement dans un
+            # navigateur (le site bloque les robots) : un lien, jamais une lecture automatique
+            "Quantalys (frais, risque, notation)":
+            f"https://www.quantalys.com/Recherche?Values.sNomOrISIN={inf['isin']}&Values.bExcludeUncommercialized=true"
             if m["categorie"] == "etf" and inf.get("isin") else None,
         }.items() if v}
         details[t] = det

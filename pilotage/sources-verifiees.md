@@ -29,7 +29,8 @@ ce que Matin PEA peut en tirer (`apprentissage/lectures/`).
 | `live.euronext.com` | Euronext | bourse | fiches et documents des titres cotés | autorisé |
 | `www.stoxx.com` | STOXX (fournisseur d'indices) | indices | méthodologies des indices Stoxx Europe 600, Euro Stoxx 50 | à autoriser |
 | `www.msci.com` | MSCI (fournisseur d'indices) | indices | méthodologies MSCI World, Emerging Markets (certains chemins interdits par `robots.txt` : vérifiés lien par lien) | à autoriser |
-| `www.amundietf.fr` | Amundi ETF | émetteur | DIC, prospectus, rapports des ETF Amundi | autorisé |
+| `www.fundsquare.net` | Fundsquare (Bourse de Luxembourg) | infrastructure de marché des fonds | **source de référence du propriétaire (17/11/2026)** : DIC (« Key Information Document (PRIIPs) », à lire en priorité pour le risque et les frais courants), prospectus, rapports et statuts des fonds luxembourgeois, irlandais et d'une partie des fonds français ; onglet Documents, version « en cours » ; `robots.txt` lu le 16/11 (nos chemins permis) | à confirmer (premier passage de `dic.py`) |
+| `www.amundietf.fr` | Amundi ETF | émetteur | DIC, prospectus, rapports des ETF Amundi ; DIC à l'adresse `/pdfDocuments/kid-priips/<ISIN>/FRA/FRA` (`robots.txt` lu le 16/11 : permis) | autorisé |
 | `www.ishares.com` | iShares (BlackRock) | émetteur | DIC, fiches et rapports des ETF iShares | autorisé |
 | `www.e-wealins.com` | Wealins | assureur (supports d'assurance vie) | DIC et prospectus des fonds de la liste Wealins | à autoriser |
 | `arxiv.org` | arXiv (Université Cornell) | recherche | articles de finance quantitative (momentum, volatilité, diversification) | autorisé |
@@ -39,6 +40,12 @@ ce que Matin PEA peut en tirer (`apprentissage/lectures/`).
 **Écartés le 6 novembre 2026** (ne pas utiliser) : `www.imf.org`, `www.spglobal.com` et `papers.ssrn.com`
 (leur `robots.txt` n'est pas lisible par un robot : accès refusé), `www.oecd.org` (le `robots.txt` interdit le
 dossier des PDF), `www.economie.gouv.fr` et `www.legifrance.gouv.fr` (accès des robots refusé).
+
+**Références sans lecture automatique (16 novembre 2026)** : `www.quantalys.com`, choisi par le propriétaire
+comme référence pour les prix, les risques et les frais, renvoie aux robots une page vide (« This website
+requires JS enabled and cookies ») : la fiche donne un lien Quantalys pour chaque ETF, à ouvrir dans un
+navigateur, et personne ne contourne ce blocage. `doc.morningstar.com` (copies des DIC dont Boursorama donne
+le lien) : son `robots.txt` interdit tout, le lien reste affiché mais n'est jamais lu par un programme.
 
 ## Ajouter une source
 
