@@ -7,6 +7,7 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 
 ## Priorités pour l'agent de nuit
 - (16/11) D-20261116-2 (titre comparé mémorisé) confirmée. Réalise l'idée n° 46 (inflation de la zone euro dans le bloc « contexte des taux », source BCE p. 3-4 déjà relue) ; **une ligne dans le tableau** de `decisions.md`.
+- (16/11, propriétaire) Après l'idée 46, réalise l'**idée n° 48** (`apprentissage/idees.md`) : dans `scripts/modele.html`, branche `estIsin(V)` du message « Cet ISIN n'est ni dans… » (fonction de recherche de « Mes investissements »), ajoute 3 liens `<a target="_blank" rel="noopener noreferrer">` qui cherchent l'ISIN sur Boursorama, justETF et Euronext (ISIN passé par `encodeURIComponent`, seulement s'il est valide). **Vérifie chaque adresse de recherche avec un vrai ISIN** (ex. FR0013412020) avant de l'écrire ; si une adresse ne mène pas au titre, retire ce site. Aucun `fetch`, CSP inchangée. Garde la phrase « donne son ISIN à Claude ». Test dans `scripts/tests.py`, ligne dans `ARCHITECTURE.md`, nouveauté dans le CHANGELOG, ligne au tableau de `decisions.md`.
 - (16/11) **Presse d'abord** : une source entière autre que Boursorama (WebSearch `site:` si bloquée), 2 chiffres attribués ; écris dans le journal que le fichier est demandé par le chef.
 - (13/11) Fais les devoirs de `pilotage/ecole.md` (le fonds de la nuit : un seul, MWRD, CEM ou EQQQ).
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (identifiant `[D-…]` dans le commit) ; une nouveauté de CHANGELOG va **sous l'en-tête** du fichier.
