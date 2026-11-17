@@ -66,3 +66,5 @@ Grille de décision : gain de clarté faible mais sûr, risque nul (aucun texte 
 - D-20261115-2 · 2026-11-15 · n° 44 · Bloc fiscalité : exceptions au retrait avant 5 ans (licenciement, invalidité 2e/3e catégorie, mise à la retraite par l'employeur) · **provisoire (nuit)** · gain 3,30, coût 1, risque 1 (« à l'essai ») · indicateur : exceptions égales à service-public F22449, aucune formulation de conseil · réalisée 2026-11-15
 
 - D-20261116-1 · provisoire (design) · 2026-11-16 · Graphique de fiche : ajouter la devise (« Prix en EUR · axe de droite ») et un libellé accessible complet. Indicateur : l'unité du graphique est lisible sans remonter au prix, à 390 px. Résultat : constaté sur capture (fiche Vusion), design.py comparer 🟢.
+
+- D-20261117-1 · provisoire (design) · 2026-11-17 · Verre dépoli (flou 14 px, repli opaque `@supports`, `prefers-reduced-transparency`) sur l'en-tête de la fiche détaillée et l'info-bulle de risque seulement. Indicateur : contraste inchangé (4,96), comparer 🟢, lisible à 360 px clair et sombre. Gain 3 (visuel seul), coût 1, risque 1. Résultat : constaté sur captures, effet discret mais propre.

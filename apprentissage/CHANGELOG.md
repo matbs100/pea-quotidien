@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-17 · Verre dépoli sur la fiche détaillée (Design, D-20261117-1)
+En-tête de fiche et info-bulle de risque en verre dépoli (repli opaque). Aucune information retirée.
+
 ## 2026-11-17 · ✨ Nouveauté : chercher un ISIN non suivi sur Boursorama, justETF ou Fundsquare (Chef, D-20261117-1)
 Quand la recherche « Mes investissements » ne connaît pas un ISIN valide, des liens ouvrent sa page chez Boursorama et justETF (et Fundsquare pour un fonds luxembourgeois), dans un nouvel onglet. Aucun appel depuis la page ; Euronext n'est pas proposé, sa recherche n'a pas pu être vérifiée.
 

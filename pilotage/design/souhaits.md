@@ -5,7 +5,7 @@ projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). 
 
 ## Tâches demandées par le propriétaire (à faire en premier, dans l'ordre)
 
-- [ ] 2026-11-16 · **Effet « verre dépoli » (style liquid glass) sur les éléments flottants seulement.**
+- [x] 2026-11-16 · fait le 2026-11-17 [D-20261117-1] · **Effet « verre dépoli » (style liquid glass) sur les éléments flottants seulement.**
   Le fond animé `.blobs` donne déjà de la couleur à faire transparaître. À faire dans `scripts/modele.html` :
   surface semi-transparente + `backdrop-filter: blur(…) saturate(…)` (avec `-webkit-`), liseré clair d'1 px
   et légère ombre, **seulement** sur ce qui flotte : en-tête et poignée de la fiche détaillée (`.feuille`),

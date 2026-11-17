@@ -15,6 +15,8 @@ Une leçon par ligne, datée, 60 lignes au plus. Relue chaque nuit avant de trav
 - 2026-11-16 · Une unité (devise) doit figurer près de chaque graphique, pas seulement dans le prix de l'en-tête.
 - 2026-11-16 · Captures lisibles : fenêtre 390×844, pas la page entière (18 000 px) ; playwright==1.63.0 avec le Chromium préinstallé.
 
+- 2026-11-17 · Verre dépoli : base opaque, flou ≤ 14 px dans @supports, repli reduced-transparency ; l'effet est discret sans contenu dessous.
+
 ## Ce qui a été annulé, et pourquoi
 
 ## Erreurs à ne plus refaire

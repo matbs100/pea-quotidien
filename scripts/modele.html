@@ -313,6 +313,12 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .sug p { margin: 0; font-size: 14px; }
 @media (max-width: 600px) { #suggestions { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .feuille, .voile { transition: none; } }
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .f-tete, #bulle-r { background: color-mix(in srgb, var(--surface) 78%, transparent); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); border-color: color-mix(in srgb, var(--surface) 55%, var(--line)); }
+  #bulle-r { box-shadow: 0 6px 18px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.35); }
+  .f-tete { border-radius: 22px 22px 0 0; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); }
+  @media (prefers-reduced-transparency: reduce) { .f-tete, #bulle-r { background: var(--surface); -webkit-backdrop-filter: none; backdrop-filter: none; } }
+}
 </style>
 </head>
 <body>
