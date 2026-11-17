@@ -1,10 +1,6 @@
 {
- "maj": "2026-11-05",
+ "maj": "2026-11-17",
  "infos": {
-  "secteur": "Healthcare",
-  "pays": "France",
-  "site": "https://www.genoway.com",
-  "source_infos": "Yahoo Finance",
-  "valorisation": "25 MEUR"
+  "source_infos": "Yahoo Finance"
  }
 }

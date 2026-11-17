@@ -12,9 +12,7 @@
  "^STOXX": {
   "boursorama": "2cSXXP",
   "ft": "SXXP:STX",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "^GDAXI": {
   "boursorama": "5pDAX",
@@ -94,9 +92,7 @@
  "ALV.DE": {
   "boursorama": "1zALV",
   "ft": "ALV:FRA",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "ATE.PA": {
   "boursorama": "1rPATE",
@@ -231,7 +227,9 @@
  "ALSGD.PA": {
   "boursorama": "1rPALSGD",
   "ft": "ALSGD:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ETL.PA": {
   "boursorama": "1rPETL",
@@ -357,9 +355,7 @@
  "WKL.AS": {
   "boursorama": "1rAWKL",
   "ft": "WKL:AEX",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "BIM.PA": {
   "boursorama": "1rPBIM",
@@ -504,7 +500,9 @@
  "AMUN.PA": {
   "boursorama": "1rPAMUN",
   "ft": "AMUN:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "SAB.MC": {
   "boursorama": "FF55-SAB",
@@ -653,6 +651,11 @@
  "PAEEM.PA": {
   "boursorama": "1rTPAEEM",
   "ft": "PAEEM:PAR:EUR",
+  "echecs": {}
+ },
+ "ALDEL.PA": {
+  "boursorama": "1rPALDEL",
+  "ft": "ALDEL:PAR",
   "echecs": {}
  }
 }
