@@ -53,6 +53,21 @@ projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). 
   téléphone, un glissement vers le bas depuis le haut de la fiche la ferme, sans fermeture par erreur pendant
   le défilement. Quand c'est fait : cocher la case avec la date et la décision `[D-…]`.
 
+- [ ] 2026-11-17 · **Toucher n'importe où sur une ligne ouvre la fiche détaillée** (action, ETF, fonds ; Top 30,
+  30 valeurs connues, petites capitalisations, Mes investissements, cartes des marchés). Le propriétaire veut
+  pouvoir toucher ou cliquer n'importe où sur le bloc d'un titre (nom, badges, prix, variations, RSI, score,
+  signal, espaces vides) pour afficher ses informations. Constat du 17/11 (ordinateur) : tout le bloc ouvre
+  déjà la fiche **sauf la pastille « Risque n/7 »** (`.rsq`), qui ouvre une bulle (`#bulle-r`) et bloque
+  l'ouverture (`stopPropagation`). À faire dans `scripts/modele.html` : un toucher sur la pastille ouvre la
+  fiche ; l'explication du risque n'est pas perdue (elle est reprise dans la fiche, à côté du risque, et
+  reste au survol à la souris / au clavier si tu le juges utile). Vérifie aussi « ✓ n sources » (`.vf`) et
+  les autres badges. **Sur téléphone (tactile)**, vérifie dans Playwright `has_touch` qu'un toucher sur chaque
+  zone ouvre la fiche (lien probable avec la tâche précédente : fais-les ensemble si la cause est commune).
+  Ajoute un test (`scripts/tests.py`) qui touche chaque zone d'une ligne et vérifie que la fiche s'ouvre.
+  Indicateur : toutes les zones d'une ligne ouvrent la fiche, sur ordinateur et au doigt ; aucune
+  information retirée ; `design.py comparer` 🟢. Quand c'est fait : cocher la case avec la date et la
+  décision `[D-…]`.
+
 ## Souhaits (le plus récent en haut)
 
 - 2026-11-16 · **Trouver un ISIN absent de la fiche** (pour information : **ne le code pas**). Réalisé par
