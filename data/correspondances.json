@@ -275,7 +275,7 @@
   "boursorama": "FF55-IBE",
   "ft": "IBE:MCE",
   "echecs": {
-   "boursorama": 1
+   "boursorama": 2
   }
  },
  "ENX.PA": {
@@ -623,7 +623,7 @@
   "boursorama": null,
   "ft": "NOKIA:HEL",
   "echecs": {
-   "ft": 1
+   "ft": 2
   }
  },
  "CW8.PA": {
