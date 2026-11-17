@@ -88,14 +88,14 @@
    "signal": "hausse",
    "sources": {
     "yahoo": 8312.84,
-    "boursorama": 8309.18,
-    "ft": 8308.83
+    "boursorama": 8311.52,
+    "ft": 8308.74
    },
-   "prix_reference": 8309.18,
+   "prix_reference": 8311.52,
    "ecarts_sources": {
-    "yahoo": 0.04,
+    "yahoo": 0.02,
     "boursorama": 0.0,
-    "ft": -0.0
+    "ft": -0.03
    },
    "verif": "ok"
   },
@@ -184,13 +184,13 @@
    "signal": "neutre",
    "sources": {
     "yahoo": 6309.86,
-    "boursorama": 6300.57,
-    "ft": 6300.57
+    "boursorama": 6297.08,
+    "ft": 6301.88
    },
-   "prix_reference": 6300.57,
+   "prix_reference": 6301.88,
    "ecarts_sources": {
-    "yahoo": 0.15,
-    "boursorama": 0.0,
+    "yahoo": 0.13,
+    "boursorama": -0.08,
     "ft": 0.0
    },
    "verif": "ok"
@@ -280,14 +280,12 @@
    "signal": "hausse",
    "sources": {
     "yahoo": 658.79,
-    "boursorama": 658.02,
-    "ft": 657.9
+    "ft": 658.12
    },
-   "prix_reference": 658.02,
+   "prix_reference": 658.455,
    "ecarts_sources": {
-    "yahoo": 0.12,
-    "boursorama": 0.0,
-    "ft": -0.02
+    "yahoo": 0.05,
+    "ft": -0.05
    },
    "verif": "ok"
   },
@@ -376,14 +374,14 @@
    "signal": "hausse",
    "sources": {
     "yahoo": 26598.64,
-    "boursorama": 26387.23,
-    "ft": 26379.37
+    "boursorama": 26393.05,
+    "ft": 26388.61
    },
-   "prix_reference": 26387.23,
+   "prix_reference": 26393.05,
    "ecarts_sources": {
-    "yahoo": 0.8,
+    "yahoo": 0.78,
     "boursorama": 0.0,
-    "ft": -0.03
+    "ft": -0.02
    },
    "verif": "ok"
   },
@@ -472,14 +470,14 @@
    "signal": "hausse",
    "sources": {
     "yahoo": 10808.27,
-    "boursorama": 10804.89,
-    "ft": 10804.68
+    "boursorama": 10805.92,
+    "ft": 10808.43
    },
-   "prix_reference": 10804.89,
+   "prix_reference": 10808.27,
    "ecarts_sources": {
-    "yahoo": 0.03,
-    "boursorama": 0.0,
-    "ft": -0.0
+    "yahoo": 0.0,
+    "boursorama": -0.02,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -1040,12 +1038,12 @@
    "signal": "baisse",
    "sources": {
     "yahoo": 23545.14,
-    "ft": 23545.14
+    "ft": 23508.17
    },
-   "prix_reference": 23545.14,
+   "prix_reference": 23526.655,
    "ecarts_sources": {
-    "yahoo": 0.0,
-    "ft": 0.0
+    "yahoo": 0.08,
+    "ft": -0.08
    },
    "verif": "ok"
   },
@@ -1832,13 +1830,13 @@
    "score": 90.3,
    "sources": {
     "yahoo": 154.8,
-    "boursorama": 152.0,
-    "ft": 153.8
+    "boursorama": 153.0,
+    "ft": 154.6
    },
-   "prix_reference": 153.8,
+   "prix_reference": 154.6,
    "ecarts_sources": {
-    "yahoo": 0.65,
-    "boursorama": -1.17,
+    "yahoo": 0.13,
+    "boursorama": -1.03,
     "ft": 0.0
    },
    "verif": "ok"
@@ -1930,13 +1928,13 @@
    "score": 88.2,
    "sources": {
     "yahoo": 52.52,
-    "boursorama": 52.62,
-    "ft": 52.52
+    "boursorama": 52.72,
+    "ft": 52.64
    },
-   "prix_reference": 52.52,
+   "prix_reference": 52.64,
    "ecarts_sources": {
-    "yahoo": 0.0,
-    "boursorama": 0.19,
+    "yahoo": -0.23,
+    "boursorama": 0.15,
     "ft": 0.0
    },
    "verif": "ok"
@@ -2126,13 +2124,13 @@
    "score": 85.9,
    "sources": {
     "yahoo": 87.32,
-    "boursorama": 87.16,
-    "ft": 87.2
+    "boursorama": 87.14,
+    "ft": 87.26
    },
-   "prix_reference": 87.2,
+   "prix_reference": 87.26,
    "ecarts_sources": {
-    "yahoo": 0.14,
-    "boursorama": -0.05,
+    "yahoo": 0.07,
+    "boursorama": -0.14,
     "ft": 0.0
    },
    "verif": "ok"
@@ -2224,14 +2222,12 @@
    "score": 85.6,
    "sources": {
     "yahoo": 473.8,
-    "boursorama": 472.7,
     "ft": 470.0
    },
-   "prix_reference": 472.7,
+   "prix_reference": 471.9,
    "ecarts_sources": {
-    "yahoo": 0.23,
-    "boursorama": 0.0,
-    "ft": -0.57
+    "yahoo": 0.4,
+    "ft": -0.4
    },
    "verif": "ok"
   },
@@ -2322,14 +2318,12 @@
    "score": 84.3,
    "sources": {
     "yahoo": 90.4,
-    "boursorama": 90.26,
     "ft": 90.2
    },
-   "prix_reference": 90.26,
+   "prix_reference": 90.3,
    "ecarts_sources": {
-    "yahoo": 0.16,
-    "boursorama": 0.0,
-    "ft": -0.07
+    "yahoo": 0.11,
+    "ft": -0.11
    },
    "verif": "ok"
   },
@@ -2714,13 +2708,13 @@
    "score": 83.2,
    "sources": {
     "yahoo": 451.0,
-    "boursorama": 449.1,
-    "ft": 449.5
+    "boursorama": 449.05,
+    "ft": 450.53
    },
-   "prix_reference": 449.5,
+   "prix_reference": 450.53,
    "ecarts_sources": {
-    "yahoo": 0.33,
-    "boursorama": -0.09,
+    "yahoo": 0.1,
+    "boursorama": -0.33,
     "ft": 0.0
    },
    "verif": "ok"
@@ -2812,13 +2806,13 @@
    "score": 83.0,
    "sources": {
     "yahoo": 35.93,
-    "boursorama": 35.85,
-    "ft": 35.85
+    "boursorama": 35.81,
+    "ft": 35.83
    },
-   "prix_reference": 35.85,
+   "prix_reference": 35.83,
    "ecarts_sources": {
-    "yahoo": 0.22,
-    "boursorama": 0.0,
+    "yahoo": 0.28,
+    "boursorama": -0.06,
     "ft": 0.0
    },
    "verif": "ok"
@@ -2910,14 +2904,14 @@
    "score": 82.7,
    "sources": {
     "yahoo": 105.66,
-    "boursorama": 106.48,
+    "boursorama": 106.18,
     "ft": 106.46
    },
-   "prix_reference": 106.46,
+   "prix_reference": 106.18,
    "ecarts_sources": {
-    "yahoo": -0.75,
-    "boursorama": 0.02,
-    "ft": 0.0
+    "yahoo": -0.49,
+    "boursorama": 0.0,
+    "ft": 0.26
    },
    "verif": "ok"
   },
@@ -3008,14 +3002,16 @@
    "score": 81.4,
    "sources": {
     "yahoo": 23.11,
-    "ft": 23.02
+    "boursorama": 18.04,
+    "ft": 23.04
    },
-   "prix_reference": 23.065,
+   "prix_reference": 23.04,
    "ecarts_sources": {
-    "yahoo": 0.2,
-    "ft": -0.2
+    "yahoo": 0.3,
+    "boursorama": -21.7,
+    "ft": 0.0
    },
-   "verif": "ok"
+   "verif": "ecart"
   },
   {
    "prix": 25.81,
@@ -3104,13 +3100,13 @@
    "score": 81.0,
    "sources": {
     "yahoo": 25.81,
-    "boursorama": 25.42,
-    "ft": 25.77
+    "boursorama": 25.45,
+    "ft": 25.68
    },
-   "prix_reference": 25.77,
+   "prix_reference": 25.68,
    "ecarts_sources": {
-    "yahoo": 0.16,
-    "boursorama": -1.36,
+    "yahoo": 0.51,
+    "boursorama": -0.9,
     "ft": 0.0
    },
    "verif": "ok"
@@ -3203,12 +3199,12 @@
    "sources": {
     "yahoo": 61.6,
     "boursorama": 61.3,
-    "ft": 61.4
+    "ft": 61.3
    },
-   "prix_reference": 61.4,
+   "prix_reference": 61.3,
    "ecarts_sources": {
-    "yahoo": 0.33,
-    "boursorama": -0.16,
+    "yahoo": 0.49,
+    "boursorama": 0.0,
     "ft": 0.0
    },
    "verif": "ok"
@@ -3301,13 +3297,13 @@
    "sources": {
     "yahoo": 30.2,
     "boursorama": 30.11,
-    "ft": 30.09
+    "ft": 30.12
    },
-   "prix_reference": 30.11,
+   "prix_reference": 30.12,
    "ecarts_sources": {
-    "yahoo": 0.3,
-    "boursorama": 0.0,
-    "ft": -0.07
+    "yahoo": 0.27,
+    "boursorama": -0.03,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -3398,14 +3394,14 @@
    "score": 80.4,
    "sources": {
     "yahoo": 46.61,
-    "boursorama": 46.44,
-    "ft": 46.45
+    "boursorama": 46.5,
+    "ft": 46.49
    },
-   "prix_reference": 46.45,
+   "prix_reference": 46.5,
    "ecarts_sources": {
-    "yahoo": 0.34,
-    "boursorama": -0.02,
-    "ft": 0.0
+    "yahoo": 0.24,
+    "boursorama": 0.0,
+    "ft": -0.02
    },
    "verif": "ok"
   },
@@ -3496,14 +3492,14 @@
    "score": 80.1,
    "sources": {
     "yahoo": 14.6,
-    "boursorama": 14.6,
-    "ft": 14.54
+    "boursorama": 14.63,
+    "ft": 14.61
    },
-   "prix_reference": 14.6,
+   "prix_reference": 14.61,
    "ecarts_sources": {
-    "yahoo": 0.0,
-    "boursorama": 0.0,
-    "ft": -0.41
+    "yahoo": -0.07,
+    "boursorama": 0.14,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -3594,14 +3590,14 @@
    "score": 79.6,
    "sources": {
     "yahoo": 36.31,
-    "boursorama": 36.22,
+    "boursorama": 36.32,
     "ft": 36.2
    },
-   "prix_reference": 36.22,
+   "prix_reference": 36.31,
    "ecarts_sources": {
-    "yahoo": 0.25,
-    "boursorama": 0.0,
-    "ft": -0.06
+    "yahoo": 0.0,
+    "boursorama": 0.03,
+    "ft": -0.3
    },
    "verif": "ok"
   },
@@ -3788,13 +3784,13 @@
    "score": 78.6,
    "sources": {
     "yahoo": 192.34,
-    "boursorama": 191.7,
-    "ft": 191.8
+    "boursorama": 191.74,
+    "ft": 192.24
    },
-   "prix_reference": 191.8,
+   "prix_reference": 192.24,
    "ecarts_sources": {
-    "yahoo": 0.28,
-    "boursorama": -0.05,
+    "yahoo": 0.05,
+    "boursorama": -0.26,
     "ft": 0.0
    },
    "verif": "ok"
@@ -3886,14 +3882,14 @@
    "score": 78.6,
    "sources": {
     "yahoo": 196.6,
-    "boursorama": 194.8,
+    "boursorama": 196.1,
     "ft": 195.4
    },
-   "prix_reference": 195.4,
+   "prix_reference": 196.1,
    "ecarts_sources": {
-    "yahoo": 0.61,
-    "boursorama": -0.31,
-    "ft": 0.0
+    "yahoo": 0.25,
+    "boursorama": 0.0,
+    "ft": -0.36
    },
    "verif": "ok"
   },
@@ -3984,14 +3980,14 @@
    "score": 78.6,
    "sources": {
     "yahoo": 85.0,
-    "boursorama": 84.88,
+    "boursorama": 84.92,
     "ft": 84.88
    },
-   "prix_reference": 84.88,
+   "prix_reference": 84.92,
    "ecarts_sources": {
-    "yahoo": 0.14,
+    "yahoo": 0.09,
     "boursorama": 0.0,
-    "ft": 0.0
+    "ft": -0.05
    },
    "verif": "ok"
   },
@@ -4082,14 +4078,14 @@
    "score": 77.8,
    "sources": {
     "yahoo": 87.95,
-    "boursorama": 87.8,
-    "ft": 87.77
+    "boursorama": 87.86,
+    "ft": 87.7
    },
-   "prix_reference": 87.8,
+   "prix_reference": 87.86,
    "ecarts_sources": {
-    "yahoo": 0.17,
+    "yahoo": 0.1,
     "boursorama": 0.0,
-    "ft": -0.03
+    "ft": -0.18
    },
    "verif": "ok"
   },
@@ -4181,12 +4177,12 @@
    "sources": {
     "yahoo": 91.85,
     "boursorama": 91.35,
-    "ft": 91.6
+    "ft": 91.55
    },
-   "prix_reference": 91.6,
+   "prix_reference": 91.55,
    "ecarts_sources": {
-    "yahoo": 0.27,
-    "boursorama": -0.27,
+    "yahoo": 0.33,
+    "boursorama": -0.22,
     "ft": 0.0
    },
    "verif": "ok"
@@ -4377,13 +4373,13 @@
    "sources": {
     "yahoo": 35.58,
     "boursorama": 35.54,
-    "ft": 35.56
+    "ft": 35.62
    },
-   "prix_reference": 35.56,
+   "prix_reference": 35.58,
    "ecarts_sources": {
-    "yahoo": 0.06,
-    "boursorama": -0.06,
-    "ft": 0.0
+    "yahoo": 0.0,
+    "boursorama": -0.11,
+    "ft": 0.11
    },
    "verif": "ok"
   },
@@ -5470,12 +5466,12 @@
    "sources": {
     "yahoo": 0.053,
     "boursorama": 0.06,
-    "ft": 0.055
+    "ft": 0.054
    },
-   "prix_reference": 0.055,
+   "prix_reference": 0.054,
    "ecarts_sources": {
-    "yahoo": -3.64,
-    "boursorama": 9.09,
+    "yahoo": -1.85,
+    "boursorama": 11.11,
     "ft": 0.0
    },
    "verif": "ok"
@@ -5570,13 +5566,13 @@
    "sources": {
     "yahoo": 0.624,
     "boursorama": 0.62,
-    "ft": 0.632
+    "ft": 0.622
    },
-   "prix_reference": 0.624,
+   "prix_reference": 0.622,
    "ecarts_sources": {
-    "yahoo": 0.0,
-    "boursorama": -0.64,
-    "ft": 1.28
+    "yahoo": 0.32,
+    "boursorama": -0.32,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -5770,14 +5766,14 @@
    "zone": "France",
    "sources": {
     "yahoo": 402.2,
-    "boursorama": 403.8,
-    "ft": 403.95
+    "boursorama": 404.35,
+    "ft": 403.7
    },
-   "prix_reference": 403.8,
+   "prix_reference": 403.7,
    "ecarts_sources": {
-    "yahoo": -0.4,
-    "boursorama": 0.0,
-    "ft": 0.04
+    "yahoo": -0.37,
+    "boursorama": 0.16,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -5869,14 +5865,14 @@
    "zone": "France",
    "sources": {
     "yahoo": 81.73,
-    "boursorama": 81.84,
-    "ft": 81.62
+    "boursorama": 81.86,
+    "ft": 81.82
    },
-   "prix_reference": 81.73,
+   "prix_reference": 81.82,
    "ecarts_sources": {
-    "yahoo": 0.0,
-    "boursorama": 0.13,
-    "ft": -0.13
+    "yahoo": -0.11,
+    "boursorama": 0.05,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -5968,13 +5964,13 @@
    "zone": "France",
    "sources": {
     "yahoo": 451.0,
-    "boursorama": 449.1,
-    "ft": 449.5
+    "boursorama": 449.05,
+    "ft": 450.53
    },
-   "prix_reference": 449.5,
+   "prix_reference": 450.53,
    "ecarts_sources": {
-    "yahoo": 0.33,
-    "boursorama": -0.09,
+    "yahoo": 0.1,
+    "boursorama": -0.33,
     "ft": 0.0
    },
    "verif": "ok"
@@ -6067,13 +6063,13 @@
    "zone": "France",
    "sources": {
     "yahoo": 192.34,
-    "boursorama": 191.7,
-    "ft": 191.8
+    "boursorama": 191.74,
+    "ft": 192.24
    },
-   "prix_reference": 191.8,
+   "prix_reference": 192.24,
    "ecarts_sources": {
-    "yahoo": 0.28,
-    "boursorama": -0.05,
+    "yahoo": 0.05,
+    "boursorama": -0.26,
     "ft": 0.0
    },
    "verif": "ok"
@@ -6166,13 +6162,13 @@
    "zone": "France",
    "sources": {
     "yahoo": 203.1,
-    "boursorama": 204.5,
+    "boursorama": 204.0,
     "ft": 203.55
    },
    "prix_reference": 203.55,
    "ecarts_sources": {
     "yahoo": -0.22,
-    "boursorama": 0.47,
+    "boursorama": 0.22,
     "ft": 0.0
    },
    "verif": "ok"
@@ -6265,14 +6261,14 @@
    "zone": "France",
    "sources": {
     "yahoo": 32.94,
-    "boursorama": 32.77,
+    "boursorama": 32.83,
     "ft": 32.8
    },
-   "prix_reference": 32.8,
+   "prix_reference": 32.83,
    "ecarts_sources": {
-    "yahoo": 0.43,
-    "boursorama": -0.09,
-    "ft": 0.0
+    "yahoo": 0.34,
+    "boursorama": 0.0,
+    "ft": -0.09
    },
    "verif": "ok"
   },
@@ -6364,13 +6360,13 @@
    "zone": "France",
    "sources": {
     "yahoo": 70.64,
-    "boursorama": 70.38,
-    "ft": 70.5
+    "boursorama": 70.42,
+    "ft": 70.56
    },
-   "prix_reference": 70.5,
+   "prix_reference": 70.56,
    "ecarts_sources": {
-    "yahoo": 0.2,
-    "boursorama": -0.17,
+    "yahoo": 0.11,
+    "boursorama": -0.2,
     "ft": 0.0
    },
    "verif": "ok"
@@ -6463,14 +6459,14 @@
    "zone": "France",
    "sources": {
     "yahoo": 87.95,
-    "boursorama": 87.8,
-    "ft": 87.77
+    "boursorama": 87.86,
+    "ft": 87.7
    },
-   "prix_reference": 87.8,
+   "prix_reference": 87.86,
    "ecarts_sources": {
-    "yahoo": 0.17,
+    "yahoo": 0.1,
     "boursorama": 0.0,
-    "ft": -0.03
+    "ft": -0.18
    },
    "verif": "ok"
   },
@@ -6562,14 +6558,14 @@
    "zone": "France",
    "sources": {
     "yahoo": 1344.0,
-    "boursorama": 1344.5,
-    "ft": 1343.5
+    "boursorama": 1346.0,
+    "ft": 1346.0
    },
-   "prix_reference": 1344.0,
+   "prix_reference": 1346.0,
    "ecarts_sources": {
-    "yahoo": 0.0,
-    "boursorama": 0.04,
-    "ft": -0.04
+    "yahoo": -0.15,
+    "boursorama": 0.0,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -6661,14 +6657,14 @@
    "zone": "France",
    "sources": {
     "yahoo": 94.51,
-    "boursorama": 94.61,
-    "ft": 94.27
+    "boursorama": 94.68,
+    "ft": 94.37
    },
    "prix_reference": 94.51,
    "ecarts_sources": {
     "yahoo": 0.0,
-    "boursorama": 0.11,
-    "ft": -0.25
+    "boursorama": 0.18,
+    "ft": -0.15
    },
    "verif": "ok"
   },
@@ -6760,14 +6756,14 @@
    "zone": "France",
    "sources": {
     "yahoo": 95.15,
-    "boursorama": 95.35,
-    "ft": 95.0
+    "boursorama": 95.4,
+    "ft": 95.3
    },
-   "prix_reference": 95.15,
+   "prix_reference": 95.3,
    "ecarts_sources": {
-    "yahoo": 0.0,
-    "boursorama": 0.21,
-    "ft": -0.16
+    "yahoo": -0.16,
+    "boursorama": 0.1,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -6859,14 +6855,14 @@
    "zone": "Pays-Bas",
    "sources": {
     "yahoo": 1292.6,
-    "boursorama": 1288.8,
-    "ft": 1290.0
+    "boursorama": 1288.2,
+    "ft": 1288.0
    },
-   "prix_reference": 1290.0,
+   "prix_reference": 1288.2,
    "ecarts_sources": {
-    "yahoo": 0.2,
-    "boursorama": -0.09,
-    "ft": 0.0
+    "yahoo": 0.34,
+    "boursorama": 0.0,
+    "ft": -0.02
    },
    "verif": "ok"
   },
@@ -6958,14 +6954,14 @@
    "zone": "Pays-Bas",
    "sources": {
     "yahoo": 85.0,
-    "boursorama": 84.88,
+    "boursorama": 84.92,
     "ft": 84.88
    },
-   "prix_reference": 84.88,
+   "prix_reference": 84.92,
    "ecarts_sources": {
-    "yahoo": 0.14,
+    "yahoo": 0.09,
     "boursorama": 0.0,
-    "ft": 0.0
+    "ft": -0.05
    },
    "verif": "ok"
   },
@@ -7057,14 +7053,14 @@
    "zone": "Allemagne",
    "sources": {
     "yahoo": 211.8,
-    "boursorama": 210.45,
-    "ft": 210.6
+    "boursorama": 210.5,
+    "ft": 210.0
    },
-   "prix_reference": 210.6,
+   "prix_reference": 210.5,
    "ecarts_sources": {
-    "yahoo": 0.57,
-    "boursorama": -0.07,
-    "ft": 0.0
+    "yahoo": 0.62,
+    "boursorama": 0.0,
+    "ft": -0.24
    },
    "verif": "ok"
   },
@@ -7156,13 +7152,13 @@
    "zone": "Allemagne",
    "sources": {
     "yahoo": 270.8,
-    "boursorama": 271.0,
+    "boursorama": 271.1,
     "ft": 269.7
    },
    "prix_reference": 270.8,
    "ecarts_sources": {
     "yahoo": 0.0,
-    "boursorama": 0.07,
+    "boursorama": 0.11,
     "ft": -0.41
    },
    "verif": "ok"
@@ -7255,14 +7251,12 @@
    "zone": "Allemagne",
    "sources": {
     "yahoo": 473.8,
-    "boursorama": 472.7,
     "ft": 470.0
    },
-   "prix_reference": 472.7,
+   "prix_reference": 471.9,
    "ecarts_sources": {
-    "yahoo": 0.23,
-    "boursorama": 0.0,
-    "ft": -0.57
+    "yahoo": 0.4,
+    "ft": -0.4
    },
    "verif": "ok"
   },
@@ -7354,14 +7348,14 @@
    "zone": "Italie",
    "sources": {
     "yahoo": 367.4,
-    "boursorama": 370.8,
-    "ft": 370.85
+    "boursorama": 370.3,
+    "ft": 370.25
    },
-   "prix_reference": 370.8,
+   "prix_reference": 370.25,
    "ecarts_sources": {
-    "yahoo": -0.92,
-    "boursorama": 0.0,
-    "ft": 0.01
+    "yahoo": -0.77,
+    "boursorama": 0.01,
+    "ft": 0.0
    },
    "verif": "ok"
   },
@@ -7453,14 +7447,14 @@
    "zone": "Espagne",
    "sources": {
     "yahoo": 60.2,
-    "boursorama": 60.0,
-    "ft": 60.02
+    "boursorama": 60.02,
+    "ft": 59.96
    },
    "prix_reference": 60.02,
    "ecarts_sources": {
     "yahoo": 0.3,
-    "boursorama": -0.03,
-    "ft": 0.0
+    "boursorama": 0.0,
+    "ft": -0.1
    },
    "verif": "ok"
   },
@@ -7745,13 +7739,13 @@
    "zone": "France",
    "sources": {
     "yahoo": 84.84,
-    "boursorama": 84.27,
+    "boursorama": 84.25,
     "ft": 84.65
    },
    "prix_reference": 84.65,
    "ecarts_sources": {
     "yahoo": 0.22,
-    "boursorama": -0.45,
+    "boursorama": -0.47,
     "ft": 0.0
    },
    "verif": "ok"
@@ -8141,13 +8135,13 @@
    "zone": "Monde",
    "sources": {
     "yahoo": 708.8,
-    "boursorama": 699.69,
+    "boursorama": 699.62,
     "ft": 706.39
    },
    "prix_reference": 706.39,
    "ecarts_sources": {
     "yahoo": 0.34,
-    "boursorama": -0.95,
+    "boursorama": -0.96,
     "ft": 0.0
    },
    "verif": "ok"
@@ -8240,13 +8234,13 @@
    "zone": "États-Unis (Nasdaq)",
    "sources": {
     "yahoo": 101.0,
-    "boursorama": 99.36,
+    "boursorama": 99.35,
     "ft": 100.28
    },
    "prix_reference": 100.28,
    "ecarts_sources": {
     "yahoo": 0.72,
-    "boursorama": -0.92,
+    "boursorama": -0.93,
     "ft": 0.0
    },
    "verif": "ok"
@@ -8438,13 +8432,13 @@
    "zone": "Asie émergente",
    "sources": {
     "yahoo": 36.77,
-    "boursorama": 35.42,
+    "boursorama": 35.48,
     "ft": 36.14
    },
    "prix_reference": 36.14,
    "ecarts_sources": {
     "yahoo": 1.74,
-    "boursorama": -1.99,
+    "boursorama": -1.83,
     "ft": 0.0
    },
    "verif": "ok"
@@ -8537,13 +8531,13 @@
    "zone": "Pays émergents",
    "sources": {
     "yahoo": 34.08,
-    "boursorama": 33.04,
+    "boursorama": 33.07,
     "ft": 33.58
    },
    "prix_reference": 33.58,
    "ecarts_sources": {
     "yahoo": 1.49,
-    "boursorama": -1.61,
+    "boursorama": -1.52,
     "ft": 0.0
    },
    "verif": "ok"
@@ -8636,13 +8630,13 @@
    "zone": "Inde",
    "sources": {
     "yahoo": 24.81,
-    "boursorama": 25.2,
+    "boursorama": 25.26,
     "ft": 25.0
    },
    "prix_reference": 25.0,
    "ecarts_sources": {
     "yahoo": -0.76,
-    "boursorama": 0.8,
+    "boursorama": 1.04,
     "ft": 0.0
    },
    "verif": "ok"
@@ -8740,14 +8734,14 @@
    "deja_suggere": false,
    "sources": {
     "yahoo": 196.6,
-    "boursorama": 194.8,
+    "boursorama": 196.1,
     "ft": 195.4
    },
-   "prix_reference": 195.4,
+   "prix_reference": 196.1,
    "ecarts_sources": {
-    "yahoo": 0.61,
-    "boursorama": -0.31,
-    "ft": 0.0
+    "yahoo": 0.25,
+    "boursorama": 0.0,
+    "ft": -0.36
    },
    "verif": "ok"
   },
@@ -8842,13 +8836,13 @@
    "deja_suggere": false,
    "sources": {
     "yahoo": 25.81,
-    "boursorama": 25.42,
-    "ft": 25.77
+    "boursorama": 25.45,
+    "ft": 25.68
    },
-   "prix_reference": 25.77,
+   "prix_reference": 25.68,
    "ecarts_sources": {
-    "yahoo": 0.16,
-    "boursorama": -1.36,
+    "yahoo": 0.51,
+    "boursorama": -0.9,
     "ft": 0.0
    },
    "verif": "ok"
@@ -8944,14 +8938,14 @@
    "deja_suggere": false,
    "sources": {
     "yahoo": 85.0,
-    "boursorama": 84.88,
+    "boursorama": 84.92,
     "ft": 84.88
    },
-   "prix_reference": 84.88,
+   "prix_reference": 84.92,
    "ecarts_sources": {
-    "yahoo": 0.14,
+    "yahoo": 0.09,
     "boursorama": 0.0,
-    "ft": 0.0
+    "ft": -0.05
    },
    "verif": "ok"
   },
@@ -9046,12 +9040,12 @@
    "deja_suggere": true,
    "sources": {
     "yahoo": 4.162,
-    "boursorama": 4.14,
-    "ft": 4.14
+    "boursorama": 4.15,
+    "ft": 4.15
    },
-   "prix_reference": 4.14,
+   "prix_reference": 4.15,
    "ecarts_sources": {
-    "yahoo": 0.53,
+    "yahoo": 0.29,
     "boursorama": 0.0,
     "ft": 0.0
    },
@@ -9151,12 +9145,12 @@
    "sources": {
     "yahoo": 0.053,
     "boursorama": 0.06,
-    "ft": 0.055
+    "ft": 0.054
    },
-   "prix_reference": 0.055,
+   "prix_reference": 0.054,
    "ecarts_sources": {
-    "yahoo": -3.64,
-    "boursorama": 9.09,
+    "yahoo": -1.85,
+    "boursorama": 11.11,
     "ft": 0.0
    },
    "verif": "ok"
@@ -14147,10 +14141,19 @@
   "suggestions": "jusqu'à 5 actions assez échangées, une par règle : nouveau signal « hausse », entrée dans le top 30, plus haut sur un an après une hausse sur 3 mois, repli (RSI < 40) au-dessus de la moyenne 200 jours, variation d'au moins 3 % sur la séance ; les titres suggérés les 3 jours précédents passent après les autres"
  },
  "controle_sources": {
-  "ok": 71,
-  "ecart": 2,
+  "ok": 70,
+  "ecart": 3,
   "seul": 4,
   "ecarts": [
+   {
+    "ticker": "IBE.MC",
+    "nom": "Iberdrola",
+    "sources": {
+     "yahoo": 23.11,
+     "boursorama": 18.04,
+     "ft": 23.04
+    }
+   },
    {
     "ticker": "ALNOV.PA",
     "nom": "Novacyt",

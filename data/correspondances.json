@@ -12,7 +12,9 @@
  "^STOXX": {
   "boursorama": "2cSXXP",
   "ft": "SXXP:STX",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "^GDAXI": {
   "boursorama": "5pDAX",
@@ -92,7 +94,9 @@
  "ALV.DE": {
   "boursorama": "1zALV",
   "ft": "ALV:FRA",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ATE.PA": {
   "boursorama": "1rPATE",
@@ -274,9 +278,7 @@
  "IBE.MC": {
   "boursorama": "FF55-IBE",
   "ft": "IBE:MCE",
-  "echecs": {
-   "boursorama": 2
-  }
+  "echecs": {}
  },
  "ENX.PA": {
   "boursorama": "1rPENX",
@@ -355,7 +357,9 @@
  "WKL.AS": {
   "boursorama": "1rAWKL",
   "ft": "WKL:AEX",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "BIM.PA": {
   "boursorama": "1rPBIM",
@@ -623,7 +627,7 @@
   "boursorama": null,
   "ft": "NOKIA:HEL",
   "echecs": {
-   "ft": 2
+   "ft": 3
   }
  },
  "CW8.PA": {
