@@ -5,6 +5,30 @@ projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). 
 
 ## Tâches demandées par le propriétaire (à faire en premier, dans l'ordre)
 
+- [ ] 2026-11-17 · **Défilement au doigt bloqué sur les lignes (téléphone, iPhone).** Le propriétaire n'arrive
+  pas à faire défiler la page quand son doigt glisse sur le nom des titres, au centre de l'écran (lignes du
+  Top 30, valeurs connues, etc.) ; il doit glisser sur les bords, à côté des lignes, pour naviguer. C'est
+  **prioritaire** : la page doit défiler quel que soit l'endroit où le doigt se pose (lignes, cartes,
+  badges, graphiques, fiche détaillée ouverte), un simple toucher ouvrant toujours la fiche.
+  1. **Reproduire d'abord** dans Playwright avec un vrai écran tactile (`has_touch=True`, `is_mobile=True`,
+     390 × 844, WebKit si disponible, sinon Chromium) : geste de glissement vertical par CDP
+     (`Input.dispatchTouchEvent` ou `Input.synthesizeScrollGesture`) partant du centre d'une ligne `.ligne`,
+     puis d'un bord ; comparer `scrollY` avant / après. Note le résultat dans ton journal.
+  2. **Pistes à vérifier** (dans `scripts/modele.html`) : `body { overflow-x: hidden }` qui fait de `body`
+     le conteneur de défilement sur iOS (préférer `overflow-x: clip` sur `html`/`body`, ou sur `main`) ;
+     `.clic:active { transform: scale(.985) }` et l'animation d'apparition `.rv` sur les lignes ; `.rsq`
+     (`cursor: help`, info-bulle `#bulle-r`) ; `.feuille` reste `display: flex` même fermée (vérifier
+     qu'elle et `.voile` ne captent aucun toucher une fois fermées : `visibility: hidden` ou
+     `pointer-events: none` hors `.ouvert`) ; les écouteurs `touchstart`/`touchmove` du glisser-pour-fermer
+     (doivent rester `passive`) ; `touch-action` sur `.f-tete`, `.f-poignee` et les SVG (`pan-y`).
+  3. Corrige la cause trouvée, sans retirer d'information ni casser le glisser-vers-le-bas qui ferme la
+     fiche. Ajoute un test (`scripts/tests.py`) qui vérifie qu'un glissement tactile partant du centre d'une
+     ligne fait défiler la page.
+  Indicateur : dans Playwright tactile, glisser depuis le centre d'une ligne fait défiler autant que depuis
+  le bord ; un toucher ouvre toujours la fiche ; `design.py comparer` 🟢. Si la cause n'est pas trouvée,
+  ne coche pas : écris dans ton journal ce qui a été essayé, et le chef le reprend.
+  Quand c'est fait : cocher la case avec la date et la décision `[D-…]`.
+
 - [x] 2026-11-16 · fait le 2026-11-17 [D-20261117-1] · **Effet « verre dépoli » (style liquid glass) sur les éléments flottants seulement.**
   Le fond animé `.blobs` donne déjà de la couleur à faire transparaître. À faire dans `scripts/modele.html` :
   surface semi-transparente + `backdrop-filter: blur(…) saturate(…)` (avec `-webkit-`), liseré clair d'1 px
