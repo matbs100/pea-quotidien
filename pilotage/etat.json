@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-17T05:16+01:00",
- "fiche": "2026-11-16 (cloture)",
+ "genere_le": "2026-11-17T12:35+01:00",
+ "fiche": "2026-11-17 (ouverture)",
  "lieu": "cloud",
- "etat": "vert",
- "resume": "Tout est en ordre. 45/45 tests, 8/8 prix revérifiés, 34/34 liens valides, site à jour.",
+ "etat": "orange",
+ "resume": "À surveiller. 45/45 tests, 34/34 liens valides, site à jour. Points à voir : cohérence des données, travail des agents (30 dernières heures), design : aucune information retirée de la page, méthode de décision.",
  "controles": [
   {
    "nom": "tests",
@@ -20,52 +20,60 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-16 (cloture), générée le 2026-11-16T17:59+01:00",
-    "fiche attendue à cette heure : 2026-11-16 (cloture)"
+    "dernière fiche : 2026-11-17 (ouverture), générée le 2026-11-17T09:20+01:00",
+    "fiche attendue à cette heure : 2026-11-17 (ouverture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "ok",
-   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 74 confirmés, 0 écart(s)",
-   "details": []
+   "niveau": "alerte",
+   "resume": "59 cours examinés, 0 problème(s), 9 alerte(s) ; entre sources : 70 confirmés, 3 écart(s)",
+   "details": [
+    "INS.PA : cours daté du 2026-11-13, pas du 2026-11-17",
+    "CD8.PA : cours daté du 2026-11-13, pas du 2026-11-17",
+    "HLT.PA : cours daté du 2026-11-13, pas du 2026-11-17",
+    "FOO.PA : cours daté du 2026-11-13, pas du 2026-11-17",
+    "EUROB.AT : cours daté du 2026-11-13, pas du 2026-11-17",
+    "DAX.PA : cours daté du 2026-11-13, pas du 2026-11-17",
+    "CG1.PA : cours daté du 2026-11-13, pas du 2026-11-17",
+    "ETZ.PA : cours daté du 2026-11-13, pas du 2026-11-17",
+    "PCEU.PA : cours daté du 2026-11-13, pas du 2026-11-17"
+   ]
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "324 mots, 0 remarque(s)",
+   "resume": "353 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-16 (cloture)",
+   "resume": "régénérée avec la fiche du 2026-11-17 (ouverture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "ok",
-   "resume": "8/8 prix identiques sur Boursorama (1 écart(s) vérifié(s))",
-   "details": [
-    "✔ vérifié par le chef le 2026-11-17 : IBE.MC : 23.14 dans la fiche, 18.04 sur Boursorama — Page FT markets.ft.com (IBE:MCE) ouverte le 17/11 : 23,14 €, égal à la fiche ; le champ sources de la fiche du 16/11 donne aussi Yahoo 23,14 et FT 23,14 (collecte du programme). La page Boursorama FF55-IBE (place « Sibe ») affiche 18,04 (+0,31 %), un cours qui ne suit aucune autre source : page non fiable pour ce contrôle (même cas que le 14/11)."
-   ]
+   "niveau": "non_verifiable",
+   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
+   "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "34/34 liens valides sur 8 titres, 9 non ouverts (robots.txt), 1 injoignables d'ici",
+   "resume": "34/34 liens valides sur 8 titres, 6 non ouverts (robots.txt)",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-16 (cloture)",
+   "resume": "le site affiche la fiche du 2026-11-17 (ouverture)",
    "details": []
   },
   {
@@ -74,17 +82,27 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "35 connaissance(s) en attente de vérification (⏳)",
+    "39 connaissance(s) en attente de vérification (⏳)",
     "5 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
   {
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
-   "niveau": "ok",
-   "resume": "15 commit(s), 0 problème(s), 0 alerte(s) ; 1 vérifiée(s) par le chef",
+   "niveau": "alerte",
+   "resume": "20 commit(s), 0 problème(s), 2 alerte(s)",
    "details": [
-    "✔ vérifié par le chef le 2026-11-16 : 09b4ed2 « Amélioration : titre comparé mémorisé sur l'appare » : data/presse/2026-11-16.md : hors du rôle de l'agent « nuit » — git show 09b4ed2 -- data/presse : revue de presse demandée par ecole.md (devoir 1) ; page Boursorama actualités ouverte le 16/11 : future CAC NOV 26 à 8 392 (+0,21 %), titre Reuters « meilleure semaine depuis juin » confirmés (Brent 95,17 $ à l'ouverture contre 95,33 $ noté : cours mouvant) ; aucun conseil.",
+    "00a69cf « Amélioration : inflation de la zone euro dans le b » : data/presse/2026-11-17.md : hors du rôle de l'agent « nuit »",
+    "00a69cf « Amélioration : inflation de la zone euro dans le b » : data/taux_bce.json : hors du rôle de l'agent « nuit »",
+    "e8231f3 [autre] tâche de design « toucher n'importe où sur une ligne ouvre la fiche » ",
+    "50f05ab [autre] tâche de design « défilement au doigt bloqué sur les lignes » (télépho",
+    "505774a [fiche] Matin PEA 2026-11-17 (ouverture) : contrôle des prix terminé",
+    "27a9564 [fiche] Matin PEA 2026-11-17 (ouverture)",
+    "2f71a99 [nuit] Amélioration : fiche régénérée avec l'inflation [D-20261117-2]",
+    "b2d06cb [nuit] Amélioration : notes de grille corrigées [D-20261117-2]",
+    "00a69cf [nuit] Amélioration : inflation de la zone euro dans le bloc des taux [D-2026",
+    "cd7a57e [design] Design : verre dépoli sur la fiche détaillée [D-20261117-1]",
+    "9431396 [chef] Chef : rapport du 2026-11-17 (vert) ; liens de recherche d'ISIN [D-202",
     "ffb2717 [code] Code : rapport du 2026-11-17 (vert)",
     "bb26bc3 [autre] Fundsquare source de référence, risque et frais courants lus dans le D",
     "e5b433b [autre] idée n° 49, lien Fundsquare vers les documents officiels (DIC, prospec",
@@ -93,38 +111,36 @@
     "2253c74 [autre] souhaits de design mis à jour",
     "b524fe3 [autre] idée n° 48, liens de recherche (Boursorama, justETF, Euronext) quand u",
     "96133bf [autre] tâche de design « effet verre dépoli sur les éléments flottants seulem",
-    "ea275b5 [fiche] Matin PEA 2026-11-16 (cloture)",
-    "529ddc4 [chef] Chef : passage de mi-journée du 2026-11-16 (orange)",
-    "ce1b8d8 [fiche] Matin PEA 2026-11-16 (ouverture)",
-    "ecf548d [chef] Chef : rapport du 2026-11-16 (vert)",
-    "d63107d [code] Code : rapport du 2026-11-16 (vert) ; test du geste de fermeture [corr",
-    "09b4ed2 [nuit] Amélioration : titre comparé mémorisé sur l'appareil [D-20261116-2]",
-    "cae79c7 [design] Design : unité sur le graphique de fiche [D-20261116-1]"
+    "ea275b5 [fiche] Matin PEA 2026-11-16 (cloture)"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
-   "niveau": "ok",
-   "resume": "3 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
+   "niveau": "alerte",
+   "resume": "4 changement(s) de la page, 0 retrait(s), 1 point(s) à revoir",
    "details": [
-    "cae79c7 « Design : unité sur le graphique de fiche [D-202611 » : rien de retiré",
-    "09b4ed2 « Amélioration : titre comparé mémorisé sur l'appare » : rien de retiré",
-    "bb26bc3 « Fundsquare source de référence, risque et frais co » : rien de retiré"
+    "00a69cf « Amélioration : inflation de la zone euro dans le b » : texte retiré ou reformulé : Taux directeurs de la Banque centrale européenne, lus à la source",
+    "bb26bc3 « Fundsquare source de référence, risque et frais co » : rien de retiré",
+    "9431396 « Chef : rapport du 2026-11-17 (vert) ; liens de rec » : rien de retiré",
+    "cd7a57e « Design : verre dépoli sur la fiche détaillée [D-20 » : rien de retiré",
+    "00a69cf « Amélioration : inflation de la zone euro dans le b » : à revoir"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "ok",
-   "resume": "42 décisions, 5 à réaliser, 0 point(s) à voir",
-   "details": []
+   "niveau": "alerte",
+   "resume": "43 décisions, 5 à réaliser, 1 point(s) à voir",
+   "details": [
+    "bilan à faire : D-20261112-1 (Contrôle : un lien Yahoo en 404 depuis le cloud n')"
+   ]
   },
   {
    "nom": "lectures",
    "titre": "Lectures des agents (PDF de sources vérifiées)",
    "niveau": "ok",
-   "resume": "9 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
+   "resume": "10 lecture(s), 1 à relire par le chef, 0 point(s) à voir",
    "details": []
   },
   {
