@@ -14,6 +14,9 @@ RACINE = Path(__file__).resolve().parent.parent
 CACHE = RACINE / "data" / "taux_bce.json"
 URL = "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.{s}.LEV?startPeriod={d}&format=csvdata"
 SERIES = {"depot": "DFR", "refinancement": "MRR_FR", "pret_marginal": "MLFR"}
+URL_INFLATION = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr"
+                 "?format=JSON&geo=EA&coicop18=TOTAL&unit=RCH_A&sinceTimePeriod={d}")
+PAGE_INFLATION = "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"
 PAGE_BCE = "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html"
 
 
@@ -38,6 +41,21 @@ def lire_csv(texte):
             if r.get("TIME_PERIOD") and r.get("OBS_VALUE")]
 
 
+def lire_inflation(donnees):
+    """Dernier taux annuel d'inflation (zone euro) d'une réponse JSON d'Eurostat : {"mois", "taux", "precedent"}.
+
+    Renvoie None si la réponse n'a pas la forme attendue ou ne contient aucun mois."""
+    try:
+        mois = donnees["dimension"]["time"]["category"]["index"]
+        val = donnees["value"]
+        pts = sorted((m, float(val[str(i)])) for m, i in mois.items() if str(i) in val)
+    except (KeyError, TypeError, ValueError, AttributeError):
+        return None
+    if not pts:
+        return None
+    return {"mois": pts[-1][0], "taux": pts[-1][1], "precedent": pts[-2][1] if len(pts) > 1 else None}
+
+
 def charger_cache():
     try:
         return json.loads(CACHE.read_text(encoding="utf-8"))
@@ -49,6 +67,13 @@ def mesurer(depuis="2023-01-01"):
     """Taux lus sur la BCE (garde le cache si la lecture échoue), ou {} si rien n'est connu."""
     import requests
     res = {}
+    try:  # inflation (Eurostat) : lue à part, une panne ne retire pas les taux
+        import requests as _r
+        ri = _r.get(URL_INFLATION.format(d="2026-01"), timeout=20, headers={"User-Agent": "matin-pea"})
+        ri.raise_for_status()
+        infl = lire_inflation(ri.json())
+    except Exception:
+        infl = None
     try:
         for nom, serie in SERIES.items():
             r = requests.get(URL.format(s=serie, d=depuis), timeout=20, headers={"User-Agent": "matin-pea"})
@@ -58,7 +83,11 @@ def mesurer(depuis="2023-01-01"):
                 raise ValueError(serie)
             res[nom] = m
     except Exception:
-        return charger_cache()
+        cache = charger_cache()
+        if infl:
+            cache["inflation"] = infl
+        return cache
+    res["inflation"] = infl or charger_cache().get("inflation")
     res["source"] = PAGE_BCE
     try:
         CACHE.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")

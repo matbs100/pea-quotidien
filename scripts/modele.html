@@ -370,7 +370,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   </section>
 
   <section id="sec-taux" hidden>
-    <div class="sec-head"><div><h2>Le contexte des taux</h2><div class="sub">Taux directeurs de la Banque centrale européenne, lus à la source</div></div></div>
+    <div class="sec-head"><div><h2>Le contexte des taux</h2><div class="sub">Taux directeurs de la Banque centrale européenne et inflation de la zone euro, lus à la source</div></div></div>
     <div class="stat" id="taux"></div>
     <p class="note" id="taux-note"></p>
   </section>
@@ -804,7 +804,13 @@ function carteTaux(nom, t) {
   const evol = t.precedent == null ? "" : ` (avant : ${fr(t.precedent)} %)`;
   return `<div class="card"><div class="val num">${fr(t.taux)} %</div><em>${esc(nom)} · en vigueur depuis le ${jourCourt(t.depuis)}${esc(evol)}</em></div>`;
 }
-const cartesTaux = [carteTaux("Taux de dépôt", TX.depot), carteTaux("Refinancement", TX.refinancement), carteTaux("Prêt marginal", TX.pret_marginal)].join("");
+const MOIS_LONGS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+function carteInflation(i) {  // inflation de la zone euro (Eurostat), pour situer le taux de dépôt
+  if (!i || typeof i.taux !== "number" || !/^\d{4}-\d{2}$/.test(i.mois || "")) return "";
+  const evol = typeof i.precedent === "number" ? ` (mois d'avant : ${fr(i.precedent)} %)` : "";
+  return `<div class="card"><div class="val num">${fr(i.taux)} %</div><em>Inflation, zone euro · sur un an, ${MOIS_LONGS[+i.mois.slice(5) - 1]} ${i.mois.slice(0, 4)}${esc(evol)}</em></div>`;
+}
+const cartesTaux = [carteTaux("Taux de dépôt", TX.depot), carteTaux("Refinancement", TX.refinancement), carteTaux("Prêt marginal", TX.pret_marginal), carteInflation(TX.inflation)].join("");
 if (cartesTaux) {
   $("#sec-taux").hidden = false;
   $("#taux").innerHTML = cartesTaux;
@@ -812,6 +818,10 @@ if (cartesTaux) {
   n.textContent = "Le taux de dépôt est celui que la BCE guide : il influence les taux des livrets et des crédits, et le prix des obligations. Information sur le contexte, pas un conseil. Dernier relevé du " + jourCourt(TX.depot.releve) + " · ";
   const u = lienSur(TX.source);
   if (u) { const a = document.createElement("a"); a.href = u; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = "source : BCE"; n.appendChild(a); }
+  if (carteInflation(TX.inflation)) {
+    n.appendChild(document.createTextNode(" · "));
+    const b = document.createElement("a"); b.href = "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"; b.target = "_blank"; b.rel = "noopener noreferrer"; b.textContent = "inflation : Eurostat"; n.appendChild(b);
+  }
 }
 const estFonds = (m) => !!m && m.categorie === "fonds";
 const valeurDu = (m) => m.date_cours ? "valeur du " + jourCourt(m.date_cours) : "";

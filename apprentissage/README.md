@@ -47,6 +47,7 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 - Il n'exécute jamais de code téléchargé.
 
 ## Journaux
+- [2026-11-17](journal/2026-11-17.md) : marchés ; inflation de la zone euro dans le bloc des taux (D-20261117-2)
 - [2026-11-16](journal/2026-11-16.md) : open source ; comparaison de titres mémorisée (D-20261116-2)
 - [2026-11-15](journal/2026-11-15.md) : données et bilan ; exceptions au retrait du PEA (D-20261115-2)
 - [2026-11-14](journal/2026-11-14.md) : compréhension ; bloc fiscalité du PEA (D-20261113-3)

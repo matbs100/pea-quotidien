@@ -821,6 +821,13 @@ def taux_bce():
     assert taux.dernier_changement([]) is None
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
     assert 'id="sec-taux"' in modele and "D.taux_bce" in modele and "2,50" not in modele
+    # inflation de la zone euro (Eurostat) : dernier mois lu, jamais un chiffre écrit dans le modèle
+    j = {"dimension": {"time": {"category": {"index": {"2026-08": 0, "2026-09": 1, "2026-10": 2}}}},
+         "value": {"0": 3.2, "1": 3.8, "2": 4.0}}
+    assert taux.lire_inflation(j) == {"mois": "2026-10", "taux": 4.0, "precedent": 3.8}
+    assert taux.lire_inflation({"value": {}}) is None and taux.lire_inflation(None) is None
+    assert taux.lire_inflation({"dimension": {"time": {"category": {"index": {}}}}, "value": {}}) is None
+    assert "carteInflation(TX.inflation)" in modele and "inflation : Eurostat" in modele
 
 
 @test

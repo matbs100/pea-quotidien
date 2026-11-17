@@ -17,5 +17,10 @@
   "precedent": 2.65,
   "releve": "2026-11-17"
  },
+ "inflation": {
+  "mois": "2026-10",
+  "taux": 4.0,
+  "precedent": 3.8
+ },
  "source": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html"
 }

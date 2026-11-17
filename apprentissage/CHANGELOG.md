@@ -8,6 +8,9 @@ Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · ti
 ## 2026-11-17 · Verre dépoli sur la fiche détaillée (Design, D-20261117-1)
 En-tête de fiche et info-bulle de risque en verre dépoli (repli opaque). Aucune information retirée.
 
+## 2026-11-17 · ✨ Nouveauté : l'inflation de la zone euro dans « Le contexte des taux » (Nuit, D-20261117-2)
+Une quatrième carte donne l'inflation sur un an de la zone euro (octobre 2026 : 4,0 %, après 3,8 % en septembre), à côté des taux de la BCE, pour situer le taux de dépôt. Le chiffre est lu chaque jour sur Eurostat (la série de la BCE n'a plus de données après 2025), avec un lien vers la source ; information, pas un conseil. Idée n° 46.
+
 ## 2026-11-17 · ✨ Nouveauté : chercher un ISIN non suivi sur Boursorama, justETF ou Fundsquare (Chef, D-20261117-1)
 Quand la recherche « Mes investissements » ne connaît pas un ISIN valide, des liens ouvrent sa page chez Boursorama et justETF (et Fundsquare pour un fonds luxembourgeois), dans un nouvel onglet. Aucun appel depuis la page ; Euronext n'est pas proposé, sa recherche n'a pas pu être vérifiée.
 

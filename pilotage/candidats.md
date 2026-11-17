@@ -49,3 +49,5 @@ Notées par le chef d'orchestre et l'agent de nuit dans la semaine ; vérifiées
 - Pas fait : pas de page d'émetteur ouverte cette nuit pour les ETF écartés (MWRD, CEM, EQQQ) ; à reprendre.
 ## Notes de la nuit du 16/11 (devoir 2)
 - Pas fait : aucune page d'émetteur ouverte cette nuit (temps pris par la lecture BCE et la presse) ; MWRD, CEM, EQQQ restent à lire.
+## Notes de la nuit du 17/11 (devoir 2)
+- EQQQ.PA · Invesco EQQQ Nasdaq-100 UCITS ETF · IE0032077012 (Dist) / IE00BFZXGZ54 (Acc) (extrait de recherche Trackinsight, non lu sur une page ouverte) · page émetteur ouverte le 17/11 (invesco.com/be/fr/etf/eqqq.html) : aucune mention « PEA », ni ISIN, ni frais ; la fiche produit invesco.com/fr/fr/... renvoie 404 · **non éligible probable** (ETF irlandais sur actions américaines) · ne plus y revenir (règle du 11/11).
