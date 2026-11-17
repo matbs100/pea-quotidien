@@ -10,6 +10,8 @@ dans [[Finance/PEA Quotidien/pilotage/sources-verifiees|les sources vérifiées]
 vérifier » jusqu'à la relecture du chef.
 
 ## Journal
+
+- [[Finance/PEA Quotidien/apprentissage/code/2026-11-17|2026-11-17]] : versions Python et bibliothèques, ZoneInfo et tzdata
 - [[2026-11-16]] · CSP stricte (OWASP)
 - [[2026-11-15]] : `zoneinfo`, fuseaux et heure ambiguë
 - [[2026-11-14]]

@@ -68,3 +68,5 @@ Statuts : `proposée`, `adoptée D-…`, `à l'essai D-…`, `en attente : raiso
 - 2026-11-15 (code) : test qui repère `date.today()` ou `datetime.now()` sans fuseau dans `scripts/` (la date du jour doit venir de `ZoneInfo("Europe/Paris")`). Source : docs.python.org (zoneinfo), lu le 15/11. Grille : U 3, R 2, V 0, N 2, F 5 ; C 1, Ri 1. Statut : proposée.
 
 - (2026-11-16, code) Test de la politique de sécurité de la page : `object-src` et `base-uri` restreints. Utilité 4, résultats 3, visuel 1, nouveauté 2, fiabilité 5 ; coût faible, risque nul. Inspiration : fiche OWASP CSP.
+
+- (2026-11-17, code) Signaler dans la note un DIC dont la date de production (`dic_date`) a plus d'un an : le document officiel serait périmé. Utilité 3, résultats 3, visuel 2, nouveauté 3, fiabilité 4 ; coût faible, risque faible. Inspiration : règlement PRIIPs (DIC revu au moins chaque année), vu dans dic.py.

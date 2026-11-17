@@ -9,6 +9,7 @@ public ni sur le site), contrôle que le code est bien fait et marche, fait au p
 apprend une technique de code dans une source fiable et propose une idée. Le chef relit son travail à 5 h.
 
 ## Rapports
+- [[Finance/PEA Quotidien/pilotage/code/2026-11-17|2026-11-17]] : 🟢
 - [[2026-11-16|2026-11-16]] · vert · test du geste de fermeture
 - [[2026-11-15|2026-11-15]] · vert · test de l'ordre du CHANGELOG
 - [[2026-11-14|2026-11-14]] · orange · aucune correction
