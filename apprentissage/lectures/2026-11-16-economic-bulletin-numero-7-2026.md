@@ -6,7 +6,7 @@ url: https://www.ecb.europa.eu/pub/pdf/ecbu/eb202607.en.pdf
 publie_le: 2026-11-12
 lu_le: 2026-11-16
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-17
 ---
 # 📄 Economic Bulletin, numéro 7 / 2026
 
@@ -28,4 +28,4 @@ Le bulletin économique de la BCE (numéro 7 de 2026) fait le point après la r�
 - Rien d'autre pour la fiche.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- ✅ relue le 2026-11-17 : le lien ouvre bien le PDF officiel de la BCE (144 pages). Vérifiés dans le texte : taux inchangés le 29/10 (p. 3 du bulletin), inflation 3,8 % en septembre et énergie 18,9 % (p. 4), chômage 6,4 % en août (p. 3). Résumé fidèle, rédigé avec les mots de l'agent, rien de copié. Site bce.europa.eu : source officielle.

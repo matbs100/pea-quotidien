@@ -1049,6 +1049,30 @@ console.log([geste(121, 600), geste(119, 600), geste(60, 100), geste(30, 100), g
 
 
 @test
+def liens_de_recherche_isin():
+    """Un ISIN valide non suivi donne 2 liens de recherche (3 pour LU), échappés, en nouvel onglet ; rien pour une saisie invalide (node)."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    a = re.search(r"const estIsin = [^\n]*\n", modele)
+    b = re.search(r"const liensIsin = .*?\n\};\n", modele, re.S)
+    assert a and b, "fonction liensIsin introuvable"
+    assert "fetch(" not in b.group(0), "aucun appel réseau depuis la page"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : liens de recherche d'ISIN non exécutés")
+        return
+    essai = a.group(0) + b.group(0) + """
+const n = (h) => (h.match(/<a /g) || []).length;
+const fr = liensIsin("FR0013412020"), lu = liensIsin("LU1681044308");
+console.log([n(fr), n(lu), liensIsin("FR0013412").length, liensIsin("<img src=x>").length,
+  fr.includes("boursorama.com/recherche/?query=FR0013412020"), fr.includes("justetf.com/fr/etf-profile.html?isin=FR0013412020"),
+  fr.includes("fundsquare"), lu.includes("fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1681044308"),
+  fr.includes('rel="noopener noreferrer"') && fr.includes('target="_blank"')].join("|"));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "2|3|0|0|true|true|false|true|true", f"liens d'ISIN faux : {r.stdout!r} {r.stderr[-300:]}"
+
+
+@test
 def lecture_des_dic():
     """dic.py lit le SRI et les frais d'un DIC en anglais et en français, malgré les ligatures et les
     retours à la ligne, et vérifie que le document cite bien l'ISIN demandé."""

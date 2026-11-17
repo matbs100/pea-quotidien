@@ -46,5 +46,11 @@
   "jour": "2026-11-16",
   "preuve": "Boursorama (page 1rTETZ) ouverte à 12 h 34 : valeur liquidative du 16/11/2026 affichée ; la fiche de 9 h 22 portait la dernière valeur connue du 13/11, décalage normal d'un ETF.",
   "le": "2026-11-16"
+ },
+ {
+  "alerte": "IBE.MC : 23.14 dans la fiche, 18.04 sur Boursorama",
+  "jour": "2026-11-16",
+  "preuve": "Page FT markets.ft.com (IBE:MCE) ouverte le 17/11 : 23,14 €, égal à la fiche ; le champ sources de la fiche du 16/11 donne aussi Yahoo 23,14 et FT 23,14 (collecte du programme). La page Boursorama FF55-IBE (place « Sibe ») affiche 18,04 (+0,31 %), un cours qui ne suit aucune autre source : page non fiable pour ce contrôle (même cas que le 14/11).",
+  "le": "2026-11-17"
  }
 ]

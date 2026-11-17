@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-17 · ✨ Nouveauté : chercher un ISIN non suivi sur Boursorama, justETF ou Fundsquare (Chef, D-20261117-1)
+Quand la recherche « Mes investissements » ne connaît pas un ISIN valide, des liens ouvrent sa page chez Boursorama et justETF (et Fundsquare pour un fonds luxembourgeois), dans un nouvel onglet. Aucun appel depuis la page ; Euronext n'est pas proposé, sa recherche n'a pas pu être vérifiée.
+
 ## 2026-11-16 · ✨ Nouveauté : 30 valeurs connues, et risque et frais lus dans le DIC officiel (Propriétaire, D-20261116-3 et D-20261116-4)
 Nouveau bloc « 30 valeurs connues » sous le Top 30 : grandes actions européennes cotées depuis longtemps et ETF répandus (Monde, Nasdaq-100, Japon, Asie, émergents, Inde), la même liste chaque jour. Le risque (SRI) et les frais courants de chaque ETF sont maintenant lus dans son DIC officiel (Fundsquare, sinon Amundi ETF) plutôt que sur Boursorama, qui donnait les frais maximum du prospectus ; la fiche affiche aussi les coûts de transaction du fonds et des liens vers Fundsquare et Quantalys.
 

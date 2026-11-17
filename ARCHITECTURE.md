@@ -114,6 +114,7 @@ Usage : `python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]`. Codes de 
 | `date_iso(txt)` | « 06/11/2026 » ou « 2026-11-06 » → « 2026-11-06 » ; `None` pour une date impossible |
 | `lire_investissements(texte)` | lit le tableau de `mes-investissements.md` (colonnes reconnues à leur titre, dans n'importe quel ordre) |
 | `mes_investissements(entrees, mesure_de, categories, jour)` | regroupe les achats par titre : prix de revient, évolution depuis l'achat, valeur, plus-value et variation du jour en euros si les quantités sont notées, total ; un ISIN qui n'est pas suivi est cherché dans la liste Wealins (fonds) ; codes introuvables listés dans `erreurs` |
+| `liensIsin(isin)` (JavaScript, `modele.html`) | liens de recherche d'un ISIN valide non suivi (Boursorama, justETF, Fundsquare si LU), nouvel onglet, sans appel réseau ; test `liens_de_recherche_isin` |
 | `catalogue(res)` | tous les ETF et actions suivis, avec leur prix du jour : la liste où cherche la barre de recherche « Mes investissements » |
 | `suggestions(candidats, top30, signaux_veille, top30_veille, deja, n)` | jusqu'à 5 actions à regarder, une par règle : nouveau signal « hausse », entrée dans le top 30, plus haut sur un an, repli (RSI < 40) au-dessus de la moyenne 200 jours, variation d'au moins 3 % ; chacune avec sa raison chiffrée |
 | `paques(annee)` | date de Pâques (algorithme de Meeus) |

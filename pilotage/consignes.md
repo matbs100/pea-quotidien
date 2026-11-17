@@ -6,10 +6,8 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (16/11) D-20261116-2 (titre comparé mémorisé) confirmée. Réalise l'idée n° 46 (inflation de la zone euro dans le bloc « contexte des taux », source BCE p. 3-4 déjà relue) ; **une ligne dans le tableau** de `decisions.md`.
-- (16/11, propriétaire) Après l'idée 46, réalise l'**idée n° 48** (`apprentissage/idees.md`) : dans `scripts/modele.html`, branche `estIsin(V)` du message « Cet ISIN n'est ni dans… » (fonction de recherche de « Mes investissements »), ajoute 3 liens `<a target="_blank" rel="noopener noreferrer">` qui cherchent l'ISIN sur Boursorama, justETF et Euronext (ISIN passé par `encodeURIComponent`, seulement s'il est valide). **Vérifie chaque adresse de recherche avec un vrai ISIN** (ex. FR0013412020) avant de l'écrire ; si une adresse ne mène pas au titre, retire ce site. Aucun `fetch`, CSP inchangée. Garde la phrase « donne son ISIN à Claude ». Test dans `scripts/tests.py`, ligne dans `ARCHITECTURE.md`, nouveauté dans le CHANGELOG, ligne au tableau de `decisions.md`.
-- (17/11, propriétaire) **Idée n° 49 : 1re partie déjà faite** par le propriétaire (D-20261116-4) : la fiche détaillée d'un ETF donne déjà le lien « DIC officiel et documents du fonds (Fundsquare) » et un lien Quantalys. Il te reste seulement le 4e lien de l'idée 48 : Fundsquare (`https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=<ISIN>`) quand l'ISIN cherché commence par LU. Ne touche pas au bloc « 30 valeurs connues » ni à `scripts/dic.py` sans décision.
-- (16/11) **Presse d'abord** : une source entière autre que Boursorama (WebSearch `site:` si bloquée), 2 chiffres attribués ; écris dans le journal que le fichier est demandé par le chef.
+- (17/11) La nuit du 17/11 n'a rien commis : **réalise l'idée n° 46** (inflation de la zone euro, 3,8 % en septembre, dans le bloc « contexte des taux » ; BCE p. 3-4 relue par le chef le 17/11) ; **une ligne dans le tableau** de `decisions.md`. Les idées 48 et 49 (liens de recherche d'ISIN) sont faites par le chef (D-20261117-1) : ne les refais pas.
+- (17/11) **Presse d'abord** : une source entière autre que Boursorama (WebSearch `site:` si bloquée), 2 chiffres attribués ; écris dans le journal que le fichier est demandé par le chef.
 - (13/11) Fais les devoirs de `pilotage/ecole.md` (le fonds de la nuit : un seul, MWRD, CEM ou EQQQ).
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (identifiant `[D-…]` dans le commit) ; une nouveauté de CHANGELOG va **sous l'en-tête** du fichier.
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
@@ -31,11 +29,11 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 
 ## Pour l'agent design
 - (16/11, propriétaire) **En premier** : la tâche « effet verre dépoli sur les éléments flottants » de `pilotage/design/souhaits.md` (pas sur les cartes ni les tableaux ; repli opaque ; captures 360 px clair et sombre).
-0. (16/11) Unité du graphique ✅ (D-20261116-1). Reste : le regarder à **360 px** (pas 390) et sur une fiche ETF qui a un historique ; étude de marché (a) toujours non faite.
+0. (17/11) Le design n'a rien commis cette nuit : refais la tâche « verre dépoli » en une seule petite étape (la fiche détaillée), captures 360 px clair et sombre. (16/11) Unité du graphique ✅ (D-20261116-1). Reste : le regarder à **360 px** (pas 390) et sur une fiche ETF qui a un historique ; étude de marché (a) toujours non faite.
 1. (13/11) Fais la note de la page et une étude de marché (a : GitHub, sites de suivi de PEA ou de bourse) : relève 2 idées concrètes pour rendre une fiche plus claire, sans rien retirer.
 2. (16/11) Note ta décision dans le **tableau** de `decisions.md`, pas en puces. (13/11) Regarde les captures avant/après avant de pousser (`design.py rendre`) et écris l'identifiant de décision tel quel (D-20261113-1), jamais « sans tirets ».
 
 ## Pour le vérificateur du code
 1. (13/11) Relire `scripts/modele.html` (glisser pour fermer, bloc `blocMois`) : un test node du seuil de glissement (120 px, geste rapide) serait-il simple ?
 2. (13/11) Vérifier que les entrées de `CHANGELOG.md` sont toujours sous l'en-tête (le design l'avait collée au-dessus) : proposer un test.
-3. (10/11) Reste : `zip(..., strict=)` (B905) seulement si le comportement est testé. Confidentialité : chaque jour.
+3. (17/11) Regrouper `date.today()` sans fuseau (`dic.py` et autres) en un test, avec l'idée du 15/11. (10/11) Reste : `zip(..., strict=)` (B905) seulement si le comportement est testé. Confidentialité : chaque jour.

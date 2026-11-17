@@ -271,6 +271,8 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .res small, .ajout small { display: block; color: var(--muted); font: 12px var(--font-mono); margin-top: 2px; overflow-wrap: anywhere; }
 .res .num { white-space: nowrap; font-size: 14px; }
 .res-vide { padding: 12px 14px; font-size: 14px; color: var(--muted); }
+.res-vide a { color: var(--accent, inherit); text-decoration: underline; text-underline-offset: 2px; }
+.liens-isin { display: block; margin-top: 6px; }
 .ajout { background: var(--surface); border: 1px solid var(--accent); border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; }
 .champs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 12px 0; }
 .champs label { display: grid; gap: 4px; font-size: 14px; color: var(--muted); }
@@ -827,6 +829,14 @@ function ecrireAchats(a) {
 const sansAccents = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const nombreSaisi = (s) => { const x = parseFloat(String(s || "").replace(/[\s  €]/g, "").replace(",", ".")); return isFinite(x) && x > 0 ? x : null; };
 const estIsin = (s) => /^[A-Z]{2}[A-Z0-9]{9}\d$/.test(s);
+// Liens de recherche d'un ISIN non suivi (nouvel onglet, aucun appel réseau depuis la page) ; Fundsquare seulement pour le Luxembourg.
+const liensIsin = (isin) => {
+  if (!estIsin(isin)) return "";
+  const i = encodeURIComponent(isin), l = (u, t) => `<a href="${u}" target="_blank" rel="noopener noreferrer">${t}</a>`;
+  const liens = [l(`https://www.boursorama.com/recherche/?query=${i}`, "Boursorama"), l(`https://www.justetf.com/fr/etf-profile.html?isin=${i}`, "justETF (ETF)")];
+  if (isin.startsWith("LU")) liens.push(l(`https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=${i}`, "Fundsquare (fonds luxembourgeois)"));
+  return ` <span class="liens-isin">Chercher cet ISIN sur : ${liens.join(" · ")}.</span>`;
+};
 const levier = (m) => m.levier ? '<span class="badge b-levier">Effet de levier</span>' : "";
 const AVERT_LEVIER = "ETF à effet de levier : il amplifie chaque jour les variations de son indice (×2, ou à l'inverse). Les pertes peuvent être très rapides, et il peut perdre de la valeur même si l'indice revient à son niveau de départ. Selon l'AMF, ce sont des placements très spéculatifs, faits pour un pari de quelques jours ou quelques semaines, pas pour investir à moyen ou long terme.";
 const isinDe = (m) => m.isin || ((CAT.find((c) => c.ticker === m.ticker) || {}).isin) || ((DET[m.ticker] || {}).infos || {}).isin || null;
@@ -932,7 +942,7 @@ function montrerResultats() {
   }
   const V = v.toUpperCase().replace(/\s+/g, ""), connus = NB_ISIN_SUIVIS;
   resultats.innerHTML = `<div class="res-vide">${!CAT.length ? "La liste des titres arrive avec la prochaine fiche."
-    : estIsin(V) ? `Cet ISIN n'est ni dans les ${NB_SUIVIS} titres suivis par la fiche${NB_FONDS ? `, ni dans les ${NB_FONDS} fonds de la liste Wealins` : ""}${connus < NB_SUIVIS ? ` (la recherche par ISIN connaît ${connus} des titres suivis pour l'instant : essaie aussi le nom)` : ""}. Pour suivre un autre titre, donne son ISIN à Claude.`
+    : estIsin(V) ? `Cet ISIN n'est ni dans les ${NB_SUIVIS} titres suivis par la fiche${NB_FONDS ? `, ni dans les ${NB_FONDS} fonds de la liste Wealins` : ""}${connus < NB_SUIVIS ? ` (la recherche par ISIN connaît ${connus} des titres suivis pour l'instant : essaie aussi le nom)` : ""}. Pour suivre un autre titre, donne son ISIN à Claude.${liensIsin(V)}`
     : "Aucun titre trouvé. Essaie l'ISIN (12 caractères, comme FR0013412020), le nom ou le code."}</div>`;
 }
 
