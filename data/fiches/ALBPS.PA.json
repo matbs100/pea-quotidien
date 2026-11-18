@@ -1,14 +1,14 @@
 {
- "maj": "2026-11-06",
+ "maj": "2026-11-18",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/cours/1rPALBPS/",
   "isin": "FR001400OLP5",
   "pea_bourso": true,
   "secteur": "Produits biopharmaceutiques",
-  "valorisation": "16 MEUR",
+  "valorisation": "13 MEUR",
   "per_annee": "2026",
-  "nb_titres": "384 726 218",
-  "capitalisation": "16,31 MEUR",
+  "nb_titres": "408 976 115",
+  "capitalisation": "12,68 MEUR",
   "marche": "Euronext Growth Paris",
   "site": "https://www.biophytis.com/",
   "pays": "France"
