@@ -77,3 +77,5 @@ Statuts : `proposée`, `adoptée D-…`, `à l'essai D-…`, `en attente : raiso
 - (2026-11-17, code) Signaler dans la note un DIC dont la date de production (`dic_date`) a plus d'un an : le document officiel serait périmé. Utilité 3, résultats 3, visuel 2, nouveauté 3, fiabilité 4 ; coût faible, risque faible. Inspiration : règlement PRIIPs (DIC revu au moins chaque année), vu dans dic.py.
 
 | 55 | Aide du signal de tendance : ajouter « les études après frais montrent un gain au mieux léger sur la simple détention, non significatif » avec le lien de l'étude originale (à trouver) | CXO Advisory, résumés d'études Zakamulin (extrait de recherche du 18/11, non ouvert) | phrase égale à l'étude, source primaire affichée, aucun conseil | 3 | 2 | 3 | 3 | 3 | 2,70 | 1 | 1 | proposée (source primaire d'abord) |
+
+- (2026-11-18, code) Fonction unique « aujourd'hui à Paris » et test interdisant `date.today()` dans `scripts/` (dic, fiches, opcvm). Utilité 3, résultats 2, visuel 1, nouveauté 2, fiabilité 5 ; coût faible, risque faible. Inspiration : devoir 3 du chef, doc Python `zoneinfo`.
