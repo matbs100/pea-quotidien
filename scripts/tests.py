@@ -739,6 +739,49 @@ console.log([Object.keys(R).join(","), R[2026][0].toFixed(1), R[2026][1].toFixed
 
 
 @test
+def defilement_tactile_sur_les_lignes():
+    """Souhait du 17/11 : le doigt glisse sur une ligne comme sur le bord, et un toucher ouvre la fiche."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert re.search(r"@supports \(overflow: clip\) \{ body \{ overflow-x: clip; \}", modele), "body doit rogner avec clip (iOS)"
+    assert ".voile[hidden], .feuille[hidden] { display: none; }" in modele, "fiche fermée : ne doit rien capter"
+    assert re.search(r"\.clic \{[^}]*touch-action: manipulation", modele), "touch-action des lignes"
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        REMARQUES.append("Playwright absent : glissement tactile non exécuté")
+        return
+    import tempfile
+    sys.path.insert(0, str(SCRIPTS))
+    import rendu
+    jour = max(p.stem for p in (SCRIPTS.parent / "data" / "jours").glob("20*.json"))
+    d, _ = rendu.donnees_du_jour(jour)
+    page = Path(tempfile.mkdtemp()) / "p.html"
+    page.write_text(rendu.page_html(d, modele), encoding="utf-8")
+    try:
+        with sync_playwright() as p:
+            nav = p.chromium.launch()
+            ctx = nav.new_context(viewport={"width": 390, "height": 844}, has_touch=True, is_mobile=True)
+            pg = ctx.new_page(); pg.goto(page.resolve().as_uri()); pg.wait_for_timeout(800)
+            cdp = ctx.new_cdp_session(pg)
+
+            def glisser(x):
+                pg.evaluate("document.querySelector('#top30 .ligne').scrollIntoView({block:'center'})"); pg.wait_for_timeout(600)
+                y0 = pg.evaluate("scrollY")
+                cdp.send("Input.dispatchTouchEvent", {"type": "touchStart", "touchPoints": [{"x": x, "y": 600}]})
+                for i in range(1, 11):
+                    cdp.send("Input.dispatchTouchEvent", {"type": "touchMove", "touchPoints": [{"x": x, "y": 600 - 30 * i}]}); pg.wait_for_timeout(16)
+                cdp.send("Input.dispatchTouchEvent", {"type": "touchEnd", "touchPoints": []}); pg.wait_for_timeout(600)
+                return pg.evaluate("scrollY") - y0
+            centre, bord = glisser(195), glisser(4)
+            assert centre > 100 and bord > 100, f"défilement tactile bloqué : centre {centre}, bord {bord}"
+            nav.close()
+    except AssertionError:
+        raise
+    except Exception as e:  # noqa: BLE001  navigateur absent ou inutilisable : on le dit sans échouer
+        REMARQUES.append(f"glissement tactile non exécuté : {str(e)[:80]}")
+
+
+@test
 def comparer_deux_titres_base_100():
     """D-20261106-7 : deux séries ramenées à 100 (node, cas connu) ; avertissement présent."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")

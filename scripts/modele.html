@@ -36,6 +36,8 @@
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--font-body);
   padding: 0 max(16px, env(safe-area-inset-left)) 56px max(16px, env(safe-area-inset-right)); overflow-x: hidden; }
+/* iOS : « overflow-x: hidden » sur body en fait un conteneur de défilement et bloque le glissement du doigt sur les lignes ; « clip » rogne sans créer de conteneur */
+@supports (overflow: clip) { body { overflow-x: clip; } }
 .wrap { max-width: 1100px; margin: 0 auto; position: relative; }
 h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.1; text-wrap: balance; }
 .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
@@ -183,7 +185,9 @@ footer a { color: var(--accent); }
 /* fiche détaillée */
 .clic { cursor: pointer; transition: border-color .2s, transform .15s, box-shadow .2s; }
 .clic:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); box-shadow: 0 8px 24px -16px var(--accent); }
-.clic:active { transform: scale(.985); }
+.clic { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+@media (hover: hover) { .clic:active { transform: scale(.985); } }
+.voile[hidden], .feuille[hidden] { display: none; }
 body.fige { overflow: hidden; }
 .voile { position: fixed; inset: 0; z-index: 40; background: rgba(6, 10, 8, .55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); opacity: 0; transition: opacity .3s; }
 .voile.ouvert { opacity: 1; }

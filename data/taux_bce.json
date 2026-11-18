@@ -3,19 +3,19 @@
   "taux": 2.5,
   "depuis": "2026-09-16",
   "precedent": 2.25,
-  "releve": "2026-11-17"
+  "releve": "2026-11-18"
  },
  "refinancement": {
   "taux": 2.65,
   "depuis": "2026-09-16",
   "precedent": 2.4,
-  "releve": "2026-11-17"
+  "releve": "2026-11-18"
  },
  "pret_marginal": {
   "taux": 2.9,
   "depuis": "2026-09-16",
   "precedent": 2.65,
-  "releve": "2026-11-17"
+  "releve": "2026-11-18"
  },
  "inflation": {
   "mois": "2026-10",
