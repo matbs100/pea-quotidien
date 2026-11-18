@@ -885,6 +885,7 @@ def bloc_fiscalite_pea():
         assert "service-public.gouv.fr/particuliers/vosdroits/" + code in bloc, code
     assert "pas un conseil" in bloc and "rel=\"noopener noreferrer\"" in bloc
     assert 'id="fisc-exceptions"' in bloc and "licenciement" in bloc and "invalidité" in bloc and "mise à la retraite" in bloc
+    assert 'id="fisc-transfert"' in bloc and "n'est pas un retrait" in bloc and "amf-france.org" in bloc
 
 
 @test

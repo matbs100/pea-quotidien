@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-18 · Transfert de PEA dans le bloc fiscalité (Nuit, D-20261118-2)
+Une ligne ajoutée sous le bloc « PEA : fiscalité en un coup d'œil » : changer de banque en transférant tout son PEA n'est pas un retrait, et les avantages fiscaux sont conservés. Source : AMF, FAQ PEA et PEA PME-ETI (p. 1). Aucun conseil. Test `bloc_fiscalite_pea` étendu.
+
 ## 2026-11-18 · Défilement au doigt sur les lignes (Design, D-20261118-1)
 
 Le propriétaire ne pouvait pas faire défiler la page en glissant sur une ligne (iPhone). Corrections de causes probables : `overflow-x: clip` sur `body`, fiche et voile fermés en `display: none`, `touch-action: manipulation` sur les lignes, effet de pression réservé à la souris. Test tactile ajouté.

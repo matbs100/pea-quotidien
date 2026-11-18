@@ -51,3 +51,5 @@ Notées par le chef d'orchestre et l'agent de nuit dans la semaine ; vérifiées
 - Pas fait : aucune page d'émetteur ouverte cette nuit (temps pris par la lecture BCE et la presse) ; MWRD, CEM, EQQQ restent à lire.
 ## Notes de la nuit du 17/11 (devoir 2)
 - EQQQ.PA · Invesco EQQQ Nasdaq-100 UCITS ETF · IE0032077012 (Dist) / IE00BFZXGZ54 (Acc) (extrait de recherche Trackinsight, non lu sur une page ouverte) · page émetteur ouverte le 17/11 (invesco.com/be/fr/etf/eqqq.html) : aucune mention « PEA », ni ISIN, ni frais ; la fiche produit invesco.com/fr/fr/... renvoie 404 · **non éligible probable** (ETF irlandais sur actions américaines) · ne plus y revenir (règle du 11/11).
+## Notes de la nuit du 18/11 (devoir 2)
+- MWRD.PA · Amundi MSCI World UCITS ETF · LU1437016972 (une fiche tierce) · extraits de recherche du 18/11 : MWRD est un fonds domicilié en Irlande ou au Luxembourg, aucune source ne le dit éligible au PEA ; les versions éligibles sont Amundi PEA Monde (FR001400U5Q4) et LU1681043599 (« PEA Oui » sur abcbourse) · non éligible probable ; pages Amundi ouvertes : 404 (liens devinés), à lire demain.
