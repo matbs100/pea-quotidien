@@ -6,3 +6,5 @@ Ce que l'agent de nuit retient, une ligne par nuit (généré par `scripts/obsid
 - **14/11** : Après 5 ans de PEA, les gains n'ont plus d'impôt sur le revenu, mais les prélèvements sociaux restent dus. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-14|journal]]
 - **15/11** : Retirer de l'argent d'un PEA avant 5 ans le clôture, sauf quelques cas comme le licenciement ou l'invalidité. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-15|journal]]
 - **16/11** : Un choc sur le prix de l'énergie peut maintenir l'inflation haute, et la banque centrale attend alors les données avant de bouger ses taux. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-16|journal]]
+- **17/11** : L'inflation se lit « sur un an » : 4,0 % veut dire que les prix sont 4 % plus hauts qu'il y a 12 mois, ce qui se compare au taux de dépôt de la BCE (2,50 %). → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-17|journal]]
+- **18/11** : Un signal de tendance doit se juger après frais, avec un délai réaliste d'exécution : sinon l'avantage apparent disparaît. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-18|journal]]

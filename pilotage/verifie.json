@@ -52,5 +52,59 @@
   "jour": "2026-11-16",
   "preuve": "Page FT markets.ft.com (IBE:MCE) ouverte le 17/11 : 23,14 €, égal à la fiche ; le champ sources de la fiche du 16/11 donne aussi Yahoo 23,14 et FT 23,14 (collecte du programme). La page Boursorama FF55-IBE (place « Sibe ») affiche 18,04 (+0,31 %), un cours qui ne suit aucune autre source : page non fiable pour ce contrôle (même cas que le 14/11).",
   "le": "2026-11-17"
+ },
+ {
+  "alerte": "data/presse/2026-11-18.md : hors du rôle",
+  "jour": "bd428fc",
+  "preuve": "git show du commit relu le 18/11 : le fichier data/presse/ est une revue de presse demandée par le chef (pilotage/ecole.md, devoir 1) et déclarée dans le journal ; aucun code ni donnée de fiche touchés.",
+  "le": "2026-11-18"
+ },
+ {
+  "alerte": "data/presse/2026-11-17.md : hors du rôle",
+  "jour": "00a69cf",
+  "preuve": "git show du commit relu le 18/11 : le fichier data/presse/ est une revue de presse demandée par le chef (pilotage/ecole.md, devoir 1) et déclarée dans le journal ; aucun code ni donnée de fiche touchés.",
+  "le": "2026-11-18"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle",
+  "jour": "30ebeac",
+  "preuve": "git show 30ebeac relu le 18/11 : seules les dates « releve » de data/taux_bce.json changent (régénérées par le rendu/test), taux inchangés.",
+  "le": "2026-11-18"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle",
+  "jour": "00a69cf",
+  "preuve": "git show 00a69cf relu le 18/11 : fichier de données écrit par scripts/taux.py, partie du rôle (inflation Eurostat 4,0 % confirmée par plusieurs médias le 18/11).",
+  "le": "2026-11-18"
+ },
+ {
+  "alerte": "scripts/tests.py : hors du rôle",
+  "jour": "30ebeac",
+  "preuve": "git show 30ebeac relu le 18/11 : test tactile ajouté pour le correctif de design demandé par le propriétaire ; 47/47 tests verts.",
+  "le": "2026-11-18"
+ },
+ {
+  "alerte": "bd428fc [nuit]",
+  "jour": "bd428fc",
+  "preuve": "git show bd428fc relu le 18/11 : ligne fiscalité juste (AMF), tests verts, rien de retiré.",
+  "le": "2026-11-18"
+ },
+ {
+  "alerte": "30ebeac [design]",
+  "jour": "30ebeac",
+  "preuve": "git show + design.py comparer 🟢 le 18/11 : CSS minimal, aucune information retirée.",
+  "le": "2026-11-18"
+ },
+ {
+  "alerte": "00a69cf [nuit]",
+  "jour": "00a69cf",
+  "preuve": "git show 00a69cf relu le 18/11 : inflation ajoutée avec source, test présent.",
+  "le": "2026-11-18"
+ },
+ {
+  "alerte": "00a69cf « Amélioration : inflation de la zone euro dans le b » : texte retiré ou reformulé",
+  "jour": "00a69cf",
+  "preuve": "Sous-titre du bloc des taux reformulé pour ajouter l'inflation ; aucune information perdue, vérifié dans modele.html le 18/11.",
+  "le": "2026-11-18"
  }
 ]

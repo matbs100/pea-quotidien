@@ -32,6 +32,7 @@ import sys
 import time
 import unicodedata
 from datetime import date
+from paris import aujourdhui  # noqa: E402
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -252,8 +253,8 @@ def lire_dic(s, ticker, isin):
             erreur = f"{source} : ni SRI ni frais lisibles"
             continue
         chiffres.pop("isin_ok", None)
-        return {"isin": isin, "source": source, "page": page, "lu_le": date.today().isoformat(), **chiffres}
-    return {"isin": isin, "erreur": erreur, "lu_le": date.today().isoformat()}
+        return {"isin": isin, "source": source, "page": page, "lu_le": aujourdhui().isoformat(), **chiffres}
+    return {"isin": isin, "erreur": erreur, "lu_le": aujourdhui().isoformat()}
 
 
 # ---------- fichier data/dic.json ----------
@@ -274,7 +275,7 @@ def dic_de(ticker, base=None):
 def a_relire(e):
     if not e or "erreur" in e or "lu_le" not in e:
         return True
-    return (date.today() - date.fromisoformat(e["lu_le"])).days >= VALIDITE_JOURS
+    return (aujourdhui() - date.fromisoformat(e["lu_le"])).days >= VALIDITE_JOURS
 
 
 def etf_suivis():
@@ -309,7 +310,7 @@ def main():
         print(f"{t} {isin} : " + (f"SRI {e.get('sri', '?')}, frais {e.get('frais_courants', '?')} %, "
                                   f"transaction {e.get('couts_transaction', '?')} % ({e.get('source')})"
                                   if "erreur" not in e else f"✗ {e['erreur']}"))
-    base["maj"] = date.today().isoformat()
+    base["maj"] = aujourdhui().isoformat()
     base["_note"] = ("Chiffres lus dans le DIC officiel (PRIIPs) de chaque ETF par scripts/dic.py : Fundsquare "
                      "d'abord, sinon le site de l'émetteur (Amundi ETF). Frais en % par an.")
     base["titres"] = dict(sorted(titres.items()))

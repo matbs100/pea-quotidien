@@ -179,6 +179,9 @@ Usage : `python scripts/fiches.py AAAA-MM-JJ`. Ajoute `details` au JSON du jour 
 | `fiche_fonds_wealins(m)` | fiche d'un fonds Wealins noté dans `mes-investissements.md` : historique de la valeur liquidative (jusqu'à 5 ans, page du fonds), statistiques, SRI estimé, gestionnaire, SFDR, lien du DIC |
 | `main()` | construit les fiches et leurs liens (Boursorama, FT, Yahoo, DIC, justETF) ; ajoute l'ISIN de chaque titre du catalogue (60 titres jamais lus au plus par passage, pour compléter peu à peu sans ralentir la fiche) |
 
+### `paris.py` : le jour à Paris
+| `aujourdhui()` | date du jour à Paris (fuseau `Europe/Paris`), utilisée par `dic.py`, `fiches.py` et `opcvm.py` à la place de `date.today()` ; un test interdit `date.today()` dans `scripts/` |
+
 ### `dic.py` : risque et frais lus dans le DIC officiel des ETF
 Usage : `python scripts/dic.py` (titres sans lecture ou lus il y a plus de 30 jours), `--tout`, ou des codes
 Yahoo. Lancé par la fiche du jour avant `fiches.py`. Sources : Fundsquare (onglet Documents, DIC « en cours »)

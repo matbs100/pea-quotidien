@@ -11,6 +11,7 @@ import json
 import math
 import sys
 from datetime import date
+from paris import aujourdhui  # noqa: E402
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -105,7 +106,7 @@ def mesurer_tout(en_ligne=True):
         except Exception as e:  # noqa: BLE001  un fonds illisible ne bloque jamais les autres
             print("OPCVM illisible :", f.get("isin"), e, file=sys.stderr)
     if en_ligne:
-        cache["maj"] = date.today().isoformat()
+        cache["maj"] = aujourdhui().isoformat()
         try:
             CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")
         except OSError as e:
@@ -116,7 +117,7 @@ def mesurer_tout(en_ligne=True):
 if __name__ == "__main__":
     # Ajoute (ou met à jour) la liste « opcvm » dans la fiche d'un jour, sans relancer toute la collecte.
     sys.path.insert(0, str(Path(__file__).resolve().parent))
-    jour = sys.argv[1] if len(sys.argv) > 1 else date.today().isoformat()
+    jour = sys.argv[1] if len(sys.argv) > 1 else aujourdhui().isoformat()
     fj = RACINE / "data" / "jours" / f"{jour}.json"
     d = json.loads(fj.read_text(encoding="utf-8"))
     d["opcvm"] = mesurer_tout(en_ligne="--hors-ligne" not in sys.argv)

@@ -1,5 +1,9 @@
 Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidian.py` depuis [[Finance/PEA Quotidien/pilotage/decisions|le journal des décisions]]).
 
+- **18/11** · `D-20261118-3` · n° 56 (code, 15/11) · Une seule fonction « jour à Paris » (`scripts/paris.py`) à la place de `date.today()` dans dic, fiches, opcvm ; test qui interdit `date.today()` → correction (gain 2,40) ; réalisée le 18/11
+- **18/11** · `D-20261118-1` · Défilement au doigt sur les lignes (iPhone) : `overflow-x: clip`, fiche fermée en `display: none`, `touch-action: manipulation` → adoptée (confirmée par le chef le 2026-11-18) (gain —) ; réalisée le 18/11
+- **18/11** · `D-20261118-2` · n° 53 · Bloc fiscalité : le transfert complet du PEA vers une autre banque n'est pas un retrait, avantages fiscaux conservés (AMF, FAQ PEA p. 1) → adoptée (confirmée par le chef le 2026-11-18) (gain 3,65) ; réalisée le 18/11
+- **17/11** · `D-20261117-2` · n° 46 · Bloc « contexte des taux » : inflation de la zone euro lue chaque jour sur Eurostat (octobre 2026 : 4,0 % ; mois d'avant 3,8 %, égal à la BCE p. 4), avec lien source → adoptée (confirmée par le chef le 2026-11-18) (gain 3,25) ; réalisée le 17/11
 - **17/11** · `D-20261117-1` · n° 48 · Recherche « Mes investissements » : un ISIN valide non suivi affiche des liens de recherche Boursorama, justETF (et Fundsquare si l'ISIN commence par LU), en nouvel onglet ; Euronext retiré (réponse 202 sans contenu, non vérifiable d'ici) → adoptée (gain 3,65) ; réalisée le 17/11
 - **16/11** · `D-20261116-4` · Fundsquare devient la source de référence : risque (SRI) et frais courants (TER) de chaque ETF lus dans son DIC officiel (Fundsquare, sinon Amundi ETF ; `scripts/dic.py`, `data/dic.json`) avant Boursorama ; coûts de transaction affichés ; liens Fundsquare et Quantalys dans la fiche (réalise la 1re partie de l'idée n° 49) → adoptée (gain —) ; réalisée le 17/11
 - **16/11** · `D-20261116-3` · 30 valeurs connues affichées chaque jour à côté du Top 30 : 20 grandes actions européennes cotées depuis longtemps (dont Amundi) et 10 ETF répandus (France, zone euro, Allemagne, Europe, Monde, Nasdaq-100, Japon, Asie émergente, émergents, Inde), sans ETF S&P 500 ; liste `_connues` de `univers.json` → adoptée (gain —) ; réalisée le 17/11
@@ -15,7 +19,7 @@ Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidi
 - **13/11** · `D-20261113-1` · Glisser vers le bas pour fermer une fiche sur téléphone (demande du propriétaire) → adoptée (confirmée par le chef le 2026-11-13) (gain 3,00) ; réalisée le 13/11
 - **12/11** · `D-20261112-3` · n° 40 · test contre les gestionnaires en ligne du gabarit → rejetée (gain 2,00)
 - **12/11** · `D-20261112-2` · n° 39 · Palette sombre dédiée aux courbes et contraste 4,5:1 des textes secondaires → adoptée (gain 3,00) ; réalisée le 13/11
-- **12/11** · `D-20261112-1` · Contrôle : un lien Yahoo en 404 depuis le cloud n'est plus « cassé » si le symbole a des cours collectés (API Yahoo interdite par son robots.txt) → correction (gain 3,10) ; réalisée le 12/11
+- **12/11** · `D-20261112-1` · Contrôle : un lien Yahoo en 404 depuis le cloud n'est plus « cassé » si le symbole a des cours collectés (API Yahoo interdite par son robots.txt) → correction (gain 3,10) ; réalisée le 12/11 ; bilan : ✅ gardée (18/11) : le contrôle du 18/11 ne signale plus de faux lien cassé (32/32 liens valides)
 - **11/11** · `D-20261111-3` · n° 37 et 38 · test du mois manquant, légende de l'échelle de couleur → rejetée (gain 2,05 / 2,75)
 - **11/11** · `D-20261111-2` · n° 36 · Mois par mois : moyenne par mois → rejetée (gain 2,90)
 - **11/11** · `D-20261111-1` · n° 34 · Aide « Qu'est-ce que le MSCI World ? » → rejetée (gain 2,95)
@@ -36,7 +40,3 @@ Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidi
 - **06/11** · `D-20261106-9` · n° 8 · Fiche installable (manifeste et icône, sans service worker) → à l'essai (gain 3,20)
 - **06/11** · `D-20261106-8` · n° 1 · Ratios de Sharpe et de Sortino → à l'essai (gain 3,35) ; réalisée le 08/11 ; bilan : ✅ gardée (12/11) : tests verts, ratios présents dans la page (`sharpe`) ; reste à l'essai tant que la définition au toucher n'est pas relue sur téléphone
 - **06/11** · `D-20261106-7` · n° 7 · Comparer deux titres (base 100) → adoptée (gain 3,85) ; réalisée le 2026-11-12 (1re partie : comparaison dans le graphique de la fiche)
-- **06/11** · `D-20261106-6` · n° 2 · Rendements mois par mois en carte de chaleur → adoptée (gain 3,55) ; réalisée le 2026-11-11 (fiche d'un titre)
-- **06/11** · `D-20261106-5` · n° 21 · Page « Mes critères » → adoptée (gain 4,20) ; réalisée le 2026-11-09 (1re partie : filtre du Top 30, D-20261109-1)
-- **06/11** · `D-20261106-4` · n° 3 · Simulateur « 50 € par mois depuis 5 ans » → adoptée (gain 4,45) ; réalisée le 07/11 ; bilan : ✅ gardée (12/11) : tests verts depuis le 07/11, avertissement présent ; aucune alerte de conseil au contrôle
-- **06/11** · `D-20261106-3` · Méthode de décision et journal des décisions → adoptée (gain —) ; réalisée le 06/11 ; bilan : ✅ gardée (12/11) : chaque amélioration récente cite sa décision ; le contrôle liste les bilans en retard (ce passage les a tous écrits)

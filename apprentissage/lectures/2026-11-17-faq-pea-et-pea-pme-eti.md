@@ -6,7 +6,7 @@ url: https://www.amf-france.org/sites/institutionnel/files/pdf/59241/fr/FAQ_PEA_
 publie_le: 2019-09-11
 lu_le: 2026-11-17
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-18
 ---
 # 📄 FAQ PEA et PEA PME-ETI
 
@@ -27,4 +27,4 @@ Cette foire aux questions de l'AMF (4 pages utiles, version imprimée le 30/05/2
 - Une ligne dans le bloc fiscalité sur le transfert de PEA sans perte d'ancienneté (idée n° 53, notée dans idees.md) ; le reste : rien pour la fiche.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- (18/11) Lien exact ; résumé en mots propres, rien de copié. Le PDF s'ouvre mal depuis le cloud (texte compressé) : le point du transfert (pas un retrait, avantages fiscaux conservés) est confirmé par un extrait de la page AMF « FAQ PEA » (extrait de recherche) ; les autres pages (2-4) ne sont pas revérifiées : ❔ à ouvrir sur un poste avec lecteur PDF.

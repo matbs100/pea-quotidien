@@ -1,17 +1,18 @@
 {
- "genere_le": "2026-11-17T12:35+01:00",
- "fiche": "2026-11-17 (ouverture)",
+ "genere_le": "2026-11-18T05:14+01:00",
+ "fiche": "2026-11-17 (cloture)",
  "lieu": "cloud",
- "etat": "orange",
- "resume": "À surveiller. 45/45 tests, 34/34 liens valides, site à jour. Points à voir : cohérence des données, travail des agents (30 dernières heures), design : aucune information retirée de la page, méthode de décision.",
+ "etat": "vert",
+ "resume": "Tout est en ordre. 47/47 tests, 4/4 prix revérifiés, 32/32 liens valides, site à jour.",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "45/45 tests réussis",
+   "resume": "47/47 tests réussis",
    "details": [
-    "• nouvelles dépendances à justifier dans le journal : pypdf"
+    "• nouvelles dépendances à justifier dans le journal : pypdf",
+    "• Playwright absent : glissement tactile non exécuté"
    ]
   },
   {
@@ -20,60 +21,52 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-17 (ouverture), générée le 2026-11-17T09:20+01:00",
-    "fiche attendue à cette heure : 2026-11-17 (ouverture)"
+    "dernière fiche : 2026-11-17 (cloture), générée le 2026-11-17T17:59+01:00",
+    "fiche attendue à cette heure : 2026-11-17 (cloture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "alerte",
-   "resume": "59 cours examinés, 0 problème(s), 9 alerte(s) ; entre sources : 70 confirmés, 3 écart(s)",
-   "details": [
-    "INS.PA : cours daté du 2026-11-13, pas du 2026-11-17",
-    "CD8.PA : cours daté du 2026-11-13, pas du 2026-11-17",
-    "HLT.PA : cours daté du 2026-11-13, pas du 2026-11-17",
-    "FOO.PA : cours daté du 2026-11-13, pas du 2026-11-17",
-    "EUROB.AT : cours daté du 2026-11-13, pas du 2026-11-17",
-    "DAX.PA : cours daté du 2026-11-13, pas du 2026-11-17",
-    "CG1.PA : cours daté du 2026-11-13, pas du 2026-11-17",
-    "ETZ.PA : cours daté du 2026-11-13, pas du 2026-11-17",
-    "PCEU.PA : cours daté du 2026-11-13, pas du 2026-11-17"
-   ]
+   "niveau": "ok",
+   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 71 confirmés, 1 écart(s)",
+   "details": []
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "353 mots, 0 remarque(s)",
+   "resume": "308 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-17 (ouverture)",
+   "resume": "régénérée avec la fiche du 2026-11-17 (cloture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "non_verifiable",
-   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
-   "details": []
+   "niveau": "ok",
+   "resume": "4/4 prix identiques sur Boursorama",
+   "details": [
+    "illisibles : ^DJI, INS.PA, AI.PA, IBE.MC"
+   ]
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "34/34 liens valides sur 8 titres, 6 non ouverts (robots.txt)",
+   "resume": "32/32 liens valides sur 8 titres, 7 non ouverts (robots.txt), 1 injoignables d'ici",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-17 (ouverture)",
+   "resume": "le site affiche la fiche du 2026-11-17 (cloture)",
    "details": []
   },
   {
@@ -82,18 +75,27 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "39 connaissance(s) en attente de vérification (⏳)",
+    "40 connaissance(s) en attente de vérification (⏳)",
     "5 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
   {
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
-   "niveau": "alerte",
-   "resume": "20 commit(s), 0 problème(s), 2 alerte(s)",
+   "niveau": "ok",
+   "resume": "19 commit(s), 0 problème(s), 0 alerte(s) ; 5 vérifiée(s) par le chef",
    "details": [
-    "00a69cf « Amélioration : inflation de la zone euro dans le b » : data/presse/2026-11-17.md : hors du rôle de l'agent « nuit »",
-    "00a69cf « Amélioration : inflation de la zone euro dans le b » : data/taux_bce.json : hors du rôle de l'agent « nuit »",
+    "✔ vérifié par le chef le 2026-11-18 : bd428fc « Amélioration : transfert de PEA dans le bloc fisca » : data/presse/2026-11-18.md : hors du rôle de l'agent « nuit » — git show du commit relu le 18/11 : le fichier data/presse/ est une revue de presse demandée par le chef (pilotage/ecole.md, devoir 1) et déclarée dans le journal ; aucun code ni donnée de fiche touchés.",
+    "✔ vérifié par le chef le 2026-11-18 : 30ebeac « Design : défilement tactile sur les lignes [D-2026 » : data/taux_bce.json : hors du rôle de l'agent « design » — git show 30ebeac relu le 18/11 : seules les dates « releve » de data/taux_bce.json changent (régénérées par le rendu/test), taux inchangés.",
+    "✔ vérifié par le chef le 2026-11-18 : 30ebeac « Design : défilement tactile sur les lignes [D-2026 » : scripts/tests.py : hors du rôle de l'agent « design » — git show 30ebeac relu le 18/11 : test tactile ajouté pour le correctif de design demandé par le propriétaire ; 47/47 tests verts.",
+    "✔ vérifié par le chef le 2026-11-18 : 00a69cf « Amélioration : inflation de la zone euro dans le b » : data/presse/2026-11-17.md : hors du rôle de l'agent « nuit » — git show du commit relu le 18/11 : le fichier data/presse/ est une revue de presse demandée par le chef (pilotage/ecole.md, devoir 1) et déclarée dans le journal ; aucun code ni donnée de fiche touchés.",
+    "✔ vérifié par le chef le 2026-11-18 : 00a69cf « Amélioration : inflation de la zone euro dans le b » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 00a69cf relu le 18/11 : fichier de données écrit par scripts/taux.py, partie du rôle (inflation Eurostat 4,0 % confirmée par plusieurs médias le 18/11).",
+    "6ee80e3 [code] Code : rapport du 2026-11-18 (vert)",
+    "bd428fc [nuit] Amélioration : transfert de PEA dans le bloc fiscalité [D-20261118-2]",
+    "30ebeac [design] Design : défilement tactile sur les lignes [D-20261118-1]",
+    "557bc1c [fiche] Matin PEA 2026-11-17 (cloture) : analyse raccourcie à 350 mots",
+    "233550d [fiche] Matin PEA 2026-11-17 (cloture)",
+    "e64d642 [chef] Chef : passage de mi-journée du 2026-11-17 (orange)",
     "e8231f3 [autre] tâche de design « toucher n'importe où sur une ligne ouvre la fiche » ",
     "50f05ab [autre] tâche de design « défilement au doigt bloqué sur les lignes » (télépho",
     "505774a [fiche] Matin PEA 2026-11-17 (ouverture) : contrôle des prix terminé",
@@ -102,45 +104,36 @@
     "b2d06cb [nuit] Amélioration : notes de grille corrigées [D-20261117-2]",
     "00a69cf [nuit] Amélioration : inflation de la zone euro dans le bloc des taux [D-2026",
     "cd7a57e [design] Design : verre dépoli sur la fiche détaillée [D-20261117-1]",
-    "9431396 [chef] Chef : rapport du 2026-11-17 (vert) ; liens de recherche d'ISIN [D-202",
-    "ffb2717 [code] Code : rapport du 2026-11-17 (vert)",
-    "bb26bc3 [autre] Fundsquare source de référence, risque et frais courants lus dans le D",
-    "e5b433b [autre] idée n° 49, lien Fundsquare vers les documents officiels (DIC, prospec",
-    "1fd5cc7 [autre] progrès de chaque jour (le chef compte améliorations, idées et stock ;",
-    "5a9c56a [autre] liens de recherche d'ISIN confiés au seul agent de nuit (idée n° 48) ;",
-    "2253c74 [autre] souhaits de design mis à jour",
-    "b524fe3 [autre] idée n° 48, liens de recherche (Boursorama, justETF, Euronext) quand u",
-    "96133bf [autre] tâche de design « effet verre dépoli sur les éléments flottants seulem",
-    "ea275b5 [fiche] Matin PEA 2026-11-16 (cloture)"
+    "9431396 [chef] Chef : rapport du 2026-11-17 (vert) ; liens de recherche d'ISIN [D-202"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
-   "niveau": "alerte",
-   "resume": "4 changement(s) de la page, 0 retrait(s), 1 point(s) à revoir",
+   "niveau": "ok",
+   "resume": "6 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
    "details": [
-    "00a69cf « Amélioration : inflation de la zone euro dans le b » : texte retiré ou reformulé : Taux directeurs de la Banque centrale européenne, lus à la source",
+    "✔ vérifié par le chef le 2026-11-18 : 00a69cf « Amélioration : inflation de la zone euro dans le b » : texte retiré ou reformulé : Taux directeurs de la Banque centrale européenne, lus à la source — Sous-titre du bloc des taux reformulé pour ajouter l'inflation ; aucune information perdue, vérifié dans modele.html le 18/11.",
     "bb26bc3 « Fundsquare source de référence, risque et frais co » : rien de retiré",
     "9431396 « Chef : rapport du 2026-11-17 (vert) ; liens de rec » : rien de retiré",
     "cd7a57e « Design : verre dépoli sur la fiche détaillée [D-20 » : rien de retiré",
-    "00a69cf « Amélioration : inflation de la zone euro dans le b » : à revoir"
+    "00a69cf « Amélioration : inflation de la zone euro dans le b » : à revoir",
+    "30ebeac « Design : défilement tactile sur les lignes [D-2026 » : rien de retiré",
+    "bd428fc « Amélioration : transfert de PEA dans le bloc fisca » : rien de retiré"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "alerte",
-   "resume": "43 décisions, 5 à réaliser, 1 point(s) à voir",
-   "details": [
-    "bilan à faire : D-20261112-1 (Contrôle : un lien Yahoo en 404 depuis le cloud n')"
-   ]
+   "niveau": "ok",
+   "resume": "46 décisions, 5 à réaliser, 0 point(s) à voir",
+   "details": []
   },
   {
    "nom": "lectures",
    "titre": "Lectures des agents (PDF de sources vérifiées)",
    "niveau": "ok",
-   "resume": "10 lecture(s), 1 à relire par le chef, 0 point(s) à voir",
+   "resume": "10 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
    "details": []
   },
   {

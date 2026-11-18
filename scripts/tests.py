@@ -1215,6 +1215,21 @@ def frais_et_risque_du_dic():
     assert fx["gestion"] == 0.28 and "source_gestion" not in fx and "transaction" not in fx, fx
 
 
+@test
+def date_du_jour_a_paris_partout():
+    """Aucun script n'appelle date.today() (fuseau de la machine) : tous passent par paris.aujourdhui() [D-20261118-3]."""
+    import re
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    sys.path.insert(0, str(SCRIPTS))
+    import paris
+    avant = datetime.now(ZoneInfo("Europe/Paris")).date()
+    assert paris.aujourdhui() >= avant, "aujourdhui() doit être la date de Paris"
+    fautifs = [p.name for p in sorted(SCRIPTS.glob("*.py"))
+               if p.name not in ("tests.py", "paris.py") and re.search(r"date\.today\(\)|datetime\.today\(\)", p.read_text(encoding="utf-8"))]
+    assert not fautifs, f"date.today() sans fuseau dans : {fautifs}"
+
+
 def main():
     echecs = 0
     for f in TESTS:

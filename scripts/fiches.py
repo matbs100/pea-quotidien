@@ -31,6 +31,7 @@ import yfinance as yf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verif import codes, get  # noqa: E402  mêmes codes de place et même politesse que verif.py
+from paris import aujourdhui  # noqa: E402
 import dic as dics  # noqa: E402  chiffres des DIC officiels (data/dic.json, écrit par dic.py)
 
 warnings.filterwarnings("ignore")
@@ -190,7 +191,7 @@ def infos(m):
     f = fichier_cache(t)
     if f.exists():
         c = json.loads(f.read_text(encoding="utf-8"))
-        if (date.today() - date.fromisoformat(c["maj"])).days < VALIDITE_JOURS:
+        if (aujourdhui() - date.fromisoformat(c["maj"])).days < VALIDITE_JOURS:
             return c["infos"]
     out = {}
     if cat in ("etf", "actions", "petites", "fonds"):
@@ -202,7 +203,7 @@ def infos(m):
         if not out:
             out = lire_yahoo(t)
     CACHE.mkdir(parents=True, exist_ok=True)
-    f.write_text(json.dumps({"maj": date.today().isoformat(), "infos": out}, ensure_ascii=False, indent=1),
+    f.write_text(json.dumps({"maj": aujourdhui().isoformat(), "infos": out}, ensure_ascii=False, indent=1),
                  encoding="utf-8")
     return out
 

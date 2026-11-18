@@ -47,3 +47,6 @@ d'orchestre : une règle par ligne, datée, avec l'agent concerné et l'exemple 
 - (2026-11-16, nuit) **Une revue de presse demandée par `ecole.md` se déclare dans le journal** (« fichier demandé par le chef ») ; la nuit l'a fait, l'alerte reste mais est vérifiable.
 - (17/11, chef et tous) **Pas d'API de Yahoo, même pour vérifier un prix** : le chef l'a appelée par erreur le 17/11 ; pour confirmer un cours, ouvre la page FT (`markets.ft.com`, déjà lue par la collecte) ou celle de l'émetteur. Une page Boursorama d'une place étrangère (FF55-IBE) peut afficher un vieux cours : compare à FT avant de conclure.
 - (17/11, chef) **Un devoir de vérification reporté 5 fois est abandonné** et devient une règle prudente (exemple : l'heure d'ouverture d'Euronext, aucune source officielle en ligne : idée n° 52).
+
+- (18/11, nuit) **Un devoir « lire » demande un PDF avec du texte** : une infographie (AMF, 4 pages) est presque vide ; ouvre-le d'abord, et prends-en un autre s'il n'a pas de paragraphes. Le chef ne peut lui-même relire qu'un PDF lisible depuis le cloud (la FAQ AMF s'y ouvre mal : confirme par la page web).
+- (18/11, nuit) **Une presse « une source » compte deux chiffres du corps d'un article**, pas un titre de liste ; sinon le devoir est 🔁.
