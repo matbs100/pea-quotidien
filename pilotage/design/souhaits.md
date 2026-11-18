@@ -5,7 +5,7 @@ projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). 
 
 ## Tâches demandées par le propriétaire (à faire en premier, dans l'ordre)
 
-- [ ] 2026-11-17 · **Défilement au doigt bloqué sur les lignes (téléphone, iPhone).** Le propriétaire n'arrive
+- [x] 2026-11-17 · fait le 2026-11-18 [D-20261118-1] · **Défilement au doigt bloqué sur les lignes (téléphone, iPhone).** Le propriétaire n'arrive
   pas à faire défiler la page quand son doigt glisse sur le nom des titres, au centre de l'écran (lignes du
   Top 30, valeurs connues, etc.) ; il doit glisser sur les bords, à côté des lignes, pour naviguer. C'est
   **prioritaire** : la page doit défiler quel que soit l'endroit où le doigt se pose (lignes, cartes,
@@ -29,6 +29,7 @@ projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). 
   ne coche pas : écris dans ton journal ce qui a été essayé, et le chef le reprend.
   Quand c'est fait : cocher la case avec la date et la décision `[D-…]`.
   (18/11, chef) D-20261118-1 corrige 4 causes probables (Chromium tactile : OK) ; iOS non reproduit. Case laissée ouverte jusqu'au retour du propriétaire sur son iPhone.
+  (18/11, propriétaire) Confirmé sur iPhone : le défilement marche bien depuis le centre des lignes. Case cochée.
 
 - [x] 2026-11-16 · fait le 2026-11-17 [D-20261117-1] · **Effet « verre dépoli » (style liquid glass) sur les éléments flottants seulement.**
   Le fond animé `.blobs` donne déjà de la couleur à faire transparaître. À faire dans `scripts/modele.html` :
