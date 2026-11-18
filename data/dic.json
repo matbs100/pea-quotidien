@@ -491,6 +491,6 @@
    "couts_transaction": 0.0
   }
  },
- "maj": "2026-11-17",
+ "maj": "2026-11-18",
  "_note": "Chiffres lus dans le DIC officiel (PRIIPs) de chaque ETF par scripts/dic.py : Fundsquare d'abord, sinon le site de l'émetteur (Amundi ETF). Frais en % par an."
 }
