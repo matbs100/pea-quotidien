@@ -2,7 +2,9 @@
  "^FCHI": {
   "boursorama": "1rPCAC",
   "ft": "CAC:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "^STOXX50E": {
   "boursorama": "2cSX5E",
@@ -102,7 +104,9 @@
  "RACE.MI": {
   "boursorama": "1gRACE",
   "ft": "RACE:MIL",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ITX.MC": {
   "boursorama": "FF55-ITX",
@@ -147,13 +151,15 @@
  "AI.PA": {
   "boursorama": "1rPAI",
   "ft": "AI:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ERF.PA": {
   "boursorama": "1rPERF",
   "ft": "ERF:PAR",
   "echecs": {
-   "boursorama": 1
+   "boursorama": 2
   }
  },
  "PHIA.AS": {
@@ -256,7 +262,9 @@
  "ALNOV.PA": {
   "boursorama": "1rPALNOV",
   "ft": "ALNOV:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ALCJ.PA": {
   "boursorama": "1rPALCJ",
@@ -392,7 +400,9 @@
  "INS.PA": {
   "boursorama": "1rTINS",
   "ft": "INS:PAR:EUR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "RCO.PA": {
   "boursorama": "1rPRCO",
@@ -427,7 +437,9 @@
  "PINR.PA": {
   "boursorama": "1rTPINR",
   "ft": "PINR:PAR:EUR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "TRV.PA": {
   "boursorama": "1rTTRV",
@@ -502,7 +514,9 @@
  "AMUN.PA": {
   "boursorama": "1rPAMUN",
   "ft": "AMUN:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "SAB.MC": {
   "boursorama": "FF55-SAB",
@@ -519,7 +533,9 @@
  "BN.PA": {
   "boursorama": "1rPBN",
   "ft": "BN:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ETE.AT": {
   "boursorama": null,
@@ -606,7 +622,9 @@
  "BNP.PA": {
   "boursorama": "1rPBNP",
   "ft": "BNP:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ASML.AS": {
   "boursorama": "1rAASML",
@@ -678,6 +696,16 @@
  "SOI.PA": {
   "boursorama": "1rPSOI",
   "ft": "SOI:PAR",
+  "echecs": {}
+ },
+ "OBLI.PA": {
+  "boursorama": "1rTOBLI",
+  "ft": "OBLI:PAR:EUR",
+  "echecs": {}
+ },
+ "SK.PA": {
+  "boursorama": "1rPSK",
+  "ft": "SK:PAR",
   "echecs": {}
  }
 }
