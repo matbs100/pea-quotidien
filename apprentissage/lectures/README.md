@@ -8,7 +8,8 @@ Ce fichier est refait par `python scripts/lectures.py index`.
 
 | Lu le | Fiche de lecture | Organisme | Document | Statut |
 |---|---|---|---|---|
-| 2026-11-17 | [[2026-11-17-faq-pea-et-pea-pme-eti\|FAQ PEA et PEA PME-ETI]] | AMF | [PDF](https://www.amf-france.org/sites/institutionnel/files/pdf/59241/fr/FAQ_PEA_et_PEA_PME-ETI.pdf) | ⏳ à vérifier |
+| 2026-11-19 | [[2026-11-19-profitability-of-simple-technical-trading-rules-of-chinese-s\|Profitability of simple technical trading rules of Chinese stock exchange indexes]] | arXiv (Zhu, Jiang, Li, Zhou) | [PDF](https://arxiv.org/abs/1504.04254) | ⏳ à vérifier |
+| 2026-11-17 | [[2026-11-17-faq-pea-et-pea-pme-eti\|FAQ PEA et PEA PME-ETI]] | AMF | [PDF](https://www.amf-france.org/sites/institutionnel/files/pdf/59241/fr/FAQ_PEA_et_PEA_PME-ETI.pdf) | ✅ relue le 2026-11-18 |
 | 2026-11-16 | [[2026-11-16-economic-bulletin-numero-7-2026\|Economic Bulletin, numéro 7 / 2026]] | Banque centrale européenne | [PDF](https://www.ecb.europa.eu/pub/pdf/ecbu/eb202607.en.pdf) | ✅ relue le 2026-11-17 |
 | 2026-11-14 | [[2026-11-14-dans-un-pea-plan-d-epargne-en-actions-ce-qu-il-faut-savoir\|Dans un PEA (plan d'épargne en actions), ce qu'il faut savoir]] | AMF | [PDF](https://www.amf-france.org/sites/institutionnel/files/private/2023-12/2023_investir_dans_un_pea.pdf) | ✅ relue le 2026-11-14 |
 | 2026-11-11 | [[2026-11-11-revisiting-the-structure-of-trend-premia-when-diversificatio\|Revisiting the Structure of Trend Premia: When Diversification Hides Redundancy]] | arXiv (Etienne et coll., Ai For Alpha) | [PDF](https://arxiv.org/pdf/2510.23150v1) | ✅ relue le 2026-11-11 |

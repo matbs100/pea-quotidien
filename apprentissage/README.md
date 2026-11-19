@@ -47,6 +47,7 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 - Il n'exécute jamais de code téléchargé.
 
 ## Journaux
+- [2026-11-19](journal/2026-11-19.md)
 - [2026-11-18](journal/2026-11-18.md) : indicateurs et méthodes ; transfert de PEA dans le bloc fiscalité (D-20261118-2)
 - [2026-11-17](journal/2026-11-17.md) : marchés ; inflation de la zone euro dans le bloc des taux (D-20261117-2)
 - [2026-11-16](journal/2026-11-16.md) : open source ; comparaison de titres mémorisée (D-20261116-2)

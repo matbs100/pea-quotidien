@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-19 · Ce que dit une étude sur le signal de tendance (Nuit, D-20261119-1)
+Sous le signal technique de chaque fiche, une note cite une étude (Zhu et al., arXiv 1504.04254) : sur les indices de Shanghai et de Shenzhen (1991-2013), les moyennes mobiles battent la simple détention avant frais, mais plus après. La note précise que c'est une seule étude, sur des marchés chinois. Idée n° 55 ; aucun conseil. Test `aide_signal_etude_tendance`.
+
 ## 2026-11-18 · Transfert de PEA dans le bloc fiscalité (Nuit, D-20261118-2)
 Une ligne ajoutée sous le bloc « PEA : fiscalité en un coup d'œil » : changer de banque en transférant tout son PEA n'est pas un retrait, et les avantages fiscaux sont conservés. Source : AMF, FAQ PEA et PEA PME-ETI (p. 1). Aucun conseil. Test `bloc_fiscalite_pea` étendu.
 

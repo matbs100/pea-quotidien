@@ -889,6 +889,18 @@ def bloc_fiscalite_pea():
 
 
 @test
+def aide_signal_etude_tendance():
+    """L'aide du signal cite l'étude arXiv 1504.04254 (frais), son lien, et ne conseille rien."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    i = modele.index('id="sig-etude"')
+    note = modele[i:modele.index("</p>", i)]
+    assert "arxiv.org/abs/1504.04254" in note and "avant frais" in note and "frais de transaction" in note
+    assert "rel=\"noopener noreferrer\"" in note and "règle générale" in note
+    for mot in ("achetez", "vendez", "nous recommandons"):
+        assert mot not in note.lower()
+
+
+@test
 def changelog_du_plus_recent_au_plus_ancien():
     """Les entrées de CHANGELOG.md restent sous l'introduction et sont rangées de la plus récente à la plus ancienne."""
     import re
