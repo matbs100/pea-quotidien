@@ -9,6 +9,7 @@ public ni sur le site), contrôle que le code est bien fait et marche, fait au p
 apprend une technique de code dans une source fiable et propose une idée. Le chef relit son travail à 5 h.
 
 ## Rapports
+- [2026-11-19](2026-11-19.md) · 🟢 import inutilisé retiré
 - [[2026-11-18]]
 - [[Finance/PEA Quotidien/pilotage/code/2026-11-17|2026-11-17]] : 🟢
 - [[2026-11-16|2026-11-16]] · vert · test du geste de fermeture

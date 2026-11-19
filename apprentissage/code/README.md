@@ -10,6 +10,7 @@ dans [[Finance/PEA Quotidien/pilotage/sources-verifiees|les sources vérifiées]
 vérifier » jusqu'à la relecture du chef.
 
 ## Journal
+- [[2026-11-19]] : naïf ou averti (datetime), versions PyPI
 - [[2026-11-18]] : overflow clip, pypdf 7.1.0
 
 - [[Finance/PEA Quotidien/apprentissage/code/2026-11-17|2026-11-17]] : versions Python et bibliothèques, ZoneInfo et tzdata

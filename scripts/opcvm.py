@@ -10,7 +10,6 @@ Information et apprentissage, pas un conseil en investissement.
 import json
 import math
 import sys
-from datetime import date
 from paris import aujourdhui  # noqa: E402
 from pathlib import Path
 
