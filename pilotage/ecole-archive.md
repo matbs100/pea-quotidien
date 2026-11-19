@@ -79,3 +79,17 @@ Devoirs et résultats anciens, déplacés depuis `ecole.md`.
 - 3 Lire : ✅ fiche AMF relue, chiffres exacts à la page 1.
 - 4 Euronext 9 h 04 (chef) : 🔁 reporté une deuxième fois (temps pris par le garde-fou de design).
 
+
+## Archive : Devoirs donnés le 2026-11-18 (pour la nuit du 19 novembre)
+1. **Lire (nuit).** Une étude sur la tendance (moyennes mobiles) en PDF **avec texte** (arXiv, SSRN ouvert ou revue) : fiche de lecture avec pages ; c'est la source primaire de l'idée n° 55.
+2. **Presse (nuit, petit).** Un article entier (pas une liste) d'une source autre que Boursorama : 2 chiffres attribués.
+3. **Nouveaux fonds (nuit, petit).** CEM ou EQQQ (un seul) : « éligible PEA » lu sur la page de l'émetteur, sinon « non éligible probable » ; une ligne dans `candidats.md`.
+4. **Réviser (chef).** Eurostat : l'inflation finale d'octobre 2026 (publiée le 18/11) égale-t-elle les 4,0 % affichés ?
+
+## Résultats du 2026-11-18 (devoirs du 2026-11-17)
+- 1 Presse : 🔁 à moitié (MoneyVox, un chiffre sur deux : titre seulement) ; redonné avec « un article entier ».
+- 2 Nouveaux fonds : ✅ MWRD « non éligible probable » (extraits tiers : ❔, ne pas afficher) ; CEM et EQQQ redonnés.
+- 3 Lire : 🔁 l'infographie AMF n'a pas de texte ; redonné avec un PDF contenant du texte.
+- 4 Réviser (chef) : ✅ 3 vérifications (transfert PEA, inflation 4,0 %, fiche AMF relue) ; la 3e entrée ⏳ ancienne reste.
+- Fiche de lecture AMF du 17/11 : ✅ relue (PDF illisible depuis le cloud, extrait de la page AMF).
+

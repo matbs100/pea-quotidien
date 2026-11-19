@@ -50,3 +50,4 @@ d'orchestre : une règle par ligne, datée, avec l'agent concerné et l'exemple 
 
 - (18/11, nuit) **Un devoir « lire » demande un PDF avec du texte** : une infographie (AMF, 4 pages) est presque vide ; ouvre-le d'abord, et prends-en un autre s'il n'a pas de paragraphes. Le chef ne peut lui-même relire qu'un PDF lisible depuis le cloud (la FAQ AMF s'y ouvre mal : confirme par la page web).
 - (18/11, nuit) **Une presse « une source » compte deux chiffres du corps d'un article**, pas un titre de liste ; sinon le devoir est 🔁.
+- (19/11, nuit) **Citer l'étude au mot près** : « la meilleure règle bat la détention » n'est pas « les règles battent la détention ». Exemple : note du signal de tendance corrigée par le chef.

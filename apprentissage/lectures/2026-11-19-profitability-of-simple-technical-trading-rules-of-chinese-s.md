@@ -6,7 +6,7 @@ url: https://arxiv.org/abs/1504.04254
 publie_le: 2015-04-15
 lu_le: 2026-11-19
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-19
 ---
 # 📄 Profitability of simple technical trading rules of Chinese stock exchange indexes
 
@@ -26,4 +26,4 @@ Des chercheurs de Shanghai testent 48 règles simples de moyennes mobiles et de 
 - Une note sous le signal technique : « avant frais, mieux que détenir ; après frais, plus » sur ces indices, avec lien et réserve « une seule étude » (idée n° 55, fait : D-20261119-1).
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- Chef, 2026-11-19 : PDF ouvert (12 pages, texte). ✅ Résumé et p. 9 fidèles (aucune règle ne passe le test à 0,3, 0,5 et 1 % de frais ; résumé : « profits éliminés »). 🔧 La note du site disait « les règles battent » : l'étude dit « la meilleure règle » (test WRC) ; corrigé sur le site. Rien de copié. Site arXiv : à ajouter à sources-verifiées si besoin.

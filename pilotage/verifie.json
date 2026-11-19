@@ -106,5 +106,11 @@
   "jour": "00a69cf",
   "preuve": "Sous-titre du bloc des taux reformulé pour ajouter l'inflation ; aucune information perdue, vérifié dans modele.html le 18/11.",
   "le": "2026-11-18"
+ },
+ {
+  "alerte": "data/presse/2026-11-19.md : hors du rôle de l'agent « nuit »",
+  "jour": "e9faa18",
+  "preuve": "git show e9faa18 relu le 19/11 : le fichier data/presse/2026-11-19.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 8 lignes, un article MoneyVox attribué à Proxinvest ; aucun code ni donnée de fiche touchés.",
+  "le": "2026-11-19"
  }
 ]

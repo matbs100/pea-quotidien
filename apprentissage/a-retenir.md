@@ -8,3 +8,4 @@ Ce que l'agent de nuit retient, une ligne par nuit (généré par `scripts/obsid
 - **16/11** : Un choc sur le prix de l'énergie peut maintenir l'inflation haute, et la banque centrale attend alors les données avant de bouger ses taux. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-16|journal]]
 - **17/11** : L'inflation se lit « sur un an » : 4,0 % veut dire que les prix sont 4 % plus hauts qu'il y a 12 mois, ce qui se compare au taux de dépôt de la BCE (2,50 %). → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-17|journal]]
 - **18/11** : Un signal de tendance doit se juger après frais, avec un délai réaliste d'exécution : sinon l'avantage apparent disparaît. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-18|journal]]
+- **19/11** : Tester beaucoup de règles finit toujours par en faire briller une : il faut corriger ce biais et compter les frais avant de croire à un gain. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-19|journal]]

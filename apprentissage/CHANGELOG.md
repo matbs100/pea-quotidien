@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-19 · Note d'étude du signal : « la meilleure règle » (Chef, D-20261119-2)
+La note sous le signal de tendance dit maintenant que la **meilleure règle testée** bat la détention avant frais (et non « les règles »), comme l'étude arXiv 1504.04254 (PDF relu par le chef). Aucun conseil.
+
 ## 2026-11-19 · Ce que dit une étude sur le signal de tendance (Nuit, D-20261119-1)
 Sous le signal technique de chaque fiche, une note cite une étude (Zhu et al., arXiv 1504.04254) : sur les indices de Shanghai et de Shenzhen (1991-2013), les moyennes mobiles battent la simple détention avant frais, mais plus après. La note précise que c'est une seule étude, sur des marchés chinois. Idée n° 55 ; aucun conseil. Test `aide_signal_etude_tendance`.
 

@@ -6,8 +6,9 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (18/11) **Idée n° 55** (efficacité du signal de tendance après frais) : trouve d'abord la **source primaire** (étude Zakamulin ou arXiv, PDF avec texte) et fais-en la fiche de lecture ; n'écris la phrase sur la fiche qu'avec elle. Ligne dans le tableau de `decisions.md`.
-- (18/11) **Presse** : 2 chiffres attribués d'une source entière autre que Boursorama (MoneyVox : lire un article, pas la liste ; sinon WebSearch `site:`).
+- (19/11) L'idée n° 55 est faite (D-20261119-1, relue et corrigée par le chef) : n'y touche plus. **Idée n° 61** : « estimation rapide » / « finale » sur la carte d'inflation (`taux.py`), avec test ; cherche d'abord la publication finale d'Eurostat du 18/11.
+- (19/11) **Presse** : 2 chiffres attribués d'une source entière **différente de MoneyVox** (essaie Zonebourse ou Capital par WebSearch `site:`).
+- (19/11) Cite une étude au mot près (« la meilleure règle », pas « les règles »).
 - (18/11) Idée n° 54 (source de l'inflation) est faite dans `taux.py` : ne la refais pas ; D-20261118-3 (`paris.py`) est fait par le chef.
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (identifiant `[D-…]` dans le commit) ; une nouveauté de CHANGELOG va **sous l'en-tête**.
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
@@ -29,11 +30,11 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 
 ## Pour l'agent design
 - (16/11, propriétaire) La tâche « effet verre dépoli » est faite (D-20261117-1) ; le défilement iPhone est corrigé côté Chromium (D-20261118-1), case ouverte jusqu'au retour du propriétaire : n'y touche plus.
-1. (18/11) **Étude de marché (a)** (GitHub, sites de suivi de PEA ou de bourse), jamais faite : relève 2 idées concrètes pour rendre une fiche plus claire, sans rien retirer.
+1. (18/11, n° 58) **Étude de marché (a)** (GitHub, sites de suivi de PEA ou de bourse), jamais faite : relève 2 idées concrètes pour rendre une fiche plus claire, sans rien retirer.
 2. (18/11) Note chiffrée de la page et lecture du graphique à **360 px** sur une fiche ETF avec historique (reportées 3 nuits).
 3. (13/11) Décision dans le **tableau** de `decisions.md`, identifiant tel quel (D-20261118-1) ; regarde les captures avant de pousser.
 
 ## Pour le vérificateur du code
-1. (18/11) Le test `date.today()` est fait (D-20261118-3) : vérifie qu'aucune autre date « du jour » sans fuseau ne traîne (`datetime.now()` nu, `time.localtime`).
+1. (19/11) Fuseaux vérifiés, merci. Écris dans ton journal la justification de `pypdf` (BSD, lit les DIC et les fiches de lecture) : dernière alerte du contrôle.
 2. (13/11) Un test node du seuil de glissement (120 px, geste rapide) de `modele.html` serait-il simple ?
-3. (18/11) Relire `scripts/paris.py` et la dépendance `pypdf` (à justifier dans un journal). Confidentialité : chaque jour.
+3. (19/11) Confidentialité : chaque jour.
