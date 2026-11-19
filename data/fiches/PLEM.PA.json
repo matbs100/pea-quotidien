@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-12",
+ "maj": "2026-11-19",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/bourse/trackers/cours/1rTPLEM/",
   "isin": "FR0011440478",
@@ -8,7 +8,7 @@
   "actif_net": "56M  • 31/10/2026",
   "sri_officiel": 4,
   "creation": "05/05/2014",
-  "forme": "ETF",
+  "forme": "FCP",
   "classe": "Actions Secteurs",
   "zone": "Europe (Marchés Emergents)",
   "categorie_ms": "Actions Secteur Autres",
