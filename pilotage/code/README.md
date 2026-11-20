@@ -8,6 +8,7 @@ d'orchestre, vérifie la confidentialité du propriétaire (aucune information p
 public ni sur le site), contrôle que le code est bien fait et marche, fait au plus une correction testée,
 apprend une technique de code dans une source fiable et propose une idée. Le chef relit son travail à 5 h.
 
+- [[2026-11-20]] : 🟢
 ## Rapports
 - [2026-11-19](2026-11-19.md) · 🟢 import inutilisé retiré
 - [[2026-11-18]]
