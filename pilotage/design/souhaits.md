@@ -55,7 +55,7 @@ projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). 
   téléphone, un glissement vers le bas depuis le haut de la fiche la ferme, sans fermeture par erreur pendant
   le défilement. Quand c'est fait : cocher la case avec la date et la décision `[D-…]`.
 
-- [ ] 2026-11-17 · **Toucher n'importe où sur une ligne ouvre la fiche détaillée** (action, ETF, fonds ; Top 30,
+- [x] 2026-11-17 · fait le 2026-11-20 [D-20261120-1] · **Toucher n'importe où sur une ligne ouvre la fiche détaillée** (action, ETF, fonds ; Top 30,
   30 valeurs connues, petites capitalisations, Mes investissements, cartes des marchés). Le propriétaire veut
   pouvoir toucher ou cliquer n'importe où sur le bloc d'un titre (nom, badges, prix, variations, RSI, score,
   signal, espaces vides) pour afficher ses informations. Constat du 17/11 (ordinateur) : tout le bloc ouvre

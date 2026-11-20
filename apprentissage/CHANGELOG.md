@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-20 · Toucher sur la pastille Risque ouvre la fiche (Design, D-20261120-1)
+
+Un toucher n'importe où sur une ligne, pastille « Risque » comprise, ouvre la fiche ; l'explication du risque y figure.
+
 ## 2026-11-19 · Note d'étude du signal : « la meilleure règle » (Chef, D-20261119-2)
 La note sous le signal de tendance dit maintenant que la **meilleure règle testée** bat la détention avant frais (et non « les règles »), comme l'étude arXiv 1504.04254 (PDF relu par le chef). Aucun conseil.
 

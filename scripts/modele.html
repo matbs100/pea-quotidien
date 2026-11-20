@@ -314,6 +314,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .sug .sug-p { font: 14px var(--font-mono); }
 .sug .sug-p small { color: var(--muted); font-size: 12px; margin-left: 6px; }
 .sug .rsq { margin-left: 6px; }
+.clic .rsq { cursor: pointer; }
 .sug p { margin: 0; font-size: 14px; }
 @media (max-width: 600px) { #suggestions { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .feuille, .voile { transition: none; } }
@@ -605,12 +606,12 @@ function risque(m) {
   const def = m.risque_officiel
     ? `Risque ${m.risque} sur 7 : indicateur officiel (SRI) du document d'informations clés. 1 = le plus faible, 7 = le plus élevé. Un risque faible ne garantit pas l'absence de perte.`
     : `Risque ${m.risque} sur 7, estimé par nos soins d'après la volatilité de l'action (méthode du SRI). 1 = le plus faible, 7 = le plus élevé. Ce n'est pas un chiffre officiel.`;
-  return `<span class="badge rsq" style="--rt:${140 - (m.risque - 1) * 22}" tabindex="0" role="button" data-r="${esc(def)}" aria-label="${esc(def)}">Risque ${m.risque}/7${m.risque_officiel ? "" : " (estimé)"}</span>`;
+  return `<span class="badge rsq" style="--rt:${140 - (m.risque - 1) * 22}" tabindex="0" role="button" title="${esc(def)}" data-r="${esc(def)}" aria-label="${esc(def)}">Risque ${m.risque}/7${m.risque_officiel ? "" : " (estimé)"}</span>`;
 }
 document.addEventListener("click", (e) => {
   let b = $("#bulle-r"), c = e.target.closest && e.target.closest(".rsq");
   if (b) b.remove();
-  if (!c || (b && b.dataset.s === c.dataset.r)) return;
+  if (!c || c.closest(".clic") || (b && b.dataset.s === c.dataset.r)) return; // dans une ligne : le toucher ouvre la fiche (l'explication y figure)
   e.stopPropagation();
   b = document.createElement("div"); b.id = "bulle-r"; b.dataset.s = c.dataset.r; b.textContent = c.dataset.r;
   document.body.appendChild(b);
@@ -1199,9 +1200,9 @@ function blocRisque(m, inf, st) {
   const vol = st.vol_5a != null && st.annees_hist >= 2 ? st.vol_5a : st.vol_1a;
   const srcDic = inf.dic_source ? ` Lu dans le DIC officiel du fonds (${inf.dic_source === "Fundsquare" ? "Fundsquare, Bourse de Luxembourg" : "site de l'émetteur, " + esc(inf.dic_source)}${inf.dic_date ? `, document du ${esc(inf.dic_date)}` : ""}${inf.dic_lu_le ? `, relu le ${jourCourt(inf.dic_lu_le)}` : ""}).${inf.sri_boursorama ? ` Boursorama affichait ${inf.sri_boursorama}/7.` : ""}` : "";
   const expl = off
-    ? `C'est l'indicateur synthétique de risque (SRI) du DIC, le document d'informations clés imposé par le règlement européen PRIIPs. Il va de 1 (risque le plus faible) à 7 (le plus élevé).${srcDic}${est ? ` Notre propre calcul, à partir de la volatilité, donne ${est}/7.` : ""}`
+    ? `C'est l'indicateur synthétique de risque (SRI) du DIC, le document d'informations clés imposé par le règlement européen PRIIPs. Il va de 1 (risque le plus faible) à 7 (le plus élevé). Un risque faible ne garantit pas l'absence de perte.${srcDic}${est ? ` Notre propre calcul, à partir de la volatilité, donne ${est}/7.` : ""}`
     : estFonds(m) ? `Le SRI officiel de ce fonds figure dans son DIC (lien plus bas). Ce niveau-ci est une estimation, calculée comme le volet « risque de marché » du SRI PRIIPs à partir de la volatilité de sa valeur liquidative sur ${st.sri_base} (${fr(vol, 1)} % par an). Seuils : moins de 0,5 % → 1 ; 5 % → 2 ; 12 % → 3 ; 20 % → 4 ; 30 % → 5 ; 80 % → 6 ; au-delà → 7.`
-    : `Une action n'a pas de DIC, donc pas de SRI officiel. Ce niveau est calculé comme le volet « risque de marché » du SRI PRIIPs, à partir de la volatilité sur ${st.sri_base} (${fr(vol, 1)} % par an). Seuils : moins de 0,5 % → 1 ; 5 % → 2 ; 12 % → 3 ; 20 % → 4 ; 30 % → 5 ; 80 % → 6 ; au-delà → 7.`;
+    : `Une action n'a pas de DIC, donc pas de SRI officiel. Ce niveau est calculé comme le volet « risque de marché » du SRI PRIIPs, à partir de la volatilité sur ${st.sri_base} (${fr(vol, 1)} % par an). Ce n'est pas un chiffre officiel. Seuils : moins de 0,5 % → 1 ; 5 % → 2 ; 12 % → 3 ; 20 % → 4 ; 30 % → 5 ; 80 % → 6 ; au-delà → 7.`;
   const pire = st.perte_max_5a != null ? st.perte_max_5a : st.perte_max_1a;
   const duree = st.perte_max_5a != null ? st.sri_base : "1 an";
   const concret = pire != null ? ` Concrètement, sur ${duree}, ce titre a perdu jusqu'à ${fr(Math.abs(pire), 0)} % depuis un sommet : ${fr(5 * Math.abs(pire), 0)} € sur 500 € placés au pire moment.` : "";

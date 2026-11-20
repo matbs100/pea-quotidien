@@ -774,6 +774,10 @@ def defilement_tactile_sur_les_lignes():
                 return pg.evaluate("scrollY") - y0
             centre, bord = glisser(195), glisser(4)
             assert centre > 100 and bord > 100, f"défilement tactile bloqué : centre {centre}, bord {bord}"
+            # souhait du 17/11 : un toucher sur la pastille « Risque » d'une ligne ouvre la fiche (pas de bulle)
+            pg.evaluate("document.querySelector('#top30 .ligne .rsq').scrollIntoView({block:'center'})"); pg.wait_for_timeout(600)
+            pg.locator("#top30 .ligne .rsq").first.tap(); pg.wait_for_timeout(500)
+            assert pg.locator("#feuille.ouvert").count() == 1 and pg.locator("#bulle-r").count() == 0, "la pastille Risque doit ouvrir la fiche"
             nav.close()
     except AssertionError:
         raise

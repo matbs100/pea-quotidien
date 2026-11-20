@@ -17,6 +17,8 @@ Une leçon par ligne, datée, 60 lignes au plus. Relue chaque nuit avant de trav
 
 - 2026-11-17 · Verre dépoli : base opaque, flou ≤ 14 px dans @supports, repli reduced-transparency ; l'effet est discret sans contenu dessous.
 
+- 2026-11-20 · Pastille Risque : toucher = fiche (D-20261120-1) ; une bulle au survol n'a pas d'équivalent tactile (NN/g). Reste à mesurer sa cible (24 px, WCAG 2.5.8).
+
 ## Ce qui a été annulé, et pourquoi
 
 ## Erreurs à ne plus refaire

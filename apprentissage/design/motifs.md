@@ -8,3 +8,4 @@ Bonnes idées vues ailleurs. Format : `- [ ] Nom · vu sur <lien> · problème r
 - [x] Une ligne de variation sans point orphelin · vu sur les cartes marchés (constat sur capture) · le « · » commence la 2e ligne sur téléphone · masquer le point en mobile · ✅ essayé le 2026-11-14
 - [ ] Bascule Tableau / Graphique pour les rendements · vu sur https://www.justetf.com/fr/etf-profile.html?isin=IE00B4L5Y983 · même donnée, deux lectures · bouton sur le bloc des variations d'une fiche · ⏳ à essayer
 - [x] Pas de chevauchement dans une ligne de tableau mobile · vu sur https://www.nngroup.com/articles/mobile-tables/ · colonnes illisibles · réduire les écarts et la taille aux petites largeurs · ✅ essayé le 2026-11-15
+- [ ] Cible tactile des pastilles ≥ 24 px · vu sur https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html · pastille Risque petite au doigt · agrandir sa zone par padding · ⏳ à essayer
