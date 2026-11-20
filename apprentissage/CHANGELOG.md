@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-20 · Inflation : date de mise à jour d'Eurostat sur la carte (Nuit, D-20261120-1)
+La carte d'inflation de la zone euro indique maintenant « chiffre mis à jour par Eurostat le 18 nov. 2026 », pour que le lecteur sache si la valeur a été revue. Eurostat ne dit pas « estimation rapide » ou « finale » dans ses données : seule la date est affichée, rien n'est supposé. Chiffre inchangé (octobre : 4,0 %). Idée n° 61 ; aucun conseil. Test `taux_bce` étendu.
+
 ## 2026-11-20 · Toucher sur la pastille Risque ouvre la fiche (Design, D-20261120-1)
 
 Un toucher n'importe où sur une ligne, pastille « Risque » comprise, ouvre la fiche ; l'explication du risque y figure.

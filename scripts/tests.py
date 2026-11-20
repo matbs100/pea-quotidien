@@ -872,6 +872,9 @@ def taux_bce():
     j = {"dimension": {"time": {"category": {"index": {"2026-08": 0, "2026-09": 1, "2026-10": 2}}}},
          "value": {"0": 3.2, "1": 3.8, "2": 4.0}}
     assert taux.lire_inflation(j) == {"mois": "2026-10", "taux": 4.0, "precedent": 3.8}
+    r = taux.lire_inflation({**j, "updated": "2026-11-18T11:00:00+0100"})  # date de mise à jour d'Eurostat gardée
+    assert r["maj"] == "2026-11-18" and taux.lire_inflation({**j, "updated": "n'importe quoi"}).get("maj") is None
+    assert "chiffre mis à jour par Eurostat" in modele
     assert taux.lire_inflation({"value": {}}) is None and taux.lire_inflation(None) is None
     assert taux.lire_inflation({"dimension": {"time": {"category": {"index": {}}}}, "value": {}}) is None
     assert "carteInflation(TX.inflation)" in modele and "inflation : Eurostat" in modele

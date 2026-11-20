@@ -66,6 +66,8 @@ l'agent de nuit y ajoute ses décisions provisoires. Le chef les résume dans `p
 | D-20261118-3 | 2026-11-18 | n° 56 (code, 15/11) · Une seule fonction « jour à Paris » (`scripts/paris.py`) à la place de `date.today()` dans dic, fiches, opcvm ; test qui interdit `date.today()` | Claude (chef) | 2,40 | 1 | 1 | — | correction | 2026-11-18 | 47/47 tests ; aucun `date.today()` dans `scripts/` | |
 | D-20261119-2 | 2026-11-19 | Note d'étude du signal : « la meilleure règle testée » (et non « les règles ») bat la détention avant frais, comme l'étude (arXiv 1504.04254, résumé et p. 9) | Claude (chef) | — | 1 | 1 | — | correction | 2026-11-19 | phrase égale à l'étude (PDF relu) ; test `aide_signal_etude_tendance` vert | |
 
+| D-20261120-1 | 2026-11-20 | n° 61 · Carte d'inflation : date de mise à jour du jeu Eurostat affichée ; Eurostat ne marque pas « rapide » ou « finale », aucune étiquette inventée | Claude (nuit) | 3,25 | 1 | 1 | 4,5 | provisoire (nuit ; priorité de consignes.md) | 2026-11-20 | date affichée égale au champ `updated` d'Eurostat (18/11), chiffre inchangé, aucun conseil ; test `taux_bce` | |
+
 ## D-20261114-1 · Cartes des marchés : plus de point orphelin sur téléphone (provisoire (design))
 Grille de décision : gain de clarté faible mais sûr, risque nul (aucun texte retiré, seul le séparateur « · » est masqué sous 600 px), coût 4 lignes. Indicateur : la ligne « 1 mois … » commence sans « · » sur chaque carte à 390 px.
 - D-20261115-1 · 2026-11-15 · Top 30 : variations sans chevauchement à 360 px · **provisoire (design)** · indicateur : 0 ligne sur 30 avec chevauchement à 320, 360 et 390 px (était 25/30 à 360 px) · réalisée 2026-11-15

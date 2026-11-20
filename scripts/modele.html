@@ -814,7 +814,7 @@ const MOIS_LONGS = ["janvier", "février", "mars", "avril", "mai", "juin", "juil
 function carteInflation(i) {  // inflation de la zone euro (Eurostat), pour situer le taux de dépôt
   if (!i || typeof i.taux !== "number" || !/^\d{4}-\d{2}$/.test(i.mois || "")) return "";
   const evol = typeof i.precedent === "number" ? ` (mois d'avant : ${fr(i.precedent)} %)` : "";
-  return `<div class="card"><div class="val num">${fr(i.taux)} %</div><em>Inflation, zone euro · sur un an, ${MOIS_LONGS[+i.mois.slice(5) - 1]} ${i.mois.slice(0, 4)}${esc(evol)}</em></div>`;
+  return `<div class="card"><div class="val num">${fr(i.taux)} %</div><em>Inflation, zone euro · sur un an, ${MOIS_LONGS[+i.mois.slice(5) - 1]} ${i.mois.slice(0, 4)}${esc(evol)}${/^\d{4}-\d{2}-\d{2}$/.test(i.maj || "") ? esc(" · chiffre mis à jour par Eurostat le " + jourCourt(i.maj)) : ""}</em></div>`;
 }
 const cartesTaux = [carteTaux("Taux de dépôt", TX.depot), carteTaux("Refinancement", TX.refinancement), carteTaux("Prêt marginal", TX.pret_marginal), carteInflation(TX.inflation)].join("");
 if (cartesTaux) {

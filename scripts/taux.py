@@ -8,6 +8,7 @@ Information et apprentissage, pas un conseil en investissement.
 import csv
 import io
 import json
+import re
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -53,7 +54,11 @@ def lire_inflation(donnees):
         return None
     if not pts:
         return None
-    return {"mois": pts[-1][0], "taux": pts[-1][1], "precedent": pts[-2][1] if len(pts) > 1 else None}
+    res = {"mois": pts[-1][0], "taux": pts[-1][1], "precedent": pts[-2][1] if len(pts) > 1 else None}
+    maj = donnees.get("updated")  # date de mise à jour du jeu de données (ex. « 2026-11-18T11:00:00+0100 »)
+    if isinstance(maj, str) and re.match(r"\d{4}-\d{2}-\d{2}", maj):
+        res["maj"] = maj[:10]  # Eurostat ne marque pas « rapide » ou « finale » : on donne seulement la date
+    return res
 
 
 def charger_cache():
