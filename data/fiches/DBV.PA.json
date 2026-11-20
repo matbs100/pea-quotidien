@@ -1,15 +1,15 @@
 {
- "maj": "2026-11-13",
+ "maj": "2026-11-20",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/cours/1rPDBV/",
   "isin": "FR0010417345",
   "pea_bourso": true,
   "secteur": "Produits biopharmaceutiques",
   "indice": "SBF 120",
-  "valorisation": "618 MEUR",
+  "valorisation": "538 MEUR",
   "per_annee": "2026",
   "nb_titres": "314 388 807",
-  "capitalisation": "618,40 MEUR",
+  "capitalisation": "537,60 MEUR",
   "marche": "Compartiment B",
   "site": "https://www.dbv-technologies.com/",
   "pays": "France"

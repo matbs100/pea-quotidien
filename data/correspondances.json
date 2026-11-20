@@ -2,9 +2,7 @@
  "^FCHI": {
   "boursorama": "1rPCAC",
   "ft": "CAC:PAR",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "^STOXX50E": {
   "boursorama": "2cSX5E",
@@ -104,9 +102,7 @@
  "RACE.MI": {
   "boursorama": "1gRACE",
   "ft": "RACE:MIL",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "ITX.MC": {
   "boursorama": "FF55-ITX",
@@ -151,16 +147,12 @@
  "AI.PA": {
   "boursorama": "1rPAI",
   "ft": "AI:PAR",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "ERF.PA": {
   "boursorama": "1rPERF",
   "ft": "ERF:PAR",
-  "echecs": {
-   "boursorama": 2
-  }
+  "echecs": {}
  },
  "PHIA.AS": {
   "boursorama": "1rAPHIA",
@@ -262,9 +254,7 @@
  "ALNOV.PA": {
   "boursorama": "1rPALNOV",
   "ft": "ALNOV:PAR",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "ALCJ.PA": {
   "boursorama": "1rPALCJ",
@@ -370,7 +360,9 @@
  "BIM.PA": {
   "boursorama": "1rPBIM",
   "ft": "BIM:PAR",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "HLT.PA": {
   "boursorama": "1rTHLT",
@@ -401,7 +393,7 @@
   "boursorama": "1rTINS",
   "ft": "INS:PAR:EUR",
   "echecs": {
-   "boursorama": 1
+   "boursorama": 2
   }
  },
  "RCO.PA": {
@@ -437,9 +429,7 @@
  "PINR.PA": {
   "boursorama": "1rTPINR",
   "ft": "PINR:PAR:EUR",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "TRV.PA": {
   "boursorama": "1rTTRV",
@@ -514,9 +504,7 @@
  "AMUN.PA": {
   "boursorama": "1rPAMUN",
   "ft": "AMUN:PAR",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "SAB.MC": {
   "boursorama": "FF55-SAB",
@@ -533,9 +521,7 @@
  "BN.PA": {
   "boursorama": "1rPBN",
   "ft": "BN:PAR",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "ETE.AT": {
   "boursorama": null,
@@ -622,9 +608,7 @@
  "BNP.PA": {
   "boursorama": "1rPBNP",
   "ft": "BNP:PAR",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "ASML.AS": {
   "boursorama": "1rAASML",
@@ -706,6 +690,16 @@
  "SK.PA": {
   "boursorama": "1rPSK",
   "ft": "SK:PAR",
+  "echecs": {}
+ },
+ "INGA.AS": {
+  "boursorama": "1rAINGA",
+  "ft": "INGA:AEX",
+  "echecs": {}
+ },
+ "VK.PA": {
+  "boursorama": "1rPVK",
+  "ft": "VK:PAR",
   "echecs": {}
  }
 }
