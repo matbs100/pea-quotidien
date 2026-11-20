@@ -893,6 +893,7 @@ def bloc_fiscalite_pea():
     assert "pas un conseil" in bloc and "rel=\"noopener noreferrer\"" in bloc
     assert 'id="fisc-exceptions"' in bloc and "licenciement" in bloc and "invalidité" in bloc and "mise à la retraite" in bloc
     assert 'id="fisc-transfert"' in bloc and "n'est pas un retrait" in bloc and "amf-france.org" in bloc
+    assert 'id="fisc-delai"' in bloc and "80 %" in bloc and "aucun délai n'est garanti" in bloc and "Rapport_GT_PEA_2023.pdf" in bloc
 
 
 @test

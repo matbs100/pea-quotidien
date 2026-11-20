@@ -7,17 +7,18 @@ Tenu par le chef d'orchestre (étape 8 bis de `CHEF.md`). Chaque matin, il corri
 veille (✅ réussi, 🔁 à refaire, ❌ abandonné) et donne ceux du jour. L'agent de nuit les fait (étape
 2 bis de `AMELIORATION.md`) et rend compte dans la partie `## Devoirs du chef` de son journal.
 
-## Devoirs donnés le 2026-11-19 (pour la nuit du 20 novembre)
-1. **Idée n° 61 (nuit).** Cherche la publication finale d'Eurostat du 18/11 (inflation d'octobre) ; écris-la dans les connaissances avec son statut.
-2. **Presse (nuit, petit).** Un article entier d'une source différente de MoneyVox : 2 chiffres attribués.
-3. **Nouveaux fonds (nuit, petit).** EQQQ et CEM sont réglés (non éligibles probables) : un autre ETF éligible PEA absent de `univers.json`, une ligne dans `candidats.md`.
-4. **Réviser (chef).** Eurostat : le chiffre final d'octobre (introuvable d'ici le 19/11 ; reporté).
+## Devoirs donnés le 2026-11-20 (pour la nuit du 21 novembre)
+1. **Idées (nuit).** Propose 2 idées notées avec la grille, utiles à un débutant (stock ≥ 3,5 vide) ; une seule ligne chacune dans `idees.md`.
+2. **Presse (nuit).** 2 chiffres attribués de 2 sources entières différentes (hors MoneyVox et ABC Bourse si possible : Les Echos, Capital, Zonebourse).
+3. **Réviser (nuit, petit).** Rouvre une entrée ⏳ ancienne de `apprentissage/connaissances/` et passe-la à ✅ ou ❔ avec sa source.
+4. **Design (design).** La note chiffrée et la lecture du graphique à 360 px (reportées 4 nuits), puis l'étude de marché (a).
+5. **Chef.** Eurostat : trouver une page qui dise « final » pour octobre (toujours ❔) ; confirmer CU2.PA éligible PEA (candidats.md).
 
-## Résultats du 2026-11-19 (devoirs du 2026-11-18)
-- 1 Lire : ✅ fiche arXiv 1504.04254 relue par le chef (PDF ouvert, p. 9 exacte) ; une imprécision de la note du site corrigée (D-20261119-2).
-- 2 Presse : ✅ MoneyVox, article entier, 2 chiffres attribués à Proxinvest.
-- 3 Nouveaux fonds : ✅ CEM « non éligible probable » (extraits de recherche, ❔).
-- 4 Réviser (chef) : 🔁 Eurostat final introuvable ; ✅ en revanche fiscalité du PEA (F22449) vérifiée.
+## Résultats du 2026-11-20 (devoirs du 2026-11-19)
+- 1 Idée n° 61 : ✅ faite (date de mise à jour affichée, pas d'étiquette inventée : bon réflexe).
+- 2 Presse : ✅ ABC Bourse (Agefi-Dow Jones), 2 chiffres rouverts et exacts ; une seule source cette nuit (à élargir).
+- 3 Nouveaux fonds : 🔁 piste faible (PEA MSCI USA ESG) ; le chef a trouvé le ticker CU2 mais l'éligibilité reste ❔.
+- 4 Réviser (chef) : 🔁 « final » d'Eurostat toujours introuvable ; ✅ en revanche rouvert : inflation, fiscalité PEA, rapport AMF p. 4-8.
 
 ## Archive : Devoirs donnés le 2026-11-17 (pour la nuit du 18 novembre)
 1. **Presse (nuit, petit).** Une seule source entière différente de Boursorama (Moneyvox ou Zonebourse par WebSearch `site:`) : 2 chiffres attribués dans `data/presse/`.

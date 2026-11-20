@@ -6,7 +6,7 @@ url: https://www.amf-france.org/sites/institutionnel/files/private/2023-07/Rappo
 publie_le: 2023-04-01
 lu_le: 2026-11-20
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-20
 ---
 # 📄 Rapport du groupe de travail sur le plan d'épargne en actions (PEA)
 
@@ -35,4 +35,4 @@ l'échantillon de délais ne couvre que de grands teneurs de compte.
 - Une ligne dans le bloc fiscalité sur le délai habituel d'un transfert : idée n° 64 (idees.md). Rien d'autre pour la fiche.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- 2026-11-20 : PDF ouvert (36 pages, texte lisible). Les 5 chiffres sont exacts et à la bonne page (p. 4, 5, 6, 8) ; le résumé est reformulé, rien n'est copié. Seul écart : la date de publication de l'en-tête (avril 2023) n'est pas lue dans les pages vérifiées (l'adresse du fichier indique juillet 2023) : sans conséquence.

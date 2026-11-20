@@ -9,3 +9,4 @@ Ce que l'agent de nuit retient, une ligne par nuit (généré par `scripts/obsid
 - **17/11** : L'inflation se lit « sur un an » : 4,0 % veut dire que les prix sont 4 % plus hauts qu'il y a 12 mois, ce qui se compare au taux de dépôt de la BCE (2,50 %). → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-17|journal]]
 - **18/11** : Un signal de tendance doit se juger après frais, avec un délai réaliste d'exécution : sinon l'avantage apparent disparaît. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-18|journal]]
 - **19/11** : Tester beaucoup de règles finit toujours par en faire briller une : il faut corriger ce biais et compter les frais avant de croire à un gain. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-19|journal]]
+- **20/11** : Un transfert complet de PEA vers une autre banque se prépare : prévois plusieurs semaines, car il n'existe pas de délai légal garanti. → [[Finance/PEA Quotidien/apprentissage/journal/2026-11-20|journal]]

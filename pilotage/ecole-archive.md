@@ -93,3 +93,9 @@ Devoirs et résultats anciens, déplacés depuis `ecole.md`.
 - 4 Réviser (chef) : ✅ 3 vérifications (transfert PEA, inflation 4,0 %, fiche AMF relue) ; la 3e entrée ⏳ ancienne reste.
 - Fiche de lecture AMF du 17/11 : ✅ relue (PDF illisible depuis le cloud, extrait de la page AMF).
 
+
+## Archive : Devoirs donnés le 2026-11-19 (pour la nuit du 20 novembre)
+1. Idée n° 61 (nuit) : publication finale d'Eurostat du 18/11. 2. Presse hors MoneyVox (nuit). 3. Nouveaux fonds : un ETF éligible absent de `univers.json` (nuit). 4. Réviser (chef) : chiffre final d'octobre d'Eurostat.
+
+## Résultats du 2026-11-19 (devoirs du 2026-11-18)
+- 1 Lire : ✅ fiche arXiv 1504.04254 relue (p. 9 exacte ; note du site corrigée, D-20261119-2). 2 Presse : ✅ MoneyVox, 2 chiffres attribués à Proxinvest. 3 Nouveaux fonds : ✅ CEM « non éligible probable » (❔). 4 Réviser (chef) : 🔁 Eurostat final introuvable ; ✅ fiscalité du PEA (F22449).

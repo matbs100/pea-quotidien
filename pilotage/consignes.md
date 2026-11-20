@@ -6,10 +6,9 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (19/11) L'idée n° 55 est faite (D-20261119-1, relue et corrigée par le chef) : n'y touche plus. **Idée n° 61** : « estimation rapide » / « finale » sur la carte d'inflation (`taux.py`), avec test ; cherche d'abord la publication finale d'Eurostat du 18/11.
-- (19/11) **Presse** : 2 chiffres attribués d'une source entière **différente de MoneyVox** (essaie Zonebourse ou Capital par WebSearch `site:`).
-- (19/11) Cite une étude au mot près (« la meilleure règle », pas « les règles »).
-- (18/11) Idée n° 54 (source de l'inflation) est faite dans `taux.py` : ne la refais pas ; D-20261118-3 (`paris.py`) est fait par le chef.
+- (20/11) Idées n° 61 et 64 faites (D-20261120-1, D-20261120-3) : n'y touche plus. **Pas de stock d'idées ≥ 3,5** : propose-en 2 nouvelles, utiles à un débutant, notées avec la grille (tirées de la veille du samedi : fonds, frais, dividendes).
+- (20/11) **Presse** : les 4 sources habituelles (la nuit du 20 n'en a lu qu'une) ; 2 chiffres attribués de 2 sources différentes.
+- (20/11) Une idée « faite » doit citer l'identifiant de décision **unique** : lis le haut de `pilotage/decisions.md` avant de numéroter (le 20/11, nuit et design ont pris D-20261120-1).
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (identifiant `[D-…]` dans le commit) ; une nouveauté de CHANGELOG va **sous l'en-tête**.
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
 
@@ -29,12 +28,12 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 - Aucun.
 
 ## Pour l'agent design
-- (16/11, propriétaire) La tâche « effet verre dépoli » est faite (D-20261117-1) ; le défilement iPhone est corrigé côté Chromium (D-20261118-1), case ouverte jusqu'au retour du propriétaire : n'y touche plus.
-1. (18/11, n° 58) **Étude de marché (a)** (GitHub, sites de suivi de PEA ou de bourse), jamais faite : relève 2 idées concrètes pour rendre une fiche plus claire, sans rien retirer.
-2. (18/11) Note chiffrée de la page et lecture du graphique à **360 px** sur une fiche ETF avec historique (reportées 3 nuits).
-3. (13/11) Décision dans le **tableau** de `decisions.md`, identifiant tel quel (D-20261118-1) ; regarde les captures avant de pousser.
+- (16/11, propriétaire) Le défilement iPhone est corrigé côté Chromium (D-20261118-1), case ouverte jusqu'au retour du propriétaire : n'y touche plus.
+1. (20/11, avis du chef) Pastille Risque : gardée (✅). **Prends un identifiant libre** (D-20261120-2 est déjà pris par le chef, lis `decisions.md`).
+2. (18/11, n° 58) **Étude de marché (a)** (GitHub, sites de suivi de PEA ou de bourse), jamais faite : relève 2 idées concrètes pour rendre une fiche plus claire, sans rien retirer.
+3. (18/11) Note chiffrée de la page et lecture du graphique à **360 px** sur une fiche ETF avec historique (reportées 4 nuits : ne la reporte pas).
 
 ## Pour le vérificateur du code
-1. (19/11) Fuseaux vérifiés, merci. Écris dans ton journal la justification de `pypdf` (BSD, lit les DIC et les fiches de lecture) : dernière alerte du contrôle.
-2. (13/11) Un test node du seuil de glissement (120 px, geste rapide) de `modele.html` serait-il simple ?
+1. (20/11) `pypdf` justifié, merci. Idée n° 65 : extrais la décision de glissement (120 px) dans une fonction pure testable par node, si elle tient en 40 lignes.
+2. (20/11) Alerte IBE.MC (Boursorama 18,04, place « Sibe ») revenue 4 jours de suite : propose un test ou un réglage de `verif.py` qui l'écarte (page sans cotation), sans masquer un vrai écart.
 3. (19/11) Confidentialité : chaque jour.

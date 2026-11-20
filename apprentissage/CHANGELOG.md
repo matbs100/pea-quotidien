@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-20 · Transfert de PEA : un délai à prévoir (Chef, D-20261120-3)
+Le bloc fiscalité ajoute une phrase : dans l'échantillon de grands teneurs de compte du rapport de l'AMF (2023, p. 8), 80 % des transferts de PEA étaient faits en moins d'un mois, mais aucun délai n'est garanti. Information, pas un conseil.
+
 ## 2026-11-20 · Inflation : date de mise à jour d'Eurostat sur la carte (Nuit, D-20261120-1)
 La carte d'inflation de la zone euro indique maintenant « chiffre mis à jour par Eurostat le 18 nov. 2026 », pour que le lecteur sache si la valeur a été revue. Eurostat ne dit pas « estimation rapide » ou « finale » dans ses données : seule la date est affichée, rien n'est supposé. Chiffre inchangé (octobre : 4,0 %). Idée n° 61 ; aucun conseil. Test `taux_bce` étendu.
 

@@ -112,5 +112,41 @@
   "jour": "e9faa18",
   "preuve": "git show e9faa18 relu le 19/11 : le fichier data/presse/2026-11-19.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 8 lignes, un article MoneyVox attribué à Proxinvest ; aucun code ni donnée de fiche touchés.",
   "le": "2026-11-19"
+ },
+ {
+  "alerte": "IBE.MC : 22.59 dans la fiche, 18.04 sur Boursorama",
+  "jour": "2026-11-19",
+  "preuve": "Champ sources de la fiche du 19/11 : Yahoo 22,59 et FT 22,59 (deux sources indépendantes d'accord). Recherche du 20/11 : Debelegger affiche Xetra à 22,78 € le 17/11 (Madrid ≈ 22,8) et DailyForex ≈ 22,11 € début novembre ; le 18,04 de la page Boursorama (place « Sibe ») est le même chiffre figé depuis le 14/11 : page non fiable.",
+  "le": "2026-11-20"
+ },
+ {
+  "alerte": "^IXIC : 24355.55 dans la fiche, 23879.2 sur Boursorama",
+  "jour": "2026-11-19",
+  "preuve": "Fiche du 19/11 : prix de référence 24521,1 (Boursorama) confirmé par FT 24523,26 (écart 0,01 %) ; Yahoo 24355,55 était un cours en séance (écart 0,68 %). Le 23879,2 lu ce matin est une séance postérieure à la fiche, pas une erreur de la fiche.",
+  "le": "2026-11-20"
+ },
+ {
+  "alerte": "data/presse/2026-11-20.md : hors du rôle de l'agent « nuit »",
+  "jour": "8a47d22",
+  "preuve": "git show 8a47d22 relu le 20/11 : data/presse/2026-11-20.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 9 lignes, un article ABC Bourse rouvert par le chef (4,0 %, 3,8 %, énergie 20,8 %, attentes WSJ) ; aucun code touché.",
+  "le": "2026-11-20"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle de l'agent « nuit »",
+  "jour": "8a47d22",
+  "preuve": "git show 8a47d22 relu le 20/11 : taux_bce.json régénéré par le rendu (champ « maj » 2026-11-18 ajouté pour D-20261120-1, relevé 2026-11-20) ; chiffres inchangés, aucun commit de donnée de fiche.",
+  "le": "2026-11-20"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle de l'agent « design »",
+  "jour": "6d52a6f",
+  "preuve": "git show 6d52a6f relu le 20/11 : seul le champ « releve » passe de 2026-11-19 à 2026-11-20 (rendu automatique, trois occurrences) ; aucun taux modifié.",
+  "le": "2026-11-20"
+ },
+ {
+  "alerte": "scripts/tests.py : hors du rôle de l'agent « design »",
+  "jour": "6d52a6f",
+  "preuve": "git show 6d52a6f relu le 20/11 : 4 lignes ajoutées au test tactile existant (la pastille Risque ouvre la fiche), prévues pour D-20261120-2 ; 48/48 tests verts.",
+  "le": "2026-11-20"
  }
 ]

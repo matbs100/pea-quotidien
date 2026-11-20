@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-19T12:35+01:00",
- "fiche": "2026-11-19 (ouverture)",
+ "genere_le": "2026-11-20T05:16+01:00",
+ "fiche": "2026-11-19 (cloture)",
  "lieu": "cloud",
- "etat": "orange",
- "resume": "À surveiller. 48/48 tests, 31/32 liens valides, site à jour. Points à voir : cohérence des données, liens des fiches détaillées, méthode de décision.",
+ "etat": "vert",
+ "resume": "Tout est en ordre. 48/48 tests, 7/7 prix revérifiés, 30/30 liens valides, site à jour.",
  "controles": [
   {
    "nom": "tests",
@@ -12,7 +12,7 @@
    "resume": "48/48 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf",
-    "• Playwright absent : glissement tactile non exécuté"
+    "• glissement tactile non exécuté : BrowserType.launch: Executable doesn't exist at /opt/pw-browsers/chromium_headle"
    ]
   },
   {
@@ -21,64 +21,53 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-19 (ouverture), générée le 2026-11-19T09:19+01:00",
-    "fiche attendue à cette heure : 2026-11-19 (ouverture)"
+    "dernière fiche : 2026-11-19 (cloture), générée le 2026-11-19T17:59+01:00",
+    "fiche attendue à cette heure : 2026-11-19 (cloture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "alerte",
-   "resume": "59 cours examinés, 0 problème(s), 11 alerte(s) ; entre sources : 66 confirmés, 4 écart(s)",
-   "details": [
-    "HLT.PA : cours daté du 2026-11-17, pas du 2026-11-19",
-    "EUROB.AT : cours daté du 2026-11-17, pas du 2026-11-19",
-    "INS.PA : cours daté du 2026-11-17, pas du 2026-11-19",
-    "FOO.PA : cours daté du 2026-11-17, pas du 2026-11-19",
-    "UTI.PA : cours daté du 2026-11-17, pas du 2026-11-19",
-    "CD8.PA : cours daté du 2026-11-17, pas du 2026-11-19",
-    "PINR.PA : cours daté du 2026-11-17, pas du 2026-11-19",
-    "PLEM.PA : cours daté du 2026-11-17, pas du 2026-11-19",
-    "ETZ.PA : cours daté du 2026-11-17, pas du 2026-11-19",
-    "ALAGO.PA : cours daté du 2026-11-17, pas du 2026-11-19",
-    "4 écarts entre sources : EUROB.AT, IBE.MC, PLEM.PA, PUST.PA"
-   ]
+   "niveau": "ok",
+   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 75 confirmés, 1 écart(s)",
+   "details": []
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "331 mots, 0 remarque(s)",
+   "resume": "323 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-19 (ouverture)",
+   "resume": "régénérée avec la fiche du 2026-11-19 (cloture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "non_verifiable",
-   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
-   "details": []
+   "niveau": "ok",
+   "resume": "7/7 prix identiques sur Boursorama (1 écart(s) vérifié(s))",
+   "details": [
+    "✔ vérifié par le chef le 2026-11-20 : ^IXIC : 24355.55 dans la fiche, 23879.2 sur Boursorama — Fiche du 19/11 : prix de référence 24521,1 (Boursorama) confirmé par FT 24523,26 (écart 0,01 %) ; Yahoo 24355,55 était un cours en séance (écart 0,68 %). Le 23879,2 lu ce matin est une séance postérieure à la fiche, pas une erreur de la fiche.",
+    "illisibles : IBE.MC"
+   ]
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
-   "niveau": "alerte",
-   "resume": "31/32 liens valides sur 8 titres, 7 non ouverts (robots.txt), 1 injoignables d'ici",
-   "details": [
-    "DIM.PA · Boursorama : réponse 429 (https://www.boursorama.com/cours/1rPDIM/)"
-   ]
+   "niveau": "ok",
+   "resume": "30/30 liens valides sur 8 titres, 8 non ouverts (robots.txt)",
+   "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-19 (ouverture)",
+   "resume": "le site affiche la fiche du 2026-11-19 (cloture)",
    "details": []
   },
   {
@@ -88,54 +77,56 @@
    "resume": "tout est documenté et rangé",
    "details": [
     "41 connaissance(s) en attente de vérification (⏳)",
-    "5 connaissance(s) non vérifiable(s) (❔)"
+    "6 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
   {
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "11 commit(s), 0 problème(s), 0 alerte(s) ; 1 vérifiée(s) par le chef",
+   "resume": "10 commit(s), 0 problème(s), 0 alerte(s) ; 5 vérifiée(s) par le chef",
    "details": [
+    "✔ vérifié par le chef le 2026-11-20 : 8a47d22 « Amélioration : date de mise à jour d'Eurostat sur  » : data/presse/2026-11-20.md : hors du rôle de l'agent « nuit » — git show 8a47d22 relu le 20/11 : data/presse/2026-11-20.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 9 lignes, un article ABC Bourse rouvert par le chef (4,0 %, 3,8 %, énergie 20,8 %, attentes WSJ) ; aucun code touché.",
+    "✔ vérifié par le chef le 2026-11-20 : 8a47d22 « Amélioration : date de mise à jour d'Eurostat sur  » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 8a47d22 relu le 20/11 : taux_bce.json régénéré par le rendu (champ « maj » 2026-11-18 ajouté pour D-20261120-1, relevé 2026-11-20) ; chiffres inchangés, aucun commit de donnée de fiche.",
+    "✔ vérifié par le chef le 2026-11-20 : 6d52a6f « Design : la pastille Risque ouvre la fiche au touc » : data/taux_bce.json : hors du rôle de l'agent « design » — git show 6d52a6f relu le 20/11 : seul le champ « releve » passe de 2026-11-19 à 2026-11-20 (rendu automatique, trois occurrences) ; aucun taux modifié.",
+    "✔ vérifié par le chef le 2026-11-20 : 6d52a6f « Design : la pastille Risque ouvre la fiche au touc » : scripts/tests.py : hors du rôle de l'agent « design » — git show 6d52a6f relu le 20/11 : 4 lignes ajoutées au test tactile existant (la pastille Risque ouvre la fiche), prévues pour D-20261120-2 ; 48/48 tests verts.",
     "✔ vérifié par le chef le 2026-11-19 : e9faa18 « Amélioration : note d'étude sous le signal de tend » : data/presse/2026-11-19.md : hors du rôle de l'agent « nuit » — git show e9faa18 relu le 19/11 : le fichier data/presse/2026-11-19.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 8 lignes, un article MoneyVox attribué à Proxinvest ; aucun code ni donnée de fiche touchés.",
+    "0a59de2 [code] Code : rapport du 2026-11-20 (vert)",
+    "8a47d22 [nuit] Amélioration : date de mise à jour d'Eurostat sur la carte d'inflation",
+    "6d52a6f [design] Design : la pastille Risque ouvre la fiche au toucher [D-20261120-1]",
+    "0ff028b [fiche] Matin PEA 2026-11-19 (cloture)",
+    "cf2fe26 [chef] Chef : passage de mi-journée du 2026-11-19 (orange)",
     "657aca6 [fiche] Matin PEA 2026-11-19 (ouverture)",
     "23a3ed3 [chef] Chef : rapport du 2026-11-19 (vert) ; note d'étude « la meilleure règl",
     "f8d05f6 [code] Code : rapport du 2026-11-19 (vert) ; import inutilisé retiré [correct",
     "e9faa18 [nuit] Amélioration : note d'étude sous le signal de tendance [D-20261119-1]",
-    "f637136 [design] Design : passage interrompu, DESIGN.md sans version antérieure fiable",
-    "1184a02 [fiche] Matin PEA 2026-11-18 (cloture) : notification à renvoyer",
-    "af181c5 [fiche] Matin PEA 2026-11-18 (cloture)",
-    "0bc3979 [autre] défilement au doigt confirmé sur iPhone [D-20261118-1]",
-    "dc7c5e6 [chef] Chef : passage de mi-journée du 2026-11-18 (orange)",
-    "0d2931f [fiche] Matin PEA 2026-11-18 (ouverture) : notification à renvoyer",
-    "0cdbf81 [fiche] Matin PEA 2026-11-18 (ouverture)"
+    "f637136 [design] Design : passage interrompu, DESIGN.md sans version antérieure fiable"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
    "niveau": "ok",
-   "resume": "2 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
+   "resume": "4 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
    "details": [
     "e9faa18 « Amélioration : note d'étude sous le signal de tend » : rien de retiré",
-    "23a3ed3 « Chef : rapport du 2026-11-19 (vert) ; note d'étude » : rien de retiré"
+    "23a3ed3 « Chef : rapport du 2026-11-19 (vert) ; note d'étude » : rien de retiré",
+    "6d52a6f « Design : la pastille Risque ouvre la fiche au touc » : rien de retiré",
+    "8a47d22 « Amélioration : date de mise à jour d'Eurostat sur  » : rien de retiré"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "alerte",
-   "resume": "48 décisions, 5 à réaliser, 2 point(s) à voir",
-   "details": [
-    "bilan à faire : D-20261116-2 (n° 7 (2e partie) · Comparer deux titres : le titre)",
-    "bilan à faire : D-20261116-1 (Graphique de fiche : devise (« Prix en EUR · axe d)"
-   ]
+   "niveau": "ok",
+   "resume": "51 décisions, 5 à réaliser, 0 point(s) à voir",
+   "details": []
   },
   {
    "nom": "lectures",
    "titre": "Lectures des agents (PDF de sources vérifiées)",
    "niveau": "ok",
-   "resume": "11 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
+   "resume": "12 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
    "details": []
   },
   {
