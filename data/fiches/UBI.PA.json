@@ -1,16 +1,16 @@
 {
- "maj": "2026-11-06",
+ "maj": "2026-11-20",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/cours/1rPUBI/",
   "isin": "FR0000054470",
   "pea_bourso": true,
   "secteur": "Logiciels et conseils",
   "indice": "SBF 120",
-  "valorisation": "617 MEUR",
+  "valorisation": "445 MEUR",
   "per_annee": "2026",
   "effectif": "16 590",
   "nb_titres": "139 028 294",
-  "capitalisation": "616,73 MEUR",
+  "capitalisation": "437,80 MEUR",
   "marche": "Compartiment B",
   "site": "https://www.ubisoft.com/fr-fr/company/about-us/investors",
   "pays": "France"

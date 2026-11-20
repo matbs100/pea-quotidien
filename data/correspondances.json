@@ -360,9 +360,7 @@
  "BIM.PA": {
   "boursorama": "1rPBIM",
   "ft": "BIM:PAR",
-  "echecs": {
-   "boursorama": 2
-  }
+  "echecs": {}
  },
  "HLT.PA": {
   "boursorama": "1rTHLT",
@@ -698,6 +696,21 @@
  "VK.PA": {
   "boursorama": "1rPVK",
   "ft": "VK:PAR",
+  "echecs": {}
+ },
+ "EXA.PA": {
+  "boursorama": "1rPEXA",
+  "ft": "EXA:PAR",
+  "echecs": {}
+ },
+ "ALVDM.PA": {
+  "boursorama": "1rPALVDM",
+  "ft": "ALVDM:PAR",
+  "echecs": {}
+ },
+ "UBI.PA": {
+  "boursorama": "1rPUBI",
+  "ft": "UBI:PAR",
   "echecs": {}
  }
 }
