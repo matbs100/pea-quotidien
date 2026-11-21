@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-21 · ✨ Nouveauté : frais sur 10 ans dans la fiche d'un titre (Nuit, D-20261121-2)
+Le bloc Frais ajoute une ligne « Sur 10 ans » : achat, 10 ans de gestion et de droits de garde, revente, pour 100, 500 ou 1 000 €. Calcul simple, valeur supposée constante et frais d'aujourd'hui : ce n'est pas une prévision. Inspiration : lecture de la lettre AMF n° 61 sur les frais. Idée n° 66 ; aucun conseil. Test `frais_sur_dix_ans`.
+
 ## 2026-11-21 · Une phrase en haut de page résume le marché (Design, D-20261121-1)
 - Sous la date : combien d'indices montent ou baissent, avec le CAC 40 et le S&P 500.
 

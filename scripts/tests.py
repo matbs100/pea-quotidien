@@ -739,6 +739,24 @@ console.log([Object.keys(R).join(","), R[2026][0].toFixed(1), R[2026][1].toFixed
 
 
 @test
+def frais_sur_dix_ans():
+    """D-20261121-2 : frais cumulés sur 10 ans, calculés avec node sur un cas connu."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "function fraisSurAns" in modele and "ce n'est pas une prévision" in modele, "frais sur 10 ans absents"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : frais sur 10 ans non exécutés")
+        return
+    fn = re.search(r"function fraisSurAns\(.*?\n}\n", modele, re.S).group(0)
+    essai = fn + """
+const c = { achat: 5, ttf: 0, revente: 5, gestion: 1, transaction: 0.5, garde: 7, total: 18.5 };
+console.log([fraisSurAns(c, 10), fraisSurAns({ ...c, total: null }, 10), fraisSurAns(null, 10)].join("|"));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "95||", f"frais sur 10 ans faux : {r.stdout!r} {r.stderr[-300:]}"
+
+
+@test
 def defilement_tactile_sur_les_lignes():
     """Souhait du 17/11 : le doigt glisse sur une ligne comme sur le bord, et un toucher ouvre la fiche."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")

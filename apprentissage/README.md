@@ -47,6 +47,7 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 - Il n'exécute jamais de code téléchargé.
 
 ## Journaux
+- [2026-11-21](journal/2026-11-21.md) : facilité d'usage et frais ; frais sur 10 ans dans la fiche (D-20261121-2)
 - [2026-11-20](journal/2026-11-20.md) : réglementation du PEA ; date de mise à jour de l'inflation (D-20261120-1)
 - [2026-11-19](journal/2026-11-19.md)
 - [2026-11-18](journal/2026-11-18.md) : indicateurs et méthodes ; transfert de PEA dans le bloc fiscalité (D-20261118-2)

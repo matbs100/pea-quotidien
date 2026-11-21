@@ -673,6 +673,10 @@ function couts(m, M) {
   const total = [achat, gestion, revente].every((x) => x != null) ? achat + ttf + gestion + transaction + garde + revente : null;
   return { f, achat, ttf, gestion, transaction, garde, revente, total };
 }
+function fraisSurAns(c, ans) {  // frais cumulés si on garde `ans` ans, valeur supposée constante (pas de prévision de cours)
+  if (!c || c.total == null) return null;
+  return c.achat + c.ttf + c.revente + ans * (c.gestion + c.transaction + c.garde);
+}
 function fraisCourt(m) {  // résumé des frais pour une ligne de liste
   const f = fraisDe(m); if (!f) return "";
   const g = f.g == null ? "frais/an : voir le DIC" : f.g === 0 ? "aucun frais annuel" : `frais ${fr(f.g, 2)} %/an`;
@@ -1254,6 +1258,8 @@ function blocFrais(m) {
   }
   L.push(["Droits de garde (chaque année)", `0,4 % (jusqu'à 50 000 €) + 5 € par ligne : ${eur(c.garde)} par an pour ${fr(M, 0)} € sur cette ligne`]);
   L.push(["Total sur 1 an : achat, 1 an de détention, revente", c.total != null ? `<b>${eur(c.total)}</b>, soit ${p(c.total)} des ${fr(M, 0)} €` : "Incomplet : une donnée manque (voir le DIC)"]);
+  const d10 = fraisSurAns(c, 10);
+  if (d10 != null) L.push(["Sur 10 ans : achat, 10 ans de détention, revente", `<b>${eur(d10)}</b>, soit ${p(d10)} des ${fr(M, 0)} € · calcul simple : valeur supposée constante, frais d'aujourd'hui, ce n'est pas une prévision`]);
   const btn = [100, 500, 1000].map((v) => `<button type="button" class="chip" data-montant="${v}" aria-pressed="${v === M}">${fr(v, 0)} €</button>`).join("");
   return `<div class="bloc" id="b-frais"><h3>Frais</h3><div class="chips" role="group" aria-label="Montant de la simulation">${btn}</div>${tab(L)}
     <p class="note">Courtage et droits de garde : ${TARIF.libelle}, dans la limite des plafonds du PEA (0,5 % par ordre en ligne ; garde 0,4 % + 5 € par ligne et par an ; art. D. 221-111-1 du Code monétaire et financier).${f.opc ? " Dans un PEA, seuls les droits d'entrée peuvent être prélevés à la souscription d'un fonds." : ""} Les droits de garde portent sur toute la ligne, une seule fois par an. D'autres banques facturent moins (souvent 0 € de garde en ligne) : compare avant d'ouvrir ou de transférer un PEA.</p></div>`;
