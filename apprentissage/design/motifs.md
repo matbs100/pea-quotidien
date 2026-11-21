@@ -9,3 +9,5 @@ Bonnes idées vues ailleurs. Format : `- [ ] Nom · vu sur <lien> · problème r
 - [ ] Bascule Tableau / Graphique pour les rendements · vu sur https://www.justetf.com/fr/etf-profile.html?isin=IE00B4L5Y983 · même donnée, deux lectures · bouton sur le bloc des variations d'une fiche · ⏳ à essayer
 - [x] Pas de chevauchement dans une ligne de tableau mobile · vu sur https://www.nngroup.com/articles/mobile-tables/ · colonnes illisibles · réduire les écarts et la taille aux petites largeurs · ✅ essayé le 2026-11-15
 - [ ] Cible tactile des pastilles ≥ 24 px · vu sur https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html · pastille Risque petite au doigt · agrandir sa zone par padding · ⏳ à essayer
+- [x] Résumé en une phrase en tête de page · vu sur https://www.nngroup.com/articles/inverted-pyramid/ · on ne sait pas en 5 s si le marché monte ou baisse · phrase calculée depuis les indices · ✅ essayé le 2026-11-21
+- [ ] Couleur jamais seule · vu sur https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html · rouge/vert seuls illisibles pour certains · vérifier que chaque variation colorée a aussi un signe ou un mot · ⏳ à essayer (audit des cartes)

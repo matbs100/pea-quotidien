@@ -19,6 +19,8 @@ Une leçon par ligne, datée, 60 lignes au plus. Relue chaque nuit avant de trav
 
 - 2026-11-20 · Pastille Risque : toucher = fiche (D-20261120-1) ; une bulle au survol n'a pas d'équivalent tactile (NN/g). Reste à mesurer sa cible (24 px, WCAG 2.5.8).
 
+- 2026-11-21 · Phrase-résumé du marché en tête (D-20261121-1) : une phrase calculée depuis les données déjà affichées ne retire rien et règle la compréhension en 5 s.
+
 ## Ce qui a été annulé, et pourquoi
 
 ## Erreurs à ne plus refaire
@@ -26,3 +28,4 @@ Une leçon par ligne, datée, 60 lignes au plus. Relue chaque nuit avant de trav
 - 2026-11-13 · Ne jamais charger une police, une image ou un script depuis un autre site : la politique de sécurité de la page (CSP) le bloque et `design.py` le signale 🔴.
 - 2026-11-14 · Captures : défiler avant de photographier (blocs `.rv`) ; installer Chromium via `python3 -m playwright install chromium`.
 - 2026-11-18 · Tester un glissement tactile avec Input.dispatchTouchEvent par petits pas (synthesizeScrollGesture ne défile pas en headless) ; pas de WebKit ici : un bug iOS reste à confirmer par le propriétaire.
+- 2026-11-21 · Installer playwright==1.63.0 avant `design.py rendre` ; photographier une fenêtre 390×844 (la page entière fait 24 000 px).

@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-21 · Une phrase en haut de page résume le marché (Design, D-20261121-1)
+- Sous la date : combien d'indices montent ou baissent, avec le CAC 40 et le S&P 500.
+
 ## 2026-11-20 · Transfert de PEA : un délai à prévoir (Chef, D-20261120-3)
 Le bloc fiscalité ajoute une phrase : dans l'échantillon de grands teneurs de compte du rapport de l'AMF (2023, p. 8), 80 % des transferts de PEA étaient faits en moins d'un mois, mais aucun délai n'est garanti. Information, pas un conseil.
 

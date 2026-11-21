@@ -254,6 +254,9 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .hist li { padding: 6px 0; border-bottom: 1px solid var(--line); }
 .astuce { font-size: 14px; color: var(--muted); }
 .moment { margin-top: 8px; font: 500 13px var(--font-mono); color: var(--accent); }
+.resume-marche { margin: 10px 0 0; font-size: 16px; line-height: 1.4; font-weight: 600; color: var(--ink); max-width: 34em; }
+.resume-marche .up { color: var(--up); }
+.resume-marche .down { color: var(--down); }
 .nouveau { display: inline-flex; gap: 6px; margin-top: 10px; font-size: 13px; padding: 5px 12px; border-radius: 999px; background: var(--amber-soft); color: var(--amber); text-decoration: none; }
 /* mes investissements */
 #inv-total { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 12px; }
@@ -335,6 +338,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
       <h1>Matin <span>PEA</span></h1>
       <div class="date" id="date"></div>
       <div class="moment" id="moment" hidden></div>
+      <p class="resume-marche" id="resume-marche" hidden></p>
       <a class="nouveau" id="nouveau" hidden></a>
     </div>
     <div class="fx">
@@ -598,6 +602,20 @@ function carte(m) {
     <div class="chg ${sens(m.var_1j)}">${pct(m.var_1j)} <span class="flat"><i class="pt">· </i>1 mois ${pct(m.var_1m)}</span></div>${spark(m.courbe.slice(-60), sens(m.var_1m))}</div>`;
 }
 $("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
+
+// résumé en une phrase, tiré des indices affichés plus bas (le VIX n'est pas un indice de prix d'actions)
+(function () {
+  const L = D.indices.filter((m) => m.var_1j != null && m.ticker !== "^VIX");
+  if (!L.length) return;
+  const b = L.filter((m) => m.var_1j < 0).length, h = L.filter((m) => m.var_1j > 0).length;
+  const cite = ["^FCHI", "^GSPC"].map((t) => L.find((m) => m.ticker === t)).filter(Boolean)
+    .map((m) => `${esc(m.nom)} <span class="${sens(m.var_1j)}">${pct(m.var_1j)}</span>`).join(", ");
+  const verdict = b === L.length ? `les ${L.length} grands indices suivis sont en baisse`
+    : h === L.length ? `les ${L.length} grands indices suivis sont en hausse`
+    : `${b} indices sur ${L.length} baissent, ${h} montent`;
+  const el = $("#resume-marche"); el.hidden = false;
+  el.innerHTML = `${D.moment === "ouverture" ? "Ce matin" : "Dernière séance"} : ${verdict}${cite ? ` (${cite})` : ""}.`;
+})();
 $("#devises").innerHTML = [...D.devises, ...D.matieres].map((m) => carte(m)).join("");
 
 $("#analyse").innerHTML = D.analyse_html || "<p>L'analyse du jour n'a pas encore été rédigée.</p>";
