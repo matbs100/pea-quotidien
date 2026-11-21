@@ -1,18 +1,17 @@
 {
- "genere_le": "2026-11-20T12:36+01:00",
- "fiche": "2026-11-20 (ouverture)",
+ "genere_le": "2026-11-21T05:12+01:00",
+ "fiche": "2026-11-20 (cloture)",
  "lieu": "cloud",
- "etat": "orange",
- "resume": "À surveiller. 48/48 tests, 35/35 liens valides, site à jour. Points à voir : cohérence des données, méthode de décision.",
+ "etat": "vert",
+ "resume": "Tout est en ordre. 51/51 tests, 8/8 prix revérifiés, 34/34 liens valides, site à jour.",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "48/48 tests réussis",
+   "resume": "51/51 tests réussis",
    "details": [
-    "• nouvelles dépendances à justifier dans le journal : pypdf",
-    "• Playwright absent : glissement tactile non exécuté"
+    "• nouvelles dépendances à justifier dans le journal : pypdf"
    ]
   },
   {
@@ -21,63 +20,50 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-20 (ouverture), générée le 2026-11-20T09:20+01:00",
-    "fiche attendue à cette heure : 2026-11-20 (ouverture)"
+    "dernière fiche : 2026-11-20 (cloture), générée le 2026-11-20T17:59+01:00",
+    "fiche attendue à cette heure : 2026-11-20 (cloture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "alerte",
-   "resume": "59 cours examinés, 0 problème(s), 12 alerte(s) ; entre sources : 67 confirmés, 7 écart(s)",
-   "details": [
-    "HLT.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "INS.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "FOO.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "UTI.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "CD8.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "PINR.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "TRV.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "PLEM.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "ALNXT.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "ALTHE.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "ALSPW.PA : cours daté du 2026-11-18, pas du 2026-11-20",
-    "7 écarts entre sources : IBE.MC, ALTHE.PA, SAP.DE, SIE.DE, PUST.PA, PAASI.PA"
-   ]
+   "niveau": "ok",
+   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 75 confirmés, 1 écart(s)",
+   "details": []
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "349 mots, 0 remarque(s)",
+   "resume": "313 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-20 (ouverture)",
+   "resume": "régénérée avec la fiche du 2026-11-20 (cloture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "non_verifiable",
-   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
+   "niveau": "ok",
+   "resume": "8/8 prix identiques sur Boursorama",
    "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "35/35 liens valides sur 8 titres, 8 non ouverts (robots.txt), 1 injoignables d'ici",
+   "resume": "34/34 liens valides sur 8 titres, 8 non ouverts (robots.txt), 2 injoignables d'ici",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-20 (ouverture)",
+   "resume": "le site affiche la fiche du 2026-11-20 (cloture)",
    "details": []
   },
   {
@@ -87,59 +73,61 @@
    "resume": "tout est documenté et rangé",
    "details": [
     "41 connaissance(s) en attente de vérification (⏳)",
-    "6 connaissance(s) non vérifiable(s) (❔)"
+    "7 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
   {
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "10 commit(s), 0 problème(s), 0 alerte(s) ; 4 vérifiée(s) par le chef",
+   "resume": "14 commit(s), 0 problème(s), 0 alerte(s) ; 5 vérifiée(s) par le chef",
    "details": [
+    "✔ vérifié par le chef le 2026-11-21 : abbf72b « Amélioration : frais sur 10 ans dans le bloc Frais » : data/presse/2026-11-21.md : hors du rôle de l'agent « nuit » — git show abbf72b relu le 21/11 : data/presse/2026-11-21.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 8 lignes, aucun code ; chiffres Zonebourse/Boursorama attribués.",
     "✔ vérifié par le chef le 2026-11-20 : 8a47d22 « Amélioration : date de mise à jour d'Eurostat sur  » : data/presse/2026-11-20.md : hors du rôle de l'agent « nuit » — git show 8a47d22 relu le 20/11 : data/presse/2026-11-20.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 9 lignes, un article ABC Bourse rouvert par le chef (4,0 %, 3,8 %, énergie 20,8 %, attentes WSJ) ; aucun code touché.",
     "✔ vérifié par le chef le 2026-11-20 : 8a47d22 « Amélioration : date de mise à jour d'Eurostat sur  » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 8a47d22 relu le 20/11 : taux_bce.json régénéré par le rendu (champ « maj » 2026-11-18 ajouté pour D-20261120-1, relevé 2026-11-20) ; chiffres inchangés, aucun commit de donnée de fiche.",
     "✔ vérifié par le chef le 2026-11-20 : 6d52a6f « Design : la pastille Risque ouvre la fiche au touc » : data/taux_bce.json : hors du rôle de l'agent « design » — git show 6d52a6f relu le 20/11 : seul le champ « releve » passe de 2026-11-19 à 2026-11-20 (rendu automatique, trois occurrences) ; aucun taux modifié.",
     "✔ vérifié par le chef le 2026-11-20 : 6d52a6f « Design : la pastille Risque ouvre la fiche au touc » : scripts/tests.py : hors du rôle de l'agent « design » — git show 6d52a6f relu le 20/11 : 4 lignes ajoutées au test tactile existant (la pastille Risque ouvre la fiche), prévues pour D-20261120-2 ; 48/48 tests verts.",
+    "d3d5675 [univers] Univers : mise à jour hebdomadaire du 2026-11-21 (2 ajouts)",
+    "ee5b243 [code] Code : rapport du 2026-11-21 (vert) ; source sans date isolée écartée ",
+    "abbf72b [nuit] Amélioration : frais sur 10 ans dans le bloc Frais [D-20261121-2]",
+    "2111aa1 [design] Design : phrase-résumé du marché en haut de page [D-20261121-1]",
+    "d3e89a6 [fiche] Matin PEA 2026-11-20 (cloture) : notification à renvoyer",
+    "cbe3db5 [fiche] Matin PEA 2026-11-20 (cloture)",
+    "7515e5d [chef] Chef : passage de mi-journée du 2026-11-20 (orange)",
     "d008649 [fiche] Matin PEA 2026-11-20 (ouverture) : contrôle des sources relancé",
     "4c9fdb6 [fiche] Matin PEA 2026-11-20 (ouverture) : notification à renvoyer",
     "8576758 [fiche] Matin PEA 2026-11-20 (ouverture)",
     "edcf8b9 [chef] Chef : rapport du 2026-11-20 (vert) ; délai de transfert du PEA dans l",
     "0a59de2 [code] Code : rapport du 2026-11-20 (vert)",
     "8a47d22 [nuit] Amélioration : date de mise à jour d'Eurostat sur la carte d'inflation",
-    "6d52a6f [design] Design : la pastille Risque ouvre la fiche au toucher [D-20261120-1]",
-    "0ff028b [fiche] Matin PEA 2026-11-19 (cloture)",
-    "cf2fe26 [chef] Chef : passage de mi-journée du 2026-11-19 (orange)",
-    "657aca6 [fiche] Matin PEA 2026-11-19 (ouverture)"
+    "6d52a6f [design] Design : la pastille Risque ouvre la fiche au toucher [D-20261120-1]"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
    "niveau": "ok",
-   "resume": "3 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
+   "resume": "5 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
    "details": [
     "6d52a6f « Design : la pastille Risque ouvre la fiche au touc » : rien de retiré",
     "8a47d22 « Amélioration : date de mise à jour d'Eurostat sur  » : rien de retiré",
-    "edcf8b9 « Chef : rapport du 2026-11-20 (vert) ; délai de tra » : rien de retiré"
+    "edcf8b9 « Chef : rapport du 2026-11-20 (vert) ; délai de tra » : rien de retiré",
+    "2111aa1 « Design : phrase-résumé du marché en haut de page [ » : rien de retiré",
+    "abbf72b « Amélioration : frais sur 10 ans dans le bloc Frais » : rien de retiré"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "alerte",
-   "resume": "51 décisions, 5 à réaliser, 4 point(s) à voir",
-   "details": [
-    "bilan à faire : D-20261116-3 (30 valeurs connues affichées chaque jour à côté du)",
-    "bilan à faire : D-20261116-4 (Fundsquare devient la source de référence : risque)",
-    "bilan à faire : D-20261117-1 (n° 48 · Recherche « Mes investissements » : un ISI)",
-    "bilan à faire : D-20261117-2 (n° 46 · Bloc « contexte des taux » : inflation de )"
-   ]
+   "niveau": "ok",
+   "resume": "53 décisions, 5 à réaliser, 0 point(s) à voir",
+   "details": []
   },
   {
    "nom": "lectures",
    "titre": "Lectures des agents (PDF de sources vérifiées)",
    "niveau": "ok",
-   "resume": "12 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
+   "resume": "13 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
    "details": []
   },
   {

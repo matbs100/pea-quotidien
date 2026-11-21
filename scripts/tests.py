@@ -768,6 +768,13 @@ console.log([fraisSurAns(c, 10), fraisSurAns({ ...c, total: null }, 10), fraisSu
 
 
 @test
+def repere_frais_moyens():
+    """D-20261121-3 : repère AMF (0,38 % / 1,33 %) dans le bloc Frais d'un ETF, chiffres de la lettre n° 61 p. 2."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "Repère : frais moyens" in modele and "0,38 %" in modele and "1,33 %" in modele and "n° 61, p. 2" in modele
+
+
+@test
 def defilement_tactile_sur_les_lignes():
     """Souhait du 17/11 : le doigt glisse sur une ligne comme sur le bord, et un toucher ouvre la fiche."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")

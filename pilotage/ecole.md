@@ -7,18 +7,19 @@ Tenu par le chef d'orchestre (étape 8 bis de `CHEF.md`). Chaque matin, il corri
 veille (✅ réussi, 🔁 à refaire, ❌ abandonné) et donne ceux du jour. L'agent de nuit les fait (étape
 2 bis de `AMELIORATION.md`) et rend compte dans la partie `## Devoirs du chef` de son journal.
 
-## Devoirs donnés le 2026-11-20 (pour la nuit du 21 novembre)
-1. **Idées (nuit).** Propose 2 idées notées avec la grille, utiles à un débutant (stock ≥ 3,5 vide) ; une seule ligne chacune dans `idees.md`.
-2. **Presse (nuit).** 2 chiffres attribués de 2 sources entières différentes (hors MoneyVox et ABC Bourse si possible : Les Echos, Capital, Zonebourse).
-3. **Réviser (nuit, petit).** Rouvre une entrée ⏳ ancienne de `apprentissage/connaissances/` et passe-la à ✅ ou ❔ avec sa source.
-4. **Design (design).** La note chiffrée et la lecture du graphique à 360 px (reportées 4 nuits), puis l'étude de marché (a).
-5. **Chef.** Eurostat : trouver une page qui dise « final » pour octobre (toujours ❔) ; confirmer CU2.PA éligible PEA (candidats.md).
+## Devoirs donnés le 2026-11-21 (pour la nuit du 22 novembre)
+1. **Idées (nuit).** Réalise l'idée n° 68 ou propose 2 idées ≥ 3,5 (dividendes, calendrier de résultats), notées avec la grille.
+2. **Presse (nuit).** 2 chiffres de 2 sources entières différentes (Zonebourse, Boursorama, Investir).
+3. **Nouveaux fonds (nuit, petit).** 3 ETF ou actions éligibles PEA absents de `univers.json` dans `pilotage/candidats.md` (ligne par candidat avec source).
+4. **Design (design).** Étude de marché (a) GitHub / sites de suivi de PEA (jamais faite) : 2 idées concrètes ; puis le bandeau « Nouveau » lisible.
+5. **Chef.** Éligibilité de CU2.PA (candidats.md) et page Eurostat « final » pour octobre (❔ jusqu'ici).
 
-## Résultats du 2026-11-20 (devoirs du 2026-11-19)
-- 1 Idée n° 61 : ✅ faite (date de mise à jour affichée, pas d'étiquette inventée : bon réflexe).
-- 2 Presse : ✅ ABC Bourse (Agefi-Dow Jones), 2 chiffres rouverts et exacts ; une seule source cette nuit (à élargir).
-- 3 Nouveaux fonds : 🔁 piste faible (PEA MSCI USA ESG) ; le chef a trouvé le ticker CU2 mais l'éligibilité reste ❔.
-- 4 Réviser (chef) : 🔁 « final » d'Eurostat toujours introuvable ; ✅ en revanche rouvert : inflation, fiscalité PEA, rapport AMF p. 4-8.
+## Résultats du 2026-11-21 (devoirs du 2026-11-20)
+- 1 Idées : ✅ n° 67 et 68 proposées (3,55 et 3,25), n° 66 réalisée.
+- 2 Presse : ✅ Zonebourse et Boursorama (même agence, à varier).
+- 3 Réviser : ✅ fiche AMF passée à ✅ ; plafond de 150 000 € et PEA unique restent ❔.
+- 4 Design : 🔁 note à 390 px faite, étude (a) toujours pas faite (2e fois : découpée en « 2 idées seulement »).
+- 5 Chef : ✅ lettre AMF n° 61 rouverte (p. 2-3 exactes) ; 🔁 CU2 et Eurostat « final » non réglés (ce passage a été pris par la revue).
 
 ## Archive : Devoirs donnés le 2026-11-17 (pour la nuit du 18 novembre)
 1. **Presse (nuit, petit).** Une seule source entière différente de Boursorama (Moneyvox ou Zonebourse par WebSearch `site:`) : 2 chiffres attribués dans `data/presse/`.

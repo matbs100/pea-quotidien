@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-21 · Repère des frais moyens dans le bloc Frais d'un ETF (D-20261121-3)
+
+Le bloc Frais d'un ETF montre le repère de l'AMF : 0,38 % par an en moyenne pour les ETF indiciels actions, 1,33 % pour les fonds d'actions français (2024). Pour comparer, pas pour choisir.
+
 ## 2026-11-21 · ✨ Nouveauté : frais sur 10 ans dans la fiche d'un titre (Nuit, D-20261121-2)
 Le bloc Frais ajoute une ligne « Sur 10 ans » : achat, 10 ans de gestion et de droits de garde, revente, pour 100, 500 ou 1 000 €. Calcul simple, valeur supposée constante et frais d'aujourd'hui : ce n'est pas une prévision. Inspiration : lecture de la lettre AMF n° 61 sur les frais. Idée n° 66 ; aucun conseil. Test `frais_sur_dix_ans`.
 

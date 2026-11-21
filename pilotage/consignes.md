@@ -6,8 +6,9 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (20/11) Idées n° 61 et 64 faites (D-20261120-1, D-20261120-3) : n'y touche plus. **Pas de stock d'idées ≥ 3,5** : propose-en 2 nouvelles, utiles à un débutant, notées avec la grille (tirées de la veille du samedi : fonds, frais, dividendes).
-- (20/11) **Presse** : les 4 sources habituelles (la nuit du 20 n'en a lu qu'une) ; 2 chiffres attribués de 2 sources différentes.
+- (21/11) Idées n° 66 et 67 faites (D-20261121-2, D-20261121-3). Reste n° 68 (aide « petit ordre hors PEA », 3,25) : réalise-la si tu la juges utile, sinon propose 2 idées ≥ 3,5 (dividendes, calendrier de résultats).
+- (21/11) **Écris toi-même la ligne de ta décision dans `pilotage/decisions.md`** (le 21/11 elle manquait : le chef l'a ajoutée) ; si l'écriture est refusée, réessaie avec un ajout en fin de ligne du tableau.
+- (21/11) **Presse** : 2 chiffres de 2 sources entières différentes (Les Echos / Capital introuvables par `site:` le 21 : essaie Zonebourse, Boursorama, Investir).
 - (20/11) Une idée « faite » doit citer l'identifiant de décision **unique** : lis le haut de `pilotage/decisions.md` avant de numéroter (le 20/11, nuit et design ont pris D-20261120-1).
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (identifiant `[D-…]` dans le commit) ; une nouveauté de CHANGELOG va **sous l'en-tête**.
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
@@ -29,11 +30,11 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 
 ## Pour l'agent design
 - (16/11, propriétaire) Le défilement iPhone est corrigé côté Chromium (D-20261118-1), case ouverte jusqu'au retour du propriétaire : n'y touche plus.
-1. (20/11, avis du chef) Pastille Risque : gardée (✅). **Prends un identifiant libre** (D-20261120-2 est déjà pris par le chef, lis `decisions.md`).
+1. (21/11, avis du chef) Phrase-résumé : gardée (✅, captures 390 px propres). Le bandeau « 🛠 Nouveau : ✨ Nouveauté : … (Nuit, D-…) » montre un jargon interne : rends-le lisible pour un débutant (retire « Nuit, D-… », double emoji) sans retirer l'information.
 2. (18/11, n° 58) **Étude de marché (a)** (GitHub, sites de suivi de PEA ou de bourse), jamais faite : relève 2 idées concrètes pour rendre une fiche plus claire, sans rien retirer.
 3. (18/11) Note chiffrée de la page et lecture du graphique à **360 px** sur une fiche ETF avec historique (reportées 4 nuits : ne la reporte pas).
 
 ## Pour le vérificateur du code
-1. (20/11) `pypdf` justifié, merci. Idée n° 65 : extrais la décision de glissement (120 px) dans une fonction pure testable par node, si elle tient en 40 lignes.
-2. (20/11) Alerte IBE.MC (Boursorama 18,04, place « Sibe ») revenue 4 jours de suite : propose un test ou un réglage de `verif.py` qui l'écarte (page sans cotation), sans masquer un vrai écart.
+1. (21/11) Correction `verif.source_isolee` relue : ✅ (test, source datée jamais écartée). Idée n° 69 : fais-la en premier (affichage des `sources_ecartees` au contrôle). Puis idée n° 65 : extrais la décision de glissement (120 px) dans une fonction pure testable par node, si elle tient en 40 lignes.
+2. (21/11) Ajoute un test pour la phrase-résumé du marché (`resume-marche`, D-20261121-1), signalé ⚠️ sans test dans ton rapport.
 3. (19/11) Confidentialité : chaque jour.

@@ -1251,6 +1251,7 @@ function blocFrais(m) {
     L.push([f.dic ? "Frais courants (chaque année)" : "Frais de gestion (chaque année)", m.categorie === "etf"
       ? (f.g != null ? `<b>${fr(f.g, 2)} %</b> par an, soit ${eur(c.gestion)} pour ${fr(M, 0)} € · déjà déduits du prix de l'ETF : tu ne les vois pas passer${f.dic ? " · lus dans son DIC officiel (frais réels de la dernière année, l'équivalent du TER)" : " · maximum prévu par le prospectus (Boursorama)"}` : "Non connus pour l'instant : voir le DIC (lien plus bas)")
       : "Aucun : une action n'a pas de frais annuels"]);
+    if (m.categorie === "etf" && f.g != null) L.push(["Repère : frais moyens", "ETF indiciels actions : 0,38 % par an en moyenne en 2024 ; fonds d'actions français : 1,33 % (AMF, lettre de l'Observatoire n° 61, p. 2). Pour comparer, pas pour choisir."]);
     if (m.categorie === "etf" && f.tr != null) L.push(["Coûts de transaction du fonds (chaque année)", f.tr === 0 ? "Aucun d'après le DIC" : `${fr(f.tr, 2)} % par an, soit ${eur(c.transaction)} · estimation du DIC : achats et ventes faits par le fonds, déjà dans son prix`]);
     L.push([`Courtage à l'achat (${fr(M, 0)} €)`, `${eur(c.achat)} (${p(c.achat)})`]);
     if (f.ttf) L.push(["Taxe sur les transactions financières", `0,4 % à l'achat : ${eur(c.ttf)} · société française de plus de 1 Md€ de capitalisation, due même dans un PEA`]);

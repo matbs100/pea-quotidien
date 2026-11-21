@@ -148,5 +148,11 @@
   "jour": "6d52a6f",
   "preuve": "git show 6d52a6f relu le 20/11 : 4 lignes ajoutées au test tactile existant (la pastille Risque ouvre la fiche), prévues pour D-20261120-2 ; 48/48 tests verts.",
   "le": "2026-11-20"
+ },
+ {
+  "alerte": "data/presse/2026-11-21.md : hors du rôle de l'agent « nuit »",
+  "jour": "abbf72b",
+  "preuve": "git show abbf72b relu le 21/11 : data/presse/2026-11-21.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 8 lignes, aucun code ; chiffres Zonebourse/Boursorama attribués.",
+  "le": "2026-11-21"
  }
 ]

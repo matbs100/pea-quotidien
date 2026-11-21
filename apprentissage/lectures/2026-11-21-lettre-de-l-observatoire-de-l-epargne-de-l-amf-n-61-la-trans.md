@@ -6,7 +6,7 @@ url: https://www.amf-france.org/sites/institutionnel/files/private/2025-05/loe-6
 publie_le: 2025-05-20
 lu_le: 2026-11-21
 lu_par: nuit
-statut: ⏳ à relire par le chef
+statut: ✅ relue le 2026-11-21
 ---
 # 📄 Lettre de l'Observatoire de l'épargne de l'AMF n° 61 : la transparence des frais
 
@@ -28,4 +28,4 @@ Cette lettre annuelle de l'AMF fait le point sur les frais que paient les éparg
 - Idée n° 68 : phrase d'aide « un petit ordre coûte cher hors PEA » (5,8 % pour 100 €, AMF p. 3).
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- Relue le 2026-11-21 : PDF rouvert, chiffres exacts (p. 2 : 1,33 % et 0,38 % ; p. 3 : 0,49 %, 5,81 %, 0,27 % → 0,35 %), résumé fidèle, rien de copié.

@@ -52,3 +52,4 @@ d'orchestre : une règle par ligne, datée, avec l'agent concerné et l'exemple 
 - (18/11, nuit) **Une presse « une source » compte deux chiffres du corps d'un article**, pas un titre de liste ; sinon le devoir est 🔁.
 - (19/11, nuit) **Citer l'étude au mot près** : « la meilleure règle bat la détention » n'est pas « les règles battent la détention ». Exemple : note du signal de tendance corrigée par le chef.
 - (20/11, nuit et design) **Identifiant de décision unique** : avant de numéroter, lis les dernières lignes de `pilotage/decisions.md` ; le 20/11 la nuit et le design ont tous deux pris D-20261120-1 (le chef a renuméroté celle du design en D-20261120-2).
+- (21/11, nuit) Écris toi-même la ligne de ta décision dans `pilotage/decisions.md` avant de pousser ; si le système refuse, réessaie en ajoutant la ligne en fin de tableau, sinon note-le pour le chef (exemple : D-20261121-2 manquait).
