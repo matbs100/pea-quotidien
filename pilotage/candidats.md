@@ -38,7 +38,7 @@ Notées par le chef d'orchestre et l'agent de nuit dans la semaine ; vérifiées
 
 ## Notes de la nuit du 12/11 (devoir 1 : émetteur Ossiam, absent de `univers.json`)
 - [x] S6EW · Ossiam STOXX Europe 600 ESG Equal Weight NR UCITS ETF 1C · LU0599613147 (lu sur francetransactions.com le 12/11) · « éligible au PEA » lu sur la même page · frais de gestion 0,35 % · ticker S6EW lu ; cotation Paris non confirmée (page muette ; Yahoo S6EW.PA répond mais le dernier cours est vide : peu échangé, à surveiller) · ajouté (S6EW.PA, LU0599613147, pea_bourso True, dernier cours 12/11)
-- [ ] (ticker non lu) · Ossiam Europe ESG Machine Learning UCITS ETF 1C · LU0599612842 (lu sur francetransactions.com le 12/11) · « éligible au PEA » lu · frais de gestion 0,65 % · ticker et place de cotation non lus (MLEU.PA et EUMV.PA : introuvables sur Yahoo) : à retrouver avant tout ajout
+- [x] (ticker non lu) · Ossiam Europe ESG Machine Learning UCITS ETF 1C · LU0599612842 (lu sur francetransactions.com le 12/11) · « éligible au PEA » lu · frais de gestion 0,65 % · ticker et place de cotation non lus (MLEU.PA et EUMV.PA : introuvables sur Yahoo) : à retrouver avant tout ajout · écarté : pas de cotation Paris trouvée (déjà écarté le 14/11)
 - Invesco EURO STOXX High Dividend Low Volatility (IE00BZ4BMM98) : **non éligible au PEA** (justETF, ouvert le 12/11, « Éligible au PEA : Non ») et sans cotation à Paris : écarté malgré la liste de pea.fr.
 
 ## Notes de la nuit du 13/11 (devoir 1)
@@ -58,4 +58,4 @@ Notées par le chef d'orchestre et l'agent de nuit dans la semaine ; vérifiées
 ## Notes de la nuit du 20/11 (devoir 3)
 - PEA MSCI USA ESG Selection (Amundi) · LU1681042864 (extrait de recherche d'une liste de fonds qui le marque « PEA », non lu sur une page émetteur) · ticker Paris non vérifié · éligibilité non confirmée par une seconde source : piste faible, à ouvrir sur la page Amundi avant tout ajout. PCEU (FR0013412038) est déjà dans `univers.json`.
 ## Notes du chef du 20/11 (devoir « nouveaux fonds »)
-- [ ] CU2.PA · Amundi PEA MSCI USA ESG Selection UCITS ETF · LU1681042864 · ticker Euronext Paris CU2 lu sur la fiche mensuelle Amundi de mai 2026 (extrait de recherche, PDF non ouvert) · le nom contient « PEA » mais aucune source ouverte ne confirme l'éligibilité (❔) · à vérifier le samedi sur la page émetteur ou Euronext avant tout ajout.
+- [x] CU2.PA · Amundi PEA MSCI USA ESG Selection UCITS ETF · LU1681042864 · ticker Euronext Paris CU2 lu sur la fiche mensuelle Amundi de mai 2026 (extrait de recherche, PDF non ouvert) · le nom contient « PEA » mais aucune source ouverte ne confirme l'éligibilité (❔) · à vérifier le samedi sur la page émetteur ou Euronext avant tout ajout. · ajouté (CU2.PA, LU1681042864, pea_bourso True, 21/11)

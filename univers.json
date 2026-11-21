@@ -108,7 +108,8 @@
   "E40.PA": "BNP Paribas Easy CAC 40 ESG",
   "50E.PA": "HSBC Euro Stoxx 50",
   "MFE.PA": "Amundi Core MSCI EMU (Dist)",
-  "S6EW.PA": "Ossiam STOXX Europe 600 ESG Equal Weight"
+  "S6EW.PA": "Ossiam STOXX Europe 600 ESG Equal Weight",
+  "CU2.PA": "Amundi PEA MSCI USA ESG Selection"
  },
  "etf_levier": {
   "LVC.PA": "Amundi CAC 40 Daily (2x) Leveraged",
@@ -117,6 +118,7 @@
   "BX4.PA": "Amundi CAC 40 Daily (-2x) Inverse"
  },
  "actions": {
+  "STLAM.MI": "Stellantis",
   "AI.PA": "Air Liquide",
   "AIR.PA": "Airbus",
   "ALO.PA": "Alstom",
