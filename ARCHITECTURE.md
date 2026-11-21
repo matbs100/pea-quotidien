@@ -146,6 +146,7 @@ Financial Times (tolérance 1 %, 2 % à l'ouverture). Quantalys n'est pas interr
 | `date_bourso(page)` / `date_ft(page)` | date du dernier cours affiché par la page Boursorama / FT |
 | `boursorama_date(code)` / `ft_date(genre, code)` | cours et date du cours (les deux fonctions sans `_date` ne renvoient que le cours) |
 | `source_perimee(date_source, jour, date_yahoo)` | règle du propriétaire (06/11) : une source qui ne donne que le cours d'un jour précédent est écartée (notée dans `sources_perimees`) ; si Yahoo n'a pas encore de cours du jour, la dernière séance compte |
+| `source_isolee(src, dates, tol)` | source sans date de cours, seule contre deux sources d'accord entre elles : son nom, sinon `None` ; `main()` l'écarte de la comparaison et la note dans `sources_ecartees` (cas IBE.MC / Boursorama « Sibe ») ; une source datée n'est jamais écartée ainsi |
 | `codes(m)` | traduit un ticker Yahoo en codes Boursorama et FT (place de cotation, ETF, indice, devise) |
 | `verif_fonds(m, tol)` | contrôle d'un fonds Wealins : compare les valeurs de même date (Wealins, FT) ; une source plus ancienne que la plus récente est écartée |
 | `main()` | ajoute sources, prix de référence (médiane) et statut `ok`, `ecart` ou `seul` à chaque titre (fonds Wealins : `verif_fonds`, sans nouvelle requête) |

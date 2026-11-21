@@ -10,6 +10,7 @@ dans [[Finance/PEA Quotidien/pilotage/sources-verifiees|les sources vérifiées]
 vérifier » jusqu'à la relecture du chef.
 
 ## Journal
+- [[Finance/PEA Quotidien/apprentissage/code/2026-11-21|2026-11-21]] : CSP frame-ancestors, versions PyPI
 - [[Finance/PEA Quotidien/apprentissage/code/2026-11-20|2026-11-20]] : CSP, pypdf 7.1.1
 - [[2026-11-19]] : naïf ou averti (datetime), versions PyPI
 - [[2026-11-18]] : overflow clip, pypdf 7.1.0

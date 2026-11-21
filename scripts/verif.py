@@ -116,6 +116,20 @@ def source_perimee(date_source, jour, date_yahoo=None):
     return date_source < min(jour, date_yahoo or jour)
 
 
+def source_isolee(src, dates, tol=TOL):
+    """Source sans date de cours qui s'écarte seule de deux autres sources d'accord entre elles (cas d'une
+    page de place sans cotation, comme Boursorama « Sibe » pour IBE.MC). Renvoie son nom, sinon None.
+    Elle est écartée de la comparaison mais signalée ; une source datée n'est jamais écartée ainsi."""
+    if len(src) != 3:
+        return None
+    for nom, p in src.items():
+        autres = [v for k, v in src.items() if k != nom]
+        if dates.get(nom) is None and min(autres) > 0 and abs(autres[0] / autres[1] - 1) * 100 <= tol \
+                and abs(p / statistics.median(autres) - 1) * 100 > tol:
+            return nom
+    return None
+
+
 def verif_fonds(m, tol=TOL):
     """Contrôle d'un fonds de la liste Wealins (valeurs lues par wealins.mesure() dans sources_vl) : on
     compare les valeurs liquidatives de même date ; une source plus ancienne que la plus récente est
@@ -184,7 +198,7 @@ def main():
         bc, fcode = codes(m)
         echecs = cache.get(t, {}).get("echecs", {})  # source -> nb d'échecs d'affilée
         src = {"yahoo": m["prix"]}
-        perimees = {}
+        perimees, dates = {}, {}
         for nom_src, code, lire in (("boursorama", bc, lambda c: boursorama_date(c)),
                                      ("ft", fcode, lambda c: ft_date(*c))):
             if not code or echecs.get(nom_src, 0) >= 3:  # abandon après 3 échecs
@@ -195,11 +209,14 @@ def main():
                 echecs.pop(nom_src, None)
             elif p:
                 src[nom_src] = p
+                dates[nom_src] = dt
                 echecs.pop(nom_src, None)
             else:
                 echecs[nom_src] = echecs.get(nom_src, 0) + 1
         cache[t] = {"boursorama": bc, "ft": fcode[1] if fcode else None, "echecs": echecs}
 
+        isolee = source_isolee(src, dates, tol)
+        ecartee = {isolee: src.pop(isolee)} if isolee else {}
         ref = statistics.median(src.values())
         ecarts = {k: round((v / ref - 1) * 100, 2) for k, v in src.items()}
         if len(src) == 1:
@@ -210,6 +227,8 @@ def main():
         info = {"sources": src, "prix_reference": round(ref, 4), "ecarts_sources": ecarts, "verif": statut}
         if perimees:
             info["sources_perimees"] = perimees
+        if ecartee:
+            info["sources_ecartees"] = ecartee  # source sans date, seule contre deux : écartée, mais visible
         m.update(info)
         vus[t] = info
         bilan[statut] += 1

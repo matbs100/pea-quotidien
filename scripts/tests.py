@@ -739,6 +739,17 @@ console.log([Object.keys(R).join(","), R[2026][0].toFixed(1), R[2026][1].toFixed
 
 
 @test
+def source_isolee_sans_date():
+    """Consigne du chef (20/11) : page sans cotation écartée seulement si sans date, seule contre deux d'accord."""
+    import verif
+    sans = {"yahoo": 23.7, "ft": 23.7, "boursorama": 18.04}
+    assert verif.source_isolee(sans, {"yahoo": "d", "ft": "d", "boursorama": None}) == "boursorama"
+    assert verif.source_isolee(sans, {"yahoo": "d", "ft": "d", "boursorama": "d"}) is None, "source datée : écart gardé"
+    assert verif.source_isolee({"yahoo": 23.7, "ft": 22.0, "boursorama": 18.04}, {}) is None, "deux autres en désaccord"
+    assert verif.source_isolee({"yahoo": 1.0, "ft": 1.0}, {}) is None and verif.source_isolee({"yahoo": 0, "ft": 0, "b": 5}, {}) is None
+
+
+@test
 def frais_sur_dix_ans():
     """D-20261121-2 : frais cumulés sur 10 ans, calculés avec node sur un cas connu."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
