@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-22 · Le résumé du marché sépare l'Europe et New York (D-20261122-4)
+La phrase en haut de page ne compte plus ensemble des marchés qui n'ont pas les mêmes heures. Elle donne d'abord l'Europe du jour, puis le S&P 500 à part, en disant si New York est encore ouverte ou de quel jour date sa clôture. L'accord « 1 montent » est corrigé. Les cartes des indices ne changent pas.
+
 ## 2026-11-22 · Repère de l'ESMA sur 10 ans dans le bloc Frais (Nuit, D-20261122-2)
 Le bloc Frais ajoute un repère : selon le régulateur européen (ESMA, rapport 2023), 10 000 € placés 10 ans dans un portefeuille type de fonds européens valent 14 850 € après 2 000 € de frais, environ 13 500 € après inflation. Exemple passé (2013-2022), pas une prévision ni un conseil. Inspiration : lecture du rapport ESMA. Idée n° 70. Test `repere_esma_dix_ans`.
 

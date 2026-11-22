@@ -606,18 +606,32 @@ function carte(m) {
 }
 $("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
 
-// résumé en une phrase, tiré des indices affichés plus bas (le VIX n'est pas un indice de prix d'actions)
+// résumé en une phrase : l'Europe du jour, puis New York à part (pas les mêmes heures de cotation)
 (function () {
-  const L = D.indices.filter((m) => m.var_1j != null && m.ticker !== "^VIX");
-  if (!L.length) return;
-  const b = L.filter((m) => m.var_1j < 0).length, h = L.filter((m) => m.var_1j > 0).length;
-  const cite = ["^FCHI", "^GSPC"].map((t) => L.find((m) => m.ticker === t)).filter(Boolean)
-    .map((m) => `${esc(m.nom)} <span class="${sens(m.var_1j)}">${pct(m.var_1j)}</span>`).join(", ");
-  const verdict = b === L.length ? `les ${L.length} grands indices suivis sont en baisse`
-    : h === L.length ? `les ${L.length} grands indices suivis sont en hausse`
-    : `${b} indices sur ${L.length} baissent, ${h} montent`;
+  const cite = (m) => `${esc(m.nom)} <span class="${sens(m.var_1j)}">${pct(m.var_1j)}</span>`;
+  const L = D.indices.filter((m) => m.var_1j != null), phrases = [];
+  // seuls les indices européens cotés aujourd'hui sont comptés ensemble
+  const E = L.filter((m) => ["^FCHI", "^STOXX50E", "^STOXX", "^GDAXI", "^FTSE"].includes(m.ticker) && m.date_cours === D.date);
+  if (E.length) {
+    const n = E.length, b = E.filter((m) => m.var_1j < 0).length, h = E.filter((m) => m.var_1j > 0).length, st = n - b - h;
+    const bouts = [[b, "baisse", "baissent"], [h, "monte", "montent"], [st, "stable", "stables"]].filter((x) => x[0]);
+    const verdict = n === 1 ? `1 indice suivi, ${b ? "en baisse" : h ? "en hausse" : "stable"}`
+      : b === n ? `les ${n} grands indices suivis sont en baisse`
+      : h === n ? `les ${n} grands indices suivis sont en hausse`
+      : bouts.map(([k, un, plus], i) => `${k}${i ? "" : ` indice${k > 1 ? "s" : ""} sur ${n}`} ${k > 1 ? plus : un}`).join(", ");
+    const cac = E.find((m) => m.ticker === "^FCHI");
+    phrases.push(`${D.moment === "ouverture" ? "Ce matin" : "Clôture"} en Europe : ${verdict}${cac ? ` (${cite(cac)})` : ""}.`);
+  }
+  const us = L.find((m) => m.ticker === "^GSPC" && m.date_cours);
+  if (us) {
+    // New York ferme à 16 h, heure locale : avant, le cours du jour n'est pas une clôture
+    const h = +new Date(D.genere_le).toLocaleString("en-US", { timeZone: "America/New_York", hour: "numeric", hourCycle: "h23" });
+    const enCours = us.date_cours === D.date && h < 16;
+    phrases.push(`New York, ${enCours ? "séance en cours" : `clôture du ${dateCourte(us.date_cours)}`} : ${cite(us)}.`);
+  }
+  if (!phrases.length) return;
   const el = $("#resume-marche"); el.hidden = false;
-  el.innerHTML = `${D.moment === "ouverture" ? "Ce matin" : "Dernière séance"} : ${verdict}${cite ? ` (${cite})` : ""}.`;
+  el.innerHTML = phrases.join(" ");
 })();
 $("#devises").innerHTML = [...D.devises, ...D.matieres].map((m) => carte(m)).join("");
 

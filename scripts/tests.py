@@ -769,7 +769,7 @@ console.log([fraisSurAns(c, 10), fraisSurAns({ ...c, total: null }, 10), fraisSu
 
 @test
 def resume_marche_phrase():
-    """D-20261121-1 : la phrase-résumé du marché est exécutée avec node (tous en baisse, mélange, VIX écarté, vide)."""
+    """D-20261121-1 et D-20261122-4 : phrase-résumé exécutée avec node (Europe du jour seule, New York datée, accords)."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
     bloc = re.search(r"// résumé en une phrase.*?\n\}\)\(\);\n", modele, re.S)
     assert bloc, "bloc resume-marche introuvable"
@@ -779,19 +779,41 @@ def resume_marche_phrase():
         return
     essai = """
 const esc = (x) => String(x), sens = (v) => (v < 0 ? "down" : "up"), pct = (v) => v + " %";
+const dateCourte = (j) => "date " + j;
 const el = { hidden: true, innerHTML: "" }, $ = () => el;
-function run(D) { el.hidden = true; el.innerHTML = ""; """ + bloc.group(0) + """ return el.hidden + "|" + el.innerHTML; }
-const m = (t, v) => ({ ticker: t, nom: t, var_1j: v });
-console.log(run({ moment: "cloture", indices: [m("^FCHI", -1), m("^GSPC", -2), m("^VIX", 5)] }));
-console.log(run({ moment: "ouverture", indices: [m("^FCHI", -1), m("^GSPC", 2)] }));
-console.log(run({ moment: "cloture", indices: [m("^VIX", 5)] }));
+function run(D) { el.hidden = true; el.innerHTML = ""; """ + bloc.group(0) + """ return el.hidden + "|" + el.innerHTML.replace(/<[^>]+>/g, ""); }
+const J = "2026-11-20", V = "2026-11-19";
+const m = (t, v, d = J) => ({ ticker: t, nom: t, var_1j: v, date_cours: d });
+const soir = { date: J, moment: "cloture", genere_le: J + "T17:59+01:00" };
+const matin = { date: J, moment: "ouverture", genere_le: J + "T09:20+01:00" };
+const nuit = { date: J, moment: "cloture", genere_le: J + "T22:30+01:00" };
+console.log([
+  run({ ...soir, indices: [m("^FCHI", -1), m("^FTSE", -2), m("^GSPC", -3), m("^N225", 4, V), m("^VIX", 5)] }),
+  run({ ...soir, indices: [m("^FCHI", 1), m("^FTSE", -2), m("^STOXX", -1)] }),
+  run({ ...soir, indices: [m("^FCHI", 1), m("^FTSE", 0)] }),
+  run({ ...matin, indices: [m("^FCHI", -1), m("^FTSE", -1), m("^GDAXI", 9, V), m("^GSPC", -2, V)] }),
+  run({ ...nuit, indices: [m("^FCHI", 1), m("^GSPC", 2)] }),
+  run({ ...matin, indices: [m("^FCHI", 1, V), m("^GSPC", 2, V)] }),
+  run({ ...soir, indices: [m("^VIX", 5)] }),
+].join("\\n"));
 """
     r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
     assert r.returncode == 0, f"phrase-résumé : erreur node {r.stderr[-300:]}"
-    a, b, c = r.stdout.strip().split("\n")
-    assert a.startswith("false|Dernière séance : les 2 grands indices suivis sont en baisse") and "^FCHI" in a and "VIX" not in a, a
-    assert b.startswith("false|Ce matin : 1 indices sur 2 baissent, 1 montent"), b
-    assert c == "true|", f"sans indice de prix, la phrase reste cachée : {c!r}"
+    obtenu = r.stdout.strip().split("\n")
+    attendu = [
+        # soir : Europe seule comptée, New York encore ouverte, ni l'Asie de la veille ni le VIX
+        "false|Clôture en Europe : les 2 grands indices suivis sont en baisse (^FCHI -1 %). New York, séance en cours : ^GSPC -3 %.",
+        # accords au singulier et au pluriel
+        "false|Clôture en Europe : 2 indices sur 3 baissent, 1 monte (^FCHI 1 %).",
+        "false|Clôture en Europe : 1 indice sur 2 monte, 1 stable (^FCHI 1 %).",
+        # matin : un indice pas encore coté aujourd'hui n'est pas compté ; New York datée de sa clôture
+        "false|Ce matin en Europe : les 2 grands indices suivis sont en baisse (^FCHI -1 %). New York, clôture du date 2026-11-19 : ^GSPC -2 %.",
+        "false|Clôture en Europe : 1 indice suivi, en hausse (^FCHI 1 %). New York, clôture du date 2026-11-20 : ^GSPC 2 %.",
+        # aucun cours européen du jour : seule New York reste, avec sa date
+        "false|New York, clôture du date 2026-11-19 : ^GSPC 2 %.",
+        "true|",
+    ]
+    assert obtenu == attendu, "phrase-résumé : " + " / ".join(o for o, t in zip(obtenu, attendu) if o != t)
 
 
 @test
