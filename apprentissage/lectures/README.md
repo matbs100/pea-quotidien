@@ -8,7 +8,8 @@ Ce fichier est refait par `python scripts/lectures.py index`.
 
 | Lu le | Fiche de lecture | Organisme | Document | Statut |
 |---|---|---|---|---|
-| 2026-11-21 | [[2026-11-21-lettre-de-l-observatoire-de-l-epargne-de-l-amf-n-61-la-trans\|Lettre de l'Observatoire de l'épargne de l'AMF n° 61 : la transparence des frais]] | AMF | [PDF](https://www.amf-france.org/sites/institutionnel/files/private/2025-05/loe-61_20-mai.pdf) | ⏳ à relire par le chef |
+| 2026-11-22 | [[2026-11-22-esma-couts-et-performance-des-produits-d-investissement-de-d\|ESMA : coûts et performance des produits d'investissement de détail de l'UE]] | ESMA | [PDF](https://www.esma.europa.eu/sites/default/files/2023-12/ESMA50-524821-3052_Market_Report_on_Costs_and_Performance_of_EU_Retail_Investment_Products.pdf) | ⏳ à vérifier |
+| 2026-11-21 | [[2026-11-21-lettre-de-l-observatoire-de-l-epargne-de-l-amf-n-61-la-trans\|Lettre de l'Observatoire de l'épargne de l'AMF n° 61 : la transparence des frais]] | AMF | [PDF](https://www.amf-france.org/sites/institutionnel/files/private/2025-05/loe-61_20-mai.pdf) | ✅ relue le 2026-11-21 |
 | 2026-11-20 | [[2026-11-20-rapport-du-groupe-de-travail-sur-le-plan-d-epargne-en-action\|Rapport du groupe de travail sur le plan d'épargne en actions (PEA)]] | AMF | [PDF](https://www.amf-france.org/sites/institutionnel/files/private/2023-07/Rapport_GT_PEA_2023.pdf) | ✅ relue le 2026-11-20 |
 | 2026-11-19 | [[2026-11-19-profitability-of-simple-technical-trading-rules-of-chinese-s\|Profitability of simple technical trading rules of Chinese stock exchange indexes]] | arXiv (Zhu, Jiang, Li, Zhou) | [PDF](https://arxiv.org/abs/1504.04254) | ✅ relue le 2026-11-19 |
 | 2026-11-17 | [[2026-11-17-faq-pea-et-pea-pme-eti\|FAQ PEA et PEA PME-ETI]] | AMF | [PDF](https://www.amf-france.org/sites/institutionnel/files/pdf/59241/fr/FAQ_PEA_et_PEA_PME-ETI.pdf) | ✅ relue le 2026-11-18 |

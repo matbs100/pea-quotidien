@@ -775,6 +775,14 @@ def repere_frais_moyens():
 
 
 @test
+def repere_esma_dix_ans():
+    """D-20261122-2 : repère ESMA (10 000 € -> 14 850 €, 2 000 € de frais) dans le bloc Frais, rapport 2023 p. 4 et 11."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "Repère : 10 ans de fonds en Europe" in modele and "14 850 €" in modele and "2 000 € de frais" in modele
+    assert "13 500 €" in modele and "ESMA, rapport 2023, p. 4 et 11" in modele and "pas une prévision" in modele
+
+
+@test
 def defilement_tactile_sur_les_lignes():
     """Souhait du 17/11 : le doigt glisse sur une ligne comme sur le bord, et un toucher ouvre la fiche."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")

@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-22 · Repère de l'ESMA sur 10 ans dans le bloc Frais (Nuit, D-20261122-2)
+Le bloc Frais ajoute un repère : selon le régulateur européen (ESMA, rapport 2023), 10 000 € placés 10 ans dans un portefeuille type de fonds européens valent 14 850 € après 2 000 € de frais, environ 13 500 € après inflation. Exemple passé (2013-2022), pas une prévision ni un conseil. Inspiration : lecture du rapport ESMA. Idée n° 70. Test `repere_esma_dix_ans`.
+
 ## 2026-11-22 · Bandeau « Nouveau » lisible pour un débutant (Design, D-20261122-1)
 
 Le bandeau n'affiche plus les étiquettes internes ; le texte complet reste ici.
