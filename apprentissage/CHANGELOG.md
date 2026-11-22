@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-23 · Un ETF non éligible au PEA retiré (D-20261123-1)
+L'ETF BNP Paribas Easy MSCI Emerging (EEMK) n'est pas éligible au PEA : il ne fait plus partie des titres suivis.
+
 ## 2026-11-22 · Le résumé du marché sépare l'Europe et New York (D-20261122-4)
 La phrase en haut de page ne compte plus ensemble des marchés qui n'ont pas les mêmes heures. Elle donne d'abord l'Europe du jour, puis le S&P 500 à part, en disant si New York est encore ouverte ou de quel jour date sa clôture. L'accord « 1 montent » est corrigé. Les cartes des indices ne changent pas.
 

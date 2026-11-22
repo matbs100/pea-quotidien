@@ -817,6 +817,19 @@ console.log([
 
 
 @test
+def etf_suivis_eligibles_pea():
+    """D-20261123-1 : aucun ETF connu comme non éligible au PEA n'est suivi ; les doutes de Boursorama sont signalés."""
+    univers = json.loads((RACINE / "univers.json").read_text(encoding="utf-8"))
+    suivis = {**univers["etf"], **univers["etf_levier"]}
+    non_eligibles = {"EEMK.PA"}  # BNP Easy MSCI Emerging (LU1291097779) : justETF et Boursorama, 23/11/2026
+    assert not non_eligibles & set(suivis), f"ETF non éligible au PEA suivi : {non_eligibles & set(suivis)}"
+    for t in suivis:
+        f = RACINE / "data" / "fiches" / f"{t}.json"
+        if f.exists() and json.loads(f.read_text(encoding="utf-8")).get("infos", {}).get("pea_bourso") is False:
+            REMARQUES.append(f"{t} : Boursorama ne l'indique pas éligible au PEA, à vérifier")
+
+
+@test
 def repere_frais_moyens():
     """D-20261121-3 : repère AMF (0,38 % / 1,33 %) dans le bloc Frais d'un ETF, chiffres de la lettre n° 61 p. 2."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")

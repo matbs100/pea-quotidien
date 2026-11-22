@@ -9203,24 +9203,6 @@
    }
   },
   {
-   "ticker": "EEMK.PA",
-   "nom": "BNP Paribas Easy MSCI Emerging",
-   "categorie": "etf",
-   "prix": 14.74,
-   "devise": "EUR",
-   "var_1j": -5.01,
-   "var_1m": -9.43,
-   "date_cours": "2026-11-20",
-   "signal": "neutre",
-   "rsi": 28.7,
-   "isin": "LU1291097779",
-   "fx": {
-    "g": 0.27,
-    "e": 0.0,
-    "s": 0.0
-   }
-  },
-  {
    "ticker": "PSP5.PA",
    "nom": "Amundi PEA S&P 500",
    "categorie": "etf",

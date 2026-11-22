@@ -23,7 +23,6 @@
   "BTC-EUR": "Prix d'un bitcoin en euros. Les cryptomonnaies ne sont pas éligibles au PEA et sont très volatiles.",
   "ESE.PA": "ETF de BNP Paribas Asset Management qui suit le S&P 500 (500 grandes entreprises américaines), avec une réplication synthétique qui le rend éligible au PEA.",
   "ETZ.PA": "ETF de BNP Paribas Asset Management qui suit le Stoxx Europe 600 (600 entreprises européennes de toutes tailles).",
-  "EEMK.PA": "ETF de BNP Paribas Asset Management qui suit les actions des pays émergents (Chine, Inde, Taïwan, Brésil…).",
   "PSP5.PA": "ETF d'Amundi qui suit le S&P 500. Il détient des actions européennes et échange leur performance contre celle du S&P 500 (réplication synthétique), d'où son éligibilité au PEA.",
   "PE500.PA": "ETF d'Amundi qui suit une version du S&P 500 filtrée sur des critères environnementaux et sociaux (ESG), éligible au PEA par réplication synthétique.",
   "PUST.PA": "ETF d'Amundi qui suit le Nasdaq 100 (les 100 plus grandes valeurs non financières du Nasdaq, surtout technologiques), éligible au PEA par réplication synthétique.",
