@@ -768,6 +768,33 @@ console.log([fraisSurAns(c, 10), fraisSurAns({ ...c, total: null }, 10), fraisSu
 
 
 @test
+def resume_marche_phrase():
+    """D-20261121-1 : la phrase-résumé du marché est exécutée avec node (tous en baisse, mélange, VIX écarté, vide)."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    bloc = re.search(r"// résumé en une phrase.*?\n\}\)\(\);\n", modele, re.S)
+    assert bloc, "bloc resume-marche introuvable"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : phrase-résumé du marché non exécutée")
+        return
+    essai = """
+const esc = (x) => String(x), sens = (v) => (v < 0 ? "down" : "up"), pct = (v) => v + " %";
+const el = { hidden: true, innerHTML: "" }, $ = () => el;
+function run(D) { el.hidden = true; el.innerHTML = ""; """ + bloc.group(0) + """ return el.hidden + "|" + el.innerHTML; }
+const m = (t, v) => ({ ticker: t, nom: t, var_1j: v });
+console.log(run({ moment: "cloture", indices: [m("^FCHI", -1), m("^GSPC", -2), m("^VIX", 5)] }));
+console.log(run({ moment: "ouverture", indices: [m("^FCHI", -1), m("^GSPC", 2)] }));
+console.log(run({ moment: "cloture", indices: [m("^VIX", 5)] }));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.returncode == 0, f"phrase-résumé : erreur node {r.stderr[-300:]}"
+    a, b, c = r.stdout.strip().split("\n")
+    assert a.startswith("false|Dernière séance : les 2 grands indices suivis sont en baisse") and "^FCHI" in a and "VIX" not in a, a
+    assert b.startswith("false|Ce matin : 1 indices sur 2 baissent, 1 montent"), b
+    assert c == "true|", f"sans indice de prix, la phrase reste cachée : {c!r}"
+
+
+@test
 def repere_frais_moyens():
     """D-20261121-3 : repère AMF (0,38 % / 1,33 %) dans le bloc Frais d'un ETF, chiffres de la lettre n° 61 p. 2."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
