@@ -810,6 +810,21 @@ def repere_esma_dix_ans():
 
 
 @test
+def bandeau_nouveau_titre_propre():
+    """D-20261122-3 : le titre du bandeau « Nouveau » perd « (Nuit, D-…) » et « ✨ Nouveauté : » (exécuté avec node)."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    m = re.search(r"const propre = (nv\.titre.*?\.trim\(\));", modele, re.S)
+    assert m, "nettoyage du titre introuvable"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : titre du bandeau non exécuté")
+        return
+    essai = "const f = (nv) => " + m.group(1) + ";\nconsole.log([\"✨ Nouveauté : repère ESMA (Nuit, D-20261122-2)\", \"Bandeau lisible (Design, D-20261122-1)\", \"Frais sur 10 ans\"].map((t) => f({ titre: t })).join(\"|\"));"
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "repère ESMA|Bandeau lisible|Frais sur 10 ans", f"titre du bandeau faux : {r.stdout!r} {r.stderr[-300:]}"
+
+
+@test
 def defilement_tactile_sur_les_lignes():
     """Souhait du 17/11 : le doigt glisse sur une ligne comme sur le bord, et un toucher ouvre la fiche."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")

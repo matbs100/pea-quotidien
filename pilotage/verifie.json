@@ -154,5 +154,17 @@
   "jour": "abbf72b",
   "preuve": "git show abbf72b relu le 21/11 : data/presse/2026-11-21.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 8 lignes, aucun code ; chiffres Zonebourse/Boursorama attribués.",
   "le": "2026-11-21"
+ },
+ {
+  "alerte": "data/presse/2026-11-22.md : hors du rôle de l'agent « nuit »",
+  "jour": "60488c7",
+  "preuve": "git show 60488c7 relu le 22/11 : data/presse/2026-11-22.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 8 lignes, aucun code ; chiffres attribués à Zonebourse et Boursorama, aucune estimation inventée.",
+  "le": "2026-11-22"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle de l'agent « design »",
+  "jour": "1d9ed5b",
+  "preuve": "git show 1d9ed5b relu le 22/11 : data/taux_bce.json ne change que la date « releve » (21 -> 22/11), effet de la régénération de la page par rendu.py ; aucun taux modifié (2,5 / 2,65 / 2,9).",
+  "le": "2026-11-22"
  }
 ]

@@ -1,17 +1,18 @@
 {
- "genere_le": "2026-11-21T05:12+01:00",
+ "genere_le": "2026-11-22T05:13+01:00",
  "fiche": "2026-11-20 (cloture)",
  "lieu": "cloud",
  "etat": "vert",
- "resume": "Tout est en ordre. 51/51 tests, 8/8 prix revérifiés, 34/34 liens valides, site à jour.",
+ "resume": "Tout est en ordre. 54/54 tests, 8/8 prix revérifiés, 35/35 liens valides, site à jour.",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "51/51 tests réussis",
+   "resume": "54/54 tests réussis",
    "details": [
-    "• nouvelles dépendances à justifier dans le journal : pypdf"
+    "• nouvelles dépendances à justifier dans le journal : pypdf",
+    "• Playwright absent : glissement tactile non exécuté"
    ]
   },
   {
@@ -56,7 +57,7 @@
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "34/34 liens valides sur 8 titres, 8 non ouverts (robots.txt), 2 injoignables d'ici",
+   "resume": "35/35 liens valides sur 8 titres, 7 non ouverts (robots.txt), 2 injoignables d'ici",
    "details": []
   },
   {
@@ -72,7 +73,7 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "41 connaissance(s) en attente de vérification (⏳)",
+    "42 connaissance(s) en attente de vérification (⏳)",
     "7 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
@@ -80,27 +81,19 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "14 commit(s), 0 problème(s), 0 alerte(s) ; 5 vérifiée(s) par le chef",
+   "resume": "8 commit(s), 0 problème(s), 0 alerte(s) ; 3 vérifiée(s) par le chef",
    "details": [
+    "✔ vérifié par le chef le 2026-11-22 : 60488c7 « Amélioration : repère ESMA sur 10 ans dans le bloc » : data/presse/2026-11-22.md : hors du rôle de l'agent « nuit » — git show 60488c7 relu le 22/11 : data/presse/2026-11-22.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 8 lignes, aucun code ; chiffres attribués à Zonebourse et Boursorama, aucune estimation inventée.",
+    "✔ vérifié par le chef le 2026-11-22 : 1d9ed5b « Design : bandeau Nouveau lisible [D-20261122-1] » : data/taux_bce.json : hors du rôle de l'agent « design » — git show 1d9ed5b relu le 22/11 : data/taux_bce.json ne change que la date « releve » (21 -> 22/11), effet de la régénération de la page par rendu.py ; aucun taux modifié (2,5 / 2,65 / 2,9).",
     "✔ vérifié par le chef le 2026-11-21 : abbf72b « Amélioration : frais sur 10 ans dans le bloc Frais » : data/presse/2026-11-21.md : hors du rôle de l'agent « nuit » — git show abbf72b relu le 21/11 : data/presse/2026-11-21.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 8 lignes, aucun code ; chiffres Zonebourse/Boursorama attribués.",
-    "✔ vérifié par le chef le 2026-11-20 : 8a47d22 « Amélioration : date de mise à jour d'Eurostat sur  » : data/presse/2026-11-20.md : hors du rôle de l'agent « nuit » — git show 8a47d22 relu le 20/11 : data/presse/2026-11-20.md est la revue de presse demandée par le chef (pilotage/ecole.md, devoir 2), 9 lignes, un article ABC Bourse rouvert par le chef (4,0 %, 3,8 %, énergie 20,8 %, attentes WSJ) ; aucun code touché.",
-    "✔ vérifié par le chef le 2026-11-20 : 8a47d22 « Amélioration : date de mise à jour d'Eurostat sur  » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 8a47d22 relu le 20/11 : taux_bce.json régénéré par le rendu (champ « maj » 2026-11-18 ajouté pour D-20261120-1, relevé 2026-11-20) ; chiffres inchangés, aucun commit de donnée de fiche.",
-    "✔ vérifié par le chef le 2026-11-20 : 6d52a6f « Design : la pastille Risque ouvre la fiche au touc » : data/taux_bce.json : hors du rôle de l'agent « design » — git show 6d52a6f relu le 20/11 : seul le champ « releve » passe de 2026-11-19 à 2026-11-20 (rendu automatique, trois occurrences) ; aucun taux modifié.",
-    "✔ vérifié par le chef le 2026-11-20 : 6d52a6f « Design : la pastille Risque ouvre la fiche au touc » : scripts/tests.py : hors du rôle de l'agent « design » — git show 6d52a6f relu le 20/11 : 4 lignes ajoutées au test tactile existant (la pastille Risque ouvre la fiche), prévues pour D-20261120-2 ; 48/48 tests verts.",
+    "2f2f898 [code] Code : rapport du 2026-11-22 (vert) ; test du résumé du marché [correc",
+    "60488c7 [nuit] Amélioration : repère ESMA sur 10 ans dans le bloc Frais [D-20261122-2",
+    "1d9ed5b [design] Design : bandeau Nouveau lisible [D-20261122-1]",
+    "222e47c [chef] Chef : rapport du 2026-11-21 (vert) ; repère des frais moyens dans le ",
     "d3d5675 [univers] Univers : mise à jour hebdomadaire du 2026-11-21 (2 ajouts)",
     "ee5b243 [code] Code : rapport du 2026-11-21 (vert) ; source sans date isolée écartée ",
     "abbf72b [nuit] Amélioration : frais sur 10 ans dans le bloc Frais [D-20261121-2]",
-    "2111aa1 [design] Design : phrase-résumé du marché en haut de page [D-20261121-1]",
-    "d3e89a6 [fiche] Matin PEA 2026-11-20 (cloture) : notification à renvoyer",
-    "cbe3db5 [fiche] Matin PEA 2026-11-20 (cloture)",
-    "7515e5d [chef] Chef : passage de mi-journée du 2026-11-20 (orange)",
-    "d008649 [fiche] Matin PEA 2026-11-20 (ouverture) : contrôle des sources relancé",
-    "4c9fdb6 [fiche] Matin PEA 2026-11-20 (ouverture) : notification à renvoyer",
-    "8576758 [fiche] Matin PEA 2026-11-20 (ouverture)",
-    "edcf8b9 [chef] Chef : rapport du 2026-11-20 (vert) ; délai de transfert du PEA dans l",
-    "0a59de2 [code] Code : rapport du 2026-11-20 (vert)",
-    "8a47d22 [nuit] Amélioration : date de mise à jour d'Eurostat sur la carte d'inflation",
-    "6d52a6f [design] Design : la pastille Risque ouvre la fiche au toucher [D-20261120-1]"
+    "2111aa1 [design] Design : phrase-résumé du marché en haut de page [D-20261121-1]"
    ]
   },
   {
@@ -109,25 +102,25 @@
    "niveau": "ok",
    "resume": "5 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
    "details": [
-    "6d52a6f « Design : la pastille Risque ouvre la fiche au touc » : rien de retiré",
-    "8a47d22 « Amélioration : date de mise à jour d'Eurostat sur  » : rien de retiré",
-    "edcf8b9 « Chef : rapport du 2026-11-20 (vert) ; délai de tra » : rien de retiré",
     "2111aa1 « Design : phrase-résumé du marché en haut de page [ » : rien de retiré",
-    "abbf72b « Amélioration : frais sur 10 ans dans le bloc Frais » : rien de retiré"
+    "abbf72b « Amélioration : frais sur 10 ans dans le bloc Frais » : rien de retiré",
+    "222e47c « Chef : rapport du 2026-11-21 (vert) ; repère des f » : rien de retiré",
+    "1d9ed5b « Design : bandeau Nouveau lisible [D-20261122-1] » : rien de retiré",
+    "60488c7 « Amélioration : repère ESMA sur 10 ans dans le bloc » : rien de retiré"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
    "niveau": "ok",
-   "resume": "53 décisions, 5 à réaliser, 0 point(s) à voir",
+   "resume": "55 décisions, 5 à réaliser, 0 point(s) à voir",
    "details": []
   },
   {
    "nom": "lectures",
    "titre": "Lectures des agents (PDF de sources vérifiées)",
    "niveau": "ok",
-   "resume": "13 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
+   "resume": "14 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
    "details": []
   },
   {

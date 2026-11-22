@@ -1,5 +1,7 @@
 Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidian.py` depuis [[Finance/PEA Quotidien/pilotage/decisions|le journal des décisions]]).
 
+- **22/11** · `D-20261122-3` · Test node du nettoyage du titre du bandeau « Nouveau » (D-20261122-1), signalé ⚠️ sans test par le vérificateur du code → correction (gain —) ; réalisée le 22/11
+- **22/11** · `D-20261122-2` · n° 70 · Bloc Frais : repère ESMA « 10 000 € sur 10 ans : 14 850 € après 2 000 € de frais, ≈ 13 500 € après inflation » → provisoire (nuit), confirmée par le chef le 2026-11-22 (chiffres relus dans le PDF de l'ESMA, p. 4 et 11) (gain 3,50) ; réalisée le 22/11
 - **21/11** · `D-20261121-3` · n° 67 · Bloc Frais d'un ETF : repère des frais moyens (ETF indiciels actions 0,38 %, fonds d'actions français 1,33 %, AMF n° 61 p. 2, rouvert par le chef) → adoptée (gain 3,55) ; réalisée le 21/11
 - **21/11** · `D-20261121-2` · n° 66 · Bloc Frais : ligne « Sur 10 ans » (valeur supposée constante, pas une prévision) → adoptée (confirmée par le chef le 2026-11-21) (gain 3,75) ; réalisée le 21/11
 - **20/11** · `D-20261120-3` · n° 64 · Bloc fiscalité : « 80 % des transferts de PEA en moins d'un mois » (échantillon de grands teneurs de compte, AMF 2023, p. 8), sans délai garanti → adoptée (gain 3,25) ; réalisée le 20/11
@@ -38,5 +40,3 @@ Décisions des agents, les plus récentes d'abord (généré par `scripts/obsidi
 - **08/11** · `D-20261108-2` · n° 29 · `lectures.py lire` garde les sauts de page (doublon) → rejetée (gain —)
 - **08/11** · `D-20261108-1` · Chantier interface : textes des notes, astuces, liens et libellés de fiche portés à 14 px (étiquettes de 11 à 12 px) → correction (gain 3,00) ; réalisée le 08/11 ; bilan : ✅ gardée (12/11) : tests verts, aucune régression de page signalée depuis 4 jours
 - **07/11** · `D-20261107-3` · n° 27 · Lien Yahoo en 404 depuis le cloud : orange et non rouge au contrôle → rejetée (gain 2,80)
-- **07/11** · `D-20261107-2` · n° 24 · Recoupement entre mes ETF (diversification seulement apparente) → à l'essai (gain 3,45)
-- **07/11** · `D-20261107-1` · n° 25 · Avertissement des ETF à effet de levier aligné sur l'AMF (texte vérifié p. 5 du guide) → correction (gain 3,15) ; réalisée le 07/11 ; bilan : ✅ gardée (12/11) : texte AMF inchangé, tests verts

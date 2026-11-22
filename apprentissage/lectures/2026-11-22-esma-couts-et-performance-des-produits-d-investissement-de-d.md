@@ -6,7 +6,7 @@ url: https://www.esma.europa.eu/sites/default/files/2023-12/ESMA50-524821-3052_M
 publie_le: 2023-12-18
 lu_le: 2026-11-22
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-22
 ---
 # 📄 ESMA : coûts et performance des produits d'investissement de détail de l'UE
 
@@ -27,4 +27,4 @@ Ce rapport du régulateur européen des marchés passe en revue les coûts et le
 - Un indicateur sur les frais des fonds actifs et passifs : idée n° 71 (apprentissage/idees.md).
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- Relue le 2026-11-22 : le PDF s'ouvre (42 pages, ESMA, rapport 2023). 14 850 €, 2 000 € de frais, environ 13 500 € après inflation, 8,4 et 5,5 Md€ : exacts (résumé p. 4, repris p. 11) ; période 2013-2022 confirmée (p. 2-3 et graphiques) ; actifs contre passifs/ETF : exact. Résumé fait avec les mots de l'agent, rien de copié. ✅
