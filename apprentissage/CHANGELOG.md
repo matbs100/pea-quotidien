@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-22 · Bandeau « Nouveau » lisible pour un débutant (Design, D-20261122-1)
+
+Le bandeau n'affiche plus les étiquettes internes ; le texte complet reste ici.
+
 ## 2026-11-21 · Repère des frais moyens dans le bloc Frais d'un ETF (D-20261121-3)
 
 Le bloc Frais d'un ETF montre le repère de l'AMF : 0,38 % par an en moyenne pour les ETF indiciels actions, 1,33 % pour les fonds d'actions français (2024). Pour comparer, pas pour choisir.

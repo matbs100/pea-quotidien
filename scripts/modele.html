@@ -545,7 +545,10 @@ if (D.url_depot) {
   if (nv && (new Date(D.date) - new Date(nv.date)) / 864e5 <= 3) {
     const a = $("#nouveau");
     a.hidden = false; a.href = D.url_depot + "/blob/claude/pea/apprentissage/CHANGELOG.md"; a.target = "_blank"; a.rel = "noopener";
-    a.textContent = "🛠 Nouveau : " + nv.titre;
+    // titre lisible : sans l'étiquette interne « (Nuit, D-…) » ni le « ✨ Nouveauté : » répété
+    const propre = nv.titre.replace(/\s*\((?:Nuit|Chef|Design|Veille|Code|Univers|Amélioration)[^)]*\)\s*$/i, "")
+      .replace(/\s*\(D-[^)]*\)\s*$/, "").replace(/^[✨🛠\s]*Nouveaut[ée]\s*:\s*/i, "").trim();
+    a.textContent = "🛠 Nouveau : " + (propre || nv.titre);
   }
 } else $("#lien-appr").remove();
 

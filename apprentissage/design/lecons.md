@@ -21,6 +21,8 @@ Une leçon par ligne, datée, 60 lignes au plus. Relue chaque nuit avant de trav
 
 - 2026-11-21 · Phrase-résumé du marché en tête (D-20261121-1) : une phrase calculée depuis les données déjà affichées ne retire rien et règle la compréhension en 5 s.
 
+- 2026-11-22 · Bandeau « Nouveau » : nettoyer le titre à l'affichage en JS (D-20261122-1) ; ne pas oublier l'étude de marché, reportée deux nuits.
+
 ## Ce qui a été annulé, et pourquoi
 
 ## Erreurs à ne plus refaire

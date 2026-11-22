@@ -84,3 +84,5 @@ Grille de décision : gain de clarté faible mais sûr, risque nul (aucun texte 
 
 - D-20261120-1 · provisoire (design) · 2026-11-20 · La pastille « Risque n/7 » d'une ligne ouvre la fiche au toucher (plus de bulle bloquante) ; l'explication complète reste dans la fiche (phrases de l'ancienne bulle reprises) et au survol (title). Indicateur : toucher sur la pastille ouvre la fiche, test ajouté, comparer 🟢. Résultat : constaté (Playwright tactile 390 px), 48/48 tests, comparer 🟢.
 - D-20261121-1 · confirmée par le chef le 2026-11-21 (captures 390 px relues, rien retiré) · (design) · 2026-11-21 · Phrase-résumé sous la date (« Dernière séance : 10 indices sur 11 baissent, 1 montent (CAC 40 …, S&P 500 …) »), calculée depuis les indices déjà affichés ; rien retiré. Indicateur : le sens du marché lisible sans défiler à 390 px. Résultat : constaté (capture 390 px clair et sombre), 48/48 tests, comparer 🟢.
+
+- D-20261122-1 · provisoire (design) · Bandeau « Nouveau » sans jargon interne · indicateur : titre lisible sans « (Nuit, D-…) » ni double emoji.
