@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <!-- Sécurité : seuls le script de cette page (repéré par son empreinte, calculée par rendu.py) et les polices
      Google peuvent se charger ; aucun envoi de données, aucun formulaire vers l'extérieur. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-eUVAE+MZRxmtMznLl8aSTeAvYZFljvMTMsI4mixYgJc='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-yjJ8NvArY8u7djaOvASHKpdqIAehUgyyyz0fCITJgqI='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matin PEA</title>
@@ -627,7 +627,8 @@ $("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
     // New York ferme à 16 h, heure locale : avant, le cours du jour n'est pas une clôture
     const h = +new Date(D.genere_le).toLocaleString("en-US", { timeZone: "America/New_York", hour: "numeric", hourCycle: "h23" });
     const enCours = us.date_cours === D.date && h < 16;
-    phrases.push(`New York, ${enCours ? "séance en cours" : `clôture du ${dateCourte(us.date_cours)}`} : ${cite(us)}.`);
+    const heure = new Date(D.genere_le).toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "numeric", minute: "2-digit" }).replace(":", " h ");
+    phrases.push(`New York, ${enCours ? `encore ouverte à ${heure}` : `clôture du ${dateCourte(us.date_cours)}`} : ${cite(us)}.`);
   }
   if (!phrases.length) return;
   const el = $("#resume-marche"); el.hidden = false;

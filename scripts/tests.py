@@ -802,7 +802,7 @@ console.log([
     obtenu = r.stdout.strip().split("\n")
     attendu = [
         # soir : Europe seule comptée, New York encore ouverte, ni l'Asie de la veille ni le VIX
-        "false|Clôture en Europe : les 2 grands indices suivis sont en baisse (^FCHI -1 %). New York, séance en cours : ^GSPC -3 %.",
+        "false|Clôture en Europe : les 2 grands indices suivis sont en baisse (^FCHI -1 %). New York, encore ouverte à 17 h 59 : ^GSPC -3 %.",
         # accords au singulier et au pluriel
         "false|Clôture en Europe : 2 indices sur 3 baissent, 1 monte (^FCHI 1 %).",
         "false|Clôture en Europe : 1 indice sur 2 monte, 1 stable (^FCHI 1 %).",

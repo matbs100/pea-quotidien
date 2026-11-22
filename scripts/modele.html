@@ -627,7 +627,8 @@ $("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
     // New York ferme à 16 h, heure locale : avant, le cours du jour n'est pas une clôture
     const h = +new Date(D.genere_le).toLocaleString("en-US", { timeZone: "America/New_York", hour: "numeric", hourCycle: "h23" });
     const enCours = us.date_cours === D.date && h < 16;
-    phrases.push(`New York, ${enCours ? "séance en cours" : `clôture du ${dateCourte(us.date_cours)}`} : ${cite(us)}.`);
+    const heure = new Date(D.genere_le).toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "numeric", minute: "2-digit" }).replace(":", " h ");
+    phrases.push(`New York, ${enCours ? `encore ouverte à ${heure}` : `clôture du ${dateCourte(us.date_cours)}`} : ${cite(us)}.`);
   }
   if (!phrases.length) return;
   const el = $("#resume-marche"); el.hidden = false;
