@@ -202,8 +202,9 @@ def main():
                    "categorie": m["categorie"], "boursorama": bourso, "secteur": inf.get("secteur")}
         titres[t] = fusionner(avant or None, nouveau, jour, relu, panne and t not in verifs)
     try:
-        for f in json.loads((RACINE / "opcvm.json").read_text(encoding="utf-8")).get("fonds", []):
-            statut, raisons, sources = statut_opcvm(f, jour)
+        doc_opc = json.loads((RACINE / "opcvm.json").read_text(encoding="utf-8"))
+        for f in doc_opc.get("fonds", []):  # date de relecture : celle du fonds, sinon celle du fichier
+            statut, raisons, sources = statut_opcvm({**f, "verifie_le": f.get("verifie_le") or doc_opc.get("verifie_le")}, jour)
             titres[f["isin"]] = fusionner((ancien.get("titres") or {}).get(f["isin"]),
                                           {"statut": statut, "raisons": raisons, "sources": sources, "isin": f["isin"],
                                            "nom": f.get("nom", ""), "categorie": "opcvm"}, jour, False)
@@ -212,6 +213,8 @@ def main():
     doc = {"maj": datetime.now().astimezone().isoformat(timespec="minutes"), "jour": jour,
            "lecture": "Boursorama relu" if reseau else "règles et cache seulement",
            "pages_lues": lus, "resume": resume(titres), "titres": titres, "verifications": verifs}
+    if not reseau and ancien.get("pages_lues") and ancien.get("jour") == jour:  # recalcul : garder la lecture du jour
+        doc["pages_lues"], doc["lecture"] = ancien["pages_lues"], "Boursorama relu, puis recalculé sans réseau"
     FICHIER.parent.mkdir(parents=True, exist_ok=True)
     FICHIER.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
     r = doc["resume"]

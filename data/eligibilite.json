@@ -1,0 +1,4385 @@
+{
+ "maj": "2026-11-23T09:03+01:00",
+ "jour": "2026-11-23",
+ "lecture": "Boursorama relu, puis recalculé sans réseau",
+ "pages_lues": 232,
+ "resume": {
+  "oui": 231,
+  "doute": 23,
+  "non": 1
+ },
+ "titres": {
+  "ESE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0011550185",
+   "nom": "BNP Paribas Easy S&P 500",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ETZ.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0011550193",
+   "nom": "BNP Paribas Easy Stoxx Europe 600",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PSP5.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0011871128",
+   "nom": "Amundi PEA S&P 500",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PE500.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0013412285",
+   "nom": "Amundi PEA S&P 500 ESG",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PUST.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0011871110",
+   "nom": "Amundi PEA Nasdaq-100",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PANX.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0013412269",
+   "nom": "Amundi PEA Nasdaq-100 (PANX)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CW8.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1681043599",
+   "nom": "Amundi MSCI World (CW8)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "DCAM.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR001400U5Q4",
+   "nom": "Amundi PEA Monde MSCI World",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "EWLD.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU2655993207",
+   "nom": "Amundi PEA MSCI World (EWLD)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "WPEA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "IE0002XZSHO1",
+   "nom": "iShares MSCI World Swap PEA",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PAEEM.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0013412020",
+   "nom": "Amundi PEA MSCI Emerging Markets",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PTPXE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0013411980",
+   "nom": "Amundi PEA Japan Topix",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RS2K.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1681038672",
+   "nom": "Amundi Russell 2000 PEA",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CAC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0007052782",
+   "nom": "Amundi CAC 40",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "C40.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1681046931",
+   "nom": "Amundi CAC 40 ESG",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "MSE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0007054358",
+   "nom": "Amundi Euro Stoxx 50",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PCEU.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0013412038",
+   "nom": "Amundi PEA MSCI Europe",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PLEM.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0011440478",
+   "nom": "Amundi PEA Emerging ESG",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "GPEA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0014017NX3",
+   "nom": "Amundi PEA Global (MSCI ACWI)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PAASI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0013412012",
+   "nom": "Amundi PEA Asie Émergente (MSCI EM Asia)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PAEJ.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0011869312",
+   "nom": "Amundi PEA Asie Pacifique hors Japon",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PINR.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0011869320",
+   "nom": "Amundi PEA Inde (MSCI India)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PMEH.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0011869304",
+   "nom": "Amundi PEA Immobilier Europe (FTSE EPRA/NAREIT)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "OBLI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0013346681",
+   "nom": "Amundi PEA Euro Court Terme (monétaire)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CACC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0013380607",
+   "nom": "Amundi CAC 40 (capitalisation, CACC)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "C50.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1681047236",
+   "nom": "Amundi Core Euro Stoxx 50",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ETDD.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0012739431",
+   "nom": "BNP Paribas Easy Euro Stoxx 50",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "DAX.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU0252633754",
+   "nom": "Amundi DAX II",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CG1.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0010655712",
+   "nom": "Amundi DAX (CG1)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CD8.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0010717090",
+   "nom": "Amundi MSCI EMU High Dividend",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "MMS.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1598689153",
+   "nom": "Amundi MSCI EMU Small Cap ESG",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PABZ.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU2182388582",
+   "nom": "Amundi MSCI EMU Climate Paris Aligned",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "TNO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1834988518",
+   "nom": "Amundi Stoxx Europe 600 Technologie",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "HLT.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1834986900",
+   "nom": "Amundi Stoxx Europe 600 Santé",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "BNK.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1834983477",
+   "nom": "Amundi Stoxx Europe 600 Banques",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "INS.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1834987973",
+   "nom": "Amundi Stoxx Europe 600 Assurance",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "FOO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1834985845",
+   "nom": "Amundi Stoxx Europe 600 Consommation de base",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "TRV.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1834988781",
+   "nom": "Amundi Stoxx Europe 600 Consommation discrétionnaire",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CHM.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1834983634",
+   "nom": "Amundi Stoxx Europe 600 Matériaux de base",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "IND.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1834987890",
+   "nom": "Amundi Stoxx Europe 600 Industrie",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "UTI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1834988864",
+   "nom": "Amundi Stoxx Europe 600 Services aux collectivités",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "EEMU.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1291098827",
+   "nom": "BNP Paribas Easy MSCI EMU Min TE",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "E40.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0010150458",
+   "nom": "BNP Paribas Easy CAC 40 ESG",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "50E.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "IE00B4K6B022",
+   "nom": "HSBC Euro Stoxx 50",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "MFE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1646360971",
+   "nom": "Amundi Core MSCI EMU (Dist)",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "S6EW.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU0599613147",
+   "nom": "Ossiam STOXX Europe 600 ESG Equal Weight",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CU2.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "LU1681042864",
+   "nom": "Amundi PEA MSCI USA ESG Selection",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "LVC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0010592014",
+   "nom": "Amundi CAC 40 Daily (2x) Leveraged",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "LQQ.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0010342592",
+   "nom": "Amundi Nasdaq-100 Daily (2x) Leveraged",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CL2.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0010755611",
+   "nom": "Amundi MSCI USA Daily (2x) Leveraged",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "BX4.PA": {
+   "statut": "oui",
+   "raisons": [
+    "Boursorama : éligible au PEA (annoncé par l'émetteur)"
+   ],
+   "sources": [
+    "Boursorama"
+   ],
+   "isin": "FR0010411884",
+   "nom": "Amundi CAC 40 Daily (-2x) Inverse",
+   "categorie": "etf",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "STLAM.MI": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL00150001Q9",
+   "nom": "Stellantis",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "AI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120073",
+   "nom": "Air Liquide",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "AIR.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0000235190",
+   "nom": "Airbus",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010220475",
+   "nom": "Alstom",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "MT.AS": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN LU)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "LU1598757687",
+   "nom": "ArcelorMittal",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits miniers et minéraux",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CS.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120628",
+   "nom": "AXA",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Assurance",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "BNP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000131104",
+   "nom": "BNP Paribas",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Banque",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "EN.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120503",
+   "nom": "Bouygues",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services industriels",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CAP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000125338",
+   "nom": "Capgemini",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120172",
+   "nom": "Carrefour",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Vente au détail de produits alimentaires et de première nécessité",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ACA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000045072",
+   "nom": "Crédit Agricole",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Banque",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "BN.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120644",
+   "nom": "Danone",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Production de produits alimentaires et de tabac",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "DSY.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014003TT8",
+   "nom": "Dassault Systèmes",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "EDEN.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010908533",
+   "nom": "Edenred",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ENGI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010208488",
+   "nom": "Engie",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services publics",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "EL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121667",
+   "nom": "EssilorLuxottica",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Biens de consommation",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ERF.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014000MR3",
+   "nom": "Eurofins",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RMS.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000052292",
+   "nom": "Hermès",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Biens de consommation",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "KER.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121485",
+   "nom": "Kering",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Biens de consommation",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "OR.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120321",
+   "nom": "L'Oréal",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits ménagers",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "LR.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010307819",
+   "nom": "Legrand",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "MC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121014",
+   "nom": "LVMH",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Biens de consommation",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ML.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400AJ45",
+   "nom": "Michelin",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ORA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000133308",
+   "nom": "Orange",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Télécommunications",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120693",
+   "nom": "Pernod Ricard",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Production de produits alimentaires et de tabac",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PUB.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000130577",
+   "nom": "Publicis",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RNO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000131906",
+   "nom": "Renault",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SAF.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000073272",
+   "nom": "Safran",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SGO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000125007",
+   "nom": "Saint-Gobain",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits miniers et minéraux",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SAN.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120578",
+   "nom": "Sanofi",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SU.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121972",
+   "nom": "Schneider Electric",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "GLE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000130809",
+   "nom": "Société Générale",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Banque",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "STLAP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL00150001Q9",
+   "nom": "Stellantis",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "STMPA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0000226223",
+   "nom": "STMicroelectronics",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Composants électroniques et fabrication",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "TEP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000051807",
+   "nom": "Teleperformance",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "HO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121329",
+   "nom": "Thales",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "TTE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120271",
+   "nom": "TotalEnergies",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Prospection et production intégrées de pétrole et de gaz",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "URW.PA": {
+   "statut": "non",
+   "raisons": [
+    "Unibail-Rodamco-Westfield : foncière au régime SIIC, exclue du PEA depuis le 21/10/2011"
+   ],
+   "sources": [
+    "règle SIIC"
+   ],
+   "isin": "FR0013326246",
+   "nom": "Unibail-Rodamco-Westfield",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": "Immobilier",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "VIE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000124141",
+   "nom": "Veolia",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "DG.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000125486",
+   "nom": "Vinci",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services industriels",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ENX.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0006294274",
+   "nom": "Euronext",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services d'investissement",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "BVI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0006174348",
+   "nom": "Bureau Veritas",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "AC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120404",
+   "nom": "Accor",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services d'accueil",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "AM.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014004L86",
+   "nom": "Dassault Aviation",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "FGR.PA": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Eiffage",
+   "categorie": "actions",
+   "boursorama": null,
+   "secteur": "Industrials",
+   "depuis": "2026-11-23"
+  },
+  "BOL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000039299",
+   "nom": "Bolloré",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Énergie en aval et en milieu de chaîne",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "GTT.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011726835",
+   "nom": "GTT",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ELIS.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0012435121",
+   "nom": "Elis",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "NEX.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000044448",
+   "nom": "Nexans",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RXL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010451203",
+   "nom": "Rexel",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services industriels",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SPIE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0012757854",
+   "nom": "Spie",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SOI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013227113",
+   "nom": "Soitec",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Composants électroniques et fabrication",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "VK.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013506730",
+   "nom": "Vallourec",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Énergie en amont",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ATE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000071946",
+   "nom": "Alten",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SOP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000050809",
+   "nom": "Sopra Steria",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "AF.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400J770",
+   "nom": "Air France-KLM",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services industriels",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ETL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010221234",
+   "nom": "Eutelsat",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Télécommunications",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "UBI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000054470",
+   "nom": "Ubisoft",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "VIRI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400PVN6",
+   "nom": "Viridien",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Énergie en amont",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ASML.AS": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0010273215",
+   "nom": "ASML",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Composants électroniques et fabrication",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ADYEN.AS": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0012969182",
+   "nom": "Adyen",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Financements et services spécialisés",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PRX.AS": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0013654783",
+   "nom": "Prosus",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Vente au détail de produits alimentaires et de première nécessité",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "INGA.AS": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0011821202",
+   "nom": "ING",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Banque",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PHIA.AS": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0000009538",
+   "nom": "Philips",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SAP.DE": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN DE)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "DE0007164600",
+   "nom": "SAP",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SIE.DE": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN DE)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "DE0007236101",
+   "nom": "Siemens",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALV.DE": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN DE)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "DE0008404005",
+   "nom": "Allianz",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": "Assurance",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "DTE.DE": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN DE)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "DE0005557508",
+   "nom": "Deutsche Telekom",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": "Télécommunications",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RHM.DE": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN DE)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "DE0007030009",
+   "nom": "Rheinmetall",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "IFX.DE": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN DE)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "DE0006231004",
+   "nom": "Infineon",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": "Composants électroniques et fabrication",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ENEL.MI": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN IT)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "IT0003128367",
+   "nom": "Enel",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services publics",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ISP.MI": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN IT)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "IT0000072618",
+   "nom": "Intesa Sanpaolo",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Banque",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RACE.MI": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0011585146",
+   "nom": "Ferrari",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ITX.MC": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN ES)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "ES0148396007",
+   "nom": "Inditex",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": "Commerces de détail de biens de consommation",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "IBE.MC": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN ES)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "ES0144580Y14",
+   "nom": "Iberdrola",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SAN.MC": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN ES)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "ES0113900J37",
+   "nom": "Banco Santander",
+   "categorie": "actions",
+   "boursorama": false,
+   "secteur": "Banque",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "NOVO-B.CO": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Novo Nordisk",
+   "categorie": "actions",
+   "boursorama": null,
+   "secteur": "Healthcare",
+   "depuis": "2026-11-23"
+  },
+  "NOKIA.HE": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Nokia",
+   "categorie": "actions",
+   "boursorama": null,
+   "secteur": "Technology",
+   "depuis": "2026-11-23"
+  },
+  "AKE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010313833",
+   "nom": "Arkema",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "AMUN.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0004125920",
+   "nom": "Amundi",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services d'investissement",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "BB.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120966",
+   "nom": "Bic",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Biens de consommation",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "BIM.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013280286",
+   "nom": "bioMérieux",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "COFA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010667147",
+   "nom": "Coface",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Assurance",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "DBG.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000053381",
+   "nom": "Derichebourg",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits miniers et minéraux",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "DEC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000077919",
+   "nom": "JCDecaux",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "DIM.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013154002",
+   "nom": "Sartorius Stedim Biotech",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services de santé",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ERA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000131757",
+   "nom": "Eramet",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits miniers et minéraux",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "FNAC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011476928",
+   "nom": "Fnac Darty",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Commerces de détail de biens de consommation",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "FR.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013176526",
+   "nom": "Valeo",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "GET.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010533075",
+   "nom": "Getlink",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services industriels",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "IPN.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010259150",
+   "nom": "Ipsen",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "IPS.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000073298",
+   "nom": "Ipsos",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "MF.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121204",
+   "nom": "Wendel",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services d'investissement",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "NK.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000120859",
+   "nom": "Imerys",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RCO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000130395",
+   "nom": "Rémy Cointreau",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Production de produits alimentaires et de tabac",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RF.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121121",
+   "nom": "Eurazeo",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services d'investissement",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "RUI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013269123",
+   "nom": "Rubis",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Énergie en aval et en milieu de chaîne",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SCR.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010411983",
+   "nom": "SCOR",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Assurance",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SK.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121709",
+   "nom": "SEB",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits ménagers",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SW.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121220",
+   "nom": "Sodexo",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services d'accueil",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "TE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0014559478",
+   "nom": "Technip Energies",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services industriels",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "TFI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000054900",
+   "nom": "TF1",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services de médias et d'édition",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "TRI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0005691656",
+   "nom": "Trigano",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "VCT.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000031775",
+   "nom": "Vicat",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits miniers et minéraux",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "VIRP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000031577",
+   "nom": "Virbac",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services de santé",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "VIV.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000127771",
+   "nom": "Vivendi",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "WLN.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR00140182K6",
+   "nom": "Worldline",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Financements et services spécialisés",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "EXA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000062671",
+   "nom": "Exail Technologies",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "AYV.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013258662",
+   "nom": "Ayvens",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Financements et services spécialisés",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "PLX.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0015001W49",
+   "nom": "Pluxee",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "OPM.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000124570",
+   "nom": "OPmobility",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "FRVIA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000121147",
+   "nom": "Forvia",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "TKO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013230612",
+   "nom": "Tikehau Capital",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services d'investissement",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ANTIN.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014005AL0",
+   "nom": "Antin Infrastructure Partners",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services d'investissement",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "VU.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010282822",
+   "nom": "Vusion",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Matériel informatique",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ADP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010340141",
+   "nom": "Aéroports de Paris (ADP)",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services industriels",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ELIOR.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011950732",
+   "nom": "Elior",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services d'accueil",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "EXENS.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400Q9V2",
+   "nom": "Exosens",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Composants électroniques et fabrication",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "AD.AS": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0011794037",
+   "nom": "Ahold Delhaize",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Vente au détail de produits alimentaires et de première nécessité",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "WKL.AS": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0000395903",
+   "nom": "Wolters Kluwer",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "HEIA.AS": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN NL)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "NL0000009165",
+   "nom": "Heineken",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Production de produits alimentaires et de tabac",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "UCG.MI": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN IT)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "IT0005239360",
+   "nom": "UniCredit",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Banque",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ENI.MI": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN IT)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "IT0003132476",
+   "nom": "Eni",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Prospection et production intégrées de pétrole et de gaz",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ITP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0004024222",
+   "nom": "Interparfums",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Produits ménagers",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CLARI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010386334",
+   "nom": "Clariane",
+   "categorie": "actions",
+   "boursorama": true,
+   "secteur": "Services de santé",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "TIT.MI": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN IT)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "IT0005712671",
+   "nom": "Telecom Italia",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Télécommunications",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "DBV.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010417345",
+   "nom": "DBV Technologies",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALSEN.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001401A9Z0",
+   "nom": "Sensorion",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "NANO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011341205",
+   "nom": "Nanobiotix",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "GNFT.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0004163111",
+   "nom": "Genfit",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "VLA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0004056851",
+   "nom": "Valneva",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALBPS.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400OLP5",
+   "nom": "Biophytis",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALHPI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014010QE1",
+   "nom": "Hopium",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALMKT.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010609263",
+   "nom": "Mauna Kea Technologies",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALTHE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010120402",
+   "nom": "Theranexus",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALAFY.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014005AC9",
+   "nom": "Afyren",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALCLS.PA": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Cellectis",
+   "categorie": "petites",
+   "boursorama": null,
+   "secteur": null,
+   "depuis": "2026-11-23"
+  },
+  "ALEO2.PA": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Eo2",
+   "categorie": "petites",
+   "boursorama": null,
+   "secteur": "Basic Materials",
+   "depuis": "2026-11-23"
+  },
+  "ALDNE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013331212",
+   "nom": "Don't Nod",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALPAT.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010785790",
+   "nom": "Plant Advanced Technologies",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALNFL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014003XT0",
+   "nom": "NFL Biosciences",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALCJ.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011716265",
+   "nom": "Crossject",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALCOX.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013018124",
+   "nom": "Nicox",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "IVA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013233012",
+   "nom": "Inventiva",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALMDG.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010353888",
+   "nom": "MDxHealth",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Matériel informatique",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALQGC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011648971",
+   "nom": "Quantum Genomics",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALVAL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013254851",
+   "nom": "Valbiotis",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALNOV.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010397232",
+   "nom": "Novacyt",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALBOO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR00140153G5",
+   "nom": "Boostheat",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALLHB.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0007080254",
+   "nom": "Les Hôtels Baverez",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Services d'accueil",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALENT.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010424697",
+   "nom": "Entech",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALWEC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013079092",
+   "nom": "We.Connect",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Matériel informatique",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALKAL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010722819",
+   "nom": "Kalray",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALOKW.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013439627",
+   "nom": "Okwind",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALLPL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400F2Z1",
+   "nom": "Lepermislibre",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALHRS.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014001PM5",
+   "nom": "Hydrogen Refueling Solutions",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALMCE.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400H3A0",
+   "nom": "McPhy",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": null,
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALNXT.PA": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Nextedia",
+   "categorie": "petites",
+   "boursorama": null,
+   "secteur": "Communication Services",
+   "depuis": "2026-11-23"
+  },
+  "ALVIA.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010326090",
+   "nom": "Visiativ",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Commerces de détail de biens de consommation",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALDLT.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013283108",
+   "nom": "Delta Drone",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Biens de consommation",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALSPW.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400N2P2",
+   "nom": "Spineway",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALUVI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011898584",
+   "nom": "Uv Germi",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALEUP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014011QJ8",
+   "nom": "Europlasma",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits miniers et minéraux",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALVDM.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0004045847",
+   "nom": "Voluntis",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Services d'accueil",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALBIO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011005933",
+   "nom": "Biosynex",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALTXC.PA": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Texcell",
+   "categorie": "petites",
+   "boursorama": null,
+   "secteur": "Technology",
+   "depuis": "2026-11-23"
+  },
+  "ALDBT.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400LO86",
+   "nom": "DBT",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALSAF.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400ZU25",
+   "nom": "Safe",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALIMP.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013470168",
+   "nom": "Implanet",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ADOC.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011184241",
+   "nom": "Adocia",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits biopharmaceutiques",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALHEX.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0004159473",
+   "nom": "Hexaom",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Commerces de détail divers",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SAB.MC": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN ES)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "ES0113860A34",
+   "nom": "Banco de Sabadell",
+   "categorie": "petites",
+   "boursorama": false,
+   "secteur": "Banque",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "SPM.MI": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN IT)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "IT0005495657",
+   "nom": "Saipem",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Énergie en amont",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "BMPS.MI": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN IT)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "IT0005508921",
+   "nom": "Monte dei Paschi",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Banque",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ENR.DE": {
+   "statut": "doute",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN DE)",
+    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+   ],
+   "sources": [
+    "règle du siège"
+   ],
+   "isin": "DE000ENER6Y0",
+   "nom": "Siemens Energy",
+   "categorie": "petites",
+   "boursorama": false,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALPHA.AT": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Alpha Bank",
+   "categorie": "petites",
+   "boursorama": null,
+   "secteur": "Financial Services",
+   "depuis": "2026-11-23"
+  },
+  "EUROB.AT": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Eurobank",
+   "categorie": "petites",
+   "boursorama": null,
+   "secteur": "Financial Services",
+   "depuis": "2026-11-23"
+  },
+  "ETE.AT": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Banque nationale de Grèce",
+   "categorie": "petites",
+   "boursorama": null,
+   "secteur": "Financial Services",
+   "depuis": "2026-11-23"
+  },
+  "MAU.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000051070",
+   "nom": "Maurel & Prom",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Énergie en amont",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ATO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001400X2S4",
+   "nom": "Atos",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "CRI.PA": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Chargeurs",
+   "categorie": "petites",
+   "boursorama": null,
+   "secteur": "Industrials",
+   "depuis": "2026-11-23"
+  },
+  "ALLIX.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0010131409",
+   "nom": "Wallix",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Logiciels et conseils",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "EKI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011466069",
+   "nom": "Ekinops",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Matériel informatique",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALGEN.PA": {
+   "statut": "doute",
+   "raisons": [
+    "ISIN inconnu : siège social non vérifié"
+   ],
+   "sources": [],
+   "isin": null,
+   "nom": "Genomic Vision",
+   "categorie": "petites",
+   "boursorama": null,
+   "secteur": null,
+   "depuis": "2026-11-23"
+  },
+  "ALNRG.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR001401A702",
+   "nom": "Energisme",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Services publics",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALPRI.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0004044600",
+   "nom": "Prismaflex",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Services aux entreprises",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALGIL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0012819381",
+   "nom": "Groupe Guillin",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits manufacturés",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALSGD.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011464452",
+   "nom": "Smart Good Things",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Équipement médical",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALMOU.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0011033083",
+   "nom": "Moulinvest",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Produits manufacturés",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "MLHK.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN DE)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "DE000A11Q133",
+   "nom": "Hunyvers",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALAGO.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0014004339",
+   "nom": "e-Pango",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Services publics",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALDEL.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0000054132",
+   "nom": "Delfingen",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Véhicules particuliers et pièces détachées",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "ALTUV.PA": {
+   "statut": "oui",
+   "raisons": [
+    "siège dans l'Union européenne ou l'EEE (ISIN FR)",
+    "Boursorama : éligible au PEA"
+   ],
+   "sources": [
+    "règle du siège",
+    "Boursorama"
+   ],
+   "isin": "FR0013345493",
+   "nom": "Tuvalu",
+   "categorie": "petites",
+   "boursorama": true,
+   "secteur": "Fabrication industrielle",
+   "depuis": "2026-11-23",
+   "relu": "2026-11-23"
+  },
+  "FR0010298596": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "FR0010298596",
+   "nom": "Moneta Multi Caps C",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "FR0007076930": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "FR0007076930",
+   "nom": "DNCA Centifolia C",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "FR0011169341": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "FR0011169341",
+   "nom": "Sycomore Sélection Responsable R",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "FR0010546929": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "FR0010546929",
+   "nom": "Tocqueville Dividende C",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "FR0010321810": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "FR0010321810",
+   "nom": "Echiquier Agenor Mid Cap Europe A",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "FR0013532710": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "FR0013532710",
+   "nom": "CPR Ambition France P",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "FR0010601971": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "FR0010601971",
+   "nom": "HMG Découvertes C",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "FR0010286005": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "FR0010286005",
+   "nom": "Sextant PEA A",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "LU1832174962": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "LU1832174962",
+   "nom": "Indépendance Europe Small A",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "LU0131510165": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "LU0131510165",
+   "nom": "Indépendance France Small & Mid A",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  },
+  "FR0010354837": {
+   "statut": "oui",
+   "raisons": [
+    "éligible d'après sa documentation (pea.fr, lue le 2026-11-09)"
+   ],
+   "sources": [
+    "pea.fr",
+    "opcvm.json"
+   ],
+   "isin": "FR0010354837",
+   "nom": "DNCA Evolutif PEA C",
+   "categorie": "opcvm",
+   "depuis": "2026-11-23"
+  }
+ },
+ "verifications": {}
+}
