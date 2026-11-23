@@ -90,3 +90,5 @@ Grille de décision : gain de clarté faible mais sûr, risque nul (aucun texte 
 - D-20261121-1 · confirmée par le chef le 2026-11-21 (captures 390 px relues, rien retiré) · (design) · 2026-11-21 · Phrase-résumé sous la date (« Dernière séance : 10 indices sur 11 baissent, 1 montent (CAC 40 …, S&P 500 …) »), calculée depuis les indices déjà affichés ; rien retiré. Indicateur : le sens du marché lisible sans défiler à 390 px. Résultat : constaté (capture 390 px clair et sombre), 48/48 tests, comparer 🟢.
 
 - D-20261122-1 · confirmée par le chef le 2026-11-22 (captures et comparer 🟢, regex relue et exécutée avec node : « (Nuit, D-…) » et « ✨ Nouveauté : » retirés) · (design) · Bandeau « Nouveau » sans jargon interne · indicateur : titre lisible sans « (Nuit, D-…) » ni double emoji.
+
+- D-20261123-1 · provisoire (design) · 2026-11-23 · Cartes des marchés : `.val-l` passe à la ligne et `.etfx` se cale à droite, le prix de l'ETF n'est plus coupé à 320, 360 et 390 px. Indicateur : bord droit du prix ETF dans la carte (mesuré). Résultat : 6 cartes sur 6 contenues à 320/360/390 px, 55/55 tests, comparer 🟢.

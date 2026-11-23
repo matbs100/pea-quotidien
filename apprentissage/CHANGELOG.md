@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-23 · Cartes des marchés : prix de l'ETF plus coupé à 320–390 px (Design, D-20261123-1)
+
+- Le prix d'une part d'ETF et « 1 part d'ETF » passent sous le prix de l'indice quand la place manque, au lieu de dépasser de la carte. Rien retiré.
+
 ## 2026-11-23 · Un ETF non éligible au PEA retiré (D-20261123-1)
 L'ETF BNP Paribas Easy MSCI Emerging (EEMK) n'est pas éligible au PEA : il ne fait plus partie des titres suivis.
 

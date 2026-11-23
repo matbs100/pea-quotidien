@@ -31,3 +31,4 @@ Une leçon par ligne, datée, 60 lignes au plus. Relue chaque nuit avant de trav
 - 2026-11-14 · Captures : défiler avant de photographier (blocs `.rv`) ; installer Chromium via `python3 -m playwright install chromium`.
 - 2026-11-18 · Tester un glissement tactile avec Input.dispatchTouchEvent par petits pas (synthesizeScrollGesture ne défile pas en headless) ; pas de WebKit ici : un bug iOS reste à confirmer par le propriétaire.
 - 2026-11-21 · Installer playwright==1.63.0 avant `design.py rendre` ; photographier une fenêtre 390×844 (la page entière fait 24 000 px).
+- 2026-11-23 · Mesurer le bord droit de chaque élément contre sa carte (overflow:hidden cache les coupures, scrollWidth ne les voit pas) ; flex-wrap règle sans retirer d'information.

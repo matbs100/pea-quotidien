@@ -11,3 +11,4 @@ Bonnes idées vues ailleurs. Format : `- [ ] Nom · vu sur <lien> · problème r
 - [ ] Cible tactile des pastilles ≥ 24 px · vu sur https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html · pastille Risque petite au doigt · agrandir sa zone par padding · ⏳ à essayer
 - [x] Résumé en une phrase en tête de page · vu sur https://www.nngroup.com/articles/inverted-pyramid/ · on ne sait pas en 5 s si le marché monte ou baisse · phrase calculée depuis les indices · ✅ essayé le 2026-11-21
 - [ ] Couleur jamais seule · vu sur https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html · rouge/vert seuls illisibles pour certains · vérifier que chaque variation colorée a aussi un signe ou un mot · ⏳ à essayer (audit des cartes)
+- [x] Contenu qui passe à la ligne plutôt que d'être coupé · vu sur https://www.toptal.com/designers/dashboard-design/mobile-dashboard-ui · prix ETF coupé dans les cartes à 360 px · flex-wrap sur la ligne de valeur · ✅ essayé le 2026-11-23
