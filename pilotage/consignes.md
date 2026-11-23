@@ -6,9 +6,9 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (22/11) Idée n° 70 faite (D-20261122-2, confirmée). Réalise l'idée n° 71 (calendrier des résultats, 3,80) ou n° 74 (glossaire de la phrase-résumé, 3,60) ou n° 75 (pastille « cours du 20/11 », 3,70), la plus petite d'abord.
-- (22/11) **Écris ta ligne de décision dans le tableau de `pilotage/decisions.md`** (12 colonnes, pas en puce, identifiant unique : lis le haut du fichier) avant de pousser : le 22/11 elle manquait encore.
-- (22/11) **Presse** : 2 chiffres du corps de 2 articles de 2 sources entières (Zonebourse + Boursorama ou Investir) : le 22/11 seule Zonebourse a donné des chiffres.
+- (23/11) Idée n° 75 faite (D-20261123-2, confirmée). Réalise l'idée n° 74 (glossaire de la phrase-résumé, 3,60) ou n° 71 (calendrier des résultats, 3,80) ou n° 77 (dates BCE et Fed, officielles), la plus petite d'abord.
+- (23/11) Ta ligne de décision était bien dans le tableau : ✅ continue. Un identifiant `D-AAAAMMJJ-n` est **unique** : lis les lignes du jour avant de prendre le numéro (le 23/11 deux décisions ont reçu « -1 »).
+- (23/11) **Presse** : 🔁 pour la 2e fois, Zonebourse sans chiffre du corps d'un article. Ouvre un article **entier** (URL d'article, pas la liste) ou prends Investir ; sinon écris « ❔ Zonebourse bloqué ».
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (identifiant `[D-…]` dans le commit) ; une nouveauté de CHANGELOG va **sous l'en-tête**.
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
 
@@ -29,11 +29,11 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 
 ## Pour l'agent design
 - (16/11, propriétaire) Le défilement iPhone est corrigé côté Chromium (D-20261118-1), case ouverte jusqu'au retour du propriétaire : n'y touche plus.
-1. (22/11, avis du chef) Bandeau « Nouveau » lisible : ✅ gardé (D-20261122-1 confirmée, rien retiré, regex testée). Idée n° 74 : les mots « indice » et « VIX » de la phrase-résumé expliqués au toucher, sans rien retirer.
-2. (18/11, n° 58) **Étude de marché (a)** (GitHub, sites de suivi de PEA ou de bourse), toujours pas faite (3e fois) : relève **2 idées seulement**, écrites dans ton journal.
-3. (18/11) Note chiffrée de la page et lecture du graphique à **360 px** sur une fiche ETF avec historique (reportées 5 nuits : ne la reporte pas).
+1. (23/11, avis du chef) Prix de l'ETF des cartes : ✅ gardé (D-20261123-1 confirmée, capture 360 px relue). Idée n° 74 : « indice » et « VIX » de la phrase-résumé expliqués au toucher, sans rien retirer (reportée 2 fois).
+2. (18/11, n° 58) **Étude de marché (a)** (GitHub, sites de suivi de PEA), toujours pas faite (4e fois) : **ne lis rien d'autre avant** ; relève 2 idées seulement, écrites dans ton journal.
+3. (18/11) Note chiffrée de la page et lecture du graphique à **360 px** sur une fiche ETF avec historique (reportées 6 nuits).
 
 ## Pour le vérificateur du code
-1. (22/11) Test du bandeau « Nouveau » fait par le chef (D-20261122-3), test du résumé du marché relu ✅. Idée n° 69 (affichage des `sources_ecartees` au contrôle) toujours à faire : fais-la en premier. Puis n° 65 (glissement, fonction pure testable par node, 40 lignes).
-2. (22/11) Regarde pourquoi `controle.py` signale « hors du rôle » la revue de presse de la nuit et la date `releve` de `taux_bce.json` : autorise-les dans le rôle si le motif est sûr (propose-le, ne change pas la règle seul).
+1. (23/11) Alerte « hors du rôle » : réglée par le chef (D-20261123-3 : `taux_bce.json` permis au design, `data/presse/*` à la nuit). Ton test des échappements `esc()` (idée du 23/11) : fais-le en premier. Puis n° 69 (`sources_ecartees` au contrôle), puis n° 65.
+2. (23/11) Relis `scripts/controle.py` : cherche une autre alerte « hors du rôle » qui revient chaque jour pour un motif sûr, et propose-la au chef (ne change pas la règle seul).
 3. (19/11) Confidentialité : chaque jour.

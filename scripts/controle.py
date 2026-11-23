@@ -67,8 +67,10 @@ PERMIS = {"fiche": ["apprentissage/idees.md", "pilotage/notification.json"],  # 
           "univers": ["pilotage/candidats.md", "apprentissage/idees.md"],
           "code": ["apprentissage/idees.md", "apprentissage/lectures/README.md", "pilotage/sources-verifiees.md"],
           "design": ["scripts/modele.html", "apprentissage/idees.md", "apprentissage/CHANGELOG.md",
-                     "pilotage/decisions.md", "pilotage/candidats.md"]}
-PERMIS_MOTIFS = {"univers": ["pilotage/univers/*"],
+                     "pilotage/decisions.md", "pilotage/candidats.md",
+                     "data/taux_bce.json"]}  # rendu.py ne change que sa date « releve » (D-20261123-3)
+PERMIS_MOTIFS = {"nuit": ["data/presse/*"],  # revue de presse quotidienne demandée par le chef (D-20261123-3)
+                 "univers": ["pilotage/univers/*"],
                  "code": ["pilotage/code/*", "apprentissage/code/*", "apprentissage/lectures/*"],
                  "design": ["pilotage/design/*", "apprentissage/design/*"]}
 MAX_LIGNES = {"nuit": 300, "chef": 250, "code": 200, "design": 200}   # lignes de code modifiées par passage

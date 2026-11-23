@@ -611,6 +611,10 @@ def controle_du_chef():
     assert c.jour_de_reference(jrs, "2026-11-14") == "2026-11-12", "samedi : la fiche du vendredi"
     assert c.ecarts_aux_regles("chef", [("M", "docs/archives/2026-11-11.html", 4)], "2026-11-12", "2026-11-11") == ([], [])
     assert c.ecarts_aux_regles("chef", [("M", "docs/archives/2026-11-10.html", 4)], "2026-11-12", "2026-11-11")[1]
+    # rendu.py change seulement la date « releve » de taux_bce.json ; la revue de presse est le devoir de la nuit (D-20261123-3)
+    assert c.ecarts_aux_regles("design", [("M", "data/taux_bce.json", 3)], "2026-11-23", "2026-11-20")[1] == []
+    assert c.ecarts_aux_regles("nuit", [("A", "data/presse/2026-11-23.md", 8)], "2026-11-23", "2026-11-20")[1] == []
+    assert c.ecarts_aux_regles("nuit", [("M", "data/signaux.csv", 1)], "2026-11-23", "2026-11-20")[1], "autres données toujours hors rôle"
     # alertes vérifiées par le chef : levées seulement avec une preuve, le bon jour, jamais un problème
     vf = [{"alerte": "P0.PA : cours daté", "jour": "2026-11-05", "preuve": "Boursorama ouvert : aucun échange le 05/11", "le": "2026-11-05"},
           {"alerte": "P1.PA : cours daté", "jour": "2026-11-05", "preuve": "court"},

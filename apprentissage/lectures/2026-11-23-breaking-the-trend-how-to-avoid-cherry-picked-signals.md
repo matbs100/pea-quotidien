@@ -6,7 +6,7 @@ url: https://arxiv.org/pdf/2504.10914v11
 publie_le: 2025-12-31
 lu_le: 2026-11-23
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-23
 ---
 # 📄 Breaking the Trend: How to Avoid Cherry-Picked Signals
 
@@ -24,4 +24,4 @@ L'auteur (un gérant parisien) part d'un risque connu des stratégies de tendanc
 - Confirme la règle de la fiche : ne pas régler les signaux pour coller au passé. Idée n° 76 (afficher la période et le nombre de paramètres derrière chaque signal) dans `idees.md`.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- ✅ 2026-11-23 : PDF ouvert (arxiv.org, 834 Ko) ; le texte dit bien qu'une seule moyenne mobile exponentielle semble optimale, que l'optimisation sur le même passé expose au sur-ajustement et que les règles usuelles sont « ad hoc » ; résumé en mots propres, aucune copie. arxiv.org est dans `pilotage/sources-verifiees.md`. Réserve : version de travail, contrats à terme de fonds de tendance, pas des ETF.

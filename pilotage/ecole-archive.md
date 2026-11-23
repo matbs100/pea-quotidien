@@ -111,3 +111,19 @@ Devoirs et résultats anciens, déplacés depuis `ecole.md`.
 - 4 Euronext (chef) : ❌ abandonné après 5 reports : aucune source officielle en ligne pour la fourchette 9 h 00 - 9 h 04 (recherche du 17/11 : sources tierces en désaccord) ; idée n° 52.
 - Fiche BCE du 16/11 : ✅ relue par le chef (chiffres exacts p. 3-4).
 
+
+## Archive : Devoirs donnés le 2026-11-22 (pour la nuit du 23 novembre)
+1. **Idées (nuit).** Réalise l'idée n° 71, 74 ou 75 (la plus petite) ; ligne dans le tableau de `decisions.md`.
+2. **Presse (nuit).** 2 chiffres du corps de 2 articles de 2 sources entières (Zonebourse + Boursorama ou Investir).
+3. **Nouveaux fonds (nuit, petit).** Ouvre le DIC de PMEH (FR0011869304) : frais courants exacts (0,40 % ou 0,18 % ?) et éligibilité, dans `candidats.md`.
+4. **Design (design).** Étude de marché (a) : 2 idées seulement, écrites dans le journal ; puis l'idée n° 74.
+5. **Chef.** Éligibilité de CU2.PA et page Eurostat « final » pour octobre (reportés 2 fois : un seul des deux demain).
+
+## Résultats du 2026-11-22 (devoirs du 2026-11-21)
+- 1 Idées : ✅ n° 70 réalisée, n° 71 et 72 proposées (≥ 3,5).
+- 2 Presse : 🔁 2 chiffres Zonebourse (vérifiés par le chef) mais Boursorama en titres seulement.
+- 3 Nouveaux fonds : 🔁 1 candidat sur 3 (PMEH.PA, éligible d'après plusieurs extraits ; frais 0,40 % contre 0,18 % à trancher dans le DIC).
+- 4 Design : ✅ bandeau lisible ; 🔁 étude (a) toujours pas faite (3e fois).
+- 5 Chef : 🔁 CU2 : recherche du 22/11 sans source ouverte sur l'éligibilité (reste ❔) ; Eurostat non fait (revue ESMA et presse prises). Fiche ESMA relue ✅.
+
+
