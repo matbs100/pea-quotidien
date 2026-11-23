@@ -1,13 +1,9 @@
 {
- "maj": "2026-11-13",
+ "maj": "2026-11-23",
  "infos": {
-  "secteur": "Financial Services",
-  "pays": "Greece",
-  "site": "https://www.eurobank.gr",
   "source_infos": "Yahoo Finance",
-  "valorisation": "17 468 MEUR",
-  "per": "12,21",
-  "rendement": "1,47%",
-  "effectif": "12 274"
+  "valorisation": "16 813 MEUR",
+  "per": "11,75",
+  "rendement": "1,53%"
  }
 }
