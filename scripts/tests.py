@@ -852,6 +852,10 @@ def etf_suivis_eligibles_pea():
         f = RACINE / "data" / "fiches" / f"{t}.json"
         if f.exists() and json.loads(f.read_text(encoding="utf-8")).get("infos", {}).get("pea_bourso") is False:
             REMARQUES.append(f"{t} : Boursorama ne l'indique pas éligible au PEA, à vérifier")
+    # D-20261123-6 : aucune action connue comme non éligible (foncière SIIC) n'est suivie
+    actions = {**univers["actions"], **univers["petites"]}
+    actions_non_eligibles = {"URW.PA"}  # Unibail-Rodamco-Westfield : SIIC, exclue du PEA depuis le 21/10/2011
+    assert not actions_non_eligibles & set(actions), f"action non éligible au PEA suivie : {actions_non_eligibles & set(actions)}"
 
 
 @test

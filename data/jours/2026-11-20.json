@@ -10664,23 +10664,6 @@
    }
   },
   {
-   "ticker": "URW.PA",
-   "nom": "Unibail-Rodamco-Westfield",
-   "categorie": "actions",
-   "prix": 90.02,
-   "devise": "EUR",
-   "var_1j": -1.21,
-   "var_1m": -0.11,
-   "date_cours": "2026-11-20",
-   "signal": "neutre",
-   "rsi": 39.6,
-   "isin": "FR0013326246",
-   "fx": {
-    "g": 0,
-    "ttf": 1
-   }
-  },
-  {
    "ticker": "VIE.PA",
    "nom": "Veolia",
    "categorie": "actions",

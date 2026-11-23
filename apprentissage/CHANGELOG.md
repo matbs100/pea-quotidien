@@ -9,6 +9,7 @@ Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · ti
 
 - En bas de la fiche, un globe à faire tourner du doigt ou à la souris : les pays où se trouvent les titres suivis sont en orange. Toucher un pays rapproche la vue et ouvre sa fiche : son drapeau, quelques clins d'œil, les chiffres de la séance et ses titres, du plus au moins performant. Actions : pays du siège ; ETF : pays de création, sauf ceux qui investissent aux États-Unis, au Japon ou en Inde, et les 4 ETF émergents et Asie, placés dans chaque pays couvert. Tracé des pays : Natural Earth (domaine public).
 - Avec la carte, l'éligibilité au PEA de chaque titre suivi est contrôlée chaque nuit (D-20261123-5) : un titre non éligible ou à vérifier le dit sur la carte et dans sa fiche.
+- Premier contrôle : Unibail-Rodamco-Westfield, foncière au régime SIIC, n'est pas éligible au PEA ; il ne fait plus partie des titres suivis (D-20261123-6).
 
 ## 2026-11-23 · Un cours ancien le dit sous le prix de la ligne (Nuit, D-20261123-2)
 

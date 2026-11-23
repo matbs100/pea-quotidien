@@ -1,12 +1,12 @@
 {
- "maj": "2026-11-23T09:03+01:00",
+ "maj": "2026-11-23T09:11+01:00",
  "jour": "2026-11-23",
  "lecture": "Boursorama relu, puis recalculé sans réseau",
  "pages_lues": 232,
  "resume": {
   "oui": 231,
   "doute": 23,
-  "non": 1
+  "non": 0
  },
  "titres": {
   "ESE.PA": {
@@ -1488,22 +1488,6 @@
    "categorie": "actions",
    "boursorama": true,
    "secteur": "Prospection et production intégrées de pétrole et de gaz",
-   "depuis": "2026-11-23",
-   "relu": "2026-11-23"
-  },
-  "URW.PA": {
-   "statut": "non",
-   "raisons": [
-    "Unibail-Rodamco-Westfield : foncière au régime SIIC, exclue du PEA depuis le 21/10/2011"
-   ],
-   "sources": [
-    "règle SIIC"
-   ],
-   "isin": "FR0013326246",
-   "nom": "Unibail-Rodamco-Westfield",
-   "categorie": "actions",
-   "boursorama": false,
-   "secteur": "Immobilier",
    "depuis": "2026-11-23",
    "relu": "2026-11-23"
   },
