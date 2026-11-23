@@ -69,7 +69,13 @@ ALIAS = {"pays bas": "NL", "netherlands": "NL", "the netherlands": "NL", "german
 SIEGES = {"STLAM.MI": "NL",   # Stellantis N.V., société de droit néerlandais
           "ALCLS.PA": "FR",   # Cellectis, Paris
           "ADOC.PA": "FR",    # Adocia, Lyon
-          "ALGEN.PA": "FR"}   # Genomic Vision, Bagneux
+          "ALGEN.PA": "FR",   # Genomic Vision, Bagneux
+          # places que Boursorama ne couvre pas : le pays ne vient que de Yahoo, qui l'omet parfois (EUROB.AT, 23/11)
+          "EUROB.AT": "GR",   # Eurobank, Athènes
+          "ALPHA.AT": "GR",   # Alpha Bank (Alpha Services and Holdings), Athènes
+          "ETE.AT": "GR",     # Banque nationale de Grèce, Athènes
+          "NOVO-B.CO": "DK",  # Novo Nordisk, Bagsværd
+          "NOKIA.HE": "FI"}   # Nokia, Espoo
 # ETF placés dans le pays où ils investissent (États-Unis, Japon, Inde : choix du propriétaire, 22/11/2026)
 ETF_ZONE = {"ESE.PA": "US", "PSP5.PA": "US", "PE500.PA": "US", "PUST.PA": "US", "PANX.PA": "US",
             "RS2K.PA": "US", "CU2.PA": "US", "LQQ.PA": "US", "CL2.PA": "US", "PTPXE.PA": "JP", "PINR.PA": "IN"}
