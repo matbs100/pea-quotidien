@@ -3,6 +3,15 @@
 Recopiés ici (sans aucune information personnelle) par la fonction mémoire quand le propriétaire parle du
 projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). Le plus récent en haut.
 
+## Carte du monde (2026-11-23)
+
+Le propriétaire a demandé la carte du monde : globe en bas de la fiche, au-dessus de « Contrôle des prix »
+(océans bleus, pays verts, pays des titres suivis en orange). Il doit se tourner au doigt ou à la souris,
+se zoomer, et un pays orange ouvre sa fiche (titres du plus au moins performant). Tu peux modifier
+`scripts/globe.js` pour l'apparence seulement (couleurs, animations, lisibilité), jamais les règles de
+placement (`scripts/globe.py`). Le propriétaire veut une page plus belle sans rien retirer et sans la
+ralentir ; le geste sur iPhone n'a pas été essayé sur un vrai appareil.
+
 ## Tâches demandées par le propriétaire (à faire en premier, dans l'ordre)
 
 - [x] 2026-11-17 · fait le 2026-11-18 [D-20261118-1] · **Défilement au doigt bloqué sur les lignes (téléphone, iPhone).** Le propriétaire n'arrive
