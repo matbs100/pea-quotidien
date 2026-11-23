@@ -10,6 +10,7 @@ dans [[Finance/PEA Quotidien/pilotage/sources-verifiees|les sources vérifiées]
 vérifier » jusqu'à la relecture du chef.
 
 ## Journal
+- [[Finance/PEA Quotidien/apprentissage/code/2026-11-23|2026-11-23]] : XSS, puits sûrs (OWASP), versions PyPI
 - [[Finance/PEA Quotidien/apprentissage/code/2026-11-22|2026-11-22]] : CSP stricte et mode Report-Only
 - [[Finance/PEA Quotidien/apprentissage/code/2026-11-21|2026-11-21]] : CSP frame-ancestors, versions PyPI
 - [[Finance/PEA Quotidien/apprentissage/code/2026-11-20|2026-11-20]] : CSP, pypdf 7.1.1
