@@ -47,6 +47,7 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 - Il n'exécute jamais de code téléchargé.
 
 ## Journaux
+- [2026-11-23](journal/2026-11-23.md) : open source, une seule moyenne mobile (arXiv) et DIC de PMEH ; cours ancien signalé dans les listes (D-20261123-2)
 - [2026-11-22](journal/2026-11-22.md) : données, robustesse et bilan ; repère ESMA sur 10 ans dans le bloc Frais (D-20261122-2)
 - [2026-11-21](journal/2026-11-21.md) : facilité d'usage et frais ; frais sur 10 ans dans la fiche (D-20261121-2)
 - [2026-11-20](journal/2026-11-20.md) : réglementation du PEA ; date de mise à jour de l'inflation (D-20261120-1)

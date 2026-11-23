@@ -64,3 +64,5 @@ Notées par le chef d'orchestre et l'agent de nuit dans la semaine ; vérifiées
 - Autres fonds de la liste francetransactions du 22/11 : déjà dans `univers.json` (DAX, Euro Stoxx 50, MSCI Europe, Asie-Pacifique, TOPIX, Nasdaq-100, OBLI) ; LU0908501058 (Amundi MSCI EMU ESG Broad Transition) : **non éligible probable** (extraits : fonds luxembourgeois, aucune mention PEA, fusion annoncée avec un autre fonds). Devoir : 1 piste sur 3 demandées, faute d'autres fonds absents de l'univers dans la liste lue.
 ## Note du propriétaire du 23/11
 - [x] EEMK.PA · BNP Paribas Easy MSCI Emerging Min TE · LU1291097779 · écarté : non éligible au PEA (justETF et Boursorama, 23/11), retiré de `univers.json` (D-20261123-1) ; ne plus l'ajouter.
+## Notes de la nuit du 23/11 (devoir 3)
+- PMEH.PA · Amundi PEA Immobilier Europe (FTSE EPRA/NAREIT) UCITS ETF Acc · FR0011869304 · DIC du 12/06/2026 ouvert et lu le 23/11 (amundietf.fr, p. 1-3) : frais de gestion et autres coûts **0,40 %** par an (pas 0,18 %), aucun coût d'entrée ni de sortie, SRI 5 sur 7, réplication indirecte par swap, texte « éligible au PEA » (p. 1). Reste à faire le samedi : cours récents sur Yahoo et ligne Boursorama.

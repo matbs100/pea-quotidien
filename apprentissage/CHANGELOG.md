@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-23 · Un cours ancien le dit sous le prix de la ligne (Nuit, D-20261123-2)
+
+- Dans les listes (Top 30, valeurs connues, petites valeurs), le mot « prix » devient « cours du 20 nov. » quand le cours date d'un autre jour que la fiche (« valeur du … » pour un fonds). Aucune ligne plus haute. Source : alerte « cours ancien » du contrôle, idée n° 75.
+
 ## 2026-11-23 · Cartes des marchés : prix de l'ETF plus coupé à 320–390 px (Design, D-20261123-1)
 
 - Le prix d'une part d'ETF et « 1 part d'ETF » passent sous le prix de l'indice quand la place manque, au lieu de dépasser de la carte. Rien retiré.

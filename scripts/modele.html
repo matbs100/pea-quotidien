@@ -702,13 +702,16 @@ function fraisCourt(m) {  // résumé des frais pour une ligne de liste
   return `<span class="fxl">${g}${a}</span>`;
 }
 
+function etiquettePrix(m, jour) {  // D-20261123-2 : « cours du 20 nov. » si le cours date d'un autre jour que la fiche
+  return m.date_cours && jour && m.date_cours !== jour ? (m.categorie === "fonds" ? "valeur du " : "cours du ") + dateCourte(m.date_cours) : "prix";
+}
 function ligne(m, i, sc, connue = false) {  // connue : liste fixe des valeurs connues (pas de rang, zone affichée)
   const s = m[sc] ?? 0;
   const parts = m.prix > 0 ? Math.floor(100 / m.prix) : 0;
   return `<div class="ligne rv clic" data-t="${esc(m.ticker)}" tabindex="0" role="button" aria-label="Fiche détaillée : ${esc(m.nom)}" data-cat="${m.categorie === "petites" ? "actions" : m.categorie}">
     <div class="rg">${connue ? "" : String(i + 1).padStart(2, "0")}</div>
     <div class="t"><strong>${esc(m.nom)}${badge[m.categorie] || ""}${m.deja_vu ? ' <span class="badge b-action">déjà vu</span>' : ""}${vf(m)}</strong><small>${esc(m.ticker)}${connue && m.zone ? " · " + esc(m.zone) : ""} · ${parts ? parts + " part" + (parts > 1 ? "s" : "") + " pour 100 €" : "plus de 100 € la part"} ${risque(m)}${fraisCourt(m)}</small></div>
-    <div class="c px"><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span><em>prix</em></div>
+    <div class="c px"><span class="num">${fr(m.prix, dec(m.prix))}${dev(m)}</span><em>${etiquettePrix(m, D.date)}</em></div>
     <div class="cs"><div class="c ${sens(m.var_1j)}">${pct(m.var_1j)}<em>1 jour</em></div>
     <div class="c ${sens(m.var_1m)}">${pct(m.var_1m)}<em>1 mois</em></div>
     <div class="c ${sens(m.var_3m)}">${pct(m.var_3m)}<em>3 mois</em></div>

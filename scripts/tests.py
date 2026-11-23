@@ -719,6 +719,25 @@ console.log([ecartesSansDonnee(L, {}, det), ecartesSansDonnee(L, {risque:4}, det
 
 
 @test
+def pastille_cours_ancien():
+    """D-20261123-2 : une ligne dont le cours date d'un autre jour le dit (étiquette « cours du … »), exécuté avec node."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "etiquettePrix(m, D.date)" in modele, "étiquette de prix absente de la ligne"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : étiquette « cours du … » non exécutée")
+        return
+    fn = re.search(r"function etiquettePrix\(.*?\n}\n", modele, re.S).group(0)
+    essai = "const dateCourte = (j) => 'D' + j.slice(8);\n" + fn + """
+const j = "2026-11-20";
+console.log([etiquettePrix({date_cours:j}, j), etiquettePrix({}, j), etiquettePrix({date_cours:"2026-11-19"}, j),
+  etiquettePrix({date_cours:"2026-11-19", categorie:"fonds"}, j)].join("|"));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "prix|prix|cours du D19|valeur du D19", f"étiquette de prix fausse : {r.stdout!r} {r.stderr[-300:]}"
+
+
+@test
 def carte_mois_par_mois():
     """D-20261106-6 : les rendements mensuels de la fiche sont calculés avec node sur un cas connu."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
