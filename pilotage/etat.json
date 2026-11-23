@@ -1,18 +1,18 @@
 {
- "genere_le": "2026-11-23T05:13+01:00",
- "fiche": "2026-11-20 (cloture)",
+ "genere_le": "2026-11-23T12:36+01:00",
+ "fiche": "2026-11-23 (ouverture)",
  "lieu": "cloud",
- "etat": "vert",
- "resume": "Tout est en ordre. 56/56 tests, 8/8 prix revérifiés, 32/32 liens valides, site à jour.",
+ "etat": "orange",
+ "resume": "À surveiller. 60/60 tests, 31/31 liens valides, site à jour. Points à voir : cohérence des données, méthode de décision.",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "56/56 tests réussis",
+   "resume": "60/60 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf",
-    "• glissement tactile non exécuté : BrowserType.launch: Executable doesn't exist at /opt/pw-browsers/chromium_headle"
+    "• Playwright absent : glissement tactile non exécuté"
    ]
   },
   {
@@ -21,50 +21,60 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-20 (cloture), générée le 2026-11-20T17:59+01:00",
-    "fiche attendue à cette heure : 2026-11-20 (cloture)"
+    "dernière fiche : 2026-11-23 (ouverture), générée le 2026-11-23T09:20+01:00",
+    "fiche attendue à cette heure : 2026-11-23 (ouverture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "ok",
-   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 75 confirmés, 1 écart(s)",
-   "details": []
+   "niveau": "alerte",
+   "resume": "59 cours examinés, 0 problème(s), 9 alerte(s) ; entre sources : 77 confirmés, 1 écart(s)",
+   "details": [
+    "PINR.PA : cours daté du 2026-11-20, pas du 2026-11-23",
+    "EUROB.AT : cours daté du 2026-11-20, pas du 2026-11-23",
+    "HLT.PA : cours daté du 2026-11-20, pas du 2026-11-23",
+    "FOO.PA : cours daté du 2026-11-20, pas du 2026-11-23",
+    "INS.PA : cours daté du 2026-11-20, pas du 2026-11-23",
+    "UTI.PA : cours daté du 2026-11-20, pas du 2026-11-23",
+    "CD8.PA : cours daté du 2026-11-20, pas du 2026-11-23",
+    "OBLI.PA : cours daté du 2026-11-20, pas du 2026-11-23",
+    "TRV.PA : cours daté du 2026-11-20, pas du 2026-11-23"
+   ]
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "313 mots, 0 remarque(s)",
+   "resume": "373 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-20 (cloture)",
+   "resume": "régénérée avec la fiche du 2026-11-23 (ouverture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "ok",
-   "resume": "8/8 prix identiques sur Boursorama",
+   "niveau": "non_verifiable",
+   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
    "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "32/32 liens valides sur 8 titres, 10 non ouverts (robots.txt), 2 injoignables d'ici",
+   "resume": "31/31 liens valides sur 8 titres, 6 non ouverts (robots.txt), 1 injoignables d'ici",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-20 (cloture)",
+   "resume": "le site affiche la fiche du 2026-11-23 (ouverture)",
    "details": []
   },
   {
@@ -81,40 +91,48 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "10 commit(s), 0 problème(s), 0 alerte(s)",
+   "resume": "15 commit(s), 0 problème(s), 0 alerte(s)",
    "details": [
+    "b17857a [autre] sièges des banques grecques, de Novo Nordisk et de Nokia notés pour la",
+    "be9fb31 [fiche] Matin PEA 2026-11-23 (ouverture) : notification à renvoyer",
+    "b02442a [fiche] Matin PEA 2026-11-23 (ouverture)",
+    "0b5db20 [autre] URW retiré des titres suivis, foncière SIIC non éligible au PEA [D-202",
+    "27c6cf4 [autre] fiche du 20/11 régénérée avec la carte du monde et l'éligibilité contr",
+    "1c3d72a [autre] souhaits de design mis à jour",
+    "7e1cdb0 [autre] premier contrôle d'éligibilité au PEA (231 oui, 23 à vérifier, 1 non :",
+    "d4987ba [autre] carte du monde des titres suivis (globe) et contrôle quotidien de l'él",
+    "3b7a952 [chef] Chef : rapport du 2026-11-23 (vert) ; rôle des fichiers autorisés au c",
     "c0d6eb1 [code] Code : rapport du 2026-11-23 (vert)",
     "fc9e41b [nuit] Amélioration : cours ancien signalé sous le prix des lignes [D-2026112",
     "7e6579e [design] Design : prix de l'ETF des cartes marchés non coupé [D-20261123-1]",
     "9f32b2e [autre] EEMK retiré des titres suivis, non éligible au PEA [D-20261123-1]",
     "8e0a8d0 [autre] résumé du marché, heure affichée si New York est encore ouverte [D-202",
-    "2259c08 [autre] résumé du marché, Europe et New York séparées, accords corrigés [D-202",
-    "f004677 [chef] Chef : rapport du 2026-11-22 (vert) ; test du titre du bandeau Nouveau",
-    "2f2f898 [code] Code : rapport du 2026-11-22 (vert) ; test du résumé du marché [correc",
-    "60488c7 [nuit] Amélioration : repère ESMA sur 10 ans dans le bloc Frais [D-20261122-2",
-    "1d9ed5b [design] Design : bandeau Nouveau lisible [D-20261122-1]"
+    "2259c08 [autre] résumé du marché, Europe et New York séparées, accords corrigés [D-202"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
    "niveau": "ok",
-   "resume": "6 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
+   "resume": "5 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
    "details": [
-    "1d9ed5b « Design : bandeau Nouveau lisible [D-20261122-1] » : rien de retiré",
-    "60488c7 « Amélioration : repère ESMA sur 10 ans dans le bloc » : rien de retiré",
     "2259c08 « résumé du marché, Europe et New York séparées, acc » : rien de retiré",
     "8e0a8d0 « résumé du marché, heure affichée si New York est e » : rien de retiré",
     "7e6579e « Design : prix de l'ETF des cartes marchés non coup » : rien de retiré",
-    "fc9e41b « Amélioration : cours ancien signalé sous le prix d » : rien de retiré"
+    "fc9e41b « Amélioration : cours ancien signalé sous le prix d » : rien de retiré",
+    "d4987ba « carte du monde des titres suivis (globe) et contrô » : rien de retiré"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "ok",
-   "resume": "59 décisions, 5 à réaliser, 0 point(s) à voir",
-   "details": []
+   "niveau": "alerte",
+   "resume": "62 décisions, 5 à réaliser, 3 point(s) à voir",
+   "details": [
+    "bilan à faire : D-20261118-2 (n° 53 · Bloc fiscalité : le transfert complet du P)",
+    "bilan à faire : D-20261118-1 (Défilement au doigt sur les lignes (iPhone) : `ove)",
+    "bilan à faire : D-20261118-3 (n° 56 (code, 15/11) · Une seule fonction « jour à )"
+   ]
   },
   {
    "nom": "lectures",
@@ -130,6 +148,15 @@
    "resume": "aucune information personnelle trouvée",
    "details": [
     "termes protégés : vérifiés chaque jour par le vérificateur du code (clé absente ici)"
+   ]
+  },
+  {
+   "nom": "eligibilite",
+   "titre": "Éligibilité au PEA (contrôle quotidien)",
+   "niveau": "ok",
+   "resume": "231 oui, 23 à vérifier, 0 non ; contrôle du 2026-11-23 (232 pages Boursorama lues)",
+   "details": [
+    "23 titre(s) à vérifier (deuxième source à trouver par l'agent de nuit) : FGR.PA, SAP.DE, SIE.DE, ALV.DE, DTE.DE, RHM.DE, IFX.DE, ITX.MC, IBE.MC, SAN.MC"
    ]
   }
  ]
