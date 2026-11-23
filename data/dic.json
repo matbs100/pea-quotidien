@@ -105,6 +105,15 @@
    "couts_transaction": 0.0,
    "date_doc": "28/04/2026"
   },
+  "CU2.PA": {
+   "isin": "LU1681042864",
+   "source": "Fundsquare",
+   "page": "https://www.fundsquare.net/search-results?fastSearch=O&isISIN=O&search=LU1681042864",
+   "lu_le": "2026-11-23",
+   "sri": 4,
+   "frais_courants": 0.35,
+   "couts_transaction": 0.0
+  },
   "CW8.PA": {
    "isin": "LU1681043599",
    "source": "Fundsquare",
