@@ -515,15 +515,17 @@ def rendu_de_bout_en_bout():
         assert r.returncode == 0, "rendu.py a planté :\n" + r.stderr[-1500:]
         page = (c / "docs" / "index.html").read_text(encoding="utf-8")
         for morceau in ('id="feuille"', "pas un conseil en investissement", "Matin <span>PEA</span>", 'id="top30"',
-                        'id="sec-inv"', 'id="suggestions"', 'id="inv-q"'):
+                        'id="sec-inv"', 'id="suggestions"', 'id="inv-q"', 'id="sec-globe"', "GlobeMath"):
             assert morceau in page, f"absent de la page : {morceau}"
+        assert "/*__GLOBE__*/" not in page, "code du globe non inséré dans la page"
         assert len(page) < 3_000_000, f"page trop lourde : {len(page) // 1024} Ko"
         m = re.search(r'<script id="donnees" type="application/json">(.*?)</script>', page, re.S)
         assert m, "données de la page introuvables"
         d = json.loads(m.group(1))
         for k in ("date", "indices", "devises", "top30", "petites", "regles", "suggestions", "mes_investissements",
-                  "catalogue"):
+                  "catalogue", "globe"):
             assert k in d, f"clé absente des données : {k}"
+        assert d["globe"]["t"] and d["globe"]["p"], "globe vide"
         assert any(x.get("risque") for x in d["top30"]), "aucun badge de risque dans le top 30"
         if (RACINE / "data" / "wealins.json").exists():
             fw = d.get("fonds_wealins") or {}
@@ -1377,6 +1379,160 @@ def frais_et_risque_du_dic():
     assert fiches.avec_dic("Y.PA", bourso, base) is bourso, "sans DIC : caractéristiques inchangées"
     fx = fiches.frais({"categorie": "etf", "ticker": "Y.PA"}, bourso)
     assert fx["gestion"] == 0.28 and "source_gestion" not in fx and "transaction" not in fx, fx
+
+
+@test
+def carte_du_monde():
+    """Globe (D-20261123-4) : chaque titre suivi placé selon les règles du propriétaire (22/11/2026) ; actions
+    au siège, ETF au pays de création, sauf États-Unis, Japon, Inde, et les 4 ETF émergents et Asie."""
+    import globe
+    assert globe.code_pays("Pays-Bas") == "NL" and globe.code_pays("Denmark") == "DK"
+    assert globe.code_pays("Greece") == "GR" and globe.code_pays("Royaume-Uni") == "GB" and globe.code_pays("Mars") == ""
+    p = globe.pays_du_titre
+    assert p({"ticker": "AI.PA", "categorie": "actions"}, {"pays": "France"}) == (["FR"], "s")
+    assert p({"ticker": "STLAM.MI", "categorie": "actions"}, {}) == (["NL"], "s"), "siège complété à la main"
+    assert p({"ticker": "X.PA", "categorie": "petites"}, {"pays": None}) == ([], "")
+    assert p({"ticker": "CW8.PA", "categorie": "etf", "isin": "LU1681043599"}) == (["LU"], "d")
+    assert p({"ticker": "WPEA.PA", "categorie": "etf", "isin": "IE0002XZSHO1"}) == (["IE"], "d")
+    for t, code in (("PSP5.PA", "US"), ("CU2.PA", "US"), ("LQQ.PA", "US"), ("PTPXE.PA", "JP"), ("PINR.PA", "IN")):
+        assert p({"ticker": t, "categorie": "etf", "isin": "FR0011871128"}) == ([code], "z"), t
+    assert p({"ticker": "NEUF.PA", "categorie": "etf", "nom": "Amundi PEA Nasdaq-100 Bis", "isin": "FR0000000001"}) == (["US"], "z")
+    em = p({"ticker": "PAEEM.PA", "categorie": "etf"})[0]
+    assert len(em) == 23 and "EG" not in em, "PAEEM : 23 pays émergents sans l'Égypte"
+    assert len(p({"ticker": "PLEM.PA", "categorie": "etf"})[0]) == 10 and len(p({"ticker": "PAASI.PA", "categorie": "etf"})[0]) == 8
+    assert sorted(p({"ticker": "PAEJ.PA", "categorie": "etf"})[0]) == sorted(globe.EM_ASIE + ["AU", "HK", "NZ", "SG"])
+    for codes in list(globe.ETF_MULTI.values()) + [[v] for v in list(globe.ETF_ZONE.values()) + list(globe.SIEGES.values())]:
+        assert all(c in globe.PAYS for c in codes), f"pays inconnu : {codes}"
+    cat = [{"ticker": "AI.PA", "nom": "Air Liquide", "categorie": "actions", "prix": 187.5, "devise": "EUR", "var_1j": -0.8,
+            "date_cours": "2026-11-20"},
+           {"ticker": "PAEJ.PA", "nom": "Amundi PEA Asie", "categorie": "etf", "prix": 23.4, "devise": "EUR", "var_1j": -4.8,
+            "date_cours": "2026-11-20", "isin": "FR0011869312"},
+           {"ticker": "^FCHI", "nom": "CAC 40", "categorie": "indices"},
+           {"ticker": "ZZZ.PA", "nom": "Sans pays", "categorie": "actions"}]
+    g = globe.table(cat, {"AI.PA": {"pays": "France", "pea_bourso": True}}, "2026-11-20")
+    assert [x[0] for x in g["t"]] == ["AI.PA", "PAEJ.PA"] and g["sans"] == ["ZZZ.PA"], g
+    assert g["t"][0][7] == 1 and g["t"][1][7] is None and g["t"][1][9] == "m"
+    assert set(g["p"]) == {"FR"} | set(globe.ETF_MULTI["PAEJ.PA"]) and g["p"]["FR"][0] == "France"
+    assert list(globe.nombres(g))[0] in g["p"]
+    # le catalogue de la dernière fiche : tous les titres suivis doivent trouver un pays (sinon, compléter SIEGES)
+    jours = sorted((RACINE / "data" / "jours").glob("20*.json"))
+    if jours:
+        dj = json.loads(jours[-1].read_text(encoding="utf-8"))
+        gr = globe.table(dj.get("catalogue", []), globe.caracteristiques(), dj["date"])
+        if gr["sans"]:
+            REMARQUES.append(f"globe : titres suivis sans pays ({', '.join(gr['sans'])}) : compléter SIEGES dans globe.py")
+
+
+@test
+def trace_des_pays():
+    """Tracé du globe (docs/globe/, Natural Earth) : lisible, un pays par code, léger, et chaque pays où la
+    carte peut placer un titre y figure (le tracé simple n'a pas les plus petits : ils ont un repère)."""
+    import globe
+    for nom, mini in (("monde-110m.json", 170), ("monde-50m.json", 230)):
+        f = RACINE / "docs" / "globe" / nom
+        assert f.exists(), f"docs/globe/{nom} absent (scripts/trace_pays.py le fabrique)"
+        assert f.stat().st_size < 400_000, f"{nom} trop lourd : {f.stat().st_size // 1024} Ko"
+        d = json.loads(f.read_text(encoding="utf-8"))
+        assert "Natural Earth" in d["source"] and len(d["pays"]) >= mini, nom
+        codes = [x["c"] for x in d["pays"] if x["c"]]
+        assert len(codes) == len(set(codes)), f"codes en double dans {nom}"
+        assert all(len(a) % 2 == 0 and len(a) >= 6 for x in d["pays"] for poly in x["p"] for a in poly), f"anneau mal formé : {nom}"
+        if nom == "monde-50m.json":
+            assert not [c for c in globe.PAYS if c not in codes], "pays de globe.PAYS absents du tracé fin"
+    import trace_pays
+    assert trace_pays.encoder([(0, 0), (1, 0), (1, 1), (0, 0)]) == [0, 0, 100, 0, 0, 100]
+    assert trace_pays.code_iso({"ISO_A2": "-99", "ISO_A2_EH": "FR"}) == "FR" and trace_pays.code_iso({"ISO_A2": "-99"}) == ""
+    assert len(trace_pays.simplifier([(0, 0), (1, 0.001), (2, 0), (2, 2), (0, 2), (0, 0)], 0.01)) == 4
+
+
+@test
+def calculs_du_globe_js():
+    """Calculs du globe (scripts/globe.js), avec node (cloud) ou JavaScriptCore (Mac) : projection et retour,
+    pays sous un point (trou compris), découpe au bord du disque, tri des titres et zoom."""
+    node = shutil.which("node")
+    jsc = Path("/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc")
+    if not node and not jsc.exists():
+        REMARQUES.append("ni node ni JavaScriptCore : calculs du globe non vérifiés")
+        return
+    essai = r"""
+    const M = GlobeMath, pres = (a, b, e) => Math.abs(a - b) < (e || 1e-6), dire = typeof print === "function" ? print : console.log;
+    for (const [l0, p0, l, p] of [[12, 44, 2.5, 46.7], [-100, 30, -90, 35], [150, -30, 140, -25], [0, 80, 90, 75]]) {
+      const R = M.matrice(l0, p0), q = M.projeter(R, l, p), b = M.inverse(R, q[0], q[1]);
+      if (!(q[2] > 0 && pres(b[0], l) && pres(b[1], p))) throw new Error("aller-retour faux " + [l0, p0, l, p]);
+    }
+    const Rc = M.matrice(12, 44), c = M.inverse(Rc, 0, 0);
+    if (!pres(c[0], 12) || !pres(c[1], 44) || M.inverse(Rc, 0.9, 0.9) !== null) throw new Error("centre ou bord faux");
+    const P = M.decoder([{ c: "XX", n: "Essai", l: [5, 45], r: 7, p: [[[0, 4000, 1000, 0, 0, 1000, -1000, 0], [400, 4400, 200, 0, 0, 200, -200, 0]]] }]);
+    if (P.length !== 1 || P[0].polys[0].rings[0].n !== 4) throw new Error("décodage");
+    if (!M.chercher(P, 2, 42) || M.chercher(P, 5, 45) || M.chercher(P, 20, 42)) throw new Error("pays sous un point");
+    const rec = () => { const o = { cmds: [] }; for (const k of ["moveTo", "lineTo", "arc", "closePath"]) o[k] = () => o.cmds.push(k); return o; };
+    const a = P[0].polys[0].rings[0];
+    let ch = rec(), vis = M.projeterAnneau(M.matrice(95, 0), a);
+    if (vis !== 2) throw new Error("anneau à cheval attendu, points visibles : " + vis);
+    M.remplirAnneau(ch, a, vis, 100, 100, 50, null);
+    if (ch.cmds[0] !== "moveTo" || !ch.cmds.includes("arc")) throw new Error("découpe sans arc : " + ch.cmds);
+    ch = rec(); vis = M.projeterAnneau(M.matrice(-175, -45), a); M.remplirAnneau(ch, a, vis, 100, 100, 50, null);
+    if (vis !== 0 || ch.cmds.length) throw new Error("anneau caché dessiné");
+    const T = M.trier([["A", "a", "", 0, "", -1], ["B", "b", "", 0, "", null], ["C", "c", "", 0, "", 2.5], ["D", "d", "", 0, "", 0]]);
+    if (T.map((x) => x[0]).join("") !== "CDAB") throw new Error("tri : " + T.map((x) => x[0]).join(""));
+    if (!(M.zoomPour(0.4) === 12 && M.zoomPour(40) === 1.15 && M.zoomPour(2) > M.zoomPour(7))) throw new Error("zoom");
+    dire("GLOBE OK");
+    """
+    with tempfile.TemporaryDirectory() as tmp:
+        f = Path(tmp) / "essai_globe.js"
+        f.write_text((SCRIPTS / "globe.js").read_text(encoding="utf-8") + "\n" + essai, encoding="utf-8")
+        r = subprocess.run([node or str(jsc), str(f)], capture_output=True, text=True, timeout=60)
+        assert "GLOBE OK" in r.stdout, "calculs du globe :\n" + (r.stdout + r.stderr)[-1500:]
+
+
+@test
+def eligibilite_pea():
+    """Contrôle quotidien de l'éligibilité au PEA (D-20261123-5) : règle du siège, foncières SIIC, ETF annoncés
+    par l'émetteur, deux sources pour un « oui » d'action, une panne ne change jamais un statut."""
+    import eligibilite as el
+    sa = el.statut_action
+    assert sa("AI.PA", "Air Liquide", "FR0000120073", True)[0] == "oui"
+    assert sa("SAP.DE", "SAP", "DE0007164600", False)[0] == "doute", "Boursorama muet sur une place étrangère"
+    assert sa("NOVO-B.CO", "Novo Nordisk", "DK0062498333", None)[0] == "doute"
+    assert sa("X.SW", "Nestlé", "CH0038863350", True)[0] == "non", "siège hors UE/EEE"
+    assert sa("URW.PA", "Unibail-Rodamco-Westfield", "FR0013326246", False)[0] == "non", "foncière SIIC"
+    assert sa("Y.PA", "Foncière Lyonnaise", "FR0000033409", True)[0] == "doute"
+    assert sa("Z.PA", "Sans ISIN", None, True)[0] == "doute"
+    se = el.statut_etf
+    assert se("CW8.PA", "Amundi MSCI World", "LU1681043599", True)[0] == "oui"
+    assert se("EEMK.PA", "BNP Easy MSCI EM", "LU1291097779", False)[0] == "doute", "un « non » d'ETF demande 2 sources"
+    assert se("OBL.PA", "Amundi Euro Govt Bond", "LU0000000000", None)[0] == "non"
+    assert se("OBLI.PA", "Amundi PEA Euro Court Terme (monétaire)", "FR0013346681", True)[0] == "oui"
+    m = {"ticker": "EEMK.PA", "nom": "BNP Easy MSCI EM", "categorie": "etf"}
+    v = {"statut": "non", "source": "https://www.justetf.com/fr/etf-profile.html?isin=LU1291097779", "date": "2026-11-23",
+         "raison": "justETF : éligible au PEA non"}
+    assert el.evaluer(m, "LU1291097779", False, "", v)[0] == "non", "vérification à la main d'abord"
+    assert el.evaluer(m, "LU1291097779", False, "", {"statut": "non"})[0] == "doute", "vérification sans source ignorée"
+    assert el.evaluer({"ticker": "O", "nom": "OAT 2030", "categorie": "obligations"}, None, None, "", None)[0] == "non"
+    ancien = {"statut": "oui", "raisons": ["x"], "depuis": "2026-11-01", "relu": "2026-11-22"}
+    garde = el.fusionner(ancien, {"statut": "doute", "raisons": ["y"]}, "2026-11-23", relu=False, panne=True)
+    assert garde["statut"] == "oui" and garde["non_relu"] == "2026-11-23", "une panne ne change pas un statut"
+    meme = el.fusionner(ancien, {"statut": "oui", "raisons": ["z"]}, "2026-11-23", relu=True)
+    assert meme["depuis"] == "2026-11-01" and meme["relu"] == "2026-11-23"
+    change = el.fusionner(ancien, {"statut": "non", "raisons": ["w"]}, "2026-11-23", relu=True)
+    assert change["depuis"] == "2026-11-23"
+    assert el.statut_opcvm({"verifie_le": "2026-01-02"}, "2026-11-23")[0] == "doute"
+    assert el.statut_opcvm({"verifie_le": "2026-11-10"}, "2026-11-23")[0] == "oui"
+    e = {"jour": "2026-11-23", "resume": {"oui": 1, "doute": 1, "non": 0},
+         "titres": {"AI.PA": {"statut": "oui", "raisons": ["a"]}, "SAP.DE": {"statut": "doute", "raisons": ["b", "c"]}}}
+    p = el.pour_la_page(e)
+    assert p["oui"] == ["AI.PA"] and p["d"] == {"SAP.DE": ["doute", "c"]} and el.statuts(e)["SAP.DE"] == "doute"
+    u = json.loads((RACINE / "univers.json").read_text(encoding="utf-8"))
+    suivis = el.titres_suivis(u)
+    assert len(suivis) == sum(len(u.get(k) or {}) for k in ("etf", "etf_levier", "actions", "petites"))
+    assert all(x["categorie"] in ("etf", "actions", "petites") for x in suivis)
+    # le fichier du jour, s'il existe : un statut pour chaque titre suivi
+    f = RACINE / "data" / "eligibilite.json"
+    if f.exists():
+        d = json.loads(f.read_text(encoding="utf-8"))
+        manquants = [x["ticker"] for x in suivis if x["ticker"] not in d.get("titres", {})]
+        if manquants:
+            REMARQUES.append(f"éligibilité : {len(manquants)} titre(s) suivi(s) pas encore contrôlé(s) : {', '.join(manquants[:5])}")
 
 
 @test

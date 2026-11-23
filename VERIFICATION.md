@@ -73,6 +73,12 @@ Tes quatre missions, dans cet ordre :
      `pip-audit -r requirements.txt` (failles connues des bibliothèques, base OSV de PyPI).
    - Le site en ligne montre-t-il la dernière fiche (voir la ligne « Site en ligne » du contrôle d'hier
      dans `pilotage/etat.json`, ou `curl -s` de l'adresse de `config.json`) ?
+   - **Éligibilité au PEA (D-20261123-5)** : la ligne « Éligibilité au PEA (contrôle quotidien) » de
+     `/tmp/controle.md` doit montrer un contrôle de la nuit (`data/eligibilite.json`, clé `jour` = $JOUR) avec un
+     statut pour **chaque** titre suivi et des pages Boursorama lues ; le test `eligibilite_pea` doit passer.
+     Si l'agent de nuit ne l'a pas lancé ou si le script plante, corrige le script (pas le fichier de données) et
+     dis-le dans ton rapport ; relis aussi les `verifications` ajoutées dans la nuit (une source https sérieuse
+     et une raison pour chacune).
 
 4. **Revue du code récent.** Pour chaque commit des 26 dernières heures qui touche `scripts/`
    (`git show <commit>`) : le code fait-il ce qu'annonce le message ? Est-il juste (cas limites, erreurs

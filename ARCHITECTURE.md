@@ -31,6 +31,13 @@ jour » sont choisies par des règles chiffrées. La barre trouve aussi les **fo
 (`data/wealins.json`) et `rendu.py` l'ajoute à la page ; un fonds a pour prix sa dernière valeur
 liquidative, avec sa date.
 
+**La carte du monde** (globe, D-20261123-4) : en bas de la fiche, au-dessus du contrôle des prix, un globe
+qu'on tourne au doigt ou à la souris montre où sont tous les titres suivis (actions : pays du siège ; ETF :
+pays de création, sauf États-Unis, Japon, Inde et les 4 ETF émergents et Asie). `globe.py` place les titres,
+`rendu.py` met la table dans la page et y insère `globe.js` ; le tracé des pays (Natural Earth, domaine
+public, `docs/globe/`) n'est chargé que quand on arrive à la section. Toucher un pays orange rapproche la
+vue et affiche ses titres du plus au moins performant sur la séance.
+
 Tout tourne dans le cloud (routines Claude Code) : le Mac peut être éteint. Le dépôt est rangé
 dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 
@@ -83,6 +90,8 @@ qu'un agent l'a fait, elle applique la version d'avant. Seul le propriétaire (a
 | `data/dic.json` | chiffres lus dans le DIC officiel (PRIIPs) de chaque ETF par `dic.py` : SRI, frais courants, coûts de transaction, date du document, source (Fundsquare ou Amundi ETF), date de lecture (relu après 30 jours) |
 | `data/wealins.json` | les fonds de la liste Wealins (nom, ISIN, devise, dernière valeur liquidative et sa date, valeur précédente), un par ligne, relus une fois par jour par `wealins.py` |
 | `docs/` | le site : `index.html` (dernière fiche) et `archives/` |
+| `data/eligibilite.json` | contrôle quotidien de l'éligibilité au PEA (`eligibilite.py`) : statut « oui », « doute » ou « non » de chaque titre suivi, raisons, sources, dernière lecture de Boursorama (`relu`), date depuis laquelle le statut tient (`depuis`), et `verifications` faites à la main (source https, date, raison), gardées d'une nuit à l'autre. Écrit par l'agent de nuit |
+| `docs/globe/` | tracé des pays du globe, fabriqué une fois par `trace_pays.py` à partir de Natural Earth (domaine public) : `monde-110m.json` (globe entier, 82 Ko) et `monde-50m.json` (zoom, 305 Ko, chargé seulement quand on zoome). Un pays par code ISO, nom français, point d'étiquette, rayon, anneaux en centièmes de degré codés par différences |
 | `notes/` | une note Obsidian par jour |
 | `apprentissage/` | journal de nuit, idées, connaissances, veille GitHub, nouveautés, crédits |
 | `apprentissage/lectures/` | les fiches de lecture des agents (une par PDF lu : lien, résumé, chiffres avec leur page, idées) et la bibliothèque `README.md` |
@@ -291,7 +300,46 @@ par les agents. Dans le graphique, la moyenne courte est en tirets et la longue 
 | `archives()` | page `docs/archives/` qui liste toutes les fiches |
 | `donnees_du_jour(jour)` | données de la fiche complétées comme la page les lit (analyse en HTML, courbes raccourcies, nouveauté, état du contrôle, risque, simulation, taux BCE) ; renvoie `(d, analyse)` |
 | `page_html(d, modele)` | page autonome : le modèle (`scripts/modele.html` par défaut, ou un texte donné, par exemple une ancienne version pour `design.py rendre`) rempli avec les données, avec les empreintes CSP |
+| `script_globe()` | code du globe (`scripts/globe.js`) mis à la place de `/*__GLOBE__*/`, dans son propre bloc `<script>` dont l'empreinte CSP est calculée comme les autres ; vide si le fichier manque |
+| `note_globe(g)` | partie « Carte du monde » de la note Obsidian : nombre de titres suivis dans chaque pays |
 | `main()` | écrit `docs/index.html`, l'archive du jour et la note ; ajoute la nouveauté du programme et l'état du dernier contrôle |
+
+### `globe.py`, `globe.js` et `trace_pays.py` : la carte du monde (D-20261123-4)
+
+Choix du propriétaire (22/11/2026) : tous les titres suivis ; une action dans le pays de son siège ; un ETF
+dans son pays de création (deux premières lettres de l'ISIN), sauf s'il investit aux États-Unis, au Japon ou
+en Inde (placé dans ce pays) ; les 4 ETF émergents et Asie éligibles au PEA (PAEEM, PLEM, PAASI, PAEJ) dans
+chacun des pays qu'ils couvrent (classement MSCI, à vérifier fonds par fonds) ; classement par la variation
+du jour ; section en bas de la fiche, au-dessus du contrôle des prix.
+
+`globe.py` (sans réseau, appelé par `rendu.py`, clé `globe` de la page) :
+
+| Fonction | Rôle |
+|---|---|
+| `table(catalogue, infos, jour)` | une ligne compacte par titre placé (`t` : ticker, nom, catégorie, prix, devise, variation du jour, date du cours, PEA selon Boursorama 1/0/null, codes pays, règle `s`/`d`/`z`/`m`, effet de levier) et les pays qui en ont (`p` : nom, région, latitude, longitude) ; `sans` : titres sans pays |
+| `pays_du_titre(m, infos)` | `(codes ISO, règle)` d'un titre : `ETF_MULTI`, `ETF_ZONE`, mots du nom (`MOTS_ZONE`, pour un ETF ajouté plus tard), domicile de l'ISIN ; pour une action, `SIEGES` (sièges complétés à la main) puis le champ `pays` des caractéristiques |
+| `code_pays(nom)`, `cle_nom(s)` | nom de pays en français ou en anglais (Boursorama, Yahoo) → code ISO ; `""` si inconnu |
+| `caracteristiques(dossier)` | caractéristiques en cache de chaque titre (`data/fiches/`), `{}` si le dossier manque |
+| `nombres(g)` | nombre de titres par pays, du plus au moins fourni |
+
+`globe.js` (JavaScript, inséré dans la page ; ses calculs sont testés sans page par `calculs_du_globe_js`,
+qui les lit dans `GlobeMath`) : `decoder()` lit le tracé compact ; `matrice()`, `projeter()` et
+`inverse()` font la projection orthographique (nord en haut) et son retour ; `chercher()` et
+`dansAnneau()` trouvent le pays sous un point ; `projeterAnneau()`, `remplirAnneau()` et `traitAnneau()`
+dessinent la partie visible des pays (voir « Techniques à retenir ») ; `graticule()` les méridiens et
+parallèles ; `zoomPour()` le zoom d'arrivée sur un pays (d'après son rayon) ; `trier()` classe les titres
+du plus au moins performant (sans variation : à la fin) ; `vecteur()`, `slerp()`, `lonlat()` et
+`distanceDeg()` le vol d'un pays à l'autre (plus court chemin sur la sphère, avec un léger recul pendant
+les longs trajets). Côté page : chargement du tracé quand la section approche (`IntersectionObserver`), tracé
+fin à partir du zoom 2,2, repères touchables pour les pays trop petits, rotation au doigt avec élan, pincer
+pour zoomer, flèches et + / − au clavier, liste des pays (boutons), fiche du pays (drapeau en émoji, clins
+d'œil `DECOR`, chiffres de la séance, titres par 25, petite barre collante), `prefers-reduced-motion` respecté.
+
+`trace_pays.py` (lancé une seule fois, à la main) : `python scripts/trace_pays.py NE_110M.geojson NE_50M.geojson --commit SHA`
+écrit `docs/globe/`. `convertir()` (un pays par entité, point d'étiquette, rayon du zoom sans les territoires
+lointains), `fusionner()` (un seul pays par code ISO), `simplifier()` (Douglas-Peucker, 0,02° pour le tracé
+fin), `encoder()` (centièmes de degré, différences), `aire()`, `distance()`, `dans()`, `code_iso()`,
+`nom_fr()` (noms courts de `NOMS`), `ecrire()`.
 
 ### `controle.py` : le contrôle qualité du chef d'orchestre
 Usage : `python scripts/controle.py [--hors-ligne]`. Ne modifie rien sauf `pilotage/etat.json`.
@@ -338,8 +386,30 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `c_decisions(d, heures)` | contrôle « Méthode de décision » : bilans en retard, gains mal calculés, améliorations sans décision (commits depuis le 07/11/2026) |
 | `c_confidentialite(d, heures)` | contrôle « Confidentialité » : aucune information personnelle dans les fichiers publiés (🔴) ni dans les commits récents (🟠) ; voir `confidentialite.py` |
 | `c_design(heures)` | contrôle « Design : aucune information retirée » : pour chaque commit des 30 dernières heures qui touche `scripts/modele.html` (tout agent), `design.comparer_modeles` entre la version d'avant et celle du commit ; un titre, un champ de données, un identifiant ou un avertissement retiré sans déplacement déclaré, un contraste sous 4,5 ou un nouveau site externe chargé (`src`, `<link href>` ; un lien `<a href>` vers une source n'en charge aucun) = 🔴 ; un texte reformulé, des textes sous 12 px, une page bien plus lourde = 🟠 |
+| `c_eligibilite(maintenant)` | contrôle « Éligibilité au PEA » (D-20261123-5) : `data/eligibilite.json` du jour ou de la veille, un statut pour chaque titre suivi ; un titre « non » encore suivi est une alerte (le chef le retire ou prouve son éligibilité) ; les « à vérifier » sont listés sans alerte. `anomalies_donnees` signale aussi un titre suivi sans pays sur la carte du monde |
 | `resume_court(controles, etat)` | phrase affichée en bas de la fiche |
 | `main()` | enchaîne les contrôles, écrit `pilotage/etat.json`, affiche le résumé |
+
+### `eligibilite.py` : le contrôle quotidien de l'éligibilité au PEA (D-20261123-5)
+
+Demande du propriétaire (23/11/2026), faite avec la carte du monde : vérifier chaque jour l'éligibilité au PEA
+de tous les titres suivis, pour que rien ne soit oublié et qu'aucune mauvaise information ne soit donnée.
+Usage : `python scripts/eligibilite.py` (chaque nuit, agent de nuit, étape 1 bis : une page Boursorama par
+seconde, `robots.txt` lu le 23/11/2026, les pages `/cours/` sont permises) ; `--sans-reseau` pour recalculer
+avec la dernière lecture gardée. Écrit `data/eligibilite.json`. Sans modèle d'IA, donc sans coût de quota.
+
+| Fonction | Rôle |
+|---|---|
+| `titres_suivis(univers)` | titres de `univers.json` (ETF, ETF à effet de levier, actions, petits prix ; une clé `obligations` serait contrôlée aussi) |
+| `statut_action(t, nom, isin, bourso, secteur)` | action : « non » si le pays de l'ISIN est hors de l'UE et de l'EEE ou si c'est une foncière SIIC (`SIIC`), « doute » pour une autre société immobilière, « oui » si le siège est dans l'UE ou l'EEE **et** que Boursorama la dit éligible, « doute » sinon |
+| `statut_etf(t, nom, isin, bourso)` | ETF : « oui » si Boursorama relaie la déclaration de l'émetteur ; « doute » sinon (un « non » demande une deuxième source, notée à la main) ; un ETF d'obligations non annoncé éligible : « non » |
+| `statut_opcvm(f, jour)` | OPCVM de `opcvm.json` : éligible d'après sa documentation, « doute » si elle a plus de 180 jours |
+| `evaluer(m, isin, bourso, secteur, verif)` | statut d'un titre ; une vérification à la main (clé `verifications`, avec source https et date) passe avant |
+| `fusionner(ancien, nouveau, jour, relu, panne)` | une panne de site ne change jamais un statut (marqué `non_relu`) ; garde la date `depuis` tant que le statut ne change pas ; `relu` = dernier jour où Boursorama a été lu |
+| `resume(titres)`, `statuts(e)` | nombre de titres par statut ; `{ticker: statut}` pour la carte du monde |
+| `pour_la_page(e)` | ce que la page lit (clé `eligibilite`) : jour du contrôle, résumé, titres « oui », et `[statut, raison]` des autres ; la fiche d'un titre (bloc « Éligibilité PEA ») et la carte du monde l'affichent |
+| `charger(chemin)` | contenu de `data/eligibilite.json`, `{}` s'il manque |
+| `lire_boursorama(m)` | éligibilité lue sur la page Boursorama du titre (`fiches.lire_bourso`), ses caractéristiques et son code ; pas de page pour Copenhague, Athènes et Helsinki |
 
 ### `design.py` : le garde-fou de l'agent design (aucune information retirée)
 Usage : `python3 scripts/design.py inventaire [REF]`, `comparer AVANT [APRES]` (codes 0 / 1 / 2),
@@ -454,6 +524,10 @@ si un test échoue. Chaque nouvelle fonction de calcul doit avoir son test.
 `contrastes_des_deux_themes` (D-20261112-2) lit les couleurs des thèmes de `modele.html` et exige 4,5:1 (WCAG AA) pour chaque texte de couleur sur le fond, la carte et la carte 2, dans le thème clair et le sombre.
 La syntaxe JavaScript de la page est vérifiée avec `node --check` dans le cloud, ou avec
 JavaScriptCore (`jsc`, présent sur tous les Mac) en local.
+`carte_du_monde`, `trace_des_pays` et `calculs_du_globe_js` (D-20261123-4) : règles de placement des titres,
+tracé lisible et léger avec tous les pays possibles, calculs du globe exécutés avec node ou JavaScriptCore.
+`eligibilite_pea` (D-20261123-5) : règle du siège, foncières SIIC, ETF, vérifications à la main, une panne qui
+ne change jamais un statut, ce que la page reçoit.
 
 ## Techniques à retenir
 
@@ -472,7 +546,14 @@ JavaScriptCore (`jsc`, présent sur tous les Mac) en local.
 - **Politesse** : une requête par seconde au plus, `robots.txt` respecté, caches pour limiter les appels,
   aucune protection anti-robot contournée.
 - **Page autonome** : données JSON compactes intégrées à la page (`<script id="donnees">`), aucun
-  appel réseau à l'ouverture, sauf les polices.
+  appel réseau à l'ouverture, sauf les polices. Seule exception, le tracé du globe (`docs/globe/`, même
+  site, permis par `connect-src 'self'`), lu quand on arrive à la carte du monde.
+- **Globe sans bibliothèque** : projection orthographique dans un `<canvas>`. Pour la partie visible d'un
+  pays, les points cachés sont ramenés sur le bord du disque (projection radiale, arcs du bord) et le tout
+  est rempli avec la règle pair-impair : on obtient exactement la partie visible ; si le pays contient le
+  point opposé au centre de la vue, un cercle complet ajouté annule le tour de trop. `touch-action: pan-y`
+  sur le globe : un glissement vertical du doigt fait défiler la page, un glissement horizontal tourne le
+  globe (et peut ensuite aller dans tous les sens).
 - **Contourner le cache** de GitHub Pages pour vérifier une mise à jour : ajouter `?v=<commit>` à l'adresse.
 - **Garde-fous** : tests obligatoires, filet de sécurité (annulation d'une amélioration de la nuit qui
   casse la fiche), règles de rôle par agent vérifiées par `controle.py`.

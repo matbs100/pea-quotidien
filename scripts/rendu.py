@@ -165,8 +165,24 @@ def note_obsidian(d, analyse, url):
             L.append(f"| {m['nom']} (`{m['ticker']}`) | {i.get('isin', '—')} | {pea} | {sri} | "
                      f"{frais_note(i)} | {i.get('per', '—')} | {i.get('rendement', '—')} | "
                      f"{pct_simple(st.get('vol_1a'))} | {pct_simple(st.get('perte_max_1a'))} |")
+    L += note_globe(d.get("globe"))
     L += ["", "## Règles", ""] + [f"- **{k}** : {v}" for k, v in d["regles"].items()]
     return "\n".join(L) + "\n"
+
+
+def note_globe(g):
+    """Partie « Carte du monde » de la note Obsidian : combien de titres suivis dans chaque pays."""
+    if not g or not g.get("t"):
+        return []
+    n = {}
+    for ligne in g["t"]:
+        for c in ligne[8]:
+            n[c] = n.get(c, 0) + 1
+    pays = sorted(n.items(), key=lambda x: (-x[1], x[0]))
+    noms = ", ".join(f"{(g.get('p') or {}).get(c, [c])[0]} {k}" for c, k in pays)
+    return ["", "## Carte du monde", "",
+            f"{len(g['t'])} titres suivis dans {len(pays)} pays (actions : siège ; ETF : pays de création, sauf "
+            f"États-Unis, Japon, Inde et ETF émergents et Asie) : {noms}."]
 
 
 def montant(x, m, signe=False):
@@ -351,6 +367,20 @@ def donnees_du_jour(jour):
         d["taux_bce"] = taux.mesurer()
     except Exception:
         pass
+    statuts = {}
+    try:  # contrôle quotidien de l'éligibilité au PEA (D-20261123-5, data/eligibilite.json)
+        import eligibilite
+        e = eligibilite.charger()
+        statuts = eligibilite.statuts(e)
+        if eligibilite.pour_la_page(e):
+            d["eligibilite"] = eligibilite.pour_la_page(e)
+    except Exception as e:  # noqa: BLE001
+        print("Éligibilité PEA non lue :", e, file=sys.stderr)
+    try:  # carte du monde : pays de chaque titre suivi (D-20261123-4) ; la page se construit même sans
+        import globe
+        d["globe"] = globe.table(d.get("catalogue", []), globe.caracteristiques(), jour, statuts)
+    except Exception as e:  # noqa: BLE001
+        print("Carte du monde non construite :", e, file=sys.stderr)
     return d, analyse
 
 
@@ -360,7 +390,17 @@ def page_html(d, modele=None):
         modele = (RACINE / "scripts" / "modele.html").read_text(encoding="utf-8")
     donnees = json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = modele.replace("/*__DONNEES__*/", donnees)
+    page = page.replace("/*__GLOBE__*/", script_globe())
     return page.replace("'__EMPREINTE_SCRIPT__'", empreintes_scripts(page))
+
+
+def script_globe():
+    """Code du globe (scripts/globe.js), inséré dans son propre bloc <script> : son empreinte est ajoutée à
+    la politique de sécurité comme celle du script principal. Vide si le fichier manque."""
+    f = RACINE / "scripts" / "globe.js"
+    if not f.exists():
+        return ""
+    return re.sub(r"</(script)", r"<\\/\1", f.read_text(encoding="utf-8"), flags=re.I)
 
 
 def main():

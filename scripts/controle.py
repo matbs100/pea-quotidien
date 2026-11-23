@@ -63,10 +63,11 @@ HORS_ROLE = {  # mes-investissements.md : tenu par le propriétaire seul, aucun 
 }
 # exceptions : idées proposées (fiche, samedi, vérificateur) ; pistes et décisions provisoires (nuit)
 PERMIS = {"fiche": ["apprentissage/idees.md", "pilotage/notification.json"],  # notification à renvoyer par le Mac
-          "nuit": ["pilotage/candidats.md", "pilotage/decisions.md"],
+          "nuit": ["pilotage/candidats.md", "pilotage/decisions.md",
+                   "data/eligibilite.json"],  # contrôle quotidien de l'éligibilité au PEA (D-20261123-5)
           "univers": ["pilotage/candidats.md", "apprentissage/idees.md"],
           "code": ["apprentissage/idees.md", "apprentissage/lectures/README.md", "pilotage/sources-verifiees.md"],
-          "design": ["scripts/modele.html", "apprentissage/idees.md", "apprentissage/CHANGELOG.md",
+          "design": ["scripts/modele.html", "scripts/globe.js", "apprentissage/idees.md", "apprentissage/CHANGELOG.md",
                      "pilotage/decisions.md", "pilotage/candidats.md",
                      "data/taux_bce.json"]}  # rendu.py ne change que sa date « releve » (D-20261123-3)
 PERMIS_MOTIFS = {"nuit": ["data/presse/*"],  # revue de presse quotidienne demandée par le chef (D-20261123-3)
@@ -210,6 +211,14 @@ def anomalies_donnees(d):
         al.append("contrôle des prix entre sources absent")
     elif cs.get("ecart", 0) > 3:
         al.append(f"{cs['ecart']} écarts entre sources : " + ", ".join(e["ticker"] for e in cs.get("ecarts", [])[:6]))
+    try:  # carte du monde (D-20261123-4) : tous les titres suivis doivent y avoir un pays
+        import globe
+        sans_pays = globe.table(d.get("catalogue", []), globe.caracteristiques())["sans"]
+        if sans_pays:
+            al.append(f"carte du monde : {len(sans_pays)} titre(s) sans pays ({', '.join(sans_pays[:6])}) : "
+                      "compléter SIEGES dans scripts/globe.py")
+    except Exception as e:  # noqa: BLE001
+        al.append(f"carte du monde non vérifiable : {e}")
     return pb, al
 
 
@@ -661,6 +670,46 @@ def commit_sans_decision(agent, message, chemins, decisions):
     return not any(i in decisions for i in ID_DECISION.findall(message))
 
 
+def c_eligibilite(maintenant):
+    """Contrôle quotidien de l'éligibilité au PEA (D-20261123-5) : data/eligibilite.json du jour ou de la
+    veille, un statut pour chaque titre suivi. Un titre « non » encore suivi est une alerte : le chef le retire
+    de univers.json (avec une décision) ou prouve son éligibilité (vérification à la main dans le fichier).
+    Les titres « à vérifier » sont listés pour l'agent de nuit, sans alerte."""
+    titre = "Éligibilité au PEA (contrôle quotidien)"
+    try:
+        import eligibilite
+    except ImportError:
+        return controle("eligibilite", titre, "non_verifiable", "scripts/eligibilite.py absent")
+    e = eligibilite.charger()
+    if not e.get("titres"):
+        return controle("eligibilite", titre, "alerte", "data/eligibilite.json absent : lancer scripts/eligibilite.py "
+                        "(agent de nuit)")
+    al = []
+    try:
+        age = (maintenant.date() - datetime.fromisoformat(e.get("jour", "")).date()).days
+    except ValueError:
+        age = 99
+    if age > 1:
+        al.append(f"contrôle vieux de {age} jours (dernier : {e.get('jour')}) : l'agent de nuit lance scripts/eligibilite.py")
+    suivis = [m["ticker"] for m in eligibilite.titres_suivis(json.loads(lire(RACINE / "univers.json") or "{}"))]
+    statut = {t: (e["titres"].get(t) or {}).get("statut") for t in suivis}
+    manquants = [t for t, s in statut.items() if not s]
+    if manquants:
+        al.append(f"{len(manquants)} titre(s) suivi(s) sans statut : {', '.join(manquants[:6])}")
+    non = [t for t, s in statut.items() if s == "non"]
+    if non:
+        al.append(f"{len(non)} titre(s) non éligible(s) encore suivi(s) : {', '.join(non[:6])} : les retirer de "
+                  "univers.json (décision D-…) ou prouver leur éligibilité (« verifications » de data/eligibilite.json)")
+    doutes = [t for t, s in statut.items() if s == "doute"]
+    infos = [f"{len(doutes)} titre(s) à vérifier (deuxième source à trouver par l'agent de nuit) : "
+             f"{', '.join(doutes[:10])}"] if doutes else []
+    al, levees = appliquer_verifications(al, None, lire_verifications()) if al else (al, [])
+    r = e.get("resume", {})
+    resume = (f"{r.get('oui', 0)} oui, {r.get('doute', 0)} à vérifier, {r.get('non', 0)} non ; contrôle du "
+              f"{e.get('jour')} ({e.get('pages_lues', 0)} pages Boursorama lues)")
+    return controle("eligibilite", titre, "alerte" if al else "ok", resume, al + infos + levees)
+
+
 def c_design(heures=30):
     """Chaque commit des dernières heures qui touche la page (scripts/modele.html), quel que soit son
     agent : aucune information retirée (titres, champs, avertissements…), contraste et accessibilité
@@ -771,7 +820,8 @@ def main():
             controles.append(x or controle(nom, nom, "non_verifiable", "non vérifié (hors ligne)"))
     else:
         controles += [c_prix(d, maintenant), c_liens(d), c_site(d)]
-    controles += [c_documentation(d, maintenant), c_agents(d), c_design(), c_decisions(d), c_lectures(d), c_confidentialite(d)]
+    controles += [c_documentation(d, maintenant), c_agents(d), c_design(), c_decisions(d), c_lectures(d), c_confidentialite(d),
+                  c_eligibilite(maintenant)]
     pire_niveau = pire(c["niveau"] for c in controles)
     etat = {"probleme": "rouge", "alerte": "orange"}.get(pire_niveau, "vert")
     sortie = {"genere_le": maintenant.isoformat(timespec="minutes"), "fiche": f"{d['date']} ({d.get('moment')})",

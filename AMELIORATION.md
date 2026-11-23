@@ -36,6 +36,19 @@ scripts : tu ne dois jamais la casser. Tout est en français.
    3 derniers journaux, les 3 dernières analyses de `data/analyses/` et le bilan des signaux
    (`data/signaux.csv`). Lance `$PY scripts/tests.py` : si les tests échouent déjà, ta seule mission de
    la nuit est de corriger ce problème.
+1 bis. **Éligibilité au PEA, chaque nuit (D-20261123-5, demande du propriétaire : rien d'oublié, aucune
+   mauvaise information).** `$PY scripts/eligibilite.py` (5 minutes environ : une page Boursorama par seconde
+   pour chaque titre suivi, `robots.txt` respecté) écrit `data/eligibilite.json` : « oui », « doute » ou « non »
+   pour chaque titre, avec ses raisons. Puis tranche **au moins 3 « doute »** par une source ouverte et sérieuse
+   (rapport annuel ou site de la société pour son siège social et son régime fiscal, DIC ou page de l'émetteur
+   pour un ETF, justETF) : ajoute pour chacun, dans la clé `verifications` du fichier,
+   `"CODE": {"statut": "oui" | "non", "source": "<lien https>", "date": "$JOUR", "raison": "<une phrase>"}`,
+   puis relance `$PY scripts/eligibilite.py --sans-reseau`. Rappels : action éligible si son **siège social**
+   (pas le siège opérationnel donné par Yahoo) est dans l'Union européenne ou l'EEE et qu'elle paie l'impôt sur
+   les sociétés (pas les foncières SIIC, SOCIMI, SIIQ ou REIT) ; ETF éligible si l'émetteur l'annonce ;
+   obligations jamais. Un « non » confirmé : écris-le dans `pilotage/candidats.md` (le chef retire le titre).
+   Ne change jamais un statut sur une seule source, ni parce qu'un site ne répond pas. Le fichier part avec ton
+   commit de l'étape 6.
 2. **Veille du jour**, selon `NUM`. Ouvre **au moins 3 sources** (des pages lues, pas seulement des
    résultats de recherche) et garde leurs liens :
    - 1, lundi : **open source** : programmes similaires sur GitHub (screeners d'actions et d'ETF,

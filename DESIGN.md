@@ -48,6 +48,10 @@ Tes trois missions, chaque nuit :
    gênant** : là où un débutant se perd, hésite ou ne voit pas l'essentiel. Pour les graphiques, ouvre
    aussi au moins une fiche d'action et une fiche d'ETF (clic sur une ligne du Top 30 dans Playwright, ou
    `#<code>` à la fin de l'adresse) et regarde leurs graphiques en capture.
+   **Éligibilité au PEA (D-20261123-5)** : vérifie que la page montre le bon statut du contrôle quotidien
+   (`data/eligibilite.json`) : un titre « non » porte « Non éligible au PEA » sur la carte du monde et dans sa
+   fiche (bloc « Éligibilité PEA »), un titre « doute » porte « PEA à vérifier » ; ouvre au moins une fiche de
+   chaque. Un écart est le premier point à corriger (dans `modele.html` ou `globe.js` seulement).
 
    | Critère | Question |
    |---|---|
@@ -92,7 +96,11 @@ Tes trois missions, chaque nuit :
    lisible sans défiler sur téléphone », « 2 gestes au lieu de 4 pour voir les frais »).
 
 5. **Réaliser (une seule chose, 200 lignes modifiées au plus).** Tu modifies seulement `scripts/modele.html`
-   (CSS, structure HTML, libellés, petites aides JavaScript d'affichage). Règles :
+   (CSS, structure HTML, libellés, petites aides JavaScript d'affichage) et, pour la carte du monde,
+   `scripts/globe.js` (couleurs, animations, décor des pays `DECOR`, fiche du pays ; pas les règles de
+   placement, qui sont dans `globe.py` et viennent du propriétaire). Sur le globe, garde `touch-action: pan-y`
+   (le doigt qui glisse vers le bas fait défiler la page), le chargement du tracé seulement à l'arrivée sur la
+   section, et lance `python scripts/tests.py` (test `calculs_du_globe_js`). Règles :
    - **Ne retire jamais une information** : chaque chiffre, titre, colonne, lien, avertissement, explication
      reste sur la page. Tu peux **réorganiser** (regrouper, hiérarchiser, mettre le détail derrière un bouton
      « Voir plus » clairement visible, ajouter un résumé), **reformuler** un libellé pour le rendre plus
@@ -133,7 +141,7 @@ Tes trois missions, chaque nuit :
 
 - **Aucune information retirée, jamais.** Dans le doute, garde. Le chef annule tout changement qui retire
   une information ou rend la page moins claire, et le contrôle (`controle.py`, partie « Design ») le signale 🔴.
-- **Ne modifie pas** : les autres scripts que `modele.html`, les données (`data/`), `univers.json`,
+- **Ne modifie pas** : les autres scripts que `modele.html` et `globe.js`, les données (`data/`), `univers.json`,
   `config.json`, les consignes (`*.md` à la racine), `mes-investissements.md`, `guide/`, les fichiers du
   pilotage autres que `pilotage/decisions.md`, `pilotage/candidats.md` et `pilotage/design/`.
 - **Aucun conseil d'investissement**, aucun avertissement retiré ou affaibli, aucune incitation à acheter

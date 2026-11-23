@@ -50,6 +50,13 @@ avec environ 500 €. Le site sert à s'informer et à apprendre, jamais à cons
    (2 minutes environ ; code de sortie 0 vert, 1 orange, 2 rouge). Il vérifie les tests, la fraîcheur de
    la fiche, les données, l'analyse, 8 prix revérifiés sur Boursorama, les liens de 8 fiches, la page
    du dépôt, le site en ligne, la documentation et les commits des autres agents.
+2 bis. **Éligibilité au PEA (D-20261123-5, demande du propriétaire).** Lis la ligne « Éligibilité au PEA
+   (contrôle quotidien) » du contrôle. Un titre **« non »** encore suivi : vérifie les deux sources, puis
+   retire-le de `univers.json` (décision `correction` dans `pilotage/decisions.md`, comme EEMK le 23/11) et
+   écris-le dans ton rapport ; si le « non » est faux, prouve l'éligibilité par une vérification à la main dans
+   `data/eligibilite.json` (`verifications`, avec source et raison). Donne dans le rapport le nombre de « à
+   vérifier » et, s'il ne baisse pas depuis 3 jours, donne un devoir à l'agent de nuit. Si le contrôle n'a pas
+   tourné cette nuit, lance `$PY scripts/eligibilite.py` toi-même.
 3. **Protéger le projet (priorité absolue).**
    - Si les tests échouent : trouve la cause. Si elle vient d'un commit de moins de 30 h d'un agent
      (« Amélioration », « Veille », « Chef »), annule-le avec `git revert --no-edit <commit>`, relance les
