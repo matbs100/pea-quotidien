@@ -255,6 +255,8 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .astuce { font-size: 14px; color: var(--muted); }
 .moment { margin-top: 8px; font: 500 13px var(--font-mono); color: var(--accent); }
 .resume-marche { margin: 10px 0 0; font-size: 16px; line-height: 1.4; font-weight: 600; color: var(--ink); max-width: 34em; }
+.resume-marche .mot { font: inherit; color: inherit; background: none; border: 0; padding: 0 0 1px; margin: 0; cursor: help; border-bottom: 1px dotted var(--muted); min-height: 24px; }
+.resume-def { margin: 6px 0 0; font-size: 14px; line-height: 1.4; color: var(--muted); max-width: 34em; }
 .resume-marche .up { color: var(--up); }
 .resume-marche .down { color: var(--down); }
 .nouveau { display: inline-flex; gap: 6px; margin-top: 10px; font-size: 13px; padding: 5px 12px; border-radius: 999px; background: var(--amber-soft); color: var(--amber); text-decoration: none; }
@@ -424,6 +426,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
       <div class="date" id="date"></div>
       <div class="moment" id="moment" hidden></div>
       <p class="resume-marche" id="resume-marche" hidden></p>
+      <p class="resume-def" id="resume-def" role="status" hidden></p>
       <a class="nouveau" id="nouveau" hidden></a>
     </div>
     <div class="fx">
@@ -736,8 +739,19 @@ $("#indices").innerHTML = D.indices.map((m) => carte(m)).join("");
   }
   if (!phrases.length) return;
   const el = $("#resume-marche"); el.hidden = false;
-  el.innerHTML = phrases.join(" ");
+  // mots du jargon expliqués au toucher (glossaire, D-20261124-2) : le texte visible ne change pas
+  el.innerHTML = phrases.join(" ").replace(/\b(indices?|[Cc]lôture)\b/g, (x) => `<button type="button" class="mot" data-mot="${x.toLowerCase().startsWith("indice") ? "indice" : "cloture"}">${x}</button>`);
 })();
+const MOTS_RESUME = {
+  indice: "Un indice (CAC 40, S&P 500…) est une moyenne de grandes entreprises : il résume en un seul chiffre comment va un marché.",
+  cloture: "La clôture est le dernier cours de la séance : c'est le prix qui sert de référence pour la variation du jour."
+};
+$("#resume-marche").addEventListener("click", (e) => {
+  const b = e.target.closest(".mot");
+  if (!b) return;
+  const def = $("#resume-def"), ouvert = !def.hidden && def.dataset.mot === b.dataset.mot;
+  def.hidden = ouvert; def.dataset.mot = ouvert ? "" : b.dataset.mot; def.textContent = ouvert ? "" : MOTS_RESUME[b.dataset.mot];
+});
 $("#devises").innerHTML = [...D.devises, ...D.matieres].map((m) => carte(m)).join("");
 
 $("#analyse").innerHTML = D.analyse_html || "<p>L'analyse du jour n'a pas encore été rédigée.</p>";

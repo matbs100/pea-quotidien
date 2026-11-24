@@ -1540,6 +1540,34 @@ def eligibilite_pea():
 
 
 @test
+def glossaire_phrase_resume():
+    """D-20261124-2 : « indice » et « clôture » de la phrase-résumé sont des boutons expliqués au toucher ; le texte visible ne change pas."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    bloc = re.search(r"// résumé en une phrase.*?\n\}\)\(\);\n", modele, re.S)
+    assert bloc and 'id="resume-def"' in modele, "bloc ou zone d'explication introuvable"
+    assert "MOTS_RESUME" in modele and "indice:" in modele and "cloture:" in modele, "définitions absentes"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : glossaire de la phrase-résumé non exécuté")
+        return
+    essai = """
+const esc = (x) => String(x), sens = (v) => (v < 0 ? "down" : "up"), pct = (v) => v + " %";
+const dateCourte = (j) => "date " + j;
+const el = { hidden: true, innerHTML: "" }, $ = () => el;
+const J = "2026-11-20";
+const m = (t, v) => ({ ticker: t, nom: t, var_1j: v, date_cours: J });
+const D = { date: J, moment: "cloture", genere_le: J + "T17:59+01:00", indices: [m("^FCHI", -1), m("^FTSE", -2)] };
+""" + bloc.group(0) + """
+console.log(el.innerHTML);
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.returncode == 0, f"glossaire : erreur node {r.stderr[-300:]}"
+    html = r.stdout
+    assert 'data-mot="indice">indices</button>' in html and 'data-mot="cloture">Clôture</button>' in html, html
+    assert re.sub(r"<[^>]+>", "", html).startswith("Clôture en Europe : les 2 grands indices"), html
+
+
+@test
 def date_du_jour_a_paris_partout():
     """Aucun script n'appelle date.today() (fuseau de la machine) : tous passent par paris.aujourdhui() [D-20261118-3]."""
     import re

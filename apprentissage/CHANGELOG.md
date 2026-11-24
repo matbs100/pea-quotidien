@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-24 · Les mots « indice » et « clôture » expliqués au toucher (Nuit, D-20261124-2)
+Dans la phrase-résumé sous la date, « indice » et « clôture » sont soulignés en pointillés : un toucher affiche leur définition en une phrase, un second la referme. Rien n'est retiré. Inspiré de l'idée n° 74 (revue du chef du 22/11, jargon pour un débutant).
+
 ## 2026-11-24 · Pastille « Risque » plus facile à toucher (Design, D-20261124-1)
 La pastille Risque mesure au moins 24 px de haut (norme WCAG 2.5.8). Rien n'est retiré de la page.
 
