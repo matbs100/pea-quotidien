@@ -108,3 +108,6 @@ Statuts : `proposée`, `adoptée D-…`, `à l'essai D-…`, `en attente : raiso
 ## 2026-11-23 · Vérificateur du code : test des échappements du gabarit
 Test statique de `modele.html` : toute donnée `${...}` dans un gabarit `innerHTML` passe par `esc()` ou une fonction de la liste blanche. Utilité 4, résultats 3, visuel 1, nouveauté 3, fiabilité 5 ; coût faible (une expression régulière), risque faible (faux positifs à régler). Inspiration : OWASP, prévention du XSS (23/11/2026).
 | 78 | Aide : « un ETF investi surtout en dollars réagit aux chocs américains et au taux de change » (phrase pédagogique sur la fiche d'un ETF monde ou États-Unis, sans conseil) | lecture BCE (Financial Stability Review, mai 2026, p. 10-11) | phrase visible sur les fiches ETF concernés ; aucune formulation de conseil ; test vert | 3 | 2 | 3 | 3 | 4 | 2,85 | 2 | 1 | proposée (nuit du 24/11) |
+
+## 2026-11-24 · Vérificateur du code : repères de version au contrôle
+| 79 | Afficher au contrôle la date de la dernière lecture de `pip-audit` et les versions des bibliothèques de `requirements.txt` | veille PyPI et OSV du 24/11 | ligne du contrôle « dépendances » verte si lue depuis moins de 7 jours ; aucune donnée personnelle | 3 | 2 | 1 | 2 | 4 | 2,30 | 2 | 1 | proposée |
