@@ -5,6 +5,9 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-24 · Pastille « Risque » plus facile à toucher (Design, D-20261124-1)
+La pastille Risque mesure au moins 24 px de haut (norme WCAG 2.5.8). Rien n'est retiré de la page.
+
 ## 2026-11-23 · La carte du monde des titres suivis (D-20261123-4)
 
 - En bas de la fiche, un globe à faire tourner du doigt ou à la souris : les pays où se trouvent les titres suivis sont en orange. Toucher un pays rapproche la vue et ouvre sa fiche : son drapeau, quelques clins d'œil, les chiffres de la séance et ses titres, du plus au moins performant. Actions : pays du siège ; ETF : pays de création, sauf ceux qui investissent aux États-Unis, au Japon ou en Inde, et les 4 ETF émergents et Asie, placés dans chaque pays couvert. Tracé des pays : Natural Earth (domaine public).

@@ -23,6 +23,8 @@ Une leçon par ligne, datée, 60 lignes au plus. Relue chaque nuit avant de trav
 
 - 2026-11-22 · Bandeau « Nouveau » : nettoyer le titre à l'affichage en JS (D-20261122-1) ; ne pas oublier l'étude de marché, reportée deux nuits.
 
+- 2026-11-24 · Pastille Risque ≥ 24 px (D-20261124-1) : min-height + inline-flex suffit ; mesurer toutes les pastilles à 320/390 px. Devoirs restants : fiche ETF 360 px, idée 74.
+
 ## Ce qui a été annulé, et pourquoi
 
 ## Erreurs à ne plus refaire
