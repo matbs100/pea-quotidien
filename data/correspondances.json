@@ -276,9 +276,7 @@
  "IBE.MC": {
   "boursorama": "FF55-IBE",
   "ft": "IBE:MCE",
-  "echecs": {
-   "boursorama": 1
-  }
+  "echecs": {}
  },
  "ENX.PA": {
   "boursorama": "1rPENX",
@@ -738,6 +736,11 @@
  "FRVIA.PA": {
   "boursorama": "1rPFRVIA",
   "ft": "FRVIA:PAR",
+  "echecs": {}
+ },
+ "CLARI.PA": {
+  "boursorama": "1rPCLARI",
+  "ft": "CLARI:PAR",
   "echecs": {}
  }
 }
