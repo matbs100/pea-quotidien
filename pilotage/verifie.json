@@ -166,5 +166,11 @@
   "jour": "1d9ed5b",
   "preuve": "git show 1d9ed5b relu le 22/11 : data/taux_bce.json ne change que la date « releve » (21 -> 22/11), effet de la régénération de la page par rendu.py ; aucun taux modifié (2,5 / 2,65 / 2,9).",
   "le": "2026-11-22"
+ },
+ {
+  "alerte": "pilotage/rapports/2026-11-23.md : hors du rôle de l'agent « code »",
+  "jour": "3461214",
+  "preuve": "git show 3461214 relu le 24/11 : la seule modification de pilotage/rapports/2026-11-23.md remplace un prénom par « le propriétaire » (1 ligne), correction de confidentialité voulue par le chef ; aucun autre changement de contenu.",
+  "le": "2026-11-24"
  }
 ]

@@ -6,7 +6,7 @@ url: https://www.ecb.europa.eu/press/financial-stability-publications/fsr/pdf/ec
 publie_le: 2026-05
 lu_le: 2026-11-24
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-24
 ---
 # 📄 Financial Stability Review, May 2026
 
@@ -27,4 +27,4 @@ La Banque centrale européenne publie deux fois par an sa revue de la stabilité
 - Rien d'autre pour la fiche : le document ne se prête pas à un signal.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- ✅ relue le 2026-11-24 par le chef : PDF rouvert, p. 7 (trois risques), p. 10 (guerre du 28/02, premier jour de bourse le 2/03, sorties des fonds obligataires à haut rendement) et p. 11 (actifs en dollars) exacts ; résumé fidèle, rien de copié ; site de la BCE dans `pilotage/sources-verifiees.md`.

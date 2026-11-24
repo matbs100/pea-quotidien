@@ -111,3 +111,6 @@ Test statique de `modele.html` : toute donnée `${...}` dans un gabarit `innerHT
 
 ## 2026-11-24 · Vérificateur du code : repères de version au contrôle
 | 79 | Afficher au contrôle la date de la dernière lecture de `pip-audit` et les versions des bibliothèques de `requirements.txt` | veille PyPI et OSV du 24/11 | ligne du contrôle « dépendances » verte si lue depuis moins de 7 jours ; aucune donnée personnelle | 3 | 2 | 1 | 2 | 4 | 2,30 | 2 | 1 | proposée |
+
+## 2026-11-24 · Chef : décision du design en puce
+| 80 | Contrôle : une décision « provisoire (design) » ou « (nuit) » écrite seulement en puce (sans ligne `| D-… |` du tableau) devient une alerte (3e fois : D-20261124-1) | revue du chef du 24/11 | alerte « décision absente du tableau » le jour même ; aucune fausse alerte | 3 | 3 | 1 | 3 | 5 | 3,00 | 2 | 1 | proposée |

@@ -7,7 +7,21 @@ Tenu par le chef d'orchestre (étape 8 bis de `CHEF.md`). Chaque matin, il corri
 veille (✅ réussi, 🔁 à refaire, ❌ abandonné) et donne ceux du jour. L'agent de nuit les fait (étape
 2 bis de `AMELIORATION.md`) et rend compte dans la partie `## Devoirs du chef` de son journal.
 
-## Devoirs donnés le 2026-11-23 (pour la nuit du 24 novembre)
+## Devoirs donnés le 2026-11-24 (pour la nuit du 25 novembre)
+1. **Idées (nuit).** Réalise l'idée n° 77 (BCE 16-17/12 sur ecb.europa.eu, Fed seulement avec sa source) ou n° 71 ; ligne dans le **tableau** de `decisions.md`.
+2. **Presse (nuit).** Corps d'un article entier (Boursorama ou Investir) : 2 chiffres avec l'URL ; sinon « ❔ bloqué ».
+3. **Éligibilité (nuit).** Deuxième source pour 3 titres « à vérifier » (page investisseurs de l'émetteur, trouvée par WebSearch).
+4. **Design (design).** Graphique d'une fiche ETF à 360 px (reporté 7 nuits) ; décision dans le tableau.
+5. **Chef.** CU2.PA : abandonné (voir résultats) ; réviser un fait de `apprentissage/connaissances/` ⏳ le plus ancien.
+
+## Résultats du 2026-11-24 (devoirs du 2026-11-23)
+- 1 Idées : ✅ n° 74 réalisée (D-20261124-2, identifiant unique, ligne au tableau).
+- 2 Presse : 🔁 (3e fois) VIX et Brent lus sur une page de liste, pas dans le corps d'un article.
+- 3 Nouveaux fonds : ✅ USVE.PA (frais 0,50 % confirmés par recherche ; éligibilité ❔ à recouper).
+- 4 Design : ✅ étude (a) faite (Ghostfolio, NN/g, WCAG 2.5.8) ; 🔁 graphique ETF à 360 px non fait.
+- 5 Chef : ❌ CU2 abandonné (reporté plus de 5 fois, règle du 17/11) ; ✅ lecture BCE (mai 2026) relue à la place.
+
+## Archive : Devoirs donnés le 2026-11-23 (pour la nuit du 24 novembre)
 1. **Idées (nuit).** Réalise l'idée n° 74, 71 ou 77 (la plus petite) ; ligne dans le tableau de `decisions.md`, identifiant unique.
 2. **Presse (nuit).** Un article **entier** de Zonebourse ou d'Investir : 2 chiffres du corps, avec l'URL de l'article ; sinon « ❔ bloqué ».
 3. **Nouveaux fonds (nuit, petit).** Un candidat éligible au PEA absent de `univers.json` (émetteur ou justETF, ISIN et frais du DIC) dans `candidats.md`.
