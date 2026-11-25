@@ -117,4 +117,4 @@ Test statique de `modele.html` : toute donnée `${...}` dans un gabarit `innerHT
 | 81 | Phrase d'aide sous les signaux : « les règles de moyenne mobile marchent surtout sur quelques mois, et leurs résultats passés ne se retrouvent qu'à peu près hors échantillon » (limite des signaux, sans chiffre inventé) | arXiv 1907.00212 p. 3 (lecture du 25/11) | phrase lisible à 360 px ; pas de promesse de performance | 3 | 2 | 3 | 3 | 5 | 3,00 | 1 | 1 | proposée |
 
 ## 2026-11-25 · Vérificateur du code : les autres `esc` du modèle
-| 82 | Vérifier que les deux `const esc = (x) => String(x)` du modèle (lignes ~806 et ~1567) ne servent jamais à `innerHTML` ; sinon les remplacer par l'`esc` qui échappe | test des échappements du 2026-11-25 | test statique vert, aucune donnée non échappée | 3 | 2 | 1 | 3 | 5 | 2,90 | 2 | 1 | proposée |
+| 82 | Vérifier que les deux `const esc = (x) => String(x)` du modèle (lignes ~806 et ~1567) ne servent jamais à `innerHTML` ; sinon les remplacer par l'`esc` qui échappe | test des échappements du 2026-11-25 | test statique vert, aucune donnée non échappée | 3 | 2 | 1 | 3 | 5 | 2,55 | 2 | 1 | proposée |
