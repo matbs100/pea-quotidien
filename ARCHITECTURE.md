@@ -527,6 +527,7 @@ La syntaxe JavaScript de la page est vérifiée avec `node --check` dans le clou
 JavaScriptCore (`jsc`, présent sur tous les Mac) en local.
 `carte_du_monde`, `trace_des_pays` et `calculs_du_globe_js` (D-20261123-4) : règles de placement des titres,
 tracé lisible et léger avec tous les pays possibles, calculs du globe exécutés avec node ou JavaScriptCore.
+`echappements_page` : exécute avec node `esc()` (échappe `&`, `<`, `>`, guillemets) et `lienSur()` (https seulement) du modèle de page sur des cas d'injection.
 `eligibilite_pea` (D-20261123-5) : règle du siège, foncières SIIC, ETF, vérifications à la main, une panne qui
 ne change jamais un statut, ce que la page reçoit.
 

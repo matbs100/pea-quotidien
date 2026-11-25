@@ -744,6 +744,29 @@ console.log([etiquettePrix({date_cours:j}, j), etiquettePrix({}, j), etiquettePr
 
 
 @test
+def echappements_page():
+    """Les données insérées dans la page passent par esc() (&, <, >, guillemets) et lienSur() (https seulement), exécutés avec node."""
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    e = re.search(r"^const esc = .*$", modele, re.M)
+    l = re.search(r"^const lienSur = .*$", modele, re.M)
+    assert e and l, "esc() ou lienSur() introuvable dans le modèle de page"
+    node = shutil.which("node")
+    if not node:
+        REMARQUES.append("node absent : esc() et lienSur() non exécutés")
+        return
+    essai = e.group(0) + "\n" + l.group(0) + """
+const brut = `<img src=x onerror="a('b')">&`;
+const sortie = esc(brut);
+const ok = !/[<>"']/.test(sortie) && sortie.includes("&lt;img") && sortie.endsWith("&amp;") && esc(null) === "null";
+const liens = [lienSur("https://exemple.org/a?b=1"), lienSur("http://exemple.org"), lienSur("javascript:alert(1)"),
+  lienSur('https://x.org/"onclick="a'), lienSur(null)].map((u) => u === null ? "-" : "ok");
+console.log(ok + "|" + liens.join(","));
+"""
+    r = subprocess.run([node, "-e", essai], capture_output=True, text=True, timeout=60)
+    assert r.stdout.strip() == "true|ok,-,-,-,-", f"échappement ou lien faux : {r.stdout!r} {r.stderr[-300:]}"
+
+
+@test
 def carte_mois_par_mois():
     """D-20261106-6 : les rendements mensuels de la fiche sont calculés avec node sur un cas connu."""
     modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
