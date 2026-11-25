@@ -101,4 +101,5 @@ Grille de décision : gain de clarté faible mais sûr, risque nul (aucun texte 
 - D-20261123-1 · confirmée par le chef le 2026-11-23 (CSS seul, comparer 🟢, capture 360 px relue) · (design) · 2026-11-23 · Cartes des marchés : `.val-l` passe à la ligne et `.etfx` se cale à droite, le prix de l'ETF n'est plus coupé à 320, 360 et 390 px. Indicateur : bord droit du prix ETF dans la carte (mesuré). Résultat : 6 cartes sur 6 contenues à 320/360/390 px, 55/55 tests, comparer 🟢.
 
 - D-20261124-1 · provisoire (design) · (design) · 2026-11-24 · Pastille « Risque n/7 » : zone tactile d'au moins 24 px de haut (WCAG 2.5.8), CSS seul. Indicateur : 75/75 pastilles ≥ 24 px à 320 et 390 px, aucune ne dépasse sa carte, `design.py comparer` 🟢.
-| D-20261125-1 | provisoire (design) | (design) | 2026-11-25 | Encadré « Aucun investissement » plus compact sur téléphone (≤ 480 px) : « Les marchés » remonte dans le premier écran. Indicateur : titre « Les marchés » visible sans défiler à 390×844 ; texte intact ; comparer 🟢. |
+
+- D-20261125-1 · provisoire (design) · (design) · 2026-11-25 · Encadré « Aucun investissement » plus compact sur téléphone (≤ 480 px), CSS seul. Indicateur : « Les marchés » visible dans le premier écran à 390×844, texte intact, `design.py comparer` 🟢.
