@@ -1,52 +1,52 @@
 {
  "vl": {
   "FR0010298596": {
-   "prix": 463.04,
-   "date_cours": "2026-11-23",
-   "var_1j": 1.5,
-   "source_vl": "Yahoo Finance"
+   "prix": 460.5,
+   "date_cours": "2026-11-24",
+   "var_1j": -0.55,
+   "source_vl": "Financial Times"
   },
   "FR0007076930": {
-   "prix": 555.34,
-   "date_cours": "2026-11-23",
-   "var_1j": 0.89,
-   "source_vl": "Yahoo Finance"
+   "prix": 556.6,
+   "date_cours": "2026-11-24",
+   "var_1j": 0.23,
+   "source_vl": "Financial Times"
   },
   "FR0011169341": {
-   "prix": 588.75,
-   "date_cours": "2026-11-23",
-   "var_1j": 2.37,
-   "source_vl": "Yahoo Finance"
+   "prix": 579.02,
+   "date_cours": "2026-11-24",
+   "var_1j": -1.65,
+   "source_vl": "Financial Times"
   },
   "FR0010546929": {
-   "prix": 40.23,
-   "date_cours": "2026-11-23",
-   "var_1j": 1.39,
-   "source_vl": "Yahoo Finance"
+   "prix": 40.05,
+   "date_cours": "2026-11-24",
+   "var_1j": -0.45,
+   "source_vl": "Financial Times"
   },
   "FR0010321810": {
-   "prix": 457.41,
-   "date_cours": "2026-11-23",
-   "var_1j": 0.0,
+   "prix": 452.73,
+   "date_cours": "2026-11-24",
+   "var_1j": -1.02,
    "source_vl": "Financial Times"
   },
   "FR0013532710": {
-   "prix": 163.32,
-   "date_cours": "2026-11-23",
-   "var_1j": 0.92,
-   "source_vl": "Yahoo Finance"
+   "prix": 165.89,
+   "date_cours": "2026-11-24",
+   "var_1j": 1.57,
+   "source_vl": "Financial Times"
   },
   "FR0010601971": {
-   "prix": 334.32,
-   "date_cours": "2026-11-23",
-   "var_1j": 0.0,
-   "source_vl": "Yahoo Finance"
+   "prix": 334.85,
+   "date_cours": "2026-11-24",
+   "var_1j": 0.16,
+   "source_vl": "Financial Times"
   },
   "FR0010286005": {
-   "prix": 1156.0,
-   "date_cours": "2026-11-23",
-   "var_1j": 0.86,
-   "source_vl": "Yahoo Finance"
+   "prix": 1144.72,
+   "date_cours": "2026-11-24",
+   "var_1j": -0.98,
+   "source_vl": "Financial Times"
   },
   "LU1832174962": {
    "prix": 238.52,
@@ -61,10 +61,10 @@
    "source_vl": "Yahoo Finance"
   },
   "FR0010354837": {
-   "prix": 205.98,
-   "date_cours": "2026-11-23",
-   "var_1j": 1.78,
-   "source_vl": "Yahoo Finance"
+   "prix": 203.73,
+   "date_cours": "2026-11-24",
+   "var_1j": -1.09,
+   "source_vl": "Financial Times"
   }
  },
  "maj": "2026-11-25"

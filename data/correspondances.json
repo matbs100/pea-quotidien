@@ -742,5 +742,10 @@
   "boursorama": "1rPCLARI",
   "ft": "CLARI:PAR",
   "echecs": {}
+ },
+ "BMPS.MI": {
+  "boursorama": "1gBMPS",
+  "ft": "BMPS:MIL",
+  "echecs": {}
  }
 }
