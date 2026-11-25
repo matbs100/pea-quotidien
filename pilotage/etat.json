@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-25T05:15+01:00",
- "fiche": "2026-11-24 (cloture)",
+ "genere_le": "2026-11-25T12:36+01:00",
+ "fiche": "2026-11-25 (ouverture)",
  "lieu": "cloud",
- "etat": "vert",
- "resume": "Tout est en ordre. 64/64 tests, 8/8 prix revérifiés, 36/36 liens valides, site à jour.",
+ "etat": "orange",
+ "resume": "À surveiller. 64/64 tests, 29/29 liens valides, site à jour. Points à voir : cohérence des données, méthode de décision.",
  "controles": [
   {
    "nom": "tests",
@@ -12,7 +12,7 @@
    "resume": "64/64 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf",
-    "• glissement tactile non exécuté : BrowserType.launch: Executable doesn't exist at /opt/pw-browsers/chromium_headle"
+    "• Playwright absent : glissement tactile non exécuté"
    ]
   },
   {
@@ -21,50 +21,53 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-24 (cloture), générée le 2026-11-24T17:59+01:00",
-    "fiche attendue à cette heure : 2026-11-24 (cloture)"
+    "dernière fiche : 2026-11-25 (ouverture), générée le 2026-11-25T09:22+01:00",
+    "fiche attendue à cette heure : 2026-11-25 (ouverture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "ok",
-   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 77 confirmés, 0 écart(s)",
-   "details": []
+   "niveau": "alerte",
+   "resume": "59 cours examinés, 0 problème(s), 2 alerte(s) ; entre sources : 74 confirmés, 0 écart(s)",
+   "details": [
+    "ALBIO.PA : cours daté du 2026-11-23, pas du 2026-11-25",
+    "ALNXT.PA : cours daté du 2026-11-23, pas du 2026-11-25"
+   ]
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "326 mots, 0 remarque(s)",
+   "resume": "313 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-24 (cloture)",
+   "resume": "régénérée avec la fiche du 2026-11-25 (ouverture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "ok",
-   "resume": "8/8 prix identiques sur Boursorama",
+   "niveau": "non_verifiable",
+   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
    "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "36/36 liens valides sur 8 titres, 7 non ouverts (robots.txt), 1 injoignables d'ici",
+   "resume": "29/29 liens valides sur 8 titres, 9 non ouverts (robots.txt), 2 injoignables d'ici",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-24 (cloture)",
+   "resume": "le site affiche la fiche du 2026-11-25 (ouverture)",
    "details": []
   },
   {
@@ -81,10 +84,11 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "13 commit(s), 0 problème(s), 0 alerte(s) ; 2 vérifiée(s) par le chef",
+   "resume": "11 commit(s), 0 problème(s), 0 alerte(s) ; 1 vérifiée(s) par le chef",
    "details": [
     "✔ vérifié par le chef le 2026-11-25 : 43d9d0e « Amélioration : prochaine réunion de la BCE sous le » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 43d9d0e relu : data/taux_bce.json est le cache écrit par scripts/taux.py (réunions de la BCE ajoutées) ; les 9 dates comparées une à une au calendrier officiel ecb.europa.eu/press/calendars/mgcgc (WebFetch du 25/11) : identiques ; test prochaine_reunion_bce vert",
-    "✔ vérifié par le chef le 2026-11-24 : 3461214 « Code : rapport du 2026-11-24 (vert) ; prénom retir » : pilotage/rapports/2026-11-23.md : hors du rôle de l'agent « code » — git show 3461214 relu le 24/11 : la seule modification de pilotage/rapports/2026-11-23.md remplace un prénom par « le propriétaire » (1 ligne), correction de confidentialité voulue par le chef ; aucun autre changement de contenu.",
+    "ca15a83 [fiche] Matin PEA 2026-11-25 (ouverture)",
+    "a4e6acc [chef] Chef : rapport du 2026-11-25 (vert) ; contrôle des décisions écrites e",
     "a7acad5 [code] Code : gain de l'idée n° 82 recalculé selon la grille [correctif]",
     "f843682 [code] Code : rapport du 2026-11-25 (vert) ; test des échappements [correctif",
     "43d9d0e [nuit] Amélioration : prochaine réunion de la BCE sous les taux [D-20261125-2",
@@ -93,21 +97,15 @@
     "7d4eeec [fiche] Matin PEA 2026-11-24 (cloture)",
     "f5d0cc9 [chef] Chef : passage de mi-journée du 2026-11-24 (orange)",
     "166f5cf [fiche] Matin PEA 2026-11-24 (ouverture) : notification à renvoyer",
-    "5eaca3b [fiche] Matin PEA 2026-11-24 (ouverture)",
-    "c195b38 [chef] Chef : rapport du 2026-11-24 (vert) ; bilans D-20261118-1/2/3, décisio",
-    "3461214 [code] Code : rapport du 2026-11-24 (vert) ; prénom retiré d'un rapport du ch",
-    "7241e57 [nuit] Amélioration : glossaire au toucher des mots « indice » et « clôture »",
-    "a42a3d2 [design] Design : pastille Risque d'au moins 24 px [D-20261124-1]"
+    "5eaca3b [fiche] Matin PEA 2026-11-24 (ouverture)"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
    "niveau": "ok",
-   "resume": "4 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
+   "resume": "2 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
    "details": [
-    "a42a3d2 « Design : pastille Risque d'au moins 24 px [D-20261 » : rien de retiré",
-    "7241e57 « Amélioration : glossaire au toucher des mots « ind » : rien de retiré",
     "b4a9b8c « Design : encadré vide compact sur téléphone [D-202 » : rien de retiré",
     "43d9d0e « Amélioration : prochaine réunion de la BCE sous le » : rien de retiré"
    ]
@@ -115,9 +113,18 @@
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "ok",
-   "resume": "69 décisions, 5 à réaliser, 0 point(s) à voir",
-   "details": []
+   "niveau": "alerte",
+   "resume": "69 décisions, 5 à réaliser, 8 point(s) à voir",
+   "details": [
+    "bilan à faire : D-20261120-1 (n° 61 · Carte d'inflation : date de mise à jour du)",
+    "bilan à faire : D-20261120-2 (Pastille « Risque n/7 » d'une ligne : un toucher o)",
+    "bilan à faire : D-20261120-3 (n° 64 · Bloc fiscalité : « 80 % des transferts de )",
+    "bilan à faire : D-20261121-2 (n° 66 · Bloc Frais : ligne « Sur 10 ans » (valeur )",
+    "bilan à faire : D-20261121-3 (n° 67 · Bloc Frais d'un ETF : repère des frais moy)",
+    "bilan à faire : D-20261122-2 (n° 70 · Bloc Frais : repère ESMA « 10 000 € sur 10)",
+    "bilan à faire : D-20261122-3 (Test node du nettoyage du titre du bandeau « Nouve)",
+    "bilan à faire : D-20261122-4 (Phrase-résumé du marché : seuls les indices europé)"
+   ]
   },
   {
    "nom": "lectures",
