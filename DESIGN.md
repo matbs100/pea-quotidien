@@ -154,3 +154,7 @@ Tes trois missions, chaque nuit :
 - **Confidentialité du propriétaire** : jamais son prénom, son nom, son adresse e-mail ni aucune autre
   information sur lui dans les fichiers, les messages de commit ou la page : écris « le propriétaire ».
 - **Seulement des informations vérifiées** : une affirmation sur une bonne pratique cite sa source.
+
+
+## Notes : méthode, erreurs et leçons (consigne du propriétaire, 25/11/2026)
+Dans tout ce que tu écris (journaux de `pilotage/`, résumés, rapports, décisions), ne note pas seulement le résultat : écris aussi **comment tu as procédé** (étapes, choix et pourquoi), **les erreurs ou fausses pistes rencontrées** (les tiennes comprises), **comment tu les as corrigées**, et **la leçon à retenir** pour ne plus les refaire (rubrique « Erreurs et leçons »). Avant un travail du même genre, relis les leçons déjà notées.

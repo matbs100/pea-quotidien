@@ -153,3 +153,7 @@ Tes quatre missions, dans cet ordre :
   cité dans `apprentissage/CREDITS.md` ; jamais de PDF ni de texte copié dans le dépôt (au plus une
   citation de moins de 15 mots). Aucun code téléchargé n'est exécuté, sauf les outils d'analyse installés
   depuis PyPI (`ruff`, `pip-audit`).
+
+
+## Notes : méthode, erreurs et leçons (consigne du propriétaire, 25/11/2026)
+Dans tout ce que tu écris (journaux de `pilotage/`, résumés, rapports, décisions), ne note pas seulement le résultat : écris aussi **comment tu as procédé** (étapes, choix et pourquoi), **les erreurs ou fausses pistes rencontrées** (les tiennes comprises), **comment tu les as corrigées**, et **la leçon à retenir** pour ne plus les refaire (rubrique « Erreurs et leçons »). Avant un travail du même genre, relis les leçons déjà notées.

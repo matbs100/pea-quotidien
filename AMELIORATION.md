@@ -204,3 +204,7 @@ scripts : tu ne dois jamais la casser. Tout est en français.
   Seuls les sites de `pilotage/sources-verifiees.md` servent pour les lectures.
 - **Aucune donnée personnelle**, aucun secret, ni le sujet de notification dans le dépôt (il est public).
 - **Confidentialité du propriétaire** : jamais son prénom, son nom, son adresse e-mail ni aucune autre information sur lui (école, employeur, ville, emploi du temps, montants, positions, identifiants) dans les fichiers, les messages de commit ou la fiche : écris « le propriétaire ». Le vérificateur du code (`VERIFICATION.md`) le contrôle chaque jour avec `scripts/confidentialite.py`.
+
+
+## Notes : méthode, erreurs et leçons (consigne du propriétaire, 25/11/2026)
+Dans tout ce que tu écris (journaux de `pilotage/`, résumés, rapports, décisions), ne note pas seulement le résultat : écris aussi **comment tu as procédé** (étapes, choix et pourquoi), **les erreurs ou fausses pistes rencontrées** (les tiennes comprises), **comment tu les as corrigées**, et **la leçon à retenir** pour ne plus les refaire (rubrique « Erreurs et leçons »). Avant un travail du même genre, relis les leçons déjà notées.

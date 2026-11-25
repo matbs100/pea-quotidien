@@ -140,3 +140,7 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
 - Ne touche pas aux fichiers de données des jours précédents.
 - Ne touche jamais à `autonome/` ni à `docs/autonome/` : c'est la fiche autonome, faite sans Claude par GitHub Actions.
 - **Confidentialité du propriétaire** : jamais son prénom, son nom, son adresse e-mail ni aucune autre information sur lui (école, employeur, ville, emploi du temps, montants, positions) dans la fiche, l'analyse, la note, la notification ou les messages de commit : écris « le propriétaire » ou « tu ».
+
+
+## Notes : méthode, erreurs et leçons (consigne du propriétaire, 25/11/2026)
+Dans tout ce que tu écris (journaux de `pilotage/`, résumés, rapports, décisions), ne note pas seulement le résultat : écris aussi **comment tu as procédé** (étapes, choix et pourquoi), **les erreurs ou fausses pistes rencontrées** (les tiennes comprises), **comment tu les as corrigées**, et **la leçon à retenir** pour ne plus les refaire (rubrique « Erreurs et leçons »). Avant un travail du même genre, relis les leçons déjà notées.
