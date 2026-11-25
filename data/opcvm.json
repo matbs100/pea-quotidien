@@ -1,71 +1,71 @@
 {
  "vl": {
   "FR0010298596": {
-   "prix": 456.18,
-   "date_cours": "2026-11-20",
-   "var_1j": -1.91,
+   "prix": 463.04,
+   "date_cours": "2026-11-23",
+   "var_1j": 1.5,
    "source_vl": "Yahoo Finance"
   },
   "FR0007076930": {
    "prix": 555.34,
    "date_cours": "2026-11-23",
    "var_1j": 0.89,
-   "source_vl": "Financial Times"
+   "source_vl": "Yahoo Finance"
   },
   "FR0011169341": {
    "prix": 588.75,
    "date_cours": "2026-11-23",
    "var_1j": 2.37,
-   "source_vl": "Financial Times"
+   "source_vl": "Yahoo Finance"
   },
   "FR0010546929": {
    "prix": 40.23,
    "date_cours": "2026-11-23",
    "var_1j": 1.39,
-   "source_vl": "Financial Times"
+   "source_vl": "Yahoo Finance"
   },
   "FR0010321810": {
    "prix": 457.41,
    "date_cours": "2026-11-23",
-   "var_1j": 1.89,
+   "var_1j": 0.0,
    "source_vl": "Financial Times"
   },
   "FR0013532710": {
    "prix": 163.32,
    "date_cours": "2026-11-23",
    "var_1j": 0.92,
-   "source_vl": "Financial Times"
+   "source_vl": "Yahoo Finance"
   },
   "FR0010601971": {
    "prix": 334.32,
-   "date_cours": "2026-11-20",
-   "var_1j": -1.01,
+   "date_cours": "2026-11-23",
+   "var_1j": 0.0,
    "source_vl": "Yahoo Finance"
   },
   "FR0010286005": {
    "prix": 1156.0,
    "date_cours": "2026-11-23",
    "var_1j": 0.86,
-   "source_vl": "Financial Times"
+   "source_vl": "Yahoo Finance"
   },
   "LU1832174962": {
-   "prix": 233.67,
-   "date_cours": "2026-11-20",
-   "var_1j": -2.45,
+   "prix": 238.52,
+   "date_cours": "2026-11-23",
+   "var_1j": 2.08,
    "source_vl": "Yahoo Finance"
   },
   "LU0131510165": {
-   "prix": 897.11,
-   "date_cours": "2026-11-20",
-   "var_1j": -1.5,
+   "prix": 903.87,
+   "date_cours": "2026-11-23",
+   "var_1j": 0.75,
    "source_vl": "Yahoo Finance"
   },
   "FR0010354837": {
-   "prix": 202.37,
-   "date_cours": "2026-11-20",
-   "var_1j": -1.9,
+   "prix": 205.98,
+   "date_cours": "2026-11-23",
+   "var_1j": 1.78,
    "source_vl": "Yahoo Finance"
   }
  },
- "maj": "2026-11-24"
+ "maj": "2026-11-25"
 }
