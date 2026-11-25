@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-25 · Encadré « Aucun investissement » compact sur téléphone (Design, D-20261125-1)
+
+CSS seul (≤ 480 px) : marge et taille réduites, texte inchangé ; « Les marchés » apparaît dans le premier écran à 390×844. comparer 🟢, 61/61 tests.
+
 ## 2026-11-24 · Les mots « indice » et « clôture » expliqués au toucher (Nuit, D-20261124-2)
 Dans la phrase-résumé sous la date, « indice » et « clôture » sont soulignés en pointillés : un toucher affiche leur définition en une phrase, un second la referme. Rien n'est retiré. Inspiré de l'idée n° 74 (revue du chef du 22/11, jargon pour un débutant).
 

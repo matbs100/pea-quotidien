@@ -305,6 +305,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .pos .c small { display: block; font-size: 14px; }
 .pos .c em { display: block; font: normal 11px var(--font-body); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-top: 2px; }
 .vide { background: var(--surface); border: 1px dashed var(--line); border-radius: 14px; padding: 14px 16px; font-size: 14px; }
+@media (max-width: 480px) { .vide { padding: 10px 14px; font-size: 13px; line-height: 1.45; } }
 @media (max-width: 760px) {
   .pos { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 8px; }
   .pos .t { grid-column: 1 / -1; }
