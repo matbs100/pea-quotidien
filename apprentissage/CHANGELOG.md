@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-25 · Prochaine réunion de la BCE affichée sous les taux (Nuit, D-20261125-2)
+
+Sous l'encadré des taux, la note indique « Prochaine réunion de la BCE : décision le … » avec un lien vers le calendrier officiel ; la date change toute seule après chaque réunion. Rien n'est retiré. Inspiré de l'idée n° 77 (presse du 23/11) ; calendrier lu sur ecb.europa.eu. La Fed n'est pas ajoutée.
+
 ## 2026-11-25 · Encadré « Aucun investissement » compact sur téléphone (Design, D-20261125-1)
 
 CSS seul (≤ 480 px) : marge et taille réduites, texte inchangé ; « Les marchés » apparaît dans le premier écran à 390×844. comparer 🟢, 61/61 tests.

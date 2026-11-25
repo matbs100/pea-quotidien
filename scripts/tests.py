@@ -1007,6 +1007,19 @@ def opcvm_et_frais():
 
 
 @test
+def prochaine_reunion_bce():
+    """La prochaine réunion de la BCE est la première dont la décision n'est pas passée ; l'encadré la lit sans date en dur."""
+    import taux
+    assert taux.prochaine_reunion("2026-11-25")["decision"] == "2026-12-17"
+    assert taux.prochaine_reunion("2026-12-17")["decision"] == "2026-12-17"  # le jour même : encore à venir
+    assert taux.prochaine_reunion("2026-12-18")["decision"] == "2027-02-04"
+    assert taux.prochaine_reunion("2028-01-01") is None
+    assert all(d1 < d2 for d1, d2 in taux.REUNIONS) and sorted(taux.REUNIONS) == taux.REUNIONS
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "TX.reunions" in modele and "Prochaine réunion de la BCE" in modele and "2026-12-17" not in modele
+
+
+@test
 def taux_bce():
     """Dernier changement d'un taux lu dans un CSV de la BCE ; l'encadré existe dans la page, sans taux en dur."""
     import taux

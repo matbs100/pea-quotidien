@@ -8,7 +8,8 @@ Ce fichier est refait par `python scripts/lectures.py index`.
 
 | Lu le | Fiche de lecture | Organisme | Document | Statut |
 |---|---|---|---|---|
-| 2026-11-24 | [[2026-11-24-financial-stability-review-may-2026\|Financial Stability Review, May 2026]] | Banque centrale européenne | [PDF](https://www.ecb.europa.eu/press/financial-stability-publications/fsr/pdf/ecb.fsr202605~50566915a7.en.pdf) | ⏳ à vérifier |
+| 2026-11-25 | [[2026-11-25-detailed-study-of-a-moving-average-trading-rule\|Detailed study of a moving average trading rule]] | arXiv (Université de São Paulo, Cincinnati) | [PDF](https://arxiv.org/pdf/1907.00212) | ⏳ à vérifier |
+| 2026-11-24 | [[2026-11-24-financial-stability-review-may-2026\|Financial Stability Review, May 2026]] | Banque centrale européenne | [PDF](https://www.ecb.europa.eu/press/financial-stability-publications/fsr/pdf/ecb.fsr202605~50566915a7.en.pdf) | ✅ relue le 2026-11-24 |
 | 2026-11-23 | [[2026-11-23-breaking-the-trend-how-to-avoid-cherry-picked-signals\|Breaking the Trend: How to Avoid Cherry-Picked Signals]] | arXiv (Valeyre) | [PDF](https://arxiv.org/pdf/2504.10914v11) | ✅ relue le 2026-11-23 |
 | 2026-11-22 | [[2026-11-22-esma-couts-et-performance-des-produits-d-investissement-de-d\|ESMA : coûts et performance des produits d'investissement de détail de l'UE]] | ESMA | [PDF](https://www.esma.europa.eu/sites/default/files/2023-12/ESMA50-524821-3052_Market_Report_on_Costs_and_Performance_of_EU_Retail_Investment_Products.pdf) | ✅ relue le 2026-11-22 |
 | 2026-11-21 | [[2026-11-21-lettre-de-l-observatoire-de-l-epargne-de-l-amf-n-61-la-trans\|Lettre de l'Observatoire de l'épargne de l'AMF n° 61 : la transparence des frais]] | AMF | [PDF](https://www.amf-france.org/sites/institutionnel/files/private/2025-05/loe-61_20-mai.pdf) | ✅ relue le 2026-11-21 |

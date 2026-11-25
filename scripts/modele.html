@@ -987,6 +987,13 @@ if (cartesTaux) {
   n.textContent = "Le taux de dépôt est celui que la BCE guide : il influence les taux des livrets et des crédits, et le prix des obligations. Information sur le contexte, pas un conseil. Dernier relevé du " + jourCourt(TX.depot.releve) + " · ";
   const u = lienSur(TX.source);
   if (u) { const a = document.createElement("a"); a.href = u; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = "source : BCE"; n.appendChild(a); }
+  // Prochaine réunion de la BCE : première dont le jour de décision n'est pas passé (dates lues par taux.py)
+  const auj = new Date(); const ajd = auj.getFullYear() + "-" + String(auj.getMonth() + 1).padStart(2, "0") + "-" + String(auj.getDate()).padStart(2, "0");
+  const reu = (Array.isArray(TX.reunions) ? TX.reunions : []).find((r) => Array.isArray(r) && /^\d{4}-\d{2}-\d{2}$/.test(r[1] || "") && r[1] >= ajd);
+  if (reu) {
+    n.appendChild(document.createTextNode(" · Prochaine réunion de la BCE : décision le " + jourCourt(reu[1]) + " "));
+    const c = document.createElement("a"); c.href = "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html"; c.target = "_blank"; c.rel = "noopener noreferrer"; c.textContent = "calendrier officiel"; n.appendChild(c);
+  }
   if (carteInflation(TX.inflation)) {
     n.appendChild(document.createTextNode(" · "));
     const b = document.createElement("a"); b.href = "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"; b.target = "_blank"; b.rel = "noopener noreferrer"; b.textContent = "inflation : Eurostat"; n.appendChild(b);

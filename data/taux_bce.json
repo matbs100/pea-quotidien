@@ -23,5 +23,44 @@
   "precedent": 3.8,
   "maj": "2026-11-18"
  },
- "source": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html"
+ "source": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html",
+ "reunions": [
+  [
+   "2026-12-16",
+   "2026-12-17"
+  ],
+  [
+   "2027-02-03",
+   "2027-02-04"
+  ],
+  [
+   "2027-03-17",
+   "2027-03-18"
+  ],
+  [
+   "2027-04-28",
+   "2027-04-29"
+  ],
+  [
+   "2027-06-09",
+   "2027-06-10"
+  ],
+  [
+   "2027-07-21",
+   "2027-07-22"
+  ],
+  [
+   "2027-09-08",
+   "2027-09-09"
+  ],
+  [
+   "2027-10-27",
+   "2027-10-28"
+  ],
+  [
+   "2027-12-15",
+   "2027-12-16"
+  ]
+ ],
+ "source_reunions": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html"
 }

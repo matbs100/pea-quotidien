@@ -59,6 +59,20 @@ def lire_inflation(donnees):
     if isinstance(maj, str) and re.match(r"\d{4}-\d{2}-\d{2}", maj):
         res["maj"] = maj[:10]  # Eurostat ne marque pas « rapide » ou « finale » : on donne seulement la date
     return res
+# Réunions de politique monétaire du Conseil des gouverneurs (jour 1, jour 2 avec décision et conférence de
+# presse). Source : calendrier officiel de la BCE, lu le 2026-11-25 ; à revérifier avant la fin de la liste.
+REUNIONS = [("2026-12-16", "2026-12-17"), ("2027-02-03", "2027-02-04"), ("2027-03-17", "2027-03-18"),
+            ("2027-04-28", "2027-04-29"), ("2027-06-09", "2027-06-10"), ("2027-07-21", "2027-07-22"),
+            ("2027-09-08", "2027-09-09"), ("2027-10-27", "2027-10-28"), ("2027-12-15", "2027-12-16")]
+PAGE_CALENDRIER = "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html"
+
+
+def prochaine_reunion(jour, reunions=REUNIONS):
+    """Première réunion dont le jour de décision n'est pas passé (jour au format AAAA-MM-JJ), ou None."""
+    for debut, decision in reunions:
+        if decision >= jour:
+            return {"debut": debut, "decision": decision, "source": PAGE_CALENDRIER}
+    return None
 
 
 def charger_cache():
@@ -91,9 +105,13 @@ def mesurer(depuis="2023-01-01"):
         cache = charger_cache()
         if infl:
             cache["inflation"] = infl
+        cache["reunions"] = REUNIONS
+        cache["source_reunions"] = PAGE_CALENDRIER
         return cache
     res["inflation"] = infl or charger_cache().get("inflation")
     res["source"] = PAGE_BCE
+    res["reunions"] = REUNIONS
+    res["source_reunions"] = PAGE_CALENDRIER
     try:
         CACHE.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     except OSError:
