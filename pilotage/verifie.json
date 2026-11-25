@@ -172,5 +172,11 @@
   "jour": "3461214",
   "preuve": "git show 3461214 relu le 24/11 : la seule modification de pilotage/rapports/2026-11-23.md remplace un prénom par « le propriétaire » (1 ligne), correction de confidentialité voulue par le chef ; aucun autre changement de contenu.",
   "le": "2026-11-24"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle de l'agent « nuit »",
+  "jour": "43d9d0e",
+  "preuve": "git show 43d9d0e relu : data/taux_bce.json est le cache écrit par scripts/taux.py (réunions de la BCE ajoutées) ; les 9 dates comparées une à une au calendrier officiel ecb.europa.eu/press/calendars/mgcgc (WebFetch du 25/11) : identiques ; test prochaine_reunion_bce vert",
+  "le": "2026-11-25"
  }
 ]

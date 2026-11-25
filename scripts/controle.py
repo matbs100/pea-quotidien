@@ -739,10 +739,21 @@ def c_design(heures=30):
                     f"{len(al)} point(s) à revoir", pb + al + levees + vus)
 
 
+def decisions_en_puce(texte, decisions, jour, delai=3):
+    """Identifiants de décisions écrits seulement en puce (« - D-… · provisoire ») sans ligne du tableau,
+    pour les `delai` derniers jours (idée n° 80 : le tableau est ce que lit `bilans_en_retard`)."""
+    from datetime import date, timedelta
+    limite = (date.fromisoformat(jour) - timedelta(days=delai)).strftime("%Y%m%d")
+    vus = re.findall(r"^\s*[-*]\s+(D-\d{8}-\d+)\b", texte or "", re.M)
+    return sorted({i for i in vus if i not in decisions and i[2:10] >= limite})
+
+
 def c_decisions(d, heures=30):
     titre = "Méthode de décision"
     decisions = lire_decisions(lire(RACINE / "pilotage" / "decisions.md"))
     al = [f"bilan à faire : {i} ({decisions[i].get('idée', '')[:50]})" for i in bilans_en_retard(decisions, d["date"])]
+    al += [f"{i} : écrite en puce seulement, ajoute sa ligne `| {i} |` au tableau de decisions.md"
+           for i in decisions_en_puce(lire(RACINE / "pilotage" / "decisions.md"), decisions, d["date"])]
     al += gains_incoherents(lire(RACINE / "apprentissage" / "idees.md"))
     journal = git("log", f"--since={heures} hours ago", "--format=%H%x1f%aI%x1f%s")
     for ligne in filter(None, journal.splitlines()):

@@ -382,6 +382,7 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `gains_incoherents(texte_idees)` | idées dont le « Gain » ne suit pas la grille (moyenne pondérée 30/25/20/15/10 %) |
 | `jours_ouvres_entre(debut, fin)` | jours de semaine entre deux dates |
 | `bilans_en_retard(decisions, jour, delai)` | décisions réalisées depuis 3 jours ouvrés et toujours sans bilan |
+| `decisions_en_puce(texte, decisions, jour, delai)` | identifiants de décisions écrits seulement en puce (sans ligne du tableau) pendant les 3 derniers jours : alerte du contrôle « Méthode de décision » (D-20261125-3) |
 | `commit_sans_decision(agent, message, chemins, decisions)` | commit d'agent qui change le programme sans citer une décision connue (`[D-…]`) |
 | `c_lectures(d)` | contrôle « Lectures des agents » (voir `lectures.defauts`) ; un PDF ajouté au dépôt par un agent est un problème (dans `ecarts_aux_regles`) |
 | `c_decisions(d, heures)` | contrôle « Méthode de décision » : bilans en retard, gains mal calculés, améliorations sans décision (commits depuis le 07/11/2026) |

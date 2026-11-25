@@ -1043,6 +1043,15 @@ def prochaine_reunion_bce():
 
 
 @test
+def decision_en_puce_signalee():
+    """Une décision écrite seulement en puce est signalée ; celle du tableau ou une ancienne ne l'est pas."""
+    import controle as c
+    texte = "- D-20261125-1 · provisoire\n- D-20261125-2 · ok\n- D-20261101-1 · ancienne\n  texte D-20261125-3\n"
+    assert c.decisions_en_puce(texte, {"D-20261125-2": {}}, "2026-11-25") == ["D-20261125-1"]
+    assert c.decisions_en_puce("", {}, "2026-11-25") == []
+
+
+@test
 def taux_bce():
     """Dernier changement d'un taux lu dans un CSV de la BCE ; l'encadré existe dans la page, sans taux en dur."""
     import taux

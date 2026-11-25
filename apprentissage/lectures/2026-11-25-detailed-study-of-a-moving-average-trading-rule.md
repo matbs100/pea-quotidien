@@ -6,7 +6,7 @@ url: https://arxiv.org/pdf/1907.00212
 publie_le: 2019-06-29
 lu_le: 2026-11-25
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-25
 ---
 # 📄 Detailed study of a moving average trading rule
 
@@ -24,4 +24,4 @@ Trois chercheurs étudient une règle simple : acheter ou vendre un indice bours
 - Idée n° 81 : phrase d'aide sur la limite des signaux de tendance (notée dans `apprentissage/idees.md`). Aucun réglage des signaux.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- ✅ 2026-11-25 : PDF ouvert (32 pages, auteurs de São Paulo et Cincinnati) ; résumé fidèle au résumé de l'article et à la p. 3 (4 mois, un an, accord approximatif hors échantillon, inversion après un an) ; rien n'est copié ; arxiv.org figure dans `sources-verifiees.md`.

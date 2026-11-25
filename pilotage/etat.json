@@ -1,18 +1,18 @@
 {
- "genere_le": "2026-11-24T12:35+01:00",
- "fiche": "2026-11-24 (ouverture)",
+ "genere_le": "2026-11-25T05:15+01:00",
+ "fiche": "2026-11-24 (cloture)",
  "lieu": "cloud",
- "etat": "orange",
- "resume": "À surveiller. 61/61 tests, 35/35 liens valides, site à jour. Points à voir : cohérence des données, méthode de décision.",
+ "etat": "vert",
+ "resume": "Tout est en ordre. 64/64 tests, 8/8 prix revérifiés, 36/36 liens valides, site à jour.",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "61/61 tests réussis",
+   "resume": "64/64 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf",
-    "• Playwright absent : glissement tactile non exécuté"
+    "• glissement tactile non exécuté : BrowserType.launch: Executable doesn't exist at /opt/pw-browsers/chromium_headle"
    ]
   },
   {
@@ -21,59 +21,50 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-24 (ouverture), générée le 2026-11-24T09:19+01:00",
-    "fiche attendue à cette heure : 2026-11-24 (ouverture)"
+    "dernière fiche : 2026-11-24 (cloture), générée le 2026-11-24T17:59+01:00",
+    "fiche attendue à cette heure : 2026-11-24 (cloture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "alerte",
-   "resume": "59 cours examinés, 0 problème(s), 8 alerte(s) ; entre sources : 75 confirmés, 0 écart(s)",
-   "details": [
-    "PINR.PA : cours daté du 2026-11-20, pas du 2026-11-24",
-    "HLT.PA : cours daté du 2026-11-20, pas du 2026-11-24",
-    "FOO.PA : cours daté du 2026-11-20, pas du 2026-11-24",
-    "INS.PA : cours daté du 2026-11-20, pas du 2026-11-24",
-    "UTI.PA : cours daté du 2026-11-20, pas du 2026-11-24",
-    "CD8.PA : cours daté du 2026-11-20, pas du 2026-11-24",
-    "OBLI.PA : cours daté du 2026-11-20, pas du 2026-11-24",
-    "TRV.PA : cours daté du 2026-11-20, pas du 2026-11-24"
-   ]
+   "niveau": "ok",
+   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 77 confirmés, 0 écart(s)",
+   "details": []
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "302 mots, 0 remarque(s)",
+   "resume": "326 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-24 (ouverture)",
+   "resume": "régénérée avec la fiche du 2026-11-24 (cloture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "non_verifiable",
-   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
+   "niveau": "ok",
+   "resume": "8/8 prix identiques sur Boursorama",
    "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "35/35 liens valides sur 8 titres, 8 non ouverts (robots.txt), 1 injoignables d'ici",
+   "resume": "36/36 liens valides sur 8 titres, 7 non ouverts (robots.txt), 1 injoignables d'ici",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-24 (ouverture)",
+   "resume": "le site affiche la fiche du 2026-11-24 (cloture)",
    "details": []
   },
   {
@@ -82,7 +73,7 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "50 connaissance(s) en attente de vérification (⏳)",
+    "51 connaissance(s) en attente de vérification (⏳)",
     "7 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
@@ -90,53 +81,49 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "16 commit(s), 0 problème(s), 0 alerte(s) ; 1 vérifiée(s) par le chef",
+   "resume": "13 commit(s), 0 problème(s), 0 alerte(s) ; 2 vérifiée(s) par le chef",
    "details": [
+    "✔ vérifié par le chef le 2026-11-25 : 43d9d0e « Amélioration : prochaine réunion de la BCE sous le » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 43d9d0e relu : data/taux_bce.json est le cache écrit par scripts/taux.py (réunions de la BCE ajoutées) ; les 9 dates comparées une à une au calendrier officiel ecb.europa.eu/press/calendars/mgcgc (WebFetch du 25/11) : identiques ; test prochaine_reunion_bce vert",
     "✔ vérifié par le chef le 2026-11-24 : 3461214 « Code : rapport du 2026-11-24 (vert) ; prénom retir » : pilotage/rapports/2026-11-23.md : hors du rôle de l'agent « code » — git show 3461214 relu le 24/11 : la seule modification de pilotage/rapports/2026-11-23.md remplace un prénom par « le propriétaire » (1 ligne), correction de confidentialité voulue par le chef ; aucun autre changement de contenu.",
+    "a7acad5 [code] Code : gain de l'idée n° 82 recalculé selon la grille [correctif]",
+    "f843682 [code] Code : rapport du 2026-11-25 (vert) ; test des échappements [correctif",
+    "43d9d0e [nuit] Amélioration : prochaine réunion de la BCE sous les taux [D-20261125-2",
+    "52d2f42 [design] Design : format de la décision D-20261125-1",
+    "b4a9b8c [design] Design : encadré vide compact sur téléphone [D-20261125-1]",
+    "7d4eeec [fiche] Matin PEA 2026-11-24 (cloture)",
+    "f5d0cc9 [chef] Chef : passage de mi-journée du 2026-11-24 (orange)",
     "166f5cf [fiche] Matin PEA 2026-11-24 (ouverture) : notification à renvoyer",
     "5eaca3b [fiche] Matin PEA 2026-11-24 (ouverture)",
     "c195b38 [chef] Chef : rapport du 2026-11-24 (vert) ; bilans D-20261118-1/2/3, décisio",
     "3461214 [code] Code : rapport du 2026-11-24 (vert) ; prénom retiré d'un rapport du ch",
     "7241e57 [nuit] Amélioration : glossaire au toucher des mots « indice » et « clôture »",
-    "a42a3d2 [design] Design : pastille Risque d'au moins 24 px [D-20261124-1]",
-    "fce171c [fiche] Matin PEA 2026-11-23 (cloture)",
-    "b72e5df [chef] Chef : passage de mi-journée du 2026-11-23 (orange)",
-    "b17857a [autre] sièges des banques grecques, de Novo Nordisk et de Nokia notés pour la",
-    "be9fb31 [fiche] Matin PEA 2026-11-23 (ouverture) : notification à renvoyer",
-    "b02442a [fiche] Matin PEA 2026-11-23 (ouverture)",
-    "0b5db20 [autre] URW retiré des titres suivis, foncière SIIC non éligible au PEA [D-202",
-    "27c6cf4 [autre] fiche du 20/11 régénérée avec la carte du monde et l'éligibilité contr",
-    "1c3d72a [autre] souhaits de design mis à jour",
-    "7e1cdb0 [autre] premier contrôle d'éligibilité au PEA (231 oui, 23 à vérifier, 1 non :",
-    "d4987ba [autre] carte du monde des titres suivis (globe) et contrôle quotidien de l'él"
+    "a42a3d2 [design] Design : pastille Risque d'au moins 24 px [D-20261124-1]"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
    "niveau": "ok",
-   "resume": "3 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
+   "resume": "4 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
    "details": [
-    "d4987ba « carte du monde des titres suivis (globe) et contrô » : rien de retiré",
     "a42a3d2 « Design : pastille Risque d'au moins 24 px [D-20261 » : rien de retiré",
-    "7241e57 « Amélioration : glossaire au toucher des mots « ind » : rien de retiré"
+    "7241e57 « Amélioration : glossaire au toucher des mots « ind » : rien de retiré",
+    "b4a9b8c « Design : encadré vide compact sur téléphone [D-202 » : rien de retiré",
+    "43d9d0e « Amélioration : prochaine réunion de la BCE sous le » : rien de retiré"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "alerte",
-   "resume": "64 décisions, 5 à réaliser, 2 point(s) à voir",
-   "details": [
-    "bilan à faire : D-20261119-1 (n° 55 · Aide du signal de tendance : note citant l)",
-    "bilan à faire : D-20261119-2 (Note d'étude du signal : « la meilleure règle test)"
-   ]
+   "niveau": "ok",
+   "resume": "69 décisions, 5 à réaliser, 0 point(s) à voir",
+   "details": []
   },
   {
    "nom": "lectures",
    "titre": "Lectures des agents (PDF de sources vérifiées)",
    "niveau": "ok",
-   "resume": "16 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
+   "resume": "17 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
    "details": []
   },
   {

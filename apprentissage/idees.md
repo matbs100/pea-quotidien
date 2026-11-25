@@ -113,7 +113,7 @@ Test statique de `modele.html` : toute donnée `${...}` dans un gabarit `innerHT
 | 79 | Afficher au contrôle la date de la dernière lecture de `pip-audit` et les versions des bibliothèques de `requirements.txt` | veille PyPI et OSV du 24/11 | ligne du contrôle « dépendances » verte si lue depuis moins de 7 jours ; aucune donnée personnelle | 3 | 2 | 1 | 2 | 4 | 2,30 | 2 | 1 | proposée |
 
 ## 2026-11-24 · Chef : décision du design en puce
-| 80 | Contrôle : une décision « provisoire (design) » ou « (nuit) » écrite seulement en puce (sans ligne `| D-… |` du tableau) devient une alerte (3e fois : D-20261124-1) | revue du chef du 24/11 | alerte « décision absente du tableau » le jour même ; aucune fausse alerte | 3 | 3 | 1 | 3 | 5 | 3,00 | 2 | 1 | proposée |
+| 80 | Contrôle : une décision « provisoire (design) » ou « (nuit) » écrite seulement en puce (sans ligne `| D-… |` du tableau) devient une alerte (3e fois : D-20261124-1) | revue du chef du 24/11 | alerte « décision absente du tableau » le jour même ; aucune fausse alerte | 3 | 3 | 1 | 3 | 5 | 3,00 | 2 | 1 | fait le 2026-11-25 (D-20261125-3, par le chef) |
 | 81 | Phrase d'aide sous les signaux : « les règles de moyenne mobile marchent surtout sur quelques mois, et leurs résultats passés ne se retrouvent qu'à peu près hors échantillon » (limite des signaux, sans chiffre inventé) | arXiv 1907.00212 p. 3 (lecture du 25/11) | phrase lisible à 360 px ; pas de promesse de performance | 3 | 2 | 3 | 3 | 5 | 3,00 | 1 | 1 | proposée |
 
 ## 2026-11-25 · Vérificateur du code : les autres `esc` du modèle
