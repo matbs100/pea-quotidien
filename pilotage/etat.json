@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-26T05:15+01:00",
- "fiche": "2026-11-25 (cloture)",
+ "genere_le": "2026-11-26T12:36+01:00",
+ "fiche": "2026-11-26 (ouverture)",
  "lieu": "cloud",
- "etat": "vert",
- "resume": "Tout est en ordre. 65/65 tests, 8/8 prix revérifiés, 33/33 liens valides, site à jour.",
+ "etat": "orange",
+ "resume": "À surveiller. 65/65 tests, 34/34 liens valides, site à jour. Points à voir : cohérence des données, méthode de décision.",
  "controles": [
   {
    "nom": "tests",
@@ -21,53 +21,61 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-25 (cloture), générée le 2026-11-25T17:59+01:00",
-    "fiche attendue à cette heure : 2026-11-25 (cloture)"
+    "dernière fiche : 2026-11-26 (ouverture), générée le 2026-11-26T09:19+01:00",
+    "fiche attendue à cette heure : 2026-11-26 (ouverture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "ok",
-   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 76 confirmés, 0 écart(s)",
-   "details": []
+   "niveau": "alerte",
+   "resume": "59 cours examinés, 0 problème(s), 10 alerte(s) ; entre sources : 71 confirmés, 4 écart(s)",
+   "details": [
+    "HLT.PA : cours daté du 2026-11-24, pas du 2026-11-26",
+    "PINR.PA : cours daté du 2026-11-24, pas du 2026-11-26",
+    "FOO.PA : cours daté du 2026-11-24, pas du 2026-11-26",
+    "UTI.PA : cours daté du 2026-11-24, pas du 2026-11-26",
+    "INS.PA : cours daté du 2026-11-24, pas du 2026-11-26",
+    "CD8.PA : cours daté du 2026-11-24, pas du 2026-11-26",
+    "OBLI.PA : cours daté du 2026-11-24, pas du 2026-11-26",
+    "TRV.PA : cours daté du 2026-11-24, pas du 2026-11-26",
+    "ALVAL.PA : cours daté du 2026-11-24, pas du 2026-11-26",
+    "4 écarts entre sources : ALVAL.PA, PUST.PA, PAASI.PA, PAEEM.PA"
+   ]
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "362 mots, 0 remarque(s)",
+   "resume": "318 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-25 (cloture)",
+   "resume": "régénérée avec la fiche du 2026-11-26 (ouverture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "ok",
-   "resume": "8/8 prix identiques sur Boursorama (2 écart(s) vérifié(s))",
-   "details": [
-    "✔ vérifié par le chef le 2026-11-26 : ^IXIC : 22842.07 dans la fiche, 23585.8 sur Boursorama — Écart de moment, pas d'erreur : la fiche (17 h 59 à Paris) a pris le Nasdaq en pleine chute (-3 % en séance, 22842) ; Boursorama lu ce matin par le contrôle donne 23585,8, soit -0,62 % sur la clôture de la veille (23733,54, courbe de la fiche), cohérent avec -0,6 % à la clôture annoncé par Reuters via Boursorama (lu par l'agent de nuit).",
-    "✔ vérifié par le chef le 2026-11-26 : ^DJI : 49361.26 dans la fiche, 50182.95 sur Boursorama — Écart de moment, pas d'erreur : la fiche (17 h 59 à Paris) est intra-séance (49361) ; Boursorama lu ce matin par le contrôle donne 50182,95, soit +0,33 % sur la clôture de la veille (50018,70, courbe de la fiche), clôture normale après le rebond de fin de séance du 25/11."
-   ]
+   "niveau": "non_verifiable",
+   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
+   "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "33/33 liens valides sur 8 titres, 5 non ouverts (robots.txt), 2 injoignables d'ici",
+   "resume": "34/34 liens valides sur 8 titres, 7 non ouverts (robots.txt), 2 injoignables d'ici",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-25 (cloture)",
+   "resume": "le site affiche la fiche du 2026-11-26 (ouverture)",
    "details": []
   },
   {
@@ -84,11 +92,12 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "15 commit(s), 0 problème(s), 0 alerte(s) ; 3 vérifiée(s) par le chef",
+   "resume": "11 commit(s), 0 problème(s), 0 alerte(s) ; 2 vérifiée(s) par le chef",
    "details": [
     "✔ vérifié par le chef le 2026-11-26 : af4a786 « Code : prénom retiré d'un rapport du chef [confide » : pilotage/rapports/2026-11-25.md : hors du rôle de l'agent « code » — git show af4a786 relu : une seule ligne modifiée, « Pour <prénom> : rien » devient « Pour le propriétaire : rien » dans mon rapport du 25/11 ; correction de confidentialité voulue, aucun autre changement.",
     "✔ vérifié par le chef le 2026-11-26 : 200ad0d « Amélioration : prochaine réunion de la Fed sous le » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 200ad0d relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clés reunions_fed et source_fed ajoutées) ; les 9 dates du FOMC (8-9/12/2026 à 16-17/11/2027) comparées une à une au calendrier officiel federalreserve.gov/monetarypolicy/fomccalendars.htm (WebFetch du 26/11) : identiques, 2027 « tentative » sur la page ; test prochaine_reunion_fed vert.",
-    "✔ vérifié par le chef le 2026-11-25 : 43d9d0e « Amélioration : prochaine réunion de la BCE sous le » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 43d9d0e relu : data/taux_bce.json est le cache écrit par scripts/taux.py (réunions de la BCE ajoutées) ; les 9 dates comparées une à une au calendrier officiel ecb.europa.eu/press/calendars/mgcgc (WebFetch du 25/11) : identiques ; test prochaine_reunion_bce vert",
+    "a7c04af [fiche] Matin PEA 2026-11-26 (ouverture)",
+    "7a1d835 [chef] Chef : rapport du 2026-11-26 (vert) ; 8 bilans de décisions, Fed confi",
     "c346f99 [code] Code : gain de l'idée 85 corrigé, tests 65/65 [correctif]",
     "4125b94 [code] Code : rapport du 2026-11-26 (vert)",
     "af4a786 [code] Code : prénom retiré d'un rapport du chef [confidentialité]",
@@ -97,32 +106,31 @@
     "b102a3d [autre] consigne — noter la méthode, les erreurs et les leçons, pas seulement ",
     "7cda3a4 [fiche] Matin PEA 2026-11-25 (cloture)",
     "6f90def [chef] Chef : passage de mi-journée du 2026-11-25 (orange)",
-    "ca15a83 [fiche] Matin PEA 2026-11-25 (ouverture)",
-    "a4e6acc [chef] Chef : rapport du 2026-11-25 (vert) ; contrôle des décisions écrites e",
-    "a7acad5 [code] Code : gain de l'idée n° 82 recalculé selon la grille [correctif]",
-    "f843682 [code] Code : rapport du 2026-11-25 (vert) ; test des échappements [correctif",
-    "43d9d0e [nuit] Amélioration : prochaine réunion de la BCE sous les taux [D-20261125-2",
-    "52d2f42 [design] Design : format de la décision D-20261125-1",
-    "b4a9b8c [design] Design : encadré vide compact sur téléphone [D-20261125-1]"
+    "ca15a83 [fiche] Matin PEA 2026-11-25 (ouverture)"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
    "niveau": "ok",
-   "resume": "3 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
+   "resume": "1 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
    "details": [
-    "b4a9b8c « Design : encadré vide compact sur téléphone [D-202 » : rien de retiré",
-    "43d9d0e « Amélioration : prochaine réunion de la BCE sous le » : rien de retiré",
     "200ad0d « Amélioration : prochaine réunion de la Fed sous le » : rien de retiré"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "ok",
-   "resume": "70 décisions, 5 à réaliser, 0 point(s) à voir",
-   "details": []
+   "niveau": "alerte",
+   "resume": "70 décisions, 5 à réaliser, 6 point(s) à voir",
+   "details": [
+    "bilan à faire : D-20261123-1 (EEMK.PA (BNP Paribas Easy MSCI Emerging Min TE, LU)",
+    "bilan à faire : D-20261123-2 (n° 75 · Étiquette « cours du 20 nov. » sous le pri)",
+    "bilan à faire : D-20261123-3 (Contrôle : `data/taux_bce.json` (date « releve » c)",
+    "bilan à faire : D-20261123-4 (Carte du monde (demande du propriétaire, 22/11) : )",
+    "bilan à faire : D-20261123-6 (URW.PA (Unibail-Rodamco-Westfield, FR0013326246) r)",
+    "bilan à faire : D-20261123-5 (Contrôle quotidien de l'éligibilité au PEA de chaq)"
+   ]
   },
   {
    "nom": "lectures",
