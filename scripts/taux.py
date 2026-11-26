@@ -65,6 +65,12 @@ REUNIONS = [("2026-12-16", "2026-12-17"), ("2027-02-03", "2027-02-04"), ("2027-0
             ("2027-04-28", "2027-04-29"), ("2027-06-09", "2027-06-10"), ("2027-07-21", "2027-07-22"),
             ("2027-09-08", "2027-09-09"), ("2027-10-27", "2027-10-28"), ("2027-12-15", "2027-12-16")]
 PAGE_CALENDRIER = "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html"
+# Réunions du FOMC (comité de la banque centrale américaine) : jour 1, jour 2 (décision). Source : calendrier
+# officiel de la Fed, lu le 2026-11-26 ; les dates de 2027 y sont dites provisoires, à revérifier.
+REUNIONS_FED = [("2026-12-08", "2026-12-09"), ("2027-01-26", "2027-01-27"), ("2027-03-16", "2027-03-17"),
+                ("2027-04-27", "2027-04-28"), ("2027-06-08", "2027-06-09"), ("2027-07-27", "2027-07-28"),
+                ("2027-09-14", "2027-09-15"), ("2027-10-26", "2027-10-27"), ("2027-11-16", "2027-11-17")]
+PAGE_FED = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
 
 
 def prochaine_reunion(jour, reunions=REUNIONS):
@@ -107,11 +113,15 @@ def mesurer(depuis="2023-01-01"):
             cache["inflation"] = infl
         cache["reunions"] = REUNIONS
         cache["source_reunions"] = PAGE_CALENDRIER
+        cache["reunions_fed"] = REUNIONS_FED
+        cache["source_fed"] = PAGE_FED
         return cache
     res["inflation"] = infl or charger_cache().get("inflation")
     res["source"] = PAGE_BCE
     res["reunions"] = REUNIONS
     res["source_reunions"] = PAGE_CALENDRIER
+    res["reunions_fed"] = REUNIONS_FED
+    res["source_fed"] = PAGE_FED
     try:
         CACHE.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     except OSError:

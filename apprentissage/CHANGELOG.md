@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-26 · Prochaine réunion de la Fed affichée sous les taux (Nuit, D-20261126-1)
+
+Sous l'encadré des taux, la note indique aussi « Prochaine réunion de la Fed (États-Unis) : décision le … » avec un lien vers le calendrier officiel ; la date change toute seule après chaque réunion. Rien n'est retiré. Inspiré de l'idée n° 77 et de la presse du 25/11 (marchés attentifs à la Fed) ; calendrier lu sur federalreserve.gov.
+
 ## 2026-11-25 · Prochaine réunion de la BCE affichée sous les taux (Nuit, D-20261125-2)
 
 Sous l'encadré des taux, la note indique « Prochaine réunion de la BCE : décision le … » avec un lien vers le calendrier officiel ; la date change toute seule après chaque réunion. Rien n'est retiré. Inspiré de l'idée n° 77 (presse du 23/11) ; calendrier lu sur ecb.europa.eu. La Fed n'est pas ajoutée.

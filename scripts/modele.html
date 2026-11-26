@@ -994,6 +994,12 @@ if (cartesTaux) {
     n.appendChild(document.createTextNode(" · Prochaine réunion de la BCE : décision le " + jourCourt(reu[1]) + " "));
     const c = document.createElement("a"); c.href = "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html"; c.target = "_blank"; c.rel = "noopener noreferrer"; c.textContent = "calendrier officiel"; n.appendChild(c);
   }
+  // Prochaine réunion de la Fed (FOMC) : même règle, dates lues par taux.py sur federalreserve.gov
+  const fed = (Array.isArray(TX.reunions_fed) ? TX.reunions_fed : []).find((r) => Array.isArray(r) && /^\d{4}-\d{2}-\d{2}$/.test(r[1] || "") && r[1] >= ajd);
+  if (fed) {
+    n.appendChild(document.createTextNode(" · Prochaine réunion de la Fed (États-Unis) : décision le " + jourCourt(fed[1]) + " "));
+    const f = document.createElement("a"); f.href = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"; f.target = "_blank"; f.rel = "noopener noreferrer"; f.textContent = "calendrier officiel"; n.appendChild(f);
+  }
   if (carteInflation(TX.inflation)) {
     n.appendChild(document.createTextNode(" · "));
     const b = document.createElement("a"); b.href = "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"; b.target = "_blank"; b.rel = "noopener noreferrer"; b.textContent = "inflation : Eurostat"; n.appendChild(b);

@@ -62,5 +62,44 @@
    "2027-12-16"
   ]
  ],
- "source_reunions": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html"
+ "source_reunions": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+ "reunions_fed": [
+  [
+   "2026-12-08",
+   "2026-12-09"
+  ],
+  [
+   "2027-01-26",
+   "2027-01-27"
+  ],
+  [
+   "2027-03-16",
+   "2027-03-17"
+  ],
+  [
+   "2027-04-27",
+   "2027-04-28"
+  ],
+  [
+   "2027-06-08",
+   "2027-06-09"
+  ],
+  [
+   "2027-07-27",
+   "2027-07-28"
+  ],
+  [
+   "2027-09-14",
+   "2027-09-15"
+  ],
+  [
+   "2027-10-26",
+   "2027-10-27"
+  ],
+  [
+   "2027-11-16",
+   "2027-11-17"
+  ]
+ ],
+ "source_fed": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
 }

@@ -1043,6 +1043,19 @@ def prochaine_reunion_bce():
 
 
 @test
+def prochaine_reunion_fed():
+    """Les réunions de la Fed sont triées, la décision suit le premier jour, et la page choisit la sienne sans date en dur."""
+    import taux
+    assert taux.prochaine_reunion("2026-11-26", taux.REUNIONS_FED)["decision"] == "2026-12-09"
+    assert taux.prochaine_reunion("2026-12-10", taux.REUNIONS_FED)["decision"] == "2027-01-27"
+    assert taux.prochaine_reunion("2028-01-01", taux.REUNIONS_FED) is None
+    assert all(d1 < d2 for d1, d2 in taux.REUNIONS_FED) and sorted(taux.REUNIONS_FED) == taux.REUNIONS_FED
+    assert taux.PAGE_FED.startswith("https://www.federalreserve.gov/")
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "TX.reunions_fed" in modele and "Prochaine réunion de la Fed" in modele and "2026-12-09" not in modele
+
+
+@test
 def decision_en_puce_signalee():
     """Une décision écrite seulement en puce est signalée ; celle du tableau ou une ancienne ne l'est pas."""
     import controle as c

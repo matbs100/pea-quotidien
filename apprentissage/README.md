@@ -47,6 +47,7 @@ Ce dossier fait partie du dépôt GitHub, et il arrive dans Obsidian avec la fic
 - Il n'exécute jamais de code téléchargé.
 
 ## Journaux
+- [2026-11-26](journal/2026-11-26.md)
 - [2026-11-25](journal/2026-11-25.md) : indicateurs (moyenne mobile, arXiv), presse Boursorama, prochaine réunion de la BCE dans l'encadré des taux (D-20261125-2)
 - [2026-11-24](journal/2026-11-24.md) : marchés (BCE 16-17/12, presse), revue de stabilité financière de la BCE, USVE, glossaire de la phrase-résumé (D-20261124-2)
 - [2026-11-23](journal/2026-11-23.md) : open source, une seule moyenne mobile (arXiv) et DIC de PMEH ; cours ancien signalé dans les listes (D-20261123-2)
