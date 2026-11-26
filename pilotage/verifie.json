@@ -178,5 +178,29 @@
   "jour": "43d9d0e",
   "preuve": "git show 43d9d0e relu : data/taux_bce.json est le cache écrit par scripts/taux.py (réunions de la BCE ajoutées) ; les 9 dates comparées une à une au calendrier officiel ecb.europa.eu/press/calendars/mgcgc (WebFetch du 25/11) : identiques ; test prochaine_reunion_bce vert",
   "le": "2026-11-25"
+ },
+ {
+  "alerte": "^IXIC : 22842.07 dans la fiche",
+  "jour": "2026-11-25",
+  "preuve": "Écart de moment, pas d'erreur : la fiche (17 h 59 à Paris) a pris le Nasdaq en pleine chute (-3 % en séance, 22842) ; Boursorama lu ce matin par le contrôle donne 23585,8, soit -0,62 % sur la clôture de la veille (23733,54, courbe de la fiche), cohérent avec -0,6 % à la clôture annoncé par Reuters via Boursorama (lu par l'agent de nuit).",
+  "le": "2026-11-26"
+ },
+ {
+  "alerte": "^DJI : 49361.26 dans la fiche",
+  "jour": "2026-11-25",
+  "preuve": "Écart de moment, pas d'erreur : la fiche (17 h 59 à Paris) est intra-séance (49361) ; Boursorama lu ce matin par le contrôle donne 50182,95, soit +0,33 % sur la clôture de la veille (50018,70, courbe de la fiche), clôture normale après le rebond de fin de séance du 25/11.",
+  "le": "2026-11-26"
+ },
+ {
+  "alerte": "pilotage/rapports/2026-11-25.md : hors du rôle de l'agent « code »",
+  "jour": "af4a786",
+  "preuve": "git show af4a786 relu : une seule ligne modifiée, « Pour <prénom> : rien » devient « Pour le propriétaire : rien » dans mon rapport du 25/11 ; correction de confidentialité voulue, aucun autre changement.",
+  "le": "2026-11-26"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle de l'agent « nuit »",
+  "jour": "200ad0d",
+  "preuve": "git show 200ad0d relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clés reunions_fed et source_fed ajoutées) ; les 9 dates du FOMC (8-9/12/2026 à 16-17/11/2027) comparées une à une au calendrier officiel federalreserve.gov/monetarypolicy/fomccalendars.htm (WebFetch du 26/11) : identiques, 2027 « tentative » sur la page ; test prochaine_reunion_fed vert.",
+  "le": "2026-11-26"
  }
 ]

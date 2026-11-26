@@ -6,7 +6,7 @@ url: https://arxiv.org/pdf/2107.02270
 publie_le: 2024-02-29
 lu_le: 2026-11-26
 lu_par: nuit
-statut: ⏳ à vérifier (pages 1-8 sur 26 lues le 2026-11-26)
+statut: ✅ relue le 2026-11-26
 ---
 # 📄 Accessible Color Sequences for Data Visualization
 
@@ -25,4 +25,4 @@ Un physicien de Johns Hopkins propose des suites de couleurs pour les graphiques
 - Idée n° 83 : vérifier que les courbes comparées de la fiche restent distinguables en simulation de daltonisme (notée dans `apprentissage/idees.md`). Rien à changer pour l'instant.
 
 ## Vérification du chef
-- (à relire par le chef : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- ✅ relue le 2026-11-26 : PDF ouvert (26 pages), pages 1-2 relues : « jusqu'à 8 % dans certaines sous-populations », déficiences deutéranomalie et protanomalie, critères de la liste de la p. 2, premières couleurs plus distinctes : tout est exact et reformulé, rien de copié. Site arxiv.org déjà dans `pilotage/sources-verifiees.md`. Méthode : lu les pages citées, pas le résumé seul.

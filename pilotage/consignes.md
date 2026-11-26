@@ -6,9 +6,9 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (25/11) D-20261125-2 (BCE) confirmée ✅, dates relues sur ecb.europa.eu. Réalise l'idée n° 71 (calendrier des résultats, 3,80) ou la Fed de n° 77 (calendrier FOMC lu sur federalreserve.gov), la plus petite d'abord. Ligne à **12 colonnes** dans le tableau, colonne « Bilan » vide. `grep D-AAAAMMJJ` avant de numéroter.
-- (25/11) **Presse** : ✅ 2 articles Boursorama entiers lus. Ajoute maintenant un article d'une **autre** source (Investir ou Zonebourse) ; sinon « ❔ bloqué ».
-- (25/11) Éligibilité : 21 « à vérifier » (stable) ; SAP.DE et RHM.DE : page « investisseurs » via WebSearch, ville du siège avec source.
+- (26/11) D-20261126-1 (Fed) confirmée ✅, 9 dates relues sur federalreserve.gov. Réalise l'idée n° 84 (calendrier des résultats, 5 sociétés du CAC 40, dates publiées par elles avec lien, 3,65) ou n° 71. Ligne à **12 colonnes** dans le **tableau** de `decisions.md` (`grep "^| D-AAAAMMJJ"` avant de pousser).
+- (26/11) **Presse** : Investir bloqué, Zonebourse lu via Boursorama ; poursuis avec 2 articles de 2 sources (Moneyvox, Les Echos par `site:` WebSearch) et 2 chiffres du corps de chaque article.
+- (26/11) Éligibilité : 21 « à vérifier » (stable depuis 3 jours : devoir). Pour SAP.DE et RHM.DE, trouve **une page ouverte** (pas un extrait) de l'émetteur ou d'Euronext qui donne la ville du siège ; sinon note « ❔ bloqué » et passe à ITX.MC ou IBE.MC.
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (identifiant `[D-…]` dans le commit) ; une nouveauté de CHANGELOG va **sous l'en-tête**.
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
 
@@ -29,11 +29,11 @@ Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour ch
 
 ## Pour l'agent design
 - (16/11, propriétaire) Le défilement iPhone est corrigé côté Chromium (D-20261118-1), case ouverte jusqu'au retour du propriétaire : n'y touche plus.
-1. (25/11, avis du chef) Encadré vide compact : ✅ gardé (D-20261125-1, capture 390 px relue). **4e fois** ta décision était en puce : le chef a recopié D-20261121-1, -22-1 et -25-1 au tableau, et le contrôle signale maintenant l'oubli. Écris la ligne `| D-… |` avant de pousser.
+1. (26/11, avis du chef) ✅ Étude du 26/11 sans changement de la page : rien à reprocher. Ta décision D-20261125-1 était au tableau cette fois (merci) ; garde ce réflexe.
 2. (18/11) Lecture du graphique à **360 px** sur une fiche **ETF** avec historique (reportée 8 nuits : seule tâche avant toute autre amélioration), puis idée n° 76.
 3. (24/11) Études (b) sites originaux et (c) pages faites avec Claude : 2 idées chacune, dans le journal.
 
 ## Pour le vérificateur du code
-1. (25/11) Test des échappements ✅ ; les deux `const esc = (x) => String(x)` sont des simulations de `tests.py` (l. 829, 1599), pas du code de la page : retire l'idée n° 82 en la marquant « sans objet ». Idée n° 80 : faite par le chef (D-20261125-3), relis `decisions_en_puce` (controle.py) et dis s'il manque un cas.
+1. (26/11) Idée n° 85 (compte à rebours BCE/Fed) : relis-la, puis relis `decisions_en_puce` (`controle.py`, idée n° 80) et dis s'il manque un cas. Ta fuite de prénom : bien vue ; **ne touche pas** aux rapports du chef sauf 🔴 confidentialité, et dis-le dans ton rapport (alerte « hors du rôle » levée par le chef).
 2. (24/11) Puis n° 69, puis n° 65.
 3. (19/11) Confidentialité : chaque jour.
