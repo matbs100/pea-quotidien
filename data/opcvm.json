@@ -1,52 +1,52 @@
 {
  "vl": {
   "FR0010298596": {
-   "prix": 460.5,
-   "date_cours": "2026-11-24",
-   "var_1j": -0.55,
-   "source_vl": "Yahoo Finance"
+   "prix": 455.52,
+   "date_cours": "2026-11-25",
+   "var_1j": -1.08,
+   "source_vl": "Financial Times"
   },
   "FR0007076930": {
    "prix": 556.6,
-   "date_cours": "2026-11-24",
-   "var_1j": 0.23,
-   "source_vl": "Yahoo Finance"
-  },
-  "FR0011169341": {
-   "prix": 579.02,
-   "date_cours": "2026-11-24",
-   "var_1j": -1.65,
-   "source_vl": "Yahoo Finance"
-  },
-  "FR0010546929": {
-   "prix": 40.05,
-   "date_cours": "2026-11-24",
-   "var_1j": -0.45,
-   "source_vl": "Yahoo Finance"
-  },
-  "FR0010321810": {
-   "prix": 452.73,
-   "date_cours": "2026-11-24",
+   "date_cours": "2026-11-25",
    "var_1j": 0.0,
    "source_vl": "Financial Times"
   },
+  "FR0011169341": {
+   "prix": 570.4,
+   "date_cours": "2026-11-25",
+   "var_1j": -1.49,
+   "source_vl": "Financial Times"
+  },
+  "FR0010546929": {
+   "prix": 39.55,
+   "date_cours": "2026-11-25",
+   "var_1j": -1.25,
+   "source_vl": "Financial Times"
+  },
+  "FR0010321810": {
+   "prix": 446.07,
+   "date_cours": "2026-11-25",
+   "var_1j": -1.47,
+   "source_vl": "Financial Times"
+  },
   "FR0013532710": {
-   "prix": 165.89,
-   "date_cours": "2026-11-24",
-   "var_1j": 1.57,
-   "source_vl": "Yahoo Finance"
+   "prix": 164.28,
+   "date_cours": "2026-11-25",
+   "var_1j": -0.97,
+   "source_vl": "Financial Times"
   },
   "FR0010601971": {
-   "prix": 334.85,
-   "date_cours": "2026-11-24",
-   "var_1j": 0.16,
-   "source_vl": "Yahoo Finance"
+   "prix": 334.32,
+   "date_cours": "2026-11-25",
+   "var_1j": -0.16,
+   "source_vl": "Financial Times"
   },
   "FR0010286005": {
-   "prix": 1144.72,
-   "date_cours": "2026-11-24",
-   "var_1j": -0.98,
-   "source_vl": "Yahoo Finance"
+   "prix": 1130.16,
+   "date_cours": "2026-11-25",
+   "var_1j": -1.27,
+   "source_vl": "Financial Times"
   },
   "LU1832174962": {
    "prix": 235.33,
@@ -61,10 +61,10 @@
    "source_vl": "Yahoo Finance"
   },
   "FR0010354837": {
-   "prix": 203.73,
-   "date_cours": "2026-11-24",
-   "var_1j": -1.09,
-   "source_vl": "Yahoo Finance"
+   "prix": 201.0,
+   "date_cours": "2026-11-25",
+   "var_1j": -1.34,
+   "source_vl": "Financial Times"
   }
  },
  "maj": "2026-11-26"

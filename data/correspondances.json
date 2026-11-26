@@ -276,7 +276,9 @@
  "IBE.MC": {
   "boursorama": "FF55-IBE",
   "ft": "IBE:MCE",
-  "echecs": {}
+  "echecs": {
+   "boursorama": 1
+  }
  },
  "ENX.PA": {
   "boursorama": "1rPENX",
