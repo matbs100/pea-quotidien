@@ -747,5 +747,10 @@
   "boursorama": "1gBMPS",
   "ft": "BMPS:MIL",
   "echecs": {}
+ },
+ "STLAP.PA": {
+  "boursorama": "1rPSTLAP",
+  "ft": "STLAP:PAR",
+  "echecs": {}
  }
 }
