@@ -3,6 +3,15 @@
 Recopiés ici (sans aucune information personnelle) par la fonction mémoire quand le propriétaire parle du
 projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). Le plus récent en haut.
 
+## Cartes des marchés sur grand écran (2026-11-27, soir)
+
+Le propriétaire a signalé, capture à l'appui, que sur grand écran la courbe rouge des cartes des marchés prenait
+trop de place (elle passait sur le texte « 1 mois ») et que, dans les cartes du haut, prix et points n'étaient
+pas alignés (prix de la part d'ETF du DAX à la ligne). Corrigé pour toutes les largeurs (commit 8a173c8,
+D-20261127-7) : courbe sous le texte, « 1 mois » sur sa propre ligne, prix et part d'ETF sur une ligne et
+alignés. Préférence : les cartes doivent être propres aussi sur ordinateur, pas seulement sur iPhone. À garder :
+tester tout changement de cartes à 390, 1 000 et 1 400 px.
+
 ## Audit des failles (2026-11-27, soir)
 
 Le propriétaire a demandé de trouver et corriger les failles de la fiche. Corrigé : le texte des suggestions
