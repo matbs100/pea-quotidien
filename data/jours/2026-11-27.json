@@ -8736,7 +8736,7 @@
    "score": 73.4,
    "critere": "nouveau_signal",
    "critere_lib": "Nouveau signal « hausse »",
-   "raison": "Le signal technique passe de « neutre » à « hausse » : prix au-dessus de ses moyennes 20 et 50 jours, sans surchauffe (RSI 54). Sa fiabilité est mesurée en bas de page.",
+   "raison": "Le signal technique passe de « neutre » à « hausse » : prix au-dessus de ses moyennes 20 et 50 jours, sans surchauffe (RSI 54). Sa fiabilité est mesurée dans l'onglet Marchés.",
    "deja_suggere": false,
    "sources": {
     "yahoo": 102.65,

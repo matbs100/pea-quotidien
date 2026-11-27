@@ -348,7 +348,7 @@ def suggestions(candidats, top30, signaux_veille, top30_veille, deja, n=NB_SUGGE
          lambda m: -(m.get("score") or 0),
          lambda m: f"Le signal technique passe de «\u00a0{signaux_veille[m['ticker']]}\u00a0» à «\u00a0hausse\u00a0» : prix "
                    f"au-dessus de ses moyennes 20 et 50 jours, sans surchauffe (RSI {m['rsi']:.0f}). "
-                   "Sa fiabilité est mesurée en bas de page."),
+                   "Sa fiabilité est mesurée dans l'onglet Marchés."),
         ("entree_top30", "Nouveau dans le top 30",
          lambda m: bool(top30_veille) and m["ticker"] in dans_top and m["ticker"] not in top30_veille,
          lambda m: -(m.get("score") or 0),

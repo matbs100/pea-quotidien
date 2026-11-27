@@ -1687,7 +1687,7 @@ function blocSignal(m, det) {
   const h = (det && det.signaux || []).slice().reverse().map((s) => `<li>${new Date(s.date + "T12:00:00").toLocaleDateString("fr-FR")} · ${S[s.signal]} à ${pxu(s.prix, u)} → ${s.resultat ? (s.resultat === "juste" ? "✓ juste" : s.resultat === "faux" ? "✗ faux" : "neutre") + ` (${pct(s.rendement)} en 5 séances)` : "en attente"}</li>`).join("");
   return bloc("Signal technique", `<p><span class="sig ${m.signal}" style="display:inline-block">${S[m.signal]}</span> Aujourd'hui, ${expl[m.signal]}</p>
     ${kv([["Moyenne 20 jours", pxu(m.ma20, u)], ["Moyenne 50 jours", pxu(m.ma50, u)], ["Moyenne 200 jours", pxu(m.ma200, u)], ["RSI 14 jours", m.rsi != null ? fr(m.rsi, 0) : null]])}
-    ${h ? `<ul class="hist">${h}</ul>` : ""}<p class="note">Un signal technique n'est pas une prédiction : sa fiabilité est mesurée en bas de la fiche du jour.</p>
+    ${h ? `<ul class="hist">${h}</ul>` : ""}<p class="note">Un signal technique n'est pas une prédiction : sa fiabilité est mesurée dans l'onglet Marchés de la fiche du jour (« Les signaux tiennent-ils la route ? »).</p>
     <p class="note" id="sig-etude">Ce que dit une étude : sur les indices de Shanghai et de Shenzhen (1991-2013), la meilleure règle de moyennes mobiles testée bat la simple détention avant frais, mais plus une fois les frais de transaction comptés (<a href="https://arxiv.org/abs/1504.04254" target="_blank" rel="noopener noreferrer">Zhu et al., arXiv 1504.04254</a>, résumé et p. 9). Une seule étude, sur des marchés chinois : ce n'est pas une règle générale.</p>`);
 }
 
