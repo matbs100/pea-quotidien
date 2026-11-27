@@ -3,6 +3,14 @@
 Recopiés ici (sans aucune information personnelle) par la fonction mémoire quand le propriétaire parle du
 projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). Le plus récent en haut.
 
+## Audit des failles (2026-11-27, soir)
+
+Le propriétaire a demandé de trouver et corriger les failles de la fiche. Corrigé : le texte des suggestions
+renvoie à l'onglet Marchés pour la fiabilité ; « Ajouter à mes investissements » depuis une fiche ouverte dans
+un autre onglet ouvre d'abord l'onglet Top 30 ; le seuil des petits prix affiché doit toujours être le seuil
+réel de la collecte du jour. À garder : textes cohérents avec les onglets, zones tactiles d'au moins 24 px,
+aucun changement qui annule les commits « Propriétaire : » du 27/11.
+
 ## Fiche en 7 onglets (2026-11-27, soir)
 
 Le propriétaire a demandé que la fiche soit rangée en 7 onglets sous la bande des indices : Marchés,
