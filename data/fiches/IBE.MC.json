@@ -1,11 +1,15 @@
 {
- "maj": "2026-11-20",
+ "maj": "2026-11-27",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/cours/FF55-IBE/",
   "isin": "ES0144580Y14",
   "pea_bourso": false,
+  "secteur": "Services publics",
   "indice": "EURO STOXX 50",
-  "valorisation": "dernier échange",
+  "valorisation": "120 350 MEUR",
+  "rendement": "3,26%",
+  "per": "21,98",
+  "dernier_dividende": "0,43 EUR (06/07/26)",
   "per_annee": "2026",
   "nb_titres": "0",
   "marche": "Mercado Continuo",

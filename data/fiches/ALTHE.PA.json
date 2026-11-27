@@ -1,14 +1,14 @@
 {
- "maj": "2026-11-20",
+ "maj": "2026-11-27",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/cours/1rPALTHE/",
   "isin": "FR0010120402",
   "pea_bourso": true,
   "secteur": "Équipement médical",
-  "valorisation": "46 MEUR",
+  "valorisation": "43 MEUR",
   "per_annee": "2026",
-  "nb_titres": "73 811 096",
-  "capitalisation": "42,37 MEUR",
+  "nb_titres": "74 026 923",
+  "capitalisation": "43,23 MEUR",
   "marche": "Euronext Growth Paris",
   "site": "https://www.theraclion.com",
   "pays": "France"

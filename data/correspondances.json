@@ -277,7 +277,7 @@
   "boursorama": "FF55-IBE",
   "ft": "IBE:MCE",
   "echecs": {
-   "boursorama": 1
+   "boursorama": 2
   }
  },
  "ENX.PA": {
@@ -753,6 +753,11 @@
  "STLAP.PA": {
   "boursorama": "1rPSTLAP",
   "ft": "STLAP:PAR",
+  "echecs": {}
+ },
+ "STLAM.MI": {
+  "boursorama": "1gSTLAM",
+  "ft": "STLAM:MIL",
   "echecs": {}
  }
 }
