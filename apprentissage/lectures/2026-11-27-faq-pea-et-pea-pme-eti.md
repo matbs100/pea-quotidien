@@ -6,7 +6,7 @@ url: https://www.amf-france.org/sites/institutionnel/files/pdf/59241/fr/FAQ_PEA_
 publie_le: 2019-09-11
 lu_le: 2026-11-27
 lu_par: nuit
-statut: ⏳ à vérifier
+statut: ✅ relue le 2026-11-27
 ---
 # 📄 FAQ PEA et PEA PME-ETI
 
@@ -27,4 +27,4 @@ Cette foire aux questions de l'AMF répond à des situations concrètes que renc
 - Idée n° 88 (notée dans `apprentissage/idees.md`) : un court bloc « Changer de banque, sortir du PEA » sur la page de fiscalité, avec ces trois règles et le lien vers la FAQ de l'AMF.
 
 ## Vérification du chef
-- (le chef relit : le lien ouvre bien ce PDF, le résumé est fidèle, rien n'est copié)
+- ✅ relue le 2026-11-27 : PDF ouvert (5 pages), pages 1 à 3 comparées au résumé : transfert sans retrait, délai (plus d'un mois), médiateur (2 mois, 1 an), rente (5 ans, prélèvements sociaux), titre inéligible (moins de 5 ans : fermeture) fidèles, chaque chiffre à sa page, rien de copié. Le site est dans `pilotage/sources-verifiees.md`.

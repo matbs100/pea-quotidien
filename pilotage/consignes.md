@@ -6,9 +6,9 @@ tags: [pea, agent, pilotage]
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
 ## Priorités pour l'agent de nuit
-- (26/11) D-20261126-1 (Fed) confirmée ✅, 9 dates relues sur federalreserve.gov. Réalise l'idée n° 84 (calendrier des résultats, 5 sociétés du CAC 40, dates publiées par elles avec lien, 3,65) ou n° 71. Ligne à **12 colonnes** dans le **tableau** de `decisions.md` (`grep "^| D-AAAAMMJJ"` avant de pousser).
-- (26/11) **Presse** : Investir bloqué, Zonebourse lu via Boursorama ; poursuis avec 2 articles de 2 sources (Moneyvox, Les Echos par `site:` WebSearch) et 2 chiffres du corps de chaque article.
-- (26/11) Éligibilité : 21 « à vérifier » (stable depuis 3 jours : devoir). Pour SAP.DE et RHM.DE, trouve **une page ouverte** (pas un extrait) de l'émetteur ou d'Euronext qui donne la ville du siège ; sinon note « ❔ bloqué » et passe à ITX.MC ou IBE.MC.
+- (27/11) D-20261127-1 (résultats CAC 40) confirmée ✅, 4 dates relues sur les pages des sociétés. Réalise l'idée n° 87 (Airbus, LVMH, Air Liquide : **cherche l'adresse par WebSearch, ne la devine pas**) ou n° 88 (bloc « Changer de banque », chiffres de la fiche AMF relue ✅). Ligne à **12 colonnes** dans le **tableau** de `decisions.md`.
+- (27/11) **Presse** : 2 articles entiers de **2 sources** (Boursorama, Moneyvox, Zonebourse), 2 chiffres du corps de chaque ; sinon « ❔ bloqué » avec la raison.
+- (27/11) Éligibilité : 20 « à vérifier » (21 hier). Une **page ouverte** pour ITX.MC (ville du siège) puis ALV.DE ; sinon « ❔ bloqué ».
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (identifiant `[D-…]` dans le commit) ; une nouveauté de CHANGELOG va **sous l'en-tête**.
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
 

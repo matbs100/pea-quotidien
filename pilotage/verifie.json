@@ -202,5 +202,17 @@
   "jour": "200ad0d",
   "preuve": "git show 200ad0d relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clés reunions_fed et source_fed ajoutées) ; les 9 dates du FOMC (8-9/12/2026 à 16-17/11/2027) comparées une à une au calendrier officiel federalreserve.gov/monetarypolicy/fomccalendars.htm (WebFetch du 26/11) : identiques, 2027 « tentative » sur la page ; test prochaine_reunion_fed vert.",
   "le": "2026-11-26"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle de l'agent « nuit »",
+  "jour": "73362a9",
+  "preuve": "git show 73362a9 relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clé resultats ajoutée), pilotage/etat.json est le contrôle de la nuit ; les 4 dates (Sanofi 28/01/2027, TotalEnergies 10/02/2027, L'Oréal 11/02/2027, Danone 24/02/2027) relues le 27/11 sur les pages des sociétés (WebFetch ; TotalEnergies : extrait de recherche du calendrier officiel) ; test prochains_resultats vert.",
+  "le": "2026-11-27"
+ },
+ {
+  "alerte": "pilotage/etat.json : hors du rôle de l'agent « nuit »",
+  "jour": "73362a9",
+  "preuve": "git show 73362a9 relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clé resultats ajoutée), pilotage/etat.json est le contrôle de la nuit ; les 4 dates (Sanofi 28/01/2027, TotalEnergies 10/02/2027, L'Oréal 11/02/2027, Danone 24/02/2027) relues le 27/11 sur les pages des sociétés (WebFetch ; TotalEnergies : extrait de recherche du calendrier officiel) ; test prochains_resultats vert.",
+  "le": "2026-11-27"
  }
 ]
