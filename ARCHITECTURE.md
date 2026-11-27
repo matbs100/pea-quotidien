@@ -49,6 +49,8 @@ dans le coffre Obsidian, donc un `git pull` sur le Mac suffit à tout y amener.
 | 3 h, chaque nuit | **Veille et amélioration** | `AMELIORATION.md` | apprend (marchés, design, pédagogie, open source), note ce qu'il apprend dans `apprentissage/`, fait une amélioration testée |
 | 4 h, chaque jour | **Vérificateur du code** | `VERIFICATION.md` | sous la direction du chef : confidentialité du propriétaire (`confidentialite.py`, avec la clé secrète de la routine), tests, contrôle, analyse statique (`ruff`) et failles des bibliothèques (`pip-audit`), revue des commits du jour, une correction au plus (« Code : … [correctif] »), apprentissage quotidien dans des sources fiables (`apprentissage/code/`), idées ; rapport dans `pilotage/code/` |
 | 5 h, chaque jour | **Chef d'orchestre** | `CHEF.md` | contrôle tout (`controle.py`), vérifie les faits appris, relit les commits des autres, annule ce qui casse, corrige un bug ou embellit l'interface, écrit `pilotage/` |
+| 8 h, chaque jour | **Journaux** | `JOURNAUX.md` | lit les flux RSS de 21 grands journaux (États-Unis, Royaume-Uni, France, Luxembourg, Allemagne, Italie, Espagne, Belgique, Pays-Bas), garde l'actualité des marchés et des entreprises des 24 dernières heures et regroupe les articles qui annoncent la même chose (`scripts/journaux.py collecter`) |
+| 8 h 30, chaque jour | **Chef d'orchestre, vérification des journaux** | `JOURNAUX.md` | sépare ou réunit les regroupements, écrit les titres en français ; « ✓ 2 sources » si deux journaux différents concordent (lien vers un article), sinon « non confirmée » (lien vers le site du journal) ; `journaux.py valider --chef` |
 | 12 h 30, jours de bourse | **Chef d'orchestre, passage de mi-journée** | routine dédiée (lit `CHEF.md`) | vérifie la fiche d'ouverture, la refait et corrige le programme si besoin, s'assure que la clôture pourra tourner ; pas d'embellissement |
 | 9 h 15 et 17 h 55, jours de bourse | **Fiche du jour** | `ROUTINE.md` | collecte, contrôle des prix, fiches détaillées, analyse, site, notification |
 | samedi à 4 h 20 | **Mise à jour des titres suivis** | `UNIVERS.md` | ajoute à `univers.json` les nouveaux ETF éligibles au PEA et les actions entrées dans le CAC 40, le SBF 120 ou l'Euro Stoxx 50, chacun vérifié (Yahoo, Boursorama) ; 20 ajouts au plus ; signale sans les supprimer les titres qui ne cotent plus |
@@ -79,6 +81,7 @@ qu'un agent l'a fait, elle applique la version d'avant. Seul le propriétaire (a
 | Chemin | Contenu |
 |---|---|
 | `univers.json` | les titres suivis, par catégorie (indices, devises, matières, ETF, ETF à effet de levier, actions, petits prix). Les ETF de `etf_levier` sont traités comme des ETF (fiche, contrôle des prix, recherche) mais restent hors du top 30 et des suggestions, et portent un avertissement. La clé `_connues` (ignorée par les boucles sur les catégories, comme toute clé qui commence par « _ ») liste les 30 valeurs connues choisies par le propriétaire, avec leur zone : grandes actions européennes et ETF répandus, affichés chaque jour à côté du top 30 |
+| `data/journaux/AAAA-MM-JJ.json` | actualité du jour : journaux lus (voie, nombre, erreur), articles (titre, lien, heure), infos regroupées et vérification du chef (D-20261127-2) |
 | `descriptions.json` | courtes descriptions des titres, rédigées sans copier de site |
 | `guide/` | notes pour le propriétaire (dans Obsidian) : ce qui a été ajouté et comment s'en servir. Les agents ne les modifient pas |
 | `mes-investissements.md` | autre façon de noter les achats du propriétaire (code Yahoo ou ISIN, date, prix, quantité, type), un par ligne de tableau, pour les retrouver dans Obsidian. Tenu par le propriétaire seul : les agents le lisent mais ne le modifient jamais (`controle.py` le signale). Public, comme tout le dépôt, contrairement à la barre de recherche |
@@ -311,7 +314,18 @@ Choix du propriétaire (22/11/2026) : tous les titres suivis ; une action dans l
 dans son pays de création (deux premières lettres de l'ISIN), sauf s'il investit aux États-Unis, au Japon ou
 en Inde (placé dans ce pays) ; les 4 ETF émergents et Asie éligibles au PEA (PAEEM, PLEM, PAASI, PAEJ) dans
 chacun des pays qu'ils couvrent (classement MSCI, à vérifier fonds par fonds) ; classement par la variation
-du jour ; section en bas de la fiche, au-dessus du contrôle des prix.
+du jour ; onglet « Globe » sous la bande des indices depuis le 27/11 (avant : section en bas de la fiche).
+
+`journaux.py` (agent Journaux et vérification du chef, D-20261127-2 ; appelé par `rendu.py`, clé `actualite` de la page) :
+
+| Fonction | Rôle |
+|---|---|
+| `JOURNAUX` | les 21 journaux du propriétaire : nom, pays, site, flux RSS (vide : Google Actualités limité au site), `filtrer` pour les flux généralistes |
+| `collecter(jour)` | lit chaque flux (2 essais, 20 s), garde les articles des 24 dernières heures qui parlent de marchés ou d'entreprises (`parle_finance`), retire les doublons, écrit `data/journaux/AAAA-MM-JJ.json` (titres et liens seulement) |
+| `vocabulaire`, `entites`, `meme_info`, `regrouper` | noms propres du jour (majuscules d'un titre ordinaire, pas des titres « à l'anglaise »), synonymes en 6 langues (BCE/ECB/EZB, pétrole/oil…) ; un article rejoint un groupe s'il ressemble à au moins la moitié de ses articles (pas de chaîne) |
+| `ajouter`, `refaire_groupes` | article trouvé à la main quand un flux est bloqué (lien obligatoirement sur le site du journal), puis regroupement |
+| `statut`, `problemes`, `valider` | la règle (2 journaux différents = confirmée) est calculée par le script ; refuse une source inventée, un lien hors des articles, un titre manquant ou trop long |
+| `pour_la_page(jour)` | dernier fichier vérifié par le chef (3 jours au plus) : confirmées puis 15 non confirmées au plus |
 
 `globe.py` (sans réseau, appelé par `rendu.py`, clé `globe` de la page) :
 
@@ -356,7 +370,7 @@ Code de sortie : 0 vert, 1 orange, 2 rouge.
 | `lire_verifications()` | entrées valides de `pilotage/verifie.json` (texte de l'alerte, jour ou commit, preuve de 20 caractères au moins) |
 | `appliquer_verifications(alertes, jour, verifs)` | sépare les alertes restantes de celles vérifiées par le chef pour ce jour ou ce commit (jamais un 🔴) |
 | `c_fraicheur(d, maintenant)` | la dernière fiche est-elle celle attendue, et la clôture postérieure au fixing ? |
-| `anomalies_donnees(d)` | prix impossibles, RSI hors de 0-100, top 30 incomplet, moins de 8 ETF, petits prix ≥ 2 €, cours pas datés du jour… |
+| `anomalies_donnees(d)` | prix impossibles, RSI hors de 0-100, top 30 incomplet, moins de 8 ETF, petits prix ≥ 10 €, cours pas datés du jour… |
 | `c_donnees(d)` | résume `anomalies_donnees` et le contrôle entre sources |
 | `chiffres_incoherents(analyse, d)` | variations citées en gras dans l'analyse qui ne collent pas aux données |
 | `c_analyse(d)` | analyse présente, 6 parties, longueur, aucune formulation de conseil, chiffres justes |

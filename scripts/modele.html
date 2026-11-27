@@ -178,6 +178,12 @@ footer a { color: var(--accent); }
 @media (max-width: 600px) {
   .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .card { padding: 12px; } .card .val { font-size: 1.15rem; }
+  /* prix et part d'ETF toujours sur une seule ligne, comme CAC 40 (27/11) : la taille suit la largeur de la carte */
+  #indices .card { container-type: inline-size; }
+  #indices .val-l { flex-wrap: nowrap; gap: 0 4px; }
+  #indices .card .val { font-size: min(1.15rem, 10cqi); }
+  #indices .val .dev, #indices .etfx small { font-size: min(10px, 6.5cqi); }
+  #indices .etfx { font-size: min(14px, 8.2cqi); }
   .card .nom { white-space: normal; } .card .nom .vf { display: table; margin: 4px 0 0; }
   .card .chg span { display: block; margin-top: 2px; } .card .chg .pt { display: none; }
   .card svg { position: static; display: block; width: 100%; height: 28px; margin-top: 8px; }
@@ -295,6 +301,27 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
 .retirer { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%;
   border: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: 14px; cursor: pointer; }
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* onglets sous la bande des indices (27/11, D-20261127-2) : Actualité, Globe, Petits prix */
+.onglets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin: 22px 0 0; padding: 4px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; }
+.onglet { min-height: 44px; border: 0; border-radius: 10px; background: transparent; color: var(--muted); font: 600 15px var(--font-body); cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: background .2s, color .2s; }
+.onglet[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+.onglet:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 60%, transparent); outline-offset: 1px; }
+.onglet[hidden] { display: none; }
+.onglets:has(.onglet[hidden]) { grid-template-columns: repeat(2, 1fr); }
+.panneau { outline: none; }
+.panneau > section { margin-top: 16px; }
+.panneau[hidden] { display: none; }
+.actus { display: grid; gap: 8px; }
+.actus h3 { font: 600 13px var(--font-body); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 14px 0 2px; }
+.actus h3:first-child { margin-top: 0; }
+.actu { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.actu p { margin: 0; font-weight: 600; line-height: 1.35; }
+.actu .am { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 8px; font-size: 13px; color: var(--muted); }
+.actu .am .vf { margin-left: 0; vertical-align: 0; }
+.actu .am a { color: var(--accent); text-decoration: none; font-weight: 600; min-height: 24px; display: inline-flex; align-items: center; }
+.actu .am a:hover { text-decoration: underline; }
+.actus .plus { justify-self: start; }
 @media (max-width: 600px) { #inv-total { grid-template-columns: 1fr 1fr; } #inv-total .card:first-child { grid-column: 1 / -1; } }
 .pos { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(96px, 150px)); align-items: center; gap: 10px;
   background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
@@ -437,6 +464,47 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   </header>
   <div class="tape" aria-label="Indices"><div class="tape-in" id="tape"></div></div>
 
+  <!-- onglets sous la bande des indices (choix du propriétaire, 27/11/2026, D-20261127-2) -->
+  <div class="onglets" role="tablist" aria-label="Rubriques du jour">
+    <button type="button" role="tab" class="onglet" id="o-actu" aria-controls="p-actu" aria-selected="true">Actualité</button>
+    <button type="button" role="tab" class="onglet" id="o-globe" aria-controls="p-globe" aria-selected="false" tabindex="-1">Globe</button>
+    <button type="button" role="tab" class="onglet" id="o-petits" aria-controls="p-petits" aria-selected="false" tabindex="-1">Petits prix</button>
+  </div>
+  <div class="panneau" id="p-actu" role="tabpanel" aria-labelledby="o-actu" tabindex="0">
+    <section id="sec-actu">
+      <div class="sec-head"><div><h2 class="vh">Actualité des marchés</h2><div class="sub" id="actu-sub">Les nouvelles des marchés et des entreprises, lues dans 21 grands journaux et vérifiées par le chef</div></div></div>
+      <div id="actus"></div>
+      <p class="note">« ✓ 2 sources » : au moins deux journaux différents annoncent la même chose ; le lien ouvre l'un des articles (il peut être réservé aux abonnés). « Non confirmée » : un seul journal en parle pour l'instant ; le lien ouvre le site du journal. Titres résumés par le chef avec ses mots. Information, pas un conseil en investissement.</p>
+    </section>
+  </div>
+  <div class="panneau" id="p-globe" role="tabpanel" aria-labelledby="o-globe" tabindex="0" hidden>
+    <section id="sec-globe" hidden>
+      <div class="sec-head"><div><h2 class="vh">La carte du monde</h2><div class="sub"><span id="globe-nb">Les titres suivis</span> · touche un pays orange pour voir ses titres, du plus au moins performant sur la séance · pas une liste d'achats</div></div></div>
+      <div class="globe-scene">
+        <div class="globe-boite">
+          <canvas id="globe" tabindex="0" role="img" aria-label="Globe : les pays des titres suivis sont en orange. Glisse pour le tourner, flèches du clavier aussi, plus et moins pour zoomer. La liste des pays est juste en dessous."></canvas>
+          <div class="globe-boutons">
+            <button type="button" class="g-btn" id="globe-plus" aria-label="Rapprocher le globe">+</button>
+            <button type="button" class="g-btn" id="globe-moins" aria-label="Éloigner le globe">−</button>
+            <button type="button" class="g-btn" id="globe-europe" aria-label="Revenir sur l'Europe">⌂</button>
+          </div>
+        </div>
+        <p class="globe-etat" id="globe-etat" aria-live="polite"></p>
+        <ul class="globe-legende" aria-label="Légende du globe"><li><i class="lg-chaud"></i>Pays avec des titres suivis</li><li><i class="lg-terre"></i>Autres pays</li><li><i class="lg-mer"></i>Océans</li></ul>
+      </div>
+      <div class="globe-pays" id="globe-pays" role="group" aria-label="Pays des titres suivis, du plus au moins fourni"></div>
+      <article class="pays-fiche" id="pays-fiche" hidden></article>
+      <p class="note">Placement : une action dans le pays de son siège ; un ETF dans le pays où le fonds a été créé (les deux premières lettres de son ISIN), sauf s'il investit aux États-Unis, au Japon ou en Inde (placé dans ce pays) ou s'il fait partie des 4 ETF émergents et Asie, placés dans chacun des pays qu'ils couvrent (classement MSCI). Tracé des pays : Natural Earth (domaine public). Information et apprentissage, pas un conseil en investissement.</p>
+    </section>
+  </div>
+  <div class="panneau" id="p-petits" role="tabpanel" aria-labelledby="o-petits" tabindex="0" hidden>
+    <section id="sec-petits">
+      <div class="sec-head"><div><h2 class="vh">10 petits prix (moins de 10 €)</h2><div class="sub">10 petits prix (moins de 10 €) · les mieux classés parmi les titres liquides éligibles au PEA</div></div></div>
+      <div class="alerte">Petit prix ne veut pas dire bon marché : ce sont souvent des sociétés fragiles (biotechs, entreprises en difficulté), très volatiles, où l'on peut perdre beaucoup. À garder pour une très petite part, ou juste à observer.</div>
+      <div class="liste" id="petites"></div>
+    </section>
+  </div>
+
   <section id="sec-inv" hidden>
     <div class="sec-head"><div><h2>Mes investissements</h2><div class="sub">Tape l'ISIN ou le nom d'un titre pour l'ajouter · touche une ligne pour sa fiche complète</div></div></div>
     <div class="recherche" role="search">
@@ -531,33 +599,8 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   </section>
 
   <section>
-    <div class="sec-head"><div><h2>10 petits prix (moins de 2 €)</h2><div class="sub">Les mieux classés parmi les titres liquides sous 2 €</div></div></div>
-    <div class="alerte">Petit prix ne veut pas dire bon marché : ce sont souvent des sociétés fragiles (biotechs, entreprises en difficulté), très volatiles, où l'on peut perdre beaucoup. À garder pour une très petite part, ou juste à observer.</div>
-    <div class="liste" id="petites"></div>
-  </section>
-
-  <section>
     <div class="sec-head"><div><h2>Les signaux tiennent-ils la route ?</h2><div class="sub">Chaque signal « hausse » ou « baisse » est vérifié 5 séances plus tard</div></div></div>
     <div class="stat" id="bilan"></div>
-  </section>
-
-  <section id="sec-globe" hidden>
-    <div class="sec-head"><div><h2>La carte du monde</h2><div class="sub"><span id="globe-nb">Les titres suivis</span> · touche un pays orange pour voir ses titres, du plus au moins performant sur la séance · pas une liste d'achats</div></div></div>
-    <div class="globe-scene">
-      <div class="globe-boite">
-        <canvas id="globe" tabindex="0" role="img" aria-label="Globe : les pays des titres suivis sont en orange. Glisse pour le tourner, flèches du clavier aussi, plus et moins pour zoomer. La liste des pays est juste en dessous."></canvas>
-        <div class="globe-boutons">
-          <button type="button" class="g-btn" id="globe-plus" aria-label="Rapprocher le globe">+</button>
-          <button type="button" class="g-btn" id="globe-moins" aria-label="Éloigner le globe">−</button>
-          <button type="button" class="g-btn" id="globe-europe" aria-label="Revenir sur l'Europe">⌂</button>
-        </div>
-      </div>
-      <p class="globe-etat" id="globe-etat" aria-live="polite"></p>
-      <ul class="globe-legende" aria-label="Légende du globe"><li><i class="lg-chaud"></i>Pays avec des titres suivis</li><li><i class="lg-terre"></i>Autres pays</li><li><i class="lg-mer"></i>Océans</li></ul>
-    </div>
-    <div class="globe-pays" id="globe-pays" role="group" aria-label="Pays des titres suivis, du plus au moins fourni"></div>
-    <article class="pays-fiche" id="pays-fiche" hidden></article>
-    <p class="note">Placement : une action dans le pays de son siège ; un ETF dans le pays où le fonds a été créé (les deux premières lettres de son ISIN), sauf s'il investit aux États-Unis, au Japon ou en Inde (placé dans ce pays) ou s'il fait partie des 4 ETF émergents et Asie, placés dans chacun des pays qu'ils couvrent (classement MSCI). Tracé des pays : Natural Earth (domaine public). Information et apprentissage, pas un conseil en investissement.</p>
   </section>
 
   <section>
@@ -845,6 +888,56 @@ if ((D.connues || []).length) {  // 30 valeurs connues : liste fixe (univers.jso
   $("#sec-connues").hidden = false;
 }
 $("#petites").innerHTML = D.petites.map((m, i) => ligne(m, i, "score_petite")).join("");
+
+// ---------- onglets sous la bande des indices (27/11, D-20261127-2) ----------
+(function () {
+  const ONG = [...document.querySelectorAll(".onglet")];
+  if (!(D.globe && Array.isArray(D.globe.t) && D.globe.t.length)) $("#o-globe").hidden = true;  // pas de globe ce jour-là
+  function choisir(o, focus) {
+    ONG.forEach((x) => { const oui = x === o; x.setAttribute("aria-selected", oui); x.tabIndex = oui ? 0 : -1; $("#" + x.getAttribute("aria-controls")).hidden = !oui; });
+    if (focus) o.focus();
+    try { sessionStorage.setItem("matin-pea-onglet", o.id); } catch (e) {}
+  }
+  ONG.forEach((o) => o.addEventListener("click", () => choisir(o)));
+  $(".onglets").addEventListener("keydown", (e) => {
+    const vis = ONG.filter((x) => !x.hidden), i = vis.indexOf(document.activeElement);
+    if (i < 0) return;
+    const k = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: vis.length - 1 }[e.key];
+    if (k == null) return;
+    e.preventDefault(); choisir(vis[(k + vis.length) % vis.length], true);
+  });
+  let id0 = null; try { id0 = sessionStorage.getItem("matin-pea-onglet"); } catch (e) {}
+  const o0 = ONG.find((x) => x.id === id0 && !x.hidden);
+  if (o0) choisir(o0);
+})();
+
+// ---------- onglet Actualité : nouvelles des journaux vérifiées par le chef ----------
+(function () {
+  const A = D.actualite, el = $("#actus");
+  el.className = "actus";
+  if (!A || !Array.isArray(A.infos) || !A.infos.length) {
+    el.innerHTML = `<div class="actu"><p>Pas encore de nouvelles vérifiées.</p><div class="am">L'agent Journaux lit la presse vers 8 h, le chef vérifie les sources vers 8 h 30 : elles s'afficheront ici.</div></div>`;
+    return;
+  }
+  const h = new Date(A.verifie_le).toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "numeric", minute: "2-digit" }).replace(":", " h ");
+  $("#actu-sub").textContent = `${A.date === D.date ? "Ce matin" : "Nouvelles du " + dateCourte(A.date)} · ${A.journaux_lus} journaux lus sur ${A.journaux_total} · vérifiées par le chef à ${h}`;
+  const carteActu = (x) => {
+    const lien = lienSur(x.lien);
+    const badge = x.confirmee ? `<span class="vf ok">✓ ${x.nb} sources</span>` : `<span class="vf seul">non confirmée</span>`;
+    const a = lien ? `<a href="${esc(lien)}" target="_blank" rel="noopener noreferrer">${x.confirmee ? "Lire l'article · " + esc(x.lien_nom) : "Site du journal"} ↗</a>` : "";
+    return `<article class="actu"><p>${esc(x.titre)}</p><div class="am">${badge}<span>${esc(x.journaux.join(" · "))}</span>${a}</div></article>`;
+  };
+  const conf = A.infos.filter((x) => x.confirmee), non = A.infos.filter((x) => !x.confirmee), N = 5;
+  const H = [];
+  if (conf.length) H.push(`<h3>Confirmées par plusieurs journaux</h3>`, ...conf.map(carteActu));
+  if (non.length) {
+    H.push(`<h3>Une seule source pour l'instant</h3>`, ...non.slice(0, N).map(carteActu));
+    if (non.length > N) H.push(`<div class="actus" id="actus-plus" hidden>${non.slice(N).map(carteActu).join("")}</div><button type="button" class="chip plus" id="actus-voir" aria-expanded="false" aria-controls="actus-plus">Voir les ${non.length - N} autres</button>`);
+  }
+  el.innerHTML = H.join("");
+  const v = $("#actus-voir");
+  if (v) v.addEventListener("click", () => { $("#actus-plus").hidden = false; v.remove(); });
+})();
 let FICHE = null;  // titre de la fiche ouverte (pour recalculer ses frais)
 
 // ---------- mes critères : réduit le Top 30 aux titres qui remplissent les critères choisis ----------
@@ -1607,12 +1700,15 @@ let avant = null;
 function montrer() {
   if (feuille.hidden) avant = document.activeElement;
   voile.hidden = false; feuille.hidden = false; document.body.classList.add("fige");
-  requestAnimationFrame(() => requestAnimationFrame(() => { voile.classList.add("ouvert"); feuille.classList.add("ouvert"); }));
+  // chaque fiche s'ouvre tout en haut (27/11) : Safari garde la position de la fiche précédente si on remet
+  // le défilement à zéro pendant que la feuille est cachée ; on le refait donc une fois affichée
+  const corps = $("#f-corps"); corps.scrollTop = 0;
+  requestAnimationFrame(() => { corps.scrollTop = 0; requestAnimationFrame(() => { corps.scrollTop = 0; voile.classList.add("ouvert"); feuille.classList.add("ouvert"); }); });
   $("#f-fermer").focus({ preventScroll: true });
 }
 function cacher() {
   voile.classList.remove("ouvert"); feuille.classList.remove("ouvert"); document.body.classList.remove("fige");
-  setTimeout(() => { if (!feuille.classList.contains("ouvert")) { voile.hidden = true; feuille.hidden = true; } }, reduit ? 0 : 400);
+  setTimeout(() => { if (!feuille.classList.contains("ouvert")) { $("#f-corps").scrollTop = 0; voile.hidden = true; feuille.hidden = true; } }, reduit ? 0 : 400);
   if (avant && avant.focus) avant.focus({ preventScroll: true });
 }
 /* Glisser vers le bas pour fermer (téléphone) : la fiche suit le doigt, se ferme au-delà de 120 px ou d'un geste rapide */

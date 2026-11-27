@@ -77,7 +77,7 @@ définitifs, qui sont la référence. Tu travailles dans ce dépôt Git. Tout es
    « *Mise à jour à la clôture de la séance.* » ; dans « Ce qui a changé », compare aussi la clôture
    aux premiers cours du matin.
 5. Le lundi, à l'ouverture seulement : cherche sur le web 3 à 5 sociétés cotées dont le siège est
-   dans l'Union européenne (donc éligibles au PEA), qui valent moins de 2 €, ont des échanges
+   dans l'Union européenne (donc éligibles au PEA), qui valent moins de 10 €, ont des échanges
    réguliers et une actualité récente notable. Vérifie que leur ticker Yahoo renvoie des cours
    (`$PY -c "import yfinance as yf; print(yf.Ticker('XXX.PA').history(period='5d'))"`). Ajoute
    celles qui fonctionnent dans la section `petites` de `univers.json` et cite-les dans l'analyse.

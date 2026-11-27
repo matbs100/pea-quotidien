@@ -1,0 +1,5613 @@
+{
+ "date": "2026-11-27",
+ "collecte_le": "2026-11-27T19:07+01:00",
+ "regle": "confirmée = au moins 2 journaux différents ; sinon non confirmée",
+ "journaux": {
+  "wsj": {
+   "nom": "The Wall Street Journal",
+   "pays": "États-Unis",
+   "site": "https://www.wsj.com",
+   "voie": "rss",
+   "articles": 10,
+   "erreur": null
+  },
+  "nyt": {
+   "nom": "The New York Times",
+   "pays": "États-Unis",
+   "site": "https://www.nytimes.com",
+   "voie": "rss",
+   "articles": 15,
+   "erreur": null
+  },
+  "bloomberg": {
+   "nom": "Bloomberg",
+   "pays": "États-Unis",
+   "site": "https://www.bloomberg.com",
+   "voie": "rss",
+   "articles": 20,
+   "erreur": null
+  },
+  "cnbc": {
+   "nom": "CNBC",
+   "pays": "États-Unis",
+   "site": "https://www.cnbc.com",
+   "voie": "rss",
+   "articles": 2,
+   "erreur": null
+  },
+  "reuters": {
+   "nom": "Reuters",
+   "pays": "États-Unis",
+   "site": "https://www.reuters.com",
+   "voie": "google",
+   "articles": 23,
+   "erreur": null
+  },
+  "ft": {
+   "nom": "Financial Times",
+   "pays": "Royaume-Uni",
+   "site": "https://www.ft.com",
+   "voie": "rss",
+   "articles": 32,
+   "erreur": null
+  },
+  "bbc": {
+   "nom": "BBC",
+   "pays": "Royaume-Uni",
+   "site": "https://www.bbc.co.uk",
+   "voie": "rss",
+   "articles": 10,
+   "erreur": null
+  },
+  "guardian": {
+   "nom": "The Guardian",
+   "pays": "Royaume-Uni",
+   "site": "https://www.theguardian.com",
+   "voie": "rss",
+   "articles": 5,
+   "erreur": null
+  },
+  "economist": {
+   "nom": "The Economist",
+   "pays": "Royaume-Uni",
+   "site": "https://www.economist.com",
+   "voie": "rss",
+   "articles": 0,
+   "erreur": null
+  },
+  "figaro": {
+   "nom": "Le Figaro",
+   "pays": "France",
+   "site": "https://www.lefigaro.fr",
+   "voie": "rss",
+   "articles": 19,
+   "erreur": null
+  },
+  "echos": {
+   "nom": "Les Échos",
+   "pays": "France",
+   "site": "https://www.lesechos.fr",
+   "voie": "google",
+   "articles": 17,
+   "erreur": "services.lesechos.fr : HTTPError"
+  },
+  "monde": {
+   "nom": "Le Monde",
+   "pays": "France",
+   "site": "https://www.lemonde.fr",
+   "voie": "rss",
+   "articles": 20,
+   "erreur": null
+  },
+  "bfm": {
+   "nom": "BFM Business",
+   "pays": "France",
+   "site": "https://www.bfmtv.com/economie/",
+   "voie": "rss",
+   "articles": 21,
+   "erreur": null
+  },
+  "lessentiel": {
+   "nom": "L'essentiel",
+   "pays": "Luxembourg",
+   "site": "https://www.lessentiel.lu",
+   "voie": "google",
+   "articles": 3,
+   "erreur": null
+  },
+  "wort": {
+   "nom": "Luxemburger Wort",
+   "pays": "Luxembourg",
+   "site": "https://www.wort.lu",
+   "voie": "rss",
+   "articles": 6,
+   "erreur": null
+  },
+  "paperjam": {
+   "nom": "Paperjam",
+   "pays": "Luxembourg",
+   "site": "https://paperjam.lu",
+   "voie": "google",
+   "articles": 5,
+   "erreur": null
+  },
+  "handelsblatt": {
+   "nom": "Handelsblatt",
+   "pays": "Allemagne",
+   "site": "https://www.handelsblatt.com",
+   "voie": "rss",
+   "articles": 37,
+   "erreur": null
+  },
+  "sole": {
+   "nom": "Il Sole 24 Ore",
+   "pays": "Italie",
+   "site": "https://www.ilsole24ore.com",
+   "voie": "rss",
+   "articles": 2,
+   "erreur": null
+  },
+  "expansion": {
+   "nom": "Expansión",
+   "pays": "Espagne",
+   "site": "https://www.expansion.com",
+   "voie": "rss",
+   "articles": 31,
+   "erreur": null
+  },
+  "lecho": {
+   "nom": "L'Echo",
+   "pays": "Belgique",
+   "site": "https://www.lecho.be",
+   "voie": "google",
+   "articles": 19,
+   "erreur": null
+  },
+  "fd": {
+   "nom": "Het Financieele Dagblad",
+   "pays": "Pays-Bas",
+   "site": "https://fd.nl",
+   "voie": "rss",
+   "articles": 30,
+   "erreur": null
+  }
+ },
+ "articles": [
+  {
+   "journal": "handelsblatt",
+   "titre": "Wall Street: US-Börsen schließen im Plus – Anthropic wieder über Ausgabepreis",
+   "lien": "https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dow-sp-500-nasdaq-us-boersen-schliessen-im-plus-anthropic-wieder-ueber-ausgabepreis/100273324.html",
+   "publie": "2026-11-27T19:04+01:00",
+   "id": "a1"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Sylvain Bersinger (Bersingéco), Lévan Sardjevéladzé (Syndicat National du Jeu Vidéo), et Adel Bakawan (European Institute for Studies on the Middle East and North Africa) – 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/le-18h-eco/sylvain-bersinger-bersingeco-levan-sardjeveladze-syndicat-national-du-jeu-video-et-adel-bakawan-european-institute-for-studies-on-the-middle-east-and-north-africa-27-11_EN-202611270820.html",
+   "publie": "2026-11-27T19:03+01:00",
+   "id": "a2"
+  },
+  {
+   "journal": "wort",
+   "titre": "„Gratis rein, gratis raus“: Fast jeder siebte Einwohner ist auf Hilfe angewiesen",
+   "lien": "https://www.wort.lu/luxemburg/stadaland/gratis-rein-gratis-raus-fast-jeder-siebte-einwohner-ist-auf-hilfe-angewiesen/164498384.html",
+   "publie": "2026-11-27T19:00+01:00",
+   "id": "a3"
+  },
+  {
+   "journal": "fd",
+   "titre": "Ceo defensietechbedrijf Palantir: ‘Wij kunnen zonder Europa. Maar jullie niet zonder ons’",
+   "lien": "https://fd.nl/tech-en-innovatie/1620899/ceo-defensietechbedrijf-palantir-wij-kunnen-zonder-europa-maar-jullie-niet-zonder-ons",
+   "publie": "2026-11-27T18:59+01:00",
+   "id": "a4"
+  },
+  {
+   "journal": "monde",
+   "titre": "Le tourisme français sommé de se réinventer pour respecter l’accord de Paris sur le climat",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/le-tourisme-francais-somme-de-se-reinventer-pour-respecter-l-accord-de-paris-sur-le-climat_6815916_3234.html",
+   "publie": "2026-11-27T18:59+01:00",
+   "id": "a5"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Contrex, Vittel, Hépar... Nestlé Waters prévoit de supprimer des postes dans les Vosges (ils seraient 95 sur 500 selon les syndicats)",
+   "lien": "https://www.bfmtv.com/economie/consommation/contrex-vittel-hepar-nestle-waters-prevoit-de-supprimer-des-postes-dans-les-vosges-ils-seraient-95-sur-500-selon-les-syndicats_AD-202611270796.html",
+   "publie": "2026-11-27T18:46+01:00",
+   "id": "a6"
+  },
+  {
+   "journal": "monde",
+   "titre": "Les distributeurs indépendants de SFR, qui craignent de ne pas survivre au rachat de l’opérateur, l’attaquent en justice",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/les-distributeurs-independants-de-sfr-qui-craignent-de-ne-pas-survivre-au-rachat-de-l-operateur-l-attaquent-en-justice_6815915_3234.html",
+   "publie": "2026-11-27T18:39+01:00",
+   "id": "a7"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Nike décroche en Bourse : le titre a perdu les deux tiers de sa valeur en trois ans, les analystes de Berenberg et HSBC se prononcent",
+   "lien": "https://bourse.lefigaro.fr/actu-conseils/nike-decroche-en-bourse-le-titre-a-perdu-les-deux-tiers-de-sa-valeur-en-trois-ans-les-analystes-de-berenberg-et-hsbc-se-prononcent-20261127",
+   "publie": "2026-11-27T18:36+01:00",
+   "id": "a8"
+  },
+  {
+   "journal": "ft",
+   "titre": "Thames Water seeks to delay debt repayments to secure £2.4bn emergency loan",
+   "lien": "https://www.ft.com/content/f7c0d928-ed8b-4835-9a60-1acf098a98c1?syn-25a6b1a6=1",
+   "publie": "2026-11-27T18:33+01:00",
+   "id": "a9"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Una deuda de 87.000 millones de dólares pone a prueba los límites de la fortuna de la familia Ellison",
+   "lien": "https://www.expansion.com/economia/financial-times/2026/11/27/deuda-87-000-millones-dolares-pone-prueba-limites-fortuna-familia-ellison.html",
+   "publie": "2026-11-27T18:31+01:00",
+   "id": "a10"
+  },
+  {
+   "journal": "wsj",
+   "titre": "Clearing out my parents’ house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
+   "lien": "https://www.marketwatch.com/story/clearing-out-my-parents-house-was-a-legal-nightmare-how-can-i-downsize-without-putting-my-children-through-the-same-ordeal-6537d804?mod=mw_rss_topstories",
+   "publie": "2026-11-27T18:31+01:00",
+   "id": "a11"
+  },
+  {
+   "journal": "ft",
+   "titre": "Verizon in talks over $6bn deal for Fidium to boost broadband footprint",
+   "lien": "https://www.ft.com/content/19c8508b-0dc6-492c-9f68-497da516a398?syn-25a6b1a6=1",
+   "publie": "2026-11-27T18:29+01:00",
+   "id": "a12"
+  },
+  {
+   "journal": "ft",
+   "titre": "US tech stocks rise in latest market swing",
+   "lien": "https://www.ft.com/content/b80e6259-dca8-4da3-962d-402106a3cd81?syn-25a6b1a6=1",
+   "publie": "2026-11-27T18:27+01:00",
+   "id": "a13"
+  },
+  {
+   "journal": "expansion",
+   "titre": "López Frade (Suzuki): \"El futuro del automóvil estaba clarísimo, hasta que llegó el futuro\"",
+   "lien": "https://www.expansion.com/empresas/motor/2026/11/27/lopez-frade-suzuki-futuro-automovil-clarisimo-llego-futuro.html",
+   "publie": "2026-11-27T18:26+01:00",
+   "id": "a14"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Hong Kong Is Selling The City It Used To Be",
+   "lien": "https://www.bloomberg.com/news/videos/2026-11-27/hong-kong-is-selling-the-city-it-used-to-be-video",
+   "publie": "2026-11-27T18:23+01:00",
+   "id": "a15"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Nvidia, le séisme qui secoue la tech",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/usa-today/video-nvidia-le-seisme-qui-secoue-la-tech_VN-202611270775.html",
+   "publie": "2026-11-27T18:18+01:00",
+   "id": "a16"
+  },
+  {
+   "journal": "fd",
+   "titre": "Prima week voor aandelenbeleggers dankzij comeback van Jensen Huang",
+   "lien": "https://fd.nl/financiele-markten/1620765/prima-week-voor-aandelenbeleggers-dankzij-comeback-van-jensen-huang",
+   "publie": "2026-11-27T18:12+01:00",
+   "id": "a17"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Muere Sabino García Vallina, fundador y presidente de TSK",
+   "lien": "https://www.expansion.com/empresas/2026/11/27/muere-sabino-garcia-vallina-fundador-presidente-tsk.html",
+   "publie": "2026-11-27T18:11+01:00",
+   "id": "a18"
+  },
+  {
+   "journal": "bfm",
+   "titre": "L'intégrale de BFM Bourse du vendredi 27 novembre",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/l-integrale-de-bfm-bourse-du-vendredi-27-novembre_EN-202611270756.html",
+   "publie": "2026-11-27T18:09+01:00",
+   "id": "a19"
+  },
+  {
+   "journal": "wsj",
+   "titre": "12 days of sardines and Croc charms: Are Advent calendars getting out of control?",
+   "lien": "https://www.marketwatch.com/story/12-days-of-sardines-and-croc-charms-are-advent-calendars-getting-out-of-control-81f24548?mod=mw_rss_topstories",
+   "publie": "2026-11-27T18:04+01:00",
+   "id": "a20"
+  },
+  {
+   "journal": "nyt",
+   "titre": "Stocks Rally at End of a Week of Wild Swings",
+   "lien": "https://www.nytimes.com/2026/11/27/business/stocks-tech-stocks-ai.html",
+   "publie": "2026-11-27T18:03+01:00",
+   "id": "a21"
+  },
+  {
+   "journal": "bfm",
+   "titre": "On refait la séance : Lumibird s'envole, rachat en vue par Thalès - 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/video-on-refait-la-seance-lumibird-s-envole-rachat-en-vue-par-thales-27-11_VN-202611270753.html",
+   "publie": "2026-11-27T18:03+01:00",
+   "id": "a22"
+  },
+  {
+   "journal": "nyt",
+   "titre": "It’s Boom Times for Old TV Shows. New TV, Not So Much.",
+   "lien": "https://www.nytimes.com/2026/11/27/business/media/old-tv-shows-mad-men.html",
+   "publie": "2026-11-27T18:02+01:00",
+   "id": "a23"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Black Friday 2026: Shoppers Try to Cut Back, Hunt for Deals",
+   "lien": "https://www.bloomberg.com/news/videos/2026-11-27/black-friday-2026-shoppers-cut-back-hunt-for-deals-video",
+   "publie": "2026-11-27T18:02+01:00",
+   "id": "a24"
+  },
+  {
+   "journal": "monde",
+   "titre": "Le groupe d’experts sur le smic s’inquiète de la « smicardisation » de la France",
+   "lien": "https://www.lemonde.fr/politique/article/2026/11/27/le-groupe-d-experts-sur-le-smic-s-inquiete-de-la-smicardisation-du-pays_6815906_823448.html",
+   "publie": "2026-11-27T18:00+01:00",
+   "id": "a25"
+  },
+  {
+   "journal": "fd",
+   "titre": "Dit jaar minder belastinginkomsten uit box 2: grootaandeelhouders wachten lager tarief af",
+   "lien": "https://fd.nl/politiek/1620895/dit-jaar-minder-belastinginkomsten-uit-box-2-grootaandeelhouders-wachten-lager-tarief-af",
+   "publie": "2026-11-27T17:58+01:00",
+   "id": "a26"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Les seuils techniques incontournables sur les marchés et les valeurs – 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/les-seuils-techniques-incontournables-sur-les-marches-et-les-valeurs-27-11_EN-202611270736.html",
+   "publie": "2026-11-27T17:58+01:00",
+   "id": "a27"
+  },
+  {
+   "journal": "bfm",
+   "titre": "500 embauches et une voiture encore produite nulle part dans le monde: les ambitions du géant chinois BYD pour son usine française se précisent",
+   "lien": "https://www.bfmtv.com/economie/entreprises/industries/500-embauches-et-une-voiture-encore-produite-nulle-part-dans-le-monde-les-ambitions-du-geant-chinois-byd-pour-son-usine-francaise-se-precisent_AV-202611270734.html",
+   "publie": "2026-11-27T17:54+01:00",
+   "id": "a28"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Dax aktuell: Dax beendet die Woche im Plus – „Black Friday“ verläuft ruhig",
+   "lien": "https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dax-aktuell-dax-beendet-die-woche-im-plus-black-friday-verlaeuft-ruhig/100273204.html",
+   "publie": "2026-11-27T17:49+01:00",
+   "id": "a29"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Anthropic Shares Jump After Volatile First Week Since IPO",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/anthropic-shares-jump-after-volatile-first-week-since-record-ipo",
+   "publie": "2026-11-27T17:49+01:00",
+   "id": "a30"
+  },
+  {
+   "journal": "ft",
+   "titre": "UK Department for Work and Pensions hit by cyber incident",
+   "lien": "https://www.ft.com/content/59a87442-51ad-47b7-ba11-e36876456fd4?syn-25a6b1a6=1",
+   "publie": "2026-11-27T17:44+01:00",
+   "id": "a31"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "UK Steel Sector Says UK-EU Agreement Gives Rivals Unfair Edge",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/uk-steel-sector-says-uk-eu-agreement-gives-rivals-unfair-edge",
+   "publie": "2026-11-27T17:43+01:00",
+   "id": "a32"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Le Club : Un paradis obligataire en vue pour les investisseurs ? – 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/le-club-un-paradis-obligataire-en-vue-pour-les-investisseurs-27-11_EN-202611270726.html",
+   "publie": "2026-11-27T17:42+01:00",
+   "id": "a33"
+  },
+  {
+   "journal": "bfm",
+   "titre": "La Data Room : Avec 16,8 milliards d’euros en octobre 2026, les cotisations d’assurance vie enregistrent leur deuxième plus haut niveau jamais atteint pour un mois d’octobre (source France Assureurs) – 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/la-data-room-avec-16-8-milliards-d-euros-en-octobre-2026-les-cotisations-d-assurance-vie-enregistrent-leur-deuxieme-plus-haut-niveau-jamais-atteint-pour-un-mois-d-octobre-source-france-assureurs-27-11_EN-202611270727.html",
+   "publie": "2026-11-27T17:42+01:00",
+   "id": "a34"
+  },
+  {
+   "journal": "echos",
+   "titre": "Les investisseurs profitent des soldes sur les actions à Paris avant le verdict de l'agence S&P sur la France",
+   "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNYUczbTdkY1FoYWxlSVJaUkYxRkM2VnN6cGVPd25YUm9qLWRwWXo3dFN3eEhJUVFsVFBwWmM1UUJzRXloOWZCUDVZMHZBN0Q4dlNid0lEOHhfU2RTUzRoM1RsNnF4T0UwbGc2SDE4NzE5TFJoUGdOZWVXN0lnbDdlNU5RWF8xODFPMUhsYzZXek5QcEg5eGx0UjlGUXNHRUQwVFFvT1QzWGhZbFhXdV8xODFVazlqOU1mTmpDMkFIcHFtbHF4N0dlMHR1c1N1OUZVZ0hIUE9WS1RhVks2NkVjZnQ1Z0pDNy1scXBsUWNWaVdUeThqaXpuVjV1QW92OXUtR2llVW9vU0RZdw?oc=5",
+   "publie": "2026-11-27T17:40+01:00",
+   "id": "a35"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Industrie: Verhandlungen bei Mercedes gehen weiter – Einigung der Metallindustrie hilft nur bedingt",
+   "lien": "https://www.handelsblatt.com/unternehmen/industrie/industrie-trotz-tarifeinigung-verhandlungen-bei-mercedes-gehen-weiter/100273332.html",
+   "publie": "2026-11-27T17:39+01:00",
+   "id": "a36"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Nvidia, Anthropic, D'Ieteren et nouveau patron à la BCE… Ce qu'il ne fallait pas rater cette semaine sur les marchés",
+   "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxONmU3TU1IS3M5aS1DUHVmRE9aczBldTFmUE9MUUJNRUZPQll2MVBiLUlETVBEWThjcDhiZEdvaHZ5WjVsVUs1RkZpQ3MxUXpxVEpBaDBLSThRWDM4VTNkVFVkLWJzbXJwc3FmUHV5dmlJU2hWNEtXcy1qWnpwSjR2MVdTUndzakR2YkRiZHhsVXJqRWVWMGN2Z3NsNTVGcTVQaFFCN2JYWmFwUTM4bG1JbEFJZDh2T3E1dUJzMDJkSFAyWThKbVkzZEc5VVFmbUhrSDFtbi1oUngtTThqOTNzUEhmOGFhdmhfVlNuMVBveWt1Vmg5cWZFMFBTdnphUmVlVEE0?oc=5",
+   "publie": "2026-11-27T17:39+01:00",
+   "id": "a37"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Iraq in talks with OPEC for higher oil quota, minister says before OPEC+ meeting",
+   "lien": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdndaSmMtcnZ2OU41SkZNYnNtNlU5ZnRWTFlOamJLb0x6eHRhRHJuQkNMY1oybHlpOUFkRWdncURJcUc0eGZvM2JNZUc4SGdvZG0yeTJFY0llZWJUeGtMRzQxaHFZNmZ0OS1YWFloelk4eDBVenhkQlotREpzR2F1cFgxbkZaT18zRWtGbHd2aTZENWFDMmhKaU13WnpSQkhIaUZGTDZtMFkwa2ZxUjdpTkRfTXRZMkNUcW1FM3hn?oc=5",
+   "publie": "2026-11-27T17:37+01:00",
+   "id": "a38"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Colombia Peso Stumbles as Mounting Risks Test Carry-Fueled Rally",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/colombia-peso-stumbles-as-mounting-risks-test-carry-fueled-rally",
+   "publie": "2026-11-27T17:37+01:00",
+   "id": "a39"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Elia relève ses prévisions de bénéfice pour l'année 2026",
+   "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYTU2VkNRck00VEN4OEVuSXhfYmJCaXNhdXFNR3BVd0NEa3haU053Z0xnLUJQMXQtZmg0cnBNYmt3Sm5rUnlmMUZ6R0tLV3lkMHlDNk9qeDhFNU5IUmJTVEtIYzNsSG5JM2l3SWowMmU5eE1Ecld1Q3VxUVFUMjhvTlZ4TWVGVEN2QzljVzNxX0dLQm1sMWNxcmFvVVVkejUxclZac0VJSzR2OGRxZURhVA?oc=5",
+   "publie": "2026-11-27T17:35+01:00",
+   "id": "a40"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Bekaert, Elia, l'inflation en Belgique... Ce qu'il faut suivre ce vendredi 27 novembre",
+   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQbFdpa2JLRzhQMzBYUVJnSE53VmZaczVqaTJLeTVGTFdIc3Q3d3E3ZC1xRFlsNDF2SXJxc1BQbXJ2dXhLXzRQazBrNlMzQVNlQzZMZlVGcHhVeV9JSXFxN3RzSUpUWVl0WEk5Mk45WGdVT1pzTU9pN0UxdmhBZnFuSjVTMEVPQThfVzhCMjBsSWo3ZUR1UXFPZFoxV29ZZC1YM3ZiQ0NJeWVUdVhVMUdlS01YeWM3UlV0Y2pFZVpBRElJMFFPNjhDRDZiZXU0aHds?oc=5",
+   "publie": "2026-11-27T17:35+01:00",
+   "id": "a41"
+  },
+  {
+   "journal": "lecho",
+   "titre": "La rotation sectorielle rebat les cartes du Rallye Boursier",
+   "lien": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRF9GTWVmaDZyMEtQY2dSRlczR1JISkxaVmNGa040Rkc0alVjTUtrWTIyZkpqYllLdnd3a0xjYlYyd28tazk2WC1NOUREVTRNVFJOU3Fwa3BTczJidFhuVERTeUZPUGgwNTFEd0hiZ1RFeXlLZEtOemFTS3pxSTQ4UlFuXzFvblVnSVBPWFc2T3RLSkpDbGs1VWJtd0VMdGxEaGFVQWhMUlJqanlhZTU1cDZOWmZFYkJEdHZr?oc=5",
+   "publie": "2026-11-27T17:29+01:00",
+   "id": "a42"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Banken: Unicredit erwägt Aufstockung von Anteil an Generali",
+   "lien": "https://www.handelsblatt.com/finanzen/banken-versicherungen/banken/banken-unicredit-erwaegt-aufstockung-von-anteil-an-generali/100273371.html",
+   "publie": "2026-11-27T17:24+01:00",
+   "id": "a43"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Lula escolhe Trabuco para acalmar mercado",
+   "lien": "https://www.bloomberg.com/news/videos/2026-11-27/lula-escolhe-trabuco-para-acalmar-mercado-video",
+   "publie": "2026-11-27T17:24+01:00",
+   "id": "a44"
+  },
+  {
+   "journal": "expansion",
+   "titre": "La Socimi de Messi compra un hotel en el Valle de Arán (Lleida)",
+   "lien": "https://www.expansion.com/inmobiliario/2026/11/27/socimi-messi-compra-hotel-valle-aran-lleida.html",
+   "publie": "2026-11-27T17:21+01:00",
+   "id": "a45"
+  },
+  {
+   "journal": "ft",
+   "titre": "Wave of cyber incidents rattles western economies",
+   "lien": "https://www.ft.com/content/6ab1172b-4f27-49f5-ad53-b384df82da77?syn-25a6b1a6=1",
+   "publie": "2026-11-27T17:19+01:00",
+   "id": "a46"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Tech stocks : IA, l'heure du rebond en Bourse ? – 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/tech-stocks-ia-l-heure-du-rebond-en-bourse-27-11_EN-202611270709.html",
+   "publie": "2026-11-27T17:09+01:00",
+   "id": "a47"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Altice International, Creditors Discuss Debt Cut of About 40%",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/altice-international-creditors-discuss-debt-cut-of-about-40",
+   "publie": "2026-11-27T17:07+01:00",
+   "id": "a48"
+  },
+  {
+   "journal": "bbc",
+   "titre": "Will new energy fixes cost more in January?",
+   "lien": "https://www.bbc.co.uk/news/videos/cwjd7y4jk581o?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-27T17:05+01:00",
+   "id": "a49"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Immobilien: Hausverkauf – wie die Solaranlage den Preis beeinflusst",
+   "lien": "https://www.handelsblatt.com/finanzen/immobilien/immobilien-hausverkauf-wie-die-solaranlage-den-preis-beeinflusst/100271538.html",
+   "publie": "2026-11-27T17:01+01:00",
+   "id": "a50"
+  },
+  {
+   "journal": "echos",
+   "titre": "En Ile-de-France, la croissance démographique devrait s'essouffler d'ici 2070 selon l'Insee",
+   "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNWWdpeFRUY0dkQUJtUHFEXzBOVTNDQXdad2QzM3JPUmpEbVNTaW0wWW8xWUtmWWVDNzlxZXYxQlFTZ0xFc21VcFMxT3QyWVlUUGZ4WVE1UUVhZG9tR2pNSTYycmRnMjFEV2Z3ZS15a3plNEdOQUljUjRsTVo2b1k4dWlFMDRNUmtaNGtMS2ZVV0hVcDRJZWp0ZDVac0l0SnljVWJ0Y1JzbTFNVVJYYVJ5d2FGa2hnYUNxX1U5ZnJnekhLUTJtdUg3b3F4RzBVUzN6b2cyazBwR0VsbUlPZVE?oc=5",
+   "publie": "2026-11-27T17:00+01:00",
+   "id": "a51"
+  },
+  {
+   "journal": "echos",
+   "titre": "La moitié des jeunes redoutent que leur futur emploi ne disparaisse » : l'angoisse des diplômés face à la tornade de l'IA",
+   "lien": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOcjM1cEQ5ZHhyUGRCV2dTUEEzcGpFN0Z6ZjZhcUdRU0U3OUZUZjljVXFmM083X3Y4N3pqVkFjRmhPZy15Z01ic0hMa1VpSW1sN0liZG04ZXhmYjVyZ0VoSks4cS0zY1pZUmhEbHBsOUNsVl9EOExqQ3FQeE9rYkkzYUJOVGtsSUF5MXM2enoyQ1Y5SXFOdFQ3VGJlemFsSHBQZ01XN1VjcjN5S3MtV29Cc1hYTXJfTVVONV8xTUFmcWdWdXBoaDZNNGVYVnMzYjY1aUZwZlBzbFlCYkdOZDI2ZmlYMW4wMGlKQ3FYRGZITkw2RFhWUkpoUHBOR1BYV3ZPWGtzZk13?oc=5",
+   "publie": "2026-11-27T17:00+01:00",
+   "id": "a52"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Des \"colombes\" pour remplacer les \"faucons\" à la BCE ?",
+   "lien": "https://www.bfmtv.com/economie/video-des-colombes-pour-remplacer-les-faucons-a-la-bce_VN-202611270703.html",
+   "publie": "2026-11-27T17:00+01:00",
+   "id": "a53"
+  },
+  {
+   "journal": "monde",
+   "titre": "Charles Ferguson, investisseur et actionnaire de Nvidia : « Jensen Huang est déconnecté de la réalité et son ego est totalement hors de contrôle »",
+   "lien": "https://www.lemonde.fr/idees/article/2026/11/27/jensen-huang-le-pdg-de-nvidia-est-deconnecte-de-la-realite-et-son-ego-est-totalement-hors-de-controle_6815895_3232.html",
+   "publie": "2026-11-27T17:00+01:00",
+   "id": "a54"
+  },
+  {
+   "journal": "wsj",
+   "titre": "A 66-year-old nurse is facing down retirement with just $500 saved. Who’s to blame?",
+   "lien": "https://www.marketwatch.com/story/a-66-year-old-nurse-faces-retirement-with-just-500-saved-whos-to-blame-4249a0fd?mod=mw_rss_topstories",
+   "publie": "2026-11-27T17:00+01:00",
+   "id": "a55"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Anterix Could Be SpaceX’s Next Deal for Mobile Network Access",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/anterix-could-be-spacex-s-next-deal-for-mobile-network-access",
+   "publie": "2026-11-27T16:58+01:00",
+   "id": "a56"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "AI Tools Reshape the Black Friday Experience",
+   "lien": "https://www.bloomberg.com/news/videos/2026-11-27/ai-tools-reshape-the-black-friday-experience-video",
+   "publie": "2026-11-27T16:54+01:00",
+   "id": "a57"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "The Big Pressures Facing the Fed",
+   "lien": "https://www.bloomberg.com/news/newsletters/2026-11-27/the-big-pressures-facing-the-fed",
+   "publie": "2026-11-27T16:53+01:00",
+   "id": "a58"
+  },
+  {
+   "journal": "wsj",
+   "titre": "These stocks soared the most during a wild week highlighted by Huang’s return to Nvidia",
+   "lien": "https://www.marketwatch.com/story/these-stocks-soared-the-most-during-a-wild-week-highlighted-by-huangs-return-to-nvidia-578b3f9a?mod=mw_rss_topstories",
+   "publie": "2026-11-27T16:52+01:00",
+   "id": "a59"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Modeindustrie: Wegen 138 Dollar Mindestlohn im Monat – Moderiesen verlassen Bangladesch",
+   "lien": "https://www.handelsblatt.com/unternehmen/handel-konsumgueter/modeindustrie-wegen-138-dollar-mindestlohn-im-monat-moderiesen-verlassen-bangladesch/100273356.html",
+   "publie": "2026-11-27T16:49+01:00",
+   "id": "a60"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Who is Luiz Carlos Trabuco, the banker Lula tapped to steer Brazil's economy?",
+   "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbTNzd0lxMGdXNVJXMjhta2cwLWlxT1pHWkV3a0dUUC1iTGlKakQtckh4SHVqY3BKYkFvekFLMXJKbnVneGJHd0RpcjJnMjRVbk9TQnNaYTloQnRQX3NFRFZTSU1vQlEyYWhlSG9FX29DaE9ZejUtRWd5NGE2V2lFYkhUeWdCZzFJYVNEcm9qcnZNLWZzcjRwNU1oVTVhNlo4Ul9jQ1M1QkRjX3Btc3hCcTh3SEtZU1BYMndsTQ?oc=5",
+   "publie": "2026-11-27T16:48+01:00",
+   "id": "a61"
+  },
+  {
+   "journal": "fd",
+   "titre": "Ondanks de oorlog willen Oekraïense start-ups van hun land een ‘clean tech hub’ maken",
+   "lien": "https://fd.nl/bedrijfsleven/1620729/ondanks-de-oorlog-willen-oekraiense-startups-van-hun-land-een-clean-tech-hub-maken",
+   "publie": "2026-11-27T16:47+01:00",
+   "id": "a62"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Norse Atlantic: Billigflieger streicht alle Flüge und beantragt Insolvenz",
+   "lien": "https://www.handelsblatt.com/unternehmen/dienstleister/norse-atlantic-billigflieger-streicht-alle-fluege-und-beantragt-insolvenz/100273357.html",
+   "publie": "2026-11-27T16:46+01:00",
+   "id": "a63"
+  },
+  {
+   "journal": "wort",
+   "titre": "„Sehr frustrierend“: Torschützin Charlotte Schmit hadert mit dem enttäuschenden Resultat",
+   "lien": "https://www.wort.lu/sport/sehr-frustrierend-torschuetzin-charlotte-schmit-hadert-mit-dem-enttaeuschenden-resultat/165220176.html",
+   "publie": "2026-11-27T16:46+01:00",
+   "id": "a64"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "CA Immo: Was diese Österreich-Aktie neben der Sonderdividende ausmacht",
+   "lien": "https://www.handelsblatt.com/finanzen/maerkte/aktien/ca-immo-diese-oesterreich-aktie-bietet-mehr-als-nur-eine-sonderdividende/100272102.html",
+   "publie": "2026-11-27T16:45+01:00",
+   "id": "a65"
+  },
+  {
+   "journal": "monde",
+   "titre": "Thales confirme son statut de nouvel ogre de l’industrie française de défense en rachetant Lumibird",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/thales-confirme-son-statut-de-nouvel-ogre-de-l-industrie-francaise-de-defense-en-rachetant-lumibird_6815892_3234.html",
+   "publie": "2026-11-27T16:45+01:00",
+   "id": "a66"
+  },
+  {
+   "journal": "wsj",
+   "titre": "I’ve been married for 58 years. It’s ‘our’ money, not ‘his’ and ‘hers.’ Why do so many couples keep their finances separate?",
+   "lien": "https://www.marketwatch.com/story/ive-been-married-for-58-years-its-our-money-not-his-and-hers-why-dont-others-feel-the-same-c5745889?mod=mw_rss_topstories",
+   "publie": "2026-11-27T16:45+01:00",
+   "id": "a67"
+  },
+  {
+   "journal": "monde",
+   "titre": "Tour Montparnasse : une « feuille de route » votée pour travailler à un nouveau projet de rénovation plus sobre ; de nombreuses incertitudes demeurent",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/tour-montparnasse-une-feuille-de-route-votee-pour-travailler-a-un-nouveau-projet-de-renovation-plus-sobre-de-nombreuses-incertitudes-demeurent_6815891_3234.html",
+   "publie": "2026-11-27T16:44+01:00",
+   "id": "a68"
+  },
+  {
+   "journal": "wort",
+   "titre": "Bigfoot im Visier der US-Forstbehörde: Was eine Untersuchung von 1982 ergab",
+   "lien": "https://www.wort.lu/panorama/bigfoot-im-visier-der-us-forstbehoerde-was-eine-untersuchung-von-1982-ergab/165194230.html",
+   "publie": "2026-11-27T16:43+01:00",
+   "id": "a69"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Brick-and-Mortar Making a Comeback on Experience, Says Dana Telsey",
+   "lien": "https://www.bloomberg.com/news/videos/2026-11-27/brick-and-mortar-making-a-comeback-says-dana-telsey-video",
+   "publie": "2026-11-27T16:42+01:00",
+   "id": "a70"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Rains Ease El Niño Crop Fears in Brazil’s Top Soybean Region",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/rains-ease-el-nino-crop-fears-in-brazil-s-top-soybean-region",
+   "publie": "2026-11-27T16:42+01:00",
+   "id": "a71"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Culture ETF : Métaux critiques, le bon pari avec les ETF ? – 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/culture-etf-metaux-critiques-le-bon-pari-avec-les-etf-27-11_EN-202611270696.html",
+   "publie": "2026-11-27T16:42+01:00",
+   "id": "a72"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Négociations commerciales : les grands patrons de la distribution somment les industriels de modérer leurs hausses de prix",
+   "lien": "https://www.lefigaro.fr/conso/negociations-commerciales-les-grands-patrons-de-la-distribution-somment-les-industriels-de-moderer-leurs-hausses-de-prix-20261127",
+   "publie": "2026-11-27T16:39+01:00",
+   "id": "a73"
+  },
+  {
+   "journal": "bfm",
+   "titre": "L'éco du monde : S&P actualise la note de la France – 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/l-eco-du-monde-s-p-actualise-la-note-de-la-france-27-11_EN-202611270690.html",
+   "publie": "2026-11-27T16:34+01:00",
+   "id": "a74"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Il dénonçait l'obsession allemande pour l'austérité il y a 11 ans, maintenant qu'elle dépense, il s'inquiète de son armée: Mélenchon arrive dans une Allemagne en plein réarmement",
+   "lien": "https://www.bfmtv.com/economie/international/il-denoncait-l-obsession-allemande-pour-l-austerite-il-y-a-11-ans-maintenant-qu-elle-depense-il-s-inquiete-de-son-armee-melenchon-arrive-dans-une-allemagne-en-plein-rearmement_AV-202611270688.html",
+   "publie": "2026-11-27T16:31+01:00",
+   "id": "a75"
+  },
+  {
+   "journal": "wsj",
+   "titre": "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
+   "lien": "https://www.marketwatch.com/story/my-husband-secretly-sends-his-ex-wife-1-500-a-month-after-she-lost-her-job-we-have-2-4-million-saved-has-he-lied-by-omission-ede1972a?mod=mw_rss_topstories",
+   "publie": "2026-11-27T16:30+01:00",
+   "id": "a76"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Émission du 27 novembre 2026",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/usa-today/video-emission-du-27-novembre-2026_VN-202611270761.html",
+   "publie": "2026-11-27T16:30+01:00",
+   "id": "a77"
+  },
+  {
+   "journal": "nyt",
+   "titre": "Holiday Deals Are Tempting. Here’s How to Avoid Buyer’s Remorse.",
+   "lien": "https://www.nytimes.com/2026/11/27/business/holiday-shopping-deals-spending.html",
+   "publie": "2026-11-27T16:29+01:00",
+   "id": "a78"
+  },
+  {
+   "journal": "nyt",
+   "titre": "Black Friday Deals and Holiday Sales Are Big Money for Influencers",
+   "lien": "https://www.nytimes.com/2026/11/27/business/influencers-black-friday-deals-holiday-shopping.html",
+   "publie": "2026-11-27T16:29+01:00",
+   "id": "a79"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Valeur ajoutée : Ils apprécient EPC Groupe - 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/video-valeur-ajoutee-ils-apprecient-epc-groupe-27-11_VN-202611270687.html",
+   "publie": "2026-11-27T16:28+01:00",
+   "id": "a80"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Abivax tiendra lundi sa Journée Investisseurs – 27/11",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-bourse/abivax-tiendra-lundi-sa-journee-investisseurs-27-11_EN-202611270685.html",
+   "publie": "2026-11-27T16:27+01:00",
+   "id": "a81"
+  },
+  {
+   "journal": "monde",
+   "titre": "Un jeune homme présentant une « déficience intellectuelle prononcée » mis en examen après le déraillement d’un TER en Normandie en septembre",
+   "lien": "https://www.lemonde.fr/societe/article/2026/11/27/deraillement-d-un-ter-en-normandie-un-homme-presentant-une-deficience-intellectuelle-prononcee-mis-en-examen-toute-autre-hypothese-evoquee-doit-ecartee-pour-le-parquet_6815884_3224.html",
+   "publie": "2026-11-27T16:24+01:00",
+   "id": "a82"
+  },
+  {
+   "journal": "nyt",
+   "titre": "Climate Talks Imploded, but the ‘Age of Electricity’ Rolls On, Energy Chief Says",
+   "lien": "https://www.nytimes.com/2026/11/27/business/fatih-birol-iea-cop31-electrification.html",
+   "publie": "2026-11-27T16:18+01:00",
+   "id": "a83"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Signa: Drei Jahre Haft für Benko nach weiterem Urteil",
+   "lien": "https://www.handelsblatt.com/unternehmen/management/signa-drei-jahre-haft-fuer-benko-nach-weiterem-urteil/100273347.html",
+   "publie": "2026-11-27T16:16+01:00",
+   "id": "a84"
+  },
+  {
+   "journal": "ft",
+   "titre": "Russia set to criminalise sharing information about Ukrainian strikes",
+   "lien": "https://www.ft.com/content/53a48a14-eadf-4fe3-bd33-9facd4c90266?syn-25a6b1a6=1",
+   "publie": "2026-11-27T16:16+01:00",
+   "id": "a85"
+  },
+  {
+   "journal": "monde",
+   "titre": "A Vendôme, les salariés de Bosch en grève illimitée face à l’avenir incertain de leur usine",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/a-vendome-les-salaries-de-bosch-en-greve-illimitee-face-a-l-avenir-incertain-de-leur-usine_6815882_3234.html",
+   "publie": "2026-11-27T16:13+01:00",
+   "id": "a86"
+  },
+  {
+   "journal": "ft",
+   "titre": "From Jobs to Jensen: tech’s metamorphosis",
+   "lien": "https://www.ft.com/content/5b10a0e6-aad6-403b-9f2e-23b5ca78897d",
+   "publie": "2026-11-27T16:10+01:00",
+   "id": "a87"
+  },
+  {
+   "journal": "bfm",
+   "titre": "\"Les Français n'ont à l'heure actuelle plus de marges de manœuvre\": Carrefour, Leclerc, Intermarché, U et Auchan écrivent aux multinationales pour leur demander de limiter leurs hausses de prix en 2027",
+   "lien": "https://www.bfmtv.com/economie/consommation/les-francais-n-ont-a-l-heure-actuelle-plus-de-marges-de-man-uvre-carrefour-leclerc-intermarche-u-et-auchan-ecrivent-aux-multinationales-pour-leur-demander-de-limiter-leurs-hausses-de-prix-en-2027_AN-202611270671.html",
+   "publie": "2026-11-27T16:08+01:00",
+   "id": "a88"
+  },
+  {
+   "journal": "bfm",
+   "titre": "L'intégrale d'USA Today du vendredi 27 novembre",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/usa-today/l-integrale-d-usa-today-du-vendredi-27-novembre_EN-202611270667.html",
+   "publie": "2026-11-27T16:04+01:00",
+   "id": "a89"
+  },
+  {
+   "journal": "wsj",
+   "titre": "My friends play ‘credit-card roulette’ to see who pays for dinner — but one ‘winner’ still Venmoed me afterward. Should I say something?",
+   "lien": "https://www.marketwatch.com/story/my-friends-play-credit-card-roulette-to-see-who-pays-for-dinner-but-one-winner-still-venmoed-me-afterward-should-i-say-something-0a657eee?mod=mw_rss_topstories",
+   "publie": "2026-11-27T16:04+01:00",
+   "id": "a90"
+  },
+  {
+   "journal": "echos",
+   "titre": "La Région Ile-de-France épinglée pour ses délais de paiement dans le cadre de ses marchés publics",
+   "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOb19IYThzNWhQd3ZVeWw3aUw5bEJ6YndkZGxhS2tGZlRiZUVlaWRqNm42clFMWnpvaW5xVEVOQjJBTE9nOEIyWUdSZE9DVXRiak9lM3c0cl8xQVBLMjJGOUFJLTJkeEdWN0tGa3VaQmNIdzROQV80ZkNPd3A3V2FkekNYNWFEbmhCSTFhek1yTmRmakxoVTFKZUtRZXlTRDBKOVJMWGp0WEo0OEVCNUcyUG1IS1ZfSGVDeUpCNDFmZWkyUDZYbWwyN2lVeUlhc1U4d3B1bEVrZW54Rm0tVURZcWVUMFRvX3lHSUNZ?oc=5",
+   "publie": "2026-11-27T16:02+01:00",
+   "id": "a91"
+  },
+  {
+   "journal": "wsj",
+   "titre": "Artificial intelligence usage is exploding, yet spending is stalling. Why a foundational rule of economics is breaking.",
+   "lien": "https://www.marketwatch.com/story/artificial-intelligence-usage-is-exploding-yet-spending-is-stalling-why-a-foundational-rule-of-economics-is-breaking-9c7ad4b3?mod=mw_rss_topstories",
+   "publie": "2026-11-27T16:01+01:00",
+   "id": "a92"
+  },
+  {
+   "journal": "fd",
+   "titre": "Levensverhaal van een sociaal begaafde ‘Hochstapler’",
+   "lien": "https://fd.nl/samenleving/1620894/levensverhaal-van-een-sociaal-begaafde-hochstapler",
+   "publie": "2026-11-27T16:00+01:00",
+   "id": "a93"
+  },
+  {
+   "journal": "bfm",
+   "titre": "Que pensez-vous de la crypto Litecoin ?",
+   "lien": "https://www.bfmtv.com/economie/replay-emissions/bfm-crypto-le-club/video-que-pensez-vous-de-la-crypto-litecoin_VN-202611270724.html",
+   "publie": "2026-11-27T16:00+01:00",
+   "id": "a94"
+  },
+  {
+   "journal": "fd",
+   "titre": "Verontrustende vooruitzichten voor Vivoryon",
+   "lien": "https://fd.nl/financiele-markten/1620471/verontrustende-vooruitzichten-voor-vivoryon",
+   "publie": "2026-11-27T16:00+01:00",
+   "id": "a95"
+  },
+  {
+   "journal": "fd",
+   "titre": "Pam Toonen van Amsterdam Light kijkt altijd door de ogen van de bezoekers",
+   "lien": "https://fd.nl/bedrijfsleven/1620681/pam-toonen-van-amsterdam-light-kijkt-altijd-door-de-ogen-van-de-bezoekers",
+   "publie": "2026-11-27T15:58+01:00",
+   "id": "a96"
+  },
+  {
+   "journal": "wsj",
+   "titre": "Nvidia’s stock has tumbled 28% over one chaotic month. The next big test lies in the week ahead",
+   "lien": "https://www.marketwatch.com/story/nvidias-stock-has-tumbled-27-over-one-chaotic-month-the-next-big-test-lies-in-the-week-ahead-06449777?mod=mw_rss_topstories",
+   "publie": "2026-11-27T15:56+01:00",
+   "id": "a97"
+  },
+  {
+   "journal": "bfm",
+   "titre": "\"C'est de mieux en mieux fait\": comment détecter les arnaques du Black Friday sur Internet?",
+   "lien": "https://www.bfmtv.com/economie/consommation/video-c-est-de-mieux-en-mieux-fait-comment-detecter-les-arnaques-du-black-friday-sur-internet_VN-202611270656.html",
+   "publie": "2026-11-27T15:54+01:00",
+   "id": "a98"
+  },
+  {
+   "journal": "fd",
+   "titre": "De grootste podcast ter wereld maken is voor Steven Bartlett nog maar het begin",
+   "lien": "https://fd.nl/bedrijfsleven/1620525/de-grootste-podcast-ter-wereld-maken-is-voor-steven-bartlett-nog-maar-het-begin",
+   "publie": "2026-11-27T15:50+01:00",
+   "id": "a99"
+  },
+  {
+   "journal": "lecho",
+   "titre": "La tech rebondit après une semaine de rodéo, mais le soufflé retombe un peu à Wall Street",
+   "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPTHF4eElhU0RHOEhoU2F5Z1pfYjFSLVlTV0ZUX3hkRTFwdnkya2dNNTU4TEdVN3NZMmtVdV94WWhSZGkxZ0xNd3pFdTh6RE1PRzIwU2xSNWdlVHU3Z3ViYlVKemtuaFR3RDVTZFRhMTduQWc1UUhXTGwxakMyR3FmUGpHcTQwTU05YzNxWnRsTl9lZDdqXy1EU0hQWWJvcXVPbG5TNWFkY2dQTE9tTU9mZEQtNk5FOEhrcEdwZnVPOGpldEN6WldRVUNVdUFscWNpWVhGdE80Y1RMQ0E?oc=5",
+   "publie": "2026-11-27T15:48+01:00",
+   "id": "a100"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Énergie, services, produits manufacturés… L’inflation a ralenti à 2,9% sur un an en novembre, annonce l’Insee",
+   "lien": "https://www.lefigaro.fr/conjoncture/energie-services-produits-manufactures-l-inflation-a-ralenti-a-2-9-sur-un-an-en-novembre-annonce-l-insee-20261127",
+   "publie": "2026-11-27T15:47+01:00",
+   "id": "a101"
+  },
+  {
+   "journal": "figaro",
+   "titre": "«Ça a été le combat de l’année» : Emmanuel Macron réaffirme son opposition à l’accord UE-Mercosur et charge la «viande dopée» du Brésil",
+   "lien": "https://www.lefigaro.fr/conjoncture/ca-a-ete-le-combat-de-l-annee-emmanuel-macron-reaffirme-son-opposition-a-l-accord-ue-mercosur-et-charge-la-viande-dopee-du-bresil-20261126",
+   "publie": "2026-11-27T15:40+01:00",
+   "id": "a102"
+  },
+  {
+   "journal": "monde",
+   "titre": "Elections législatives en Espagne : les graphiques pour comprendre le dynamisme économique du pays et ses limites",
+   "lien": "https://www.lemonde.fr/international/visuel/2026/11/27/elections-legislatives-en-espagne-les-graphiques-pour-comprendre-le-dynamisme-economique-du-pays-et-ses-limites_6815875_3210.html",
+   "publie": "2026-11-27T15:39+01:00",
+   "id": "a103"
+  },
+  {
+   "journal": "figaro",
+   "titre": "L'Agence France-Presse victime d'une cyberattaque, sa plateforme de photos et vidéos temporairement inaccessible",
+   "lien": "https://www.lefigaro.fr/secteur/high-tech/l-agence-france-presse-victime-d-une-cyberattaque-sa-plateforme-de-photos-et-videos-temporairement-inaccessible-20261126",
+   "publie": "2026-11-27T15:38+01:00",
+   "id": "a104"
+  },
+  {
+   "journal": "monde",
+   "titre": "Les syndicats réformistes sortent renforcés des élections professionnelles à la SNCF",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/les-syndicats-reformistes-sortent-renforces-des-elections-professionnelles-a-la-sncf_6815874_3234.html",
+   "publie": "2026-11-27T15:37+01:00",
+   "id": "a105"
+  },
+  {
+   "journal": "monde",
+   "titre": "Au procès d’un gérant de brasserie et de l’entreprise Otis après l’accident mortel d’un jeune apprenti, la banalité de l’absence de prévention",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/on-a-l-impression-d-une-improvisation-totale-au-proces-d-un-gerant-de-brasserie-et-d-otis-apres-un-accident-mortel-la-banalite-de-l-absence-de-prevention_6815872_3234.html",
+   "publie": "2026-11-27T15:30+01:00",
+   "id": "a106"
+  },
+  {
+   "journal": "fd",
+   "titre": "Een huurbaar op de Blaricumse heide en chique lippenbalsem",
+   "lien": "https://fd.nl/samenleving/1620822/een-huurbaar-op-de-blaricumse-heide-en-chique-lippenbalsem",
+   "publie": "2026-11-27T15:30+01:00",
+   "id": "a107"
+  },
+  {
+   "journal": "wsj",
+   "titre": "How much more are richest Americans spending on the holidays compared to everyone else?",
+   "lien": "https://www.marketwatch.com/story/see-how-much-more-money-the-richest-americans-are-spending-on-the-holidays-compared-to-everyone-else-f0ff3f4b?mod=mw_rss_topstories",
+   "publie": "2026-11-27T15:23+01:00",
+   "id": "a108"
+  },
+  {
+   "journal": "lessentiel",
+   "titre": "«Nous avons en ce moment plus de 80 offres d'emploi»",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPb1VRQk1tZElSa2Z5VzZIWkRTR3gyVGtibmhnWWNSOFR2bTFiRmNRZ3B6RE5BSnI0emRjeF9EQVYydU5fUEdWb2lKY29nbXlnRG9aLWNNNi1Bd1dJS1dwSzlYMkhVbXljMDhKVm11aEFONVJWb1dORnVKSDFWNkVEdi1YTjNqbThUZEpzdnRrVUpfVjRCeHlWa0dNSW9vdXFuMkVLaUEtTjNxN2x1?oc=5",
+   "publie": "2026-11-27T15:14+01:00",
+   "id": "a109"
+  },
+  {
+   "journal": "echos",
+   "titre": "Premier aéroport européen d'affaires, le Bourget peine à s'accorder sur son plan antibruit",
+   "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQMXdOdktSZE5NczY1Y05sM1RBaC1IaDgxckJfOHVPRWJwcE83WFNWWnpVN3VXNkVXYmpzeW5IVUp1c2lwVkdGdXhyNkR2VWdocVhObDJmaXNNUTFfVFE5cXE3VWJLT2ZVVzl6THdTSURMTk94Ukgwc21ILVBkSFp1SkNTUjZhOXhVWFFCQWpVcUhqZHhMcWp6SXloZ1FMaWg1TlFORHhhb3N2UFlLN3dyYm9fLVFlT1NVTWJ2NlNhd1RpZVlQd051RUlva2IxcWRDalpnVjdYV0ctczlEeHc?oc=5",
+   "publie": "2026-11-27T15:04+01:00",
+   "id": "a110"
+  },
+  {
+   "journal": "fd",
+   "titre": "Een nieuw gezicht, maar bij Forum klinkt hetzelfde ‘deuntje’",
+   "lien": "https://fd.nl/politiek/1620853/een-nieuw-gezicht-maar-bij-forum-klinkt-hetzelfde-deuntje",
+   "publie": "2026-11-27T15:02+01:00",
+   "id": "a111"
+  },
+  {
+   "journal": "fd",
+   "titre": "Rheinmetall verlaagt prognoses, taaie onderhandelingen over pantserwagens",
+   "lien": "https://fd.nl/bedrijfsleven/1620897/rheinmetall-verlaagt-prognoses-taaie-onderhandelingen-over-pantserwagens",
+   "publie": "2026-11-27T15:00+01:00",
+   "id": "a112"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Wall St Week Ahead Sliding stock market confronts jobs data, rate view as next tests",
+   "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPQWRTQ0tlUW54X0tjS2R6bWdzblVkUnZ5VnBCa2NjWkd5Q2xIWUh0MUFWVW4weVlRTTBpbDhFWTFsbmYwc2NqOERDdGxTZmpHTzdHRVk2b2o5U0RZYm1WMXZhaEJMRXFrQmxKaUViQXNNdE1XZ3RTT05VbmxqX3BYOXNONGFkMVFTU1VLVVRjTzdfUTloYnhJaVpsWS1YMV9FVGlmeUdYRmk0clkzM3FhQjZuUnRfYXdZRnVHdTE2Smo1V2M?oc=5",
+   "publie": "2026-11-27T14:59+01:00",
+   "id": "a113"
+  },
+  {
+   "journal": "echos",
+   "titre": "Au Brésil, Lula cherche à rassurer les marchés en confiant le portefeuille des Finances à un banquier",
+   "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPZUd0alp2WDhwUm51YTZ5RlRWU3VYREc1Vmg4TEhBMl9IRXNyLW9qaXFKWFEwcUotUmNhMkp5eG5vUHJ4a0U0dC1FM2pzTm5KcjJ0UU13c2E5NjlCLXZpcFJzemxYM3JKSE5qU3FpZGFyWTdoWkxjME1YZDhjTjNNMVpvX010RlpDdHpseEFUMnRjTjFNanhnUWF2QW1hY29lekY3SVliQ1oyUnE1N3pyZVFFUHNFVWFMYldic3l4Unh6SDUxWVU2WFRaMV9JUi1FQ3NQZE1FVmZCSmtVYnNQWlRn?oc=5",
+   "publie": "2026-11-27T14:53+01:00",
+   "id": "a114"
+  },
+  {
+   "journal": "fd",
+   "titre": "Pol Knops slaat CO₂ op in beton: ‘Duurzaamheid is ook een economische kans’",
+   "lien": "https://fd.nl/tech-en-innovatie/1620874/pol-knops-slaat-co-op-in-beton-duurzaamheid-is-ook-een-economische-kans",
+   "publie": "2026-11-27T14:52+01:00",
+   "id": "a115"
+  },
+  {
+   "journal": "nyt",
+   "titre": "Photos: Macy’s Thanksgiving Day Parade History and Wacky Moments",
+   "lien": "https://www.nytimes.com/2026/11/26/nyregion/macys-thanksgiving-parade-history-timeline.html",
+   "publie": "2026-11-27T14:40+01:00",
+   "id": "a116"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Un an après avoir fait fondre la France, le loup «Mal-Aimé» d’Intermarché se croque en chocolat",
+   "lien": "https://www.lefigaro.fr/conso/un-an-apres-avoir-fait-fondre-la-france-le-loup-mal-aime-d-intermarche-se-croque-en-chocolat-20261127",
+   "publie": "2026-11-27T14:39+01:00",
+   "id": "a117"
+  },
+  {
+   "journal": "echos",
+   "titre": "Rachat de SFR : des boutiques à Armando Pereira, les fronts se multiplient pour Patrick Drahi",
+   "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPUEZWckZFS0l2OUZlTFFOWllwdUlDaVBLQXdlUzNoSURRVk1qbVpLVFhXMUFtS0puSWdqeWNlbnRGRF81NUFjc3JrWEUxdUFoa1JqUXhrZnE1blVSRE9iOHhXcFJEZm5Lb0NPbmtBTS15UE40SEtmblZIeTAyRGVUOWtqMlVhMWU0bDN5eTlFbEEwWUZsWUd3WktqeTFoaldWVmtoSktELUFmVzBkNm8yME4xTGNqdWdpYTJGdVNYZXh6VEpIN1lkWTZQUG94N3UyeWtaQmJGTy1wa1U?oc=5",
+   "publie": "2026-11-27T14:30+01:00",
+   "id": "a118"
+  },
+  {
+   "journal": "cnbc",
+   "titre": "Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals",
+   "lien": "https://www.cnbc.com/2026/11/25/nvidia-kevin-warsh-fed-market-signals.html",
+   "publie": "2026-11-27T14:29+01:00",
+   "id": "a119"
+  },
+  {
+   "journal": "ft",
+   "titre": "The reforms the NHS needs (and those it doesn’t)",
+   "lien": "https://www.ft.com/content/901cc148-f3ed-460b-b2ed-8024f9ddff1d",
+   "publie": "2026-11-27T14:27+01:00",
+   "id": "a120"
+  },
+  {
+   "journal": "ft",
+   "titre": "EU weighs tighter export controls to prevent battery waste going to China",
+   "lien": "https://www.ft.com/content/a8ecccda-f986-4ae9-9f45-9470d2be8c65?syn-25a6b1a6=1",
+   "publie": "2026-11-27T14:26+01:00",
+   "id": "a121"
+  },
+  {
+   "journal": "echos",
+   "titre": "VIDEO - Qui est Pablo Hernandez de Cos, le futur patron de la BCE ?",
+   "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOT04wby1uVzBCaXVzUnlTNGx0bDV1d1VnWTRCQnQzbjBXOUNCYmQtakFWQVZRU2pQVkNZTTZkY3dTMnI5QWdQTnBWbVdoSTRVOTh3X25nYktyNnRkSnlnVEFNRUNuQVZhY1dBbmZVS2x6UUVvajNEWmpvcldqblhzTlRNdWUwYzc4Sy14cUxrYUxKOFM1WHFKVmw4SE1HNVdfaXJwem9UbjVQTS1oVk9HVkRvN0VXS19oTTJuS2EtOXloNExKMmtKLQ?oc=5",
+   "publie": "2026-11-27T14:26+01:00",
+   "id": "a122"
+  },
+  {
+   "journal": "paperjam",
+   "titre": "Bruxelles valide le rachat d’Allfunds par Deutsche Börse",
+   "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQT1E5d0JkU1dfNmFlWDFyYk43WG9GaTI5WlNRdXhXVmpEWmJrSndJdjBpa0RjVXNTMDRuWXVWT0h5bFM1TndFWC05VUoxQkFEY3VGYVBuelVoT0VaYnlZYTB1UFlLclgxcW9iNzJ0bmtVMjVuVjBmV242RFBlNk51WTJKbFMzR01FWWxN?oc=5",
+   "publie": "2026-11-27T14:24+01:00",
+   "id": "a123"
+  },
+  {
+   "journal": "cnbc",
+   "titre": "The S&P 500 is in a correction. Bear markets and recessions don't always follow",
+   "lien": "https://www.cnbc.com/2026/11/27/the-sp-500-is-in-a-correction-bear-markets-and-recessions-dont-always-follow.html",
+   "publie": "2026-11-27T14:21+01:00",
+   "id": "a124"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Annika Steiner: „Wärmepumpen oder KI machen ein Gebäude nicht zukunftsfähig“",
+   "lien": "https://www.handelsblatt.com/finanzen/immobilien/annika-steiner-waermepumpen-oder-ki-machen-ein-gebaeude-nicht-zukunftsfaehig/100271497.html",
+   "publie": "2026-11-27T14:18+01:00",
+   "id": "a125"
+  },
+  {
+   "journal": "reuters",
+   "titre": "US stock selloffs trigger a new kind of dollar bounce",
+   "lien": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZGRGWE5fV3A5Um9RYUlPZ1ZTRjlHMzBHckV2bmhVbkFTX0xqZEJ0dldFMkN0NFNlYUNOLXpLR25YNU1fdzNyajYyV0JHcUFELUtLU3FMN3E5MWlCS0dqLVIybTF3bXpRMU5CeHhxbXFpeHNhNzVMZ2RnREdUaXZCbGdCQXh1YUxKRXhuUVpUb3k3SDl4ZGt5ZQ?oc=5",
+   "publie": "2026-11-27T14:17+01:00",
+   "id": "a126"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Qui est Bending Spoons, l'entreprise tech italienne croqueuse de plateformes numériques?",
+   "lien": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQaTBOYUR1Y3AtdUJYSHhCcVlGQXN2WVJmcXdnb2hiWnctdjVHY3p5S2plOEVUVEQ3VUFRREg4MS1hbHBLOHVDZjUxcHlGQTlNeFZoREYwcGdFSEJIckZ0NWpMQ0hnVnRJQ2hESDhGaTVPamJVc3Z5M2pVSHVlT09Fc19tRnJzLUtmbS1lZ3JtSlc0TWEzQ3BWWENFRzhoblNaRjY4YUNMWHpMclpvbUVEeTBseUlNM0tTdi1rV3U5c29BMkl3N0VfYzZaLTBOczFuelRDS2p5VVFuZmIycC1v?oc=5",
+   "publie": "2026-11-27T14:16+01:00",
+   "id": "a127"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Tourismus: Tui-Chef plant Imagewechsel: Wie das Firmenlogo „Smile“ dabei helfen soll",
+   "lien": "https://www.handelsblatt.com/unternehmen/dienstleister/tourismus-wie-das-logo-smile-tui-beim-geplanten-imagewechsel-helfen-soll/100270308.html",
+   "publie": "2026-11-27T14:02+01:00",
+   "id": "a128"
+  },
+  {
+   "journal": "fd",
+   "titre": "Bouwbedrijf Wessels Stevin voor de derde keer naar Beursplein 5",
+   "lien": "https://fd.nl/bedrijfsleven/1620871/bouwbedrijf-wessels-stevin-voor-de-derde-keer-naar-beursplein-5",
+   "publie": "2026-11-27T13:59+01:00",
+   "id": "a129"
+  },
+  {
+   "journal": "fd",
+   "titre": "Ceo FlatexDeGiro: ‘Als Europese belegger heb je geen dollars nodig, tenzij je met pensioen wilt in Miami’",
+   "lien": "https://fd.nl/financiele-markten/1620818/ceo-flatexdegiro-als-europese-belegger-heb-je-geen-dollars-nodig-tenzij-je-met-pensioen-wilt-in-miami",
+   "publie": "2026-11-27T13:55+01:00",
+   "id": "a130"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Euríbor hoy, 27 de noviembre: El Euríbor cierra la semana al alza",
+   "lien": "https://www.expansion.com/mercados/euribor/2026/11/27/euribor-hoy-27-noviembre-euribor-cierra-semana-alza.html",
+   "publie": "2026-11-27T13:44+01:00",
+   "id": "a131"
+  },
+  {
+   "journal": "ft",
+   "titre": "First principles to cling to when markets convulse",
+   "lien": "https://www.ft.com/content/839c7d2c-adad-4e70-9abd-3cd5bdf5e09e?syn-25a6b1a6=1",
+   "publie": "2026-11-27T13:32+01:00",
+   "id": "a132"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Interview: Herr Joseph, wie kamen Sie an das Datenleck der Deutschen Bank?",
+   "lien": "https://www.handelsblatt.com/finanzen/banken-versicherungen/banken/inside-deutsche-bank-herr-joseph-wie-kamen-sie-an-das-datenleck-der-deutschen-bank/100272415.html",
+   "publie": "2026-11-27T13:26+01:00",
+   "id": "a133"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Je voulais montrer la belgitude en action - L'Echo",
+   "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUjYwanNCNDJ4dGxHMXRBeFFVMS1uQ1VwS2dzYi1vbGd1bG5TM1p5YXNscS1xd3UzUmdjNklkSF9qRGJuRHRmVUVTVTMwYS0xanNDZWl6aFNWTXd1Qmg5UDlQeXVSREFIbEdoZnZwd2N4NkFLN3Buc0FfOXNELWxseU9MV0kwT1NJNUZHNUFfMjNJUDh3MHJBQm16QW9rVjU4M21Fa0lLdHg0T29reDZtNHdtekF5OFlWSEtvdkx2dTJqZW12LXpFbA?oc=5",
+   "publie": "2026-11-27T13:26+01:00",
+   "id": "a134"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Global diesel market to run into deficit in second quarter of 2027",
+   "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNLUh5OURIMC1MRmNIM3pMa2ZMUnBhZjl4TjRVUWl6QTg4Mk9FdXluQWVubzNSOUNMUmROMGdnWGp2Wlp3Y1NxdFdaQ0tubFFoZTVlS3hydlBkcDJUWURvLVZKamppQTlvSm8yYkV0NE5rRlp6TVUtSzNsOUtGYUJtR1pWMl94TjA5UFRta3lPVldBaGtxQm95Wng2UVlwckszVVhaTHFYQ044cjNPQUE?oc=5",
+   "publie": "2026-11-27T13:25+01:00",
+   "id": "a135"
+  },
+  {
+   "journal": "echos",
+   "titre": "Hypothèse de Riemann : la Banque d'Angleterre sonne l'alarme sur le chiffrement des données bancaires",
+   "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNeHJla0hHUFl5V2QxWUNMMVRkTG43YzkxY1NBZER3XzcybVVGUFE3czBMNWFlWlhaVGxocjVvVnpkVWtwRVFyeGN3UGt1QTB0UVZYN0dSMDN5Um5HMnZPNzByV01jVWZIazZPTEVpZjBHaE1JOFhtN29sTVlZem00UnIxbkl2bGhVRFY0WDRFYkFDUUktMkdZajF1THNsZzB1S3JnQkhnTUlQZV8tM3BYMHpyMVM2Y2NDOHF5TGpEcGlJMmhGcXhMUVU3LU03LUxWaVlZbk9MRGd0emd6aVJ4c0xORENiUHFWV1RtaGpxQUNjUHQ2TVE?oc=5",
+   "publie": "2026-11-27T13:24+01:00",
+   "id": "a136"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Märkte: EU erlaubt Deutscher Börse Milliarden-Übernahme von Allfunds",
+   "lien": "https://www.handelsblatt.com/finanzen/maerkte/maerkte-eu-erlaubt-deutscher-boerse-milliarden-uebernahme-von-allfunds/100273297.html",
+   "publie": "2026-11-27T13:16+01:00",
+   "id": "a137"
+  },
+  {
+   "journal": "echos",
+   "titre": "La scène nationale de Mulhouse tire le bilan de ses actions pour le public",
+   "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNT1hhRmxtcHN2QlB5MGtYXzF2Q0VjTndNNzlTZWJfVklLRmlNZjJ4SVY5S01QaVJRZnJNekNDcmZ3QUswTS1sTDBNeVFZVTdnZ3NBVE1KVUlUYTJIVWFoSkVQSXB5N0ExUnhlUGpiY0xKd3MzMDVXbnJZQlpidVNtLUx6R1R2VXVxbTFQQUtRUm5qaE9mSXVXLTlmWWxFYjh3WXdvTVZaUHp4bEtNdWllckZ6b1pSNlREUjBHcjVTalB3VzNLSldr?oc=5",
+   "publie": "2026-11-27T13:15+01:00",
+   "id": "a138"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Michaël R. Roskam (\"Le faux Soir\"): \"Je voulais montrer la belgitude en action\"",
+   "lien": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOU2JFa0p0U1ltVW45OFJOLVd0Vk1TOXoyZlVHSTNKa0UwaHlybW9IWmRJbnBnTkRQMUZidmwtVWt2eV9URzZpQ1ltdjN1LWJNWjF4aEpQQWU0NzNiY3ZzcWJkNTFlcmdPYVRmcjJJYkZLZHBNS0dKTTl0TXRIR0xhOWt0VWFOVUpsTTkxeGppblZ3ZkZfR2xWN0Jib1BTZmJWMUdZWWhzVTczN3BkV09RNDNnT09iYmF4UFFrR0QyTVhHc3Mya0xzM1IwbHFnZFU?oc=5",
+   "publie": "2026-11-27T13:11+01:00",
+   "id": "a139"
+  },
+  {
+   "journal": "fd",
+   "titre": "Vervroeg de invoer van de greentimerregeling en houd groene auto in Nederland",
+   "lien": "https://fd.nl/opinie/1620677/houd-de-groene-auto-in-nederland",
+   "publie": "2026-11-27T13:10+01:00",
+   "id": "a140"
+  },
+  {
+   "journal": "ft",
+   "titre": "London is playing a game of penthouse one-upmanship",
+   "lien": "https://www.ft.com/content/55d25c66-4405-4698-8fc9-9516010bd7fb",
+   "publie": "2026-11-27T13:00+01:00",
+   "id": "a141"
+  },
+  {
+   "journal": "fd",
+   "titre": "Houthi-raketten leggen pijnpunt bloot van Nederlandse wet op maritieme beveiliging",
+   "lien": "https://fd.nl/opinie/1620637/houthi-raketten-leggen-pijnpunt-bloot-van-nederlandse-wet-op-maritieme-beveiliging",
+   "publie": "2026-11-27T13:00+01:00",
+   "id": "a142"
+  },
+  {
+   "journal": "fd",
+   "titre": "In de voetsporen van kunstschilder Georgia O’Keeffe",
+   "lien": "https://fd.nl/samenleving/1620726/in-de-voetsporen-van-kunstschilder-georgia-okeeffe",
+   "publie": "2026-11-27T12:55+01:00",
+   "id": "a143"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Grifols compra 47 centros de plasma de Biotest por 220 millones",
+   "lien": "https://www.expansion.com/catalunya/2026/11/27/grifols-compra-47-centros-plasma-biotest-220-millones.html",
+   "publie": "2026-11-27T12:46+01:00",
+   "id": "a144"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Santander revoluciona su red de Territoriales con siete nuevos directores",
+   "lien": "https://www.expansion.com/empresas/banca/2026/11/27/santander-revoluciona-red-territoriales-siete-nuevos-directores.html",
+   "publie": "2026-11-27T12:40+01:00",
+   "id": "a145"
+  },
+  {
+   "journal": "monde",
+   "titre": "Radio France demande des sanctions alourdies pour les auteurs de violences contre des journalistes",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/radio-france-demande-des-sanctions-alourdies-pour-les-auteurs-de-violences-contre-des-journalistes_6815853_3234.html",
+   "publie": "2026-11-27T12:37+01:00",
+   "id": "a146"
+  },
+  {
+   "journal": "ft",
+   "titre": "Japanese carmakers’ sales collapse amid China market plunge",
+   "lien": "https://www.ft.com/content/f627ff39-58e4-4def-8e79-794d3dc2996b?syn-25a6b1a6=1",
+   "publie": "2026-11-27T12:31+01:00",
+   "id": "a147"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Jainaga se protege para evitar una segunda opa sobre Azkoyen",
+   "lien": "https://www.expansion.com/empresas/fusiones-y-adquisiciones/2026/11/27/jainaga-protege-evitar-segunda-opa-sobre-azkoyen.html",
+   "publie": "2026-11-27T12:30+01:00",
+   "id": "a148"
+  },
+  {
+   "journal": "echos",
+   "titre": "Dans le quartier d'affaires de La Défense, un marché de Noël en pleine expansion",
+   "lien": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxONjZxbTJ6VkdWNG9YWlluMTVvYUUzdzNZbUtPTDgtSU9kY05BQ0pyTzhRS0Z3UTJkVWtxTzNJNnpNSWdzZGQzbFNGOVdhaTRUeEJHZzVFNmE1TUY0b21OWnh6WHZDV2dCZmR5Z0NJYTFWc0tRQy04bVBaWDA1T1ZEdk1Ka01CWk16b0ZSUXJ5RTUwUTJjVjZMdUJzSXJIc1ZhRElOSFZjYnRWLVpBdGtmNElsMWt4V0dHLUFZd291MVpJVnUtUEFYRjNKREJLVWR4amc?oc=5",
+   "publie": "2026-11-27T12:30+01:00",
+   "id": "a149"
+  },
+  {
+   "journal": "fd",
+   "titre": "Juridisch gevecht Den Haag en Strukton over tunnel laait weer op",
+   "lien": "https://fd.nl/bedrijfsleven/1620869/juridisch-gevecht-den-haag-en-strukton-over-tunnel-laait-weer-op",
+   "publie": "2026-11-27T12:26+01:00",
+   "id": "a150"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Christian Wolf: Der Schatten-Chef – Wird More Nutrition seinen Gründer nicht los?",
+   "lien": "https://www.handelsblatt.com/unternehmen/handel-konsumgueter/fitnessbranche-wird-more-nutrition-seinen-gruender-christian-wolf-nicht-los/100265323.html",
+   "publie": "2026-11-27T12:24+01:00",
+   "id": "a151"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Rasperia: RBI beantragt Freigabe eingefrorener russischer Vermögenswerte",
+   "lien": "https://www.handelsblatt.com/finanzen/banken-versicherungen/banken/rasperia-rbi-beantragt-freigabe-eingefrorener-russischer-vermoegenswerte/100273284.html",
+   "publie": "2026-11-27T12:20+01:00",
+   "id": "a152"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Autobauer: Fast eine halbe Million für einen Ingenieur – Erneut Personalabbau bei Mercedes durch Abfindungen",
+   "lien": "https://www.handelsblatt.com/unternehmen/industrie/autobauer-so-hoch-sind-die-abfindungsangebote-bei-mercedes-ab-dezember/100271862.html",
+   "publie": "2026-11-27T12:19+01:00",
+   "id": "a153"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Altria’s Interest in Imperial May Affect Its AB InBev Stake",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/altria-s-interest-in-imperial-may-also-affect-its-ab-inbev-stake",
+   "publie": "2026-11-27T12:14+01:00",
+   "id": "a154"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Volksbanken: Spencer Stuart mit Kandidatensuche für BVR-Spitze beauftragt",
+   "lien": "https://www.handelsblatt.com/finanzen/banken-versicherungen/banken/volksbanken-spencer-stuart-mit-kandidatensuche-fuer-bvr-spitze-beauftragt/100272178.html",
+   "publie": "2026-11-27T12:14+01:00",
+   "id": "a155"
+  },
+  {
+   "journal": "expansion",
+   "titre": "HD Covalco sube el ebitda un 11% tras batir su récord de ventas",
+   "lien": "https://www.expansion.com/catalunya/2026/11/27/hd-covalco-sube-ebitda-11-batir-record-ventas.html",
+   "publie": "2026-11-27T12:13+01:00",
+   "id": "a156"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Les biotechs, nouvelles stars du Rallye Boursier?",
+   "lien": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUDRXaktuckVXM1NhZXdPVTNFYTRLcmU0R3A3aV9nQ0hCbXpkTEdIYTFxT2loRjNFdEFoaVg0U25CSXNuOG8wMVdxR1dtbHJKQTFKVFdqU0lURGRlWG1KX3dGVlJQai1qaTU3dE9kR1FVTmFDVm1IN29ubVR4dWJjRkJ2TEdaWmFaZTRLWXhVV1NPT2tYNXVKZ2x3UzB5S0tUQTZ3UVdaWkFKWUE?oc=5",
+   "publie": "2026-11-27T12:10+01:00",
+   "id": "a157"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Konjunktur: Inflation in Spanien und Frankreich lässt überraschend nach",
+   "lien": "https://www.handelsblatt.com/finanzen/geldpolitik/konjunktur-inflation-in-spanien-und-frankreich-laesst-ueberraschend-nach/100273264.html",
+   "publie": "2026-11-27T12:09+01:00",
+   "id": "a158"
+  },
+  {
+   "journal": "lessentiel",
+   "titre": "Réseau d'aide en faillite: des patients livrés à eux-mêmes?",
+   "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQaUVvYm55R2JTSGlxaDlJa0pKNG1wUTBVOHJiLS1aNkdlYkFvQVdiaERfVGhrbGhnV0ZYei1UVmkzX1QwazNsTGRrclNlM0RFQ1QyOVNQQnhuNEJ3Vjg1T1pMR3BpYXlETS1IeWdrSFNxVlh5RjZveU5FTTFhd05maXRIZ2VxVl9tTjdsRHEtYjlaY3BYWTd4ckRtYzlHc0R6eXBFUERfWlhPdE5nSnpEWGZhOA?oc=5",
+   "publie": "2026-11-27T12:08+01:00",
+   "id": "a159"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Kraftstoff: Raffineriemargen schrumpfen trotz Iran-Krieg deutlich",
+   "lien": "https://www.handelsblatt.com/unternehmen/energie/kraftstoff-raffineriemargen-schrumpfen-trotz-iran-krieg-deutlich/100273240.html",
+   "publie": "2026-11-27T12:02+01:00",
+   "id": "a160"
+  },
+  {
+   "journal": "fd",
+   "titre": "AFM onderzoekt ‘risicovolle’ producten om overwaarde koophuis te verzilveren",
+   "lien": "https://fd.nl/samenleving/1620584/afm-onderzoekt-risicovolle-producten-om-overwaarde-in-koophuis-te-verzilveren",
+   "publie": "2026-11-27T12:00+01:00",
+   "id": "a161"
+  },
+  {
+   "journal": "fd",
+   "titre": "Gideon Rachman: ‘Een autocraat die een simpele overwinning haalt, wil altijd een volgend doelwit’",
+   "lien": "https://fd.nl/politiek/1620266/gideon-rachman-een-autocraat-die-een-simpele-overwinning-haalt-wil-altijd-een-volgend-doelwit",
+   "publie": "2026-11-27T12:00+01:00",
+   "id": "a162"
+  },
+  {
+   "journal": "ft",
+   "titre": "Indonesia arrests three over alleged ‘deep fried’ market manipulation",
+   "lien": "https://www.ft.com/content/50626b00-6d7b-47ac-b1f2-4b150ff9417e?syn-25a6b1a6=1",
+   "publie": "2026-11-27T11:54+01:00",
+   "id": "a163"
+  },
+  {
+   "journal": "ft",
+   "titre": "If we say the pay, let’s mention the pension",
+   "lien": "https://www.ft.com/content/bc44826f-2c9c-4f3e-a065-72e64d14ee84?syn-25a6b1a6=1",
+   "publie": "2026-11-27T11:54+01:00",
+   "id": "a164"
+  },
+  {
+   "journal": "lecho",
+   "titre": "L'inflation en Belgique se maintient au-dessus de 5%",
+   "lien": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQ2U4d2lHU0JqcFJ3U1Q1Sm5VNjk1T3lsTXQyM3BTaXdla1owMzQzQzdzc2lpa0FVUmgtalpjeWcwUG1jam52eWsxY0RKdzJtSDMzMkVZNzNtazZPWTBMTjRNUUplTDBKTGY4cEg5NmYtcVJVV3ozbDBHNUFGQXhrZjVWRklSUUJMUFFWS0oxZGY4blFCb0I5aXBDQmtTRlpvV2Y1RUJmMmpEWlNpSUZEYV8yaUktUTVGUGc?oc=5",
+   "publie": "2026-11-27T11:54+01:00",
+   "id": "a165"
+  },
+  {
+   "journal": "fd",
+   "titre": "Coalitiegedonder is niet voorbehouden aan Den Haag",
+   "lien": "https://fd.nl/politiek/1620762/coalitiegedonder-is-niet-voorbehouden-aan-den-haag",
+   "publie": "2026-11-27T11:53+01:00",
+   "id": "a166"
+  },
+  {
+   "journal": "echos",
+   "titre": "« La crise a assaini l'offre » : l'industrie du bio affiche son optimisme malgré le retour de l'inflation",
+   "lien": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPeDREOEE5X2pkbk9oNDlic1kxYTBkSzlXZlJrYlpuSnpVNjBsakVqOTlMQW84OEdBQUwyTmpXdGJtNVRrb0tzRk9ubExTU2ExbkQ4MWw5THlFT3BXYzZLYnZjNTloLVZZSU1TUWw3T1JVSUQ4UUxrbXJJWEgwMUpsUXp4UHVIVDE1MkQzR0hkbXhaVmxlZHJ4dzVoTGxSOUNzX3JoM1NaeTg3RkR0ejJLbnhNS2pJRTBpaUZ5WDNKTUNiZ2xHd1E5NzBIblJwRnVoYWxpbjRHLVdRSVZpT2FMaS1RbXE4ZHlYVms3R2E3M2pMLW4tbXhxNjBB?oc=5",
+   "publie": "2026-11-27T11:52+01:00",
+   "id": "a167"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Zukunftsgestalter: Trumpf auf dem Weg zum Maschinen-Menschen",
+   "lien": "https://www.handelsblatt.com/unternehmen/industrie/ki-so-macht-trumpf-roboter-selbststaendiger/100248242.html",
+   "publie": "2026-11-27T11:48+01:00",
+   "id": "a168"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Un hombre cambiado: ¿Cómo dirigirá Jensen Huang a Nvidia a partir de ahora?",
+   "lien": "https://www.expansion.com/economia/financial-times/2026/11/27/hombre-cambiado-dirigira-jensen-huang-nvidia-partir.html",
+   "publie": "2026-11-27T11:47+01:00",
+   "id": "a169"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Sport2000: Sportfachhändler sind trotz Konsumflaute vorsichtig optimistisch – das sind die Gründe",
+   "lien": "https://www.handelsblatt.com/unternehmen/handel-konsumgueter/sport2000-sportfachhaendler-sind-trotz-konsumflaute-vorsichtig-optimistisch/100273205.html",
+   "publie": "2026-11-27T11:47+01:00",
+   "id": "a170"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Unicredit: Bundesregierung stellt sich hinter Orcel-Pläne für den Aufsichtsrat der Commerzbank",
+   "lien": "https://www.handelsblatt.com/finanzen/banken-versicherungen/banken/commerzbank-bundesregierung-stellt-sich-hinter-orcels-plaene-fuer-den-aufsichtsrat/100273270.html",
+   "publie": "2026-11-27T11:35+01:00",
+   "id": "a171"
+  },
+  {
+   "journal": "monde",
+   "titre": "Black Friday : « La surconsommation n’est que la partie visible du problème : son envers, c’est la surproduction »",
+   "lien": "https://www.lemonde.fr/idees/article/2026/11/27/black-friday-la-surconsommation-n-est-que-la-partie-visible-du-probleme-son-envers-c-est-la-surproduction_6815843_3232.html",
+   "publie": "2026-11-27T11:30+01:00",
+   "id": "a172"
+  },
+  {
+   "journal": "ft",
+   "titre": "92 Labour MPs call for Rosebank oilfield to be rejected",
+   "lien": "https://www.ft.com/content/76befc28-cba3-4c9b-bdc3-cced4b304ab1?syn-25a6b1a6=1",
+   "publie": "2026-11-27T11:21+01:00",
+   "id": "a173"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Emag: Tesla will deutschen Roboter-Spezialisten übernehmen",
+   "lien": "https://www.handelsblatt.com/unternehmen/industrie/emag-tesla-will-deutschen-roboter-spezialisten-uebernehmen/100273250.html",
+   "publie": "2026-11-27T11:18+01:00",
+   "id": "a174"
+  },
+  {
+   "journal": "nyt",
+   "titre": "Jensen Huang Is Back, and So Is His Plaque at Denny’s",
+   "lien": "https://www.nytimes.com/2026/11/26/business/dennys-jensen-huang-nvidia-plaque.html",
+   "publie": "2026-11-27T11:17+01:00",
+   "id": "a175"
+  },
+  {
+   "journal": "monde",
+   "titre": "Jeu vidéo : en crise, le secteur interpelle les candidats à l’élection présidentielle",
+   "lien": "https://www.lemonde.fr/politique/article/2026/11/27/jeu-video-en-crise-le-secteur-interpelle-les-candidats-a-l-election-presidentielle_6815838_823448.html",
+   "publie": "2026-11-27T11:15+01:00",
+   "id": "a176"
+  },
+  {
+   "journal": "fd",
+   "titre": "Advocaten Sywert van Lienden zeggen samenwerking op wegens bemoeizucht",
+   "lien": "https://fd.nl/samenleving/1620764/advocaten-sywert-van-lienden-zeggen-samenwerking-op-wegens-bemoeizucht",
+   "publie": "2026-11-27T11:12+01:00",
+   "id": "a177"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Führung: „Die besten Chefs sind Meister der strategischen Natürlichkeit“",
+   "lien": "https://www.handelsblatt.com/unternehmen/management/fuehrungskraefte-fuehrung-ist-immer-auch-eine-rolle/100229671.html",
+   "publie": "2026-11-27T11:11+01:00",
+   "id": "a178"
+  },
+  {
+   "journal": "bbc",
+   "titre": "My self-care ritual is a meal at a fancy restaurant - on my own",
+   "lien": "https://www.bbc.co.uk/news/articles/cw8dv11dp2yeo?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-27T11:10+01:00",
+   "id": "a179"
+  },
+  {
+   "journal": "guardian",
+   "titre": "Banks may pass on £1.5bn tax rise to customers, warns Bank of England chief",
+   "lien": "https://www.theguardian.com/business/2026/nov/27/bank-tax-rise-customers-bank-of-england-andrew-bailey",
+   "publie": "2026-11-27T11:10+01:00",
+   "id": "a180"
+  },
+  {
+   "journal": "expansion",
+   "titre": "El precio del Bitcoin hoy, 27 de noviembre: el Bitcoin asciende de los 62.000 dólares",
+   "lien": "https://www.expansion.com/mercados/bitcoin/2026/11/27/precio-bitcoin-hoy-27-noviembre-bitcoin-asciende-62-000-dolares.html",
+   "publie": "2026-11-27T11:03+01:00",
+   "id": "a181"
+  },
+  {
+   "journal": "nyt",
+   "titre": "How to Live Calmly, Despite Stock Market Whiplash",
+   "lien": "https://www.nytimes.com/2026/11/27/business/nvidia-jensen-huang-trump-markets.html",
+   "publie": "2026-11-27T11:02+01:00",
+   "id": "a182"
+  },
+  {
+   "journal": "nyt",
+   "titre": "As Prices Rise, Americans Are Making Trade-Offs Rather Than Cutting Back",
+   "lien": "https://www.nytimes.com/2026/11/27/business/inflation-consumer-spending-trade-offs-holidays.html",
+   "publie": "2026-11-27T11:02+01:00",
+   "id": "a183"
+  },
+  {
+   "journal": "nyt",
+   "titre": "2 TV Shows Take on Sam Bankman-Fried and FTX",
+   "lien": "https://www.nytimes.com/2026/11/27/business/media/sam-bankman-fried-ftx-altruists.html",
+   "publie": "2026-11-27T11:02+01:00",
+   "id": "a184"
+  },
+  {
+   "journal": "nyt",
+   "titre": "48 Hours in Tokyo With an Airline Pilot",
+   "lien": "https://www.nytimes.com/2026/11/27/travel/48-hours-tokyo-layover.html",
+   "publie": "2026-11-27T11:00+01:00",
+   "id": "a185"
+  },
+  {
+   "journal": "monde",
+   "titre": "Fin de l’interdiction des passoires thermiques à la location : aux Assises de la rénovation énergétique, la consternation des professionnels du secteur",
+   "lien": "https://www.lemonde.fr/societe/article/2026/11/27/fin-de-l-interdiction-des-passoires-thermiques-a-la-location-aux-assises-de-la-renovation-energetique-la-consternation-des-professionnels-du-secteur_6815833_3224.html",
+   "publie": "2026-11-27T11:00+01:00",
+   "id": "a186"
+  },
+  {
+   "journal": "fd",
+   "titre": "Goede zaken vragen geen steun, maar concurrentie",
+   "lien": "https://fd.nl/opinie/1620474/goede-zaken-vragen-geen-steun-maar-concurrentie",
+   "publie": "2026-11-27T11:00+01:00",
+   "id": "a187"
+  },
+  {
+   "journal": "fd",
+   "titre": "De wereld achter het pakketpunt: vaste waarde, wankel verdienmodel",
+   "lien": "https://fd.nl/bedrijfsleven/1620377/de-wereld-achter-het-pakketpunt-vaste-waarde-wankel-verdienmodel",
+   "publie": "2026-11-27T10:56+01:00",
+   "id": "a188"
+  },
+  {
+   "journal": "figaro",
+   "titre": "La France en récession : visualisez l’évolution de la croissance ces dernières années",
+   "lien": "https://www.lefigaro.fr/conjoncture/visualisez-la-croissance-francaise-en-2025-20261030",
+   "publie": "2026-11-27T10:54+01:00",
+   "id": "a189"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Rüstungsindustrie: Rheinmetall senkt Umsatzziel für 2030",
+   "lien": "https://www.handelsblatt.com/unternehmen/industrie/rheinmetall-umsatzziel-fuer-2030-sinkt-auf-33-bis-37-milliarden-euro/100273257.html",
+   "publie": "2026-11-27T10:54+01:00",
+   "id": "a190"
+  },
+  {
+   "journal": "guardian",
+   "titre": "Pizza history: AI agent’s cardless purchase is a first for UK",
+   "lien": "https://www.theguardian.com/business/2026/nov/27/ai-agent-cardless-transaction-pizza-papa-john-uk-fca-truelayer",
+   "publie": "2026-11-27T10:53+01:00",
+   "id": "a191"
+  },
+  {
+   "journal": "ft",
+   "titre": "Ladbrokes owner to settle Australia money laundering case",
+   "lien": "https://www.ft.com/content/5fe8a858-6ed2-40f0-a0f3-e8742b7656aa?syn-25a6b1a6=1",
+   "publie": "2026-11-27T10:51+01:00",
+   "id": "a192"
+  },
+  {
+   "journal": "expansion",
+   "titre": "El oso de Wall Street cierra sus apuestas bajistas contra el Nasdaq",
+   "lien": "https://www.expansion.com/inversion/2026/11/27/oso-wall-street-cierra-apuestas-bajistas-nasdaq.html",
+   "publie": "2026-11-27T10:50+01:00",
+   "id": "a193"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Künstliche Intelligenz: So verschaffen sich Führungskräfte im mittleren Management einen Wettbewerbsvorteil",
+   "lien": "https://www.handelsblatt.com/unternehmen/management/fuehrungskraefte-mit-diesem-ki-wissen-ueberzeugen-sie-headhunter-sofort/100240522.html",
+   "publie": "2026-11-27T10:47+01:00",
+   "id": "a194"
+  },
+  {
+   "journal": "figaro",
+   "titre": "La France est en récession depuis le deuxième trimestre, selon l’Insee",
+   "lien": "https://www.lefigaro.fr/conjoncture/la-france-est-en-legere-recession-depuis-le-deuxieme-trimestre-selon-l-insee-20261127",
+   "publie": "2026-11-27T10:46+01:00",
+   "id": "a195"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Karriere: „Es ist in Ordnung, kein Karriereziel zu haben“",
+   "lien": "https://www.handelsblatt.com/unternehmen/management/management-ich-setze-mich-nicht-unter-druck-um-ein-ziel-zu-erreichen/100248072.html",
+   "publie": "2026-11-27T10:46+01:00",
+   "id": "a196"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Les bourses en direct | \"Le mouvement de rebond généralisé suscite chez de nombreux investisseurs la crainte de manquer un rallye de fin d'année\"",
+   "lien": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPRlprV1RwcXNheWFmMEl1bUxuUHgyQ3FMSTZEclc1Z0I4V3k4SXBHYUZxUVdVcEI1TVY2cGllWF9BRVpLWVVCc1dsZG8zRF9CVWpLNXItTzA5OG1WV0RiWHdaUXM2eDdQb3c4MTJiVnpXLUZwY3lBRW9ZZDhaaG9weVZ3SDZIdUVfUHRMZ25FV2hVc1dkTzJpTHNiVllNQlFXeHU2MGsyX3pXN01Td1pmZkhWLWtOejFOX0VOZ1dwV1U0MzJEcmZzYUdCN0dIb0p4ZEFpT3pSM0FiR3d0WUxCMzYyckRDVFdyUnJsLXVlTEM?oc=5",
+   "publie": "2026-11-27T10:44+01:00",
+   "id": "a197"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Autobranche: Dieser Mann ist bald der wichtigste Automanager Europas",
+   "lien": "https://www.handelsblatt.com/unternehmen/industrie/antonio-filosa-dieser-mann-ist-bald-der-wichtigste-automanager-europas/100272928.html",
+   "publie": "2026-11-27T10:36+01:00",
+   "id": "a198"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Action, Aldi, Wibra, Halfprice... Pourquoi les chaînes discount envahissent les anciens Cora",
+   "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxONV9RakdnSW9xcUw1dGFWbFRxNnREa0VIcGdMWS15WFFvcHFzWDdPWnZQTktQQXJnNFFHaUNpOEFQWERrcWhIb3JKclFvMWl6Z1VMLWVjRGNzd0pQUmtIMmdEMzVOM2dpbm9xQ3hmOERkQnJ2R0UyQWtqUXVBR0MyaE1ZVnlmMmd4d3R3V3hYNWZsT2VoSzlHam5tSVRwYnV4ZWhqbnlhTlFjS1JCNkY4dWVIYVY4RkZfbFVXUXlCcGNnS3N5aG52WjlUTG5DSGJNMkJwRkFyQkVFNjF5VmNLc1oxUmRIZVNk?oc=5",
+   "publie": "2026-11-27T10:31+01:00",
+   "id": "a199"
+  },
+  {
+   "journal": "monde",
+   "titre": "« Les vents contraires du transport maritime mondial font un vainqueur : le fret aérien »",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/les-vents-contraires-du-transport-maritime-mondial-font-un-vainqueur-le-fret-aerien_6815827_3234.html",
+   "publie": "2026-11-27T10:30+01:00",
+   "id": "a200"
+  },
+  {
+   "journal": "figaro",
+   "titre": "«11 milliards de dollars de retraites partis en fumée» : au Chili, le coup de poker qui a anéanti l’épargne de millions de travailleurs",
+   "lien": "https://www.lefigaro.fr/conjoncture/11-milliards-de-dollars-de-retraites-partis-en-fumee-au-chili-le-coup-de-poker-qui-a-aneanti-l-epargne-de-millions-de-travailleurs-20261127",
+   "publie": "2026-11-27T10:30+01:00",
+   "id": "a201"
+  },
+  {
+   "journal": "monde",
+   "titre": "La France entre officiellement en récession",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/la-france-entre-en-recession-apres-deux-trimestres-de-recul-du-pib_6815824_3234.html",
+   "publie": "2026-11-27T10:25+01:00",
+   "id": "a202"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Nikkei, Yen, CSI 300: Chinesische Märkte legen nach seltenem Regierungskommentar zu",
+   "lien": "https://www.handelsblatt.com/finanzen/maerkte/marktberichte/nikkei-yen-csi-300-chinesische-maerkte-legen-nach-seltenem-regierungskommentar-zu/100273175.html",
+   "publie": "2026-11-27T10:16+01:00",
+   "id": "a203"
+  },
+  {
+   "journal": "wort",
+   "titre": "Weihnachtsmärkte in Luxemburg: Alle Termine auf einen Blick",
+   "lien": "https://www.wort.lu/luxemburg/stadaland/weihnachtsmaerkte-in-luxemburg-alle-termine-auf-einen-blick/164740437.html",
+   "publie": "2026-11-27T10:02+01:00",
+   "id": "a204"
+  },
+  {
+   "journal": "fd",
+   "titre": "Zonder duidelijke regels verandert AI je mailbox – en organisatie – in een mijnenveld",
+   "lien": "https://fd.nl/tech-en-innovatie/1620465/zonder-duidelijke-regels-verandert-ai-je-mailbox-en-organisatie-in-een-mijnenveld",
+   "publie": "2026-11-27T10:00+01:00",
+   "id": "a205"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Baufinanzierung: Bafin beanstandet Hypoport-Konzernabschluss 2023 – Aktie bricht ein",
+   "lien": "https://www.handelsblatt.com/finanzen/baufinanzierung-bafin-beanstandet-hypoport-konzernabschluss-2023/100273206.html",
+   "publie": "2026-11-27T09:54+01:00",
+   "id": "a206"
+  },
+  {
+   "journal": "bbc",
+   "titre": "'We're scared to turn our heating on'",
+   "lien": "https://www.bbc.co.uk/news/videos/c6jd7yj4ve9xo?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-27T09:47+01:00",
+   "id": "a207"
+  },
+  {
+   "journal": "sole",
+   "titre": "Marlboro e West, fusione allo studio per creare il polo mondiale delle sigarette",
+   "lien": "https://www.ilsole24ore.com/art/marlboro-e-west-fusione-studio-creare-polo-mondiale-sigarette-AJ6WkWUC",
+   "publie": "2026-11-27T09:43+01:00",
+   "id": "a208"
+  },
+  {
+   "journal": "ft",
+   "titre": "Chinese shares soar after Beijing signals more support",
+   "lien": "https://www.ft.com/content/fedc6392-ad25-43e4-9d9f-20216cbf331e?syn-25a6b1a6=1",
+   "publie": "2026-11-27T09:32+01:00",
+   "id": "a209"
+  },
+  {
+   "journal": "lessentiel",
+   "titre": "La préparation du marché de Noël représente des mois de travail",
+   "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQcW5LbW5SQ0FkQzItakZYenBMLTJxY3RtU0pjTEw2TGFlMWJrVFVLZGQtOXBhalRWSmZyWWd0V2hjb2tpMldKNFFqOTJxQzVyX2ZjUDhHMGhxNWNCQWlrMjc5M2RmcklxQUpqZldXQlNMZ3hWRXl4cjlLUE1ucURVSXdFczhyQ3QxZDNCV0F0ZDNNMEZfWEwxamdGTUtEWFI0azVhXzFtNGNKbTM2STVQVW1sbmMwN0ZjLVUxR1laMA?oc=5",
+   "publie": "2026-11-27T09:30+01:00",
+   "id": "a210"
+  },
+  {
+   "journal": "echos",
+   "titre": "La croissance pire que prévu, l'économie française en récession",
+   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNT2R0VEtzNk9RWjJPSG1lZTNldjM2VmllMDBScGwwT0lMNnE1RW1McTVOc1VvNWJ5S085c25jSHVnaXpWMWlQM0JhcThsWTdWcExwYi1DTVRxTGdqTGM1Q2lZTUZlTi1ONTA3TURpdVhoQVZtZjJKMXFxcnFBZGNSUGtBMzlyOVJfVE5pei1uOEZyV2R6MTIxREswUndxZElFaU9LZU1sMlA2eHVJb0N6MklR?oc=5",
+   "publie": "2026-11-27T09:12+01:00",
+   "id": "a211"
+  },
+  {
+   "journal": "fd",
+   "titre": "Veranker in de wet dat een politieke partij hooguit een kwart van haar zetels kan winnen of verliezen",
+   "lien": "https://fd.nl/opinie/1620646/veranker-in-de-wet-dat-een-politieke-partij-hooguit-een-kwart-van-haar-zetels-kan-winnen-of-verliezen",
+   "publie": "2026-11-27T09:00+01:00",
+   "id": "a212"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "US Stocks Rebound as Traders Pile Into Battered Tech Shares",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/us-stocks-set-to-bounce-as-risk-appetite-returns-after-holiday",
+   "publie": "2026-11-27T08:56+01:00",
+   "id": "a213"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Familienunternehmen: 40.000 Flaschen pro Stunde: So trotzt Jeff Maisel mit Bayreuther Hell der Bierkrise",
+   "lien": "https://www.handelsblatt.com/unternehmen/handel-konsumgueter/unternehmen-so-will-eine-fraenkische-brauerei-der-bierkrise-trotzen/100268743.html",
+   "publie": "2026-11-27T08:45+01:00",
+   "id": "a214"
+  },
+  {
+   "journal": "paperjam",
+   "titre": "IA en finance: la fin des expérimentations sans retour sur investissement",
+   "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORTNsRnBBa1VCVEtyZXpvM2Y5UUd0QjlodzhhaGI3eUFjRDJHRjVhTVFGM1BwZkwxZS1QN0VJNXdEQmw1dmNDV3NWd0h2RWo5MFpwdmxkbkpqN2puZDdMNmdDYmxXMDh6cTU3bVhuOEpXNkE0SG5PaXEtQmVERzljVTNiLUQyOFBXMnk0WnJGbng0YXdXNkJaTDdfTEJRUGRwQkE?oc=5",
+   "publie": "2026-11-27T08:41+01:00",
+   "id": "a215"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Spatial et IA agentique : quelles actions surveiller au cours des prochains mois et des prochaines années",
+   "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNTjRoMVBqcWJsQWRVT3J2Y09NTE1CMG56TlhxUDJ6aUxQZlpkbS05ZmpuLVZSY1pfbk9IV3Jwc0UzdFJtSzA4YlFKbmtRZ1lyNGs4UF9fcnlfYlJjb0Y0ekd0UzhOSlBOdHhBWXp3azJGYkxfcVVMNDFZVXRtdWpjZmlRdEZoTzMxV2NaaDNmaGhjT3dxZWs4Wkw0MFVORHN5bFBwTEZKQkNiLUZOZUJ5ZGw5NVVBMEsxYkpzSmkyX2dCc1VRZnp1WGdaRjJDMHFYdlZUVzIzRy1kS3Q5Qi05QXRpQURSbXNCV3h3ZWVfUUFSSjlfLUE?oc=5",
+   "publie": "2026-11-27T08:40+01:00",
+   "id": "a216"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Patron cool ou manager toxique et insultant ? Le double visage du PDG de Nvidia Jensen Huang pointé du doigt par d’ex-salariés",
+   "lien": "https://www.lefigaro.fr/societes/patron-cool-ou-manager-toxique-et-insultant-le-double-visage-du-pdg-de-nvidia-jensen-huang-pointe-du-doigt-par-d-ex-salaries-20261127",
+   "publie": "2026-11-27T08:38+01:00",
+   "id": "a217"
+  },
+  {
+   "journal": "reuters",
+   "titre": "US stocks set for weekly advance as battered AI shares hold their ground",
+   "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVGx5dUNYcGtCM2ZGUXB0RDNfNzF5TkNJNEctdjFiak5JRHExWWZVODg2c3hDcDZCUjdpWGpVYUg2bFE4UE5NQVJZUk52UzZGS082TTJiRWN4MTVxQlNXSTlmWnkzXzlyUzJONjlGSkNzVFNFSUlvRTRXQWxpbC1mQ2llcXRWWEIwZlpnVjBDZy1LcXU0MGc?oc=5",
+   "publie": "2026-11-27T08:34+01:00",
+   "id": "a218"
+  },
+  {
+   "journal": "echos",
+   "titre": "« C'en est fini de plus de 90 ans d'escroquerie » : en Argentine, la réforme Milei recadre sévèrement l'action de la Banque centrale sur l'inflation",
+   "lien": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNcU1wbjZQc3hEQ2pVdEs4aWkxVUpFV3E3Yjlja0puYVFaaEMyWUcza0xPSml4UHhyMEUzRGRzZFZmV01xTXB0SjRyMVNMbjJjMTRITXFUdVBONzBfOGZlMzJpOUhmRWE5R0xBanJoakNiaG5iZS1sbHZqRmtJSkJtS29pb3ZER0lQTGVqQlBybGJnYk1NV3MxZjNVc0plc2ctSU4yeW8zTWYxaFRrYzE3ZzNfc2Zwbk5fbTVtaGRWdFY4TWZYdjFCNjhyak44d0hob3BtN2htSEZGYVhnS0pFSzBuanFsaXdCRGoxNzJDWDRLNUw3WlV3ZlhOa0gyMW5jMkwtdGtITGFNbFlwQlVrRW40NA?oc=5",
+   "publie": "2026-11-27T08:28+01:00",
+   "id": "a219"
+  },
+  {
+   "journal": "expansion",
+   "titre": "SUV grande con 1.000 km de autonomía: el gran filón de las marcas chinas en España",
+   "lien": "https://www.expansion.com/empresas/motor/2026/11/27/suv-grande-1-000-km-autonomia-gran-filon-marcas-chinas-espana.html",
+   "publie": "2026-11-27T08:22+01:00",
+   "id": "a220"
+  },
+  {
+   "journal": "ft",
+   "titre": "Sky-high WiFi will give airlines a shortlived boost",
+   "lien": "https://www.ft.com/content/8a8d973e-e476-4578-80a9-26e9c6e5f912?syn-25a6b1a6=1",
+   "publie": "2026-11-27T08:11+01:00",
+   "id": "a221"
+  },
+  {
+   "journal": "expansion",
+   "titre": "El Ibex apunta a una apertura en positivo",
+   "lien": "https://www.expansion.com/mercados/cronica-bolsa/2026/11/27/ibex-apunta-apertura-positivo.html",
+   "publie": "2026-11-27T08:02+01:00",
+   "id": "a222"
+  },
+  {
+   "journal": "monde",
+   "titre": "« On est vraiment sur de l’achat compulsif » : Whatnot, la plateforme de téléachat 2.0 au rythme effréné",
+   "lien": "https://www.lemonde.fr/pixels/article/2026/11/27/on-est-vraiment-sur-de-l-achat-compulsif-whatnot-la-plateforme-de-teleachat-2-0-au-rythme-effrene_6815812_4408996.html",
+   "publie": "2026-11-27T08:00+01:00",
+   "id": "a223"
+  },
+  {
+   "journal": "paperjam",
+   "titre": "Résoudre les litiges au regard des enjeux de l’entreprise",
+   "lien": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOUVJ6VUFHbEVHbzV6Rmx6NWpzMHdRT052VHo2bl9YM2FibzhBLXZicC1OdVVLaU82RHRqd2VrRzBoODgxUDJRLXFYWDdJbUtuZGlmMUtSVzB0U3FUMHNRS2pFRFo5ZlVlclQ0ckFyQTNDLWYxN0NGYjA5SUZralhtYnVFRQ?oc=5",
+   "publie": "2026-11-27T07:49+01:00",
+   "id": "a224"
+  },
+  {
+   "journal": "ft",
+   "titre": "Hong Kong seeks to lure sovereign wealth funds with tax breaks",
+   "lien": "https://www.ft.com/content/0285a2eb-5312-443d-bd60-b094af9575b1?syn-25a6b1a6=1",
+   "publie": "2026-11-27T07:47+01:00",
+   "id": "a225"
+  },
+  {
+   "journal": "reuters",
+   "titre": "China cabinet calls for greater role by 'national team' investors to steady sinking markets",
+   "lien": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQSFgzSVB4VzlUMGw5WEx0UjZrWkFZc2tnRVdlaFF4UWNUQW5IRWwtSjB6aXBENzl1dHhFOGpySE1Kb0xac3g3YU1RMDVPVGRHc2FPcUFaSmJNYWRBbm1qMlo0V3BpQS0teFNJMnAtYy1RQjlZemlfV0FVZW9tZ05MQlY4cGdYd3g5Wmp2cXhsdjhOT2ZrMEYzaWNmSld6WEpvS29VWW4zVm0?oc=5",
+   "publie": "2026-11-27T07:32+01:00",
+   "id": "a226"
+  },
+  {
+   "journal": "monde",
+   "titre": "En Suisse, une industrie du drone de défense bridée par la neutralité",
+   "lien": "https://www.lemonde.fr/economie/article/2026/11/27/en-suisse-une-industrie-du-drone-de-defense-bridee-par-la-neutralite_6815811_3234.html",
+   "publie": "2026-11-27T07:30+01:00",
+   "id": "a227"
+  },
+  {
+   "journal": "ft",
+   "titre": "‘It’s not nation versus nation. It’s hyperscaler versus hyperscaler’",
+   "lien": "https://www.ft.com/content/698d29bd-490b-41ef-a3e3-20edc2b591f7?syn-25a6b1a6=1",
+   "publie": "2026-11-27T07:30+01:00",
+   "id": "a228"
+  },
+  {
+   "journal": "echos",
+   "titre": "Robustesse, agilité et leadership, un triptyque essentiel aux entreprises",
+   "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQY2Z2NFRmazJzWjdXQUxOWXFDSHRJMXdrdXdJOUMzNUFWc3haVXYxX3E0SFdYbi02VnJyTWpxTUVNa2oyQ1V5cGhUOW9vMEhKSFgtcWFPOEctX2xzLWJGRFlnSV8zaFZjZVhZbDZZem9ra1hpNi1hVHMtRzBSb3BCNEN2NGt4V3QwcTRJLTh3amc1M2JVbGVsVm9DUXc4VjliSEN6UE95RWt1RGtOU09ETWJnMDVxLUlBS202OWN3OGJ3NG5Xbld0MmVtZVQyWE5JTU5ZdQ?oc=5",
+   "publie": "2026-11-27T07:25+01:00",
+   "id": "a229"
+  },
+  {
+   "journal": "reuters",
+   "titre": "China stocks surge most in two years as Beijing vows stronger market support",
+   "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPLWxqTUV2X2RZam8zVGVSY2ZFTzRLQkxKYjdBUVJvR1dIOVlaczllTWRmay1FM3pMOHk5SlBjYkhxaDZ4YmJXbWM3NFpSRDBuWWs3T05QS2hZU2FoVzluTzJTMVFjQmhVS3B3a3ZQSXlOc0JKLV92RHZiNFZoNUlXUW5MMk1ncnpDXzVsMnhpTGx4OWpOVnpCNjlWRlJCa1Bp?oc=5",
+   "publie": "2026-11-27T07:24+01:00",
+   "id": "a230"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Autohersteller: Stellantis stoppt Fabriken länger – wegen chinesischer Konkurrenz",
+   "lien": "https://www.handelsblatt.com/unternehmen/industrie/autohersteller-stellantis-stoppt-fabriken-wegen-chinesischer-konkurrenz/100273192.html",
+   "publie": "2026-11-27T07:17+01:00",
+   "id": "a231"
+  },
+  {
+   "journal": "ft",
+   "titre": "Business of Energy",
+   "lien": "https://www.ft.com/content/5122d17d-341b-4ca1-8bae-b8ec2b52b797?syn-25a6b1a6=1",
+   "publie": "2026-11-27T07:15+01:00",
+   "id": "a232"
+  },
+  {
+   "journal": "echos",
+   "titre": "Immobilier : les SCPI tentent de regagner la confiance des investisseurs",
+   "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOa1RrY1hzNXdMSzhSUHRfVGhkRVNTTVhJUUIxcHJpZ3A3X3pmVXRqeWtRbDJ2ekUyQjVMMnV6ckZZak8tdklhMEJsbk8wQzQwbU9mX0o1RG4zcW5DVVFwV1NMTWJWN1NSRkV5bmVhV2Ffa3hFQ1dLT0lKRC03ZUxUa245cXptTGtJVmdkUzZVMXpjUThnNGVFTkdKT2JKQ3N4VXh4eXlsWWZRdW5iNndKSTBWcGg4Wm54dW9DTDdtM0U?oc=5",
+   "publie": "2026-11-27T07:15+01:00",
+   "id": "a233"
+  },
+  {
+   "journal": "sole",
+   "titre": "Borse, Milano (+1,9%) guida la ripresa in Europa. A Wall Street Anthropic torna sopra prezzo Ipo",
+   "lien": "https://www.ilsole24ore.com/art/volano-borse-cinesi-shanghai-32percento-shenzhen-63percento-AJro4PUC",
+   "publie": "2026-11-27T07:14+01:00",
+   "id": "a234"
+  },
+  {
+   "journal": "bbc",
+   "titre": "How much is your rent in Birmingham?",
+   "lien": "https://www.bbc.co.uk/news/videos/ckg5r02mqp4no?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-27T07:11+01:00",
+   "id": "a235"
+  },
+  {
+   "journal": "bbc",
+   "titre": "The food bank helping pet owners with rising bills",
+   "lien": "https://www.bbc.co.uk/news/articles/c623jgz7zmg8o?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-27T07:11+01:00",
+   "id": "a236"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Dette : pourquoi les agences S&P, Fitch et Moody’s sont si complaisantes envers la France",
+   "lien": "https://www.lefigaro.fr/conjoncture/dette-pourquoi-les-agences-s-p-fitch-et-moody-s-sont-si-complaisantes-envers-la-france-20261127",
+   "publie": "2026-11-27T07:05+01:00",
+   "id": "a237"
+  },
+  {
+   "journal": "fd",
+   "titre": "AEX gaat volatiele week hoger uit, ook herstel op Wall Street",
+   "lien": "https://fd.nl/financiele-markten/1620849/live-hoe-sluiten-we-een-volatiele-handelsweek-af",
+   "publie": "2026-11-27T07:04+01:00",
+   "id": "a238"
+  },
+  {
+   "journal": "reuters",
+   "titre": "How Sanofi's new CEO struck a rapid $41 billion deal for Insmed",
+   "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObU1CTWI1cG1XTE9pbkN0cEl4NGFSYVFkalA1bVRsZ2xBVDhwa1lSbFBJUEJubXdSVnlKOTE5UVB3NHhFREZGUnlIMk1pU1RCdHUwWXhGdDJka2cxVEUyaVNPN3dmV2VudGlxWTJpM2NNTmhRNmJiNjVGNkpsZzZTbWFZNlpWc19sYTNNc1VDN1NRMzJESGlYZWVpeU5fdFZMTC1DZWdzZzIzQS1BTFJkVG5sOA?oc=5",
+   "publie": "2026-11-27T07:03+01:00",
+   "id": "a239"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Axa : considérablement plus optimiste que les autres bureaux d’études, Berenberg prédit une envolée de 70% de l’action",
+   "lien": "https://bourse.lefigaro.fr/actu-conseils/axa-considerablement-plus-optimiste-que-les-autres-bureaux-d-etudes-berenberg-predit-une-envolee-de-70-de-l-action-20261127",
+   "publie": "2026-11-27T07:02+01:00",
+   "id": "a240"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Les bourses en direct | L'Europe termine dans le vert, le Bel 20 prend plus de 1%, Wall Street rebondit grâce à la tech, le Nasdaq gagne près de 2%",
+   "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNc19wSmlORTlDVk9wS3FxRnJLdmxWNHJ0RWx5LVNDaV9sc0RIbFE5QjFsaURac19hcy1UbHBDbVloLTRWbk1JTjYtQ3REa05ZMkRVWTFLVzAtb25XdzNjX1ZRLVZuNVpXRDlNOGpyeHdmT1NELWZaS3liSjdMeG4wVmp2eTRKUjZObnVDOGcwemt5SUZLQ1JKN0FORHhfbG5ZTXE4WHdNWWo1bFRxN0kyV25CQl9aSGxKcUFxMWRhVlloTFNnUVVMQVp6c3pVNmg2NWdzR1Fkakl3Zw?oc=5",
+   "publie": "2026-11-27T07:01+01:00",
+   "id": "a241"
+  },
+  {
+   "journal": "monde",
+   "titre": "Logement : plus de la moitié du parc privé est aux mains de multipropriétaires",
+   "lien": "https://www.lemonde.fr/le-monde-evenements/article/2026/11/27/logement-plus-de-la-moitie-du-parc-prive-est-aux-mains-de-multiproprietaires_6815810_4333359.html",
+   "publie": "2026-11-27T07:00+01:00",
+   "id": "a242"
+  },
+  {
+   "journal": "ft",
+   "titre": "Private credit’s ‘alpha’ problem",
+   "lien": "https://www.ft.com/content/364fece7-4303-4ed9-afc9-47e953bd4e9f",
+   "publie": "2026-11-27T07:00+01:00",
+   "id": "a243"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Prime de Noël, revalorisation du smic, prix du gaz... Ce qui change en décembre 2026",
+   "lien": "https://www.lefigaro.fr/conjoncture/prime-de-noel-revalorisation-du-smic-prix-du-gaz-ce-qui-change-en-decembre-2026-20261127",
+   "publie": "2026-11-27T07:00+01:00",
+   "id": "a244"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Backstage | Mathilde Riga (Kult Kefir): \"Je pourrais lâcher mon rôle de CEO pour la pérennité de l'entreprise\"",
+   "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOS0FGU1c4NlgtOXpHWEkwMEREV1Z6WVBOV1ZTekFMdnRyY0RxOHNrQ3d0RGdVaHo0QU1YTjVQdkN4QmlhcGZqZ0J0TU1mVWVoY1hWMjJBdVUtdWRjc1VMZ085d0cxd1BYRDZ5ZElHYllXcWxSOXhVZnRsWjB1MDRhdFBfdnNITjU3dzVTYjdZVW9ObWRHZXZwVHlXRllidHh2ZE44RWlFTWJMRWtNNG1POVN0Y0h3eExOTEFVMFZ3amE3QkZ1SGswSUhaR1hCd1RJMGtqZzYwUVdjYzdWNFpQUVRLTEp3YnBLQUw0NA?oc=5",
+   "publie": "2026-11-27T06:31+01:00",
+   "id": "a245"
+  },
+  {
+   "journal": "ft",
+   "titre": "FirstFT: BoE’s Bailey warns of AI threat to encrypted financial data",
+   "lien": "https://www.ft.com/content/f1669703-4e86-4ab0-b4d8-f43a40cb0294?syn-25a6b1a6=1",
+   "publie": "2026-11-27T06:30+01:00",
+   "id": "a246"
+  },
+  {
+   "journal": "reuters",
+   "titre": "India-US trade deal is nearing completion, minister says",
+   "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMkR3N0t3ZmV1SDk5LWNGa3hCcXVleWpPVFpORzVUZnUtYUJoUXQ2eFEzN3ZrQjcxMHhCaXk0NzY4M2NkSFNic1Q2aGJYZlZoYnFlSG5iU0NQX1dUNWZzci1xTU10bm5UbGRYSWkzdno1c3dDRlpZWjVxNjRaWkF5ZzlJdGxsUlJpWUFTbDZCN0d4bFlqN3NNOG4xdy1zZy05TmxNZTlR?oc=5",
+   "publie": "2026-11-27T06:21+01:00",
+   "id": "a247"
+  },
+  {
+   "journal": "echos",
+   "titre": "Budget 2027 : le Sénat fait marche arrière sur les économies proposées",
+   "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQa1FGS1lGQTlzUDBEU2NYNkZ3X2NtMV84N1p2dWdjRkQzZGQ0SkRkS1M5b0oxM2FVTUxPb0ZERzJfbi15NmtraTdfU1U2TUNFNjRzczR3SVJZYndMaDJmZXNLWTdHbjlCSFpvMW1XeXQ1N04tWUZhR1Z4U0hPR29WN0k4ZmxXRU5IejVsT1MyZm56SkZRdk1Id3paMjNJdHczZGhncDk5UzVscVRiN3JTS0dycms5Qy1jLVBTajQ5d2RqajdzamZ6OU1lRHk3Zw?oc=5",
+   "publie": "2026-11-27T06:20+01:00",
+   "id": "a248"
+  },
+  {
+   "journal": "nyt",
+   "titre": "Judge Blocks F.C.C. From Targeting Disney’s Local ABC Licenses",
+   "lien": "https://www.nytimes.com/2026/11/25/business/media/disney-fcc-abc-ruling.html",
+   "publie": "2026-11-27T06:19+01:00",
+   "id": "a249"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Börse am 27. November: Fünf Punkte, die für Anleger heute wichtig sind",
+   "lien": "https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dax-und-boerse-aktuell-fuenf-punkte-die-fuer-anleger-heute-wichtig-sind/100002161.html",
+   "publie": "2026-11-27T06:17+01:00",
+   "id": "a250"
+  },
+  {
+   "journal": "paperjam",
+   "titre": "Le cadeau d’entreprise, un levier de reconnaissance",
+   "lien": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMnVieWRJcGE3MmVIajhrTmw2Y05kM0EzTkZoOVFsSVktVmZRYjNTbXlfcXpUdF82M0lXankxVDVjcjliOU9rVk5ZR1RTM05NemNWV3MyMWRkZkIyWUxiYWVIUy1kak1tLWV5XzJFZXBJa2xMekxCZjBVNGVjbS13eUxMYw?oc=5",
+   "publie": "2026-11-27T06:09+01:00",
+   "id": "a251"
+  },
+  {
+   "journal": "paperjam",
+   "titre": "«L’investissement doit être créateur de valeur»",
+   "lien": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4zdzNhem5WS0FUOThLX2dSZGI1RWRiMEt3d25uT1BnRWtHeV8zYmZRaFh2MWNSYzROdTJMbWVvQTNDdERjMkFMVld5cUlueDYxTjVkODhiYkNiUFNUTUxsVUpTQlRPU2VJMmV2bXJXX1VVSzJmbDdkMUdTSDk?oc=5",
+   "publie": "2026-11-27T06:04+01:00",
+   "id": "a252"
+  },
+  {
+   "journal": "ft",
+   "titre": "Trump media group splashes out to woo shareholders before merger vote",
+   "lien": "https://www.ft.com/content/10a28fed-3825-4e07-804d-3c80c35229e5?syn-25a6b1a6=1",
+   "publie": "2026-11-27T06:02+01:00",
+   "id": "a253"
+  },
+  {
+   "journal": "ft",
+   "titre": "Venezuelan oil magnate defends contentious deal with Trump",
+   "lien": "https://www.ft.com/content/2586bde3-a1e1-463c-b5fc-0775e8512d28?syn-25a6b1a6=1",
+   "publie": "2026-11-27T06:01+01:00",
+   "id": "a254"
+  },
+  {
+   "journal": "ft",
+   "titre": "AI data centre boom piles pressure on stressed US defence sector",
+   "lien": "https://www.ft.com/content/76143592-b1c8-42d2-bf4c-17aa87255467?syn-25a6b1a6=1",
+   "publie": "2026-11-27T06:01+01:00",
+   "id": "a255"
+  },
+  {
+   "journal": "ft",
+   "titre": "The Ellisons’ debt-fuelled takeover of Hollywood",
+   "lien": "https://www.ft.com/content/627323de-7ad0-4600-97c6-daac931c7ee1?syn-25a6b1a6=1",
+   "publie": "2026-11-27T06:00+01:00",
+   "id": "a256"
+  },
+  {
+   "journal": "ft",
+   "titre": "Kirkland & Ellis under fire from private equity backers over sell-to-yourself deals",
+   "lien": "https://www.ft.com/content/5cc534e6-d461-4fc7-a744-b938e54eee1d?syn-25a6b1a6=1",
+   "publie": "2026-11-27T06:00+01:00",
+   "id": "a257"
+  },
+  {
+   "journal": "ft",
+   "titre": "Kalshi’s next big bet: ‘microinsurance’ for small businesses",
+   "lien": "https://www.ft.com/content/587198a8-ac15-46b2-83f2-f6e181ccd7cd?syn-25a6b1a6=1",
+   "publie": "2026-11-27T06:00+01:00",
+   "id": "a258"
+  },
+  {
+   "journal": "ft",
+   "titre": "Roughnecks lose out to AI as automation in the oil industry gathers pace",
+   "lien": "https://www.ft.com/content/da45883c-6612-4071-b363-a826c6edb085?syn-25a6b1a6=1",
+   "publie": "2026-11-27T06:00+01:00",
+   "id": "a259"
+  },
+  {
+   "journal": "ft",
+   "titre": "Big Oil looks to diversify with move into electricity generation",
+   "lien": "https://www.ft.com/content/0f537b6e-7426-43a1-b82c-4e444335507b?syn-25a6b1a6=1",
+   "publie": "2026-11-27T06:00+01:00",
+   "id": "a260"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Indian central bank lets rupee rise to break one-way bets on depreciation",
+   "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaktQNmpwalZ6MUN4ZFF0OG14aGVqRVh3OWl5MHlLTHNFd3FJNi10U1I1UGI1bjJqRm15NGR3UXJtcFRKcjZtbmlZZF9tVFdub0N0Zl85RTBodGE0OHFyVWM5M1BESkE5Y1JwRV8xaWc2a1owN05TSUw5aGE2UFMta0l3dURQRllvZkM4NUZ5UGI3dWpZeDFxbDB5enJUWWpfMDJnWll6SGczVXpjanVkMFJ3NzVrdw?oc=5",
+   "publie": "2026-11-27T05:30+01:00",
+   "id": "a261"
+  },
+  {
+   "journal": "wort",
+   "titre": "Vier Tage, zehn Stunden: Betriebe bleiben bislang zurückhaltend",
+   "lien": "https://www.wort.lu/politik/vier-tage-zehn-stunden-betriebe-bleiben-bislang-zurueckhaltend/165087588.html",
+   "publie": "2026-11-27T05:00+01:00",
+   "id": "a262"
+  },
+  {
+   "journal": "wort",
+   "titre": "Luxemburgs Mäzene sollen aus der Reserve gelockt werden",
+   "lien": "https://www.wort.lu/kultur/luxemburgs-maezene-sollen-aus-der-reserve-gelockt-werden/165080643.html",
+   "publie": "2026-11-27T05:00+01:00",
+   "id": "a263"
+  },
+  {
+   "journal": "fd",
+   "titre": "Vastgoedbeleggers en witwassers kijken gespannen naar de Spaanse verkiezingen",
+   "lien": "https://fd.nl/economie/1620816/vastgoedbeleggers-en-witwassers-kijken-gespannen-naar-de-spaanse-verkiezingen",
+   "publie": "2026-11-27T05:00+01:00",
+   "id": "a264"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Phishing: les refus de remboursement des banques dans le viseur de l'Inspection économique",
+   "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOMFRZTEx0b0QzVlVDRExEOFhWZVJ5ejY5QkVucHJuc21fcVpEN0RERy1TRGpJNkFlb0N4UTZIX1BWU1BadlRkS0xxNF9xejRfMjAxT1BQWjUwZTYwQWNwN0tFT3huRjY1cUYyWjhQbm9QWkltTmtMWmF4WWJJYW9fUV9nNUN1YWRGQ3NPaVVRdWduTWRpT0FOMFdyZEJMVHFYaE5UdUVUQkFkNFJTTzZYY1JoSlp4ZXltWWZET1lDTGY0aTJyazdEdlpxQUhlZ1dTT1piSE1VUDVXTVdNMjBNZ243N3dwU0VXLVNZ?oc=5",
+   "publie": "2026-11-27T04:52+01:00",
+   "id": "a265"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Le FC Bruges affiche des résultats financiers record: un bénéfice net de plus de 43 millions d'euros",
+   "lien": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNLWdJUkxwc0ktTlVKMzQ5WUdsLVFDOHlGQ1haZ0c1TmNkQ2xNeHBIek9lNFd1Tm1Rb1ZuQ0pPYl9QcjNsVFB4dkw3b01qYkpIemptX3Rfd2ppcmNWWjdWUTJYNFE2YnphMWZXaUZCRTIzeUlmQmo4RGxYcWh5MWpsVVljZS1FdlZmZ1dzbV84YjNDRWJWVDBYaGNEcHpnWDYtb2dTMDFETHB6Yk9vSlNBcnB0TzdKSG55N3U3TVFTdEdXbE42LVlmMGlSdEJ6UzBXWHZRb1g2LWFYOGEtc2dSSkJVbXVRZm8?oc=5",
+   "publie": "2026-11-27T04:52+01:00",
+   "id": "a266"
+  },
+  {
+   "journal": "lecho",
+   "titre": "L'inflation américaine fera-t-elle encore grimper les taux de la Fed?",
+   "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPOG40djNvUEVoOVFvOWF3WXFudzdwbXZkQjNyU1FidkNlVjEzX21UeWtDOTR5U09mblloeVc0SHp6b3VKOXlsV1lHbTdoY2NUNlZfQk91MWc2TUdVbHpPVkctczFWLUNGOGtmT21TREtpS0dicmNHdlhDajFfZWFMbXZOTmJWU05CZG1vcHpiSm5pSDZpYjFoRVYyNWl3UUVrMHYySU50Tm5WNWtLYVY5aVdtVDFqNF9peE1mUUVmQWdoc21PSHUwd2tJRDhpMlM1YWhJQXZUR2ZnSnFZTEliQg?oc=5",
+   "publie": "2026-11-27T04:51+01:00",
+   "id": "a267"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Emerging-Market Stocks Eye Best Week Since June on Tech Rebound",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/em-asia-stocks-set-for-weekly-gain-as-markets-regain-footing",
+   "publie": "2026-11-27T04:33+01:00",
+   "id": "a268"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Aktie im Blick: Nach dem größten Börsengang aller Zeiten kommt es zur Glaubensfrage",
+   "lien": "https://www.handelsblatt.com/finanzen/anlagestrategie/kolumnen/anthropic-der-groesste-boersengang-aller-zeiten-wird-zur-glaubensfrage/100272712.html",
+   "publie": "2026-11-27T04:00+01:00",
+   "id": "a269"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Stoxx Europe 600: Kursplus von bis zu 289 Prozent – das sind Europas Top-Aktien",
+   "lien": "https://www.handelsblatt.com/finanzen/maerkte/aktien/geldanlage-kursplus-von-bis-zu-289-prozent-das-sind-europas-top-aktien/100270179.html",
+   "publie": "2026-11-27T04:00+01:00",
+   "id": "a270"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Baumärkte: Kartellrechtliche Hürden könnten Fusion von Obi und Toom erschweren",
+   "lien": "https://www.handelsblatt.com/unternehmen/handel-konsumgueter/baumaerkte-kartellrecht-koennte-fusion-von-obi-und-toom-erschweren/100273004.html",
+   "publie": "2026-11-27T04:00+01:00",
+   "id": "a271"
+  },
+  {
+   "journal": "handelsblatt",
+   "titre": "Gastronomie: Eine Kunstpause in Europas teuerstem Restaurant",
+   "lien": "https://www.handelsblatt.com/unternehmen/gastronomie-eine-kunstpause-in-europas-teuerstem-restaurant/100270984.html",
+   "publie": "2026-11-27T04:00+01:00",
+   "id": "a272"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Rupee rally takes a hit as AI trade revival dents shares, currency sees weekly dip",
+   "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTVpnbGF5MDlLb2hLcjBEWnM2ajc3TkQ0R0tmYy1ZV2lMU2NpeEMtdG95djVVcDVFY3dZMmxRSjFPT19sWDJNeDNCcTJyLVJYelprdFNIdkNOQTV0NG80VjV3bTVkYXhBb3JWY2ZydEJsbFVMUll0Q3lkZVAyWWkwY0NNV3lVcll6YzVqcDU2SGZma0c4cm5WR2ZSLVlTekx6LUgwUGlWTWNuMlBXeEhrQTIza3Q4TTBC?oc=5",
+   "publie": "2026-11-27T03:47+01:00",
+   "id": "a273"
+  },
+  {
+   "journal": "nyt",
+   "titre": "Nvidia Halts Sales to Southeast Asia as U.S. Tightens China Restrictions",
+   "lien": "https://www.nytimes.com/2026/11/26/business/nvidia-southeast-asia-sales.html",
+   "publie": "2026-11-27T03:45+01:00",
+   "id": "a274"
+  },
+  {
+   "journal": "lecho",
+   "titre": "Société de patrimoine avec immeuble de placement à Anvers",
+   "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNdG9DbTRUMlFmNmYzYVdCOHJkb2J6UjE2MWs2U091eHlSSW02VENjQjJFbWZDRFkxYzM1UjRhcExJelpHMW8yaFJDcHRlNjZXUjFodnQ5V2h3NGtWd29LRzR5eHBwMHhnbXJRalQzYU0xa1BJeXRMZENKSWdvSzl6VS1ELTBpdFBGTnJYMGotbVhLLVlZZTcxNVB2ejlyVTBNTU03MEJVR0tOZFdvbkRfbk1ueTBBUjRJMHlOTEpuYVBWVUszNUZRZ2tFWVFiTVRSeFB0QlpzZWRYdFF1Y0U5TC1mVXVlYU9YU1FaT3BkbFh3VjlsbGRV?oc=5",
+   "publie": "2026-11-27T03:45+01:00",
+   "id": "a275"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Treasuries Fall as Haven Demand Ebbs Amid Stocks Rebound",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/treasuries-retreat-as-gains-in-equities-sap-demand-for-havens",
+   "publie": "2026-11-27T03:43+01:00",
+   "id": "a276"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Indian shares snap blistering rally after four weeks as oil prices climb",
+   "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNVDF2UTZXY0ZrSVVuYktpbG1TWVI0aU5wZENOV1Y4YlZZV1NiTmhyeWYxMDB6MGl1cWR3ZllHTWF3YkxIT1BhbDRjQjd6SUZvaTRybUZPZDBtSjMySTlqMVdZMklDWEtKUzI3OGQ4R0l4WjlDcWRNemtmY3dUV25kYThKRVNXWmZ0am4zenFldkZvNk8yWHZQRnMzR0pfUzg1OUxGRlkxMmtIVWtkNEw4aE5rQU5KOGZjOTd0ZFNGcw?oc=5",
+   "publie": "2026-11-27T03:30+01:00",
+   "id": "a277"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Global markets rally as end of bruising month approaches",
+   "lien": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOeDB1T1E2SVA0LVpuZFR6d2d5dWFobkEwdkN5aFVmZUZKN1pSVWExbEJzWlZhV0tKcklRQ09yZlFTZklkLTBNSGFwbHBfbHR2SWZoQTdXcWtFdEViWGdQamN2a0JjWjZ4M0Mydmlpc1lrQUdYaFBNVkFBdTQ4djVpbjZrRQ?oc=5",
+   "publie": "2026-11-27T03:01+01:00",
+   "id": "a278"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Oil on track for first weekly gain in November on supply fears",
+   "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTzVQVzE5aGdzbGVhNEUtVl94M0V3RjN5Rks4UDU0U0plazFDcjFnUTBMMHBvdk9BRzFaVHljSXk1ZFdzSjlRTVRXNGZ0cnRyUWRRbFJaRjBsVWNFbDZqSnQ0cHo0TW5fRDlwMWlKWDI3V2ROcnlXczVET1RqSXR6UGtZSTZ0OTQtY1YwaG1yYTRwQnZ6TW43azNGNTFqMmpkNFhtbVJwRnVkVERhR1NnSlFIMzExZw?oc=5",
+   "publie": "2026-11-27T02:55+01:00",
+   "id": "a279"
+  },
+  {
+   "journal": "reuters",
+   "titre": "China's industrial profit growth fastest in five months as recovery remains uneven",
+   "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQYXpmLS1vbkF6ZV9ZNmNyaUpnUGVQTGx6RHRFSXNGX0NhWGhxQ0tET29xdFhjSi15VWloX1lscXVRZ3dKM0g2MVBwU3ppVkVKNE1KWmhNZDV2Y2dwUWt4MTV3YzBGdUhRYTBDVjg4cEgxam9yX3F2OGpIMXJNV2V1amg5bU43MzFoUFlKNFV1OUFUZDRfUnVhank3V2VVRHQ0?oc=5",
+   "publie": "2026-11-27T02:36+01:00",
+   "id": "a280"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Shoppers look for respite in big Black Friday discounts as inflation bites",
+   "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNXzUyQUp1enhRcjVIdWlBejd2XzFsdXVwaFF1SUswaVBuTzBKMkE2cU5GdnVSX2tiMjVIYnQzLXFKN3E2UWZ0bVZkX3dvdjEzaHRQRUdsM1pBOF9vaG0wYWVKZ2JNam5zWXZmT25QcVhPcWIwcDQ5cEx2U3QyQW1LcE43UEpGQVhpMF94bjVid21hYm9YbEZ0UnhBTnhPdlBJRFpzbFhsbWxBNndmeGNjcHptNXhJMnlQNk94TQ?oc=5",
+   "publie": "2026-11-27T02:32+01:00",
+   "id": "a281"
+  },
+  {
+   "journal": "expansion",
+   "titre": "El cisne del Ibex que vuela alto este año y encandila a los expertos",
+   "lien": "https://www.expansion.com/inversion/2026/11/27/cisne-ibex-vuela-alto-ano-encandila-expertos.html",
+   "publie": "2026-11-27T02:12+01:00",
+   "id": "a282"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Brazil Markets Rally as Trabuco Pick Soothes Fiscal Fears",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-27/brazil-assets-rally-after-lula-names-banker-luiz-carlos-trabuco-cappi-finance-minister",
+   "publie": "2026-11-27T02:08+01:00",
+   "id": "a283"
+  },
+  {
+   "journal": "reuters",
+   "titre": "The search for Vietnam's stolen pets at wet markets and slaughterhouses",
+   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQ2dYeElFYjEyMGxyeHFRdGd0SzUxZ3ctdUhzdVp0c0NSS1VKTWJSTXpxdHdyTGFQTGc5d3FvUUxpN2xEMDBlU2o2bHRRXzh1NUMtRUtTOTJsRmxGVzNoT0VDQ000Qm1lcTRnTUp1SDRSUFU2bXY1QVBsS19mSTRIMkxaTkVjVU9WdXNVV29ZaEhNR3BRV1RULWpEUjlLQnJ5Vmc2blVlRmFKUkpKOEFtdFZR?oc=5",
+   "publie": "2026-11-27T02:06+01:00",
+   "id": "a284"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Risk-sensitive currencies rise on tech rebound, dollar set for weekly gain",
+   "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWkt5OU9rSlNUam1waVVQSzc0cWNjMWk3N0xXSnk5Q1p4UlVHSG5JdGpkZGxVLWI5bW9QOVUwMGRsOExnNkc1VkZWUHllWWQxOV9QX0xTLUVxbGcxOFV3NHQxUnpUQUJRTFh6aXZ6MlpOb3d0eHRucTNQOERjNHlfS01YTlk3dTBwX2ZfWVFjdER1Tkl5V0NDODlzclpSckpUT3c?oc=5",
+   "publie": "2026-11-27T02:03+01:00",
+   "id": "a285"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Los valores más firmes del Ibex en plenas turbulencias",
+   "lien": "https://www.expansion.com/mercados/2026/11/27/valores-firmes-ibex-plenas-turbulencias.html",
+   "publie": "2026-11-27T02:01+01:00",
+   "id": "a286"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Así es T. Rowe Price, la gestora pionera en el estilo de inversión en crecimiento",
+   "lien": "https://www.expansion.com/mercados/fondos/2026/11/27/asi-t-rowe-price-gestora-pionera-estilo-inversion-crecimiento.html",
+   "publie": "2026-11-27T02:01+01:00",
+   "id": "a287"
+  },
+  {
+   "journal": "expansion",
+   "titre": "La nueva estrategia de Indra despeja un recorrido alcista superior al 30%",
+   "lien": "https://www.expansion.com/inversion/2026/11/27/nueva-estrategia-indra-despeja-recorrido-alcista-superior-30.html",
+   "publie": "2026-11-27T02:00+01:00",
+   "id": "a288"
+  },
+  {
+   "journal": "expansion",
+   "titre": "¿Habrá correctivo para el Ibex si Pedro Sánchez gana las elecciones?",
+   "lien": "https://www.expansion.com/mercados/2026/11/27/habra-correctivo-ibex-pedro-sanchez-gana-elecciones.html",
+   "publie": "2026-11-27T02:00+01:00",
+   "id": "a289"
+  },
+  {
+   "journal": "bbc",
+   "titre": "From £250 job to £9,000 bill: Inside the rogue trader networks scamming customers at scale",
+   "lien": "https://www.bbc.co.uk/news/articles/c65yme31k7m2o?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-27T01:58+01:00",
+   "id": "a290"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Japan Tobacco shares surge on talk it may acquire part of Imperial",
+   "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSm1oeUhYUWItMFM0aFNieVpQSFV6Q29IX0tvWFJyOVk0c1FPNTdvLUZueEtBRGozWThaMHdqbWxlVjNQNHNzMk1NcFZqSDZjcDFueGlybVA3RkJTQWxLVERHalU3Nzl4ZnF0cm8tQk9FeDV6N3pfd3hjeWliZkNJZmNMZGNaVTF3MFNUdjQxeXFZOFQ3TGdRX1k3WTlBTkVa?oc=5",
+   "publie": "2026-11-27T01:40+01:00",
+   "id": "a291"
+  },
+  {
+   "journal": "expansion",
+   "titre": "La Fed se prepara para subir los tipos de interés",
+   "lien": "https://www.expansion.com/mercados/2026/11/27/fed-prepara-subir-tipos-interes.html",
+   "publie": "2026-11-27T01:36+01:00",
+   "id": "a292"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Microsoft, Alphabet, Meta y Amazon son la ‘tecnología de calidad’ para 2027, según Pictet",
+   "lien": "https://www.expansion.com/mercados/2026/11/27/microsoft-alphabet-meta-amazon-son-tecnologia-calidad-2027-pictet.html",
+   "publie": "2026-11-27T01:29+01:00",
+   "id": "a293"
+  },
+  {
+   "journal": "expansion",
+   "titre": "La 'fintech' Ebury impulsa en León un centro financiero y tecnológico con 300 empleados",
+   "lien": "https://www.expansion.com/empresas/banca/2026/11/27/fintech-ebury-impulsa-leon-centro-financiero-tecnologico-300-empleados.html",
+   "publie": "2026-11-27T01:25+01:00",
+   "id": "a294"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Trump says Wednesday's market had him briefly 'concerned' before stocks recovered",
+   "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWHRXZnN1TmZVRDJ6VUJtNjhuRm85eGlQVmdGNGQ0SC0yeHlPVUlKSksyLVNZa0VqRGdqUWVtaW1oNHhjQldDdHlKYnZ0TVgtbkpEcmJfVEcyTUxnNkNYeEdaYXlWUmQwcnhyLUtrUERoYnhIdnVxV3lFeUhza21Wc3U2WW9yd2loWmpxeXE4SG9OT2Rlai1reWtSemRkYnlBZndLaFVNOHJHeDF4ZkVmckpqSzZSbElNZHpfdUFLTTBsOW9C?oc=5",
+   "publie": "2026-11-27T01:25+01:00",
+   "id": "a295"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Seat se alía con Indra para lanzar su desembarco en el sector de Defensa",
+   "lien": "https://www.expansion.com/empresas/2026/11/27/seat-alia-indra-lanzar-desembarco-sector-defensa.html",
+   "publie": "2026-11-27T01:19+01:00",
+   "id": "a296"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Prologis ultima la venta de 15 naves en España a BGO y P3",
+   "lien": "https://www.expansion.com/inmobiliario/2026/11/27/prologis-ultima-venta-15-naves-espana-bgo-p3.html",
+   "publie": "2026-11-27T01:10+01:00",
+   "id": "a297"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Ence se lanza a por 3.000 millones en proyectos para combustible sostenible de aviación",
+   "lien": "https://www.expansion.com/empresas/2026/11/27/ence-lanza-3-000-millones-proyectos-combustible-sostenible-aviacion.html",
+   "publie": "2026-11-27T01:09+01:00",
+   "id": "a298"
+  },
+  {
+   "journal": "bbc",
+   "titre": "Why is there a shortage of 'wizard' elevator mechanics?",
+   "lien": "https://www.bbc.co.uk/news/articles/c52e8k19y94mo?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-27T01:02+01:00",
+   "id": "a299"
+  },
+  {
+   "journal": "guardian",
+   "titre": "Water firms to identify 250,000 vulnerable households in England eligible for discounts",
+   "lien": "https://www.theguardian.com/business/2026/nov/27/water-firms-to-identify-250000-vulnerable-households-in-england-eligible-for-discounts",
+   "publie": "2026-11-27T01:01+01:00",
+   "id": "a300"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Gold Rises as Rebound in Tech Stocks Helps Revive Risk Appetite",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-26/gold-steadies-as-fed-rate-path-and-ai-stocks-frame-volatile-week",
+   "publie": "2026-11-27T00:53+01:00",
+   "id": "a301"
+  },
+  {
+   "journal": "expansion",
+   "titre": "El bitcoin se enfrenta hoy a un gran vencimiento de opciones",
+   "lien": "https://www.expansion.com/mercados/criptomonedas/2026/11/27/bitcoin-enfrenta-hoy-gran-vencimiento-opciones.html",
+   "publie": "2026-11-27T00:44+01:00",
+   "id": "a302"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Los retos del nuevo BCE: combatir la inflación con un ojo en Francia",
+   "lien": "https://www.expansion.com/mercados/2026/11/27/retos-nuevo-bce-combatir-inflacion-ojo-francia.html",
+   "publie": "2026-11-27T00:42+01:00",
+   "id": "a303"
+  },
+  {
+   "journal": "fd",
+   "titre": "Vraag naar rekenkracht blijft groot, beurscorrectie AI lijkt vooral ingegeven door politieke ontwikkelingen",
+   "lien": "https://fd.nl/financiele-markten/1620645/vraag-naar-rekenkracht-blijft-groot-beurscorrectie-ai-lijkt-vooral-ingegeven-door-politieke-ontwikkelingen",
+   "publie": "2026-11-27T00:30+01:00",
+   "id": "a304"
+  },
+  {
+   "journal": "bbc",
+   "titre": "UK to pay 'participation' fee to deliver EU deals",
+   "lien": "https://www.bbc.co.uk/news/articles/ck2057x387ego?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-27T00:17+01:00",
+   "id": "a305"
+  },
+  {
+   "journal": "bbc",
+   "titre": "Asia made a big AI bet on Nvidia. What happens now?",
+   "lien": "https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-27T00:08+01:00",
+   "id": "a306"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "Latest Oil Market News and Analysis for Nov. 27",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-26/latest-oil-market-news-and-analysis-for-nov-27",
+   "publie": "2026-11-27T00:05+01:00",
+   "id": "a307"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Los sindicatos temen el despido de los 659 empleados de Plus Ultra y el cierre de la aerolínea",
+   "lien": "https://www.expansion.com/empresas/transporte/2026/11/26/sindicatos-temen-despido-659-empleados-plus-ultra-cierre-aerolinea.html",
+   "publie": "2026-11-26T23:51+01:00",
+   "id": "a308"
+  },
+  {
+   "journal": "bloomberg",
+   "titre": "S&P 500 Has Best Week Since April 2025 on AI Rally: Markets Wrap",
+   "lien": "https://www.bloomberg.com/news/articles/2026-11-26/asian-stock-futures-signal-gains-oil-climbs-again-markets-wrap",
+   "publie": "2026-11-26T22:59+01:00",
+   "id": "a309"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Musk pledges two SpaceX shares for every US child in $18 billion AI charm offensive",
+   "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNklmekFZWmFURnFwVlBHa2FlTGZwYkxaSkNSRUxMV2lsanFDc2hkdGF1RGhHWlJoUTBicHFXY1B3dWxHa0xmdU5mYzFBbGpYN3Z5N2xTS2U1bVBJeVZQVHRucldkRVhsVlVfNldnTWpRclIzSjJQa0tMMnBFVGhDTS1HYzdwVlctaXowdDJtdVJaNkxLcXo2Tk9Odi1XZnI0c1JScHZycXhWRUNUZmQ4?oc=5",
+   "publie": "2026-11-26T22:58+01:00",
+   "id": "a310"
+  },
+  {
+   "journal": "ft",
+   "titre": "What's a fund manager to do?",
+   "lien": "https://www.ft.com/content/ff2a3ebf-d9be-45f6-95e0-00cc67e7c49e?syn-25a6b1a6=1",
+   "publie": "2026-11-26T22:00+01:00",
+   "id": "a311"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Toyota supera los 300 millones en España con su negocio de carretillas",
+   "lien": "https://www.expansion.com/catalunya/2026/11/26/toyota-supera-300-millones-espana-negocio-carretillas.html",
+   "publie": "2026-11-26T21:50+01:00",
+   "id": "a312"
+  },
+  {
+   "journal": "nyt",
+   "titre": "Dan Carney Has Died. He Co-Founded Pizza Hut and Then Made It Ubiquitous.",
+   "lien": "https://www.nytimes.com/2026/11/26/business/dan-carney-dead.html",
+   "publie": "2026-11-26T21:37+01:00",
+   "id": "a313"
+  },
+  {
+   "journal": "figaro",
+   "titre": "«Une erreur délibérée» : Trump exige une «enquête» sur le taux de croissance américain publié avant les élections de mi-mandat",
+   "lien": "https://www.lefigaro.fr/conjoncture/une-erreur-deliberee-trump-exige-une-enquete-sur-le-taux-de-croissance-americain-publie-avant-les-elections-de-mi-mandat-20261126",
+   "publie": "2026-11-26T21:00+01:00",
+   "id": "a314"
+  },
+  {
+   "journal": "bbc",
+   "titre": "Faisal Islam: Why Trump's new tariffs are less of a threat",
+   "lien": "https://www.bbc.co.uk/news/articles/c6r7g4e3yep1o?at_medium=RSS&at_campaign=rss",
+   "publie": "2026-11-26T20:55+01:00",
+   "id": "a315"
+  },
+  {
+   "journal": "nyt",
+   "titre": "European Central Bank Chooses Pablo Hernández de Cos as Next President",
+   "lien": "https://www.nytimes.com/2026/11/26/business/ecb-pablo-hernandez-de-cos.html",
+   "publie": "2026-11-26T20:41+01:00",
+   "id": "a316"
+  },
+  {
+   "journal": "figaro",
+   "titre": "« Tout le monde les regarde » : moins chers et adaptables, les modèles chinois d’IA séduisent aussi les grands groupes français",
+   "lien": "https://www.lefigaro.fr/secteur/high-tech/tout-le-monde-les-regarde-moins-chers-et-adaptables-les-modeles-chinois-d-ia-seduisent-aussi-les-grands-groupes-francais-20261126",
+   "publie": "2026-11-26T20:26+01:00",
+   "id": "a317"
+  },
+  {
+   "journal": "expansion",
+   "titre": "Acciona estudia integrar su filial energética tras no encontrar comprador",
+   "lien": "https://www.expansion.com/empresas/2026/11/26/acciona-estudia-integrar-filial-energetica-encontrar-comprador.html",
+   "publie": "2026-11-26T20:15+01:00",
+   "id": "a318"
+  },
+  {
+   "journal": "reuters",
+   "titre": "Turkey's capital markets catch cold from funds crisis",
+   "lien": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNS3lROFVRYjM4YU8zM0VfZjVwMEVLZC1oNWtyUmRzZThnYkNwa28yZlNMRDhBaHAwMkdfQ0lObE1ZSjZEb1dMNzdORFdBSEI3aXZpRl9Rb2xOTEI2SklOellmVHVlVG1qT1BMM0JKdWhpX2NyRWowOVoxTnA4TnVOSDJuTURmd0xHR3VKakhHblU0M3NwVGpZQ0JZU0swbmZtcUxR?oc=5",
+   "publie": "2026-11-26T19:50+01:00",
+   "id": "a319"
+  },
+  {
+   "journal": "figaro",
+   "titre": "« Opération conviction » : à Reims, Marine Le Pen propose de baisser l’impôt sur les sociétés pour les petites entreprises",
+   "lien": "https://www.lefigaro.fr/elections/presidentielles/operation-conviction-a-reims-marine-le-pen-propose-de-baisser-l-impot-sur-les-societes-pour-les-petites-entreprises-20261126",
+   "publie": "2026-11-26T19:46+01:00",
+   "id": "a320"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Retraites, chômage, santé… Les leçons de nos voisins européens pour maîtriser nos dépenses sociales",
+   "lien": "https://www.lefigaro.fr/conjoncture/retraites-chomage-sante-les-lecons-de-nos-voisins-europeens-pour-maitriser-nos-depenses-sociales-20261126",
+   "publie": "2026-11-26T19:45+01:00",
+   "id": "a321"
+  },
+  {
+   "journal": "fd",
+   "titre": "Rechter oordeelt: moet er een verbod komen op de AI-brillen van Meta?",
+   "lien": "https://fd.nl/tech-en-innovatie/1620827/rechter-mag-oordelen-moet-er-een-verbod-komen-op-de-ai-brillen-van-meta",
+   "publie": "2026-11-26T19:42+01:00",
+   "id": "a322"
+  },
+  {
+   "journal": "expansion",
+   "titre": "La gran distribución negociará subir hasta un 16% los salarios",
+   "lien": "https://www.expansion.com/empresas/distribucion/2026/11/26/gran-distribucion-negociara-subir-16-salarios.html",
+   "publie": "2026-11-26T19:34+01:00",
+   "id": "a323"
+  },
+  {
+   "journal": "guardian",
+   "titre": "Can Elon Musk really put AI datacentres in space? - The Latest",
+   "lien": "https://www.theguardian.com/news/video/2026/nov/26/can-elon-musk-really-put-ai-datacentres-in-space-the-latest",
+   "publie": "2026-11-26T19:34+01:00",
+   "id": "a324"
+  },
+  {
+   "journal": "figaro",
+   "titre": "« Nous sommes en discussion avec un tiers des pays de l’Apec » : l’intelligence artificielle chinoise à la conquête du monde",
+   "lien": "https://www.lefigaro.fr/economie/nous-sommes-en-discussion-avec-un-tiers-des-pays-de-l-apec-l-intelligence-artificielle-chinoise-a-la-conquete-du-monde-20261126",
+   "publie": "2026-11-26T19:30+01:00",
+   "id": "a325"
+  },
+  {
+   "journal": "figaro",
+   "titre": "Pneus : Michelin à la pointe dans la lutte contre la déforestation",
+   "lien": "https://www.lefigaro.fr/economie/pneus-michelin-a-la-pointe-dans-la-lutte-contre-la-deforestation-20261126",
+   "publie": "2026-11-26T19:27+01:00",
+   "id": "a326"
+  },
+  {
+   "journal": "guardian",
+   "titre": "Some old-school advice for Burnham: boost competition if you want growth | Nils Pratley",
+   "lien": "https://www.theguardian.com/business/nils-pratley-on-finance/2026/nov/26/old-school-advice-burnham-boost-competition-if-you-want-growth",
+   "publie": "2026-11-26T19:19+01:00",
+   "id": "a327"
+  }
+ ],
+ "infos": [
+  {
+   "id": "i1",
+   "articles": [
+    "a217",
+    "a175",
+    "a169",
+    "a59",
+    "a54",
+    "a17"
+   ],
+   "titre": "",
+   "titre_origine": "Prima week voor aandelenbeleggers dankzij comeback van Jensen Huang",
+   "statut": "confirmee",
+   "nb_journaux": 6
+  },
+  {
+   "id": "i2",
+   "articles": [
+    "a281",
+    "a79",
+    "a24"
+   ],
+   "titre": "",
+   "titre_origine": "Black Friday 2026: Shoppers Try to Cut Back, Hunt for Deals",
+   "statut": "confirmee",
+   "nb_journaux": 3
+  },
+  {
+   "id": "i3",
+   "articles": [
+    "a66",
+    "a22"
+   ],
+   "titre": "",
+   "titre_origine": "On refait la séance : Lumibird s'envole, rachat en vue par Thalès - 27/11",
+   "statut": "confirmee",
+   "nb_journaux": 2
+  },
+  {
+   "id": "i4",
+   "articles": [
+    "a234",
+    "a30"
+   ],
+   "titre": "",
+   "titre_origine": "Anthropic Shares Jump After Volatile First Week Since IPO",
+   "statut": "confirmee",
+   "nb_journaux": 2
+  },
+  {
+   "id": "i5",
+   "articles": [
+    "a283",
+    "a61",
+    "a44"
+   ],
+   "titre": "",
+   "titre_origine": "Lula escolhe Trabuco para acalmar mercado",
+   "statut": "confirmee",
+   "nb_journaux": 2
+  },
+  {
+   "id": "i6",
+   "articles": [
+    "a232",
+    "a49"
+   ],
+   "titre": "",
+   "titre_origine": "Will new energy fixes cost more in January?",
+   "statut": "confirmee",
+   "nb_journaux": 2
+  },
+  {
+   "id": "i7",
+   "articles": [
+    "a306",
+    "a97"
+   ],
+   "titre": "",
+   "titre_origine": "Nvidia’s stock has tumbled 28% over one chaotic month. The next big test lies in the week ahead",
+   "statut": "confirmee",
+   "nb_journaux": 2
+  },
+  {
+   "id": "i8",
+   "articles": [
+    "a316",
+    "a122"
+   ],
+   "titre": "",
+   "titre_origine": "VIDEO - Qui est Pablo Hernandez de Cos, le futur patron de la BCE ?",
+   "statut": "confirmee",
+   "nb_journaux": 2
+  },
+  {
+   "id": "i9",
+   "articles": [
+    "a1"
+   ],
+   "titre": "",
+   "titre_origine": "Wall Street: US-Börsen schließen im Plus – Anthropic wieder über Ausgabepreis",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i10",
+   "articles": [
+    "a2"
+   ],
+   "titre": "",
+   "titre_origine": "Sylvain Bersinger (Bersingéco), Lévan Sardjevéladzé (Syndicat National du Jeu Vidéo), et Adel Bakawan (European Institute for Studies on the Middle East and North Africa) – 27/11",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i11",
+   "articles": [
+    "a3"
+   ],
+   "titre": "",
+   "titre_origine": "„Gratis rein, gratis raus“: Fast jeder siebte Einwohner ist auf Hilfe angewiesen",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i12",
+   "articles": [
+    "a4"
+   ],
+   "titre": "",
+   "titre_origine": "Ceo defensietechbedrijf Palantir: ‘Wij kunnen zonder Europa. Maar jullie niet zonder ons’",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i13",
+   "articles": [
+    "a5"
+   ],
+   "titre": "",
+   "titre_origine": "Le tourisme français sommé de se réinventer pour respecter l’accord de Paris sur le climat",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i14",
+   "articles": [
+    "a6"
+   ],
+   "titre": "",
+   "titre_origine": "Contrex, Vittel, Hépar... Nestlé Waters prévoit de supprimer des postes dans les Vosges (ils seraient 95 sur 500 selon les syndicats)",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i15",
+   "articles": [
+    "a7"
+   ],
+   "titre": "",
+   "titre_origine": "Les distributeurs indépendants de SFR, qui craignent de ne pas survivre au rachat de l’opérateur, l’attaquent en justice",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i16",
+   "articles": [
+    "a8"
+   ],
+   "titre": "",
+   "titre_origine": "Nike décroche en Bourse : le titre a perdu les deux tiers de sa valeur en trois ans, les analystes de Berenberg et HSBC se prononcent",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i17",
+   "articles": [
+    "a9"
+   ],
+   "titre": "",
+   "titre_origine": "Thames Water seeks to delay debt repayments to secure £2.4bn emergency loan",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i18",
+   "articles": [
+    "a10"
+   ],
+   "titre": "",
+   "titre_origine": "Una deuda de 87.000 millones de dólares pone a prueba los límites de la fortuna de la familia Ellison",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i19",
+   "articles": [
+    "a11"
+   ],
+   "titre": "",
+   "titre_origine": "Clearing out my parents’ house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i20",
+   "articles": [
+    "a12"
+   ],
+   "titre": "",
+   "titre_origine": "Verizon in talks over $6bn deal for Fidium to boost broadband footprint",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i21",
+   "articles": [
+    "a13"
+   ],
+   "titre": "",
+   "titre_origine": "US tech stocks rise in latest market swing",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i22",
+   "articles": [
+    "a14"
+   ],
+   "titre": "",
+   "titre_origine": "López Frade (Suzuki): \"El futuro del automóvil estaba clarísimo, hasta que llegó el futuro\"",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i23",
+   "articles": [
+    "a15"
+   ],
+   "titre": "",
+   "titre_origine": "Hong Kong Is Selling The City It Used To Be",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i24",
+   "articles": [
+    "a16"
+   ],
+   "titre": "",
+   "titre_origine": "Nvidia, le séisme qui secoue la tech",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i25",
+   "articles": [
+    "a18"
+   ],
+   "titre": "",
+   "titre_origine": "Muere Sabino García Vallina, fundador y presidente de TSK",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i26",
+   "articles": [
+    "a19"
+   ],
+   "titre": "",
+   "titre_origine": "L'intégrale de BFM Bourse du vendredi 27 novembre",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i27",
+   "articles": [
+    "a20"
+   ],
+   "titre": "",
+   "titre_origine": "12 days of sardines and Croc charms: Are Advent calendars getting out of control?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i28",
+   "articles": [
+    "a21"
+   ],
+   "titre": "",
+   "titre_origine": "Stocks Rally at End of a Week of Wild Swings",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i29",
+   "articles": [
+    "a23"
+   ],
+   "titre": "",
+   "titre_origine": "It’s Boom Times for Old TV Shows. New TV, Not So Much.",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i30",
+   "articles": [
+    "a25"
+   ],
+   "titre": "",
+   "titre_origine": "Le groupe d’experts sur le smic s’inquiète de la « smicardisation » de la France",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i31",
+   "articles": [
+    "a26"
+   ],
+   "titre": "",
+   "titre_origine": "Dit jaar minder belastinginkomsten uit box 2: grootaandeelhouders wachten lager tarief af",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i32",
+   "articles": [
+    "a27"
+   ],
+   "titre": "",
+   "titre_origine": "Les seuils techniques incontournables sur les marchés et les valeurs – 27/11",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i33",
+   "articles": [
+    "a28"
+   ],
+   "titre": "",
+   "titre_origine": "500 embauches et une voiture encore produite nulle part dans le monde: les ambitions du géant chinois BYD pour son usine française se précisent",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i34",
+   "articles": [
+    "a29"
+   ],
+   "titre": "",
+   "titre_origine": "Dax aktuell: Dax beendet die Woche im Plus – „Black Friday“ verläuft ruhig",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i35",
+   "articles": [
+    "a31"
+   ],
+   "titre": "",
+   "titre_origine": "UK Department for Work and Pensions hit by cyber incident",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i36",
+   "articles": [
+    "a32"
+   ],
+   "titre": "",
+   "titre_origine": "UK Steel Sector Says UK-EU Agreement Gives Rivals Unfair Edge",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i37",
+   "articles": [
+    "a33"
+   ],
+   "titre": "",
+   "titre_origine": "Le Club : Un paradis obligataire en vue pour les investisseurs ? – 27/11",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i38",
+   "articles": [
+    "a34"
+   ],
+   "titre": "",
+   "titre_origine": "La Data Room : Avec 16,8 milliards d’euros en octobre 2026, les cotisations d’assurance vie enregistrent leur deuxième plus haut niveau jamais atteint pour un mois d’octobre (source France Assureurs) – 27/11",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i39",
+   "articles": [
+    "a35"
+   ],
+   "titre": "",
+   "titre_origine": "Les investisseurs profitent des soldes sur les actions à Paris avant le verdict de l'agence S&P sur la France",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i40",
+   "articles": [
+    "a36"
+   ],
+   "titre": "",
+   "titre_origine": "Industrie: Verhandlungen bei Mercedes gehen weiter – Einigung der Metallindustrie hilft nur bedingt",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i41",
+   "articles": [
+    "a37"
+   ],
+   "titre": "",
+   "titre_origine": "Nvidia, Anthropic, D'Ieteren et nouveau patron à la BCE… Ce qu'il ne fallait pas rater cette semaine sur les marchés",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i42",
+   "articles": [
+    "a38"
+   ],
+   "titre": "",
+   "titre_origine": "Iraq in talks with OPEC for higher oil quota, minister says before OPEC+ meeting",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i43",
+   "articles": [
+    "a39"
+   ],
+   "titre": "",
+   "titre_origine": "Colombia Peso Stumbles as Mounting Risks Test Carry-Fueled Rally",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i44",
+   "articles": [
+    "a40"
+   ],
+   "titre": "",
+   "titre_origine": "Elia relève ses prévisions de bénéfice pour l'année 2026",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i45",
+   "articles": [
+    "a41"
+   ],
+   "titre": "",
+   "titre_origine": "Bekaert, Elia, l'inflation en Belgique... Ce qu'il faut suivre ce vendredi 27 novembre",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i46",
+   "articles": [
+    "a42"
+   ],
+   "titre": "",
+   "titre_origine": "La rotation sectorielle rebat les cartes du Rallye Boursier",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i47",
+   "articles": [
+    "a43"
+   ],
+   "titre": "",
+   "titre_origine": "Banken: Unicredit erwägt Aufstockung von Anteil an Generali",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i48",
+   "articles": [
+    "a45"
+   ],
+   "titre": "",
+   "titre_origine": "La Socimi de Messi compra un hotel en el Valle de Arán (Lleida)",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i49",
+   "articles": [
+    "a46"
+   ],
+   "titre": "",
+   "titre_origine": "Wave of cyber incidents rattles western economies",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i50",
+   "articles": [
+    "a47"
+   ],
+   "titre": "",
+   "titre_origine": "Tech stocks : IA, l'heure du rebond en Bourse ? – 27/11",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i51",
+   "articles": [
+    "a48"
+   ],
+   "titre": "",
+   "titre_origine": "Altice International, Creditors Discuss Debt Cut of About 40%",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i52",
+   "articles": [
+    "a50"
+   ],
+   "titre": "",
+   "titre_origine": "Immobilien: Hausverkauf – wie die Solaranlage den Preis beeinflusst",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i53",
+   "articles": [
+    "a51"
+   ],
+   "titre": "",
+   "titre_origine": "En Ile-de-France, la croissance démographique devrait s'essouffler d'ici 2070 selon l'Insee",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i54",
+   "articles": [
+    "a52"
+   ],
+   "titre": "",
+   "titre_origine": "La moitié des jeunes redoutent que leur futur emploi ne disparaisse » : l'angoisse des diplômés face à la tornade de l'IA",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i55",
+   "articles": [
+    "a53"
+   ],
+   "titre": "",
+   "titre_origine": "Des \"colombes\" pour remplacer les \"faucons\" à la BCE ?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i56",
+   "articles": [
+    "a55"
+   ],
+   "titre": "",
+   "titre_origine": "A 66-year-old nurse is facing down retirement with just $500 saved. Who’s to blame?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i57",
+   "articles": [
+    "a56"
+   ],
+   "titre": "",
+   "titre_origine": "Anterix Could Be SpaceX’s Next Deal for Mobile Network Access",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i58",
+   "articles": [
+    "a57"
+   ],
+   "titre": "",
+   "titre_origine": "AI Tools Reshape the Black Friday Experience",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i59",
+   "articles": [
+    "a58"
+   ],
+   "titre": "",
+   "titre_origine": "The Big Pressures Facing the Fed",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i60",
+   "articles": [
+    "a60"
+   ],
+   "titre": "",
+   "titre_origine": "Modeindustrie: Wegen 138 Dollar Mindestlohn im Monat – Moderiesen verlassen Bangladesch",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i61",
+   "articles": [
+    "a62"
+   ],
+   "titre": "",
+   "titre_origine": "Ondanks de oorlog willen Oekraïense start-ups van hun land een ‘clean tech hub’ maken",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i62",
+   "articles": [
+    "a63"
+   ],
+   "titre": "",
+   "titre_origine": "Norse Atlantic: Billigflieger streicht alle Flüge und beantragt Insolvenz",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i63",
+   "articles": [
+    "a64"
+   ],
+   "titre": "",
+   "titre_origine": "„Sehr frustrierend“: Torschützin Charlotte Schmit hadert mit dem enttäuschenden Resultat",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i64",
+   "articles": [
+    "a65"
+   ],
+   "titre": "",
+   "titre_origine": "CA Immo: Was diese Österreich-Aktie neben der Sonderdividende ausmacht",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i65",
+   "articles": [
+    "a67"
+   ],
+   "titre": "",
+   "titre_origine": "I’ve been married for 58 years. It’s ‘our’ money, not ‘his’ and ‘hers.’ Why do so many couples keep their finances separate?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i66",
+   "articles": [
+    "a68"
+   ],
+   "titre": "",
+   "titre_origine": "Tour Montparnasse : une « feuille de route » votée pour travailler à un nouveau projet de rénovation plus sobre ; de nombreuses incertitudes demeurent",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i67",
+   "articles": [
+    "a69"
+   ],
+   "titre": "",
+   "titre_origine": "Bigfoot im Visier der US-Forstbehörde: Was eine Untersuchung von 1982 ergab",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i68",
+   "articles": [
+    "a70"
+   ],
+   "titre": "",
+   "titre_origine": "Brick-and-Mortar Making a Comeback on Experience, Says Dana Telsey",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i69",
+   "articles": [
+    "a71"
+   ],
+   "titre": "",
+   "titre_origine": "Rains Ease El Niño Crop Fears in Brazil’s Top Soybean Region",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i70",
+   "articles": [
+    "a72"
+   ],
+   "titre": "",
+   "titre_origine": "Culture ETF : Métaux critiques, le bon pari avec les ETF ? – 27/11",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i71",
+   "articles": [
+    "a73"
+   ],
+   "titre": "",
+   "titre_origine": "Négociations commerciales : les grands patrons de la distribution somment les industriels de modérer leurs hausses de prix",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i72",
+   "articles": [
+    "a74"
+   ],
+   "titre": "",
+   "titre_origine": "L'éco du monde : S&P actualise la note de la France – 27/11",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i73",
+   "articles": [
+    "a75"
+   ],
+   "titre": "",
+   "titre_origine": "Il dénonçait l'obsession allemande pour l'austérité il y a 11 ans, maintenant qu'elle dépense, il s'inquiète de son armée: Mélenchon arrive dans une Allemagne en plein réarmement",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i74",
+   "articles": [
+    "a76"
+   ],
+   "titre": "",
+   "titre_origine": "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i75",
+   "articles": [
+    "a77"
+   ],
+   "titre": "",
+   "titre_origine": "Émission du 27 novembre 2026",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i76",
+   "articles": [
+    "a78"
+   ],
+   "titre": "",
+   "titre_origine": "Holiday Deals Are Tempting. Here’s How to Avoid Buyer’s Remorse.",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i77",
+   "articles": [
+    "a80"
+   ],
+   "titre": "",
+   "titre_origine": "Valeur ajoutée : Ils apprécient EPC Groupe - 27/11",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i78",
+   "articles": [
+    "a81"
+   ],
+   "titre": "",
+   "titre_origine": "Abivax tiendra lundi sa Journée Investisseurs – 27/11",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i79",
+   "articles": [
+    "a82"
+   ],
+   "titre": "",
+   "titre_origine": "Un jeune homme présentant une « déficience intellectuelle prononcée » mis en examen après le déraillement d’un TER en Normandie en septembre",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i80",
+   "articles": [
+    "a83"
+   ],
+   "titre": "",
+   "titre_origine": "Climate Talks Imploded, but the ‘Age of Electricity’ Rolls On, Energy Chief Says",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i81",
+   "articles": [
+    "a84"
+   ],
+   "titre": "",
+   "titre_origine": "Signa: Drei Jahre Haft für Benko nach weiterem Urteil",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i82",
+   "articles": [
+    "a85"
+   ],
+   "titre": "",
+   "titre_origine": "Russia set to criminalise sharing information about Ukrainian strikes",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i83",
+   "articles": [
+    "a86"
+   ],
+   "titre": "",
+   "titre_origine": "A Vendôme, les salariés de Bosch en grève illimitée face à l’avenir incertain de leur usine",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i84",
+   "articles": [
+    "a87"
+   ],
+   "titre": "",
+   "titre_origine": "From Jobs to Jensen: tech’s metamorphosis",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i85",
+   "articles": [
+    "a88"
+   ],
+   "titre": "",
+   "titre_origine": "\"Les Français n'ont à l'heure actuelle plus de marges de manœuvre\": Carrefour, Leclerc, Intermarché, U et Auchan écrivent aux multinationales pour leur demander de limiter leurs hausses de prix en 2027",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i86",
+   "articles": [
+    "a89"
+   ],
+   "titre": "",
+   "titre_origine": "L'intégrale d'USA Today du vendredi 27 novembre",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i87",
+   "articles": [
+    "a90"
+   ],
+   "titre": "",
+   "titre_origine": "My friends play ‘credit-card roulette’ to see who pays for dinner — but one ‘winner’ still Venmoed me afterward. Should I say something?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i88",
+   "articles": [
+    "a91"
+   ],
+   "titre": "",
+   "titre_origine": "La Région Ile-de-France épinglée pour ses délais de paiement dans le cadre de ses marchés publics",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i89",
+   "articles": [
+    "a92"
+   ],
+   "titre": "",
+   "titre_origine": "Artificial intelligence usage is exploding, yet spending is stalling. Why a foundational rule of economics is breaking.",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i90",
+   "articles": [
+    "a93"
+   ],
+   "titre": "",
+   "titre_origine": "Levensverhaal van een sociaal begaafde ‘Hochstapler’",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i91",
+   "articles": [
+    "a94"
+   ],
+   "titre": "",
+   "titre_origine": "Que pensez-vous de la crypto Litecoin ?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i92",
+   "articles": [
+    "a95"
+   ],
+   "titre": "",
+   "titre_origine": "Verontrustende vooruitzichten voor Vivoryon",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i93",
+   "articles": [
+    "a96"
+   ],
+   "titre": "",
+   "titre_origine": "Pam Toonen van Amsterdam Light kijkt altijd door de ogen van de bezoekers",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i94",
+   "articles": [
+    "a98"
+   ],
+   "titre": "",
+   "titre_origine": "\"C'est de mieux en mieux fait\": comment détecter les arnaques du Black Friday sur Internet?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i95",
+   "articles": [
+    "a99"
+   ],
+   "titre": "",
+   "titre_origine": "De grootste podcast ter wereld maken is voor Steven Bartlett nog maar het begin",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i96",
+   "articles": [
+    "a100"
+   ],
+   "titre": "",
+   "titre_origine": "La tech rebondit après une semaine de rodéo, mais le soufflé retombe un peu à Wall Street",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i97",
+   "articles": [
+    "a101"
+   ],
+   "titre": "",
+   "titre_origine": "Énergie, services, produits manufacturés… L’inflation a ralenti à 2,9% sur un an en novembre, annonce l’Insee",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i98",
+   "articles": [
+    "a102"
+   ],
+   "titre": "",
+   "titre_origine": "«Ça a été le combat de l’année» : Emmanuel Macron réaffirme son opposition à l’accord UE-Mercosur et charge la «viande dopée» du Brésil",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i99",
+   "articles": [
+    "a103"
+   ],
+   "titre": "",
+   "titre_origine": "Elections législatives en Espagne : les graphiques pour comprendre le dynamisme économique du pays et ses limites",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i100",
+   "articles": [
+    "a104"
+   ],
+   "titre": "",
+   "titre_origine": "L'Agence France-Presse victime d'une cyberattaque, sa plateforme de photos et vidéos temporairement inaccessible",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i101",
+   "articles": [
+    "a105"
+   ],
+   "titre": "",
+   "titre_origine": "Les syndicats réformistes sortent renforcés des élections professionnelles à la SNCF",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i102",
+   "articles": [
+    "a106"
+   ],
+   "titre": "",
+   "titre_origine": "Au procès d’un gérant de brasserie et de l’entreprise Otis après l’accident mortel d’un jeune apprenti, la banalité de l’absence de prévention",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i103",
+   "articles": [
+    "a107"
+   ],
+   "titre": "",
+   "titre_origine": "Een huurbaar op de Blaricumse heide en chique lippenbalsem",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i104",
+   "articles": [
+    "a108"
+   ],
+   "titre": "",
+   "titre_origine": "How much more are richest Americans spending on the holidays compared to everyone else?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i105",
+   "articles": [
+    "a109"
+   ],
+   "titre": "",
+   "titre_origine": "«Nous avons en ce moment plus de 80 offres d'emploi»",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i106",
+   "articles": [
+    "a110"
+   ],
+   "titre": "",
+   "titre_origine": "Premier aéroport européen d'affaires, le Bourget peine à s'accorder sur son plan antibruit",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i107",
+   "articles": [
+    "a111"
+   ],
+   "titre": "",
+   "titre_origine": "Een nieuw gezicht, maar bij Forum klinkt hetzelfde ‘deuntje’",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i108",
+   "articles": [
+    "a112"
+   ],
+   "titre": "",
+   "titre_origine": "Rheinmetall verlaagt prognoses, taaie onderhandelingen over pantserwagens",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i109",
+   "articles": [
+    "a113"
+   ],
+   "titre": "",
+   "titre_origine": "Wall St Week Ahead Sliding stock market confronts jobs data, rate view as next tests",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i110",
+   "articles": [
+    "a114"
+   ],
+   "titre": "",
+   "titre_origine": "Au Brésil, Lula cherche à rassurer les marchés en confiant le portefeuille des Finances à un banquier",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i111",
+   "articles": [
+    "a115"
+   ],
+   "titre": "",
+   "titre_origine": "Pol Knops slaat CO₂ op in beton: ‘Duurzaamheid is ook een economische kans’",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i112",
+   "articles": [
+    "a116"
+   ],
+   "titre": "",
+   "titre_origine": "Photos: Macy’s Thanksgiving Day Parade History and Wacky Moments",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i113",
+   "articles": [
+    "a117"
+   ],
+   "titre": "",
+   "titre_origine": "Un an après avoir fait fondre la France, le loup «Mal-Aimé» d’Intermarché se croque en chocolat",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i114",
+   "articles": [
+    "a118"
+   ],
+   "titre": "",
+   "titre_origine": "Rachat de SFR : des boutiques à Armando Pereira, les fronts se multiplient pour Patrick Drahi",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i115",
+   "articles": [
+    "a119"
+   ],
+   "titre": "",
+   "titre_origine": "Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i116",
+   "articles": [
+    "a120"
+   ],
+   "titre": "",
+   "titre_origine": "The reforms the NHS needs (and those it doesn’t)",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i117",
+   "articles": [
+    "a121"
+   ],
+   "titre": "",
+   "titre_origine": "EU weighs tighter export controls to prevent battery waste going to China",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i118",
+   "articles": [
+    "a123"
+   ],
+   "titre": "",
+   "titre_origine": "Bruxelles valide le rachat d’Allfunds par Deutsche Börse",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i119",
+   "articles": [
+    "a124"
+   ],
+   "titre": "",
+   "titre_origine": "The S&P 500 is in a correction. Bear markets and recessions don't always follow",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i120",
+   "articles": [
+    "a125"
+   ],
+   "titre": "",
+   "titre_origine": "Annika Steiner: „Wärmepumpen oder KI machen ein Gebäude nicht zukunftsfähig“",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i121",
+   "articles": [
+    "a126"
+   ],
+   "titre": "",
+   "titre_origine": "US stock selloffs trigger a new kind of dollar bounce",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i122",
+   "articles": [
+    "a127"
+   ],
+   "titre": "",
+   "titre_origine": "Qui est Bending Spoons, l'entreprise tech italienne croqueuse de plateformes numériques?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i123",
+   "articles": [
+    "a128"
+   ],
+   "titre": "",
+   "titre_origine": "Tourismus: Tui-Chef plant Imagewechsel: Wie das Firmenlogo „Smile“ dabei helfen soll",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i124",
+   "articles": [
+    "a129"
+   ],
+   "titre": "",
+   "titre_origine": "Bouwbedrijf Wessels Stevin voor de derde keer naar Beursplein 5",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i125",
+   "articles": [
+    "a130"
+   ],
+   "titre": "",
+   "titre_origine": "Ceo FlatexDeGiro: ‘Als Europese belegger heb je geen dollars nodig, tenzij je met pensioen wilt in Miami’",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i126",
+   "articles": [
+    "a131"
+   ],
+   "titre": "",
+   "titre_origine": "Euríbor hoy, 27 de noviembre: El Euríbor cierra la semana al alza",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i127",
+   "articles": [
+    "a132"
+   ],
+   "titre": "",
+   "titre_origine": "First principles to cling to when markets convulse",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i128",
+   "articles": [
+    "a133"
+   ],
+   "titre": "",
+   "titre_origine": "Interview: Herr Joseph, wie kamen Sie an das Datenleck der Deutschen Bank?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i129",
+   "articles": [
+    "a134"
+   ],
+   "titre": "",
+   "titre_origine": "Je voulais montrer la belgitude en action - L'Echo",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i130",
+   "articles": [
+    "a135"
+   ],
+   "titre": "",
+   "titre_origine": "Global diesel market to run into deficit in second quarter of 2027",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i131",
+   "articles": [
+    "a136"
+   ],
+   "titre": "",
+   "titre_origine": "Hypothèse de Riemann : la Banque d'Angleterre sonne l'alarme sur le chiffrement des données bancaires",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i132",
+   "articles": [
+    "a137"
+   ],
+   "titre": "",
+   "titre_origine": "Märkte: EU erlaubt Deutscher Börse Milliarden-Übernahme von Allfunds",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i133",
+   "articles": [
+    "a138"
+   ],
+   "titre": "",
+   "titre_origine": "La scène nationale de Mulhouse tire le bilan de ses actions pour le public",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i134",
+   "articles": [
+    "a139"
+   ],
+   "titre": "",
+   "titre_origine": "Michaël R. Roskam (\"Le faux Soir\"): \"Je voulais montrer la belgitude en action\"",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i135",
+   "articles": [
+    "a140"
+   ],
+   "titre": "",
+   "titre_origine": "Vervroeg de invoer van de greentimerregeling en houd groene auto in Nederland",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i136",
+   "articles": [
+    "a141"
+   ],
+   "titre": "",
+   "titre_origine": "London is playing a game of penthouse one-upmanship",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i137",
+   "articles": [
+    "a142"
+   ],
+   "titre": "",
+   "titre_origine": "Houthi-raketten leggen pijnpunt bloot van Nederlandse wet op maritieme beveiliging",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i138",
+   "articles": [
+    "a143"
+   ],
+   "titre": "",
+   "titre_origine": "In de voetsporen van kunstschilder Georgia O’Keeffe",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i139",
+   "articles": [
+    "a144"
+   ],
+   "titre": "",
+   "titre_origine": "Grifols compra 47 centros de plasma de Biotest por 220 millones",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i140",
+   "articles": [
+    "a145"
+   ],
+   "titre": "",
+   "titre_origine": "Santander revoluciona su red de Territoriales con siete nuevos directores",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i141",
+   "articles": [
+    "a146"
+   ],
+   "titre": "",
+   "titre_origine": "Radio France demande des sanctions alourdies pour les auteurs de violences contre des journalistes",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i142",
+   "articles": [
+    "a147"
+   ],
+   "titre": "",
+   "titre_origine": "Japanese carmakers’ sales collapse amid China market plunge",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i143",
+   "articles": [
+    "a148"
+   ],
+   "titre": "",
+   "titre_origine": "Jainaga se protege para evitar una segunda opa sobre Azkoyen",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i144",
+   "articles": [
+    "a149"
+   ],
+   "titre": "",
+   "titre_origine": "Dans le quartier d'affaires de La Défense, un marché de Noël en pleine expansion",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i145",
+   "articles": [
+    "a150"
+   ],
+   "titre": "",
+   "titre_origine": "Juridisch gevecht Den Haag en Strukton over tunnel laait weer op",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i146",
+   "articles": [
+    "a151"
+   ],
+   "titre": "",
+   "titre_origine": "Christian Wolf: Der Schatten-Chef – Wird More Nutrition seinen Gründer nicht los?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i147",
+   "articles": [
+    "a152"
+   ],
+   "titre": "",
+   "titre_origine": "Rasperia: RBI beantragt Freigabe eingefrorener russischer Vermögenswerte",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i148",
+   "articles": [
+    "a153"
+   ],
+   "titre": "",
+   "titre_origine": "Autobauer: Fast eine halbe Million für einen Ingenieur – Erneut Personalabbau bei Mercedes durch Abfindungen",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i149",
+   "articles": [
+    "a154"
+   ],
+   "titre": "",
+   "titre_origine": "Altria’s Interest in Imperial May Affect Its AB InBev Stake",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i150",
+   "articles": [
+    "a155"
+   ],
+   "titre": "",
+   "titre_origine": "Volksbanken: Spencer Stuart mit Kandidatensuche für BVR-Spitze beauftragt",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i151",
+   "articles": [
+    "a156"
+   ],
+   "titre": "",
+   "titre_origine": "HD Covalco sube el ebitda un 11% tras batir su récord de ventas",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i152",
+   "articles": [
+    "a157"
+   ],
+   "titre": "",
+   "titre_origine": "Les biotechs, nouvelles stars du Rallye Boursier?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i153",
+   "articles": [
+    "a158"
+   ],
+   "titre": "",
+   "titre_origine": "Konjunktur: Inflation in Spanien und Frankreich lässt überraschend nach",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i154",
+   "articles": [
+    "a159"
+   ],
+   "titre": "",
+   "titre_origine": "Réseau d'aide en faillite: des patients livrés à eux-mêmes?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i155",
+   "articles": [
+    "a160"
+   ],
+   "titre": "",
+   "titre_origine": "Kraftstoff: Raffineriemargen schrumpfen trotz Iran-Krieg deutlich",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i156",
+   "articles": [
+    "a161"
+   ],
+   "titre": "",
+   "titre_origine": "AFM onderzoekt ‘risicovolle’ producten om overwaarde koophuis te verzilveren",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i157",
+   "articles": [
+    "a162"
+   ],
+   "titre": "",
+   "titre_origine": "Gideon Rachman: ‘Een autocraat die een simpele overwinning haalt, wil altijd een volgend doelwit’",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i158",
+   "articles": [
+    "a163"
+   ],
+   "titre": "",
+   "titre_origine": "Indonesia arrests three over alleged ‘deep fried’ market manipulation",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i159",
+   "articles": [
+    "a164"
+   ],
+   "titre": "",
+   "titre_origine": "If we say the pay, let’s mention the pension",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i160",
+   "articles": [
+    "a165"
+   ],
+   "titre": "",
+   "titre_origine": "L'inflation en Belgique se maintient au-dessus de 5%",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i161",
+   "articles": [
+    "a166"
+   ],
+   "titre": "",
+   "titre_origine": "Coalitiegedonder is niet voorbehouden aan Den Haag",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i162",
+   "articles": [
+    "a167"
+   ],
+   "titre": "",
+   "titre_origine": "« La crise a assaini l'offre » : l'industrie du bio affiche son optimisme malgré le retour de l'inflation",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i163",
+   "articles": [
+    "a168"
+   ],
+   "titre": "",
+   "titre_origine": "Zukunftsgestalter: Trumpf auf dem Weg zum Maschinen-Menschen",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i164",
+   "articles": [
+    "a170"
+   ],
+   "titre": "",
+   "titre_origine": "Sport2000: Sportfachhändler sind trotz Konsumflaute vorsichtig optimistisch – das sind die Gründe",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i165",
+   "articles": [
+    "a171"
+   ],
+   "titre": "",
+   "titre_origine": "Unicredit: Bundesregierung stellt sich hinter Orcel-Pläne für den Aufsichtsrat der Commerzbank",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i166",
+   "articles": [
+    "a172"
+   ],
+   "titre": "",
+   "titre_origine": "Black Friday : « La surconsommation n’est que la partie visible du problème : son envers, c’est la surproduction »",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i167",
+   "articles": [
+    "a173"
+   ],
+   "titre": "",
+   "titre_origine": "92 Labour MPs call for Rosebank oilfield to be rejected",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i168",
+   "articles": [
+    "a174"
+   ],
+   "titre": "",
+   "titre_origine": "Emag: Tesla will deutschen Roboter-Spezialisten übernehmen",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i169",
+   "articles": [
+    "a176"
+   ],
+   "titre": "",
+   "titre_origine": "Jeu vidéo : en crise, le secteur interpelle les candidats à l’élection présidentielle",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i170",
+   "articles": [
+    "a177"
+   ],
+   "titre": "",
+   "titre_origine": "Advocaten Sywert van Lienden zeggen samenwerking op wegens bemoeizucht",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i171",
+   "articles": [
+    "a178"
+   ],
+   "titre": "",
+   "titre_origine": "Führung: „Die besten Chefs sind Meister der strategischen Natürlichkeit“",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i172",
+   "articles": [
+    "a179"
+   ],
+   "titre": "",
+   "titre_origine": "My self-care ritual is a meal at a fancy restaurant - on my own",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i173",
+   "articles": [
+    "a180"
+   ],
+   "titre": "",
+   "titre_origine": "Banks may pass on £1.5bn tax rise to customers, warns Bank of England chief",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i174",
+   "articles": [
+    "a181"
+   ],
+   "titre": "",
+   "titre_origine": "El precio del Bitcoin hoy, 27 de noviembre: el Bitcoin asciende de los 62.000 dólares",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i175",
+   "articles": [
+    "a182"
+   ],
+   "titre": "",
+   "titre_origine": "How to Live Calmly, Despite Stock Market Whiplash",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i176",
+   "articles": [
+    "a183"
+   ],
+   "titre": "",
+   "titre_origine": "As Prices Rise, Americans Are Making Trade-Offs Rather Than Cutting Back",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i177",
+   "articles": [
+    "a184"
+   ],
+   "titre": "",
+   "titre_origine": "2 TV Shows Take on Sam Bankman-Fried and FTX",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i178",
+   "articles": [
+    "a185"
+   ],
+   "titre": "",
+   "titre_origine": "48 Hours in Tokyo With an Airline Pilot",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i179",
+   "articles": [
+    "a186"
+   ],
+   "titre": "",
+   "titre_origine": "Fin de l’interdiction des passoires thermiques à la location : aux Assises de la rénovation énergétique, la consternation des professionnels du secteur",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i180",
+   "articles": [
+    "a187"
+   ],
+   "titre": "",
+   "titre_origine": "Goede zaken vragen geen steun, maar concurrentie",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i181",
+   "articles": [
+    "a188"
+   ],
+   "titre": "",
+   "titre_origine": "De wereld achter het pakketpunt: vaste waarde, wankel verdienmodel",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i182",
+   "articles": [
+    "a189"
+   ],
+   "titre": "",
+   "titre_origine": "La France en récession : visualisez l’évolution de la croissance ces dernières années",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i183",
+   "articles": [
+    "a190"
+   ],
+   "titre": "",
+   "titre_origine": "Rüstungsindustrie: Rheinmetall senkt Umsatzziel für 2030",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i184",
+   "articles": [
+    "a191"
+   ],
+   "titre": "",
+   "titre_origine": "Pizza history: AI agent’s cardless purchase is a first for UK",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i185",
+   "articles": [
+    "a192"
+   ],
+   "titre": "",
+   "titre_origine": "Ladbrokes owner to settle Australia money laundering case",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i186",
+   "articles": [
+    "a193"
+   ],
+   "titre": "",
+   "titre_origine": "El oso de Wall Street cierra sus apuestas bajistas contra el Nasdaq",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i187",
+   "articles": [
+    "a194"
+   ],
+   "titre": "",
+   "titre_origine": "Künstliche Intelligenz: So verschaffen sich Führungskräfte im mittleren Management einen Wettbewerbsvorteil",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i188",
+   "articles": [
+    "a195"
+   ],
+   "titre": "",
+   "titre_origine": "La France est en récession depuis le deuxième trimestre, selon l’Insee",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i189",
+   "articles": [
+    "a196"
+   ],
+   "titre": "",
+   "titre_origine": "Karriere: „Es ist in Ordnung, kein Karriereziel zu haben“",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i190",
+   "articles": [
+    "a197"
+   ],
+   "titre": "",
+   "titre_origine": "Les bourses en direct | \"Le mouvement de rebond généralisé suscite chez de nombreux investisseurs la crainte de manquer un rallye de fin d'année\"",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i191",
+   "articles": [
+    "a198"
+   ],
+   "titre": "",
+   "titre_origine": "Autobranche: Dieser Mann ist bald der wichtigste Automanager Europas",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i192",
+   "articles": [
+    "a199"
+   ],
+   "titre": "",
+   "titre_origine": "Action, Aldi, Wibra, Halfprice... Pourquoi les chaînes discount envahissent les anciens Cora",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i193",
+   "articles": [
+    "a200"
+   ],
+   "titre": "",
+   "titre_origine": "« Les vents contraires du transport maritime mondial font un vainqueur : le fret aérien »",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i194",
+   "articles": [
+    "a201"
+   ],
+   "titre": "",
+   "titre_origine": "«11 milliards de dollars de retraites partis en fumée» : au Chili, le coup de poker qui a anéanti l’épargne de millions de travailleurs",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i195",
+   "articles": [
+    "a202"
+   ],
+   "titre": "",
+   "titre_origine": "La France entre officiellement en récession",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i196",
+   "articles": [
+    "a203"
+   ],
+   "titre": "",
+   "titre_origine": "Nikkei, Yen, CSI 300: Chinesische Märkte legen nach seltenem Regierungskommentar zu",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i197",
+   "articles": [
+    "a204"
+   ],
+   "titre": "",
+   "titre_origine": "Weihnachtsmärkte in Luxemburg: Alle Termine auf einen Blick",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i198",
+   "articles": [
+    "a205"
+   ],
+   "titre": "",
+   "titre_origine": "Zonder duidelijke regels verandert AI je mailbox – en organisatie – in een mijnenveld",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i199",
+   "articles": [
+    "a206"
+   ],
+   "titre": "",
+   "titre_origine": "Baufinanzierung: Bafin beanstandet Hypoport-Konzernabschluss 2023 – Aktie bricht ein",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i200",
+   "articles": [
+    "a207"
+   ],
+   "titre": "",
+   "titre_origine": "'We're scared to turn our heating on'",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i201",
+   "articles": [
+    "a208"
+   ],
+   "titre": "",
+   "titre_origine": "Marlboro e West, fusione allo studio per creare il polo mondiale delle sigarette",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i202",
+   "articles": [
+    "a209"
+   ],
+   "titre": "",
+   "titre_origine": "Chinese shares soar after Beijing signals more support",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i203",
+   "articles": [
+    "a210"
+   ],
+   "titre": "",
+   "titre_origine": "La préparation du marché de Noël représente des mois de travail",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i204",
+   "articles": [
+    "a211"
+   ],
+   "titre": "",
+   "titre_origine": "La croissance pire que prévu, l'économie française en récession",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i205",
+   "articles": [
+    "a212"
+   ],
+   "titre": "",
+   "titre_origine": "Veranker in de wet dat een politieke partij hooguit een kwart van haar zetels kan winnen of verliezen",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i206",
+   "articles": [
+    "a213"
+   ],
+   "titre": "",
+   "titre_origine": "US Stocks Rebound as Traders Pile Into Battered Tech Shares",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i207",
+   "articles": [
+    "a214"
+   ],
+   "titre": "",
+   "titre_origine": "Familienunternehmen: 40.000 Flaschen pro Stunde: So trotzt Jeff Maisel mit Bayreuther Hell der Bierkrise",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i208",
+   "articles": [
+    "a215"
+   ],
+   "titre": "",
+   "titre_origine": "IA en finance: la fin des expérimentations sans retour sur investissement",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i209",
+   "articles": [
+    "a216"
+   ],
+   "titre": "",
+   "titre_origine": "Spatial et IA agentique : quelles actions surveiller au cours des prochains mois et des prochaines années",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i210",
+   "articles": [
+    "a218"
+   ],
+   "titre": "",
+   "titre_origine": "US stocks set for weekly advance as battered AI shares hold their ground",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i211",
+   "articles": [
+    "a219"
+   ],
+   "titre": "",
+   "titre_origine": "« C'en est fini de plus de 90 ans d'escroquerie » : en Argentine, la réforme Milei recadre sévèrement l'action de la Banque centrale sur l'inflation",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i212",
+   "articles": [
+    "a220"
+   ],
+   "titre": "",
+   "titre_origine": "SUV grande con 1.000 km de autonomía: el gran filón de las marcas chinas en España",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i213",
+   "articles": [
+    "a221"
+   ],
+   "titre": "",
+   "titre_origine": "Sky-high WiFi will give airlines a shortlived boost",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i214",
+   "articles": [
+    "a222"
+   ],
+   "titre": "",
+   "titre_origine": "El Ibex apunta a una apertura en positivo",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i215",
+   "articles": [
+    "a223"
+   ],
+   "titre": "",
+   "titre_origine": "« On est vraiment sur de l’achat compulsif » : Whatnot, la plateforme de téléachat 2.0 au rythme effréné",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i216",
+   "articles": [
+    "a224"
+   ],
+   "titre": "",
+   "titre_origine": "Résoudre les litiges au regard des enjeux de l’entreprise",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i217",
+   "articles": [
+    "a225"
+   ],
+   "titre": "",
+   "titre_origine": "Hong Kong seeks to lure sovereign wealth funds with tax breaks",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i218",
+   "articles": [
+    "a226"
+   ],
+   "titre": "",
+   "titre_origine": "China cabinet calls for greater role by 'national team' investors to steady sinking markets",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i219",
+   "articles": [
+    "a227"
+   ],
+   "titre": "",
+   "titre_origine": "En Suisse, une industrie du drone de défense bridée par la neutralité",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i220",
+   "articles": [
+    "a228"
+   ],
+   "titre": "",
+   "titre_origine": "‘It’s not nation versus nation. It’s hyperscaler versus hyperscaler’",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i221",
+   "articles": [
+    "a229"
+   ],
+   "titre": "",
+   "titre_origine": "Robustesse, agilité et leadership, un triptyque essentiel aux entreprises",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i222",
+   "articles": [
+    "a230"
+   ],
+   "titre": "",
+   "titre_origine": "China stocks surge most in two years as Beijing vows stronger market support",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i223",
+   "articles": [
+    "a231"
+   ],
+   "titre": "",
+   "titre_origine": "Autohersteller: Stellantis stoppt Fabriken länger – wegen chinesischer Konkurrenz",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i224",
+   "articles": [
+    "a233"
+   ],
+   "titre": "",
+   "titre_origine": "Immobilier : les SCPI tentent de regagner la confiance des investisseurs",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i225",
+   "articles": [
+    "a235"
+   ],
+   "titre": "",
+   "titre_origine": "How much is your rent in Birmingham?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i226",
+   "articles": [
+    "a236"
+   ],
+   "titre": "",
+   "titre_origine": "The food bank helping pet owners with rising bills",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i227",
+   "articles": [
+    "a237"
+   ],
+   "titre": "",
+   "titre_origine": "Dette : pourquoi les agences S&P, Fitch et Moody’s sont si complaisantes envers la France",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i228",
+   "articles": [
+    "a238"
+   ],
+   "titre": "",
+   "titre_origine": "AEX gaat volatiele week hoger uit, ook herstel op Wall Street",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i229",
+   "articles": [
+    "a239"
+   ],
+   "titre": "",
+   "titre_origine": "How Sanofi's new CEO struck a rapid $41 billion deal for Insmed",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i230",
+   "articles": [
+    "a240"
+   ],
+   "titre": "",
+   "titre_origine": "Axa : considérablement plus optimiste que les autres bureaux d’études, Berenberg prédit une envolée de 70% de l’action",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i231",
+   "articles": [
+    "a241"
+   ],
+   "titre": "",
+   "titre_origine": "Les bourses en direct | L'Europe termine dans le vert, le Bel 20 prend plus de 1%, Wall Street rebondit grâce à la tech, le Nasdaq gagne près de 2%",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i232",
+   "articles": [
+    "a242"
+   ],
+   "titre": "",
+   "titre_origine": "Logement : plus de la moitié du parc privé est aux mains de multipropriétaires",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i233",
+   "articles": [
+    "a243"
+   ],
+   "titre": "",
+   "titre_origine": "Private credit’s ‘alpha’ problem",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i234",
+   "articles": [
+    "a244"
+   ],
+   "titre": "",
+   "titre_origine": "Prime de Noël, revalorisation du smic, prix du gaz... Ce qui change en décembre 2026",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i235",
+   "articles": [
+    "a245"
+   ],
+   "titre": "",
+   "titre_origine": "Backstage | Mathilde Riga (Kult Kefir): \"Je pourrais lâcher mon rôle de CEO pour la pérennité de l'entreprise\"",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i236",
+   "articles": [
+    "a246"
+   ],
+   "titre": "",
+   "titre_origine": "FirstFT: BoE’s Bailey warns of AI threat to encrypted financial data",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i237",
+   "articles": [
+    "a247"
+   ],
+   "titre": "",
+   "titre_origine": "India-US trade deal is nearing completion, minister says",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i238",
+   "articles": [
+    "a248"
+   ],
+   "titre": "",
+   "titre_origine": "Budget 2027 : le Sénat fait marche arrière sur les économies proposées",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i239",
+   "articles": [
+    "a249"
+   ],
+   "titre": "",
+   "titre_origine": "Judge Blocks F.C.C. From Targeting Disney’s Local ABC Licenses",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i240",
+   "articles": [
+    "a250"
+   ],
+   "titre": "",
+   "titre_origine": "Börse am 27. November: Fünf Punkte, die für Anleger heute wichtig sind",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i241",
+   "articles": [
+    "a251"
+   ],
+   "titre": "",
+   "titre_origine": "Le cadeau d’entreprise, un levier de reconnaissance",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i242",
+   "articles": [
+    "a252"
+   ],
+   "titre": "",
+   "titre_origine": "«L’investissement doit être créateur de valeur»",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i243",
+   "articles": [
+    "a253"
+   ],
+   "titre": "",
+   "titre_origine": "Trump media group splashes out to woo shareholders before merger vote",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i244",
+   "articles": [
+    "a254"
+   ],
+   "titre": "",
+   "titre_origine": "Venezuelan oil magnate defends contentious deal with Trump",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i245",
+   "articles": [
+    "a255"
+   ],
+   "titre": "",
+   "titre_origine": "AI data centre boom piles pressure on stressed US defence sector",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i246",
+   "articles": [
+    "a256"
+   ],
+   "titre": "",
+   "titre_origine": "The Ellisons’ debt-fuelled takeover of Hollywood",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i247",
+   "articles": [
+    "a257"
+   ],
+   "titre": "",
+   "titre_origine": "Kirkland & Ellis under fire from private equity backers over sell-to-yourself deals",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i248",
+   "articles": [
+    "a258"
+   ],
+   "titre": "",
+   "titre_origine": "Kalshi’s next big bet: ‘microinsurance’ for small businesses",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i249",
+   "articles": [
+    "a259"
+   ],
+   "titre": "",
+   "titre_origine": "Roughnecks lose out to AI as automation in the oil industry gathers pace",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i250",
+   "articles": [
+    "a260"
+   ],
+   "titre": "",
+   "titre_origine": "Big Oil looks to diversify with move into electricity generation",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i251",
+   "articles": [
+    "a261"
+   ],
+   "titre": "",
+   "titre_origine": "Indian central bank lets rupee rise to break one-way bets on depreciation",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i252",
+   "articles": [
+    "a262"
+   ],
+   "titre": "",
+   "titre_origine": "Vier Tage, zehn Stunden: Betriebe bleiben bislang zurückhaltend",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i253",
+   "articles": [
+    "a263"
+   ],
+   "titre": "",
+   "titre_origine": "Luxemburgs Mäzene sollen aus der Reserve gelockt werden",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i254",
+   "articles": [
+    "a264"
+   ],
+   "titre": "",
+   "titre_origine": "Vastgoedbeleggers en witwassers kijken gespannen naar de Spaanse verkiezingen",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i255",
+   "articles": [
+    "a265"
+   ],
+   "titre": "",
+   "titre_origine": "Phishing: les refus de remboursement des banques dans le viseur de l'Inspection économique",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i256",
+   "articles": [
+    "a266"
+   ],
+   "titre": "",
+   "titre_origine": "Le FC Bruges affiche des résultats financiers record: un bénéfice net de plus de 43 millions d'euros",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i257",
+   "articles": [
+    "a267"
+   ],
+   "titre": "",
+   "titre_origine": "L'inflation américaine fera-t-elle encore grimper les taux de la Fed?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i258",
+   "articles": [
+    "a268"
+   ],
+   "titre": "",
+   "titre_origine": "Emerging-Market Stocks Eye Best Week Since June on Tech Rebound",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i259",
+   "articles": [
+    "a269"
+   ],
+   "titre": "",
+   "titre_origine": "Aktie im Blick: Nach dem größten Börsengang aller Zeiten kommt es zur Glaubensfrage",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i260",
+   "articles": [
+    "a270"
+   ],
+   "titre": "",
+   "titre_origine": "Stoxx Europe 600: Kursplus von bis zu 289 Prozent – das sind Europas Top-Aktien",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i261",
+   "articles": [
+    "a271"
+   ],
+   "titre": "",
+   "titre_origine": "Baumärkte: Kartellrechtliche Hürden könnten Fusion von Obi und Toom erschweren",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i262",
+   "articles": [
+    "a272"
+   ],
+   "titre": "",
+   "titre_origine": "Gastronomie: Eine Kunstpause in Europas teuerstem Restaurant",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i263",
+   "articles": [
+    "a273"
+   ],
+   "titre": "",
+   "titre_origine": "Rupee rally takes a hit as AI trade revival dents shares, currency sees weekly dip",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i264",
+   "articles": [
+    "a274"
+   ],
+   "titre": "",
+   "titre_origine": "Nvidia Halts Sales to Southeast Asia as U.S. Tightens China Restrictions",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i265",
+   "articles": [
+    "a275"
+   ],
+   "titre": "",
+   "titre_origine": "Société de patrimoine avec immeuble de placement à Anvers",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i266",
+   "articles": [
+    "a276"
+   ],
+   "titre": "",
+   "titre_origine": "Treasuries Fall as Haven Demand Ebbs Amid Stocks Rebound",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i267",
+   "articles": [
+    "a277"
+   ],
+   "titre": "",
+   "titre_origine": "Indian shares snap blistering rally after four weeks as oil prices climb",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i268",
+   "articles": [
+    "a278"
+   ],
+   "titre": "",
+   "titre_origine": "Global markets rally as end of bruising month approaches",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i269",
+   "articles": [
+    "a279"
+   ],
+   "titre": "",
+   "titre_origine": "Oil on track for first weekly gain in November on supply fears",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i270",
+   "articles": [
+    "a280"
+   ],
+   "titre": "",
+   "titre_origine": "China's industrial profit growth fastest in five months as recovery remains uneven",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i271",
+   "articles": [
+    "a282"
+   ],
+   "titre": "",
+   "titre_origine": "El cisne del Ibex que vuela alto este año y encandila a los expertos",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i272",
+   "articles": [
+    "a284"
+   ],
+   "titre": "",
+   "titre_origine": "The search for Vietnam's stolen pets at wet markets and slaughterhouses",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i273",
+   "articles": [
+    "a285"
+   ],
+   "titre": "",
+   "titre_origine": "Risk-sensitive currencies rise on tech rebound, dollar set for weekly gain",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i274",
+   "articles": [
+    "a286"
+   ],
+   "titre": "",
+   "titre_origine": "Los valores más firmes del Ibex en plenas turbulencias",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i275",
+   "articles": [
+    "a287"
+   ],
+   "titre": "",
+   "titre_origine": "Así es T. Rowe Price, la gestora pionera en el estilo de inversión en crecimiento",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i276",
+   "articles": [
+    "a288"
+   ],
+   "titre": "",
+   "titre_origine": "La nueva estrategia de Indra despeja un recorrido alcista superior al 30%",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i277",
+   "articles": [
+    "a289"
+   ],
+   "titre": "",
+   "titre_origine": "¿Habrá correctivo para el Ibex si Pedro Sánchez gana las elecciones?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i278",
+   "articles": [
+    "a290"
+   ],
+   "titre": "",
+   "titre_origine": "From £250 job to £9,000 bill: Inside the rogue trader networks scamming customers at scale",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i279",
+   "articles": [
+    "a291"
+   ],
+   "titre": "",
+   "titre_origine": "Japan Tobacco shares surge on talk it may acquire part of Imperial",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i280",
+   "articles": [
+    "a292"
+   ],
+   "titre": "",
+   "titre_origine": "La Fed se prepara para subir los tipos de interés",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i281",
+   "articles": [
+    "a293"
+   ],
+   "titre": "",
+   "titre_origine": "Microsoft, Alphabet, Meta y Amazon son la ‘tecnología de calidad’ para 2027, según Pictet",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i282",
+   "articles": [
+    "a294"
+   ],
+   "titre": "",
+   "titre_origine": "La 'fintech' Ebury impulsa en León un centro financiero y tecnológico con 300 empleados",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i283",
+   "articles": [
+    "a295"
+   ],
+   "titre": "",
+   "titre_origine": "Trump says Wednesday's market had him briefly 'concerned' before stocks recovered",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i284",
+   "articles": [
+    "a296"
+   ],
+   "titre": "",
+   "titre_origine": "Seat se alía con Indra para lanzar su desembarco en el sector de Defensa",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i285",
+   "articles": [
+    "a297"
+   ],
+   "titre": "",
+   "titre_origine": "Prologis ultima la venta de 15 naves en España a BGO y P3",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i286",
+   "articles": [
+    "a298"
+   ],
+   "titre": "",
+   "titre_origine": "Ence se lanza a por 3.000 millones en proyectos para combustible sostenible de aviación",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i287",
+   "articles": [
+    "a299"
+   ],
+   "titre": "",
+   "titre_origine": "Why is there a shortage of 'wizard' elevator mechanics?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i288",
+   "articles": [
+    "a300"
+   ],
+   "titre": "",
+   "titre_origine": "Water firms to identify 250,000 vulnerable households in England eligible for discounts",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i289",
+   "articles": [
+    "a301"
+   ],
+   "titre": "",
+   "titre_origine": "Gold Rises as Rebound in Tech Stocks Helps Revive Risk Appetite",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i290",
+   "articles": [
+    "a302"
+   ],
+   "titre": "",
+   "titre_origine": "El bitcoin se enfrenta hoy a un gran vencimiento de opciones",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i291",
+   "articles": [
+    "a303"
+   ],
+   "titre": "",
+   "titre_origine": "Los retos del nuevo BCE: combatir la inflación con un ojo en Francia",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i292",
+   "articles": [
+    "a304"
+   ],
+   "titre": "",
+   "titre_origine": "Vraag naar rekenkracht blijft groot, beurscorrectie AI lijkt vooral ingegeven door politieke ontwikkelingen",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i293",
+   "articles": [
+    "a305"
+   ],
+   "titre": "",
+   "titre_origine": "UK to pay 'participation' fee to deliver EU deals",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i294",
+   "articles": [
+    "a307"
+   ],
+   "titre": "",
+   "titre_origine": "Latest Oil Market News and Analysis for Nov. 27",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i295",
+   "articles": [
+    "a308"
+   ],
+   "titre": "",
+   "titre_origine": "Los sindicatos temen el despido de los 659 empleados de Plus Ultra y el cierre de la aerolínea",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i296",
+   "articles": [
+    "a309"
+   ],
+   "titre": "",
+   "titre_origine": "S&P 500 Has Best Week Since April 2025 on AI Rally: Markets Wrap",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i297",
+   "articles": [
+    "a310"
+   ],
+   "titre": "",
+   "titre_origine": "Musk pledges two SpaceX shares for every US child in $18 billion AI charm offensive",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i298",
+   "articles": [
+    "a311"
+   ],
+   "titre": "",
+   "titre_origine": "What's a fund manager to do?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i299",
+   "articles": [
+    "a312"
+   ],
+   "titre": "",
+   "titre_origine": "Toyota supera los 300 millones en España con su negocio de carretillas",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i300",
+   "articles": [
+    "a313"
+   ],
+   "titre": "",
+   "titre_origine": "Dan Carney Has Died. He Co-Founded Pizza Hut and Then Made It Ubiquitous.",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i301",
+   "articles": [
+    "a314"
+   ],
+   "titre": "",
+   "titre_origine": "«Une erreur délibérée» : Trump exige une «enquête» sur le taux de croissance américain publié avant les élections de mi-mandat",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i302",
+   "articles": [
+    "a315"
+   ],
+   "titre": "",
+   "titre_origine": "Faisal Islam: Why Trump's new tariffs are less of a threat",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i303",
+   "articles": [
+    "a317"
+   ],
+   "titre": "",
+   "titre_origine": "« Tout le monde les regarde » : moins chers et adaptables, les modèles chinois d’IA séduisent aussi les grands groupes français",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i304",
+   "articles": [
+    "a318"
+   ],
+   "titre": "",
+   "titre_origine": "Acciona estudia integrar su filial energética tras no encontrar comprador",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i305",
+   "articles": [
+    "a319"
+   ],
+   "titre": "",
+   "titre_origine": "Turkey's capital markets catch cold from funds crisis",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i306",
+   "articles": [
+    "a320"
+   ],
+   "titre": "",
+   "titre_origine": "« Opération conviction » : à Reims, Marine Le Pen propose de baisser l’impôt sur les sociétés pour les petites entreprises",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i307",
+   "articles": [
+    "a321"
+   ],
+   "titre": "",
+   "titre_origine": "Retraites, chômage, santé… Les leçons de nos voisins européens pour maîtriser nos dépenses sociales",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i308",
+   "articles": [
+    "a322"
+   ],
+   "titre": "",
+   "titre_origine": "Rechter oordeelt: moet er een verbod komen op de AI-brillen van Meta?",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i309",
+   "articles": [
+    "a323"
+   ],
+   "titre": "",
+   "titre_origine": "La gran distribución negociará subir hasta un 16% los salarios",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i310",
+   "articles": [
+    "a324"
+   ],
+   "titre": "",
+   "titre_origine": "Can Elon Musk really put AI datacentres in space? - The Latest",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i311",
+   "articles": [
+    "a325"
+   ],
+   "titre": "",
+   "titre_origine": "« Nous sommes en discussion avec un tiers des pays de l’Apec » : l’intelligence artificielle chinoise à la conquête du monde",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i312",
+   "articles": [
+    "a326"
+   ],
+   "titre": "",
+   "titre_origine": "Pneus : Michelin à la pointe dans la lutte contre la déforestation",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  },
+  {
+   "id": "i313",
+   "articles": [
+    "a327"
+   ],
+   "titre": "",
+   "titre_origine": "Some old-school advice for Burnham: boost competition if you want growth | Nils Pratley",
+   "statut": "non_confirmee",
+   "nb_journaux": 1
+  }
+ ],
+ "chef": null
+}

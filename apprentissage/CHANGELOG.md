@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-27 · Onglets Actualité, Globe et Petits prix sous les indices (Propriétaire, D-20261127-2 à 4)
+
+Sous la bande des indices, trois onglets : « Actualité » (nouvelles des marchés et des entreprises lues chaque matin dans 21 grands journaux, vérifiées par le chef : « ✓ 2 sources » quand deux journaux concordent, sinon « non confirmée »), « Globe » (la carte du monde, déplacée du bas de page) et « Petits prix » (désormais moins de 10 €). Sur téléphone, le prix des cartes des marchés tient sur une ligne, et chaque fiche détail s'ouvre en haut.
+
 ## 2026-11-27 · Prochains résultats annuels de quatre sociétés du CAC 40 (Nuit, D-20261127-1)
 
 Sous la note des taux, une ligne liste les prochains résultats annuels de Sanofi, TotalEnergies, L'Oréal et Danone avec la date annoncée par chaque société et un lien vers sa page de calendrier ; une date passée disparaît toute seule. Rien n'est retiré. Airbus et LVMH ne figurent pas : aucune date publiée lue. Inspiré de l'idée n° 84 (presse du 25/11) ; dates lues le 27/11 sur les sites des sociétés.

@@ -1,4 +1,4 @@
-"""Collecte quotidienne : prix, indicateurs, top 30 PEA, 10 titres < 2 €, suivi des signaux,
+"""Collecte quotidienne : prix, indicateurs, top 30 PEA, 10 titres < 10 €, suivi des signaux,
 suggestions du jour et suivi des investissements notés par le propriétaire.
 
 Usage : python scripts/collecte.py [AAAA-MM-JJ] [ouverture|cloture]   (par défaut : aujourd'hui, cloture)
@@ -35,6 +35,7 @@ HORIZON = 5            # un signal est jugé 5 séances plus tard
 LIQ_MIN = 50_000       # € échangés par jour en moyenne pour entrer dans le top 30
 LIQ_MIN_PETITES = 5_000
 PRIX_MIN_PETITES = 0.05  # en dessous : quasi-faillite / "penny" extrême, exclu
+PRIX_MAX_PETITES = 10  # onglet « Petits prix » : moins de 10 € (choix du propriétaire, 27/11/2026 ; avant : 2 €)
 DEVISES = {"PA": "EUR", "AS": "EUR", "BR": "EUR", "LS": "EUR", "IR": "EUR", "DE": "EUR", "F": "EUR", "MI": "EUR",
            "MC": "EUR", "HE": "EUR", "AT": "EUR", "VI": "EUR", "CO": "DKK", "ST": "SEK", "OL": "NOK"}
 FICHIER_INV = RACINE / "mes-investissements.md"
@@ -560,10 +561,10 @@ def main():
     top30 = sorted(etf + reste, key=lambda m: -m["score"])
     connues = valeurs_connues(u, tous)
 
-    # 10 titres < 2 € : liquides, triés par score, en évitant ceux montrés les 3 derniers jours
+    # 10 titres < PRIX_MAX_PETITES € : liquides, triés par score, en évitant ceux montrés les 3 derniers jours
     deja = _petites_recentes(jour, 3)
     cand = [m for c in ("etf", "actions", "petites") for m in res.get(c, [])
-            if PRIX_MIN_PETITES <= m["prix"] < 2 and m["liquidite"] >= LIQ_MIN_PETITES]
+            if PRIX_MIN_PETITES <= m["prix"] < PRIX_MAX_PETITES and m["liquidite"] >= LIQ_MIN_PETITES]
     if cand:
         sc = classer(cand)
         for m in cand:
@@ -644,7 +645,7 @@ def main():
             "signal": "hausse si prix > MM20 > MM50 et RSI < 70 ; baisse si prix < MM20 < MM50 et RSI > 30 ; "
                       f"jugé {HORIZON} séances plus tard",
             "filtres": f"liquidité ≥ {LIQ_MIN:,} €/jour (top 30), ≥ {LIQ_MIN_PETITES:,} €/jour et prix "
-                       f"entre {PRIX_MIN_PETITES} et 2 € (petits prix)".replace(",", " "),
+                       f"entre {PRIX_MIN_PETITES} et {PRIX_MAX_PETITES} € (petits prix)".replace(",", " "),
             "suggestions": f"jusqu'à {NB_SUGGESTIONS} actions assez échangées, une par règle : nouveau signal "
                            "« hausse », entrée dans le top 30, plus haut sur un an après une hausse sur 3 mois, "
                            "repli (RSI < 40) au-dessus de la moyenne 200 jours, variation d'au moins 3 % sur la "

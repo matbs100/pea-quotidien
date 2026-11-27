@@ -515,9 +515,12 @@ def rendu_de_bout_en_bout():
         assert r.returncode == 0, "rendu.py a planté :\n" + r.stderr[-1500:]
         page = (c / "docs" / "index.html").read_text(encoding="utf-8")
         for morceau in ('id="feuille"', "pas un conseil en investissement", "Matin <span>PEA</span>", 'id="top30"',
-                        'id="sec-inv"', 'id="suggestions"', 'id="inv-q"', 'id="sec-globe"', "GlobeMath"):
+                        'id="sec-inv"', 'id="suggestions"', 'id="inv-q"', 'id="sec-globe"', "GlobeMath",
+                        'role="tablist"', 'id="o-actu"', 'id="p-globe"', 'id="p-petits"', 'id="actus"'):
             assert morceau in page, f"absent de la page : {morceau}"
         assert "/*__GLOBE__*/" not in page, "code du globe non inséré dans la page"
+        # onglets juste sous la bande des indices, avant « Mes investissements » (demande du 27/11)
+        assert page.index('id="tape"') < page.index('role="tablist"') < page.index('id="sec-inv"'), "onglets mal placés"
         assert len(page) < 3_000_000, f"page trop lourde : {len(page) // 1024} Ko"
         m = re.search(r'<script id="donnees" type="application/json">(.*?)</script>', page, re.S)
         assert m, "données de la page introuvables"
@@ -591,9 +594,9 @@ def controle_du_chef():
     abime = json.loads(json.dumps(d))
     abime["top30"] = abime["top30"][:29]
     abime["top30"][0]["prix"] = -1
-    abime["petites"][0]["prix"] = 3.5
+    abime["petites"][0]["prix"] = 12.5
     pb, _ = c.anomalies_donnees(abime)
-    for morceau in ("29 titres", "prix invalide", "moins de 2 €"):
+    for morceau in ("29 titres", "prix invalide", "moins de 10 €"):
         assert any(morceau in x for x in pb), f"anomalie non repérée : {morceau}"
     # lien Yahoo en 404 depuis le cloud : toléré seulement si le symbole a des cours collectés
     y = "https://finance.yahoo.com/quote/%s/"
@@ -1653,6 +1656,62 @@ def date_du_jour_a_paris_partout():
     fautifs = [p.name for p in sorted(SCRIPTS.glob("*.py"))
                if p.name not in ("tests.py", "paris.py") and re.search(r"date\.today\(\)|datetime\.today\(\)", p.read_text(encoding="utf-8"))]
     assert not fautifs, f"date.today() sans fuseau dans : {fautifs}"
+
+
+@test
+def journaux_et_verification():
+    """Agent Journaux (D-20261127-2) : regroupement des titres, règle des 2 sources calculée par le script,
+    source inventée refusée, page alimentée seulement après la vérification du chef ; seuil des petits prix."""
+    import tempfile
+    from datetime import datetime, timezone
+    sys.path.insert(0, str(SCRIPTS))
+    import journaux as J
+    import collecte
+    import controle
+    assert collecte.PRIX_MAX_PETITES == controle.PRIX_MAX_PETITES == 10, "seuil des petits prix différent"
+    assert J.meme_info("Thales confirme son statut de nouvel ogre de la défense en rachetant Lumibird",
+                       "On refait la séance : Lumibird s'envole, rachat en vue par Thalès")
+    assert not J.meme_info("Stocks Rally at End of a Week of Wild Swings", "Black Friday Deals Are Big Money for Influencers")
+    assert J.parle_finance("Nestlé prévoit de supprimer des postes, l'action recule") and not J.parle_finance("Le match de foot de ce soir")
+    noms = {j["id"] for j in J.JOURNAUX}
+    assert len(J.JOURNAUX) == 21 and len(noms) == 21, "21 journaux attendus (liste du propriétaire)"
+    assert all(j["site"].startswith("https://") and all(u.startswith("https://") for u in j["rss"]) for j in J.JOURNAUX)
+    t = datetime(2026, 11, 27, 7, tzinfo=timezone.utc)
+    arts = [{"id": "a1", "journal": "monde", "titre": "Thales rachète Lumibird", "lien": "https://www.lemonde.fr/a", "publie": t},
+            {"id": "a2", "journal": "bfm", "titre": "Lumibird s'envole, rachat par Thalès", "lien": "https://www.bfmtv.com/b", "publie": t},
+            {"id": "a3", "journal": "bfm", "titre": "Thalès et Lumibird : la séance", "lien": "https://www.bfmtv.com/c", "publie": t},
+            {"id": "a4", "journal": "ft", "titre": "Thames Water seeks to delay debt repayments", "lien": "https://www.ft.com/d", "publie": t}]
+    infos = J.regrouper(arts)
+    assert len(infos) == 2 and set(infos[0]["articles"]) == {"a1", "a2", "a3"}, infos
+    par = {a["id"]: a for a in arts}
+    assert J.statut(infos[0], par) == ("confirmee", 2) and J.statut(infos[1], par)[0] == "non_confirmee"
+    seul_bfm = {"articles": ["a2", "a3"]}
+    assert J.statut(seul_bfm, par)[0] == "non_confirmee", "deux articles du même journal ne se confirment pas"
+    for a in arts:
+        a["publie"] = a["publie"].isoformat()
+    d = {"date": "2026-11-27", "journaux": {}, "articles": arts, "chef": None,
+         "infos": [{"id": "i1", "articles": ["a1", "a2", "a3"], "titre": "Thales rachète Lumibird"},
+                   {"id": "i2", "articles": ["a4"], "titre": "Thames Water veut repousser ses remboursements"}]}
+    assert not J.problemes(d), J.problemes(d)
+    faux = json.loads(json.dumps(d)); faux["infos"][1]["articles"].append("a99")
+    assert any("inexistant" in p for p in J.problemes(faux)), "source inventée non repérée"
+    faux = json.loads(json.dumps(d)); faux["infos"][0]["lien"] = "https://exemple.com/"
+    assert any("lien choisi" in p for p in J.problemes(faux)), "lien hors des articles non repéré"
+    with tempfile.TemporaryDirectory() as tmp:
+        ancien = J.DOSSIER
+        J.DOSSIER = Path(tmp)
+        try:
+            (Path(tmp) / "2026-11-27.json").write_text(json.dumps(d), encoding="utf-8")
+            assert J.pour_la_page("2026-11-27") is None, "nouvelles affichées sans la vérification du chef"
+            d["chef"] = {"verifie_le": "2026-11-27T08:31+01:00"}
+            (Path(tmp) / "2026-11-27.json").write_text(json.dumps(d), encoding="utf-8")
+            pg = J.pour_la_page("2026-11-28")
+            assert pg and pg["date"] == "2026-11-27" and len(pg["infos"]) == 2
+            c, n = pg["infos"]
+            assert c["confirmee"] and c["nb"] == 2 and c["lien"] in ("https://www.lemonde.fr/a", "https://www.bfmtv.com/b", "https://www.bfmtv.com/c")
+            assert not n["confirmee"] and n["lien"] == "https://www.ft.com", "une info non confirmée renvoie au site du journal"
+        finally:
+            J.DOSSIER = ancien
 
 
 def main():

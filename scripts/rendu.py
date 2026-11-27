@@ -124,7 +124,7 @@ def note_obsidian(d, analyse, url):
             L.append(f"| {m['nom']} (`{m['ticker']}`) | {m.get('zone', '')} | {typ.get(m['categorie'], '')} | "
                      f"{prix_dev(m['prix'], m)} | {pct(m.get('var_1j'))} | {pct(m.get('var_1m'))} | "
                      f"{pct(m.get('var_3m'))} | {m.get('signal', '')} | {VERIF[m.get('verif')]} |")
-    L += ["", "## 10 petits prix (moins de 2 €)", "",
+    L += ["", "## 10 petits prix (moins de 10 €)", "",
           "> [!caution] Sociétés souvent fragiles et très volatiles : risque de perte élevé.", "",
           "| # | Titre | Prix | 1 mois | 3 mois | Liquidité €/j | Signal | Déjà vu |",
           "|--:|---|--:|--:|--:|--:|---|:-:|"]
@@ -376,6 +376,16 @@ def donnees_du_jour(jour):
             d["eligibilite"] = eligibilite.pour_la_page(e)
     except Exception as e:  # noqa: BLE001
         print("Éligibilité PEA non lue :", e, file=sys.stderr)
+    try:  # onglet « Actualité » : nouvelles des journaux vérifiées par le chef (D-20261127-2)
+        import journaux
+        import paris
+        # fiche la plus récente : les nouvelles du jour même (week-end compris) ; archive : celles de son jour
+        dernier = max(p.stem for p in (DATA / "jours").glob("20*.json"))
+        a = journaux.pour_la_page(max(jour, paris.aujourdhui().isoformat()) if jour == dernier else jour)
+        if a:
+            d["actualite"] = a
+    except Exception as e:  # noqa: BLE001
+        print("Actualité des journaux non lue :", e, file=sys.stderr)
     try:  # carte du monde : pays de chaque titre suivi (D-20261123-4) ; la page se construit même sans
         import globe
         d["globe"] = globe.table(d.get("catalogue", []), globe.caracteristiques(), jour, statuts)

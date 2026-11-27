@@ -26,6 +26,8 @@ from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 from zoneinfo import ZoneInfo
 
+PRIX_MAX_PETITES = 10  # même seuil que scripts/collecte.py (onglet « Petits prix », 27/11/2026)
+
 RACINE = Path(__file__).resolve().parent.parent
 DATA = RACINE / "data"
 ETAT = RACINE / "pilotage" / "etat.json"
@@ -62,6 +64,11 @@ HORS_ROLE = {  # mes-investissements.md : tenu par le propriétaire seul, aucun 
                "mes-investissements.md", "guide/*", "descriptions.json"],
 }
 # exceptions : idées proposées (fiche, samedi, vérificateur) ; pistes et décisions provisoires (nuit)
+HORS_ROLE["journaux"] = ["*.md", "scripts/*", "config.json", "univers.json", "data/*", "docs/*", "notes/*", "pilotage/*",
+                         "apprentissage/*", "guide/*"]  # agent Journaux (D-20261127-2) : seulement data/journaux/
+for _a in ("fiche", "nuit", "chef", "univers", "code", "design"):  # consigne de l'agent Journaux : propriétaire seul
+    if _a in HORS_ROLE and "JOURNAUX.md" not in HORS_ROLE[_a]:
+        HORS_ROLE[_a].append("JOURNAUX.md")
 PERMIS = {"fiche": ["apprentissage/idees.md", "pilotage/notification.json"],  # notification à renvoyer par le Mac
           "nuit": ["pilotage/candidats.md", "pilotage/decisions.md",
                    "data/eligibilite.json"],  # contrôle quotidien de l'éligibilité au PEA (D-20261123-5)
@@ -70,7 +77,8 @@ PERMIS = {"fiche": ["apprentissage/idees.md", "pilotage/notification.json"],  # 
           "design": ["scripts/modele.html", "scripts/globe.js", "apprentissage/idees.md", "apprentissage/CHANGELOG.md",
                      "pilotage/decisions.md", "pilotage/candidats.md",
                      "data/taux_bce.json"]}  # rendu.py ne change que sa date « releve » (D-20261123-3)
-PERMIS_MOTIFS = {"nuit": ["data/presse/*"],  # revue de presse quotidienne demandée par le chef (D-20261123-3)
+PERMIS_MOTIFS = {"journaux": ["data/journaux/*"],
+                 "nuit": ["data/presse/*"],  # revue de presse quotidienne demandée par le chef (D-20261123-3)
                  "univers": ["pilotage/univers/*"],
                  "code": ["pilotage/code/*", "apprentissage/code/*", "apprentissage/lectures/*"],
                  "design": ["pilotage/design/*", "apprentissage/design/*"]}
@@ -191,8 +199,8 @@ def anomalies_donnees(d):
     if sum(m.get("categorie") == "etf" for m in d["top30"]) < 8:
         al.append("top 30 : moins de 8 ETF (règle de diversification)")
     for m in d["petites"]:
-        if isinstance(m.get("prix"), (int, float)) and m["prix"] >= 2:
-            pb.append(f"petits prix : {m['ticker']} vaut {m['prix']} €, pas moins de 2 €")
+        if isinstance(m.get("prix"), (int, float)) and m["prix"] >= PRIX_MAX_PETITES:
+            pb.append(f"petits prix : {m['ticker']} vaut {m['prix']} €, pas moins de {PRIX_MAX_PETITES} €")
     if len(d["petites"]) < 10:
         al.append(f"petits prix : {len(d['petites'])} titres au lieu de 10")
     for e in (d.get("mes_investissements") or {}).get("erreurs", []):
@@ -504,6 +512,8 @@ def agent_du_commit(message):
         return "chef"
     if message.startswith("Univers :"):
         return "univers"
+    if message.startswith("Journaux :"):
+        return "journaux"
     if message.startswith("Code :"):
         return "code"
     if message.startswith("Design :"):
