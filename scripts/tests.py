@@ -1075,6 +1075,8 @@ def decision_en_puce_signalee():
     texte = "- D-20261125-1 · provisoire\n- D-20261125-2 · ok\n- D-20261101-1 · ancienne\n  texte D-20261125-3\n"
     assert c.decisions_en_puce(texte, {"D-20261125-2": {}}, "2026-11-25") == ["D-20261125-1"]
     assert c.decisions_en_puce("", {}, "2026-11-25") == []
+    # variantes : identifiant en gras, liste numérotée
+    assert c.decisions_en_puce("- **D-20261125-4** · x\n1. D-20261125-5 · y\n", {}, "2026-11-25") == ["D-20261125-4", "D-20261125-5"]
 
 
 @test

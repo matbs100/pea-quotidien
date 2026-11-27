@@ -744,7 +744,7 @@ def decisions_en_puce(texte, decisions, jour, delai=3):
     pour les `delai` derniers jours (idée n° 80 : le tableau est ce que lit `bilans_en_retard`)."""
     from datetime import date, timedelta
     limite = (date.fromisoformat(jour) - timedelta(days=delai)).strftime("%Y%m%d")
-    vus = re.findall(r"^\s*[-*]\s+(D-\d{8}-\d+)\b", texte or "", re.M)
+    vus = re.findall(r"^\s*(?:[-*]|\d+\.)\s+\**(D-\d{8}-\d+)\b", texte or "", re.M)
     return sorted({i for i in vus if i not in decisions and i[2:10] >= limite})
 
 
