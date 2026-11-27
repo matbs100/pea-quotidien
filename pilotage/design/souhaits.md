@@ -3,6 +3,15 @@
 Recopiés ici (sans aucune information personnelle) par la fonction mémoire quand le propriétaire parle du
 projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). Le plus récent en haut.
 
+## Fiche en 7 onglets (2026-11-27, soir)
+
+Le propriétaire a demandé que la fiche soit rangée en 7 onglets sous la bande des indices : Marchés,
+Actualité, Top 30, Valeurs connues, Petits prix, OPCVM, Globe. Barre collante en haut qui défile de côté ;
+glisser le doigt sur le contenu passe d'un onglet à l'autre. Il veut une expérience fluide et sympa. À la fin
+de Marchés : « Les signaux tiennent-ils la route ? » puis « Contrôle des prix » ; dans Top 30, « Mes
+investissements » au-dessus des suggestions. Sans rien retirer ni ralentir la page ; glissement sur vrai
+iPhone pas encore essayé.
+
 ## Actualité, onglets et cartes (2026-11-27)
 
 Le propriétaire a demandé des onglets Actualité · Globe · Petits prix, placés sous la bande des indices et
