@@ -21,8 +21,8 @@ Le propriétaire). Tout est en français.
 | 3 h | Veille et amélioration (`AMELIORATION.md`) | apprend (marchés, méthodes, design, pédagogie, open source), note dans `apprentissage/`, fait une amélioration testée |
 | 4 h | Vérificateur du code (`VERIFICATION.md`) | sous ta direction : veille chaque jour à la confidentialité du propriétaire, vérifie que le code est bien fait et marche, une correction au plus, apprend de nouvelles techniques de code (sources fiables) et propose des idées ; rapport dans `pilotage/code/` |
 | 5 h | **toi** (`CHEF.md`) | contrôles, revue des autres agents, vérification des faits, une correction ou un embellissement, consignes, rapport |
-| 8 h, chaque jour | Journaux (`JOURNAUX.md`) | lit l'actualité des marchés et des entreprises dans 21 grands journaux (flux RSS), regroupe les articles qui annoncent la même chose |
-| 8 h 30, chaque jour | **toi** : vérification des journaux (`JOURNAUX.md`) | vérifie chaque regroupement, écrit les titres en français ; 2 journaux = « ✓ 2 sources », 1 seul = « non confirmée » ; onglet Actualité de la fiche |
+| 8 h et 16 h, chaque jour | Journaux (`JOURNAUX.md`) | lit l'actualité des marchés et des entreprises dans 21 grands journaux (flux RSS), regroupe les articles qui annoncent la même chose |
+| 8 h 30 et 16 h 30, chaque jour | **toi** : vérification des journaux (`JOURNAUX.md`) | vérifie chaque regroupement, écrit les titres en français ; 2 journaux = « ✓ 2 sources », 1 seul = « non confirmée » ; onglet Actualité de la fiche |
 | 9 h 15 et 17 h 55, jours de bourse | Fiche du jour (`ROUTINE.md`) | fiche d'ouverture puis de clôture, site, notification |
 | samedi 4 h 20 | Titres suivis (`UNIVERS.md`) | ajoute à `univers.json` les nouveaux ETF et actions éligibles au PEA, vérifiés un par un |
 

@@ -5,6 +5,10 @@ tags: [pea, agent, apprentissage]
 
 Du plus récent au plus ancien. Chaque entrée commence par `## AAAA-MM-JJ · titre` : la fiche du jour affiche la plus récente.
 
+## 2026-11-27 · Sept onglets à faire glisser du doigt, actualité aussi l'après-midi (Propriétaire, D-20261127-5)
+
+La fiche est rangée en 7 onglets sous la bande des indices : Marchés, Actualité, Top 30 (avec mes investissements et les suggestions), Valeurs connues, Petits prix, OPCVM et Globe. La barre reste en haut de l'écran ; sur téléphone, on glisse le doigt à gauche ou à droite pour passer d'un onglet à l'autre. L'agent Journaux relit aussi la presse à 16 h, vérifiée par le chef à 16 h 30.
+
 ## 2026-11-27 · Onglets Actualité, Globe et Petits prix sous les indices (Propriétaire, D-20261127-2 à 4)
 
 Sous la bande des indices, trois onglets : « Actualité » (nouvelles des marchés et des entreprises lues chaque matin dans 21 grands journaux, vérifiées par le chef : « ✓ 2 sources » quand deux journaux concordent, sinon « non confirmée »), « Globe » (la carte du monde, déplacée du bas de page) et « Petits prix » (désormais moins de 10 €). Sur téléphone, le prix des cartes des marchés tient sur une ligne, et chaque fiche détail s'ouvre en haut.

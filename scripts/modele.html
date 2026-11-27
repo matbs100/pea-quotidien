@@ -302,16 +302,27 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   border: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: 14px; cursor: pointer; }
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* onglets sous la bande des indices (27/11, D-20261127-2) : Actualité, Globe, Petits prix */
-.onglets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin: 22px 0 0; padding: 4px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; }
-.onglet { min-height: 44px; border: 0; border-radius: 10px; background: transparent; color: var(--muted); font: 600 15px var(--font-body); cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: background .2s, color .2s; }
-.onglet[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+/* onglets sous la bande des indices (27/11, D-20261127-2 et -5) : 7 rubriques, barre collante qui défile,
+   on glisse le doigt sur le contenu pour passer à l'onglet voisin */
+.rubriques { position: sticky; top: 0; z-index: 20; display: flex; gap: 6px; margin: 22px -4px 0; padding: 8px 4px; overflow-x: auto; scroll-snap-type: x proximity;
+  scrollbar-width: none; overscroll-behavior-x: contain; background: color-mix(in srgb, var(--bg) 88%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.rubriques::-webkit-scrollbar { display: none; }
+.onglet { flex: 0 0 auto; scroll-snap-align: center; min-height: 40px; padding: 0 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted);
+  font: 600 14px var(--font-body); white-space: nowrap; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: background .2s, color .2s, border-color .2s; }
+.onglet[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .onglet:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 60%, transparent); outline-offset: 1px; }
 .onglet[hidden] { display: none; }
-.onglets:has(.onglet[hidden]) { grid-template-columns: repeat(2, 1fr); }
+.panneaux { touch-action: pan-y; }
 .panneau { outline: none; }
-.panneau > section { margin-top: 16px; }
+.panneau > section:first-child { margin-top: 18px; }
 .panneau[hidden] { display: none; }
+.panneau.glisse { transition: none; }
+.panneau.vient-droite { animation: vient-droite .32s cubic-bezier(.2,.8,.2,1); }
+.panneau.vient-gauche { animation: vient-gauche .32s cubic-bezier(.2,.8,.2,1); }
+@keyframes vient-droite { from { opacity: 0; transform: translateX(48px); } }
+@keyframes vient-gauche { from { opacity: 0; transform: translateX(-48px); } }
+@media (prefers-reduced-motion: reduce) { .panneau.vient-droite, .panneau.vient-gauche { animation: none; } }
+.astuce-glisse { margin: 6px 0 0; font-size: 13px; color: var(--muted); text-align: center; }
 .actus { display: grid; gap: 8px; }
 .actus h3 { font: 600 13px var(--font-body); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 14px 0 2px; }
 .actus h3:first-child { margin-top: 0; }
@@ -464,17 +475,127 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   </header>
   <div class="tape" aria-label="Indices"><div class="tape-in" id="tape"></div></div>
 
-  <!-- onglets sous la bande des indices (choix du propriétaire, 27/11/2026, D-20261127-2) -->
-  <div class="onglets" role="tablist" aria-label="Rubriques du jour">
-    <button type="button" role="tab" class="onglet" id="o-actu" aria-controls="p-actu" aria-selected="true">Actualité</button>
-    <button type="button" role="tab" class="onglet" id="o-globe" aria-controls="p-globe" aria-selected="false" tabindex="-1">Globe</button>
+  <!-- onglets sous la bande des indices (choix du propriétaire, 27/11/2026, D-20261127-2 et -5) : on glisse le doigt pour passer de l'un à l'autre -->
+  <nav class="rubriques" role="tablist" aria-label="Rubriques de la fiche">
+    <button type="button" role="tab" class="onglet" id="o-marches" aria-controls="p-marches" aria-selected="true">Marchés</button>
+    <button type="button" role="tab" class="onglet" id="o-actu" aria-controls="p-actu" aria-selected="false" tabindex="-1">Actualité</button>
+    <button type="button" role="tab" class="onglet" id="o-top" aria-controls="p-top" aria-selected="false" tabindex="-1">Top 30</button>
+    <button type="button" role="tab" class="onglet" id="o-connues" aria-controls="p-connues" aria-selected="false" tabindex="-1">Valeurs connues</button>
     <button type="button" role="tab" class="onglet" id="o-petits" aria-controls="p-petits" aria-selected="false" tabindex="-1">Petits prix</button>
+    <button type="button" role="tab" class="onglet" id="o-opc" aria-controls="p-opc" aria-selected="false" tabindex="-1">OPCVM</button>
+    <button type="button" role="tab" class="onglet" id="o-globe" aria-controls="p-globe" aria-selected="false" tabindex="-1">Globe</button>
+  </nav>
+  <div class="panneaux" id="panneaux">
+  <div class="panneau" id="p-marches" role="tabpanel" aria-labelledby="o-marches" tabindex="0">
+    <section>
+      <div class="sec-head"><h2>Les marchés</h2><span class="sub"><span id="sub-marches">Dernière séance</span> · à droite, le prix d'une part d'ETF qui suit l'indice · touche une carte pour son historique</span></div>
+      <div class="grid" id="indices"></div>
+    </section>
+    <section>
+      <div class="sec-head"><h2>Devises et matières premières</h2></div>
+      <div class="grid" id="devises"></div>
+    </section>
+    <section>
+      <div class="sec-head"><h2>L'analyse du jour</h2><span class="sub">Rédigée par Claude à partir des données</span></div>
+      <div class="analyse rv" id="analyse"></div>
+    </section>
+    <section id="sec-taux" hidden>
+      <div class="sec-head"><div><h2>Le contexte des taux</h2><div class="sub">Taux directeurs de la Banque centrale européenne et inflation de la zone euro, lus à la source</div></div></div>
+      <div class="stat" id="taux"></div>
+      <p class="note" id="taux-note"></p>
+      <p class="note" id="resultats-note" hidden></p>
+    </section>
+    <section id="sec-fisc">
+      <div class="sec-head"><div><h2>PEA : fiscalité en un coup d'œil</h2><div class="sub">Chiffres relus le 13/11/2026 sur service-public.gouv.fr · à revérifier avant toute décision</div></div></div>
+      <div class="stat" id="fisc">
+        <div class="card"><div class="val num">150 000 €</div><em>Plafond des versements sur un PEA (les gains ne comptent pas dans ce plafond)</em></div>
+        <div class="card"><div class="val num">12,8 %</div><em>Impôt sur les gains en cas de retrait avant 5 ans (le PEA est alors clos, sauf cas particuliers)</em></div>
+        <div class="card"><div class="val num">18,6 %</div><em>Prélèvements sociaux sur les gains, dans tous les cas</em></div>
+        <div class="card"><div class="val num">0 %</div><em>Impôt sur le revenu sur les gains après 5 ans (seuls les prélèvements sociaux restent dus)</em></div>
+      </div>
+      <p class="note" id="fisc-exceptions">Exceptions au retrait avant 5 ans (le PEA n'est pas clos) : licenciement, invalidité de 2e ou 3e catégorie, mise à la retraite décidée par l'employeur, pour le titulaire ou son conjoint ou partenaire. La liste de service-public est introduite par « notamment » : elle peut ne pas être complète.</p>
+      <p class="note" id="fisc-transfert">Changer de banque : le transfert complet de son PEA (espèces, titres, bordereau fiscal) n'est pas un retrait, et les avantages fiscaux sont conservés. Source : <a href="https://www.amf-france.org/fr/espace-epargnants/comprendre-les-produits-financiers/supports-dinvestissement/pea" target="_blank" rel="noopener noreferrer">AMF, FAQ PEA et PEA PME-ETI</a>.</p>
+      <p class="note" id="fisc-delai">Un transfert se prépare : dans l'échantillon de grands teneurs de compte étudié par un groupe de travail de l'AMF (rapport de 2023), 80 % des transferts étaient faits en moins d'un mois après la demande, mais aucun délai n'est garanti. Source : <a href="https://www.amf-france.org/sites/institutionnel/files/private/2023-07/Rapport_GT_PEA_2023.pdf" target="_blank" rel="noopener noreferrer">AMF, rapport du groupe de travail sur le PEA, p. 8</a>.</p>
+      <p class="note">Information générale sur les règles en vigueur, pas un conseil fiscal ni d'investissement : ta situation personnelle peut changer le calcul. Sources : <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F22449" target="_blank" rel="noopener noreferrer">service-public.gouv.fr (F22449)</a>, <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F2385" target="_blank" rel="noopener noreferrer">(F2385)</a>, <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F2329" target="_blank" rel="noopener noreferrer">(F2329)</a>.</p>
+    </section>
+    <section>
+      <div class="sec-head"><div><h2>Les signaux tiennent-ils la route ?</h2><div class="sub">Chaque signal « hausse » ou « baisse » est vérifié 5 séances plus tard</div></div></div>
+      <div class="stat" id="bilan"></div>
+    </section>
+    <section>
+      <div class="sec-head"><div><h2>Contrôle des prix</h2><div class="sub">Chaque prix affiché est comparé entre Yahoo Finance, Boursorama et le Financial Times</div></div></div>
+      <div class="stat" id="sources"></div>
+    </section>
   </div>
-  <div class="panneau" id="p-actu" role="tabpanel" aria-labelledby="o-actu" tabindex="0">
+  <div class="panneau" id="p-actu" role="tabpanel" aria-labelledby="o-actu" tabindex="0" hidden>
     <section id="sec-actu">
       <div class="sec-head"><div><h2 class="vh">Actualité des marchés</h2><div class="sub" id="actu-sub">Les nouvelles des marchés et des entreprises, lues dans 21 grands journaux et vérifiées par le chef</div></div></div>
       <div id="actus"></div>
       <p class="note">« ✓ 2 sources » : au moins deux journaux différents annoncent la même chose ; le lien ouvre l'un des articles (il peut être réservé aux abonnés). « Non confirmée » : un seul journal en parle pour l'instant ; le lien ouvre le site du journal. Titres résumés par le chef avec ses mots. Information, pas un conseil en investissement.</p>
+    </section>
+  </div>
+  <div class="panneau" id="p-top" role="tabpanel" aria-labelledby="o-top" tabindex="0" hidden>
+    <section id="sec-inv" hidden>
+      <div class="sec-head"><div><h2>Mes investissements</h2><div class="sub">Tape l'ISIN ou le nom d'un titre pour l'ajouter · touche une ligne pour sa fiche complète</div></div></div>
+      <div class="recherche" role="search">
+        <svg class="loupe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <label for="inv-q" class="vh">Rechercher un titre par ISIN, nom ou code</label>
+        <input id="inv-q" type="search" placeholder="Ex. FR0013412020 ou Air Liquide" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search" aria-controls="inv-res">
+        <div class="resultats" id="inv-res" hidden></div>
+      </div>
+      <div class="ajout" id="inv-form" hidden></div>
+      <div class="stat" id="inv-total" hidden></div>
+      <div class="alerte" id="inv-erreurs" hidden></div>
+      <div class="liste" id="inv"></div>
+      <p class="note" id="inv-note" hidden></p>
+    </section>
+    <section id="sec-sugg" hidden>
+      <div class="sec-head"><div><h2>Suggestions du jour</h2><div class="sub">Des actions à regarder de plus près, choisies par des règles chiffrées · pas une liste d'achats</div></div></div>
+      <div class="grid" id="suggestions"></div>
+      <p class="note">Chaque suggestion vient d'une règle publiée en bas de page. Avant toute décision, lis sa fiche, cherche l'actualité de la société et regarde son niveau de risque.</p>
+    </section>
+    <section id="sec-crit">
+      <div class="sec-head"><div><h2>Mes critères</h2><div class="sub">Choisis ce qui compte pour toi : la liste du Top 30 se réduit en conséquence · pas une liste d'achats</div></div></div>
+      <div class="criteres">
+        <label>Risque maximum<select id="cr-risque"><option value="">Peu importe</option><option value="3">3 sur 7</option><option value="4">4 sur 7</option><option value="5">5 sur 7</option><option value="6">6 sur 7</option></select></label>
+        <label>Plus forte baisse sur 1 an<select id="cr-perte"><option value="">Peu importe</option><option value="15">moins de 15 %</option><option value="25">moins de 25 %</option><option value="35">moins de 35 %</option></select></label>
+        <label>Type<select id="cr-type"><option value="">ETF et actions</option><option value="etf">ETF seulement</option><option value="actions">Actions seulement</option></select></label>
+      </div>
+      <p class="note" id="cr-bilan" aria-live="polite"></p>
+      <div class="liste" id="cr-liste"></div>
+    </section>
+    <section>
+      <div class="sec-head">
+        <div><h2>Top 30 éligible PEA</h2><div class="sub">Classement par critères chiffrés, pas une liste d'achats · touche une ligne pour sa fiche complète (graphique, risque, frais…)</div></div>
+        <div class="chips" id="chips-top" role="group" aria-label="Filtrer">
+          <button class="chip" aria-pressed="true" data-f="tous">Tous</button>
+          <button class="chip" aria-pressed="false" data-f="etf">ETF</button>
+          <button class="chip" aria-pressed="false" data-f="actions">Actions</button>
+        </div>
+      </div>
+      <p class="note" id="top-nb" aria-live="polite" hidden></p>
+      <div class="liste" id="top30"></div>
+    </section>
+  </div>
+  <div class="panneau" id="p-connues" role="tabpanel" aria-labelledby="o-connues" tabindex="0" hidden>
+    <section id="sec-connues" hidden>
+      <div class="sec-head"><div><h2>30 valeurs connues</h2><div class="sub">Grandes actions européennes cotées depuis longtemps et ETF répandus (Monde, États-Unis, Japon, Asie, pays émergents), tous éligibles au PEA · la même liste chaque jour, pas une liste d'achats · touche une ligne pour sa fiche complète</div></div></div>
+      <div class="liste" id="connues"></div>
+      <p class="note">Pas d'actions américaines ou asiatiques en direct : elles ne sont pas éligibles au PEA. Ces zones passent par des ETF éligibles, qui suivent leur indice grâce à un contrat d'échange. Risque et frais des ETF : lus dans leur DIC officiel quand il est disponible.</p>
+    </section>
+  </div>
+  <div class="panneau" id="p-petits" role="tabpanel" aria-labelledby="o-petits" tabindex="0" hidden>
+    <section id="sec-petits">
+      <div class="sec-head"><div><h2 class="vh">10 petits prix (moins de 10 €)</h2><div class="sub">10 petits prix (moins de 10 €) · les mieux classés parmi les titres liquides éligibles au PEA</div></div></div>
+      <div class="alerte">Petit prix ne veut pas dire bon marché : ce sont souvent des sociétés fragiles (biotechs, entreprises en difficulté), très volatiles, où l'on peut perdre beaucoup. À garder pour une très petite part, ou juste à observer.</div>
+      <div class="liste" id="petites"></div>
+    </section>
+  </div>
+  <div class="panneau" id="p-opc" role="tabpanel" aria-labelledby="o-opc" tabindex="0" hidden>
+    <section id="sec-opc" hidden>
+      <div class="sec-head"><div><h2>OPCVM éligibles au PEA</h2><div class="sub">Fonds (SICAV et FCP) gérés par une équipe, achetés auprès de ta banque · valeur calculée une fois par jour · pas une liste d'achats</div></div></div>
+      <div class="liste" id="opcvm"></div>
+      <p class="note" id="opc-note"></p>
     </section>
   </div>
   <div class="panneau" id="p-globe" role="tabpanel" aria-labelledby="o-globe" tabindex="0" hidden>
@@ -497,116 +618,8 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
       <p class="note">Placement : une action dans le pays de son siège ; un ETF dans le pays où le fonds a été créé (les deux premières lettres de son ISIN), sauf s'il investit aux États-Unis, au Japon ou en Inde (placé dans ce pays) ou s'il fait partie des 4 ETF émergents et Asie, placés dans chacun des pays qu'ils couvrent (classement MSCI). Tracé des pays : Natural Earth (domaine public). Information et apprentissage, pas un conseil en investissement.</p>
     </section>
   </div>
-  <div class="panneau" id="p-petits" role="tabpanel" aria-labelledby="o-petits" tabindex="0" hidden>
-    <section id="sec-petits">
-      <div class="sec-head"><div><h2 class="vh">10 petits prix (moins de 10 €)</h2><div class="sub">10 petits prix (moins de 10 €) · les mieux classés parmi les titres liquides éligibles au PEA</div></div></div>
-      <div class="alerte">Petit prix ne veut pas dire bon marché : ce sont souvent des sociétés fragiles (biotechs, entreprises en difficulté), très volatiles, où l'on peut perdre beaucoup. À garder pour une très petite part, ou juste à observer.</div>
-      <div class="liste" id="petites"></div>
-    </section>
   </div>
-
-  <section id="sec-inv" hidden>
-    <div class="sec-head"><div><h2>Mes investissements</h2><div class="sub">Tape l'ISIN ou le nom d'un titre pour l'ajouter · touche une ligne pour sa fiche complète</div></div></div>
-    <div class="recherche" role="search">
-      <svg class="loupe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <label for="inv-q" class="vh">Rechercher un titre par ISIN, nom ou code</label>
-      <input id="inv-q" type="search" placeholder="Ex. FR0013412020 ou Air Liquide" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search" aria-controls="inv-res">
-      <div class="resultats" id="inv-res" hidden></div>
-    </div>
-    <div class="ajout" id="inv-form" hidden></div>
-    <div class="stat" id="inv-total" hidden></div>
-    <div class="alerte" id="inv-erreurs" hidden></div>
-    <div class="liste" id="inv"></div>
-    <p class="note" id="inv-note" hidden></p>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>Les marchés</h2><span class="sub"><span id="sub-marches">Dernière séance</span> · à droite, le prix d'une part d'ETF qui suit l'indice · touche une carte pour son historique</span></div>
-    <div class="grid" id="indices"></div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>Devises et matières premières</h2></div>
-    <div class="grid" id="devises"></div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>L'analyse du jour</h2><span class="sub">Rédigée par Claude à partir des données</span></div>
-    <div class="analyse rv" id="analyse"></div>
-  </section>
-
-  <section id="sec-taux" hidden>
-    <div class="sec-head"><div><h2>Le contexte des taux</h2><div class="sub">Taux directeurs de la Banque centrale européenne et inflation de la zone euro, lus à la source</div></div></div>
-    <div class="stat" id="taux"></div>
-    <p class="note" id="taux-note"></p>
-    <p class="note" id="resultats-note" hidden></p>
-  </section>
-
-  <section id="sec-fisc">
-    <div class="sec-head"><div><h2>PEA : fiscalité en un coup d'œil</h2><div class="sub">Chiffres relus le 13/11/2026 sur service-public.gouv.fr · à revérifier avant toute décision</div></div></div>
-    <div class="stat" id="fisc">
-      <div class="card"><div class="val num">150 000 €</div><em>Plafond des versements sur un PEA (les gains ne comptent pas dans ce plafond)</em></div>
-      <div class="card"><div class="val num">12,8 %</div><em>Impôt sur les gains en cas de retrait avant 5 ans (le PEA est alors clos, sauf cas particuliers)</em></div>
-      <div class="card"><div class="val num">18,6 %</div><em>Prélèvements sociaux sur les gains, dans tous les cas</em></div>
-      <div class="card"><div class="val num">0 %</div><em>Impôt sur le revenu sur les gains après 5 ans (seuls les prélèvements sociaux restent dus)</em></div>
-    </div>
-    <p class="note" id="fisc-exceptions">Exceptions au retrait avant 5 ans (le PEA n'est pas clos) : licenciement, invalidité de 2e ou 3e catégorie, mise à la retraite décidée par l'employeur, pour le titulaire ou son conjoint ou partenaire. La liste de service-public est introduite par « notamment » : elle peut ne pas être complète.</p>
-    <p class="note" id="fisc-transfert">Changer de banque : le transfert complet de son PEA (espèces, titres, bordereau fiscal) n'est pas un retrait, et les avantages fiscaux sont conservés. Source : <a href="https://www.amf-france.org/fr/espace-epargnants/comprendre-les-produits-financiers/supports-dinvestissement/pea" target="_blank" rel="noopener noreferrer">AMF, FAQ PEA et PEA PME-ETI</a>.</p>
-    <p class="note" id="fisc-delai">Un transfert se prépare : dans l'échantillon de grands teneurs de compte étudié par un groupe de travail de l'AMF (rapport de 2023), 80 % des transferts étaient faits en moins d'un mois après la demande, mais aucun délai n'est garanti. Source : <a href="https://www.amf-france.org/sites/institutionnel/files/private/2023-07/Rapport_GT_PEA_2023.pdf" target="_blank" rel="noopener noreferrer">AMF, rapport du groupe de travail sur le PEA, p. 8</a>.</p>
-    <p class="note">Information générale sur les règles en vigueur, pas un conseil fiscal ni d'investissement : ta situation personnelle peut changer le calcul. Sources : <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F22449" target="_blank" rel="noopener noreferrer">service-public.gouv.fr (F22449)</a>, <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F2385" target="_blank" rel="noopener noreferrer">(F2385)</a>, <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F2329" target="_blank" rel="noopener noreferrer">(F2329)</a>.</p>
-  </section>
-
-  <section id="sec-sugg" hidden>
-    <div class="sec-head"><div><h2>Suggestions du jour</h2><div class="sub">Des actions à regarder de plus près, choisies par des règles chiffrées · pas une liste d'achats</div></div></div>
-    <div class="grid" id="suggestions"></div>
-    <p class="note">Chaque suggestion vient d'une règle publiée en bas de page. Avant toute décision, lis sa fiche, cherche l'actualité de la société et regarde son niveau de risque.</p>
-  </section>
-
-  <section id="sec-crit">
-    <div class="sec-head"><div><h2>Mes critères</h2><div class="sub">Choisis ce qui compte pour toi : la liste du Top 30 se réduit en conséquence · pas une liste d'achats</div></div></div>
-    <div class="criteres">
-      <label>Risque maximum<select id="cr-risque"><option value="">Peu importe</option><option value="3">3 sur 7</option><option value="4">4 sur 7</option><option value="5">5 sur 7</option><option value="6">6 sur 7</option></select></label>
-      <label>Plus forte baisse sur 1 an<select id="cr-perte"><option value="">Peu importe</option><option value="15">moins de 15 %</option><option value="25">moins de 25 %</option><option value="35">moins de 35 %</option></select></label>
-      <label>Type<select id="cr-type"><option value="">ETF et actions</option><option value="etf">ETF seulement</option><option value="actions">Actions seulement</option></select></label>
-    </div>
-    <p class="note" id="cr-bilan" aria-live="polite"></p>
-    <div class="liste" id="cr-liste"></div>
-  </section>
-
-  <section>
-    <div class="sec-head">
-      <div><h2>Top 30 éligible PEA</h2><div class="sub">Classement par critères chiffrés, pas une liste d'achats · touche une ligne pour sa fiche complète (graphique, risque, frais…)</div></div>
-      <div class="chips" id="chips-top" role="group" aria-label="Filtrer">
-        <button class="chip" aria-pressed="true" data-f="tous">Tous</button>
-        <button class="chip" aria-pressed="false" data-f="etf">ETF</button>
-        <button class="chip" aria-pressed="false" data-f="actions">Actions</button>
-      </div>
-    </div>
-    <p class="note" id="top-nb" aria-live="polite" hidden></p>
-    <div class="liste" id="top30"></div>
-  </section>
-
-  <section id="sec-connues" hidden>
-    <div class="sec-head"><div><h2>30 valeurs connues</h2><div class="sub">Grandes actions européennes cotées depuis longtemps et ETF répandus (Monde, États-Unis, Japon, Asie, pays émergents), tous éligibles au PEA · la même liste chaque jour, pas une liste d'achats · touche une ligne pour sa fiche complète</div></div></div>
-    <div class="liste" id="connues"></div>
-    <p class="note">Pas d'actions américaines ou asiatiques en direct : elles ne sont pas éligibles au PEA. Ces zones passent par des ETF éligibles, qui suivent leur indice grâce à un contrat d'échange. Risque et frais des ETF : lus dans leur DIC officiel quand il est disponible.</p>
-  </section>
-
-  <section id="sec-opc" hidden>
-    <div class="sec-head"><div><h2>OPCVM éligibles au PEA</h2><div class="sub">Fonds (SICAV et FCP) gérés par une équipe, achetés auprès de ta banque · valeur calculée une fois par jour · pas une liste d'achats</div></div></div>
-    <div class="liste" id="opcvm"></div>
-    <p class="note" id="opc-note"></p>
-  </section>
-
-  <section>
-    <div class="sec-head"><div><h2>Les signaux tiennent-ils la route ?</h2><div class="sub">Chaque signal « hausse » ou « baisse » est vérifié 5 séances plus tard</div></div></div>
-    <div class="stat" id="bilan"></div>
-  </section>
-
-  <section>
-    <div class="sec-head"><div><h2>Contrôle des prix</h2><div class="sub">Chaque prix affiché est comparé entre Yahoo Finance, Boursorama et le Financial Times</div></div></div>
-    <div class="stat" id="sources"></div>
-  </section>
+  <p class="astuce-glisse" id="astuce-glisse" hidden>Astuce : glisse le doigt vers la gauche ou la droite pour passer d'un onglet à l'autre.</p>
 
   <footer>
     <dl id="regles"></dl>
@@ -889,27 +902,78 @@ if ((D.connues || []).length) {  // 30 valeurs connues : liste fixe (univers.jso
 }
 $("#petites").innerHTML = D.petites.map((m, i) => ligne(m, i, "score_petite")).join("");
 
-// ---------- onglets sous la bande des indices (27/11, D-20261127-2) ----------
-(function () {
-  const ONG = [...document.querySelectorAll(".onglet")];
-  if (!(D.globe && Array.isArray(D.globe.t) && D.globe.t.length)) $("#o-globe").hidden = true;  // pas de globe ce jour-là
-  function choisir(o, focus) {
-    ONG.forEach((x) => { const oui = x === o; x.setAttribute("aria-selected", oui); x.tabIndex = oui ? 0 : -1; $("#" + x.getAttribute("aria-controls")).hidden = !oui; });
-    if (focus) o.focus();
+// ---------- onglets sous la bande des indices (27/11, D-20261127-2 et -5) ----------
+// 7 rubriques ; un onglet sans contenu ce jour-là est caché ; glisser le doigt sur le contenu passe à l'onglet voisin.
+addEventListener("DOMContentLoaded", function () {
+  const barre = $(".rubriques"), ONG = [...document.querySelectorAll(".onglet")], zone = $("#panneaux");
+  const panneau = (o) => $("#" + o.getAttribute("aria-controls"));
+  ONG.forEach((o) => {  // tout est caché dans ce panneau (pas d'OPCVM, pas de globe…) : on retire l'onglet
+    const p = panneau(o), secs = [...p.querySelectorAll(":scope > section")];
+    if (secs.length && secs.every((x) => x.hidden)) o.hidden = true;
+  });
+  const vis = () => ONG.filter((x) => !x.hidden);
+  let actif = vis()[0];
+  function choisir(o, opts = {}) {
+    if (!o || o.hidden) return;
+    const avant = vis().indexOf(actif), apres = vis().indexOf(o);
+    ONG.forEach((x) => { const oui = x === o; x.setAttribute("aria-selected", oui); x.tabIndex = oui ? 0 : -1; panneau(x).hidden = !oui; });
+    const p = panneau(o);
+    p.classList.remove("vient-droite", "vient-gauche");
+    if (opts.anime && avant !== apres) { void p.offsetWidth; p.classList.add(apres > avant ? "vient-droite" : "vient-gauche"); }
+    actif = o;
+    barre.scrollTo({ left: o.offsetLeft - (barre.clientWidth - o.offsetWidth) / 2, behavior: reduit ? "auto" : "smooth" });
+    // si on avait défilé plus bas, on remonte au début de la rubrique (la barre reste collée en haut)
+    const haut = barre.getBoundingClientRect().top + scrollY;
+    if (opts.remonter !== false && scrollY > haut) scrollTo({ top: haut, behavior: "auto" });
+    if (opts.focus) o.focus({ preventScroll: true });
     try { sessionStorage.setItem("matin-pea-onglet", o.id); } catch (e) {}
   }
-  ONG.forEach((o) => o.addEventListener("click", () => choisir(o)));
-  $(".onglets").addEventListener("keydown", (e) => {
-    const vis = ONG.filter((x) => !x.hidden), i = vis.indexOf(document.activeElement);
+  ONG.forEach((o) => o.addEventListener("click", () => choisir(o, { anime: true })));
+  barre.addEventListener("keydown", (e) => {
+    const v = vis(), i = v.indexOf(document.activeElement);
     if (i < 0) return;
-    const k = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: vis.length - 1 }[e.key];
+    const k = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: v.length - 1 }[e.key];
     if (k == null) return;
-    e.preventDefault(); choisir(vis[(k + vis.length) % vis.length], true);
+    e.preventDefault(); choisir(v[(k + v.length) % v.length], { anime: true, focus: true });
   });
+  // glisser : seulement un geste surtout horizontal, hors du globe et des listes qui défilent de côté
+  let x0 = 0, y0 = 0, t0 = 0, dx = 0, sens = null, p0 = null;
+  const defileDeCote = (el) => { for (; el && el !== zone; el = el.parentElement) { if (el.scrollWidth > el.clientWidth + 2 && /auto|scroll/.test(getComputedStyle(el).overflowX)) return true; } return false; };
+  zone.addEventListener("touchstart", (e) => {
+    sens = null; dx = 0; p0 = null;
+    if (e.touches.length !== 1 || e.target.closest("canvas, input, textarea, select, .globe-boutons") || defileDeCote(e.target)) { sens = "non"; return; }
+    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; t0 = Date.now(); p0 = panneau(actif);
+  }, { passive: true });
+  zone.addEventListener("touchmove", (e) => {
+    if (sens === "non" || !p0) return;
+    const ddx = e.touches[0].clientX - x0, ddy = e.touches[0].clientY - y0;
+    if (!sens) { if (Math.abs(ddx) < 10 && Math.abs(ddy) < 10) return; sens = Math.abs(ddx) > Math.abs(ddy) * 1.2 ? "h" : "non"; if (sens === "non") return; p0.classList.add("glisse"); }
+    dx = ddx;
+    const v = vis(), i = v.indexOf(actif), bord = (dx > 0 && i === 0) || (dx < 0 && i === v.length - 1);
+    p0.style.transform = `translateX(${bord ? dx / 4 : dx * 0.85}px)`; p0.style.opacity = String(1 - Math.min(Math.abs(dx) / 600, .35));
+  }, { passive: true });
+  function fin() {
+    if (sens !== "h" || !p0) { sens = null; return; }
+    p0.classList.remove("glisse"); p0.style.transform = ""; p0.style.opacity = "";
+    const v = vis(), i = v.indexOf(actif), rapide = Math.abs(dx) > 40 && Date.now() - t0 < 300;
+    if (Math.abs(dx) > 70 || rapide) {
+      const j = dx < 0 ? i + 1 : i - 1;
+      if (j >= 0 && j < v.length) {
+        choisir(v[j], { anime: true });
+        try { localStorage.setItem("matin-pea-glisse-vu", "1"); } catch (e) {}
+        $("#astuce-glisse").hidden = true;
+      }
+    }
+    sens = null;
+  }
+  zone.addEventListener("touchend", fin, { passive: true });
+  zone.addEventListener("touchcancel", fin, { passive: true });
+  // petite astuce sur téléphone, tant qu'on n'a jamais glissé
+  let vu = false; try { vu = !!localStorage.getItem("matin-pea-glisse-vu"); } catch (e) {}
+  if (!vu && matchMedia("(pointer: coarse)").matches) $("#astuce-glisse").hidden = false;
   let id0 = null; try { id0 = sessionStorage.getItem("matin-pea-onglet"); } catch (e) {}
-  const o0 = ONG.find((x) => x.id === id0 && !x.hidden);
-  if (o0) choisir(o0);
-})();
+  choisir(ONG.find((x) => x.id === id0 && !x.hidden) || vis()[0], { remonter: false });
+});
 
 // ---------- onglet Actualité : nouvelles des journaux vérifiées par le chef ----------
 (function () {

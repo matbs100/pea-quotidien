@@ -521,6 +521,9 @@ def rendu_de_bout_en_bout():
         assert "/*__GLOBE__*/" not in page, "code du globe non inséré dans la page"
         # onglets juste sous la bande des indices, avant « Mes investissements » (demande du 27/11)
         assert page.index('id="tape"') < page.index('role="tablist"') < page.index('id="sec-inv"'), "onglets mal placés"
+        ordre = re.findall(r'role="tab" class="onglet" id="o-([a-z]+)"', page)
+        assert ordre == ["marches", "actu", "top", "connues", "petits", "opc", "globe"], f"ordre des onglets : {ordre}"
+        assert page.index('id="p-top"') < page.index('id="sec-inv"') < page.index('id="sec-sugg"'), "mes investissements au-dessus des suggestions"
         assert len(page) < 3_000_000, f"page trop lourde : {len(page) // 1024} Ko"
         m = re.search(r'<script id="donnees" type="application/json">(.*?)</script>', page, re.S)
         assert m, "données de la page introuvables"
@@ -1710,6 +1713,21 @@ def journaux_et_verification():
             c, n = pg["infos"]
             assert c["confirmee"] and c["nb"] == 2 and c["lien"] in ("https://www.lemonde.fr/a", "https://www.bfmtv.com/b", "https://www.bfmtv.com/c")
             assert not n["confirmee"] and n["lien"] == "https://www.ft.com", "une info non confirmée renvoie au site du journal"
+            # second passage (16 h) : le travail du chef est gardé, les nouveaux articles attendent sa relecture
+            d["infos"][0]["verifie"] = d["infos"][1]["verifie"] = True
+            (Path(tmp) / "2026-11-27.json").write_text(json.dumps(d), encoding="utf-8")
+            reel = J.articles_du_journal
+            J.articles_du_journal = lambda j, depuis: (([{"titre": "Thames Water obtient un prêt d'urgence", "lien": "https://www.bbc.co.uk/n",
+                                                          "publie": datetime(2026, 11, 27, 15, tzinfo=timezone.utc), "resume": "", "source_url": None}]
+                                                        if j["id"] == "bbc" else []), "rss", None)
+            try:
+                d2 = J.collecter("2026-11-27", datetime(2026, 11, 27, 15, 1, tzinfo=timezone.utc))
+            finally:
+                J.articles_du_journal = reel
+            assert len(d2["articles"]) == 5 and d2["chef"] and [i["id"] for i in d2["infos"]] == ["i1", "i2", "i3"], d2["infos"]
+            assert d2["infos"][0]["titre"] == "Thales rachète Lumibird" and not d2["infos"][2].get("verifie")
+            assert len(J.pour_la_page("2026-11-27")["infos"]) == 2, "info de 16 h affichée avant la relecture du chef"
+            assert not J.valider("2026-11-27", True), "validation du chef acceptée sans titre en français"
         finally:
             J.DOSSIER = ancien
 

@@ -4,7 +4,8 @@ propriétaire du 27/11/2026 (D-20261127-2).
 
 Usage :
   python scripts/journaux.py collecter [AAAA-MM-JJ]
-      (agent Journaux, vers 8 h) lit le flux RSS de chaque journal de JOURNAUX (ou, s'il n'en a pas,
+      (agent Journaux, vers 8 h puis 16 h ; à 16 h, le travail du matin est gardé et seuls les nouveaux
+      articles sont ajoutés, en infos « NOUVEAU » que le chef relit à 16 h 30) : lit le flux RSS de chaque journal de JOURNAUX (ou, s'il n'en a pas,
       Google Actualités limité au site du journal), garde les articles des dernières 24 h qui parlent de
       marchés ou d'entreprises, puis regroupe ceux qui annoncent la même information (« infos »
       candidates). Écrit data/journaux/AAAA-MM-JJ.json : titres et liens seulement (le texte des
@@ -384,17 +385,34 @@ def collecter(jour, maintenant=None):
             articles.append({"journal": j["id"], "titre": x["titre"][:300], "lien": x["lien"], "publie": x["publie"]})
         print(f"{j['nom']:<26} {voie or '—':<7} {len(a):>3} article(s){' · ' + err if err else ''}")
     articles.sort(key=lambda a: a["publie"], reverse=True)
-    for n, a in enumerate(articles, 1):
+    f = chemin(jour)
+    ancien = json.loads(f.read_text(encoding="utf-8")) if f.exists() else None
+    if ancien:  # second passage du jour (16 h) : on garde tout le travail du matin, on ajoute les nouveaux
+        vus = {a["lien"] for a in ancien["articles"]}
+        articles = [a for a in articles if a["lien"] not in vus]
+        n0 = max([int(a["id"][1:]) for a in ancien["articles"]] or [0])
+    else:
+        n0 = 0
+    for n, a in enumerate(articles, n0 + 1):
         a["id"] = f"a{n}"
-    infos = regrouper(articles)
+    infos = regrouper(articles)  # nouvelles infos candidates (le chef les réunit aux anciennes s'il le faut)
     for a in articles:
         a["publie"] = a["publie"].astimezone(PARIS).isoformat(timespec="minutes")
+    if ancien:
+        k0 = max([int(i["id"][1:]) for i in ancien["infos"]] or [0])
+        for k, i in enumerate(infos, k0 + 1):
+            i["id"] = f"i{k}"
+        for jid, e in etat.items():  # nombre d'articles du jour par journal, matin et après-midi
+            e["articles"] += ancien["journaux"].get(jid, {}).get("articles", 0)
+        articles, infos = ancien["articles"] + articles, ancien["infos"] + infos
     arts = {a["id"]: a for a in articles}
     for i in infos:
         i["statut"], i["nb_journaux"] = statut(i, arts)
     d = {"date": jour, "collecte_le": maintenant.astimezone(PARIS).isoformat(timespec="minutes"),
          "regle": "confirmée = au moins 2 journaux différents ; sinon non confirmée",
-         "journaux": etat, "articles": articles, "infos": infos, "chef": None}
+         "journaux": etat, "articles": articles, "infos": infos, "chef": ancien.get("chef") if ancien else None}
+    if ancien:
+        d["passages"] = ancien.get("passages", [ancien.get("collecte_le")]) + [d["collecte_le"]]
     DOSSIER.mkdir(parents=True, exist_ok=True)
     chemin(jour).write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     nc = sum(i["statut"] == "confirmee" for i in infos)
@@ -436,10 +454,14 @@ def ajouter(jour, journal, titre, lien, date_iso):
 def refaire_groupes(jour):
     f = chemin(jour)
     d = json.loads(f.read_text(encoding="utf-8"))
-    if d.get("chef"):
-        raise SystemExit("le chef a déjà vérifié ce fichier : ne pas refaire les groupes")
-    arts = [dict(a, publie=datetime.fromisoformat(a["publie"])) for a in d["articles"]]
-    d["infos"] = regrouper(arts)
+    gardees = [i for i in d["infos"] if i.get("verifie")]  # le travail du chef n'est jamais refait
+    pris = {a for i in gardees for a in i["articles"]}
+    arts = [dict(a, publie=datetime.fromisoformat(a["publie"])) for a in d["articles"] if a["id"] not in pris]
+    nouvelles = regrouper(arts)
+    k0 = max([int(i["id"][1:]) for i in gardees] or [0])
+    for k, i in enumerate(nouvelles, k0 + 1):
+        i["id"] = f"i{k}"
+    d["infos"] = gardees + nouvelles
     par = {a["id"]: a for a in d["articles"]}
     for i in d["infos"]:
         i["statut"], i["nb_journaux"] = statut(i, par)
@@ -462,7 +484,7 @@ def lire(jour):
                 pass
     for i in d["infos"]:
         st, n = statut(i, arts)
-        print(f"\n[{i['id']}] {'✓' if st == 'confirmee' else '·'} {n} journal(aux) · titre chef : {i.get('titre') or '—'}")
+        print(f"\n[{i['id']}]{'' if i.get('verifie') else ' NOUVEAU'} {'✓' if st == 'confirmee' else '·'} {n} journal(aux) · titre chef : {i.get('titre') or '—'}")
         for a in i["articles"]:
             x = arts[a]
             print(f"   {a} {PAR_ID[x['journal']]['nom']} ({x['publie'][11:16]}) : {x['titre']}\n      {x['lien']}")
@@ -491,7 +513,7 @@ def problemes(d):
                 pb.append(f"{i['id']} : article {a} déjà utilisé par une autre info")
             vus.add(a)
         t = i.get("titre") or ""
-        if d.get("chef") and not t.strip():
+        if i.get("verifie") and not t.strip():
             pb.append(f"{i['id']} : titre en français manquant")
         if len(t) > 180:
             pb.append(f"{i['id']} : titre trop long ({len(t)} caractères, 180 au plus)")
@@ -506,9 +528,14 @@ def valider(jour, par_chef=False):
     arts = {a["id"]: a for a in d["articles"]}
     for i in d["infos"]:
         i["statut"], i["nb_journaux"] = statut(i, arts)
-    if par_chef:
-        d["chef"] = {"verifie_le": datetime.now(PARIS).isoformat(timespec="minutes")}
-    pb = problemes(d)
+    pb = []
+    if par_chef:  # le chef a relu toutes les infos du fichier : chacune doit avoir son titre en français
+        pb = [f"{i['id']} : titre en français manquant" for i in d["infos"] if not (i.get("titre") or "").strip()]
+        if not pb:
+            for i in d["infos"]:
+                i["verifie"] = True
+            d["chef"] = {"verifie_le": datetime.now(PARIS).isoformat(timespec="minutes")}
+    pb += problemes(d)
     f.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     for p in pb:
         print("✗", p)
@@ -533,7 +560,11 @@ def pour_la_page(jour, jours_max=3):
             d = json.loads(f.read_text(encoding="utf-8"))
         except ValueError:
             continue
-        if not d.get("chef") or problemes(d):
+        if not d.get("chef"):
+            continue
+        if any("verifie" in i for i in d["infos"]):  # seulement ce que le chef a relu (pas le passage de 16 h en attente)
+            d["infos"] = [i for i in d["infos"] if i.get("verifie")]
+        if problemes(d):
             continue
         arts = {a["id"]: a for a in d["articles"]}
         out = []

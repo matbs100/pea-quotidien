@@ -1,8 +1,8 @@
-# Consigne de l'agent « Journaux » (8 h) et de la vérification du chef (8 h 30)
+# Consigne de l'agent « Journaux » (8 h et 16 h) et de la vérification du chef (8 h 30 et 16 h 30)
 
 Demande du propriétaire du 27 novembre 2026 (D-20261127-2). Deux routines cloud, chaque jour (week-end compris),
-lisent ce fichier : « Matin PEA — Journaux » vers 8 h, puis « Matin PEA — Chef : vérification des
-journaux » vers 8 h 30. La fiche de 9 h 15 (jours de bourse) affiche le résultat dans l'onglet « Actualité », juste sous la
+lisent ce fichier : « Matin PEA — Journaux » vers 8 h et 16 h, puis « Matin PEA — Chef : vérification des
+journaux » vers 8 h 30 et 16 h 30 (le second passage suit l'actualité de la journée, demande du 27/11). La fiche de 9 h 15 (jours de bourse) affiche le résultat dans l'onglet « Actualité », juste sous la
 bande des indices. Les agents ne modifient pas ce fichier : seul le propriétaire le change.
 
 ---
@@ -27,12 +27,13 @@ bande des indices. Les agents ne modifient pas ce fichier : seul le propriétair
 - Aucune information personnelle du propriétaire nulle part ; jamais de conseil d'achat ou de vente.
 - Jamais de `push --force` ni de réécriture de l'historique.
 
-## Agent Journaux (8 h)
+## Agent Journaux (8 h et 16 h)
 
 1. `git pull --ff-only origin claude/pea` (sinon `git pull --rebase origin claude/pea`),
    `PY=python3; $PY -m pip install -q -r requirements.txt`, `JOUR=$(TZ=Europe/Paris date +%F)`.
 2. `$PY scripts/journaux.py collecter $JOUR` (moins d'une minute). Il affiche, journal par journal, la voie
-   utilisée (rss, google) et le nombre d'articles.
+   utilisée (rss, google) et le nombre d'articles. À 16 h, le fichier du matin existe déjà : le script le garde
+   tel quel (travail du chef compris) et n'ajoute que les nouveaux articles, en infos « NOUVEAU ».
 3. Pour chaque journal à **0 article** (réseau du cloud fermé, flux en panne) : cherche avec WebSearch
    (`site:<domaine du journal>`, actualité du jour) **au plus 5** articles de marchés ou d'entreprises
    publiés dans les 24 dernières heures et ajoute chacun avec
@@ -40,17 +41,18 @@ bande des indices. Les agents ne modifient pas ce fichier : seul le propriétair
    (le script refuse un lien hors du site du journal). Puis `$PY scripts/journaux.py regrouper $JOUR`.
    Note dans le commit les journaux restés sans article.
 4. `$PY scripts/journaux.py valider $JOUR` (sans `--chef` : c'est le chef qui vérifie).
-5. Commit `Journaux : collecte du $JOUR (<n> articles, <m> journaux)` avec seulement
+5. Commit `Journaux : collecte du $JOUR, <8 h|16 h> (<n> articles, <m> journaux)` avec seulement
    `data/journaux/$JOUR.json`, puis `git push origin HEAD:claude/pea` (en cas de refus : `git pull --rebase`
    puis push). 10 minutes au plus en tout.
 
-## Chef : vérification des journaux (8 h 30)
+## Chef : vérification des journaux (8 h 30 et 16 h 30)
 
 Tu es le **chef d'orchestre**. Tu repasses derrière l'agent Journaux et tu vérifies les sources.
 
 1. Prépare comme ci-dessus (`git pull`, `PY`, `JOUR`). Si `data/journaux/$JOUR.json` manque, lance toi-même
    les étapes 2 à 4 de l'agent Journaux.
-2. `$PY scripts/journaux.py lire $JOUR` : chaque info candidate avec ses articles (titre, heure, lien et,
+2. `$PY scripts/journaux.py lire $JOUR` (à 16 h 30, concentre-toi sur les infos marquées « NOUVEAU » : réunis
+   à une info du matin un nouvel article qui la confirme, ce qui peut la faire passer à « ✓ 2 sources ») : chaque info candidate avec ses articles (titre, heure, lien et,
    quand le flux en donne un, son chapeau relu en direct, jamais enregistré).
 3. Corrige `data/journaux/$JOUR.json` (clé `infos`) :
    - **sépare** les articles regroupés à tort (même entreprise, mais pas la même information) ;
@@ -73,5 +75,5 @@ Tu es le **chef d'orchestre**. Tu repasses derrière l'agent Journaux et tu vér
 6. Mets la fiche en ligne à jour (utile le week-end, quand la fiche de 9 h 15 ne tourne pas) :
    `$PY scripts/rendu.py $(ls data/jours | grep -E '^20.*\.json$' | tail -1 | cut -d. -f1)`. Vérifie que
    `docs/index.html` contient `"actualite"`.
-   Commit `Chef : vérification des journaux du $JOUR (<n> confirmées, <m> non confirmées)` avec
+   Commit `Chef : vérification des journaux du $JOUR, <8 h 30|16 h 30> (<n> confirmées, <m> non confirmées)` avec
    `data/journaux/$JOUR.json`, `pilotage/rapports/$JOUR.md`, `docs/` et `notes/`, puis `git push origin HEAD:claude/pea`. 15 minutes au plus.
