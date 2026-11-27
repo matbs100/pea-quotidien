@@ -178,16 +178,19 @@ footer a { color: var(--accent); }
 @media (max-width: 600px) {
   .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .card { padding: 12px; } .card .val { font-size: 1.15rem; }
-  /* prix et part d'ETF toujours sur une seule ligne, comme CAC 40 (27/11) : la taille suit la largeur de la carte */
-  #indices .card { container-type: inline-size; }
-  #indices .val-l { flex-wrap: nowrap; gap: 0 4px; }
   #indices .card .val { font-size: min(1.15rem, 10cqi); }
-  #indices .val .dev, #indices .etfx small { font-size: min(10px, 6.5cqi); }
-  #indices .etfx { font-size: min(14px, 8.2cqi); }
   .card .nom { white-space: normal; } .card .nom .vf { display: table; margin: 4px 0 0; }
-  .card .chg span { display: block; margin-top: 2px; } .card .chg .pt { display: none; }
-  .card svg { position: static; display: block; width: 100%; height: 28px; margin-top: 8px; }
 }
+/* cartes des marchés et des devises, sur toutes les largeurs (27/11, demande du propriétaire) :
+   prix et part d'ETF sur une seule ligne et alignés (la taille suit la largeur de la carte),
+   « 1 mois » sur sa propre ligne, courbe sous le texte au lieu de passer dessus */
+.grid .card { container-type: inline-size; }
+#indices .val-l { flex-wrap: nowrap; align-items: baseline; gap: 0 4px; }
+#indices .card .val { font-size: min(1.35rem, 10cqi); }
+#indices .val .dev, #indices .etfx small { font-size: min(10px, 6.5cqi); }
+#indices .etfx { font-size: min(14px, 8.2cqi); margin-top: 0; }
+.grid .card .chg span { display: block; margin-top: 2px; } .grid .card .chg .pt { display: none; }
+.grid .card svg { position: static; display: block; width: 100%; height: 28px; margin-top: 8px; }
 /* fiche détaillée */
 .clic { cursor: pointer; transition: border-color .2s, transform .15s, box-shadow .2s; }
 .clic:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); box-shadow: 0 8px 24px -16px var(--accent); }
