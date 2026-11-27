@@ -124,7 +124,8 @@ def note_obsidian(d, analyse, url):
             L.append(f"| {m['nom']} (`{m['ticker']}`) | {m.get('zone', '')} | {typ.get(m['categorie'], '')} | "
                      f"{prix_dev(m['prix'], m)} | {pct(m.get('var_1j'))} | {pct(m.get('var_1m'))} | "
                      f"{pct(m.get('var_3m'))} | {m.get('signal', '')} | {VERIF[m.get('verif')]} |")
-    L += ["", "## 10 petits prix (moins de 10 €)", "",
+    seuil = re.search(r"et ([\d.,]+) € \(petits prix\)", (d.get("regles") or {}).get("filtres", ""))
+    L += ["", f"## {len(d['petites'])} petits prix (moins de {seuil.group(1).replace('.', ',') if seuil else '10'} €)", "",
           "> [!caution] Sociétés souvent fragiles et très volatiles : risque de perte élevé.", "",
           "| # | Titre | Prix | 1 mois | 3 mois | Liquidité €/j | Signal | Déjà vu |",
           "|--:|---|--:|--:|--:|--:|---|:-:|"]

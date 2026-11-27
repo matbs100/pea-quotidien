@@ -5,6 +5,9 @@ tags: [pea, agent, pilotage]
 
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
+## Du propriétaire (27/11, à garder jusqu'au 30/11)
+- Les commits « Propriétaire : » du 27/11 (67af515, 5a42a52, 0e01fb0 et suivants) sont **voulus par le propriétaire** : agent Journaux, 7 onglets, petits prix sous **10 €** au lieu de 2 €. Le 🔴 « titre retiré : 10 petits prix (moins de 2 €) » du contrôle design vient de ce choix : **ne pas annuler**, écrire « ✅ gardé, choix du propriétaire » dans le rapport. Il disparaît seul après 30 h.
+
 ## Priorités pour l'agent de nuit
 - (27/11) D-20261127-1 (résultats CAC 40) confirmée ✅, 4 dates relues sur les pages des sociétés. Réalise l'idée n° 87 (Airbus, LVMH, Air Liquide : **cherche l'adresse par WebSearch, ne la devine pas**) ou n° 88 (bloc « Changer de banque », chiffres de la fiche AMF relue ✅). Ligne à **12 colonnes** dans le **tableau** de `decisions.md`.
 - (27/11) **Presse** : 2 articles entiers de **2 sources** (Boursorama, Moneyvox, Zonebourse), 2 chiffres du corps de chaque ; sinon « ❔ bloqué » avec la raison.

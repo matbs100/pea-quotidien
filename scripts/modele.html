@@ -586,7 +586,7 @@ table.tab td:first-child { color: var(--muted); padding-right: 14px; width: 42%;
   </div>
   <div class="panneau" id="p-petits" role="tabpanel" aria-labelledby="o-petits" tabindex="0" hidden>
     <section id="sec-petits">
-      <div class="sec-head"><div><h2 class="vh">10 petits prix (moins de 10 €)</h2><div class="sub">10 petits prix (moins de 10 €) · les mieux classés parmi les titres liquides éligibles au PEA</div></div></div>
+      <div class="sec-head"><div><h2 class="vh" id="petits-titre">10 petits prix (moins de 10 €)</h2><div class="sub"><span id="petits-seuil">10 petits prix (moins de 10 €)</span> · les mieux classés parmi les titres liquides éligibles au PEA</div></div></div>
       <div class="alerte">Petit prix ne veut pas dire bon marché : ce sont souvent des sociétés fragiles (biotechs, entreprises en difficulté), très volatiles, où l'on peut perdre beaucoup. À garder pour une très petite part, ou juste à observer.</div>
       <div class="liste" id="petites"></div>
     </section>
@@ -901,6 +901,13 @@ if ((D.connues || []).length) {  // 30 valeurs connues : liste fixe (univers.jso
   $("#sec-connues").hidden = false;
 }
 $("#petites").innerHTML = D.petites.map((m, i) => ligne(m, i, "score_petite")).join("");
+// seuil réellement appliqué ce jour-là (lu dans les règles de la collecte) : une ancienne fiche garde le sien
+(function () {
+  const m = /et ([\d.,]+) € \(petits prix\)/.exec((D.regles && D.regles.filtres) || "");
+  if (!m) return;
+  const t = `${D.petites.length} petits prix (moins de ${m[1].replace(".", ",")} €)`;
+  $("#petits-seuil").textContent = t; $("#petits-titre").textContent = t;
+})();
 
 // ---------- onglets sous la bande des indices (27/11, D-20261127-2 et -5) ----------
 // 7 rubriques ; un onglet sans contenu ce jour-là est caché ; glisser le doigt sur le contenu passe à l'onglet voisin.
@@ -929,6 +936,8 @@ addEventListener("DOMContentLoaded", function () {
     try { sessionStorage.setItem("matin-pea-onglet", o.id); } catch (e) {}
   }
   ONG.forEach((o) => o.addEventListener("click", () => choisir(o, { anime: true })));
+  // pour les autres parties de la page (ex. « Ajouter à mes investissements » depuis une fiche ouverte dans un autre onglet)
+  window.montrerOnglet = (id) => { const o = $("#" + id); if (o && o !== actif) choisir(o, { remonter: false }); };
   barre.addEventListener("keydown", (e) => {
     const v = vis(), i = v.indexOf(document.activeElement);
     if (i < 0) return;
@@ -1371,6 +1380,7 @@ if (CAT.length || MI) {
     if (!b) return;
     const m = TOUS[b.dataset.ajouter];
     fermer();
+    if (window.montrerOnglet) montrerOnglet("o-top");  // le formulaire est dans l'onglet Top 30
     setTimeout(() => formulaire(m), reduit ? 0 : 420);
   });
 }

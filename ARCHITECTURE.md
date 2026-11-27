@@ -322,6 +322,8 @@ du jour ; onglet « Globe » sous la bande des indices depuis le 27/11 (avant : 
 |---|---|
 | `JOURNAUX` | les 21 journaux du propriétaire : nom, pays, site, flux RSS (vide : Google Actualités limité au site), `filtrer` pour les flux généralistes |
 | `collecter(jour)` | lit chaque flux (2 essais, 20 s), garde les articles des 24 dernières heures qui parlent de marchés ou d'entreprises (`parle_finance`), retire les doublons, écrit `data/journaux/AAAA-MM-JJ.json` (titres et liens seulement) |
+| `sans_accents`, `nettoyer`, `en_majuscules_partout` | outils de texte : retirer les accents, le HTML et les espaces en trop ; reconnaître un titre « à l'anglaise » (Title Case) |
+| `lire_flux`, `domaine`, `url_google`, `articles_du_journal`, `chemin` | lecture d'un flux RSS 2.0 ou Atom, domaine d'un lien (sans « www. »), adresse Google Actualités `site:… when:1d` d'un journal, articles récents d'un journal (flux puis secours Google, filtre et doublons), chemin du fichier du jour |
 | `vocabulaire`, `entites`, `meme_info`, `regrouper` | noms propres du jour (majuscules d'un titre ordinaire, pas des titres « à l'anglaise »), synonymes en 6 langues (BCE/ECB/EZB, pétrole/oil…) ; un article rejoint un groupe s'il ressemble à au moins la moitié de ses articles (pas de chaîne) |
 | `ajouter`, `refaire_groupes` | article trouvé à la main quand un flux est bloqué (lien obligatoirement sur le site du journal), puis regroupement |
 | `statut`, `problemes`, `valider` | la règle (2 journaux différents = confirmée) est calculée par le script ; refuse une source inventée, un lien hors des articles, un titre manquant ou trop long |

@@ -1,18 +1,31 @@
 {
- "genere_le": "2026-11-27T12:36+01:00",
- "fiche": "2026-11-27 (ouverture)",
- "lieu": "cloud",
- "etat": "orange",
- "resume": "À surveiller. 66/66 tests, 32/32 liens valides, site à jour. Points à voir : cohérence des données, méthode de décision.",
+ "genere_le": "2026-11-27T19:45+01:00",
+ "fiche": "2026-11-27 (cloture)",
+ "lieu": "local",
+ "etat": "rouge",
+ "resume": "À corriger. 67/67 tests, 8/8 prix revérifiés, 37/37 liens valides, site à jour. Points à voir : documentation et mémoire Obsidian, design : aucune information retirée de la page, méthode de décision.",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "66/66 tests réussis",
+   "resume": "67/67 tests réussis",
    "details": [
+    "✗ i3 : titre en français manquant",
     "• nouvelles dépendances à justifier dans le journal : pypdf",
-    "• Playwright absent : glissement tactile non exécuté"
+    "• node absent : filtre de « Mes critères » non exécuté",
+    "• node absent : étiquette « cours du … » non exécutée",
+    "• node absent : esc() et lienSur() non exécutés",
+    "• node absent : carte mois par mois non exécutée",
+    "• node absent : frais sur 10 ans non exécutés",
+    "• node absent : phrase-résumé du marché non exécutée",
+    "• node absent : titre du bandeau non exécuté",
+    "• Playwright absent : glissement tactile non exécuté",
+    "• node absent : comparaison base 100 non exécutée",
+    "• node absent : mémoire de la comparaison non exécutée",
+    "• node absent : geste de fermeture non exécuté",
+    "• node absent : liens de recherche d'ISIN non exécutés",
+    "• node absent : glossaire de la phrase-résumé non exécuté"
    ]
   },
   {
@@ -21,67 +34,66 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-27 (ouverture), générée le 2026-11-27T09:19+01:00",
-    "fiche attendue à cette heure : 2026-11-27 (ouverture)"
+    "dernière fiche : 2026-11-27 (cloture), générée le 2026-11-27T17:59+01:00",
+    "fiche attendue à cette heure : 2026-11-27 (cloture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "alerte",
-   "resume": "59 cours examinés, 0 problème(s), 8 alerte(s) ; entre sources : 73 confirmés, 3 écart(s)",
-   "details": [
-    "HLT.PA : cours daté du 2026-11-25, pas du 2026-11-27",
-    "FOO.PA : cours daté du 2026-11-25, pas du 2026-11-27",
-    "PINR.PA : cours daté du 2026-11-25, pas du 2026-11-27",
-    "INS.PA : cours daté du 2026-11-25, pas du 2026-11-27",
-    "UTI.PA : cours daté du 2026-11-25, pas du 2026-11-27",
-    "CD8.PA : cours daté du 2026-11-25, pas du 2026-11-27",
-    "PMEH.PA : cours daté du 2026-11-25, pas du 2026-11-27",
-    "OBLI.PA : cours daté du 2026-11-25, pas du 2026-11-27"
-   ]
+   "niveau": "ok",
+   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 76 confirmés, 1 écart(s)",
+   "details": []
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "328 mots, 0 remarque(s)",
+   "resume": "289 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-27 (ouverture)",
+   "resume": "régénérée avec la fiche du 2026-11-27 (cloture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "non_verifiable",
-   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
+   "niveau": "ok",
+   "resume": "8/8 prix identiques sur Boursorama",
    "details": []
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "32/32 liens valides sur 8 titres, 7 non ouverts (robots.txt), 1 injoignables d'ici",
+   "resume": "37/37 liens valides sur 8 titres, 6 non ouverts (robots.txt), 1 injoignables d'ici",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-27 (ouverture)",
+   "resume": "le site affiche la fiche du 2026-11-27 (cloture)",
    "details": []
   },
   {
    "nom": "documentation",
    "titre": "Documentation et mémoire Obsidian",
-   "niveau": "ok",
-   "resume": "tout est documenté et rangé",
+   "niveau": "alerte",
+   "resume": "8 manque(s)",
    "details": [
+    "fonction non décrite : journaux.sans_accents",
+    "fonction non décrite : journaux.en_majuscules_partout",
+    "fonction non décrite : journaux.nettoyer",
+    "fonction non décrite : journaux.lire_flux",
+    "fonction non décrite : journaux.domaine",
+    "fonction non décrite : journaux.url_google",
+    "fonction non décrite : journaux.articles_du_journal",
+    "fonction non décrite : journaux.chemin",
     "61 connaissance(s) en attente de vérification (⏳)",
     "8 connaissance(s) non vérifiable(s) (❔)"
    ]
@@ -90,35 +102,48 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "9 commit(s), 0 problème(s), 0 alerte(s) ; 2 vérifiée(s) par le chef",
+   "resume": "16 commit(s), 0 problème(s), 0 alerte(s) ; 2 vérifiée(s) par le chef",
    "details": [
     "✔ vérifié par le chef le 2026-11-27 : 73362a9 « Amélioration : prochains résultats annuels de 4 so » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 73362a9 relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clé resultats ajoutée), pilotage/etat.json est le contrôle de la nuit ; les 4 dates (Sanofi 28/01/2027, TotalEnergies 10/02/2027, L'Oréal 11/02/2027, Danone 24/02/2027) relues le 27/11 sur les pages des sociétés (WebFetch ; TotalEnergies : extrait de recherche du calendrier officiel) ; test prochains_resultats vert.",
     "✔ vérifié par le chef le 2026-11-27 : 73362a9 « Amélioration : prochains résultats annuels de 4 so » : pilotage/etat.json : hors du rôle de l'agent « nuit » — git show 73362a9 relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clé resultats ajoutée), pilotage/etat.json est le contrôle de la nuit ; les 4 dates (Sanofi 28/01/2027, TotalEnergies 10/02/2027, L'Oréal 11/02/2027, Danone 24/02/2027) relues le 27/11 sur les pages des sociétés (WebFetch ; TotalEnergies : extrait de recherche du calendrier officiel) ; test prochains_resultats vert.",
+    "0e01fb0 [autre] suggestions, la fiabilité des signaux est dans l'onglet Marchés",
+    "3379750 [autre] souhaits de design mis à jour",
+    "5a42a52 [autre] 7 onglets à faire glisser (Marchés, Actualité, Top 30, Valeurs connues",
+    "112abae [autre] règle absolue pour tous les agents, sites web en lecture seule",
+    "8138665 [autre] agents Journaux et chef en lecture seule sur les sites [D-20261127-2]",
+    "97f0baa [autre] souhaits de design mis à jour",
+    "67af515 [autre] agent Journaux et vérification du chef, onglets Actualité/Globe/Petits",
+    "bde9de4 [fiche] Matin PEA 2026-11-27 (cloture)",
+    "42fd6cb [chef] Chef : passage de mi-journée du 2026-11-27 (orange)",
     "786be2a [fiche] Matin PEA 2026-11-27 (ouverture)",
     "8315152 [chef] Chef : rapport du 2026-11-27 (vert)",
     "d1a0276 [code] Code : gain de l'idée n° 89 corrigé, tests 66/66",
     "66ebfc9 [code] Code : rapport du 2026-11-27 (vert) ; decisions_en_puce plus tolérante",
     "73362a9 [nuit] Amélioration : prochains résultats annuels de 4 sociétés du CAC 40 [D-",
     "af0cf88 [design] Design : étude du 2026-11-27",
-    "0269f32 [fiche] Matin PEA 2026-11-26 (cloture)",
-    "b5e4db8 [chef] Chef : passage de mi-journée du 2026-11-26 (orange)",
-    "a7c04af [fiche] Matin PEA 2026-11-26 (ouverture)"
+    "0269f32 [fiche] Matin PEA 2026-11-26 (cloture)"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
-   "niveau": "ok",
-   "resume": "1 changement(s) de la page, 0 retrait(s), 0 point(s) à revoir",
+   "niveau": "probleme",
+   "resume": "4 changement(s) de la page, 1 retrait(s), 2 point(s) à revoir",
    "details": [
-    "73362a9 « Amélioration : prochains résultats annuels de 4 so » : rien de retiré"
+    "67af515 « agent Journaux et vérification du chef, onglets Ac » : titre retiré : 10 petits prix (moins de 2 €)",
+    "67af515 « agent Journaux et vérification du chef, onglets Ac » : texte retiré ou reformulé : 10 petits prix (moins de 2 €)",
+    "67af515 « agent Journaux et vérification du chef, onglets Ac » : texte retiré ou reformulé : Les mieux classés parmi les titres liquides sous 2 €",
+    "73362a9 « Amélioration : prochains résultats annuels de 4 so » : rien de retiré",
+    "67af515 « agent Journaux et vérification du chef, onglets Ac » : information retirée",
+    "5a42a52 « 7 onglets à faire glisser (Marchés, Actualité, Top » : rien de retiré",
+    "0e01fb0 « suggestions, la fiabilité des signaux est dans l'o » : rien de retiré"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
    "niveau": "alerte",
-   "resume": "71 décisions, 5 à réaliser, 2 point(s) à voir",
+   "resume": "75 décisions, 5 à réaliser, 2 point(s) à voir",
    "details": [
     "bilan à faire : D-20261124-2 (n° 74 · Glossaire au toucher pour « indice » et « )",
     "bilan à faire : D-20261124-1 (Pastille « Risque n/7 » : zone tactile d'au moins )"
@@ -136,9 +161,7 @@
    "titre": "Confidentialité (dépôt public)",
    "niveau": "ok",
    "resume": "aucune information personnelle trouvée",
-   "details": [
-    "termes protégés : vérifiés chaque jour par le vérificateur du code (clé absente ici)"
-   ]
+   "details": []
   },
   {
    "nom": "eligibilite",
