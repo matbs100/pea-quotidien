@@ -26,6 +26,7 @@ Une leçon par ligne, datée, 60 lignes au plus. Relue chaque nuit avant de trav
 - 2026-11-24 · Pastille Risque ≥ 24 px (D-20261124-1) : min-height + inline-flex suffit ; mesurer toutes les pastilles à 320/390 px. Devoirs restants : fiche ETF 360 px, idée 74.
 - 2026-11-25 · Encadré vide compact en mobile (D-20261125-1) : réduire padding/taille (≥ 13 px) fait remonter le contenu utile sans rien retirer. Ne pas sauter l'étude de marché : reportée, à faire en premier demain.
 - 2026-11-26 · Nuit sans changement : rien ne gênait, étude faite ; ne pas forcer. Une recherche web donne peu : préférer WebFetch d'une page précise.
+- 2026-11-27 · Deuxième nuit sans changement ; une adresse GitHub devinée donne 404 : ne fetch que des adresses déjà vues. Details (GOV.UK) : replier seulement le secondaire.
 
 ## Ce qui a été annulé, et pourquoi
 
