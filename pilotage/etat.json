@@ -1,15 +1,15 @@
 {
- "genere_le": "2026-11-26T12:36+01:00",
- "fiche": "2026-11-26 (ouverture)",
+ "genere_le": "2026-11-27T03:17+01:00",
+ "fiche": "2026-11-26 (cloture)",
  "lieu": "cloud",
  "etat": "orange",
- "resume": "À surveiller. 65/65 tests, 34/34 liens valides, site à jour. Points à voir : cohérence des données, méthode de décision.",
+ "resume": "À surveiller. 66/66 tests, 7/8 prix revérifiés, 34/34 liens valides, site à jour. Points à voir : prix revérifiés après coup, méthode de décision.",
  "controles": [
   {
    "nom": "tests",
    "titre": "Tests garde-fous",
    "niveau": "ok",
-   "resume": "65/65 tests réussis",
+   "resume": "66/66 tests réussis",
    "details": [
     "• nouvelles dépendances à justifier dans le journal : pypdf",
     "• Playwright absent : glissement tactile non exécuté"
@@ -21,61 +21,52 @@
    "niveau": "ok",
    "resume": "la dernière fiche est bien celle attendue",
    "details": [
-    "dernière fiche : 2026-11-26 (ouverture), générée le 2026-11-26T09:19+01:00",
-    "fiche attendue à cette heure : 2026-11-26 (ouverture)"
+    "dernière fiche : 2026-11-26 (cloture), générée le 2026-11-26T17:59+01:00",
+    "fiche attendue à cette heure : 2026-11-26 (cloture)"
    ]
   },
   {
    "nom": "donnees",
    "titre": "Cohérence des données",
-   "niveau": "alerte",
-   "resume": "59 cours examinés, 0 problème(s), 10 alerte(s) ; entre sources : 71 confirmés, 4 écart(s)",
-   "details": [
-    "HLT.PA : cours daté du 2026-11-24, pas du 2026-11-26",
-    "PINR.PA : cours daté du 2026-11-24, pas du 2026-11-26",
-    "FOO.PA : cours daté du 2026-11-24, pas du 2026-11-26",
-    "UTI.PA : cours daté du 2026-11-24, pas du 2026-11-26",
-    "INS.PA : cours daté du 2026-11-24, pas du 2026-11-26",
-    "CD8.PA : cours daté du 2026-11-24, pas du 2026-11-26",
-    "OBLI.PA : cours daté du 2026-11-24, pas du 2026-11-26",
-    "TRV.PA : cours daté du 2026-11-24, pas du 2026-11-26",
-    "ALVAL.PA : cours daté du 2026-11-24, pas du 2026-11-26",
-    "4 écarts entre sources : ALVAL.PA, PUST.PA, PAASI.PA, PAEEM.PA"
-   ]
+   "niveau": "ok",
+   "resume": "59 cours examinés, 0 problème(s), 0 alerte(s) ; entre sources : 75 confirmés, 0 écart(s)",
+   "details": []
   },
   {
    "nom": "analyse",
    "titre": "Analyse du jour",
    "niveau": "ok",
-   "resume": "318 mots, 0 remarque(s)",
+   "resume": "375 mots, 0 remarque(s)",
    "details": []
   },
   {
    "nom": "page",
    "titre": "Page du dépôt (docs/index.html)",
    "niveau": "ok",
-   "resume": "régénérée avec la fiche du 2026-11-26 (ouverture)",
+   "resume": "régénérée avec la fiche du 2026-11-26 (cloture)",
    "details": []
   },
   {
    "nom": "prix",
    "titre": "Prix revérifiés après coup",
-   "niveau": "non_verifiable",
-   "resume": "une séance a eu lieu depuis la fiche : rien de comparable",
-   "details": []
+   "niveau": "alerte",
+   "resume": "7/8 prix identiques sur Boursorama",
+   "details": [
+    "IBE.MC : 23.03 dans la fiche, 18.04 sur Boursorama"
+   ]
   },
   {
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "34/34 liens valides sur 8 titres, 7 non ouverts (robots.txt), 2 injoignables d'ici",
+   "resume": "34/34 liens valides sur 8 titres, 9 non ouverts (robots.txt), 2 injoignables d'ici",
    "details": []
   },
   {
    "nom": "site",
    "titre": "Site en ligne",
    "niveau": "ok",
-   "resume": "le site affiche la fiche du 2026-11-26 (ouverture)",
+   "resume": "le site affiche la fiche du 2026-11-26 (cloture)",
    "details": []
   },
   {
@@ -84,7 +75,7 @@
    "niveau": "ok",
    "resume": "tout est documenté et rangé",
    "details": [
-    "56 connaissance(s) en attente de vérification (⏳)",
+    "61 connaissance(s) en attente de vérification (⏳)",
     "8 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
@@ -92,21 +83,20 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "11 commit(s), 0 problème(s), 0 alerte(s) ; 2 vérifiée(s) par le chef",
+   "resume": "10 commit(s), 0 problème(s), 0 alerte(s) ; 2 vérifiée(s) par le chef",
    "details": [
     "✔ vérifié par le chef le 2026-11-26 : af4a786 « Code : prénom retiré d'un rapport du chef [confide » : pilotage/rapports/2026-11-25.md : hors du rôle de l'agent « code » — git show af4a786 relu : une seule ligne modifiée, « Pour <prénom> : rien » devient « Pour le propriétaire : rien » dans mon rapport du 25/11 ; correction de confidentialité voulue, aucun autre changement.",
     "✔ vérifié par le chef le 2026-11-26 : 200ad0d « Amélioration : prochaine réunion de la Fed sous le » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 200ad0d relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clés reunions_fed et source_fed ajoutées) ; les 9 dates du FOMC (8-9/12/2026 à 16-17/11/2027) comparées une à une au calendrier officiel federalreserve.gov/monetarypolicy/fomccalendars.htm (WebFetch du 26/11) : identiques, 2027 « tentative » sur la page ; test prochaine_reunion_fed vert.",
+    "af0cf88 [design] Design : étude du 2026-11-27",
+    "0269f32 [fiche] Matin PEA 2026-11-26 (cloture)",
+    "b5e4db8 [chef] Chef : passage de mi-journée du 2026-11-26 (orange)",
     "a7c04af [fiche] Matin PEA 2026-11-26 (ouverture)",
     "7a1d835 [chef] Chef : rapport du 2026-11-26 (vert) ; 8 bilans de décisions, Fed confi",
     "c346f99 [code] Code : gain de l'idée 85 corrigé, tests 65/65 [correctif]",
     "4125b94 [code] Code : rapport du 2026-11-26 (vert)",
     "af4a786 [code] Code : prénom retiré d'un rapport du chef [confidentialité]",
     "200ad0d [nuit] Amélioration : prochaine réunion de la Fed sous les taux [D-20261126-1",
-    "2f06a7d [design] Design : étude du 2026-11-26",
-    "b102a3d [autre] consigne — noter la méthode, les erreurs et les leçons, pas seulement ",
-    "7cda3a4 [fiche] Matin PEA 2026-11-25 (cloture)",
-    "6f90def [chef] Chef : passage de mi-journée du 2026-11-25 (orange)",
-    "ca15a83 [fiche] Matin PEA 2026-11-25 (ouverture)"
+    "2f06a7d [design] Design : étude du 2026-11-26"
    ]
   },
   {
@@ -122,7 +112,7 @@
    "nom": "decisions",
    "titre": "Méthode de décision",
    "niveau": "alerte",
-   "resume": "70 décisions, 5 à réaliser, 6 point(s) à voir",
+   "resume": "71 décisions, 5 à réaliser, 6 point(s) à voir",
    "details": [
     "bilan à faire : D-20261123-1 (EEMK.PA (BNP Paribas Easy MSCI Emerging Min TE, LU)",
     "bilan à faire : D-20261123-2 (n° 75 · Étiquette « cours du 20 nov. » sous le pri)",
@@ -136,7 +126,7 @@
    "nom": "lectures",
    "titre": "Lectures des agents (PDF de sources vérifiées)",
    "niveau": "ok",
-   "resume": "18 lecture(s), 0 à relire par le chef, 0 point(s) à voir",
+   "resume": "19 lecture(s), 1 à relire par le chef, 0 point(s) à voir",
    "details": []
   },
   {
@@ -152,9 +142,9 @@
    "nom": "eligibilite",
    "titre": "Éligibilité au PEA (contrôle quotidien)",
    "niveau": "ok",
-   "resume": "233 oui, 21 à vérifier, 0 non ; contrôle du 2026-11-26 (231 pages Boursorama lues)",
+   "resume": "234 oui, 20 à vérifier, 0 non ; contrôle du 2026-11-27 (231 pages Boursorama lues)",
    "details": [
-    "21 titre(s) à vérifier (deuxième source à trouver par l'agent de nuit) : FGR.PA, SAP.DE, SIE.DE, ALV.DE, DTE.DE, RHM.DE, IFX.DE, ITX.MC, IBE.MC, SAN.MC"
+    "20 titre(s) à vérifier (deuxième source à trouver par l'agent de nuit) : FGR.PA, SAP.DE, ALV.DE, DTE.DE, RHM.DE, ITX.MC, IBE.MC, SAN.MC, NOKIA.HE, ALEO2.PA"
    ]
   }
  ]

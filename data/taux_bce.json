@@ -101,5 +101,27 @@
    "2027-11-17"
   ]
  ],
- "source_fed": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+ "source_fed": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+ "resultats": [
+  [
+   "Sanofi",
+   "2027-01-28",
+   "https://www.sanofi.com/en/investors/financial-results-and-events/financial-calendar/"
+  ],
+  [
+   "TotalEnergies",
+   "2027-02-10",
+   "https://totalenergies.com/en/media/colonne-3/info/calendar"
+  ],
+  [
+   "L'Oréal",
+   "2027-02-11",
+   "https://www.loreal-finance.com/eng/financial-calendar"
+  ],
+  [
+   "Danone",
+   "2027-02-24",
+   "https://www.danone.com/investors/publications-and-events/financial-calendar.html"
+  ]
+ ]
 }

@@ -1056,6 +1056,19 @@ def prochaine_reunion_fed():
 
 
 @test
+def prochains_resultats():
+    """Les dates de résultats sont triées, sourcées par la société, et la page filtre les dates passées sans date en dur."""
+    import taux
+    assert [r["nom"] for r in taux.prochains_resultats("2026-11-27")][0] == "Sanofi"
+    assert [r["nom"] for r in taux.prochains_resultats("2027-02-11")] == ["L'Oréal", "Danone"]
+    assert taux.prochains_resultats("2028-01-01") == []
+    assert sorted(r[1] for r in taux.RESULTATS) == [r[1] for r in sorted(taux.RESULTATS, key=lambda r: r[1])]
+    assert all(r[2].startswith("https://") for r in taux.RESULTATS)
+    modele = (SCRIPTS / "modele.html").read_text(encoding="utf-8")
+    assert "TX.resultats" in modele and "Prochains résultats annuels" in modele and "2027-02-10" not in modele
+
+
+@test
 def decision_en_puce_signalee():
     """Une décision écrite seulement en puce est signalée ; celle du tableau ou une ancienne ne l'est pas."""
     import controle as c

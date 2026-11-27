@@ -71,6 +71,17 @@ REUNIONS_FED = [("2026-12-08", "2026-12-09"), ("2027-01-26", "2027-01-27"), ("20
                 ("2027-04-27", "2027-04-28"), ("2027-06-08", "2027-06-09"), ("2027-07-27", "2027-07-28"),
                 ("2027-09-14", "2027-09-15"), ("2027-10-26", "2027-10-27"), ("2027-11-16", "2027-11-17")]
 PAGE_FED = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+# Publication des résultats annuels 2026 de sociétés du CAC 40 : (nom, date, page où la société publie sa date).
+# Dates lues le 2026-11-27 sur les pages « calendrier financier » des sociétés ; à revérifier (une société peut les déplacer).
+RESULTATS = [("Sanofi", "2027-01-28", "https://www.sanofi.com/en/investors/financial-results-and-events/financial-calendar/"),
+             ("TotalEnergies", "2027-02-10", "https://totalenergies.com/en/media/colonne-3/info/calendar"),
+             ("L'Oréal", "2027-02-11", "https://www.loreal-finance.com/eng/financial-calendar"),
+             ("Danone", "2027-02-24", "https://www.danone.com/investors/publications-and-events/financial-calendar.html")]
+
+
+def prochains_resultats(jour, resultats=RESULTATS):
+    """Publications de résultats dont la date n'est pas passée (jour AAAA-MM-JJ), de la plus proche à la plus lointaine."""
+    return [{"nom": n, "date": d, "source": u} for n, d, u in sorted(resultats, key=lambda r: r[1]) if d >= jour]
 
 
 def prochaine_reunion(jour, reunions=REUNIONS):
@@ -115,6 +126,7 @@ def mesurer(depuis="2023-01-01"):
         cache["source_reunions"] = PAGE_CALENDRIER
         cache["reunions_fed"] = REUNIONS_FED
         cache["source_fed"] = PAGE_FED
+        cache["resultats"] = RESULTATS
         return cache
     res["inflation"] = infl or charger_cache().get("inflation")
     res["source"] = PAGE_BCE
@@ -122,6 +134,7 @@ def mesurer(depuis="2023-01-01"):
     res["source_reunions"] = PAGE_CALENDRIER
     res["reunions_fed"] = REUNIONS_FED
     res["source_fed"] = PAGE_FED
+    res["resultats"] = RESULTATS
     try:
         CACHE.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     except OSError:
