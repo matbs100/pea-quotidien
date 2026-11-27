@@ -3,6 +3,14 @@
 Recopiés ici (sans aucune information personnelle) par la fonction mémoire quand le propriétaire parle du
 projet avec Claude. Lus chaque nuit par l'agent design (`DESIGN.md`, étape 1). Le plus récent en haut.
 
+## Actualité, onglets et cartes (2026-11-27)
+
+Le propriétaire a demandé des onglets Actualité · Globe · Petits prix, placés sous la bande des indices et
+au-dessus de « Mes investissements » : l'actualité ne va jamais en bas de page. Sur téléphone, dans les cartes
+des marchés, le prix et la part d'ETF doivent tenir sur une seule ligne. La fiche détail doit s'ouvrir tout en
+haut. Chaque actualité montre clairement si elle est confirmée par deux sources ou non confirmée. Sans rien
+retirer et sans ralentir la page ; rendu sur vrai iPhone pas encore essayé.
+
 ## Carte du monde (2026-11-23)
 
 Le propriétaire a demandé la carte du monde : globe en bas de la fiche, au-dessus de « Contrôle des prix »
