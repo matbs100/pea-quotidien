@@ -1,14 +1,14 @@
 {
- "maj": "2026-11-06",
+ "maj": "2026-11-27",
  "infos": {
   "url_boursorama": "https://www.boursorama.com/cours/1rPALEUP/",
-  "isin": "FR0014011QJ8",
+  "isin": "FR001401BHQ6",
   "pea_bourso": true,
   "secteur": "Produits miniers et minéraux",
   "valorisation": "1 MEUR",
   "per_annee": "2026",
-  "nb_titres": "3 030 443 801",
-  "capitalisation": "0,61 MEUR",
+  "nb_titres": "453 044",
+  "capitalisation": "0,77 MEUR",
   "marche": "Euronext Growth Paris",
   "site": "https://www.europlasma.com/",
   "pays": "France"
