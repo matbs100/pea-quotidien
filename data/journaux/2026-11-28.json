@@ -3073,11 +3073,12 @@
    "articles": [
     "a72",
     "a67",
-    "a58"
+    "a58",
+    "a384"
    ],
    "titre": "OpenAI poursuit Apple en retour, l'accusant de vol de secrets industriels et de pressions sur ses fournisseurs.",
    "statut": "confirmee",
-   "nb_journaux": 3,
+   "nb_journaux": 4,
    "verifie": true
   },
   {
@@ -3126,7 +3127,8 @@
     "a209",
     "a116",
     "a93",
-    "a245"
+    "a245",
+    "a402"
    ],
    "titre": "Wall Street termine la semaine en hausse : la tech rebondit après des séances très agitées, et le Nasdaq signe sa meilleure semaine depuis avril.",
    "statut": "confirmee",
@@ -3148,11 +3150,15 @@
    "id": "i8",
    "articles": [
     "a74",
-    "a77"
+    "a77",
+    "a397",
+    "a354",
+    "a348",
+    "a368"
    ],
-   "titre": "S&P abaisse la perspective de la note de la France à « négative », sans dégrader la note elle-même.",
+   "titre": "S&P abaisse la perspective de la note de la France à « négative » sans la dégrader ; le gouvernement y voit un avertissement.",
    "statut": "confirmee",
-   "nb_journaux": 2,
+   "nb_journaux": 3,
    "verifie": true
   },
   {
@@ -3269,16 +3275,6 @@
    "verifie": true
   },
   {
-   "id": "i20",
-   "articles": [
-    "a184"
-   ],
-   "titre": "La compagnie à bas prix Norse Atlantic annule tous ses vols et demande l'ouverture d'une procédure d'insolvabilité.",
-   "statut": "non_confirmee",
-   "nb_journaux": 1,
-   "verifie": true
-  },
-  {
    "id": "i21",
    "articles": [
     "a137"
@@ -3301,11 +3297,12 @@
   {
    "id": "i23",
    "articles": [
-    "a105"
+    "a105",
+    "a401"
    ],
    "titre": "Puig rachète 75 % de la maison de parfums Parfums de Marly.",
-   "statut": "non_confirmee",
-   "nb_journaux": 1,
+   "statut": "confirmee",
+   "nb_journaux": 2,
    "verifie": true
   },
   {
@@ -3324,947 +3321,46 @@
     "a340",
     "a315"
    ],
-   "titre": "",
-   "titre_origine": "Une économie \"plus forte et diversifiée\", un pays \"plus riche\" et une dette \"plus faible\": malgré les vives inquiétudes sur les finances publiques françaises, le vice-président de la BCE ne croit pas à un scénario à la grecque",
+   "titre": "Le vice-président de la BCE écarte un scénario à la grecque pour la dette française, en s'appuyant sur la solidité de l'économie du pays.",
    "statut": "confirmee",
-   "nb_journaux": 2
+   "nb_journaux": 2,
+   "verifie": true
   },
   {
    "id": "i26",
    "articles": [
     "a331",
-    "a324"
-   ],
-   "titre": "",
-   "titre_origine": "Argentina loses bid to halt Falklands oil drilling",
-   "statut": "confirmee",
-   "nb_journaux": 2
-  },
-  {
-   "id": "i27",
-   "articles": [
-    "a354",
-    "a348"
-   ],
-   "titre": "",
-   "titre_origine": "Après l'avertissement de l'agence S&P au moment où la France entre en récession, Roland Lescure rappelle l'absolue nécessité de voter un budget et de réduire le déficit pour rassurer les marchés",
-   "statut": "confirmee",
-   "nb_journaux": 2
-  },
-  {
-   "id": "i28",
-   "articles": [
-    "a356",
-    "a355"
-   ],
-   "titre": "",
-   "titre_origine": "Une grève de quatre jours annoncée avant Noël dans les aéroports de Paris",
-   "statut": "confirmee",
-   "nb_journaux": 2
-  },
-  {
-   "id": "i29",
-   "articles": [
-    "a314"
-   ],
-   "titre": "",
-   "titre_origine": "Being scammed is 'such a challenge to overcome'",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i30",
-   "articles": [
-    "a316"
-   ],
-   "titre": "",
-   "titre_origine": "Robotaxis: Tesla hofft auf EU-weite Freigabe für Fahrassistenz",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i31",
-   "articles": [
-    "a317"
-   ],
-   "titre": "",
-   "titre_origine": "Francesco Pesci (Millefili) : Mellefili, la filature du sur-mesure - 28/11",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i32",
-   "articles": [
-    "a318"
-   ],
-   "titre": "",
-   "titre_origine": "Nigeria Central Bank Plans 2027 Launch of Repo and Swap Markets",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i33",
-   "articles": [
-    "a319"
-   ],
-   "titre": "",
-   "titre_origine": "Backstage | Mathilde Riga (Kult Kefir): \"Je pourrais lâcher mon rôle de CEO pour la pérennité de l'entreprise\"",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i34",
-   "articles": [
-    "a320"
-   ],
-   "titre": "",
-   "titre_origine": "What’s the most tax-efficient way to donate to charity?",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i35",
-   "articles": [
-    "a321"
-   ],
-   "titre": "",
-   "titre_origine": "Immobilien: Was die Bundesbaugesellschaft für Käufer und Mieter bedeutet",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i36",
-   "articles": [
-    "a322"
-   ],
-   "titre": "",
-   "titre_origine": "Travel Demand Holds Despite Higher Prices",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i37",
-   "articles": [
+    "a324",
     "a323"
    ],
-   "titre": "",
-   "titre_origine": "L'Argentine réclamait la suspension d'un projet pétrolier autorisé par le Royaume-Uni au large des îles Malouines: le Tribunal du droit de la mer rejette la demande de Buenos Aires et donne raison à Londres",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i38",
-   "articles": [
-    "a325"
-   ],
-   "titre": "",
-   "titre_origine": "Sur les marchés, la dette française reprend son souffle",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i39",
-   "articles": [
-    "a326"
-   ],
-   "titre": "",
-   "titre_origine": "Émission du 28 novembre 2026",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i40",
-   "articles": [
-    "a327"
-   ],
-   "titre": "",
-   "titre_origine": "Jefferies says this dip is a rare tech buying opportunity. 5 stocks to pick up now",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i41",
-   "articles": [
-    "a328"
-   ],
-   "titre": "",
-   "titre_origine": "Cinq euros par jour de prison : le Sénat vote pour taxer les détenus",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i42",
-   "articles": [
-    "a329"
-   ],
-   "titre": "",
-   "titre_origine": "The Iran war could shatter rising expectations of surplus oil supply in coming months",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i43",
-   "articles": [
-    "a330"
-   ],
-   "titre": "",
-   "titre_origine": "L'intégrale de Check-up Santé du samedi 29 novembre",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i44",
-   "articles": [
-    "a332"
-   ],
-   "titre": "",
-   "titre_origine": "Une journée de prison coûte près de 130 euros à l'État: les sénateurs votent pour taxer les détenus à hauteur de 5 euros par jour",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i45",
-   "articles": [
-    "a333"
-   ],
-   "titre": "",
-   "titre_origine": "\"Les extrémités des ailes sont entrées en contact\": deux avions se percutent à l'aéroport Ronald Reagan de Washington, sans faire de blessé",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i46",
-   "articles": [
-    "a334"
-   ],
-   "titre": "",
-   "titre_origine": "Higher Prices Test Holiday Shoppers",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i47",
-   "articles": [
-    "a335"
-   ],
-   "titre": "",
-   "titre_origine": "Focus Retail du samedi 28 novembre",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i48",
-   "articles": [
-    "a336"
-   ],
-   "titre": "",
-   "titre_origine": "Binance, géant mondial des cryptomonnaies, prépare sa sortie de l’Europe, faute de visa des régulateurs",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i49",
-   "articles": [
-    "a337"
-   ],
-   "titre": "",
-   "titre_origine": "Le Grand Est a tout pour réussir : Festilight Illuminations - 28/11",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i50",
-   "articles": [
-    "a338"
-   ],
-   "titre": "",
-   "titre_origine": "Energie: Uniper könnte mit bis zu 16 Milliarden Euro bewertet werden",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i51",
-   "articles": [
-    "a339"
-   ],
-   "titre": "",
-   "titre_origine": "These tech stocks may let you play defense without giving up on AI",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i52",
-   "articles": [
-    "a341"
-   ],
-   "titre": "",
-   "titre_origine": "Plus de 3% de croissance, des milliards de dollars venus de Russie et une réception d'ambassadeurs inédite depuis 30 ans: pourquoi 2026 a été une année exceptionnellement favorable pour la Corée du Nord de Kim Jong-un",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i53",
-   "articles": [
-    "a342"
-   ],
-   "titre": "",
-   "titre_origine": "Christmas market 'absolutely vital' for businesses",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i54",
-   "articles": [
-    "a343"
-   ],
-   "titre": "",
-   "titre_origine": "Poundland closure 'big loss' for former mining town",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i55",
-   "articles": [
-    "a344"
-   ],
-   "titre": "",
-   "titre_origine": "A un banquet du Canon français, à Biarritz, des manifestants bloquent les participants, qu’ils accusent de véhiculer des idées d’extrême droite",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i56",
-   "articles": [
-    "a345"
-   ],
-   "titre": "",
-   "titre_origine": "L’horlogerie suisse rattrapée par les faiblesses de sa stratégie de montée en gamme",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i57",
-   "articles": [
-    "a346"
-   ],
-   "titre": "",
-   "titre_origine": "India’s SEBI Weighs Exchange Platform for Pre-IPO Shares",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i58",
-   "articles": [
-    "a347"
-   ],
-   "titre": "",
-   "titre_origine": "Olivier Fournier (2SF Cash Services) : Cash Services, le nouveau réseau d'automates bancaires - 28/11",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i59",
-   "articles": [
-    "a349"
-   ],
-   "titre": "",
-   "titre_origine": "Les impôts avaient calculé sa taxe foncière en francs… et réclamaient 96 000 euros en trop à cette commune du Jura",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i60",
-   "articles": [
-    "a350"
-   ],
-   "titre": "",
-   "titre_origine": "\"Les classes moyennes devront payer plus pour transmettre leur assurance vie\": un amendement adopté au Sénat pourrait alourdir la fiscalité de 10.500 euros par bénéficiaire",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i61",
-   "articles": [
-    "a351"
-   ],
-   "titre": "",
-   "titre_origine": "« Etablir une règle d’or budgétaire n’ôtera pas le besoin de relever l’âge de la retraite ou d’augmenter le temps de travail »",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i62",
-   "articles": [
-    "a352"
-   ],
-   "titre": "",
-   "titre_origine": "Kouver, le petit Poucet nantais qui défie les géants TheFork et ZenChef sur la réservation en ligne de restaurants",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i63",
-   "articles": [
-    "a353"
-   ],
-   "titre": "",
-   "titre_origine": "La France en récession: \"Il faut augmenter l’ensemble des niveaux de salaires\" pour relancer la consommation et l’économie du pays, estime Agathe Le Berder, secrétaire confédérale de la CGT",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i64",
-   "articles": [
-    "a357"
-   ],
-   "titre": "",
-   "titre_origine": "Modi Nears Majority Needed to Increase India’s Parliament Seats",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i65",
-   "articles": [
-    "a358"
-   ],
-   "titre": "",
-   "titre_origine": "Norway’s Wealth Fund Again Votes No to Musk’s Tesla Pay Package",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i66",
-   "articles": [
-    "a359"
-   ],
-   "titre": "",
-   "titre_origine": "Au Venezuela, la dette abyssale complique la tâche de Matthieu Pigasse",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i67",
-   "articles": [
-    "a360"
-   ],
-   "titre": "",
-   "titre_origine": "Kleinste loonsverhoging in veertig jaar voor stakende kledingarbeiders in Bangladesh",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i68",
-   "articles": [
-    "a361"
-   ],
-   "titre": "",
-   "titre_origine": "A.I. Companies Race for Space in New York, a City That Doesn’t Have Much of It",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i69",
-   "articles": [
-    "a362"
-   ],
-   "titre": "",
-   "titre_origine": "Avec sa marque Arket, H&M mise sur le premium pour tenter d’enrayer la concurrence de Shein",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i70",
-   "articles": [
-    "a363"
-   ],
-   "titre": "",
-   "titre_origine": "Plunging Fuel Prices Bring Relief for Drivers and Central Banks",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i71",
-   "articles": [
-    "a364"
-   ],
-   "titre": "",
-   "titre_origine": "Immobilien: Deutschland droht eine teure Heizsaison – und die Rechnung kommt erst noch",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i72",
-   "articles": [
-    "a365"
-   ],
-   "titre": "",
-   "titre_origine": "Comment ce petit village du Cantal a réussi à doubler sa population et à multiplier les commerces en offrant des terrains gratuits aux nouveaux habitants",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i73",
-   "articles": [
-    "a366"
-   ],
-   "titre": "",
-   "titre_origine": "La France en récession: l'économie du pays est \"à l'arrêt\", explique Michaël Zemmour, enseignant-chercheur en économie",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i74",
-   "articles": [
-    "a367"
-   ],
-   "titre": "",
-   "titre_origine": "«Est-ce que le pays entre en gérontocratie ?» : en Suisse, le référendum sur le 13e mois de retraite avive les fractures entre générations",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i75",
-   "articles": [
-    "a368"
-   ],
-   "titre": "",
-   "titre_origine": "Quelle est la note S&P des voisins de la France ?",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i76",
-   "articles": [
-    "a369"
-   ],
-   "titre": "",
-   "titre_origine": "Technische problemen bij drukkerij: mogelijk geen krant bezorgd",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i77",
-   "articles": [
-    "a370"
-   ],
-   "titre": "",
-   "titre_origine": "Philippe Guldemont (Aellia) : Aellia aide à la réduction des émissions industrielles - 28/11",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i78",
-   "articles": [
-    "a371"
-   ],
-   "titre": "",
-   "titre_origine": "The NBA sets sights on Europe’s arenas",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i79",
-   "articles": [
-    "a372"
-   ],
-   "titre": "",
-   "titre_origine": "Eisenkot Edging Closer to Leading Israel With Talks Progressing",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i80",
-   "articles": [
-    "a373"
-   ],
-   "titre": "",
-   "titre_origine": "2027, une année moins favorable pour les actions américaines ?",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i81",
-   "articles": [
-    "a374"
-   ],
-   "titre": "",
-   "titre_origine": "Konflikte: Wie eine Mediation die Produktivität des Unternehmens wieder herstellen kann",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i82",
-   "articles": [
-    "a375"
-   ],
-   "titre": "",
-   "titre_origine": "Mittelstand: Mittelstand blickt wieder optimistischer auf die Geschäfte der nächsten Monate",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i83",
-   "articles": [
-    "a376"
-   ],
-   "titre": "",
-   "titre_origine": "Paris dit adieu à une \"madeleine de Proust\": après 126 ans de service, le ticket de métro en carton tirera sa révérence mi-décembre",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i84",
-   "articles": [
-    "a377"
-   ],
-   "titre": "",
-   "titre_origine": "Check out JAPAN TOBACCO INC.'s stock price (2914-JP) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i85",
-   "articles": [
-    "a378"
-   ],
-   "titre": "",
-   "titre_origine": "Rüstung: 100.000 Bewerbungen bei Panzerbauer KNDS Deutschland",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i86",
-   "articles": [
-    "a379"
-   ],
-   "titre": "",
-   "titre_origine": "« Après avoir appris à mieux gérer nos déchets, veillons à rallonger la durée de vie de nos biens »",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i87",
-   "articles": [
-    "a380"
-   ],
-   "titre": "",
-   "titre_origine": "1 minute de film par semaine : la création folle derrière le dernier \"Astérix\"",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i88",
-   "articles": [
-    "a381"
-   ],
-   "titre": "",
-   "titre_origine": "En Gironde, des viticulteurs se diversifient dans la culture de chanvre",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i89",
-   "articles": [
-    "a382"
-   ],
-   "titre": "",
-   "titre_origine": "L'armée américaine visée par une cyberattaque ? Le Pentagone assure que ses systèmes informatiques sont sécurisés",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i90",
-   "articles": [
-    "a383"
-   ],
-   "titre": "",
-   "titre_origine": "«C’est frustrant pour tout le monde» : pourquoi la première gare de fret parisienne, inaugurée en 2018, n’accueille toujours aucun train",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i91",
-   "articles": [
-    "a384"
-   ],
-   "titre": "",
-   "titre_origine": "OpenAI affronte Apple en justice, l’accusant d’avoir dérobé des secrets industriels et d’exercer des pressions sur ses fournisseurs",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i92",
-   "articles": [
-    "a385"
-   ],
-   "titre": "",
-   "titre_origine": "Butcher blames costs for closure after 127 years",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
+   "titre": "Le tribunal international du droit de la mer rejette la demande de l'Argentine de suspendre un projet pétrolier britannique près des Malouines.",
+   "statut": "confirmee",
+   "nb_journaux": 3,
+   "verifie": true
   },
   {
    "id": "i93",
    "articles": [
     "a386"
    ],
-   "titre": "",
-   "titre_origine": "United Fidelity Bank shut in biggest US bank failure in 2 years, First Citizens buys assets",
+   "titre": "Une banque américaine, United Fidelity Bank, est fermée, la plus grosse faillite bancaire aux États-Unis en deux ans ; First Citizens reprend des actifs.",
    "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i94",
-   "articles": [
-    "a387"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Advanced Micro Devices, Inc.'s stock price (AMD) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i95",
-   "articles": [
-    "a388"
-   ],
-   "titre": "",
-   "titre_origine": "In 20th try, Sharks hand Golden Knights first loss in San Jose",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i96",
-   "articles": [
-    "a389"
-   ],
-   "titre": "",
-   "titre_origine": "Chelsea suffer third successive loss as Gibbs-White grabs double for Nottingham Forest",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i97",
-   "articles": [
-    "a390"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Alphabet Inc.'s stock price (ABEA-FF) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i98",
-   "articles": [
-    "a391"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Alphabet Inc.'s stock price (ABEA-DE) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i99",
-   "articles": [
-    "a392"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Alphabet Class A's stock price (GOOGL) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i100",
-   "articles": [
-    "a393"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Alphabet Class C's stock price (GOOG) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i101",
-   "articles": [
-    "a394"
-   ],
-   "titre": "",
-   "titre_origine": "Check out 's stock price (TL01-FF) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i102",
-   "articles": [
-    "a395"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Microsoft Corporation's stock price (MSFT) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i103",
-   "articles": [
-    "a396"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Alphabet's stock price (GOGL3'A-BR) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i104",
-   "articles": [
-    "a397"
-   ],
-   "titre": "",
-   "titre_origine": "Dette : Standard & Poor’s abaisse la perspective de la note française à «négative»",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i105",
-   "articles": [
-    "a398"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Apple Inc.'s stock price (APC-DE) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i106",
-   "articles": [
-    "a399"
-   ],
-   "titre": "",
-   "titre_origine": "Check out 's stock price (AAPL-CA) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i107",
-   "articles": [
-    "a400"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Apple Inc.'s stock price (AAPL) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i108",
-   "articles": [
-    "a401"
-   ],
-   "titre": "",
-   "titre_origine": "Puig to buy Parfums de Marly owner from Advent in €1.2 billion deal",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i109",
-   "articles": [
-    "a402"
-   ],
-   "titre": "",
-   "titre_origine": "La tech rebondit après une semaine de rodéo, Wall Street reprend du poil de la bête",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i110",
-   "articles": [
-    "a403"
-   ],
-   "titre": "",
-   "titre_origine": "« Un passage obligé pour les candidats » : comment les médias vidéo en ligne jouent leur partition dans la campagne présidentielle",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i111",
-   "articles": [
-    "a404"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Walmart Inc.'s stock price (WMT) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i112",
-   "articles": [
-    "a405"
-   ],
-   "titre": "",
-   "titre_origine": "Johannesburg picks Mashaba as mayor in ANC-backed deal",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i113",
-   "articles": [
-    "a406"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Amazon.com's stock price (AMZN) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
+   "nb_journaux": 1,
+   "verifie": true
   },
   {
    "id": "i114",
    "articles": [
     "a407"
    ],
-   "titre": "",
-   "titre_origine": "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally",
+   "titre": "Le FTSE 100 londonien signe sa meilleure semaine depuis huit mois, porté par les mines et les banques.",
    "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i115",
-   "articles": [
-    "a408"
-   ],
-   "titre": "",
-   "titre_origine": "Davis Cup's current format a winning formula, says World Tennis CEO",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i116",
-   "articles": [
-    "a409"
-   ],
-   "titre": "",
-   "titre_origine": "Check out Novo Nordisk A/S's stock price (NVO) in real time",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i117",
-   "articles": [
-    "a410"
-   ],
-   "titre": "",
-   "titre_origine": "Kevin de Patoul (CEO de Keyrock):\"C'est toujours un bon moment pour acheter des cryptomonnaies\"",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
-  },
-  {
-   "id": "i118",
-   "articles": [
-    "a411"
-   ],
-   "titre": "",
-   "titre_origine": "UK steel industry calls for changes to 'unequal' EU emissions deal",
-   "statut": "non_confirmee",
-   "nb_journaux": 1
+   "nb_journaux": 1,
+   "verifie": true
   }
  ],
  "chef": {
-  "verifie_le": "2026-11-28T08:31+01:00"
+  "verifie_le": "2026-11-28T16:37+01:00"
  },
  "passages": [
   "2026-11-28T08:10+01:00",
