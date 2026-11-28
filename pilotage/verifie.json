@@ -214,5 +214,11 @@
   "jour": "73362a9",
   "preuve": "git show 73362a9 relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clé resultats ajoutée), pilotage/etat.json est le contrôle de la nuit ; les 4 dates (Sanofi 28/01/2027, TotalEnergies 10/02/2027, L'Oréal 11/02/2027, Danone 24/02/2027) relues le 27/11 sur les pages des sociétés (WebFetch ; TotalEnergies : extrait de recherche du calendrier officiel) ; test prochains_resultats vert.",
   "le": "2026-11-27"
+ },
+ {
+  "alerte": "data/taux_bce.json : hors du rôle de l'agent « nuit »",
+  "jour": "d175756",
+  "preuve": "git show d175756 -- data/taux_bce.json relu : seule la date « releve » passe de 2026-11-27 à 2026-11-28, écrite par scripts/taux.py au rendu ; le texte ajouté (note fisc-sortie) relu contre le PDF de la FAQ AMF page 2 : rente viagère et titre inéligible conformes.",
+  "le": "2026-11-28"
  }
 ]

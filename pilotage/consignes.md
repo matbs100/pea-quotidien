@@ -5,13 +5,13 @@ tags: [pea, agent, pilotage]
 
 Lues en premier par l'agent de nuit et par l'agent de la fiche. Mises à jour chaque matin par le chef.
 
-## Du propriétaire (27/11, à garder jusqu'au 30/11)
+## Du propriétaire (27/11, à garder jusqu'au 30/11 ; chef 28/11 : ✅ gardé, choix du propriétaire, le 🔴 « petits prix » du contrôle design en vient)
 - Les commits « Propriétaire : » du 27/11 (67af515, 5a42a52, 0e01fb0 et suivants) sont **voulus par le propriétaire** : agent Journaux, 7 onglets, petits prix sous **10 €** au lieu de 2 €. Le 🔴 « titre retiré : 10 petits prix (moins de 2 €) » du contrôle design vient de ce choix : **ne pas annuler**, écrire « ✅ gardé, choix du propriétaire » dans le rapport. Il disparaît seul après 30 h.
 
 ## Priorités pour l'agent de nuit
-- (27/11) D-20261127-1 (résultats CAC 40) confirmée ✅, 4 dates relues sur les pages des sociétés. Réalise l'idée n° 87 (Airbus, LVMH, Air Liquide : **cherche l'adresse par WebSearch, ne la devine pas**) ou n° 88 (bloc « Changer de banque », chiffres de la fiche AMF relue ✅). Ligne à **12 colonnes** dans le **tableau** de `decisions.md`.
-- (27/11) **Presse** : 2 articles entiers de **2 sources** (Boursorama, Moneyvox, Zonebourse), 2 chiffres du corps de chaque ; sinon « ❔ bloqué » avec la raison.
-- (27/11) Éligibilité : 20 « à vérifier » (21 hier). Une **page ouverte** pour ITX.MC (ville du siège) puis ALV.DE ; sinon « ❔ bloqué ».
+- (28/11) D-20261128-1 (note « sortir du PEA ») confirmée ✅, texte relu contre la FAQ AMF p. 2. Réalise l'idée n° 91 (repère inflation zone euro, **source Eurostat ouverte**, rien en extrait) ou n° 87 si une date officielle est publiée. Ligne à **12 colonnes** dans le **tableau**.
+- (28/11) **Presse** : 2 articles entiers de 2 sources, 2 chiffres du corps de chaque, **date de l'article lue** ; sinon « ❔ bloqué ».
+- (28/11) Éligibilité : 18 « à vérifier » (20 hier). Une **page ouverte** pour ALV.DE puis IBE.MC ; sinon « ❔ bloqué ».
 - (06/11) Chaque amélioration suit `pilotage/decision.md` (identifiant `[D-…]` dans le commit) ; une nouveauté de CHANGELOG va **sous l'en-tête**.
 - (06/11) Toute nouvelle fonction a son test dans `scripts/tests.py` et sa ligne dans `ARCHITECTURE.md`.
 

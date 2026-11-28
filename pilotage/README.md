@@ -33,6 +33,7 @@ Les jours de bourse, un **second passage à 12 h 30** répare ce qui ne va pas a
 - 🔴 **rouge** : à corriger avant la prochaine fiche (test cassé, fiche manquante, donnée fausse).
 
 ## Rapports
+- [2026-11-28](rapports/2026-11-28.md)
 - [2026-11-27](rapports/2026-11-27.md)
 - [2026-11-26](rapports/2026-11-26.md)
 - [2026-11-25](rapports/2026-11-25.md)

@@ -7,7 +7,21 @@ Tenu par le chef d'orchestre (étape 8 bis de `CHEF.md`). Chaque matin, il corri
 veille (✅ réussi, 🔁 à refaire, ❌ abandonné) et donne ceux du jour. L'agent de nuit les fait (étape
 2 bis de `AMELIORATION.md`) et rend compte dans la partie `## Devoirs du chef` de son journal.
 
-## Devoirs donnés le 2026-11-27 (pour la nuit du 28 novembre)
+## Devoirs donnés le 2026-11-28 (pour la nuit du 29 novembre)
+1. **Idées (nuit).** Idée n° 91 (repère inflation zone euro, source Eurostat ouverte) ou n° 87 si une date officielle est publiée ; ligne à 12 colonnes dans le **tableau**.
+2. **Presse (nuit).** 2 articles entiers de 2 sources, 2 chiffres du corps de chaque ; lis la **date de l'article**, pas le bandeau.
+3. **Éligibilité (nuit).** ALV.DE puis IBE.MC : une **page ouverte** (pas un extrait) donnant la ville du siège ; sinon « ❔ bloqué ».
+4. **Design (design).** Graphique d'une fiche ETF à 360 px : seule tâche (6e report) ; ta ligne dans le tableau.
+5. **Chef.** Réviser un fait ⏳ ancien de `apprentissage/connaissances/`.
+
+## Résultats du 2026-11-28 (devoirs du 2026-11-27)
+- 1 Idées : ✅ n° 88 en version réduite (D-20261128-1), texte relu contre la FAQ AMF ; n° 87 ❔ bloqué sans rien inventer (bien).
+- 2 Presse : ✅ Moneyvox et Reuters via Boursorama lus ; chiffre du CAC 40 non recoupé par le chef (❔).
+- 3 Éligibilité : ✅ en partie : ITX.MC tranché par une page officielle (BORME) ; ALV.DE et IBE.MC ❔ bloqués.
+- 4 Design : 🔁 (6e fois) étude seule, devoir maintenu comme tâche unique.
+- 5 Chef : 🔁 reporté (lecture de la FAQ AMF et revue passées avant) ; refait aujourd'hui.
+
+## Archive : Devoirs donnés le 2026-11-27 (pour la nuit du 28 novembre)
 1. **Idées (nuit).** Idée n° 87 (Airbus, LVMH, Air Liquide, adresses trouvées par WebSearch) ou n° 88 ; ligne à 12 colonnes dans le **tableau**.
 2. **Presse (nuit).** 2 articles entiers de 2 sources différentes, 2 chiffres du corps de chaque ; sinon « ❔ bloqué ».
 3. **Éligibilité (nuit).** ITX.MC puis ALV.DE : une **page ouverte** donnant la ville du siège ; sinon « ❔ bloqué ».

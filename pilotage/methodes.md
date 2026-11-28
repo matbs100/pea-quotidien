@@ -67,3 +67,5 @@ d'orchestre : une règle par ligne, datée, avec l'agent concerné et l'exemple 
 - (26/11, tous) **Rubrique « Erreurs et leçons »** (consigne du propriétaire, 25/11) : méthode suivie, fausses pistes, correction, leçon. Les journaux de la nuit et du code la tiennent déjà ; garde le même niveau de précision.
 
 - (27/11, nuit) **Une date dont l'année est déduite n'est pas une date lue** : Danone (« February, 24 » sans année) ; garde la mention « année déduite » dans la note et revérifie-la avant la date (idée n° 90). Cherche l'adresse d'une page par WebSearch, ne la devine pas (4 pages en 404 le 27/11).
+
+- (28/11, nuit) **Un chiffre de presse non recoupé reste ❔** : le CAC 40 du 27/11 (8 156,09) vient de deux articles du même flux et n'a pas de confirmation indépendante ; note la source et écris « non recoupé ». Lis la date de l'article, pas celle du bandeau (leçon de la nuit du 28/11).

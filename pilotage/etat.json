@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-27T19:45+01:00",
+ "genere_le": "2026-11-28T05:12+01:00",
  "fiche": "2026-11-27 (cloture)",
- "lieu": "local",
+ "lieu": "cloud",
  "etat": "rouge",
- "resume": "À corriger. 67/67 tests, 8/8 prix revérifiés, 37/37 liens valides, site à jour. Points à voir : documentation et mémoire Obsidian, design : aucune information retirée de la page, méthode de décision.",
+ "resume": "À corriger. 67/67 tests, 8/8 prix revérifiés, 35/35 liens valides, site à jour. Points à voir : design : aucune information retirée de la page, éligibilité au PEA (contrôle quotidien).",
  "controles": [
   {
    "nom": "tests",
@@ -13,19 +13,8 @@
    "details": [
     "✗ i3 : titre en français manquant",
     "• nouvelles dépendances à justifier dans le journal : pypdf",
-    "• node absent : filtre de « Mes critères » non exécuté",
-    "• node absent : étiquette « cours du … » non exécutée",
-    "• node absent : esc() et lienSur() non exécutés",
-    "• node absent : carte mois par mois non exécutée",
-    "• node absent : frais sur 10 ans non exécutés",
-    "• node absent : phrase-résumé du marché non exécutée",
-    "• node absent : titre du bandeau non exécuté",
     "• Playwright absent : glissement tactile non exécuté",
-    "• node absent : comparaison base 100 non exécutée",
-    "• node absent : mémoire de la comparaison non exécutée",
-    "• node absent : geste de fermeture non exécuté",
-    "• node absent : liens de recherche d'ISIN non exécutés",
-    "• node absent : glossaire de la phrase-résumé non exécuté"
+    "• éligibilité : 1 titre(s) suivi(s) pas encore contrôlé(s) : USVE.PA"
    ]
   },
   {
@@ -70,7 +59,7 @@
    "nom": "liens",
    "titre": "Liens des fiches détaillées",
    "niveau": "ok",
-   "resume": "37/37 liens valides sur 8 titres, 6 non ouverts (robots.txt), 1 injoignables d'ici",
+   "resume": "35/35 liens valides sur 8 titres, 8 non ouverts (robots.txt), 1 injoignables d'ici",
    "details": []
   },
   {
@@ -83,18 +72,10 @@
   {
    "nom": "documentation",
    "titre": "Documentation et mémoire Obsidian",
-   "niveau": "alerte",
-   "resume": "8 manque(s)",
+   "niveau": "ok",
+   "resume": "tout est documenté et rangé",
    "details": [
-    "fonction non décrite : journaux.sans_accents",
-    "fonction non décrite : journaux.en_majuscules_partout",
-    "fonction non décrite : journaux.nettoyer",
-    "fonction non décrite : journaux.lire_flux",
-    "fonction non décrite : journaux.domaine",
-    "fonction non décrite : journaux.url_google",
-    "fonction non décrite : journaux.articles_du_journal",
-    "fonction non décrite : journaux.chemin",
-    "61 connaissance(s) en attente de vérification (⏳)",
+    "65 connaissance(s) en attente de vérification (⏳)",
     "8 connaissance(s) non vérifiable(s) (❔)"
    ]
   },
@@ -102,10 +83,19 @@
    "nom": "agents",
    "titre": "Travail des agents (30 dernières heures)",
    "niveau": "ok",
-   "resume": "16 commit(s), 0 problème(s), 0 alerte(s) ; 2 vérifiée(s) par le chef",
+   "resume": "23 commit(s), 0 problème(s), 0 alerte(s) ; 3 vérifiée(s) par le chef",
    "details": [
+    "✔ vérifié par le chef le 2026-11-28 : d175756 « Amélioration : note « sortir du PEA » (rente viagè » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show d175756 -- data/taux_bce.json relu : seule la date « releve » passe de 2026-11-27 à 2026-11-28, écrite par scripts/taux.py au rendu ; le texte ajouté (note fisc-sortie) relu contre le PDF de la FAQ AMF page 2 : rente viagère et titre inéligible conformes.",
     "✔ vérifié par le chef le 2026-11-27 : 73362a9 « Amélioration : prochains résultats annuels de 4 so » : data/taux_bce.json : hors du rôle de l'agent « nuit » — git show 73362a9 relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clé resultats ajoutée), pilotage/etat.json est le contrôle de la nuit ; les 4 dates (Sanofi 28/01/2027, TotalEnergies 10/02/2027, L'Oréal 11/02/2027, Danone 24/02/2027) relues le 27/11 sur les pages des sociétés (WebFetch ; TotalEnergies : extrait de recherche du calendrier officiel) ; test prochains_resultats vert.",
     "✔ vérifié par le chef le 2026-11-27 : 73362a9 « Amélioration : prochains résultats annuels de 4 so » : pilotage/etat.json : hors du rôle de l'agent « nuit » — git show 73362a9 relu : data/taux_bce.json est le cache écrit par scripts/taux.py (clé resultats ajoutée), pilotage/etat.json est le contrôle de la nuit ; les 4 dates (Sanofi 28/01/2027, TotalEnergies 10/02/2027, L'Oréal 11/02/2027, Danone 24/02/2027) relues le 27/11 sur les pages des sociétés (WebFetch ; TotalEnergies : extrait de recherche du calendrier officiel) ; test prochains_resultats vert.",
+    "0ce4903 [univers] Univers : mise à jour hebdomadaire du 2026-11-28 (1 ajout)",
+    "02dff35 [code] Code : rapport du 2026-11-28 (vert)",
+    "d175756 [nuit] Amélioration : note « sortir du PEA » (rente viagère, titre inéligible",
+    "1182924 [design] Design : étude du 2026-11-28",
+    "64ca321 [autre] souhaits de design mis à jour",
+    "8a173c8 [autre] cartes des marchés, courbe sous le texte et prix alignés sur grand écr",
+    "4831d4e [autre] souhaits de design mis à jour",
+    "55d8b26 [autre] failles corrigées (ajout depuis un autre onglet, seuil réel des petits",
     "0e01fb0 [autre] suggestions, la fiabilité des signaux est dans l'onglet Marchés",
     "3379750 [autre] souhaits de design mis à jour",
     "5a42a52 [autre] 7 onglets à faire glisser (Marchés, Actualité, Top 30, Valeurs connues",
@@ -114,40 +104,34 @@
     "97f0baa [autre] souhaits de design mis à jour",
     "67af515 [autre] agent Journaux et vérification du chef, onglets Actualité/Globe/Petits",
     "bde9de4 [fiche] Matin PEA 2026-11-27 (cloture)",
-    "42fd6cb [chef] Chef : passage de mi-journée du 2026-11-27 (orange)",
-    "786be2a [fiche] Matin PEA 2026-11-27 (ouverture)",
-    "8315152 [chef] Chef : rapport du 2026-11-27 (vert)",
-    "d1a0276 [code] Code : gain de l'idée n° 89 corrigé, tests 66/66",
-    "66ebfc9 [code] Code : rapport du 2026-11-27 (vert) ; decisions_en_puce plus tolérante",
-    "73362a9 [nuit] Amélioration : prochains résultats annuels de 4 sociétés du CAC 40 [D-",
-    "af0cf88 [design] Design : étude du 2026-11-27",
-    "0269f32 [fiche] Matin PEA 2026-11-26 (cloture)"
+    "42fd6cb [chef] Chef : passage de mi-journée du 2026-11-27 (orange)"
    ]
   },
   {
    "nom": "design",
    "titre": "Design : aucune information retirée de la page",
    "niveau": "probleme",
-   "resume": "4 changement(s) de la page, 1 retrait(s), 2 point(s) à revoir",
+   "resume": "7 changement(s) de la page, 1 retrait(s), 3 point(s) à revoir",
    "details": [
     "67af515 « agent Journaux et vérification du chef, onglets Ac » : titre retiré : 10 petits prix (moins de 2 €)",
     "67af515 « agent Journaux et vérification du chef, onglets Ac » : texte retiré ou reformulé : 10 petits prix (moins de 2 €)",
     "67af515 « agent Journaux et vérification du chef, onglets Ac » : texte retiré ou reformulé : Les mieux classés parmi les titres liquides sous 2 €",
+    "55d8b26 « failles corrigées (ajout depuis un autre onglet, s » : texte retiré ou reformulé : 10 petits prix (moins de 10 €) · les mieux classés parmi les titres liquides éligibles au ",
     "73362a9 « Amélioration : prochains résultats annuels de 4 so » : rien de retiré",
     "67af515 « agent Journaux et vérification du chef, onglets Ac » : information retirée",
     "5a42a52 « 7 onglets à faire glisser (Marchés, Actualité, Top » : rien de retiré",
-    "0e01fb0 « suggestions, la fiabilité des signaux est dans l'o » : rien de retiré"
+    "0e01fb0 « suggestions, la fiabilité des signaux est dans l'o » : rien de retiré",
+    "55d8b26 « failles corrigées (ajout depuis un autre onglet, s » : à revoir",
+    "8a173c8 « cartes des marchés, courbe sous le texte et prix a » : rien de retiré",
+    "d175756 « Amélioration : note « sortir du PEA » (rente viagè » : rien de retiré"
    ]
   },
   {
    "nom": "decisions",
    "titre": "Méthode de décision",
-   "niveau": "alerte",
-   "resume": "75 décisions, 5 à réaliser, 2 point(s) à voir",
-   "details": [
-    "bilan à faire : D-20261124-2 (n° 74 · Glossaire au toucher pour « indice » et « )",
-    "bilan à faire : D-20261124-1 (Pastille « Risque n/7 » : zone tactile d'au moins )"
-   ]
+   "niveau": "ok",
+   "resume": "78 décisions, 5 à réaliser, 0 point(s) à voir",
+   "details": []
   },
   {
    "nom": "lectures",
@@ -161,15 +145,18 @@
    "titre": "Confidentialité (dépôt public)",
    "niveau": "ok",
    "resume": "aucune information personnelle trouvée",
-   "details": []
+   "details": [
+    "termes protégés : vérifiés chaque jour par le vérificateur du code (clé absente ici)"
+   ]
   },
   {
    "nom": "eligibilite",
    "titre": "Éligibilité au PEA (contrôle quotidien)",
-   "niveau": "ok",
-   "resume": "234 oui, 20 à vérifier, 0 non ; contrôle du 2026-11-27 (231 pages Boursorama lues)",
+   "niveau": "alerte",
+   "resume": "236 oui, 18 à vérifier, 0 non ; contrôle du 2026-11-28 (231 pages Boursorama lues)",
    "details": [
-    "20 titre(s) à vérifier (deuxième source à trouver par l'agent de nuit) : FGR.PA, SAP.DE, ALV.DE, DTE.DE, RHM.DE, ITX.MC, IBE.MC, SAN.MC, NOKIA.HE, ALEO2.PA"
+    "1 titre(s) suivi(s) sans statut : USVE.PA",
+    "18 titre(s) à vérifier (deuxième source à trouver par l'agent de nuit) : FGR.PA, SAP.DE, ALV.DE, DTE.DE, RHM.DE, IBE.MC, SAN.MC, NOKIA.HE, ALEO2.PA, ALNXT.PA"
    ]
   }
  ]
