@@ -108,7 +108,8 @@
   "50E.PA": "HSBC Euro Stoxx 50",
   "MFE.PA": "Amundi Core MSCI EMU (Dist)",
   "S6EW.PA": "Ossiam STOXX Europe 600 ESG Equal Weight",
-  "CU2.PA": "Amundi PEA MSCI USA ESG Selection"
+  "CU2.PA": "Amundi PEA MSCI USA ESG Selection",
+  "USVE.PA": "Amundi PEA MSCI USA Value Advanced"
  },
  "etf_levier": {
   "LVC.PA": "Amundi CAC 40 Daily (2x) Leveraged",
