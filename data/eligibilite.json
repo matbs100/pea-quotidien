@@ -1,11 +1,11 @@
 {
- "maj": "2026-11-27T02:15+00:00",
- "jour": "2026-11-27",
+ "maj": "2026-11-28T02:15+00:00",
+ "jour": "2026-11-28",
  "lecture": "Boursorama relu, puis recalculé sans réseau",
  "pages_lues": 231,
  "resume": {
-  "oui": 234,
-  "doute": 20,
+  "oui": 236,
+  "doute": 18,
   "non": 0
  },
  "titres": {
@@ -23,7 +23,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ETZ.PA": {
    "statut": "oui",
@@ -39,7 +39,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PSP5.PA": {
    "statut": "oui",
@@ -55,7 +55,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PE500.PA": {
    "statut": "oui",
@@ -71,7 +71,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PUST.PA": {
    "statut": "oui",
@@ -87,7 +87,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PANX.PA": {
    "statut": "oui",
@@ -103,7 +103,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CW8.PA": {
    "statut": "oui",
@@ -119,7 +119,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "DCAM.PA": {
    "statut": "oui",
@@ -135,7 +135,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "EWLD.PA": {
    "statut": "oui",
@@ -151,7 +151,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "WPEA.PA": {
    "statut": "oui",
@@ -167,7 +167,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PAEEM.PA": {
    "statut": "oui",
@@ -183,7 +183,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PTPXE.PA": {
    "statut": "oui",
@@ -199,7 +199,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RS2K.PA": {
    "statut": "oui",
@@ -215,7 +215,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CAC.PA": {
    "statut": "oui",
@@ -231,7 +231,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "C40.PA": {
    "statut": "oui",
@@ -247,7 +247,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "MSE.PA": {
    "statut": "oui",
@@ -263,7 +263,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PCEU.PA": {
    "statut": "oui",
@@ -279,7 +279,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PLEM.PA": {
    "statut": "oui",
@@ -295,7 +295,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "GPEA.PA": {
    "statut": "oui",
@@ -311,7 +311,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PAASI.PA": {
    "statut": "oui",
@@ -327,7 +327,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PAEJ.PA": {
    "statut": "oui",
@@ -343,7 +343,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PINR.PA": {
    "statut": "oui",
@@ -359,7 +359,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PMEH.PA": {
    "statut": "oui",
@@ -375,7 +375,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "OBLI.PA": {
    "statut": "oui",
@@ -391,7 +391,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CACC.PA": {
    "statut": "oui",
@@ -407,7 +407,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "C50.PA": {
    "statut": "oui",
@@ -423,7 +423,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ETDD.PA": {
    "statut": "oui",
@@ -439,7 +439,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "DAX.PA": {
    "statut": "oui",
@@ -455,7 +455,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CG1.PA": {
    "statut": "oui",
@@ -471,7 +471,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CD8.PA": {
    "statut": "oui",
@@ -487,7 +487,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "MMS.PA": {
    "statut": "oui",
@@ -503,7 +503,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PABZ.PA": {
    "statut": "oui",
@@ -519,7 +519,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "TNO.PA": {
    "statut": "oui",
@@ -535,7 +535,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "HLT.PA": {
    "statut": "oui",
@@ -551,7 +551,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "BNK.PA": {
    "statut": "oui",
@@ -567,7 +567,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "INS.PA": {
    "statut": "oui",
@@ -583,7 +583,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "FOO.PA": {
    "statut": "oui",
@@ -599,7 +599,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "TRV.PA": {
    "statut": "oui",
@@ -615,7 +615,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CHM.PA": {
    "statut": "oui",
@@ -631,7 +631,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "IND.PA": {
    "statut": "oui",
@@ -647,7 +647,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "UTI.PA": {
    "statut": "oui",
@@ -663,7 +663,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "EEMU.PA": {
    "statut": "oui",
@@ -679,7 +679,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "E40.PA": {
    "statut": "oui",
@@ -695,7 +695,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "50E.PA": {
    "statut": "oui",
@@ -711,7 +711,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "MFE.PA": {
    "statut": "oui",
@@ -727,7 +727,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "S6EW.PA": {
    "statut": "oui",
@@ -743,7 +743,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CU2.PA": {
    "statut": "oui",
@@ -759,7 +759,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "LVC.PA": {
    "statut": "oui",
@@ -775,7 +775,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "LQQ.PA": {
    "statut": "oui",
@@ -791,7 +791,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CL2.PA": {
    "statut": "oui",
@@ -807,7 +807,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "BX4.PA": {
    "statut": "oui",
@@ -823,7 +823,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "STLAM.MI": {
    "statut": "oui",
@@ -841,7 +841,7 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "AI.PA": {
    "statut": "oui",
@@ -859,7 +859,7 @@
    "boursorama": true,
    "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "AIR.PA": {
    "statut": "oui",
@@ -877,7 +877,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALO.PA": {
    "statut": "oui",
@@ -895,7 +895,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "MT.AS": {
    "statut": "oui",
@@ -913,7 +913,7 @@
    "boursorama": true,
    "secteur": "Produits miniers et minéraux",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CS.PA": {
    "statut": "oui",
@@ -931,7 +931,7 @@
    "boursorama": true,
    "secteur": "Assurance",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "BNP.PA": {
    "statut": "oui",
@@ -949,7 +949,7 @@
    "boursorama": true,
    "secteur": "Banque",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "EN.PA": {
    "statut": "oui",
@@ -967,7 +967,7 @@
    "boursorama": true,
    "secteur": "Services industriels",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CAP.PA": {
    "statut": "oui",
@@ -985,7 +985,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CA.PA": {
    "statut": "oui",
@@ -1003,7 +1003,7 @@
    "boursorama": true,
    "secteur": "Vente au détail de produits alimentaires et de première nécessité",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ACA.PA": {
    "statut": "oui",
@@ -1021,7 +1021,7 @@
    "boursorama": true,
    "secteur": "Banque",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "BN.PA": {
    "statut": "oui",
@@ -1039,7 +1039,7 @@
    "boursorama": true,
    "secteur": "Production de produits alimentaires et de tabac",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "DSY.PA": {
    "statut": "oui",
@@ -1057,7 +1057,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "EDEN.PA": {
    "statut": "oui",
@@ -1075,7 +1075,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ENGI.PA": {
    "statut": "oui",
@@ -1093,7 +1093,7 @@
    "boursorama": true,
    "secteur": "Services publics",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "EL.PA": {
    "statut": "oui",
@@ -1111,7 +1111,7 @@
    "boursorama": true,
    "secteur": "Biens de consommation",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ERF.PA": {
    "statut": "oui",
@@ -1129,7 +1129,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RMS.PA": {
    "statut": "oui",
@@ -1147,7 +1147,7 @@
    "boursorama": true,
    "secteur": "Biens de consommation",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "KER.PA": {
    "statut": "oui",
@@ -1165,7 +1165,7 @@
    "boursorama": true,
    "secteur": "Biens de consommation",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "OR.PA": {
    "statut": "oui",
@@ -1183,7 +1183,7 @@
    "boursorama": true,
    "secteur": "Produits ménagers",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "LR.PA": {
    "statut": "oui",
@@ -1201,7 +1201,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "MC.PA": {
    "statut": "oui",
@@ -1219,7 +1219,7 @@
    "boursorama": true,
    "secteur": "Biens de consommation",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ML.PA": {
    "statut": "oui",
@@ -1237,7 +1237,7 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ORA.PA": {
    "statut": "oui",
@@ -1255,7 +1255,7 @@
    "boursorama": true,
    "secteur": "Télécommunications",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RI.PA": {
    "statut": "oui",
@@ -1273,7 +1273,7 @@
    "boursorama": true,
    "secteur": "Production de produits alimentaires et de tabac",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PUB.PA": {
    "statut": "oui",
@@ -1291,7 +1291,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RNO.PA": {
    "statut": "oui",
@@ -1309,7 +1309,7 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SAF.PA": {
    "statut": "oui",
@@ -1327,7 +1327,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SGO.PA": {
    "statut": "oui",
@@ -1345,7 +1345,7 @@
    "boursorama": true,
    "secteur": "Produits miniers et minéraux",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SAN.PA": {
    "statut": "oui",
@@ -1363,7 +1363,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SU.PA": {
    "statut": "oui",
@@ -1381,7 +1381,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "GLE.PA": {
    "statut": "oui",
@@ -1399,7 +1399,7 @@
    "boursorama": true,
    "secteur": "Banque",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "STLAP.PA": {
    "statut": "oui",
@@ -1417,7 +1417,7 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "STMPA.PA": {
    "statut": "oui",
@@ -1435,7 +1435,7 @@
    "boursorama": true,
    "secteur": "Composants électroniques et fabrication",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "TEP.PA": {
    "statut": "oui",
@@ -1453,7 +1453,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "HO.PA": {
    "statut": "oui",
@@ -1471,7 +1471,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "TTE.PA": {
    "statut": "oui",
@@ -1489,7 +1489,7 @@
    "boursorama": true,
    "secteur": "Prospection et production intégrées de pétrole et de gaz",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "VIE.PA": {
    "statut": "oui",
@@ -1507,7 +1507,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "DG.PA": {
    "statut": "oui",
@@ -1525,7 +1525,7 @@
    "boursorama": true,
    "secteur": "Services industriels",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ENX.PA": {
    "statut": "oui",
@@ -1543,7 +1543,7 @@
    "boursorama": true,
    "secteur": "Services d'investissement",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "BVI.PA": {
    "statut": "oui",
@@ -1561,7 +1561,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "AC.PA": {
    "statut": "oui",
@@ -1579,7 +1579,7 @@
    "boursorama": true,
    "secteur": "Services d'accueil",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "AM.PA": {
    "statut": "oui",
@@ -1597,7 +1597,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "FGR.PA": {
    "statut": "doute",
@@ -1628,7 +1628,7 @@
    "boursorama": true,
    "secteur": "Énergie en aval et en milieu de chaîne",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "GTT.PA": {
    "statut": "oui",
@@ -1646,7 +1646,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ELIS.PA": {
    "statut": "oui",
@@ -1664,7 +1664,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "NEX.PA": {
    "statut": "oui",
@@ -1682,7 +1682,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RXL.PA": {
    "statut": "oui",
@@ -1700,7 +1700,7 @@
    "boursorama": true,
    "secteur": "Services industriels",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SPIE.PA": {
    "statut": "oui",
@@ -1718,7 +1718,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SOI.PA": {
    "statut": "oui",
@@ -1736,7 +1736,7 @@
    "boursorama": true,
    "secteur": "Composants électroniques et fabrication",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "VK.PA": {
    "statut": "oui",
@@ -1754,7 +1754,7 @@
    "boursorama": true,
    "secteur": "Énergie en amont",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ATE.PA": {
    "statut": "oui",
@@ -1772,7 +1772,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SOP.PA": {
    "statut": "oui",
@@ -1790,7 +1790,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "AF.PA": {
    "statut": "oui",
@@ -1808,7 +1808,7 @@
    "boursorama": true,
    "secteur": "Services industriels",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ETL.PA": {
    "statut": "oui",
@@ -1826,7 +1826,7 @@
    "boursorama": true,
    "secteur": "Télécommunications",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "UBI.PA": {
    "statut": "oui",
@@ -1844,7 +1844,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "VIRI.PA": {
    "statut": "oui",
@@ -1862,7 +1862,7 @@
    "boursorama": true,
    "secteur": "Énergie en amont",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ASML.AS": {
    "statut": "oui",
@@ -1880,7 +1880,7 @@
    "boursorama": true,
    "secteur": "Composants électroniques et fabrication",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ADYEN.AS": {
    "statut": "oui",
@@ -1898,7 +1898,7 @@
    "boursorama": true,
    "secteur": "Financements et services spécialisés",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PRX.AS": {
    "statut": "oui",
@@ -1916,7 +1916,7 @@
    "boursorama": true,
    "secteur": "Vente au détail de produits alimentaires et de première nécessité",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "INGA.AS": {
    "statut": "oui",
@@ -1934,7 +1934,7 @@
    "boursorama": true,
    "secteur": "Banque",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PHIA.AS": {
    "statut": "oui",
@@ -1952,7 +1952,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SAP.DE": {
    "statut": "doute",
@@ -1969,7 +1969,7 @@
    "boursorama": false,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SIE.DE": {
    "statut": "oui",
@@ -1985,7 +1985,7 @@
    "boursorama": false,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-27",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALV.DE": {
    "statut": "doute",
@@ -2002,7 +2002,7 @@
    "boursorama": false,
    "secteur": "Assurance",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "DTE.DE": {
    "statut": "doute",
@@ -2019,7 +2019,7 @@
    "boursorama": false,
    "secteur": "Télécommunications",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RHM.DE": {
    "statut": "doute",
@@ -2036,7 +2036,7 @@
    "boursorama": false,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "IFX.DE": {
    "statut": "oui",
@@ -2052,7 +2052,7 @@
    "boursorama": false,
    "secteur": "Composants électroniques et fabrication",
    "depuis": "2026-11-27",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ENEL.MI": {
    "statut": "oui",
@@ -2070,7 +2070,7 @@
    "boursorama": true,
    "secteur": "Services publics",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ISP.MI": {
    "statut": "oui",
@@ -2088,7 +2088,7 @@
    "boursorama": true,
    "secteur": "Banque",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RACE.MI": {
    "statut": "oui",
@@ -2106,24 +2106,23 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ITX.MC": {
-   "statut": "doute",
+   "statut": "oui",
    "raisons": [
-    "siège dans l'Union européenne ou l'EEE (ISIN ES)",
-    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+    "vérifié à la main le 2026-11-28 : Le registre officiel du commerce espagnol (BORME) place le domicilio social d'Inditex à Arteixo (A Coruña), donc en Espagne, dans l'Union européenne."
    ],
    "sources": [
-    "règle du siège"
+    "https://www.boe.es/borme/dias/2026/06/04/pdfs/BORME-C-2026-3192.pdf"
    ],
    "isin": "ES0148396007",
    "nom": "Inditex",
    "categorie": "actions",
    "boursorama": false,
    "secteur": "Commerces de détail de biens de consommation",
-   "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "depuis": "2026-11-28",
+   "relu": "2026-11-28"
   },
   "IBE.MC": {
    "statut": "doute",
@@ -2140,7 +2139,7 @@
    "boursorama": false,
    "secteur": "Services publics",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SAN.MC": {
    "statut": "doute",
@@ -2157,7 +2156,7 @@
    "boursorama": false,
    "secteur": "Banque",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "NOVO-B.CO": {
    "statut": "oui",
@@ -2203,7 +2202,7 @@
    "boursorama": true,
    "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "AMUN.PA": {
    "statut": "oui",
@@ -2221,7 +2220,7 @@
    "boursorama": true,
    "secteur": "Services d'investissement",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "BB.PA": {
    "statut": "oui",
@@ -2239,7 +2238,7 @@
    "boursorama": true,
    "secteur": "Biens de consommation",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "BIM.PA": {
    "statut": "oui",
@@ -2257,7 +2256,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "COFA.PA": {
    "statut": "oui",
@@ -2275,7 +2274,7 @@
    "boursorama": true,
    "secteur": "Assurance",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "DBG.PA": {
    "statut": "oui",
@@ -2293,7 +2292,7 @@
    "boursorama": true,
    "secteur": "Produits miniers et minéraux",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "DEC.PA": {
    "statut": "oui",
@@ -2311,7 +2310,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "DIM.PA": {
    "statut": "oui",
@@ -2329,7 +2328,7 @@
    "boursorama": true,
    "secteur": "Services de santé",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ERA.PA": {
    "statut": "oui",
@@ -2347,7 +2346,7 @@
    "boursorama": true,
    "secteur": "Produits miniers et minéraux",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "FNAC.PA": {
    "statut": "oui",
@@ -2365,7 +2364,7 @@
    "boursorama": true,
    "secteur": "Commerces de détail de biens de consommation",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "FR.PA": {
    "statut": "oui",
@@ -2383,7 +2382,7 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "GET.PA": {
    "statut": "oui",
@@ -2401,7 +2400,7 @@
    "boursorama": true,
    "secteur": "Services industriels",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "IPN.PA": {
    "statut": "oui",
@@ -2419,7 +2418,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "IPS.PA": {
    "statut": "oui",
@@ -2437,7 +2436,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "MF.PA": {
    "statut": "oui",
@@ -2455,7 +2454,7 @@
    "boursorama": true,
    "secteur": "Services d'investissement",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "NK.PA": {
    "statut": "oui",
@@ -2473,7 +2472,7 @@
    "boursorama": true,
    "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RCO.PA": {
    "statut": "oui",
@@ -2491,7 +2490,7 @@
    "boursorama": true,
    "secteur": "Production de produits alimentaires et de tabac",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RF.PA": {
    "statut": "oui",
@@ -2509,7 +2508,7 @@
    "boursorama": true,
    "secteur": "Services d'investissement",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "RUI.PA": {
    "statut": "oui",
@@ -2527,7 +2526,7 @@
    "boursorama": true,
    "secteur": "Énergie en aval et en milieu de chaîne",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SCR.PA": {
    "statut": "oui",
@@ -2545,7 +2544,7 @@
    "boursorama": true,
    "secteur": "Assurance",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SK.PA": {
    "statut": "oui",
@@ -2563,7 +2562,7 @@
    "boursorama": true,
    "secteur": "Produits ménagers",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SW.PA": {
    "statut": "oui",
@@ -2581,7 +2580,7 @@
    "boursorama": true,
    "secteur": "Services d'accueil",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "TE.PA": {
    "statut": "oui",
@@ -2599,7 +2598,7 @@
    "boursorama": true,
    "secteur": "Services industriels",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "TFI.PA": {
    "statut": "oui",
@@ -2617,7 +2616,7 @@
    "boursorama": true,
    "secteur": "Services de médias et d'édition",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "TRI.PA": {
    "statut": "oui",
@@ -2635,7 +2634,7 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "VCT.PA": {
    "statut": "oui",
@@ -2653,7 +2652,7 @@
    "boursorama": true,
    "secteur": "Produits miniers et minéraux",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "VIRP.PA": {
    "statut": "oui",
@@ -2671,7 +2670,7 @@
    "boursorama": true,
    "secteur": "Services de santé",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "VIV.PA": {
    "statut": "oui",
@@ -2689,7 +2688,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "WLN.PA": {
    "statut": "oui",
@@ -2707,7 +2706,7 @@
    "boursorama": true,
    "secteur": "Financements et services spécialisés",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "EXA.PA": {
    "statut": "oui",
@@ -2725,7 +2724,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "AYV.PA": {
    "statut": "oui",
@@ -2743,7 +2742,7 @@
    "boursorama": true,
    "secteur": "Financements et services spécialisés",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "PLX.PA": {
    "statut": "oui",
@@ -2761,7 +2760,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "OPM.PA": {
    "statut": "oui",
@@ -2779,7 +2778,7 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "FRVIA.PA": {
    "statut": "oui",
@@ -2797,7 +2796,7 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "TKO.PA": {
    "statut": "oui",
@@ -2815,7 +2814,7 @@
    "boursorama": true,
    "secteur": "Services d'investissement",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ANTIN.PA": {
    "statut": "oui",
@@ -2833,7 +2832,7 @@
    "boursorama": true,
    "secteur": "Services d'investissement",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "VU.PA": {
    "statut": "oui",
@@ -2851,7 +2850,7 @@
    "boursorama": true,
    "secteur": "Matériel informatique",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ADP.PA": {
    "statut": "oui",
@@ -2869,7 +2868,7 @@
    "boursorama": true,
    "secteur": "Services industriels",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ELIOR.PA": {
    "statut": "oui",
@@ -2887,7 +2886,7 @@
    "boursorama": true,
    "secteur": "Services d'accueil",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "EXENS.PA": {
    "statut": "oui",
@@ -2905,7 +2904,7 @@
    "boursorama": true,
    "secteur": "Composants électroniques et fabrication",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "AD.AS": {
    "statut": "oui",
@@ -2923,7 +2922,7 @@
    "boursorama": true,
    "secteur": "Vente au détail de produits alimentaires et de première nécessité",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "WKL.AS": {
    "statut": "oui",
@@ -2941,7 +2940,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "HEIA.AS": {
    "statut": "oui",
@@ -2959,7 +2958,7 @@
    "boursorama": true,
    "secteur": "Production de produits alimentaires et de tabac",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "UCG.MI": {
    "statut": "oui",
@@ -2977,7 +2976,7 @@
    "boursorama": true,
    "secteur": "Banque",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ENI.MI": {
    "statut": "oui",
@@ -2995,7 +2994,7 @@
    "boursorama": true,
    "secteur": "Prospection et production intégrées de pétrole et de gaz",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ITP.PA": {
    "statut": "oui",
@@ -3013,7 +3012,7 @@
    "boursorama": true,
    "secteur": "Produits ménagers",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CLARI.PA": {
    "statut": "oui",
@@ -3031,7 +3030,7 @@
    "boursorama": true,
    "secteur": "Services de santé",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "TIT.MI": {
    "statut": "oui",
@@ -3049,7 +3048,7 @@
    "boursorama": true,
    "secteur": "Télécommunications",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "DBV.PA": {
    "statut": "oui",
@@ -3067,7 +3066,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALSEN.PA": {
    "statut": "oui",
@@ -3085,7 +3084,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "NANO.PA": {
    "statut": "oui",
@@ -3103,7 +3102,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "GNFT.PA": {
    "statut": "oui",
@@ -3121,7 +3120,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "VLA.PA": {
    "statut": "oui",
@@ -3139,7 +3138,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALBPS.PA": {
    "statut": "oui",
@@ -3157,7 +3156,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALHPI.PA": {
    "statut": "oui",
@@ -3175,7 +3174,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALMKT.PA": {
    "statut": "oui",
@@ -3193,7 +3192,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALTHE.PA": {
    "statut": "oui",
@@ -3211,7 +3210,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALAFY.PA": {
    "statut": "oui",
@@ -3229,7 +3228,7 @@
    "boursorama": true,
    "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALCLS.PA": {
    "statut": "oui",
@@ -3275,7 +3274,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALPAT.PA": {
    "statut": "oui",
@@ -3293,7 +3292,7 @@
    "boursorama": true,
    "secteur": "Matériaux chimiques, en plastique et en caoutchouc",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALNFL.PA": {
    "statut": "oui",
@@ -3311,7 +3310,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALCJ.PA": {
    "statut": "oui",
@@ -3329,7 +3328,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALCOX.PA": {
    "statut": "oui",
@@ -3347,7 +3346,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "IVA.PA": {
    "statut": "oui",
@@ -3365,7 +3364,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALMDG.PA": {
    "statut": "oui",
@@ -3383,7 +3382,7 @@
    "boursorama": true,
    "secteur": "Matériel informatique",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALQGC.PA": {
    "statut": "oui",
@@ -3401,7 +3400,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALVAL.PA": {
    "statut": "oui",
@@ -3419,7 +3418,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALNOV.PA": {
    "statut": "oui",
@@ -3437,7 +3436,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALBOO.PA": {
    "statut": "oui",
@@ -3455,7 +3454,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALLHB.PA": {
    "statut": "oui",
@@ -3473,7 +3472,7 @@
    "boursorama": true,
    "secteur": "Services d'accueil",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALENT.PA": {
    "statut": "oui",
@@ -3491,7 +3490,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALWEC.PA": {
    "statut": "oui",
@@ -3509,7 +3508,7 @@
    "boursorama": true,
    "secteur": "Matériel informatique",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALKAL.PA": {
    "statut": "oui",
@@ -3527,7 +3526,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALOKW.PA": {
    "statut": "oui",
@@ -3545,7 +3544,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALLPL.PA": {
    "statut": "oui",
@@ -3563,7 +3562,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALHRS.PA": {
    "statut": "oui",
@@ -3581,7 +3580,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALMCE.PA": {
    "statut": "oui",
@@ -3599,7 +3598,7 @@
    "boursorama": true,
    "secteur": null,
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALNXT.PA": {
    "statut": "doute",
@@ -3630,7 +3629,7 @@
    "boursorama": true,
    "secteur": "Commerces de détail de biens de consommation",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALDLT.PA": {
    "statut": "oui",
@@ -3648,7 +3647,7 @@
    "boursorama": true,
    "secteur": "Biens de consommation",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALSPW.PA": {
    "statut": "oui",
@@ -3666,7 +3665,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALUVI.PA": {
    "statut": "oui",
@@ -3684,24 +3683,25 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALEUP.PA": {
-   "statut": "doute",
+   "statut": "oui",
    "raisons": [
     "siège dans l'Union européenne ou l'EEE (ISIN FR)",
-    "Boursorama ne l'indique pas éligible sur cette place de cotation : la banque doit pouvoir l'acheter dans un PEA sur ce marché"
+    "Boursorama : éligible au PEA"
    ],
    "sources": [
-    "règle du siège"
+    "règle du siège",
+    "Boursorama"
    ],
-   "isin": "FR0014011QJ8",
+   "isin": "FR001401BHQ6",
    "nom": "Europlasma",
    "categorie": "petites",
-   "boursorama": false,
+   "boursorama": true,
    "secteur": "Produits miniers et minéraux",
-   "depuis": "2026-11-27",
-   "relu": "2026-11-27"
+   "depuis": "2026-11-28",
+   "relu": "2026-11-28"
   },
   "ALVDM.PA": {
    "statut": "oui",
@@ -3719,7 +3719,7 @@
    "boursorama": true,
    "secteur": "Services d'accueil",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALBIO.PA": {
    "statut": "oui",
@@ -3737,7 +3737,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALTXC.PA": {
    "statut": "doute",
@@ -3768,7 +3768,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALSAF.PA": {
    "statut": "oui",
@@ -3786,7 +3786,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALIMP.PA": {
    "statut": "oui",
@@ -3804,7 +3804,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ADOC.PA": {
    "statut": "oui",
@@ -3822,7 +3822,7 @@
    "boursorama": true,
    "secteur": "Produits biopharmaceutiques",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALHEX.PA": {
    "statut": "oui",
@@ -3840,7 +3840,7 @@
    "boursorama": true,
    "secteur": "Commerces de détail divers",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SAB.MC": {
    "statut": "doute",
@@ -3857,7 +3857,7 @@
    "boursorama": false,
    "secteur": "Banque",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "SPM.MI": {
    "statut": "oui",
@@ -3875,7 +3875,7 @@
    "boursorama": true,
    "secteur": "Énergie en amont",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "BMPS.MI": {
    "statut": "oui",
@@ -3893,7 +3893,7 @@
    "boursorama": true,
    "secteur": "Banque",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ENR.DE": {
    "statut": "doute",
@@ -3910,7 +3910,7 @@
    "boursorama": false,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALPHA.AT": {
    "statut": "doute",
@@ -3967,7 +3967,7 @@
    "boursorama": true,
    "secteur": "Énergie en amont",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ATO.PA": {
    "statut": "oui",
@@ -3985,7 +3985,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "CRI.PA": {
    "statut": "doute",
@@ -4016,7 +4016,7 @@
    "boursorama": true,
    "secteur": "Logiciels et conseils",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "EKI.PA": {
    "statut": "oui",
@@ -4034,7 +4034,7 @@
    "boursorama": true,
    "secteur": "Matériel informatique",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALGEN.PA": {
    "statut": "doute",
@@ -4065,7 +4065,7 @@
    "boursorama": true,
    "secteur": "Services publics",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALPRI.PA": {
    "statut": "oui",
@@ -4083,7 +4083,7 @@
    "boursorama": true,
    "secteur": "Services aux entreprises",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALGIL.PA": {
    "statut": "oui",
@@ -4101,7 +4101,7 @@
    "boursorama": true,
    "secteur": "Produits manufacturés",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALSGD.PA": {
    "statut": "oui",
@@ -4119,7 +4119,7 @@
    "boursorama": true,
    "secteur": "Équipement médical",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALMOU.PA": {
    "statut": "oui",
@@ -4137,7 +4137,7 @@
    "boursorama": true,
    "secteur": "Produits manufacturés",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "MLHK.PA": {
    "statut": "oui",
@@ -4155,7 +4155,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALAGO.PA": {
    "statut": "oui",
@@ -4173,7 +4173,7 @@
    "boursorama": true,
    "secteur": "Services publics",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALDEL.PA": {
    "statut": "oui",
@@ -4191,7 +4191,7 @@
    "boursorama": true,
    "secteur": "Véhicules particuliers et pièces détachées",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "ALTUV.PA": {
    "statut": "oui",
@@ -4209,7 +4209,7 @@
    "boursorama": true,
    "secteur": "Fabrication industrielle",
    "depuis": "2026-11-23",
-   "relu": "2026-11-27"
+   "relu": "2026-11-28"
   },
   "FR0010298596": {
    "statut": "oui",
@@ -4390,6 +4390,12 @@
    "source": "https://lei.bloomberg.com/leis/view/TSI2PJM6EPETEQ4X1U25",
    "date": "2026-11-27",
    "raison": "siège social à Neubiberg (Allemagne, Union européenne), Aktiengesellschaft soumise à l'impôt sur les sociétés ; deux pages ouvertes indépendantes : registre LEI (Amtsgericht München, HRB 126492) et North Data (northdata.com/TSI2PJM6EPETEQ4X1U25)"
+  },
+  "ITX.MC": {
+   "statut": "oui",
+   "source": "https://www.boe.es/borme/dias/2026/06/04/pdfs/BORME-C-2026-3192.pdf",
+   "date": "2026-11-28",
+   "raison": "Le registre officiel du commerce espagnol (BORME) place le domicilio social d'Inditex à Arteixo (A Coruña), donc en Espagne, dans l'Union européenne."
   }
  }
 }

@@ -1123,6 +1123,7 @@ def bloc_fiscalite_pea():
     assert 'id="fisc-exceptions"' in bloc and "licenciement" in bloc and "invalidité" in bloc and "mise à la retraite" in bloc
     assert 'id="fisc-transfert"' in bloc and "n'est pas un retrait" in bloc and "amf-france.org" in bloc
     assert 'id="fisc-delai"' in bloc and "80 %" in bloc and "aucun délai n'est garanti" in bloc and "Rapport_GT_PEA_2023.pdf" in bloc
+    assert 'id="fisc-sortie"' in bloc and "rente viagère" in bloc and "prélèvements sociaux" in bloc and "inéligible" in bloc and "FAQ_PEA_et_PEA_PME-ETI.pdf" in bloc
 
 
 @test
